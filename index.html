@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="app">
   <head>
     <base href="/jonR_folio/">
     <meta charset="utf-8" />
@@ -18,24 +18,27 @@
     <script type="text/javascript" src="node_modules/angular-route/angular-route.js" ></script>
 <!--    <script type="text/javascript" src="node_modules/angular-route/angular-route.js" ></script>-->
     <script type="text/javascript" src="lib/js/script.js" ></script>
+    <script src="https://use.typekit.net/qgo6zhu.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <link rel="stylesheet" type="text/css" href="lib/css/style.css" />
   </head>
 
 <body>
-  <div id="page" ng-app="app">
-	<header>
-		<h1>
-		<a href="#/">Jon Richards - Web Developer</a>
-		</h1>
+
+	<header role="banner">
+      <a href="#/">
+		<h1>Jon Richards</h1>
+        <h2>Full Stack Web Developer</h2>
+      </a>
 	</header>
 
-	<div ng-view></div>
+	<main ng-view></main>
 
 	<footer>
 		&copy; 2016
 	</footer>
-  </div>
+
 
 </body>
 </html>

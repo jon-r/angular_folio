@@ -1,7 +1,17 @@
 @import "core/reset";
+
+
+@import "bourbon/bourbon/bourbon"; //totally unintentional
+
 @import "core/variables";
+
+@import "bourbon/neat/neat";
+
+
 @import "core/type";
 @import "core/animations";
-@import "core/core-layout";
 
+@import "layouts/site-generic";
 @import "layouts/work-generic";
+@import "layouts/template-intro";
+

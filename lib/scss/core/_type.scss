@@ -1,0 +1,15 @@
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: modular-scale(3);
+}
+h2 {
+  font-size: modular-scale(2);
+}
+h3 {
+  font-size: modular-scale(1);
+}
+

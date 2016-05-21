@@ -1,7 +1,4 @@
-/*! http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/*! http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
@@ -16,3 +13,29 @@ blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 
 table { border-collapse: collapse; border-spacing: 0; }
+
+html { box-sizing: border-box; }
+
+*, *::after, *::before { box-sizing: inherit; }
+
+body:before { background-image: linear-gradient(to left, transparent 0, #2daa91 0, #2daa91 6.17215%, transparent 6.17215%, transparent 8.5298%, #2daa91 8.5298%, #2daa91 14.70196%, transparent 14.70196%, transparent 17.05961%, #2daa91 17.05961%, #2daa91 23.23176%, transparent 23.23176%, transparent 25.58941%, #2daa91 25.58941%, #2daa91 31.76157%, transparent 31.76157%, transparent 34.11922%, #2daa91 34.11922%, #2daa91 40.29137%, transparent 40.29137%, transparent 42.64902%, #2daa91 42.64902%, #2daa91 48.82117%, transparent 48.82117%, transparent 51.17883%, #2daa91 51.17883%, #2daa91 57.35098%, transparent 57.35098%, transparent 59.70863%, #2daa91 59.70863%, #2daa91 65.88078%, transparent 65.88078%, transparent 68.23843%, #2daa91 68.23843%, #2daa91 74.41059%, transparent 74.41059%, transparent 76.76824%, #2daa91 76.76824%, #2daa91 82.94039%, transparent 82.94039%, transparent 85.29804%, #2daa91 85.29804%, #2daa91 91.4702%, transparent 91.4702%, transparent 93.82785%, #2daa91 93.82785%, #2daa91 100%, transparent 100%); content: ""; display: inline-block; height: 100%; left: 0; margin: 0 auto; max-width: 1200px; opacity: 0.4; pointer-events: none; position: fixed; right: 0; width: 100%; z-index: -1; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; text-align: center; }
+
+h1 { font-size: 2.36859em; }
+
+h2 { font-size: 1.77689em; }
+
+h3 { font-size: 1.333em; }
+
+body { background: #16a085; font-family: "soleil",sans-serif; color: white; }
+
+header, body, footer { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+header::after, body::after, footer::after { clear: both; content: ""; display: table; }
+
+header h1 { font-size: 4.20873em; }
+
+.intro-link { float: left; display: block; margin-right: 2.35765%; width: 48.82117%; }
+
+.intro-link:last-child { margin-right: 0; }

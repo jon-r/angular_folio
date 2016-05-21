@@ -1,0 +1,29 @@
+body {
+  background:$jr-primary;
+  font-family: "soleil",sans-serif;
+  color: white;
+}
+
+
+%page-frames {
+  @include outer-container();
+}
+
+header {
+  @extend %page-frames;
+
+  h1 {
+    font-size: modular-scale(5);
+  }
+//  h2 {
+//    font-size: 3em;
+//  }
+}
+
+body   {
+  @extend %page-frames;
+}
+
+footer {
+  @extend %page-frames;
+}

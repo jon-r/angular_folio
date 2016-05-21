@@ -18,21 +18,21 @@ gulp.task('sass', function() {
 
 
 gulp.task('minjs', function() {
-  return gulp.src('./lib/js/script.js')
+  return gulp.src('lib/js/script.js')
     .pipe(uglify({preserveComments: 'some'}))
     .pipe(rename('script.min.js'))
-    .pipe(gulp.dest('./lib/js'));
+    .pipe(gulp.dest('lib/js'));
 });
 
 gulp.task('default', ['sass','minjs']);
 
 gulp.task('watch', function () {
-  gulp.watch('./lib/scss/**/*.scss', ['sass']);
-  gulp.watch('./lib/js/script.js', ['minjs']);
+  gulp.watch('lib/scss/**/*.scss', ['sass']);
+  gulp.watch('lib/js/script.js', ['minjs']);
 });
 
-gulp.task('zip', function() {
+/*gulp.task('zip', function() {
   return gulp.src(['../wp_angular/**', '!./node_modules/**'])
       .pipe(zip('wp_angular.zip'))
       .pipe(gulp.dest('../'));
-})
+})*/
