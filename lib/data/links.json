@@ -1,0 +1,39 @@
+{
+  "experiments": {
+    "blackjack": {
+      "name": "BlackJack JS",
+      "url": "blackjack"
+    },
+    "svgicons": {
+      "name": "Interactive SVG",
+      "url": "svgicons"
+    },
+    "book": {
+      "name": "Responsive Book",
+      "url": "book"
+    },
+    "scaling": {
+      "name": "Scale Reference",
+      "url": "scaling"
+    }
+  },
+
+  "portfolio": {
+    "dunalastair": {
+      "name": "Dunalastair Hotel",
+      "url": "dunalastair"
+    },
+    "rhc": {
+      "name": "Red Hot Chilli Catering",
+      "url": "rhc"
+    },
+    "arcane": {
+      "name": "Arcane Bar Manchester",
+      "url": "arcane"
+    },
+    "proinstall": {
+      "name": "Pro-Install AV",
+      "url": "proinstall"
+    }
+  }
+}
