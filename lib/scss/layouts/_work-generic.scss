@@ -1,0 +1,17 @@
+.work-list  {
+  @extend %page-frames;
+
+  li {
+    margin-bottom:20px;
+    @include span-columns(6);
+    &:nth-of-type(even) {
+      @include omega();
+    }
+  }
+}
+
+.image-frame {
+  width:100%;
+  height: 10vw;
+  background: tint($jr-primary, 30%);
+}

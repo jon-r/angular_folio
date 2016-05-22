@@ -24,21 +24,19 @@
     <link rel="stylesheet" type="text/css" href="lib/css/style.css" />
   </head>
 
-<body>
+<body ng-controller="mainCtrl">
+  <a style="position:fixed" href="#/">(home)</a>
 
-	<header role="banner">
-      <a href="#/">
-		<h1>Jon Richards</h1>
-        <h2>Full Stack Web Developer</h2>
-      </a>
-	</header>
+<header ng-style="p.headerStyle" role="banner">
+    <h1 >{{p.title}}</h1>
+    <h2>{{p.subtitle}}</h2>
+</header>
 
-	<main ng-view></main>
+<div ng-view></div>
 
-	<footer>
-		&copy; 2016
-	</footer>
-
+<footer>
+  &copy; 2016
+</footer>
 
 </body>
 </html>

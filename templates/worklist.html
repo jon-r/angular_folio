@@ -1,0 +1,15 @@
+<main ng-style="mainStyle" >
+
+    <ul class="work-list">
+      <li ng-repeat="post in posts | orderBy: 'name' | filter:category">
+        <a href="#/work/{{post.url}}">
+          <div class="image-frame" >
+            <div class="placehold" ></div>
+          </div>
+          {{post.name}}
+        </a>
+      </li>
+
+    </ul>
+
+</main>

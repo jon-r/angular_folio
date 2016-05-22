@@ -28,7 +28,7 @@ gulp.task('default', ['sass','minjs']);
 
 gulp.task('watch', function () {
   gulp.watch('lib/scss/**/*.scss', ['sass']);
-  gulp.watch('lib/js/script.js', ['minjs']);
+ // gulp.watch('lib/js/script.js', ['minjs']);
 });
 
 /*gulp.task('zip', function() {

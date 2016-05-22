@@ -1,39 +1,51 @@
-{
-  "experiments": {
-    "blackjack": {
-      "name": "BlackJack JS",
-      "url": "blackjack"
-    },
-    "svgicons": {
-      "name": "Interactive SVG",
-      "url": "svgicons"
-    },
-    "book": {
-      "name": "Responsive Book",
-      "url": "book"
-    },
-    "scaling": {
-      "name": "Scale Reference",
-      "url": "scaling"
-    }
+[
+ {
+    "name": "BlackJack JS",
+    "url": "blackjack",
+    "intro": "blackjack in vanilla javascript",
+    "cat": "exp"
+  },
+  {
+    "name": "Interactive SVG",
+    "url": "svgicons",
+    "intro": "svg golderg",
+    "cat": "exp"
+  },
+ {
+    "name": "Responsive Book",
+    "url": "book",
+    "intro": "responsive pagination",
+    "cat": "exp"
+  },
+ {
+    "name": "Scale Reference",
+    "url": "scaling",
+    "intro": "dynamic scale reference",
+    "cat": "exp"
   },
 
-  "portfolio": {
-    "dunalastair": {
-      "name": "Dunalastair Hotel",
-      "url": "dunalastair"
-    },
-    "rhc": {
-      "name": "Red Hot Chilli Catering",
-      "url": "rhc"
-    },
-    "arcane": {
-      "name": "Arcane Bar Manchester",
-      "url": "arcane"
-    },
-    "proinstall": {
-      "name": "Pro-Install AV",
-      "url": "proinstall"
-    }
+ {
+    "name": "Dunalastair Hotel",
+    "url": "dunalastair",
+    "intro": "scottish lochs hotel",
+    "cat": "work"
+  },
+ {
+    "name": "Red Hot Chilli",
+    "url": "rhc",
+    "intro": "second hand catering equipment",
+    "cat": "work"
+  },
+ {
+    "name": "Arcane Bar",
+    "url": "arcane",
+    "intro": "cocktail bar in manchester",
+    "cat": "work"
+  },
+ {
+    "name": "Pro-Install AV",
+    "url": "proinstall",
+    "intro": "home technology experts",
+    "cat": "work"
   }
-}
+]
