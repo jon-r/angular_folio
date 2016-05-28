@@ -16,7 +16,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js" ></script>-->
     <script type="text/javascript" src="node_modules/angular/angular.js" ></script>
     <script type="text/javascript" src="node_modules/angular-route/angular-route.js" ></script>
-<!--    <script type="text/javascript" src="node_modules/angular-route/angular-route.js" ></script>-->
     <script type="text/javascript" src="lib/js/script.js" ></script>
     <script src="https://use.typekit.net/qgo6zhu.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -25,12 +24,40 @@
   </head>
 
 <body ng-controller="mainCtrl">
-  <a style="position:fixed" href="#/">(home)</a>
 
-<header ng-style="p.headerStyle" role="banner">
-    <h1 >{{p.title}}</h1>
-    <h2>{{p.subtitle}}</h2>
+<header role="banner">
+  <h1 >Jon Richards</h1>
+  <h2>Full Stack Web Developer</h2>
 </header>
+
+<nav role="navigation" ng-class="activePage" >
+  <ul class="main-list">
+    <li class="home" ng-class="activePage == 'home' ? 'active' : ''">
+      <a href="#/">Hello</a>
+    </li>
+    <li class="work" ng-class="activePage == 'work' ? 'active' : ''">
+      <a href="#/work">Work Projects</a>
+      <ul class="sub-list">
+        <li ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'work'}"
+            ng-class="activePage == post.url ? 'active' : ''" >
+          <a href="#/work/{{post.url}}">{{post.name}}</a>
+        </li>
+      </ul>
+    </li>
+    <li class="exp" ng-class="activePage == 'exp' ? 'active' : ''">
+      <a href="#/experiments">Experiments</a>
+      <ul class="sub-list">
+        <li ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'exp'}"
+            ng-class="activePage == post.url ? 'active' : ''" >
+          <a href="#/work/{{post.url}}">{{post.name}}</a>
+        </li>
+      </ul>
+    </li>
+    <li class="about" ng-class="activePage == 'about' ? 'active' : ''">
+      <a href="#/about">About Me</a>
+    </li>
+  </ul>
+</nav>
 
 <div ng-view></div>
 

@@ -2,6 +2,7 @@ body {
   background:$jr-primary;
   font-family: "soleil",sans-serif;
   color: white;
+  line-height: 2rem;
 }
 
 a {
@@ -15,9 +16,9 @@ a {
 }
 
 header {
-  @extend %page-frames;
+  @include position(absolute, 2rem 2rem null null);
   height: 15vh;
-  margin-top: 1rem;
+  text-align: right;
 
 
   h1 {
@@ -30,22 +31,10 @@ header {
 
 }
 
-nav {
-  @include position(absolute, 1rem null null calc(50% - #{$max-width / 2}));
-
-  @extend %page-frames;
-
-  width:100%;
-}
-
 
 
 main {
-  position: absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  @include position(absolute, 2rem);
   padding-top: 200px;
   z-index: -1;
 }

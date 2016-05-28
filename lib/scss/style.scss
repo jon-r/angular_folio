@@ -1,6 +1,5 @@
 @import "core/reset";
 
-
 @import "bourbon/bourbon/bourbon"; //totally unintentional
 
 @import "core/variables";
@@ -10,8 +9,11 @@
 
 @import "core/type";
 @import "core/animations";
+@import "core/grid-mesh";
 
 @import "layouts/global";
+@import "layouts/nav-bar";
+
 @import "layouts/work-generic";
 @import "layouts/template-intro";
 

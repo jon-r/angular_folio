@@ -1,0 +1,106 @@
+nav {
+  @include position(absolute, 2vw 2rem);
+
+  font-weight: bold;
+  font-size: 1.5rem;
+
+}
+
+/*initial settings ------------------------------------*/
+$main-links: "home", "work", "exp", "about";
+$i: 4;
+
+
+%position-reset {
+  @include position(absolute, 0 null null 0);
+  transform-origin: top left;
+  transition: 300ms ease;
+}
+
+@each $n in $main-links {
+
+
+  li.#{$n} {
+    @extend %position-reset;
+
+    @include gridPos(0, $i);
+  }
+
+  $i: $i + 1;
+
+}
+
+.sub-list {
+  opacity: 0;
+  pointer-events: none;
+  li {
+    @extend %position-reset;
+  }
+}
+
+nav.sub-active, li.active {
+  .sub-list {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+
+li.active {
+  @include gridPos(0,0,1.5);
+
+
+
+  @for $i from 1 through $demo-count {
+
+    $y: 6 * floor($i / 3) + 6;
+    $x: 4 * ($i % 2) + 2;
+
+    li:nth-of-type(#{$i}) {
+
+      @include gridPos($x, $y);
+    }
+  }
+}
+
+
+/* home page ------------------------------------------*/
+nav.home {
+  li.work {
+    @include gridPos(2, 5, 3);
+  }
+  li.exp {
+    @include gridPos(2, 10, 3);
+  }
+  li.about {
+    @include gridPos(2, 15, 3);
+  }
+}
+
+/* work page ------------------------------------------*/
+
+nav.work {
+  li.work {
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

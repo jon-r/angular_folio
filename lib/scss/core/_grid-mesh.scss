@@ -1,0 +1,22 @@
+$xGrid: 5vw;
+$yGrid: 2rem;
+
+/*guide grid, inspired by bourbon neat -------------------------------*/
+$showGuide: true;
+
+@if ($showGuide == true) {
+  main {
+    background-position: 64px top;
+    background-image:
+      repeating-linear-gradient(to left, transparent, transparent calc(#{$xGrid} - 1px), $visual-grid-color calc(#{$xGrid} - 1px), $visual-grid-color $xGrid),
+      repeating-linear-gradient(to bottom, transparent, transparent calc(#{$yGrid} - 1px), $visual-grid-color calc(#{$yGrid} - 1px), $visual-grid-color $yGrid)
+;
+  }
+}
+
+@mixin gridPos($x, $y, $scale : 1) {
+  $setX : $x * $xGrid;
+  $setY : $y * $yGrid;
+
+  transform: translate($setX,$setY) scale($scale);
+};
