@@ -2,12 +2,12 @@
 
 
     <ul class="work-list">
-      <li ng-repeat="post in posts | orderBy: 'name' | filter:category">
+      <li class="animate-repeat" ng-repeat="post in posts | orderBy: 'name' | filter:category">
         <a href="#/demo/{{post.url}}">
-          <div class="image-frame" >
-            <div class="placehold" ></div>
+          <div class="image-frame" ng-animate-ref="frame-{{post.url}}" >
+
           </div>
-          {{post.name}}
+          <span ng-animate-ref="title-{{post.url}}" >{{post.name}}</span>
         </a>
       </li>
 

@@ -27,67 +27,117 @@ h2, .h2 { font-size: 1.77689em; }
 h3, .h3 { font-size: 1.333em; }
 
 /*guide grid, inspired by bourbon neat -------------------------------*/
-nav { background-position: 64px top; background-image: repeating-linear-gradient(to left, transparent, transparent calc(5vw - 1px), #2daa91 calc(5vw - 1px), #2daa91 5vw), repeating-linear-gradient(to bottom, transparent, transparent calc(2rem - 1px), #2daa91 calc(2rem - 1px), #2daa91 2rem); }
+body { background-position: 2.5vw top; background-image: repeating-linear-gradient(to left, transparent, transparent calc(5vw - 1px), #2daa91 calc(5vw - 1px), #2daa91 5vw), repeating-linear-gradient(to bottom, transparent, transparent calc(2rem - 1px), #2daa91 calc(2rem - 1px), #2daa91 2rem); }
 
-body { background: #16a085; font-family: "soleil",sans-serif; color: white; line-height: 2rem; }
+body { background-color: #16a085; font-family: "soleil",sans-serif; color: white; line-height: 2rem; min-height: 100vh; }
 
 a { text-decoration: none; color: inherit; }
-
-.work-list { max-width: 1200px; margin-left: auto; margin-right: auto; }
-
-.work-list::after { clear: both; content: ""; display: table; }
 
 header { position: absolute; top: 2rem; right: 2rem; height: 15vh; text-align: right; }
 
 header h1 { font-size: 4.20873em; }
 
-main { position: absolute; top: 2rem; right: 2rem; bottom: 2rem; left: 2rem; padding-top: 200px; }
-
 footer { text-align: center; position: absolute; bottom: 1rem; width: 100%; }
 
-nav { position: absolute; top: 2vw; right: 2rem; bottom: 2vw; left: 2rem; font-weight: bold; font-size: 1.5rem; }
+nav { font-weight: bold; font-size: 1.5rem; }
 
 /*initial settings ------------------------------------*/
-li.home, li.work, li.exp, li.about, .sub-list { position: absolute; top: 0; left: 0; transform-origin: top left; transition: 300ms ease; }
+li.home, li.work, li.exp, li.about, .sub-list, .work-list, .image-frame.active { position: absolute; top: 0; left: 0; transform-origin: top left; transition: 300ms ease; }
 
-li.home { transform: translate(0vw, 8rem) scale(1); }
+li.home { transform: translate(2.5vw, 8rem) scale(1); }
 
-nav.home li.home { transform: translate(0vw, 0rem) scale(1.5); }
+nav.home li.home { transform: translate(2.5vw, 2rem) scale(1.5); }
 
-li.work { transform: translate(0vw, 10rem) scale(1); }
+li.work { transform: translate(2.5vw, 10rem) scale(1); }
 
-nav.work li.work { transform: translate(0vw, 0rem) scale(1.5); }
+nav.work li.work { transform: translate(2.5vw, 2rem) scale(1.5); }
 
-li.exp { transform: translate(0vw, 12rem) scale(1); }
+li.exp { transform: translate(2.5vw, 12rem) scale(1); }
 
-nav.exp li.exp { transform: translate(0vw, 0rem) scale(1.5); }
+nav.exp li.exp { transform: translate(2.5vw, 2rem) scale(1.5); }
 
-li.about { transform: translate(0vw, 14rem) scale(1); }
+li.about { transform: translate(2.5vw, 14rem) scale(1); }
 
-nav.about li.about { transform: translate(0vw, 0rem) scale(1.5); }
+nav.about li.about { transform: translate(2.5vw, 2rem) scale(1.5); }
 
-/*.sub-list { opacity: 0; pointer-events: none; li { @extend %position-reset; } }*/
-/* nav.sub-active, li.active { .sub-list { opacity: 1; pointer-events: auto; } } */
-/*li.active { @include gridPos(0,0,1.5); @for $i from 1 through $demo-count { $y: 6 * floor($i / 3) + 6; $x: 4 * ($i % 2) + 2; li:nth-of-type(8) { @include gridPos($x, $y); } } }*/
+/*.sub-list {
+  opacity: 0;
+  pointer-events: none;
+  li {
+    @extend %position-reset;
+  }
+}*/
+/*
+nav.sub-active, li.active {
+  .sub-list {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+*/
+/*li.active {
+  @include gridPos(0,0,1.5);
+
+
+
+  @for $i from 1 through $demo-count {
+
+    $y: 6 * floor($i / 3) + 6;
+    $x: 4 * ($i % 2) + 2;
+
+    li:nth-of-type(8) {
+
+      @include gridPos($x, $y);
+    }
+  }
+}*/
 /* home page ------------------------------------------*/
 nav.home { /*  li.home { @include gridPos(0,0,1.5); } */ }
 
-nav.home li.work { transform: translate(10vw, 10rem) scale(3); }
+nav.home li.work { transform: translate(17.5vw, 12rem) scale(3); }
 
-nav.home li.exp { transform: translate(10vw, 20rem) scale(3); }
+nav.home li.exp { transform: translate(17.5vw, 22rem) scale(3); }
 
-nav.home li.about { transform: translate(10vw, 30rem) scale(3); }
+nav.home li.about { transform: translate(17.5vw, 32rem) scale(3); }
 
 /* work page ------------------------------------------*/
-/*nav.work { li.work { @include gridPos(0,0,1.5); } }*/
+/*nav.work {
+  li.work {
+    @include gridPos(0,0,1.5);
+  }
+}*/
 /* exp  page ------------------------------------------*/
-/*nav.exp { li.exp { @include gridPos(0,0,1.5); } }*/
+/*nav.exp {
+  li.exp {
+    @include gridPos(0,0,1.5);
+  }
+}*/
 /* about  page ------------------------------------------*/
-/*nav.about { li.about { @include gridPos(0,0,1.5); } }*/
-.work-list li { margin-bottom: 20px; float: left; display: block; margin-right: 2.35765%; width: 48.82117%; }
+/*nav.about {
+  li.about {
+    @include gridPos(0,0,1.5);
+  }
+}*/
+.work-list { transform: translate(17.5vw, 12rem) scale(1); width: 65vw; margin: 0 auto; }
 
-.work-list li:last-child { margin-right: 0; }
+.work-list li { width: 30vw; margin-bottom: 2rem; float: left; }
 
-.work-list li:nth-of-type(even) { margin-right: 0; }
+.work-list li:nth-of-type(odd) { margin-right: 5vw; }
 
 .image-frame { width: 100%; height: 10vw; background: #5cbdaa; }
+
+.image-frame.active { transform: translate(17.5vw, 12rem) scale(1); width: 65vw; }
+
+.ng-anchor { /* this animation will last for 1 second since there are two phases to the animation (an `in` and an `out` phase) */ transition: 0.5s all; white-space: nowrap; }
+
+.ng-anchor-out { transition: 0.5s all; /* the scale will be applied during the out animation, but will be animated away when the in animation runs */ transform: scale(1.2); }
+
+.ng-anchor-in { transition: 1s all; }
+
+.view-animation.ng-enter, .view-animation.ng-leave { transition: 0.5s all; /*  position:fixed; left:0; top:0; width:100%;*/ }
+
+.view-animation.ng-enter { opacity: 0; }
+
+.view-animation.ng-leave, .view-animation.ng-enter.ng-enter-active { opacity: 1; }
+
+.view-animation.ng-leave.ng-leave-active { opacity: 0; }

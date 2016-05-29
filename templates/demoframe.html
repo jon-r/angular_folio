@@ -1,3 +1,17 @@
-<a href="#/work/{{prev.url}}">{{prev.name}} (prev)</a>
+<main ng-style="mainStyle" >
 
-<a href="#/work/{{next.url}}">{{next.name}} (next)</a>
+<a href="#/demo/{{prev.url}}">
+  <span ng-animate-ref="title-{{prev.url}}" >{{prev.name}}</span>
+  (prev)</a>
+
+<a href="#/demo/{{next.url}}">
+  <span ng-animate-ref="title-{{next.url}}" >{{next.name}}</span>
+  (next)</a>
+
+
+          <div class="image-frame active" ng-animate-ref="frame-{{post.url}}" >
+
+          </div>
+          <span ng-animate-ref="title-{{post.url}}" >{{post.name}}</span>
+
+</main>

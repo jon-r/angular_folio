@@ -1,8 +1,9 @@
 body {
-  background:$jr-primary;
+  background-color:$jr-primary;
   font-family: "soleil",sans-serif;
   color: white;
   line-height: 2rem;
+  min-height:100vh;
 }
 
 a {
@@ -34,8 +35,6 @@ header {
 
 
 main {
-  @include position(absolute, 2rem);
-  padding-top: 200px;
 
 }
 
