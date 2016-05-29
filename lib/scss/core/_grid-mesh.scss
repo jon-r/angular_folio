@@ -5,7 +5,7 @@ $yGrid: 2rem;
 $showGuide: true;
 
 @if ($showGuide == true) {
-  main {
+  nav {
     background-position: 64px top;
     background-image:
       repeating-linear-gradient(to left, transparent, transparent calc(#{$xGrid} - 1px), $visual-grid-color calc(#{$xGrid} - 1px), $visual-grid-color $xGrid),

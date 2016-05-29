@@ -16,6 +16,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js" ></script>-->
     <script type="text/javascript" src="node_modules/angular/angular.js" ></script>
     <script type="text/javascript" src="node_modules/angular-route/angular-route.js" ></script>
+    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.js" ></script>
     <script type="text/javascript" src="lib/js/script.js" ></script>
     <script src="https://use.typekit.net/qgo6zhu.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -32,34 +33,34 @@
 
 <nav role="navigation" ng-class="activePage" >
   <ul class="main-list">
-    <li class="home" ng-class="activePage == 'home' ? 'active' : ''">
+    <li class="home" >
       <a href="#/">Hello</a>
     </li>
-    <li class="work" ng-class="activePage == 'work' ? 'active' : ''">
+    <li class="work" >
       <a href="#/work">Work Projects</a>
-      <ul class="sub-list">
-        <li ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'work'}"
-            ng-class="activePage == post.url ? 'active' : ''" >
+<!--      <ul class="sub-list">
+        <li ng-show="activePage == 'work'"
+            ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'work'}" >
           <a href="#/work/{{post.url}}">{{post.name}}</a>
         </li>
-      </ul>
+      </ul>-->
     </li>
-    <li class="exp" ng-class="activePage == 'exp' ? 'active' : ''">
+    <li class="exp" >
       <a href="#/experiments">Experiments</a>
-      <ul class="sub-list">
-        <li ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'exp'}"
-            ng-class="activePage == post.url ? 'active' : ''" >
+<!--      <ul class="sub-list">
+        <li ng-show="activePage == 'exp'"
+            ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'exp'}" >
           <a href="#/work/{{post.url}}">{{post.name}}</a>
         </li>
-      </ul>
+      </ul>-->
     </li>
-    <li class="about" ng-class="activePage == 'about' ? 'active' : ''">
+    <li class="about" >
       <a href="#/about">About Me</a>
     </li>
   </ul>
 </nav>
 
-<div ng-view></div>
+<div class="anim" ng-view></div>
 
 <footer>
   &copy; 2016

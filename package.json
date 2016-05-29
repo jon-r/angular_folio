@@ -18,8 +18,8 @@
   "homepage": "https://github.com/jon-r/wp_angular#readme",
   "devDependencies": {
     "angular": "^1.5.5",
+    "angular-animate": "^1.5.6",
     "angular-router": "0.0.2",
-    "angular-sanitize": "^1.5.5",
     "bourbon": "^4.2.7",
     "bourbon-neat": "^1.7.4",
     "gulp": "^3.9.1",
@@ -31,4 +31,3 @@
     "gulp-zip": "^3.2.0"
   }
 }
-

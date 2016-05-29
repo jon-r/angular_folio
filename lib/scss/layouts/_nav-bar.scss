@@ -26,27 +26,37 @@ $i: 4;
     @include gridPos(0, $i);
   }
 
+  nav.#{$n} li.#{$n} {
+    @include gridPos(0,0,1.5);
+  }
+
   $i: $i + 1;
 
 }
 
 .sub-list {
+  @extend %position-reset;
+}
+
+/*.sub-list {
   opacity: 0;
   pointer-events: none;
   li {
     @extend %position-reset;
   }
-}
+}*/
 
+/*
 nav.sub-active, li.active {
   .sub-list {
     opacity: 1;
     pointer-events: auto;
   }
 }
+*/
 
 
-li.active {
+/*li.active {
   @include gridPos(0,0,1.5);
 
 
@@ -61,11 +71,14 @@ li.active {
       @include gridPos($x, $y);
     }
   }
-}
+}*/
 
 
 /* home page ------------------------------------------*/
 nav.home {
+/*  li.home {
+    @include gridPos(0,0,1.5);
+  } */
   li.work {
     @include gridPos(2, 5, 3);
   }
@@ -79,14 +92,27 @@ nav.home {
 
 /* work page ------------------------------------------*/
 
-nav.work {
+/*nav.work {
   li.work {
-
+    @include gridPos(0,0,1.5);
   }
-}
+}*/
 
+/* exp  page ------------------------------------------*/
 
+/*nav.exp {
+  li.exp {
+    @include gridPos(0,0,1.5);
+  }
+}*/
 
+/* about  page ------------------------------------------*/
+
+/*nav.about {
+  li.about {
+    @include gridPos(0,0,1.5);
+  }
+}*/
 
 
 
