@@ -2,7 +2,7 @@ body {
   background-color:$jr-primary;
   font-family: "soleil",sans-serif;
   color: white;
-  line-height: 2rem;
+  line-height: 1;
   min-height:100vh;
 }
 
@@ -11,19 +11,16 @@ a {
   color:inherit;
 }
 
-
-%page-frames {
-  @include outer-container();
-}
-
 header {
-  @include position(absolute, 2rem 2rem null null);
-  height: 15vh;
+  @include position(absolute, null gridX(1) gridY(1) null );
+
+  width: gridX(8);
   text-align: right;
 
 
+
   h1 {
-    font-size: modular-scale(5);
+  //  font-size: modular-scale(5);
   }
 
   h2 {
@@ -35,7 +32,8 @@ header {
 
 
 main {
-
+  width: gridX(15);
+  @include position(absolute, gridY(3) null null calc(50% - #{gridX(7.5)}));
 }
 
 

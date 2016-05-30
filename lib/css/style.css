@@ -20,85 +20,66 @@ html { box-sizing: border-box; }
 
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
-h1, .h1 { font-size: 2.36859em; line-height: 4rem; }
+h1, .h1 { font-size: 5rem; line-height: 4rem; }
 
-h2, .h2 { font-size: 1.77689em; }
+h2, .h2 { font-size: 2rem; }
 
-h3, .h3 { font-size: 1.333em; }
+h3, .h3 { font-size: 1.5rem; }
+
+.ng-anchor { /*   this animation will last for 1 second since there are two phases to the animation (an `in` and an `out` phase) */ transition: 0.3s all; white-space: nowrap; z-index: 5; }
+
+/*.ng-anchor-out {
+  transition:0.3s all;
+  transform: scale(1.1);
+}*/
+.view-animation.ng-enter, .view-animation.ng-leave { transition: 0.5s transform, 0.2s opacity; }
+
+.view-animation.ng-enter { opacity: 0; transform: translateX(50%); }
+
+.view-animation.ng-leave, .view-animation.ng-enter.ng-enter-active { opacity: 1; transform: translateX(0); }
+
+.view-animation.ng-leave.ng-leave-active { opacity: 0; transform: translateX(-50%); }
 
 /*guide grid, inspired by bourbon neat -------------------------------*/
-body { background-position: 2.5vw top; background-image: repeating-linear-gradient(to left, transparent, transparent calc(5vw - 1px), #2daa91 calc(5vw - 1px), #2daa91 5vw), repeating-linear-gradient(to bottom, transparent, transparent calc(2rem - 1px), #2daa91 calc(2rem - 1px), #2daa91 2rem); }
+body { background-image: repeating-linear-gradient(to right, transparent, transparent 63px, #2daa91 63px, #2daa91 64px), repeating-linear-gradient(to bottom, transparent, transparent 63px, #2daa91 63px, #2daa91 64px); }
 
-body { background-color: #16a085; font-family: "soleil",sans-serif; color: white; line-height: 2rem; min-height: 100vh; }
+body { background-color: #16a085; font-family: "soleil",sans-serif; color: white; line-height: 1; min-height: 100vh; }
 
 a { text-decoration: none; color: inherit; }
 
-header { position: absolute; top: 2rem; right: 2rem; height: 15vh; text-align: right; }
+header { position: absolute; right: 64px; bottom: 64px; width: 512px; text-align: right; }
 
-header h1 { font-size: 4.20873em; }
+main { width: 960px; position: absolute; top: 192px; left: calc(50% - 480px); }
 
 footer { text-align: center; position: absolute; bottom: 1rem; width: 100%; }
 
-nav { font-weight: bold; font-size: 1.5rem; }
+.main-nav > a { font-weight: bold; position: absolute; top: 0; left: 0; transform-origin: top left; transition: 500ms ease; }
 
 /*initial settings ------------------------------------*/
-li.home, li.work, li.exp, li.about, .sub-list, .work-list, .image-frame.active { position: absolute; top: 0; left: 0; transform-origin: top left; transition: 300ms ease; }
+.main-nav a.home { transform: translate(32px, 256px) scale(1); }
 
-li.home { transform: translate(2.5vw, 8rem) scale(1); }
+nav.home a.home { transform: translate(256px, 64px) scale(3); }
 
-nav.home li.home { transform: translate(2.5vw, 2rem) scale(1.5); }
+.main-nav a.work { transform: translate(32px, 288px) scale(1); }
 
-li.work { transform: translate(2.5vw, 10rem) scale(1); }
+nav.work a.work { transform: translate(256px, 64px) scale(3); }
 
-nav.work li.work { transform: translate(2.5vw, 2rem) scale(1.5); }
+.main-nav a.exp { transform: translate(32px, 320px) scale(1); }
 
-li.exp { transform: translate(2.5vw, 12rem) scale(1); }
+nav.exp a.exp { transform: translate(256px, 64px) scale(3); }
 
-nav.exp li.exp { transform: translate(2.5vw, 2rem) scale(1.5); }
+.main-nav a.about { transform: translate(32px, 352px) scale(1); }
 
-li.about { transform: translate(2.5vw, 14rem) scale(1); }
+nav.about a.about { transform: translate(256px, 64px) scale(3); }
 
-nav.about li.about { transform: translate(2.5vw, 2rem) scale(1.5); }
-
-/*.sub-list {
-  opacity: 0;
-  pointer-events: none;
-  li {
-    @extend %position-reset;
-  }
-}*/
-/*
-nav.sub-active, li.active {
-  .sub-list {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-*/
-/*li.active {
-  @include gridPos(0,0,1.5);
-
-
-
-  @for $i from 1 through $demo-count {
-
-    $y: 6 * floor($i / 3) + 6;
-    $x: 4 * ($i % 2) + 2;
-
-    li:nth-of-type(8) {
-
-      @include gridPos($x, $y);
-    }
-  }
-}*/
 /* home page ------------------------------------------*/
 nav.home { /*  li.home { @include gridPos(0,0,1.5); } */ }
 
-nav.home li.work { transform: translate(17.5vw, 12rem) scale(3); }
+nav.home a.work { transform: translate(192px, 64px) scale(4); }
 
-nav.home li.exp { transform: translate(17.5vw, 22rem) scale(3); }
+nav.home a.exp { transform: translate(128px, 192px) scale(4); }
 
-nav.home li.about { transform: translate(17.5vw, 32rem) scale(3); }
+nav.home a.about { transform: translate(64px, 320px) scale(4); }
 
 /* work page ------------------------------------------*/
 /*nav.work {
@@ -118,26 +99,25 @@ nav.home li.about { transform: translate(17.5vw, 32rem) scale(3); }
     @include gridPos(0,0,1.5);
   }
 }*/
-.work-list { transform: translate(17.5vw, 12rem) scale(1); width: 65vw; margin: 0 auto; }
+/*
+TO ADD:
 
-.work-list li { width: 30vw; margin-bottom: 2rem; float: left; }
+item specific ng-animations. could probably set per item rather than trying to cover all items.
+eg color, size, opacity, etc
 
-.work-list li:nth-of-type(odd) { margin-right: 5vw; }
+*/
+.work-list article { width: 448px; margin-bottom: 2rem; border: solid 1px white; float: left; }
 
-.image-frame { width: 100%; height: 10vw; background: #5cbdaa; }
+.work-list article:nth-of-type(odd) { margin-right: 64px; }
 
-.image-frame.active { transform: translate(17.5vw, 12rem) scale(1); width: 65vw; }
+.image-frame { width: 100%; height: 10vw; max-height: 96px; }
 
-.ng-anchor { /* this animation will last for 1 second since there are two phases to the animation (an `in` and an `out` phase) */ transition: 0.5s all; white-space: nowrap; }
+article { border: solid 1px white; background: #5cbdaa; }
 
-.ng-anchor-out { transition: 0.5s all; /* the scale will be applied during the out animation, but will be animated away when the in animation runs */ transform: scale(1.2); }
+.demo-list .image-frame { height: 20vw; }
 
-.ng-anchor-in { transition: 1s all; }
+.demo-list article { position: absolute; width: 100%; height: 320px; }
 
-.view-animation.ng-enter, .view-animation.ng-leave { transition: 0.5s all; /*  position:fixed; left:0; top:0; width:100%;*/ }
+.demo-list .prev { transform: translate(-128px, 0px) scale(0.9); z-index: -1; background: #149078; }
 
-.view-animation.ng-enter { opacity: 0; }
-
-.view-animation.ng-leave, .view-animation.ng-enter.ng-enter-active { opacity: 1; }
-
-.view-animation.ng-leave.ng-leave-active { opacity: 0; }
+.demo-list .next { transform: translateX(calc(100% + 4rem)); }

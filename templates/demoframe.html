@@ -1,17 +1,26 @@
-<main ng-style="mainStyle" >
+<section class="demo-list">
 
-<a href="#/demo/{{prev.url}}">
-  <span ng-animate-ref="title-{{prev.url}}" >{{prev.name}}</span>
-  (prev)</a>
+  <article class="prev" ng-animate-ref="frame-{{prev.url}}">
+    <a href="#/demo/{{prev.url}}">
+      <div class="image-frame"  ></div>
+      <span >{{prev.name}}</span>(prev)
+    </a>
+  </article>
 
-<a href="#/demo/{{next.url}}">
-  <span ng-animate-ref="title-{{next.url}}" >{{next.name}}</span>
-  (next)</a>
+  <article class="active" ng-animate-ref="frame-{{post.url}}">
+    <a href="#/demo/{{post.url}}">
+      <div class="image-frame"  ></div>
+      <span>{{post.name}}</span>(prev)
+    </a>
+  </article>
+
+  <article class="next" ng-animate-ref="frame-{{next.url}}">
+    <a href="#/demo/{{next.url}}">
+      <div class="image-frame"  ></div>
+      <span>{{next.name}}</span>(prev)
+    </a>
+  </article>
 
 
-          <div class="image-frame active" ng-animate-ref="frame-{{post.url}}" >
+</section>
 
-          </div>
-          <span ng-animate-ref="title-{{post.url}}" >{{post.name}}</span>
-
-</main>

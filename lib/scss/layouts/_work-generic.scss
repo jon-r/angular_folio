@@ -1,17 +1,22 @@
+/*
+TO ADD:
+
+item specific ng-animations. could probably set per item rather than trying to cover all items.
+eg color, size, opacity, etc
+
+*/
+
 .work-list  {
-  @extend %position-reset;
 
-  @include gridPos(3,6);
-  @include gridSize(13);
-  margin: 0 auto;
 
-  li {
-    @include gridSize(6);
+  article {
+    width: gridX(7);
     margin-bottom:2rem;
+    border:solid 1px white;
 
     float: left;
     &:nth-of-type(odd) {
-      margin-right: 5vw;
+      margin-right: gridX(1);
     }
   }
 
@@ -21,51 +26,36 @@
 .image-frame {
   width:100%;
   height: 10vw;
+  max-height: 96px;
+
+}
+
+article {
+  border:solid 1px white;
   background: tint($jr-primary, 30%);
-  &.active {
+}
 
-    @extend %position-reset;
-
-    @include gridPos(3,6);
-    @include gridSize(13);
+.demo-list {
+  .image-frame {
+    height: 20vw;
   }
-}
 
+  article {
 
+    position: absolute;
+    width: 100%;
+    height: gridY(5);
+  }
 
-.ng-anchor {
-  /* this animation will last for 1 second since there are
-         two phases to the animation (an `in` and an `out` phase) */
-  transition:0.5s all;
-  white-space: nowrap;
-}
+  .prev {
+    @include gridPos(-2,0,0.9);
+    z-index: -1;
+    background: shade($jr-primary, 10%);
+  }
+  .active {
 
-.ng-anchor-out {
-  transition: 0.5s all;
-
-  /* the scale will be applied during the out animation,
-         but will be animated away when the in animation runs */
-  transform: scale(1.2);
-}
-
-.ng-anchor-in {
-  transition: 1s all;
-}
-
-.view-animation.ng-enter, .view-animation.ng-leave {
-  transition:0.5s all;
-/*  position:fixed;
-  left:0;
-  top:0;
-  width:100%;*/
-}
-.view-animation.ng-enter {
-  opacity:0;
-}
-.view-animation.ng-leave,
-.view-animation.ng-enter.ng-enter-active {
-  opacity: 1;
-}
-.view-animation.ng-leave.ng-leave-active {
-  opacity: 0
+  }
+  .next {
+    transform: translateX(calc(100% + 4rem));
+  }
 }

@@ -1,28 +1,43 @@
-$xGrid: 5vw;
-$yGrid: 2rem;
+
+$xGrid: 64px;
+$yGrid: 64px;
 
 /*guide grid, inspired by bourbon neat -------------------------------*/
 $showGuide: true;
 
 @if ($showGuide == true) {
+
+  $gX : $xGrid - 1px;
+  $gY : $yGrid - 1px;
+
   body {
-    background-position: #{$xGrid/2} top;
     background-image:
-      repeating-linear-gradient(to left, transparent, transparent calc(#{$xGrid} - 1px), $visual-grid-color calc(#{$xGrid} - 1px), $visual-grid-color $xGrid),
-      repeating-linear-gradient(to bottom, transparent, transparent calc(#{$yGrid} - 1px), $visual-grid-color calc(#{$yGrid} - 1px), $visual-grid-color $yGrid);
+      repeating-linear-gradient(to right, transparent, transparent $gX, $visual-grid-color $gX, $visual-grid-color $xGrid),
+      repeating-linear-gradient(to bottom, transparent, transparent $gY, $visual-grid-color $gY, $visual-grid-color $yGrid);
 
   }
 }
 
+@function gridX($x) {
+  @return $x * $xGrid;
+}
+
+@function gridY($y) {
+  @return $y * $yGrid;
+}
+
 @mixin gridPos($x, $y, $scale : 1) {
-  $setX : ($x + 0.5) * $xGrid;
-  $setY : $y * $yGrid;
+  $setX : gridX($x);
+  $setY : gridY($y);
 
   transform: translate($setX,$setY) scale($scale);
 };
 
-@mixin gridSize($x) {
-  $w: $x * $xGrid;
-  width: $w;
 
+
+@mixin position-reset() {
+  @include position(absolute, 0 null null 0);
+  transform-origin: top left;
+  transition: 500ms ease;
 }
+

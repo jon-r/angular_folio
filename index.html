@@ -26,41 +26,25 @@
 
 <body ng-controller="mainCtrl">
 
-<header role="banner">
+<header role="banner" >
+  <a href="#/">
   <h1 >Jon Richards</h1>
   <h2>Full Stack Web Developer</h2>
+    </a>
 </header>
 
-<nav role="navigation" ng-class="activePage" >
-  <ul class="main-list">
-    <li class="home" >
-      <a href="#/">Hello</a>
-    </li>
-    <li class="work" >
-      <a href="#/work">Work Projects</a>
-<!--      <ul class="sub-list">
-        <li ng-show="activePage == 'work'"
-            ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'work'}" >
-          <a href="#/work/{{post.url}}">{{post.name}}</a>
-        </li>
-      </ul>-->
-    </li>
-    <li class="exp" >
-      <a href="#/experiments">Experiments</a>
-<!--      <ul class="sub-list">
-        <li ng-show="activePage == 'exp'"
-            ng-repeat="post in posts | orderBy: 'name' | filter:{cat : 'exp'}" >
-          <a href="#/work/{{post.url}}">{{post.name}}</a>
-        </li>
-      </ul>-->
-    </li>
-    <li class="about" >
-      <a href="#/about">About Me</a>
-    </li>
-  </ul>
+<nav class="main-nav" role="navigation" ng-class="pgRef">
+
+  <a class="work" href="#/work">Work Projects</a>
+
+  <a class="exp" href="#/experiments">Experiments</a>
+
+  <a class="about" href="#/about">About Me</a>
+
 </nav>
 
-<div class="view-animation" ng-view></div>
+
+<main class="view-animation" ng-view></main>
 
 <footer>
   &copy; 2016
