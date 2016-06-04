@@ -3,7 +3,8 @@ body {
   font-family: "soleil",sans-serif;
   color: white;
   line-height: 1;
-  min-height:100vh;
+  height:100vh;
+//  overflow: hidden;
 }
 
 a {
@@ -11,35 +12,9 @@ a {
   color:inherit;
 }
 
-header {
-  @include position(absolute, null gridX(1) gridY(1) null );
-
-  width: gridX(8);
-  text-align: right;
-
-
-
-  h1 {
-  //  font-size: modular-scale(5);
-  }
-
-  h2 {
-
-  }
-
-}
-
-
-
 main {
   width: gridX(15);
   @include position(absolute, gridY(3) null null calc(50% - #{gridX(7.5)}));
 }
 
 
-footer {
-  text-align: center;
-  position: absolute;
-  bottom:1rem;
-  width: 100%;
-}

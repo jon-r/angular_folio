@@ -12,6 +12,7 @@ $showGuide: true;
 
   body {
     background-image:
+      linear-gradient(to right, transparent calc(50% - 1px), red calc(50% - 1px), red 50%, transparent 50%),
       repeating-linear-gradient(to right, transparent, transparent $gX, $visual-grid-color $gX, $visual-grid-color $xGrid),
       repeating-linear-gradient(to bottom, transparent, transparent $gY, $visual-grid-color $gY, $visual-grid-color $yGrid);
 
@@ -35,8 +36,8 @@ $showGuide: true;
 
 
 
-@mixin position-reset() {
-  @include position(absolute, 0 null null 0);
+@mixin position-reset($pos) {
+  @include position(absolute, $pos);
   transform-origin: top left;
   transition: 500ms ease;
 }

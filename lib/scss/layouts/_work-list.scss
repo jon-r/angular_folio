@@ -12,7 +12,7 @@ eg color, size, opacity, etc
   article {
     width: gridX(7);
     margin-bottom:2rem;
-    border:solid 1px white;
+//    border:solid 1px white;
 
     float: left;
     &:nth-of-type(odd) {
@@ -31,31 +31,7 @@ eg color, size, opacity, etc
 }
 
 article {
-  border:solid 1px white;
+//  border:solid 1px white;
   background: tint($jr-primary, 30%);
 }
 
-.demo-list {
-  .image-frame {
-    height: 20vw;
-  }
-
-  article {
-
-    position: absolute;
-    width: 100%;
-    height: gridY(5);
-  }
-
-  .prev {
-    @include gridPos(-2,0,0.9);
-    z-index: -1;
-    background: shade($jr-primary, 10%);
-  }
-  .active {
-
-  }
-  .next {
-    transform: translateX(calc(100% + 4rem));
-  }
-}

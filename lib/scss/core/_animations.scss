@@ -1,24 +1,10 @@
-.ng-anchor {
-/*   this animation will last for 1 second since there are
-         two phases to the animation (an `in` and an `out` phase) */
-  transition:0.3s all;
-  white-space: nowrap;
-  z-index: 5;
-}
-
-/*.ng-anchor-out {
-  transition:0.3s all;
-  transform: scale(1.1);
-}*/
-
-
 .view-animation.ng-enter, .view-animation.ng-leave {
-  transition:0.5s transform, 0.2s opacity;
+  transition:0.4s all;
 }
 
 .view-animation.ng-enter {
   opacity: 0;
-  transform: translateX(50%);
+  transform: translateY(100%);
 }
 .view-animation.ng-leave,
 .view-animation.ng-enter.ng-enter-active {
@@ -27,5 +13,14 @@
 }
 .view-animation.ng-leave.ng-leave-active {
   opacity: 0;
-  transform: translateX(-50%);
+  transform: scale(0.5);
+}
+
+.ng-anchor {
+  transition:0.6s all;
+  z-index: 5;
+}
+
+.prev-add-active {
+  opacity: 0.5;
 }

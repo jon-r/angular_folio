@@ -1,0 +1,33 @@
+header {
+ // @include position(absolute, null gridX(1) gridY(1) null );
+
+  @include position-reset(null 0 0 null);
+  @include gridPos(-1,-1);
+
+  width: gridX(8);
+  text-align: right;
+
+
+  .home & {
+    transform: translate(-50vw, gridY(-3));
+   // @include gridPos(-8,4);
+  }
+
+
+  h1 {
+  //  font-size: modular-scale(5);
+  }
+
+  h2 {
+
+  }
+
+}
+
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom:1rem;
+  width: 100%;
+}

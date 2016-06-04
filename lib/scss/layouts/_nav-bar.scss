@@ -3,15 +3,15 @@
 
   & > a {
     font-weight: bold;
-    @include position-reset();
+    @include position-reset(0 null null 0);
   }
 }
 
 
 
 /*initial settings ------------------------------------*/
-$main-links: "home", "work", "exp", "about";
-$i: 4;
+$main-links: work exp about;
+$i: 3;
 
 
 @each $n in $main-links {
@@ -21,8 +21,8 @@ $i: 4;
     @include gridPos(0.5, $i);
   }
 
-  nav.#{$n} a.#{$n} {
-    @include gridPos(4,1,3);
+  body.#{$n} a.#{$n} {
+    @include gridPos(3,1,3);
   }
 
   $i: $i + 0.5;
@@ -35,32 +35,38 @@ $i: 4;
 
 
 /* home page ------------------------------------------*/
-nav.home {
-/*  li.home {
-    @include gridPos(0,0,1.5);
-  } */
+body.home {
   a.work {
-    @include gridPos(3, 1, 4);
+    transform: translate(35vw, gridY(2)) scale(4);
+//    @include gridPos(-1, 2, 4);
   }
   a.exp {
-    @include gridPos(2, 3, 4);
+    transform: translate(45vw, gridY(4)) scale(4);
+//    @include gridPos(1, 4.5, 4);
   }
   a.about {
-    @include gridPos(1, 5, 4);
+    transform: translate(60vw, gridY(6)) scale(4);
+//    @include gridPos(3, 7, 4);
   }
 }
 
 /* work page ------------------------------------------*/
 
-/*nav.work {
-  li.work {
-    @include gridPos(0,0,1.5);
-  }
-}*/
+//body.work {
+//  a.work {
+//    @include gridPos(-4, 1, 3);
+//  }
+//  a.exp {
+//    @include gridPos(0, 1);
+//  }
+//  a.about {
+//    @include gridPos(0, 1);
+//  }
+//}
 
 /* exp  page ------------------------------------------*/
 
-/*nav.exp {
+/*body.exp {
   li.exp {
     @include gridPos(0,0,1.5);
   }
@@ -68,7 +74,7 @@ nav.home {
 
 /* about  page ------------------------------------------*/
 
-/*nav.about {
+/*body.about {
   li.about {
     @include gridPos(0,0,1.5);
   }

@@ -12,8 +12,8 @@
 @import "core/grid-mesh";
 
 @import "layouts/global";
+@import "layouts/header-footer";
 @import "layouts/nav-bar";
 
-@import "layouts/work-generic";
-@import "layouts/template-intro";
-
+@import "layouts/work-focus";
+@import "layouts/work-list";
