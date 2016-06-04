@@ -41,39 +41,45 @@ h3, .h3 { font-size: 1.5rem; }
 /*guide grid, inspired by bourbon neat -------------------------------*/
 body { background-image: linear-gradient(to right, transparent calc(50% - 1px), red calc(50% - 1px), red 50%, transparent 50%), repeating-linear-gradient(to right, transparent, transparent 63px, #2daa91 63px, #2daa91 64px), repeating-linear-gradient(to bottom, transparent, transparent 63px, #2daa91 63px, #2daa91 64px); }
 
-body { background-color: #16a085; font-family: "soleil",sans-serif; color: white; line-height: 1; height: 100vh; }
+body { background-color: #16a085; font-family: "soleil",sans-serif; color: white; line-height: 1; height: 100vh; overflow: hidden; }
 
 a { text-decoration: none; color: inherit; }
 
-main { width: 960px; position: absolute; top: 192px; left: calc(50% - 480px); }
+main { width: 1024px; position: absolute; top: 192px; left: 256px; }
 
-header { position: absolute; right: 0; bottom: 0; transform-origin: top left; transition: 500ms ease; transform: translate(-64px, -64px) scale(1); width: 512px; text-align: right; }
+.framer { position: absolute; top: 0; left: 0; transform-origin: top left; transition: 500ms ease; transform: translate(256px, 160px) scale(1); width: 1024px; height: 3px; background-color: white; }
 
-.home header { transform: translate(-50vw, -192px); }
+.home .framer { transform: translate(50vw, 64px) rotate(90deg); width: calc(100vh - 128px); }
+
+header { position: absolute; right: 0; bottom: 0; transform-origin: bottom right; transition: 500ms ease; transform: translate(-64px, -64px) scale(1); width: 512px; text-align: right; }
+
+.home header { transform: translate(-51vw, -192px) scale(1.2); }
+
+header svg { position: absolute; top: -53px; left: -22px; height: 160px; widtH: 544px; z-index: -1; }
 
 footer { text-align: center; position: absolute; bottom: 1rem; width: 100%; }
 
 .main-nav > a { font-weight: bold; position: absolute; top: 0; left: 0; transform-origin: top left; transition: 500ms ease; }
 
 /*initial settings ------------------------------------*/
-.main-nav a.work { transform: translate(32px, 192px) scale(1); }
+.main-nav a.work { transform: translate(38.4px, 320px) scale(1); }
 
-body.work a.work { transform: translate(192px, 64px) scale(3); }
+body.work a.work { transform: translate(256px, 80px) scale(3); }
 
-.main-nav a.exp { transform: translate(32px, 224px) scale(1); }
+.main-nav a.exp { transform: translate(38.4px, 352px) scale(1); }
 
-body.exp a.exp { transform: translate(192px, 64px) scale(3); }
+body.exp a.exp { transform: translate(256px, 80px) scale(3); }
 
-.main-nav a.about { transform: translate(32px, 256px) scale(1); }
+.main-nav a.about { transform: translate(38.4px, 384px) scale(1); }
 
-body.about a.about { transform: translate(192px, 64px) scale(3); }
+body.about a.about { transform: translate(256px, 80px) scale(3); }
 
 /* home page ------------------------------------------*/
-body.home a.work { transform: translate(35vw, 128px) scale(4); }
+body.home a.work { transform: translate(51vw, 128px) scale(4); }
 
-body.home a.exp { transform: translate(45vw, 256px) scale(4); }
+body.home a.exp { transform: translate(51vw, 256px) scale(4); }
 
-body.home a.about { transform: translate(60vw, 384px) scale(4); }
+body.home a.about { transform: translate(51vw, 384px) scale(4); }
 
 /* work page ------------------------------------------*/
 /* exp  page ------------------------------------------*/
@@ -88,12 +94,7 @@ body.home a.about { transform: translate(60vw, 384px) scale(4); }
     @include gridPos(0,0,1.5);
   }
 }*/
-/*
-.ng-anchor-out {
-  transition:0.6s all;
-  opacity: 0.5;
-}
-*/
+/* .ng-anchor-out { transition:0.6s all; opacity: 0.5; } */
 .demo-list .image-frame { height: 20vw; }
 
 .demo-list article { position: absolute; width: 100%; height: 384px; }
@@ -109,10 +110,14 @@ item specific ng-animations. could probably set per item rather than trying to c
 eg color, size, opacity, etc
 
 */
-.work-list article { width: 448px; margin-bottom: 2rem; float: left; }
+.work-list { min-height: 320px; }
 
-.work-list article:nth-of-type(odd) { margin-right: 64px; }
+.work-list article { width: 512px; height: 256px; float: left; }
 
-.image-frame { width: 100%; height: 10vw; max-height: 96px; }
+/*.image-frame {
+  width:100%;
+  height: 10vw;
+  max-height: 96px;
 
+}*/
 article { background: #5cbdaa; }

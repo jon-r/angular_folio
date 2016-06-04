@@ -1,7 +1,9 @@
 header {
- // @include position(absolute, null gridX(1) gridY(1) null );
+  @include position(absolute, null 0 0 null );
 
-  @include position-reset(null 0 0 null);
+  transform-origin: bottom right;
+  transition: 500ms ease;
+
   @include gridPos(-1,-1);
 
   width: gridX(8);
@@ -9,7 +11,7 @@ header {
 
 
   .home & {
-    transform: translate(-50vw, gridY(-3));
+    transform: translate(-51vw, gridY(-3)) scale(1.2) ;
    // @include gridPos(-8,4);
   }
 
@@ -21,6 +23,16 @@ header {
   h2 {
 
   }
+
+  svg {
+    position: absolute;
+    top: -53px;
+    left: -22px;
+    height: 160px;
+    widtH: 544px;
+    z-index: -1;
+  }
+
 
 }
 

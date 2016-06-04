@@ -8,27 +8,41 @@ eg color, size, opacity, etc
 
 .work-list  {
 
+  min-height: gridY(5);
+
 
   article {
-    width: gridX(7);
-    margin-bottom:2rem;
-//    border:solid 1px white;
+    width: gridX(8);
+    height: gridY(4);
+//    margin-bottom: gridY(1);
+//    margin-right: gridX(1);
 
     float: left;
-    &:nth-of-type(odd) {
-      margin-right: gridX(1);
-    }
+//    &:nth-of-type(even) {
+//      margin-right: 0;
+//    }
   }
+
+//  &:hover {
+//    article {
+//      transition: 0.3s;
+//      opacity: 0.5;
+//      &:hover {
+//        transform: scale(1.1);
+//        opacity: 1;
+//      }
+//    }
+//  }
 
 
 }
 
-.image-frame {
+/*.image-frame {
   width:100%;
   height: 10vw;
   max-height: 96px;
 
-}
+}*/
 
 article {
 //  border:solid 1px white;

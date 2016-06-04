@@ -4,7 +4,8 @@ body {
   color: white;
   line-height: 1;
   height:100vh;
-//  overflow: hidden;
+  overflow: hidden;
+
 }
 
 a {
@@ -13,8 +14,19 @@ a {
 }
 
 main {
-  width: gridX(15);
-  @include position(absolute, gridY(3) null null calc(50% - #{gridX(7.5)}));
+  width: gridX(16);
+  @include position(absolute, gridY(3) null null gridX(4));
+
 }
 
-
+.framer {
+  @include position-reset(0 null null 0 0);
+  @include gridPos(4,2.5);
+  width: gridX(16);
+  height: 3px;
+  background-color: white;
+  .home & {
+    transform: translate(50vw, gridY(1)) rotate(90deg);
+    width: calc(100vh - #{gridY(2)});
+  }
+}
