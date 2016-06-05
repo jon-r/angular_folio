@@ -3,7 +3,8 @@
 
   & > a {
     font-weight: bold;
-    @include position-reset(0 null null 0);
+    @extend %grid-top-left;
+    @include gridPos(4,2.5);
   }
 
 //  span {
@@ -24,7 +25,7 @@
 
 
 /*initial settings ------------------------------------*/
-$main-links: work exp about;
+$main-links: projects exp about;
 $i: 5;
 
 
@@ -50,7 +51,7 @@ $i: 5;
 
 /* home page ------------------------------------------*/
 body.home {
-  a.work {
+  a.projects {
     transform: translate(51vw, gridY(2)) scale(4);
 //    @include gridPos(-1, 2, 4);
   }

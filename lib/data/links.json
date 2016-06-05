@@ -28,24 +28,24 @@
     "name": "Dunalastair Hotel",
     "url": "dunalastair",
     "intro": "scottish lochs hotel",
-    "cat": "work"
+    "cat": "projects"
   },
  {
     "name": "Red Hot Chilli",
     "url": "rhc",
     "intro": "second hand catering equipment",
-    "cat": "work"
+    "cat": "projects"
   },
  {
     "name": "Arcane Bar",
     "url": "arcane",
     "intro": "cocktail bar in manchester",
-    "cat": "work"
+    "cat": "projects"
   },
  {
     "name": "Pro-Install AV",
     "url": "proinstall",
     "intro": "home technology experts",
-    "cat": "work"
+    "cat": "projects"
   }
 ]

@@ -1,5 +1,5 @@
 .view-animation.ng-enter, .view-animation.ng-leave {
-  transition:0.4s all;
+  transition:0.6s all;
 }
 
 .view-animation.ng-enter {
@@ -21,6 +21,10 @@
   z-index: 5;
 }
 
-.prev-add-active {
-  opacity: 0.5;
+.ng-anchor-out {
+
+}
+
+.ng-anchor-in {
+//transition:0.6s all;
 }

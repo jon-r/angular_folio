@@ -1,8 +1,5 @@
 header {
-  @include position(absolute, null 0 0 null );
-
-  transform-origin: bottom right;
-  transition: 500ms ease;
+  @extend %grid-btm-right;
 
   @include gridPos(-1,-1);
 

@@ -16,17 +16,20 @@ a {
 main {
   width: gridX(16);
   @include position(absolute, gridY(3) null null gridX(4));
-
 }
 
 .framer {
-  @include position-reset(0 null null 0 0);
-  @include gridPos(4,2.5);
+  @extend %grid-top-left;
+
   width: gridX(16);
   height: 3px;
   background-color: white;
+
+  @include gridPos(4,2.5);
+
   .home & {
     transform: translate(50vw, gridY(1)) rotate(90deg);
     width: calc(100vh - #{gridY(2)});
   }
+
 }

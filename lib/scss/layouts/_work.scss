@@ -1,0 +1,134 @@
+/*
+TO ADD:
+
+item specific ng-animations. could probably set per item rather than trying to cover all items.
+eg color, size, opacity, etc
+
+*/
+
+.work-list, .work-focus {
+  white-space: nowrap;
+}
+
+.work {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow:hidden;
+
+
+  &.tile {
+    height: gridY(3);
+    width: gridX(5);
+    margin-right: gridX(0.5);
+
+  }
+
+//  &.prev {
+//    width: gridX(16);
+//    @include gridPos(-1,0.5, 0.9);
+//  }
+
+  &.active {
+
+    height: gridY(8);
+    width: gridX(16);
+  }
+
+//  &.next {
+//    width: gridX(1);
+//    @include gridPos(16.5,0);
+//  }
+}
+
+.work-title {
+  @extend %grid-top-left;
+
+//  position: absolute;
+  @include gridPos(0,0);
+//  transition: all 300ms, visibility 0;
+
+
+  .tile & {
+    @include gridPos(0, 2.5, 0.75);
+  }
+
+
+
+}
+
+
+.work-thumb {
+  @extend %grid-btm-right;
+
+  background: tint($jr-primary, 20%);
+  height: gridY(5);
+  width: gridX(5);
+  transition-property: transform, width, height;
+  @include gridPos(0,1);
+
+  .active &  {
+    @include gridPos(0,0);
+
+    width: gridX(8);
+    height: gridY(8);
+  }
+
+}
+
+
+
+
+
+
+//
+//.active-add-active {
+//  img {
+//    height: 3rem;
+//    width: 100%;
+//  }
+//}
+//
+//.prev-add-active {
+//  opacity: 0.5;
+//}
+
+/*
+.ng-anchor-out {
+  transition:0.6s all;
+  opacity: 0.5;
+}
+*/
+
+/*.work-focus {
+  .image-frame {
+    height: gridY(3);
+    width: 100%;
+    //    height: 20vw;
+  }
+  article {
+    position: absolute;
+  }
+  .prev {
+    @include gridPos(-2, 0);
+    width: gridX(1);
+    z-index: -1;
+    height: gridY(6);
+  }
+  .active {
+    width: 100%;
+    height: gridY(10);
+  }
+  .next {
+    @include gridPos(18, 0);
+    width: gridX(2);
+    height: gridY(6);
+  }
+}*/
+
+.ng-anchor {
+  .image-frame {
+    width: 100%;
+    height: 20px;
+  }
+}

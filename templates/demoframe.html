@@ -1,24 +1,26 @@
-<section class="demo-list">
+<section class="work-focus">
 
-  <article class="prev" ng-animate-ref="frame-{{prev.url}}">
-<!--    <a href="#/demo/{{prev.url}}">
-      <div class="image-frame"  ></div>
-    </a>-->
-  </article>
+<!--  <article class="work prev" >
+    <a href="#/demo/{{prev.url}}">
 
-  <article class="active" ng-animate-ref="frame-{{post.url}}">
+      (prev)
+    </a>
+  </article>-->
+
+  <article class="work active" ng-animate-ref="frame-{{post.url}}">
     <a href="#/demo/{{post.url}}">
-      <div class="image-frame"  ></div>
-      <span>{{post.name}}</span>
+      <div class="work-thumb"  ></div>
+      <h2 class="work-title">{{post.name}}</h2>
     </a>
   </article>
 
-  <article class="next" ng-animate-ref="frame-{{next.url}}">
+
+<!--  <article class="work next" >
     <a href="#/demo/{{next.url}}">
       <div class="image-frame"  ></div>
-      <span>{{next.name}}</span>(naxt)
+      (next)
     </a>
-  </article>
+  </article>-->
 
 
 </section>

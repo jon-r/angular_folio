@@ -8,7 +8,7 @@ var zip = require('gulp-zip');
 
 gulp.task('sass', function() {
   return gulp.src('lib/scss/style.scss')
-    .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
     .pipe(prefix("last 2 version", "> 2%"))
     .pipe(gulp.dest('lib/css'))
     .pipe(rename({suffix: '.min'}))
