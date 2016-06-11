@@ -16,6 +16,26 @@ eg color, size, opacity, etc
   position: relative;
   overflow:hidden;
 
+  &.ng-enter,
+  &.ng-leave {
+    transition: 0.6s ease;
+  }
+
+  &.ng-enter {
+    opacity: 0;
+    transform: translateY(100%) scale(1);
+  }
+
+  &.ng-enter-active {
+    transform: scale(1);
+    opacity: 1
+  }
+
+  &.ng-enter-stagger {
+    transition-delay: 0.08s;
+    transition-duration: 0s;
+  }
+
 
   &.tile {
     height: gridY(3);
@@ -23,6 +43,8 @@ eg color, size, opacity, etc
     margin-right: gridX(0.5);
 
   }
+
+
 
 //  &.prev {
 //    width: gridX(16);
@@ -39,6 +61,8 @@ eg color, size, opacity, etc
 //    width: gridX(1);
 //    @include gridPos(16.5,0);
 //  }
+
+
 }
 
 .work-title {
@@ -50,11 +74,8 @@ eg color, size, opacity, etc
 
 
   .tile & {
-    @include gridPos(0, 2.5, 0.75);
+    @include gridPos(0.1, 2.5, 0.75);
   }
-
-
-
 }
 
 
@@ -65,12 +86,14 @@ eg color, size, opacity, etc
   height: gridY(5);
   width: gridX(5);
   transition-property: transform, width, height;
+  transition-duration: 0.3s;
   @include gridPos(0,1);
 
   .active &  {
     @include gridPos(0,0);
 
     width: gridX(8);
+//    width: gridX(11);
     height: gridY(8);
   }
 

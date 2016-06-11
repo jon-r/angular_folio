@@ -88,18 +88,18 @@ h3, .h3 {
 body {
   background-image: repeating-linear-gradient(to right, transparent, transparent 63px, #2daa91 63px, #2daa91 64px), repeating-linear-gradient(to bottom, transparent, transparent 63px, #2daa91 63px, #2daa91 64px); }
 
-.framer, .main-nav > a, .work-title {
+.framer, .links, .work-title {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.6s ease;
+  transition: opacity 1.2s ease, transform 0.6s ease;
   transform-origin: top left; }
 
 header, .work-thumb {
   position: absolute;
   right: 0;
   bottom: 0;
-  transition: transform 0.6s ease;
+  transition: opacity 1.2s ease, transform 0.6s ease;
   transform-origin: bottom right; }
 
 body {
@@ -121,20 +121,26 @@ main {
   left: 256px; }
 
 .framer {
-  width: 1024px;
-  height: 3px;
   background-color: white;
-  transform: translate(256px, 160px) scale(1); }
-  .home .framer {
-    transform: translate(50vw, 64px) rotate(90deg);
-    width: calc(100vh - 128px); }
+  transition: transform 0.6s ease;
+  transform: translate(50vw, 64px) rotate(90deg);
+  width: calc(100vh - 128px);
+  height: 3px; }
+  .not-home .framer {
+    width: 1024px;
+    transform: translate(256px, 160px) scale(1); }
 
 header {
-  transform: translate(-64px, -64px) scale(1);
+  transform: translate(-51vw, -384px) scale(1.2);
+  opacity: 0;
   width: 512px;
   text-align: right; }
   .home header {
+    opacity: 1;
     transform: translate(-51vw, -192px) scale(1.2); }
+  .not-home header {
+    transform: translate(-64px, -64px) scale(1);
+    opacity: 1; }
   header svg {
     position: absolute;
     top: -53px;
@@ -149,52 +155,48 @@ footer {
   bottom: 1rem;
   width: 100%; }
 
-.main-nav > a {
-  font-weight: bold;
-  transform: translate(256px, 160px) scale(1); }
-
-/*initial settings ------------------------------------*/
-.main-nav a.projects {
-  transform: translate(38.4px, 320px) scale(1); }
-
-body.projects a.projects {
-  transform: translate(256px, 80px) scale(3); }
-
-.main-nav a.exp {
-  transform: translate(38.4px, 352px) scale(1); }
-
-body.exp a.exp {
-  transform: translate(256px, 80px) scale(3); }
-
-.main-nav a.about {
-  transform: translate(38.4px, 384px) scale(1); }
-
-body.about a.about {
-  transform: translate(256px, 80px) scale(3); }
-
-/* home page ------------------------------------------*/
-body.home a.projects {
-  transform: translate(51vw, 128px) scale(4); }
-
-body.home a.exp {
-  transform: translate(51vw, 256px) scale(4); }
-
-body.home a.about {
+.links.projects.ng-enter {
+  opacity: 0;
   transform: translate(51vw, 384px) scale(4); }
 
-/* work page ------------------------------------------*/
-/* exp  page ------------------------------------------*/
-/*body.exp {
-  li.exp {
-    @include gridPos(0,0,1.5);
-  }
-}*/
-/* about  page ------------------------------------------*/
-/*body.about {
-  li.about {
-    @include gridPos(0,0,1.5);
-  }
-}*/
+.links.projects, .links.projects.ng-enter-active {
+  opacity: 1;
+  transform: translate(51vw, 192px) scale(4); }
+
+.not-home .links.projects {
+  transform: translate(640px, 64px) scale(1); }
+
+body.projects .links.projects {
+  transform: translate(256px, 80px) scale(3); }
+
+.links.exp.ng-enter {
+  opacity: 0;
+  transform: translate(51vw, 512px) scale(4); }
+
+.links.exp, .links.exp.ng-enter-active {
+  opacity: 1;
+  transform: translate(51vw, 320px) scale(4); }
+
+.not-home .links.exp {
+  transform: translate(640px, 89.6px) scale(1); }
+
+body.exp .links.exp {
+  transform: translate(256px, 80px) scale(3); }
+
+.links.about.ng-enter {
+  opacity: 0;
+  transform: translate(51vw, 640px) scale(4); }
+
+.links.about, .links.about.ng-enter-active {
+  opacity: 1;
+  transform: translate(51vw, 448px) scale(4); }
+
+.not-home .links.about {
+  transform: translate(640px, 115.2px) scale(1); }
+
+body.about .links.about {
+  transform: translate(256px, 80px) scale(3); }
+
 /*
 TO ADD:
 
@@ -210,6 +212,17 @@ eg color, size, opacity, etc
   vertical-align: top;
   position: relative;
   overflow: hidden; }
+  .work.ng-enter, .work.ng-leave {
+    transition: 0.6s ease; }
+  .work.ng-enter {
+    opacity: 0;
+    transform: translateY(100%) scale(1); }
+  .work.ng-enter-active {
+    transform: scale(1);
+    opacity: 1; }
+  .work.ng-enter-stagger {
+    transition-delay: 0.08s;
+    transition-duration: 0s; }
   .work.tile {
     height: 192px;
     width: 320px;
@@ -221,13 +234,14 @@ eg color, size, opacity, etc
 .work-title {
   transform: translate(0px, 0px) scale(1); }
   .tile .work-title {
-    transform: translate(0px, 160px) scale(0.75); }
+    transform: translate(6.4px, 160px) scale(0.75); }
 
 .work-thumb {
   background: #45b39d;
   height: 320px;
   width: 320px;
   transition-property: transform, width, height;
+  transition-duration: 0.3s;
   transform: translate(0px, 64px) scale(1); }
   .active .work-thumb {
     transform: translate(0px, 0px) scale(1);

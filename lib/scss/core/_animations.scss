@@ -25,6 +25,32 @@
 
 }
 
-.ng-anchor-in {
-//transition:0.6s all;
-}
+
+//@mixin fadeInTo($x,$y) {
+//  $firstX = $x - 4;
+//
+//  transition: opacity 0.6s ease, transition 0.6s ease;
+//
+//  &.ng-enter {
+//    opacity: 0;
+//    @include gridPos($firstX,$y);
+//  }
+//
+//  &.ng-enter-active, & {
+//    opacity: 1;
+//    transform: translateX(0);
+//    @include gridPos($x,$y);
+//  }
+//
+//}
+//
+//@mixin fadeOut() {
+//  &.ng-leave {
+//    opacity: 1;
+//  }
+//  &.ng-leave.ng-leave-active {
+//    opacity: 0;
+//    transform: scale(0.5);
+//  }
+//
+//}

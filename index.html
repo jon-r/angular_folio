@@ -24,7 +24,10 @@
     <link rel="stylesheet" type="text/css" href="lib/css/style.css" />
   </head>
 
-<body ng-controller="mainCtrl" ng-class="pgRef">
+<body ng-controller="mainCtrl" ng-class="pgBody" ng-animate-children="true">
+
+<div class="framer"></div>
+
 
 <header role="banner"  >
   <a href="#/">
@@ -33,19 +36,15 @@
   </a>
 </header>
 
-<div class="framer"></div>
-
 <nav class="main-nav" role="navigation" >
 
-  <a class="projects" href="#/work"><h4>Projects</h4></a>
-
-  <a class="exp" href="#/experiments"><h4>Experiments</h4></a>
-
-  <a class="about" href="#/about"><h4>About Me</h4></a>
+  <a ng-repeat="link in navList" class="links {{link.ref}}" ng-href="#/{{link.ref}}" >
+    <h4>{{link.name}}</h4>
+  </a>
 
 </nav>
 
-<main class="view-animation" ng-view></main>
+<main class="view-animation" ng-view ></main>
 
 <footer>
   &copy; 2016

@@ -1,14 +1,22 @@
 header {
   @extend %grid-btm-right;
 
-  @include gridPos(-1,-1);
+  transform: translate(-51vw, gridY(-6)) scale(1.2);
+  opacity: 0;
 
   width: gridX(8);
   text-align: right;
 
 
   .home & {
-    transform: translate(-51vw, gridY(-3)) scale(1.2) ;
+    opacity: 1;
+    transform: translate(-51vw, gridY(-3)) scale(1.2);
+//    transition: opacity 2s, transform 0.6s;
+  }
+
+  .not-home & {
+    @include gridPos(-1,-1);
+    opacity: 1;
    // @include gridPos(-8,4);
   }
 

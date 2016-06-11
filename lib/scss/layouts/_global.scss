@@ -21,15 +21,23 @@ main {
 .framer {
   @extend %grid-top-left;
 
-  width: gridX(16);
-  height: 3px;
   background-color: white;
+  transition: transform 0.6s ease;
+  transform: translate(50vw, gridY(1)) rotate(90deg);
+  width: calc(100vh - #{gridY(2)});
+  height: 3px;
 
-  @include gridPos(4,2.5);
+
+  .not-home & {
+    width: gridX(16);
+    @include gridPos(4,2.5);
+  }
 
   .home & {
-    transform: translate(50vw, gridY(1)) rotate(90deg);
-    width: calc(100vh - #{gridY(2)});
+
   }
 
 }
+
+
+.about-me {}
