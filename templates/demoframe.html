@@ -1,27 +1,21 @@
 <section class="work-focus">
 
-<!--  <article class="work prev" >
-    <a href="#/demo/{{prev.url}}">
 
-      (prev)
-    </a>
-  </article>-->
+  <article class="work active" ng-animate-ref="frame-{{post.url}}" >
+    <h2 class="work-title">{{post.name}}</h2>
 
-  <article class="work active" ng-animate-ref="frame-{{post.url}}">
-    <a href="#/demo/{{post.url}}">
-      <div class="work-thumb"  ></div>
-      <h2 class="work-title">{{post.name}}</h2>
-      <p class="work-desc" ng-show="loaded">{{post.desc}}</p>
-    </a>
+      <p class="work-desc" >{{post.desc}}</p>
+
+  <a class="link-prev" href="#/demo/{{prev.url}}">
+    &larr; {{prev.name}}
+  </a>
+
+  <a class="link-next" href="#/demo/{{next.url}}">
+    {{next.name}} &rarr;
+  </a>
   </article>
 
 
-<!--  <article class="work next" >
-    <a href="#/demo/{{next.url}}">
-      <div class="image-frame"  ></div>
-      (next)
-    </a>
-  </article>-->
 
 
 </section>
