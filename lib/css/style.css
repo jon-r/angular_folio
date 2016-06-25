@@ -72,11 +72,11 @@ h3, .h3 {
   font-size: 1.5rem; }
 
 .view-animation.ng-enter, .view-animation.ng-leave {
-  transition: 0.6s all; }
+  transition: 0.8s all; }
 
 .view-animation.ng-enter {
   opacity: 0;
-  transform: translateY(100%); }
+  transform: translateX(100%); }
 
 .view-animation.ng-leave,
 .view-animation.ng-enter.ng-enter-active {
@@ -209,12 +209,12 @@ body.about .links.about {
     transition: 0.6s ease; }
   .work.ng-enter {
     opacity: 0;
-    transform: translateY(100%); }
+    transform: translateY(150%); }
   .work.ng-enter-active {
     transform: translateY(0);
     opacity: 1; }
   .work.ng-enter-stagger {
-    transition-delay: 0.08s;
+    transition-delay: 0.1s;
     transition-duration: 0s; }
   .work.tile {
     height: 192px;
@@ -235,6 +235,15 @@ body.about .links.about {
 .active .work-title {
   transform: translate(134.4px, 0px) scale(2); }
 
+.work-thumb, .link-prev, .link-next {
+  position: absolute;
+  border-bottom: solid 3px white;
+  padding-bottom: 6px;
+  transition: opacity 1s ease; }
+  .ng-animate .work-thumb, .ng-animate .link-prev, .ng-animate .link-next {
+    transition: none;
+    opacity: 0; }
+
 .work-thumb {
   transition: opacity 0.8s ease;
   height: 100%;
@@ -245,24 +254,21 @@ body.about .links.about {
 
 .work-desc {
   position: absolute;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
   left: 100%;
   top: 96px;
+  padding-left: 6.4px;
   width: 256px; }
   .ng-animate .work-desc {
     transition: none;
     opacity: 0; }
 
-.work-thumb, .link-prev, .link-next {
-  position: absolute;
-  border-bottom: solid 3px white;
-  padding-bottom: 6px; }
-
 .link-prev {
   right: calc(100% - 128px);
   top: 38.4px;
   white-space: nowrap;
-  width: 128px; }
+  width: 128px;
+  text-align: right; }
 
 .link-next {
   left: 100%;

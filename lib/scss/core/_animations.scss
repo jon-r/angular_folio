@@ -1,10 +1,10 @@
 .view-animation.ng-enter, .view-animation.ng-leave {
-  transition:0.6s all;
+  transition:0.8s all;
 }
 
 .view-animation.ng-enter {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateX(100%);
 }
 .view-animation.ng-leave,
 .view-animation.ng-enter.ng-enter-active {
