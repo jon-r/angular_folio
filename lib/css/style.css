@@ -114,7 +114,21 @@ body {
   font: 300 14px/1 "soleil",sans-serif;
   color: white;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  background-image: linear-gradient(to top left, #16a085, #0097A7);
+  /*  &::before {
+    content: "";
+
+    @include position(absolute, 0);
+
+    background-image: linear-gradient(to left, $jr-primary 30%, $jr-secondary 70%);
+    transition: opacity 600ms ease;
+
+  }
+
+  &.not-home::before {
+    opacity: 0;
+  }*/ }
 
 main {
   width: 1408px;
@@ -167,10 +181,10 @@ footer {
   transform: translate(51vw, 192px) scale(4); }
 
 .not-home .links.projects {
-  transform: translate(640px, 64px) scale(1); }
+  transform: translate(272px, 128px) scale(1); }
 
 body.projects .links.projects {
-  transform: translate(256px, 80px) scale(3); }
+  transform: translate(272px, 96px) scale(3); }
 
 .links.exp.ng-enter {
   opacity: 0;
@@ -181,10 +195,10 @@ body.projects .links.projects {
   transform: translate(51vw, 320px) scale(4); }
 
 .not-home .links.exp {
-  transform: translate(640px, 89.6px) scale(1); }
+  transform: translate(624px, 128px) scale(1); }
 
 body.exp .links.exp {
-  transform: translate(256px, 80px) scale(3); }
+  transform: translate(624px, 96px) scale(3); }
 
 .links.about.ng-enter {
   opacity: 0;
@@ -195,10 +209,10 @@ body.exp .links.exp {
   transform: translate(51vw, 448px) scale(4); }
 
 .not-home .links.about {
-  transform: translate(640px, 115.2px) scale(1); }
+  transform: translate(976px, 128px) scale(1); }
 
 body.about .links.about {
-  transform: translate(256px, 80px) scale(3); }
+  transform: translate(976px, 96px) scale(3); }
 
 .work {
   display: inline-block;
@@ -219,18 +233,18 @@ body.about .links.about {
   .work.tile {
     height: 192px;
     width: 320px; }
-  .work.prev {
-    width: 64px;
-    height: 512px; }
-  .work.next {
-    width: 64px;
-    height: 512px; }
+  .work.ng-anchor-out.tile {
+    height: 512px;
+    width: 1152px !important; }
   .work.active {
     height: 512px;
-    width: 1024px; }
+    width: 1152px; }
 
 .tile .work-title {
   transform: translate(6.4px, 160px) scale(0.75); }
+
+.ng-anchor-out .work-title {
+  transform: translate(128px, 0px) scale(2); }
 
 .active .work-title {
   transform: translate(134.4px, 0px) scale(2); }
@@ -265,13 +279,13 @@ body.about .links.about {
 
 .link-prev {
   right: calc(100% - 128px);
-  top: 38.4px;
+  top: 32px;
   white-space: nowrap;
   width: 128px;
   text-align: right; }
 
 .link-next {
   left: 100%;
-  top: 38.4px;
+  top: 32px;
   white-space: nowrap;
   width: 256px; }

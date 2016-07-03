@@ -4,12 +4,29 @@ body {
   color: white;
   height:100vh;
   overflow: hidden;
+  background-image: linear-gradient(to top left, $jr-primary, $jr-secondary);
+
+/*  &::before {
+    content: "";
+
+    @include position(absolute, 0);
+
+    background-image: linear-gradient(to left, $jr-primary 30%, $jr-secondary 70%);
+    transition: opacity 600ms ease;
+
+  }
+
+  &.not-home::before {
+    opacity: 0;
+  }*/
+
 }
 
 main {
   width: gridX(22);
   @include position(absolute, gridY(3) null null gridX(4));
 }
+
 
 .framer {
   @extend %grid-top-left;

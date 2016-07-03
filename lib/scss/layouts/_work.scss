@@ -33,26 +33,28 @@
   &.tile {
     height: gridY(3);
     width: gridX(5);
-
-
   }
 
-
-
-  &.prev {
-    width: gridX(1);
+  &.ng-anchor-out.tile {
     height: gridY(8);
+    width: gridX(18) !important;
   }
 
-  &.next {
-    width: gridX(1);
-    height: gridY(8);
-  }
+
+//  &.prev {
+//    width: gridX(1);
+//    height: gridY(8);
+//  }
+//
+//  &.next {
+//    width: gridX(1);
+//    height: gridY(8);
+//  }
 
   &.active {
 
     height: gridY(8);
-    width: gridX(16);
+    width: gridX(18);
   }
 
 
@@ -67,6 +69,10 @@
   .tile & {
     @include gridPos(0.1, 2.5, 0.75);
   }
+  .ng-anchor-out & {
+    @include gridPos(2, 0, 2);
+  }
+
 
   .active &  {
     @include gridPos(2.1, 0, 2);
@@ -123,7 +129,7 @@
 .link-prev {
   @extend %work-links;
   right: calc(100% - #{gridX(2)});
-  top: gridY(0.6);
+  top: gridY(0.5);
   white-space: nowrap;
   width: gridX(2);
   text-align: right;
@@ -131,7 +137,7 @@
 .link-next {
   @extend %work-links;
   left: 100%;
-  top: gridY(0.6);
+  top: gridY(0.5);
   white-space: nowrap;
   width: gridX(4);
 

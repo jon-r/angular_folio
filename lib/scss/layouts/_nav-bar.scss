@@ -17,8 +17,9 @@ $i: 1;
 
 @each $n in $main-links {
 
-  $homeY: ($i * 5) - 2;
+  $homeY: $i + 2;
   $enterY: $homeY + 3;
+  $pageX: $i * 2.75 + 1.5;
 
 
   .links.#{$n} {
@@ -35,15 +36,18 @@ $i: 1;
     }
 
     .not-home & {
-      @include gridPos(10, $i);
+      @include gridPos($pageX, 2);
     }
 
     body.#{$n} & {
-      @include gridPos(4, 1.25, 3);
+      //@include gridPos(4, 1.25, 3);
+      @include gridPos($pageX, 1.5, 3);
     }
+
+
   }
 
-  $i: $i + 0.4;
+  $i: $i + 2;
 }
 
 
