@@ -1,54 +1,25 @@
-<!DOCTYPE html>
-<!doctype html>
-<html lang="en" ng-app="app">
+<html>
   <head>
-    <base href="/jonR_folio/">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <base href="/" >
+    <title>Angular 2 QuickStart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
 
-    <title>AngularJS Demo Theme</title>
-
-    <meta name="author" content="Jon Richards" />
-    <meta name="description" content="ng-jonR">
-
-   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js" ></script>-->
-    <script type="text/javascript" src="node_modules/angular/angular.js" ></script>
-    <script type="text/javascript" src="node_modules/angular-route/angular-route.js" ></script>
-    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.js" ></script>
-    <script type="text/javascript" src="lib/js/script.js" ></script>
-    <script src="https://use.typekit.net/qgo6zhu.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-    <link rel="stylesheet" type="text/css" href="lib/css/style.css" />
   </head>
-
-<body ng-controller="mainCtrl" ng-class="pgBody" ng-animate-children="true">
-
-
-<div class="framer" ></div>
-
-<header role="banner"  >
-  <a href="#/">
-  <h1 >Jon Richards</h1>
-  <h2>Full Stack Web Developer</h2>
-  </a>
-</header>
-
-<nav class="main-nav" role="navigation" >
-
-  <a ng-repeat="link in navList" class="links {{link.ref}}" ng-href="#/{{link.ref}}" >
-    <h4>{{link.name}}</h4>
-  </a>
-
-</nav>
-
-<main class="view-animation" ng-view ></main>
-
-<footer>
-  &copy; 2016
-</footer>
-
-</body>
+  <!-- 3. Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
 </html>
