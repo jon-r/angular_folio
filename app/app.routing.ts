@@ -1,26 +1,31 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { HeroesComponent } from './heroes.component';
-import { DashboardComponent } from './dashboard.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ListComponent } from './list/list.component';
+import { SingleComponent } from './single/single.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'home',
+    component: HomeComponent
   },
   {
-    path: 'heroes',
-    component: HeroesComponent
+    path: 'about',
+    component: AboutComponent
   },
   {
-    path: 'detail/:id',
-    component: HeroDetailComponent
+    path: 'folio',
+    component: ListComponent
+  },
+  {
+    path: 'work/:id',
+    component: SingleComponent
   }
 
 ];

@@ -1,32 +1,35 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+//import { FormsModule }    from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { routing }      from './app.routing';
 
-import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
-import { DashboardComponent }   from './dashboard.component';
+import { AboutComponent }   from './about/about.component';
+import { ListComponent }    from './list/list.component';
+import { SingleComponent }  from './single/single.component';
+import { HomeComponent }    from './home/home.component';
 
-import { HeroService }  from './hero.service';
+import { ButtonService }  from './shared/button.service';
+import { GridService }  from './shared/grid.service';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
     routing
   ],
   declarations: [
     AppComponent,
-    HeroesComponent,
-    DashboardComponent,
-    HeroDetailComponent
+    HomeComponent,
+    AboutComponent,
+    ListComponent,
+    SingleComponent
   ],
   providers: [
-    HeroService
+    GridService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [
+    AppComponent
+  ]
 })
-export class AppModule {
-}
+export class AppModule {}

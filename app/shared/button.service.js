@@ -9,18 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var ButtonService = (function () {
+    function ButtonService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html',
-            styleUrls: ['app/app.component.css']
-        }),
+    ButtonService = __decorate([
+        core_1.Injectable(),
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ButtonService);
+    return ButtonService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ButtonService = ButtonService;
+//# sourceMappingURL=button.service.js.map

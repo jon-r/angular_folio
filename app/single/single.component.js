@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var SingleComponent = (function () {
+    function SingleComponent() {
     }
-    AppComponent = __decorate([
+    SingleComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html',
-            styleUrls: ['app/app.component.css']
+            selector: 'page-about',
+            templateUrl: 'app/single/single.component.html',
+            styleUrls: ['app/single/single.component.css']
         }),
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], SingleComponent);
+    return SingleComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SingleComponent = SingleComponent;
+//# sourceMappingURL=single.component.js.map
