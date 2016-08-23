@@ -1,29 +1,61 @@
 import { Injectable } from '@angular/core';
+import { Positions } from './positions'
 import { Button } from './button'
 import { BUTTONS } from './button-list'
-
 
 @Injectable()
 export class ButtonService {
 
- // private btns: string[] = ['home', 'about', 'folio'];
+  private grid;
+  private buttons: Button;
 
-//  private btnArr: Button[] = [];
 
-
-  init() {
+  init(): Promise<Button> {
     return Promise.resolve(BUTTONS);
+  }
 
-/*    for (let i in this.btns) {
-      let out = new Button(this.btns[i], 'temp-' + this.btns[i]);
-      this.btnArr.push(out);
+  setGrid(window) {
+    let width = window.target.innerWidth;
+    let height = window.target.innerHeight;
 
-    }*/
-  //  console.info(this.btnArr);
-  //  return this.btnArr;
+    let squareDims = 20;
+    let xCount = Math.floor(width / squareDims);
+    let yCount = Math.floor(height / squareDims);
+
+    this.grid = {
+      squareDims : squareDims,
+      count: [xCount, yCount]
+    };
+  }
+
+  setPositions(posGroup:Positions) {
+
+    for (let pos in posGroup) {
+      this.buttons[pos] = this.setPosition(posGroup[pos]);
+    }
+
+  };
+
+  setPosition(position:number[]) {
+
+    let arr: number[];
+
+    for (let i = 0; i < 2; i ++) {
+      let n = (position[i] > 0) ? position[i] : this.grid.count[i] - position[i];
+      arr[i] = n * this.grid.squareDims;
+    }
+
+    return `translate(${arr.join('px,')}px)`;
+
+  }
+
+  update() {
+
   }
 
 }
+
+
 
 /*
 TO DO:

@@ -13,17 +13,35 @@ var button_list_1 = require('./button-list');
 var ButtonService = (function () {
     function ButtonService() {
     }
-    // private btns: string[] = ['home', 'about', 'folio'];
-    //  private btnArr: Button[] = [];
     ButtonService.prototype.init = function () {
         return Promise.resolve(button_list_1.BUTTONS);
-        /*    for (let i in this.btns) {
-              let out = new Button(this.btns[i], 'temp-' + this.btns[i]);
-              this.btnArr.push(out);
-
-            }*/
-        //  console.info(this.btnArr);
-        //  return this.btnArr;
+    };
+    ButtonService.prototype.setGrid = function (window) {
+        var width = window.target.innerWidth;
+        var height = window.target.innerHeight;
+        var squareDims = 20;
+        var xCount = Math.floor(width / squareDims);
+        var yCount = Math.floor(height / squareDims);
+        this.grid = {
+            squareDims: squareDims,
+            count: [xCount, yCount]
+        };
+    };
+    ButtonService.prototype.setPositions = function (posGroup) {
+        for (var pos in posGroup) {
+            this.buttons[pos] = this.setPosition(posGroup[pos]);
+        }
+    };
+    ;
+    ButtonService.prototype.setPosition = function (position) {
+        var arr;
+        for (var i = 0; i < 2; i++) {
+            var n = (position[i] > 0) ? position[i] : this.grid.count[i] - position[i];
+            arr[i] = n * this.grid.squareDims;
+        }
+        return "translate(" + arr.join('px,') + "px)";
+    };
+    ButtonService.prototype.update = function () {
     };
     ButtonService = __decorate([
         core_1.Injectable(),
