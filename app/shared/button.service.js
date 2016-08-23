@@ -9,9 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var button_list_1 = require('./button-list');
 var ButtonService = (function () {
     function ButtonService() {
     }
+    ButtonService.prototype.getButtons = function () {
+        return Promise.resolve(button_list_1.BUTTONS);
+    };
     ButtonService = __decorate([
         core_1.Injectable(),
         __metadata('design:paramtypes', [])
@@ -19,4 +23,20 @@ var ButtonService = (function () {
     return ButtonService;
 }());
 exports.ButtonService = ButtonService;
+//
+//import { Injectable } from '@angular/core';
+//import { HEROES } from './mock-heroes';
+//import { Hero } from './hero';
+//
+//@Injectable()
+//export class HeroService {
+//  getHeroes() {
+//    return Promise.resolve(HEROES);
+//  }
+//
+//  getHero(id: number): Promise<Hero> {
+//    return this.getHeroes()
+//      .then(heroes => heroes.find(hero => hero.id === id));
+//  }
+//}
 //# sourceMappingURL=button.service.js.map

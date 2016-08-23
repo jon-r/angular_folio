@@ -1,7 +1,13 @@
 <h1>Jon Richards | Web Developer</h1>
 <nav>
+<!--
   <a routerLink="/" routerLinkActive="active">Home</a>
   <a routerLink="/folio" routerLinkActive="active">Folio</a>
   <a routerLink="/about" routerLinkActive="active">About</a>
+-->
+  <a *ngFor="let btn of buttons" routerLink={{btn.url}}
+     [ngStyle]="{'transform': 'translate(1px,2px)' }" >
+    <span>{{btn.name}}</span>
+  </a>
 </nav>
 <router-outlet></router-outlet>
