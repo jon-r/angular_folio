@@ -2,39 +2,37 @@ import { Injectable } from '@angular/core';
 import { Button } from './button'
 import { BUTTONS } from './button-list'
 
+
 @Injectable()
 export class ButtonService {
 
-  getButtons(): Promise<Button[]> {
+ // private btns: string[] = ['home', 'about', 'folio'];
+
+//  private btnArr: Button[] = [];
+
+
+  init() {
     return Promise.resolve(BUTTONS);
+
+/*    for (let i in this.btns) {
+      let out = new Button(this.btns[i], 'temp-' + this.btns[i]);
+      this.btnArr.push(out);
+
+    }*/
+  //  console.info(this.btnArr);
+  //  return this.btnArr;
   }
 
-//
-//  move(int,x,y) {
-//    this.posX = x;
-//    this.posY = y;
-//  }
-//
-//  set(int,x,y) {
-//    this.animate = false;
-//    this.posX = x;
-//    this.posY = y;
-//    setTimeout(() => {this.animate = true});
-//  }
 }
-//
-//import { Injectable } from '@angular/core';
-//import { HEROES } from './mock-heroes';
-//import { Hero } from './hero';
-//
-//@Injectable()
-//export class HeroService {
-//  getHeroes() {
-//    return Promise.resolve(HEROES);
-//  }
-//
-//  getHero(id: number): Promise<Hero> {
-//    return this.getHeroes()
-//      .then(heroes => heroes.find(hero => hero.id === id));
-//  }
-//}
+
+/*
+TO DO:
+
+on init: setGrid, setPositions, updateTranslates;
+
+on resize: setGrid, updateTranslates;
+
+on newpage: setPositions, updateTranslates;
+
+
+*/

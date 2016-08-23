@@ -11,7 +11,7 @@ import { SingleComponent }  from './single/single.component';
 import { HomeComponent }    from './home/home.component';
 
 import { ButtonService }  from './shared/button.service';
-import { GridService }  from './shared/grid.service';
+//import { GridService }  from './shared/grid.service';
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import { GridService }  from './shared/grid.service';
     SingleComponent
   ],
   providers: [
-    GridService
+    ButtonService
   ],
   bootstrap: [
     AppComponent

@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+require('rxjs/add/operator/debounceTime');
+require('rxjs/add/observable/fromEvent');
 var button_service_1 = require('./shared/button.service');
 var AppComponent = (function () {
     function AppComponent(buttonService) {
@@ -17,11 +19,13 @@ var AppComponent = (function () {
     ;
     AppComponent.prototype.getButtons = function () {
         var _this = this;
-        this.buttonService.getButtons()
-            .then(function (buttons) { return _this.buttons = buttons; });
+        //  this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+        this.buttonService.init().then(function (buttons) { return _this.buttons = buttons; });
     };
     AppComponent.prototype.ngOnInit = function () {
+        //    this.links = this.buttonService.init();
         this.getButtons();
+        console.info(this.buttons);
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -35,4 +39,28 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+/*  getButtons(): void {
+    this.buttons = this.buttonService.init();
+  }
+
+  ngOnInit(): void {
+   // this.getButtons();
+
+    this.gridService.set(window);
+
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(200)
+      .subscribe(e => {this.gridService.set(e.target)});
+  }
+
+
+/*  onResize(event) {
+    console.info(event);
+  }
+  */
+/*  buttons = [
+    new Button('Home','home',1,1),
+    new Button('Work','folio',1,2),
+    new Button('About','about',1,3)
+  ];*/
 //# sourceMappingURL=app.component.js.map

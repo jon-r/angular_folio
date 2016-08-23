@@ -13,8 +13,17 @@ var button_list_1 = require('./button-list');
 var ButtonService = (function () {
     function ButtonService() {
     }
-    ButtonService.prototype.getButtons = function () {
+    // private btns: string[] = ['home', 'about', 'folio'];
+    //  private btnArr: Button[] = [];
+    ButtonService.prototype.init = function () {
         return Promise.resolve(button_list_1.BUTTONS);
+        /*    for (let i in this.btns) {
+              let out = new Button(this.btns[i], 'temp-' + this.btns[i]);
+              this.btnArr.push(out);
+
+            }*/
+        //  console.info(this.btnArr);
+        //  return this.btnArr;
     };
     ButtonService = __decorate([
         core_1.Injectable(),
@@ -23,20 +32,15 @@ var ButtonService = (function () {
     return ButtonService;
 }());
 exports.ButtonService = ButtonService;
-//
-//import { Injectable } from '@angular/core';
-//import { HEROES } from './mock-heroes';
-//import { Hero } from './hero';
-//
-//@Injectable()
-//export class HeroService {
-//  getHeroes() {
-//    return Promise.resolve(HEROES);
-//  }
-//
-//  getHero(id: number): Promise<Hero> {
-//    return this.getHeroes()
-//      .then(heroes => heroes.find(hero => hero.id === id));
-//  }
-//}
+/*
+TO DO:
+
+on init: setGrid, setPositions, updateTranslates;
+
+on resize: setGrid, updateTranslates;
+
+on newpage: setPositions, updateTranslates;
+
+
+*/
 //# sourceMappingURL=button.service.js.map

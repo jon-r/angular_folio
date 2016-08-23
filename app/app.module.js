@@ -17,7 +17,8 @@ var about_component_1 = require('./about/about.component');
 var list_component_1 = require('./list/list.component');
 var single_component_1 = require('./single/single.component');
 var home_component_1 = require('./home/home.component');
-var grid_service_1 = require('./shared/grid.service');
+var button_service_1 = require('./shared/button.service');
+//import { GridService }  from './shared/grid.service';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +36,7 @@ var AppModule = (function () {
                 single_component_1.SingleComponent
             ],
             providers: [
-                grid_service_1.GridService
+                button_service_1.ButtonService
             ],
             bootstrap: [
                 app_component_1.AppComponent

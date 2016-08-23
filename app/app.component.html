@@ -1,13 +1,11 @@
-<h1>Jon Richards | Web Developer</h1>
+<div *ngIf="buttons">
+<a routerLink="/" ><h1>Jon Richards | Web Developer
+  <sub>{{buttons.home}}</sub></h1></a>
 <nav>
-<!--
-  <a routerLink="/" routerLinkActive="active">Home</a>
-  <a routerLink="/folio" routerLinkActive="active">Folio</a>
-  <a routerLink="/about" routerLinkActive="active">About</a>
--->
-  <a *ngFor="let btn of buttons" routerLink={{btn.url}}
-     [ngStyle]="{'transform': 'translate(1px,2px)' }" >
-    <span>{{btn.name}}</span>
-  </a>
+  <a routerLink="/folio" ><h2>Folio
+    <sub>{{buttons.folio}}</sub></h2></a>
+  <a routerLink="/about" ><h2>About
+    <sub>{{buttons.about}}</sub></h2></a>
 </nav>
+</div>
 <router-outlet></router-outlet>
