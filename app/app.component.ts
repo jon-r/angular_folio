@@ -14,21 +14,46 @@ import { ButtonService } from './shared/button.service';
   providers: [ButtonService]
 })
 export class AppComponent {
-  buttons: Button;
+  buttons: string[];
 
   constructor(private buttonService: ButtonService) {};
 
-  getButtons() {
-  //  this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-    this.buttonService.init().then(buttons => this.buttons = buttons);
-  }
+
+
+//  getButtons() {
+//  //  this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+//    this.buttonService.init().then(buttons => this.buttons = buttons);
+//  }
 
   ngOnInit(): void {
-//    this.links = this.buttonService.init();
-    this.getButtons();
 
-    console.info(this.buttons);
+    this.buttonService.setLayout({
+      home: '0,0',
+      folio: '1,1',
+      about: '1,2'
+    })
+
+////    this.links = this.buttonService.init();
+//
+//    this.buttonService.setLayout({
+//      home: '0,0',
+//      folio: '1,1',
+//      about: '1,2'
+//    })
+//
+//    this.getButtons();
+//
+//    console.info(this.buttons);
+//
+//
+//
+//
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(200)
+      .subscribe(e => {this.buttonService.setGrid(e.target)});
   }
+
+
 
 }
 

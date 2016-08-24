@@ -9,27 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Subject_1 = require('rxjs/Subject');
 var GridService = (function () {
     function GridService() {
-        this.gridSource = new Subject_1.Subject();
-        this.grid$ = this.gridSource.asObservable();
     }
-    GridService.prototype.set = function (window) {
-        var width = window.target.innerWidth;
-        var height = window.target.innerHeight;
-        var squareDims = 20;
-        var xCount = Math.floor(width / squareDims);
-        var yCount = Math.floor(height / squareDims);
-        //    this.gridSource = {
-        //      squareDims : squareDims,
-        //      xCount : xCount,
-        //      yCount : yCount
-        //    };
-        this.gridSource.
-        ;
-    };
-    ;
     GridService = __decorate([
         core_1.Injectable(),
         __metadata('design:paramtypes', [])

@@ -9,16 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import { Subject } from 'rxjs/Subject';
+//import { Positions } from './positions';
 var button_list_1 = require('./button-list');
 var ButtonService = (function () {
     function ButtonService() {
+        this.grid = null;
+        this.buttons = null;
     }
+    //
+    //  buttonLayoutOutput$ = this.buttonLayout.asObservable();
     ButtonService.prototype.init = function () {
         return Promise.resolve(button_list_1.BUTTONS);
     };
     ButtonService.prototype.setGrid = function (window) {
-        var width = window.target.innerWidth;
-        var height = window.target.innerHeight;
+        var width = window.innerWidth;
+        var height = window.innerHeight;
         var squareDims = 20;
         var xCount = Math.floor(width / squareDims);
         var yCount = Math.floor(height / squareDims);
@@ -26,23 +32,30 @@ var ButtonService = (function () {
             squareDims: squareDims,
             count: [xCount, yCount]
         };
+        this.updatePositions();
     };
-    ButtonService.prototype.setPositions = function (posGroup) {
-        for (var pos in posGroup) {
-            this.buttons[pos] = this.setPosition(posGroup[pos]);
+    ButtonService.prototype.setLayout = function (posGroup) {
+        this.buttons = posGroup;
+        this.updatePositions();
+    };
+    ButtonService.prototype.updatePositions = function () {
+        if (this.grid && this.buttons) {
+            var set = void 0;
+            for (var pos in this.buttons) {
+                //this.buttonPositions[pos] = this.calcPosition(this.buttons[pos]);
+                var arrIn = pos.split(',');
+                var arr = [];
+                for (var i = 0; i < 2; i++) {
+                    var n = (+arrIn[i] > 0) ? +arrIn[i] : this.grid.count[i] - +arrIn[i];
+                    arr[i] = n * this.grid.squareDims;
+                }
+                set[pos] = "translate(" + arr.join('px,') + "px)";
+            }
+            console.log(set);
+            console.info(this.buttonPositions);
         }
     };
     ;
-    ButtonService.prototype.setPosition = function (position) {
-        var arr;
-        for (var i = 0; i < 2; i++) {
-            var n = (position[i] > 0) ? position[i] : this.grid.count[i] - position[i];
-            arr[i] = n * this.grid.squareDims;
-        }
-        return "translate(" + arr.join('px,') + "px)";
-    };
-    ButtonService.prototype.update = function () {
-    };
     ButtonService = __decorate([
         core_1.Injectable(),
         __metadata('design:paramtypes', [])

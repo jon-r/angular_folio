@@ -6,6 +6,7 @@ import { Grid } from './grid'
 @Injectable()
 export class GridService {
 
+/*
   private gridSource = new Subject<Grid>;
 
   grid$  = this.gridSource.asObservable();
@@ -25,6 +26,7 @@ export class GridService {
 //    };
     this.gridSource.
   };
+*/
 
 
 //  setPos(x: number,y: number) {
