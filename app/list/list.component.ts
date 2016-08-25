@@ -11,7 +11,11 @@ export class ListComponent implements OnInit {
   constructor(private buttonService: ButtonService) {};
 
   ngOnInit(): void {
-
+    this.buttonService.setButtons({
+      home: '1,1',
+      about: '-1,2',
+      folio: '1,-3'
+    })
   }
 
 

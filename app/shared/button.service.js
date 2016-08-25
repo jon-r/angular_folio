@@ -9,24 +9,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Subject_1 = require('rxjs/Subject');
+//import { Positions } from './positions';
+//import { BUTTONS } from './button-list';
 var ButtonService = (function () {
     function ButtonService() {
         this.grid = null;
-        this.counter = 0;
-        this.buttons = null;
+        // private buttonPositions: Buttons = {home: '',about: '',folio: ''}
+        this.btnSrc = new Subject_1.Subject();
+        this.buttonOutput$ = this.btnSrc.asObservable();
     }
-    ButtonService.prototype.setGrid = function (window) {
-        var width = window.innerWidth;
-        var height = window.innerHeight;
+    ButtonService.prototype.setGrid = function () {
         var squareDims = 20;
-        var xCount = Math.floor(width / squareDims);
-        var yCount = Math.floor(height / squareDims);
+        var xCount = Math.floor(window.innerWidth / squareDims);
+        var yCount = Math.floor(window.innerHeight / squareDims);
         this.grid = {
             squareDims: squareDims,
             count: [xCount, yCount]
         };
+        if (this.btnStore) {
+            this.setButtons(this.btnStore);
+        }
     };
-    ButtonService.prototype.setLayout = function (coords) {
+    ButtonService.prototype.setButtons = function (buttons) {
+        var out = { home: '', about: '', folio: '' };
+        this.btnStore = buttons;
+        for (var btn in buttons) {
+            out[btn] = this.calcPos(buttons[btn]);
+        }
+        this.btnSrc.next(out);
+        //return this.btnOutput.asObservable();
+    };
+    ButtonService.prototype.calcPos = function (coords) {
         var arrIn = coords.split(',');
         var arr = [];
         for (var i = 0; i < 2; i++) {
@@ -34,7 +48,6 @@ var ButtonService = (function () {
             arr[i] = n * this.grid.squareDims;
         }
         return "translate(" + arr.join('px,') + "px)";
-        //this.updatePositions();
     };
     ButtonService = __decorate([
         core_1.Injectable(),

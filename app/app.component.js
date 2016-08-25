@@ -9,25 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Observable_1 = require('rxjs/Observable');
 require('rxjs/add/operator/debounceTime');
 require('rxjs/add/observable/fromEvent');
 var button_service_1 = require('./shared/button.service');
 var AppComponent = (function () {
     function AppComponent(buttonService) {
         this.buttonService = buttonService;
+        buttonService.buttonOutput$.subscribe(function (n) {
+            console.log(n);
+        });
     }
     ;
-    AppComponent.prototype.setButtons = function (btn, coords) {
-        //this.buttons[btn] = this.buttonService.setLayout(coords);
-    };
     AppComponent.prototype.ngOnInit = function () {
-        this.buttonService.setGrid(window);
-        //    console.log(ButtonService);
-        //  ButtonService.setGrid(window)
-        /*
-            Observable.fromEvent(window, 'resize')
-              .debounceTime(200)
-              .subscribe(e => { ButtonService.setGrid(e.target) });*/
+        var _this = this;
+        this.buttonService.setGrid();
+        Observable_1.Observable.fromEvent(window, 'resize')
+            .debounceTime(200)
+            .subscribe(function (e) { _this.buttonService.setGrid(); });
     };
     AppComponent = __decorate([
         core_1.Component({

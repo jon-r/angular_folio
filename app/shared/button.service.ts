@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Button } from './button';
-//import { Subject } from 'rxjs/Subject';
+import { Buttons } from './button';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 //import { Positions } from './positions';
-import { BUTTONS } from './button-list';
+//import { BUTTONS } from './button-list';
 
 
 
 @Injectable()
 export class ButtonService {
 
-  private grid = null;
-  private counter: number = 0;
+  private grid = null
+  private btnStore: Buttons
+ // private buttonPositions: Buttons = {home: '',about: '',folio: ''}
 
-  private buttons: Button = null;
-  private buttonPositions: Button;
+  private btnSrc = new Subject<Buttons>();
 
-  setGrid(window) {
+  buttonOutput$ = this.btnSrc.asObservable();
 
-    let width = window.innerWidth;
-    let height = window.innerHeight;
+  public setGrid() {
 
     let squareDims = 20;
-    let xCount = Math.floor(width / squareDims);
-    let yCount = Math.floor(height / squareDims);
+    let xCount = Math.floor(window.innerWidth / squareDims);
+    let yCount = Math.floor(window.innerHeight / squareDims);
 
 
     this.grid = {
@@ -30,9 +30,26 @@ export class ButtonService {
       count: [xCount, yCount]
     }
 
+    if (this.btnStore) {
+      this.setButtons(this.btnStore);
+    }
+
   }
 
-  setLayout(coords:string) {
+  public setButtons(buttons:Buttons) {
+    let out: Buttons = {home: '',about: '',folio: ''};
+
+    this.btnStore = buttons;
+    for (let btn in buttons) {
+      out[btn] = this.calcPos(buttons[btn]);
+    }
+
+    this.btnSrc.next(out);
+    //return this.btnOutput.asObservable();
+  }
+
+
+  private calcPos(coords:string) {
     let arrIn: string[] = coords.split(',');
     let arr: number[] = [];
 
@@ -41,9 +58,11 @@ export class ButtonService {
       arr[i] = n * this.grid.squareDims;
     }
 
+
     return `translate(${arr.join('px,')}px)`;
-    //this.updatePositions();
+
   }
+
 }
 
 //  updatePositions() {

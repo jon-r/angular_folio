@@ -1,4 +1,4 @@
-export class Button {
+export class Buttons {
 
   constructor(
     public home: string,

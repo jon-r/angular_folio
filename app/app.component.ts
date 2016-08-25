@@ -4,7 +4,7 @@ import {Observable}  from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
 
-import { Button } from './shared/button';
+import { Buttons } from './shared/button';
 import { ButtonService } from './shared/button.service';
 
 @Component({
@@ -15,35 +15,26 @@ import { ButtonService } from './shared/button.service';
 })
 export class AppComponent {
 
-  constructor(private buttonService: ButtonService) {};
+  constructor(private buttonService: ButtonService) {
+    buttonService.buttonOutput$.subscribe(
+      n => {
+        console.log(n);
+      }
+    )
+  };
 
 
-  buttons: Button;
-
-
-
-  setButtons(btn: string, coords:string) {
-
-    //this.buttons[btn] = this.buttonService.setLayout(coords);
-  }
-
+  buttons: Buttons;
 
   ngOnInit(): void {
 
+    this.buttonService.setGrid()
 
-
-    this.buttonService.setGrid(window)
-//    console.log(ButtonService);
-
-  //  ButtonService.setGrid(window)
-
-/*
     Observable.fromEvent(window, 'resize')
       .debounceTime(200)
-      .subscribe(e => { ButtonService.setGrid(e.target) });*/
+      .subscribe(e => { this.buttonService.setGrid()});
+
   }
-
-
 
 }
 

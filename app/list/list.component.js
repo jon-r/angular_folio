@@ -16,6 +16,11 @@ var ListComponent = (function () {
     }
     ;
     ListComponent.prototype.ngOnInit = function () {
+        this.buttonService.setButtons({
+            home: '1,1',
+            about: '-1,2',
+            folio: '1,-3'
+        });
     };
     ListComponent = __decorate([
         core_1.Component({
