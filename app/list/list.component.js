@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var button_service_1 = require('../shared/button.service');
 var ListComponent = (function () {
-    function ListComponent() {
+    function ListComponent(buttonService) {
+        this.buttonService = buttonService;
     }
+    ;
+    ListComponent.prototype.ngOnInit = function () {
+    };
     ListComponent = __decorate([
         core_1.Component({
             selector: 'page-list',
             templateUrl: 'app/list/list.component.html',
             styleUrls: ['app/list/list.component.css']
         }),
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], ListComponent);
     return ListComponent;
 }());

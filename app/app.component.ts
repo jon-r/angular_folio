@@ -11,27 +11,50 @@ import { ButtonService } from './shared/button.service';
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  providers: [ButtonService]
+
 })
 export class AppComponent {
-  buttons: string[];
 
   constructor(private buttonService: ButtonService) {};
 
 
+  buttons: Button;
 
-//  getButtons() {
-//  //  this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-//    this.buttonService.init().then(buttons => this.buttons = buttons);
-//  }
+
+
+  setButtons(btn: string, coords:string) {
+
+    //this.buttons[btn] = this.buttonService.setLayout(coords);
+  }
+
 
   ngOnInit(): void {
 
-    this.buttonService.setLayout({
-      home: '0,0',
-      folio: '1,1',
-      about: '1,2'
-    })
+
+
+    this.buttonService.setGrid(window)
+//    console.log(ButtonService);
+
+  //  ButtonService.setGrid(window)
+
+/*
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(200)
+      .subscribe(e => { ButtonService.setGrid(e.target) });*/
+  }
+
+
+
+}
+
+
+   // this.buttonService.setGrid(window);
+
+//    this.buttonService.setLayout({
+//      home: '0,0',
+//      folio: '1,1',
+//      about: '1,2'
+//    })
 
 ////    this.links = this.buttonService.init();
 //
@@ -48,15 +71,6 @@ export class AppComponent {
 //
 //
 //
-    Observable.fromEvent(window, 'resize')
-      .debounceTime(200)
-      .subscribe(e => {this.buttonService.setGrid(e.target)});
-  }
-
-
-
-}
-
 
 /*  getButtons(): void {
     this.buttons = this.buttonService.init();

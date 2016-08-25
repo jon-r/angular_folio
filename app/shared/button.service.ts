@@ -4,18 +4,16 @@ import { Button } from './button';
 //import { Positions } from './positions';
 import { BUTTONS } from './button-list';
 
+
+
 @Injectable()
 export class ButtonService {
 
   private grid = null;
+  private counter: number = 0;
+
   private buttons: Button = null;
   private buttonPositions: Button;
-//
-//  buttonLayoutOutput$ = this.buttonLayout.asObservable();
-
-  init(): Promise<Button> {
-    return Promise.resolve(BUTTONS);
-  }
 
   setGrid(window) {
 
@@ -26,54 +24,62 @@ export class ButtonService {
     let xCount = Math.floor(width / squareDims);
     let yCount = Math.floor(height / squareDims);
 
+
     this.grid = {
       squareDims : squareDims,
       count: [xCount, yCount]
-    };
-
-    this.updatePositions();
-  }
-
-  setLayout(posGroup:Button) {
-    this.buttons = posGroup;
-
-    this.updatePositions();
-  }
-
-  updatePositions() {
-
-    if (this.grid && this.buttons) {
-
-
-
-      for (let pos in this.buttonPositions) {
-        //this.buttonPositions[pos] = this.calcPosition(this.buttons[pos]);
-
-        let arrIn: string[] = pos.split(',');
-        let arr: number[] = [];
-
-        for (let i = 0; i < 2; i ++) {
-          let n = (+arrIn[i] > 0) ? +arrIn[i] : this.grid.count[i] - +arrIn[i];
-          arr[i] = n * this.grid.squareDims;
-        }
-
-        set[pos] = `translate(${arr.join('px,')}px)`;
-
-        this.buttonPositions[pos] = `translate(${arr.join('px,')}px)`;
-
-      }
-
-      console.log(set);
-
-      console.info(this.buttonPositions);
-
     }
 
+  }
 
-  };
+  setLayout(coords:string) {
+    let arrIn: string[] = coords.split(',');
+    let arr: number[] = [];
 
+    for (let i = 0; i < 2; i ++) {
+      let n = (+arrIn[i] > 0) ? +arrIn[i] : this.grid.count[i] - +arrIn[i];
+      arr[i] = n * this.grid.squareDims;
+    }
 
+    return `translate(${arr.join('px,')}px)`;
+    //this.updatePositions();
+  }
 }
+
+//  updatePositions() {
+//
+//    if (this.grid && this.buttons) {
+//
+//
+//
+//      for (let pos in this.buttonPositions) {
+//        //this.buttonPositions[pos] = this.calcPosition(this.buttons[pos]);
+//
+//        let arrIn: string[] = pos.split(',');
+//        let arr: number[] = [];
+//
+//        for (let i = 0; i < 2; i ++) {
+//          let n = (+arrIn[i] > 0) ? +arrIn[i] : this.grid.count[i] - +arrIn[i];
+//          arr[i] = n * this.grid.squareDims;
+//        }
+//
+//        set[pos] = `translate(${arr.join('px,')}px)`;
+//
+//        this.buttonPositions[pos] = `translate(${arr.join('px,')}px)`;
+//
+//      }
+//
+//      console.log(set);
+//
+//      console.info(this.buttonPositions);
+//
+//    }
+//
+//
+//  };
+
+
+//}
 
 
 
