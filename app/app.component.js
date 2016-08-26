@@ -15,12 +15,25 @@ require('rxjs/add/observable/fromEvent');
 var button_service_1 = require('./shared/button.service');
 var AppComponent = (function () {
     function AppComponent(buttonService) {
+        var _this = this;
         this.buttonService = buttonService;
+        this.btnPos = { home: null, about: null, folio: null };
         buttonService.buttonOutput$.subscribe(function (n) {
             console.log(n);
+            _this.btnPos = n;
         });
     }
     ;
+    //  btnStyle(el) {
+    //    return
+    //  }
+    //  setBtns(btn: Buttons) {
+    //    this.btnPos = {
+    //      home : { 'transform': btn.home, '-webkit-transform': btn.home },
+    //      about : { 'transform': btn.about, '-webkit-transform': btn.about },
+    //      folio : { 'transform': btn.folio, '-webkit-transform': btn.folio }
+    //    }
+    //  }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.buttonService.setGrid();

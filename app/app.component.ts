@@ -19,12 +19,26 @@ export class AppComponent {
     buttonService.buttonOutput$.subscribe(
       n => {
         console.log(n);
+        this.btnPos = n;
       }
     )
   };
 
+  btnPos = {home: null,about: null,folio: null};
 
-  buttons: Buttons;
+//  btnStyle(el) {
+//    return
+//  }
+
+//  setBtns(btn: Buttons) {
+//    this.btnPos = {
+//      home : { 'transform': btn.home, '-webkit-transform': btn.home },
+//      about : { 'transform': btn.about, '-webkit-transform': btn.about },
+//      folio : { 'transform': btn.folio, '-webkit-transform': btn.folio }
+//    }
+//  }
+
+
 
   ngOnInit(): void {
 

@@ -32,7 +32,7 @@ var ButtonService = (function () {
         }
     };
     ButtonService.prototype.setButtons = function (buttons) {
-        var out = { home: '', about: '', folio: '' };
+        var out = { home: null, about: null, folio: null };
         this.btnStore = buttons;
         for (var btn in buttons) {
             out[btn] = this.calcPos(buttons[btn]);
@@ -41,13 +41,13 @@ var ButtonService = (function () {
         //return this.btnOutput.asObservable();
     };
     ButtonService.prototype.calcPos = function (coords) {
-        var arrIn = coords.split(',');
+        //    let arrIn: string[] = coords.split(',');
         var arr = [];
         for (var i = 0; i < 2; i++) {
-            var n = (+arrIn[i] > 0) ? +arrIn[i] : this.grid.count[i] - +arrIn[i];
+            var n = (coords[i] > 0) ? coords[i] : this.grid.count[i] - coords[i];
             arr[i] = n * this.grid.squareDims;
         }
-        return "translate(" + arr.join('px,') + "px)";
+        return { 'transform': "translate(" + arr.join('px,') + "px)" };
     };
     ButtonService = __decorate([
         core_1.Injectable(),

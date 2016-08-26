@@ -17,9 +17,9 @@ var ListComponent = (function () {
     ;
     ListComponent.prototype.ngOnInit = function () {
         this.buttonService.setButtons({
-            home: '1,1',
-            about: '-1,2',
-            folio: '1,-3'
+            home: [-1, 1],
+            about: [2, 1],
+            folio: [3, 1]
         });
     };
     ListComponent = __decorate([

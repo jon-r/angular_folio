@@ -1,10 +1,10 @@
 export class Buttons {
 
   constructor(
-    public home: string,
-    public folio: string,
-    public about: string
+    public home: any,
+    public folio: any,
+    public about: any
 
-  ) { }
+  ) {}
 
 }

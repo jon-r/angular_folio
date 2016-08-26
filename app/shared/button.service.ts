@@ -37,7 +37,7 @@ export class ButtonService {
   }
 
   public setButtons(buttons:Buttons) {
-    let out: Buttons = {home: '',about: '',folio: ''};
+    let out : Buttons = {home: null ,about: null ,folio: null };
 
     this.btnStore = buttons;
     for (let btn in buttons) {
@@ -49,17 +49,16 @@ export class ButtonService {
   }
 
 
-  private calcPos(coords:string) {
-    let arrIn: string[] = coords.split(',');
+  private calcPos(coords:number[]) {
+//    let arrIn: string[] = coords.split(',');
     let arr: number[] = [];
 
     for (let i = 0; i < 2; i ++) {
-      let n = (+arrIn[i] > 0) ? +arrIn[i] : this.grid.count[i] - +arrIn[i];
+      let n = (coords[i] > 0) ? coords[i] : this.grid.count[i] - coords[i];
       arr[i] = n * this.grid.squareDims;
     }
 
-
-    return `translate(${arr.join('px,')}px)`;
+    return { 'transform' : `translate(${arr.join('px,')}px)` };
 
   }
 
