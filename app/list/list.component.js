@@ -10,17 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var button_service_1 = require('../shared/button.service');
+var page_set_service_1 = require('../shared/page-set.service');
 var ListComponent = (function () {
-    function ListComponent(buttonService) {
+    function ListComponent(buttonService, pageSetService) {
+        //    this.pageSetService.setClass('list');
         this.buttonService = buttonService;
+        this.pageSetService = pageSetService;
+        this.buttonService.setButtons({
+            home: [-0.5, 0],
+            about: [1.5, 0.5],
+            folio: [0.5, 0.5]
+        });
     }
     ;
     ListComponent.prototype.ngOnInit = function () {
-        this.buttonService.setButtons({
-            home: [-1, 1],
-            about: [2, 1],
-            folio: [3, 1]
-        });
     };
     ListComponent = __decorate([
         core_1.Component({
@@ -28,7 +31,7 @@ var ListComponent = (function () {
             templateUrl: 'app/list/list.component.html',
             styleUrls: ['app/list/list.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, page_set_service_1.PageSetService])
     ], ListComponent);
     return ListComponent;
 }());

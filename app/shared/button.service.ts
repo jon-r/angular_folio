@@ -10,7 +10,8 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ButtonService {
 
-  private grid = null
+
+  private grid : number[];
   private btnStore: Buttons
  // private buttonPositions: Buttons = {home: '',about: '',folio: ''}
 
@@ -20,15 +21,13 @@ export class ButtonService {
 
   public setGrid() {
 
-    let squareDims = 20;
-    let xCount = Math.floor(window.innerWidth / squareDims);
-    let yCount = Math.floor(window.innerHeight / squareDims);
+/*    let squareDims = 20;
+    let xCount =
+    let yCount = window.innerHeight / 10;*/
 
 
-    this.grid = {
-      squareDims : squareDims,
-      count: [xCount, yCount]
-    }
+//    this.grid.x = 10;
+    this.grid = [ window.innerWidth / 10, window.innerHeight / 10 ]
 
     if (this.btnStore) {
       this.setButtons(this.btnStore);
@@ -40,23 +39,20 @@ export class ButtonService {
     let out : Buttons = {home: null ,about: null ,folio: null };
 
     this.btnStore = buttons;
+
     for (let btn in buttons) {
       out[btn] = this.calcPos(buttons[btn]);
     }
 
-    this.btnSrc.next(out);
-    //return this.btnOutput.asObservable();
+    setTimeout(() => this.btnSrc.next(out), 200);
   }
 
 
   private calcPos(coords:number[]) {
-//    let arrIn: string[] = coords.split(',');
+
     let arr: number[] = [];
 
-    for (let i = 0; i < 2; i ++) {
-      let n = (coords[i] > 0) ? coords[i] : this.grid.count[i] - coords[i];
-      arr[i] = n * this.grid.squareDims;
-    }
+    coords.forEach((el,i) => arr[i] = this.grid[i] * el);
 
     return { 'transform' : `translate(${arr.join('px,')}px)` };
 

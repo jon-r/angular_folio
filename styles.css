@@ -1,7 +1,119 @@
+/**
+ * Eric Meyer's Reset CSS v2.0
+(http://meyerweb.com/
+eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* STYLE */
+body {
+  font: 300 14px/1 "soleil",sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(to top left, #16a085, #0097A7);
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: calc(1vw + 1.5em);
+}
+
+h2 {
+  font-size: calc(1vw + 1em);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.nav-btn.anchor-right {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+.nav-frame {
+  position: relative;
+  margin: 20px;
+}
+
 .nav-btn {
   display: block;
   position: absolute;
   top:0;
   left:0;
-  transition: transform 300ms ease;
+  transition: 600ms ease;
+  transform: translate(0);
 }
+
+.nav-btn.home {
+  right:0;
+  left: auto;
+}
+
+.nav-frame.home .nav-btn.home { transform: translate(-50vw,50vh); color: red  }
+.nav-frame.home .nav-btn.about { transform: translate(50vw,45vh) }
+.nav-frame.home .nav-btn.folio { transform: translate(50vw,55vh) }
+
+.nav-frame.about .nav-btn.home { transform: translate(0,0) }
+.nav-frame.about .nav-btn.about { transform: translate(0,0); color: red }
+.nav-frame.about .nav-btn.folio { transform: translate(5vw,0) }
+
+.nav-frame.folio .nav-btn.home { transform: translate(0,0) }
+.nav-frame.folio .nav-btn.about { transform: translate(5vw,0) }
+.nav-frame.folio .nav-btn.folio { transform: translate(0,0); color: red }
+
+.nav-frame.list .nav-btn.home { transform: translate(0,0) }
+.nav-frame.list .nav-btn.about { transform: translate(5vw,0) }
+.nav-frame.list .nav-btn.folio { transform: translate(0,0); color: red }

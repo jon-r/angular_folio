@@ -1,28 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {NgStyle} from '@angular/common';
+import {NgClass} from '@angular/common';
 import {Observable}  from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
 
 import { Buttons } from './shared/button';
 import { ButtonService } from './shared/button.service';
+import { PageSetService } from './shared/page-set.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-
+  providers: [ButtonService, PageSetService ]
 })
 export class AppComponent {
 
-  constructor(private buttonService: ButtonService) {
+  constructor(private buttonService: ButtonService, private pageSetService: PageSetService) {
     buttonService.buttonOutput$.subscribe(
       n => {
         console.log(n);
         this.btnPos = n;
       }
     )
+    pageSetService.pgClassOutput$.subscribe(
+      n => {this.pageClass = n;}
+    )
   };
+
+  pageClass:string;
 
   btnPos = {home: null,about: null,folio: null};
 
@@ -41,6 +48,7 @@ export class AppComponent {
 
 
   ngOnInit(): void {
+//    this.pageClass = '';
 
     this.buttonService.setGrid()
 

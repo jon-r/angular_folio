@@ -1,8 +1,14 @@
-<!--<div *ngIf="buttons">-->
-<a class="nav-btn" routerLink="/" [ngStyle]="btnPos.home" ><h1>Jon Richards | Web Developer</h1></a>
-<nav>
-  <a class="nav-btn" routerLink="/folio" [ngStyle]="btnPos.folio"  ><h2>Folio</h2></a>
-  <a class="nav-btn" routerLink="/about" [ngStyle]="btnPos.about"  ><h2>About</h2></a>
-</nav>
-<!--</div>-->
+<header [ngClass]="pageClass" class="nav-frame" >
+
+  <nav  >
+    <a class="nav-btn home" routerLink="/" [ngStyle]="btnPos.home">
+      <h1>Jon Richards</h1>
+      <h2>Web Developer</h2>
+    </a>
+
+    <a class="nav-btn folio" routerLink="/folio" [ngStyle]="btnPos.folio"  ><h2>Folio</h2></a>
+    <a class="nav-btn about" routerLink="/about" [ngStyle]="btnPos.about"  ><h2>About</h2></a>
+  </nav>
+
+</header>
 <router-outlet ></router-outlet>

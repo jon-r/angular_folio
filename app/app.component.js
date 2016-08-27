@@ -13,15 +13,18 @@ var Observable_1 = require('rxjs/Observable');
 require('rxjs/add/operator/debounceTime');
 require('rxjs/add/observable/fromEvent');
 var button_service_1 = require('./shared/button.service');
+var page_set_service_1 = require('./shared/page-set.service');
 var AppComponent = (function () {
-    function AppComponent(buttonService) {
+    function AppComponent(buttonService, pageSetService) {
         var _this = this;
         this.buttonService = buttonService;
+        this.pageSetService = pageSetService;
         this.btnPos = { home: null, about: null, folio: null };
         buttonService.buttonOutput$.subscribe(function (n) {
             console.log(n);
             _this.btnPos = n;
         });
+        pageSetService.pgClassOutput$.subscribe(function (n) { _this.pageClass = n; });
     }
     ;
     //  btnStyle(el) {
@@ -35,6 +38,7 @@ var AppComponent = (function () {
     //    }
     //  }
     AppComponent.prototype.ngOnInit = function () {
+        //    this.pageClass = '';
         var _this = this;
         this.buttonService.setGrid();
         Observable_1.Observable.fromEvent(window, 'resize')
@@ -46,8 +50,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
+            providers: [button_service_1.ButtonService, page_set_service_1.PageSetService]
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, page_set_service_1.PageSetService])
     ], AppComponent);
     return AppComponent;
 }());

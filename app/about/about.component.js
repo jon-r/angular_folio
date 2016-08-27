@@ -9,16 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var button_service_1 = require('../shared/button.service');
+var page_set_service_1 = require('../shared/page-set.service');
 var AboutComponent = (function () {
-    function AboutComponent() {
+    function AboutComponent(buttonService, pageSetService) {
+        this.buttonService = buttonService;
+        this.pageSetService = pageSetService;
+        //    this.pageSetService.setClass('about');
+        this.buttonService.setButtons({
+            home: [-0.5, 0],
+            about: [0.5, 0.5],
+            folio: [1.5, 0.5]
+        });
     }
+    ;
+    AboutComponent.prototype.ngOnInit = function () {
+    };
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'page-about',
             templateUrl: 'app/about/about.component.html',
             styleUrls: ['app/about/about.component.css']
         }),
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, page_set_service_1.PageSetService])
     ], AboutComponent);
     return AboutComponent;
 }());

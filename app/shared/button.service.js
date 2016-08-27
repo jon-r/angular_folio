@@ -14,39 +14,33 @@ var Subject_1 = require('rxjs/Subject');
 //import { BUTTONS } from './button-list';
 var ButtonService = (function () {
     function ButtonService() {
-        this.grid = null;
         // private buttonPositions: Buttons = {home: '',about: '',folio: ''}
         this.btnSrc = new Subject_1.Subject();
         this.buttonOutput$ = this.btnSrc.asObservable();
     }
     ButtonService.prototype.setGrid = function () {
-        var squareDims = 20;
-        var xCount = Math.floor(window.innerWidth / squareDims);
-        var yCount = Math.floor(window.innerHeight / squareDims);
-        this.grid = {
-            squareDims: squareDims,
-            count: [xCount, yCount]
-        };
+        /*    let squareDims = 20;
+            let xCount =
+            let yCount = window.innerHeight / 10;*/
+        //    this.grid.x = 10;
+        this.grid = [window.innerWidth / 10, window.innerHeight / 10];
         if (this.btnStore) {
             this.setButtons(this.btnStore);
         }
     };
     ButtonService.prototype.setButtons = function (buttons) {
+        var _this = this;
         var out = { home: null, about: null, folio: null };
         this.btnStore = buttons;
         for (var btn in buttons) {
             out[btn] = this.calcPos(buttons[btn]);
         }
-        this.btnSrc.next(out);
-        //return this.btnOutput.asObservable();
+        setTimeout(function () { return _this.btnSrc.next(out); }, 200);
     };
     ButtonService.prototype.calcPos = function (coords) {
-        //    let arrIn: string[] = coords.split(',');
+        var _this = this;
         var arr = [];
-        for (var i = 0; i < 2; i++) {
-            var n = (coords[i] > 0) ? coords[i] : this.grid.count[i] - coords[i];
-            arr[i] = n * this.grid.squareDims;
-        }
+        coords.forEach(function (el, i) { return arr[i] = _this.grid[i] * el; });
         return { 'transform': "translate(" + arr.join('px,') + "px)" };
     };
     ButtonService = __decorate([
