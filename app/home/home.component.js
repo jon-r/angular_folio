@@ -10,28 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var button_service_1 = require('../shared/button.service');
-var page_set_service_1 = require('../shared/page-set.service');
 var HomeComponent = (function () {
-    function HomeComponent(buttonService, pageSetService) {
+    function HomeComponent(buttonService) {
         this.buttonService = buttonService;
-        this.pageSetService = pageSetService;
-        //    this.pageSetService.setClass('home');
         this.buttonService.setButtons({
-            home: [-5, 4],
-            about: [5, 4.5],
-            folio: [5, 5.5]
+            home: [-5, -3.5],
+            about: [5.3, 3.8],
+            folio: [5.3, 3],
+            framer: [5, 1.5, 1]
         });
     }
     ;
-    HomeComponent.prototype.ngOnInit = function () {
-    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'page-home',
             templateUrl: 'app/home/home.component.html',
             styleUrls: ['app/home/home.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, page_set_service_1.PageSetService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], HomeComponent);
     return HomeComponent;
 }());

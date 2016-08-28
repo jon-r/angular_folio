@@ -1,14 +1,15 @@
-<header [ngClass]="pageClass" class="nav-frame" >
 
-  <nav  >
-    <a class="nav-btn home" routerLink="/" [ngStyle]="btnPos.home">
-      <h1>Jon Richards</h1>
-      <h2>Web Developer</h2>
+  <nav [ngClass]="pageClass" >
+    <a class="anim home" routerLink="/home" [ngStyle]="btnPos.home" >
+      <header>
+        <h1>Jon Richards</h1>
+        <h2>Web Developer</h2>
+      </header>
     </a>
-
-    <a class="nav-btn folio" routerLink="/folio" [ngStyle]="btnPos.folio"  ><h2>Folio</h2></a>
-    <a class="nav-btn about" routerLink="/about" [ngStyle]="btnPos.about"  ><h2>About</h2></a>
+    <a class="anim" routerLink="/folio" [ngStyle]="btnPos.folio" ><h2>Work</h2></a>
+    <a class="anim" routerLink="/about" [ngStyle]="btnPos.about" ><h2>About</h2></a>
+    <hr class="anim framer" [ngStyle]="btnPos.framer" >
   </nav>
-
-</header>
-<router-outlet ></router-outlet>
+  <main >
+    <router-outlet ></router-outlet>
+  </main>

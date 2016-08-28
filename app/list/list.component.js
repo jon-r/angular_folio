@@ -10,28 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var button_service_1 = require('../shared/button.service');
-var page_set_service_1 = require('../shared/page-set.service');
+var project_service_1 = require('../shared/project.service');
 var ListComponent = (function () {
-    function ListComponent(buttonService, pageSetService) {
-        //    this.pageSetService.setClass('list');
+    function ListComponent(buttonService, projectService) {
         this.buttonService = buttonService;
-        this.pageSetService = pageSetService;
+        this.projectService = projectService;
+        this.temp = 'https://placekitten.com/300/300';
         this.buttonService.setButtons({
-            home: [-0.5, 0],
+            home: [-0.5, -0.5],
             about: [1.5, 0.5],
-            folio: [0.5, 0.5]
+            folio: [0.5, 0.5],
+            framer: [0.5, 1.2]
         });
     }
     ;
+    ListComponent.prototype.getProjects = function () {
+        var _this = this;
+        this.projectService.getProjects().then(function (projects) { return _this.projects = projects; });
+    };
     ListComponent.prototype.ngOnInit = function () {
+        this.getProjects();
     };
     ListComponent = __decorate([
         core_1.Component({
             selector: 'page-list',
             templateUrl: 'app/list/list.component.html',
-            styleUrls: ['app/list/list.component.css']
+            styles: ["\n  .projects li {\n    display: inline-block;\n    width: 20%;\n    padding: 15px;\n    text-align: center;\n    vertical-align: top;\n  }\n  .projects figure {\n    background-color: white;\n    padding: 15px;\n  }\n  "]
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, page_set_service_1.PageSetService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService])
     ], ListComponent);
     return ListComponent;
 }());

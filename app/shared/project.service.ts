@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { Project } from './project';
+import { Headers, Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
+
+@Injectable()
+export class ProjectService {
+
+  //private headers = new Headers({'Content-Type' : 'application/json'});
+  private dataUrl = 'app/shared/projects-list.json';
+
+  constructor(private http: Http) { }
+
+  getProjects(): Promise<Project[]> {
+    return this.http.get(this.dataUrl)
+      .toPromise()
+      .then(response => response.json().data as Project[])
+      .catch(this.handleError)
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+
+}

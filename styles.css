@@ -1,55 +1,7 @@
-/**
- * Eric Meyer's Reset CSS v2.0
-(http://meyerweb.com/
-eric/tools/css/reset/)
- * http://cssreset.com
- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+/*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img,embed,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
 
 
-/* STYLE */
+/* BASE STYLE --------------------------------------------------------------- */
 body {
   font: 300 14px/1 "soleil",sans-serif;
   color: white;
@@ -63,11 +15,11 @@ h1, h2 {
 }
 
 h1 {
-  font-size: calc(1vw + 1.5em);
+  font-size: calc(0.8vw + 3rem);
 }
 
 h2 {
-  font-size: calc(1vw + 1em);
+  font-size: calc(0.8vw + 1.5rem);
 }
 
 a {
@@ -75,20 +27,9 @@ a {
   color: inherit;
 }
 
+/* animations --------------------------------------------------------------- */
 
-
-.nav-btn.anchor-right {
-  left: auto;
-  right: 0;
-  text-align: right;
-}
-
-.nav-frame {
-  position: relative;
-  margin: 20px;
-}
-
-.nav-btn {
+.anim {
   display: block;
   position: absolute;
   top:0;
@@ -97,23 +38,43 @@ a {
   transform: translate(0);
 }
 
-.nav-btn.home {
-  right:0;
+/* Site Nav ----------------------------------------------------------------- */
+nav {
+  position: absolute;
+  top:20px;
+  bottom:20px;
+  left:20px;
+  right:20px;
+  border: solid 1px rgba(255,255,255,0.2);
+  z-index: 10;
+}
+nav .home{
+  right: 0;
   left: auto;
+  bottom: 0;
+  top: auto;
+  text-align: right;
+}
+.framer {
+  background-color: white;
+  height: 4px;
+  border: none;
+  width: 90%;
+  transform-origin: left
 }
 
-.nav-frame.home .nav-btn.home { transform: translate(-50vw,50vh); color: red  }
-.nav-frame.home .nav-btn.about { transform: translate(50vw,45vh) }
-.nav-frame.home .nav-btn.folio { transform: translate(50vw,55vh) }
+.home .framer {
+  width: 60vh;
+}
 
-.nav-frame.about .nav-btn.home { transform: translate(0,0) }
-.nav-frame.about .nav-btn.about { transform: translate(0,0); color: red }
-.nav-frame.about .nav-btn.folio { transform: translate(5vw,0) }
+/* content ------------------------------------------------------------------ */
 
-.nav-frame.folio .nav-btn.home { transform: translate(0,0) }
-.nav-frame.folio .nav-btn.about { transform: translate(5vw,0) }
-.nav-frame.folio .nav-btn.folio { transform: translate(0,0); color: red }
+main {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
 
-.nav-frame.list .nav-btn.home { transform: translate(0,0) }
-.nav-frame.list .nav-btn.about { transform: translate(5vw,0) }
-.nav-frame.list .nav-btn.folio { transform: translate(0,0); color: red }
+}
+

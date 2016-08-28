@@ -1,1 +1,10 @@
-<h2>work list</h2>
+
+<ul class="projects">
+  <li *ngFor="let project of projects" >
+    <figure>
+      <img [src]="temp" >
+    </figure>
+    <h3>{{project.title}}</h3>
+  </li>
+
+</ul>

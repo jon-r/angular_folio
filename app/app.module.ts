@@ -1,6 +1,7 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 //import { FormsModule }    from '@angular/forms';
+import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { routing }      from './app.routing';
@@ -11,12 +12,13 @@ import { SingleComponent }  from './single/single.component';
 import { HomeComponent }    from './home/home.component';
 
 import { ButtonService }  from './shared/button.service';
-//import { GridService }  from './shared/grid.service';
+import { ProjectService }  from './shared/project.service';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpModule,
     routing
   ],
   declarations: [
@@ -27,7 +29,8 @@ import { ButtonService }  from './shared/button.service';
     SingleComponent
   ],
   providers: [
-    ButtonService
+    ButtonService,
+    ProjectService
   ],
   bootstrap: [
     AppComponent

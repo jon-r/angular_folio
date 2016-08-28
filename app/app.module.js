@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 //import { FormsModule }    from '@angular/forms';
+var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
 var about_component_1 = require('./about/about.component');
@@ -18,7 +19,7 @@ var list_component_1 = require('./list/list.component');
 var single_component_1 = require('./single/single.component');
 var home_component_1 = require('./home/home.component');
 var button_service_1 = require('./shared/button.service');
-//import { GridService }  from './shared/grid.service';
+var project_service_1 = require('./shared/project.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,6 +27,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                http_1.HttpModule,
                 app_routing_1.routing
             ],
             declarations: [
@@ -36,7 +38,8 @@ var AppModule = (function () {
                 single_component_1.SingleComponent
             ],
             providers: [
-                button_service_1.ButtonService
+                button_service_1.ButtonService,
+                project_service_1.ProjectService
             ],
             bootstrap: [
                 app_component_1.AppComponent
