@@ -35,7 +35,19 @@ var ListComponent = (function () {
         core_1.Component({
             selector: 'page-list',
             templateUrl: 'app/list/list.component.html',
-            styles: ["\n  .projects li {\n    display: inline-block;\n    width: 20%;\n    padding: 15px;\n    text-align: center;\n    vertical-align: top;\n  }\n  .projects figure {\n    background-color: white;\n    padding: 15px;\n  }\n  "]
+            animations: [
+                core_1.trigger('pageView', [
+                    core_1.state('in', core_1.style({ transform: 'transform: translateY(0)' })),
+                    core_1.transition('void => *', [
+                        core_1.animate('600ms 200ms ease-out', core_1.keyframes([
+                            core_1.style({ opacity: 0, transform: 'translateY(100%)', offset: 0 }),
+                            core_1.style({ opacity: 1, transform: 'translateY(-10%)', offset: 0.7 }),
+                            core_1.style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+                        ]))
+                    ])
+                ])
+            ],
+            styles: ["\n.projects li {\n  display: inline-block;\n  width: 20%;\n  padding: 15px;\n  text-align: center;\n  vertical-align: top;\n}\n.projects figure {\n  background-color: white;\n  padding: 15px;\n}\n/*:host {\n  transition: translate ease-in 0.6s;\n}\n:host(.ng-enter) {\n  transform: translateY(100%);\n}\n:host(.ng-enter-active) {\n  transform: translateY(0);\n}*/\n  "]
         }),
         __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService])
     ], ListComponent);

@@ -1,8 +1,8 @@
 
-<ul class="projects">
-  <li *ngFor="let project of projects" >
+<ul class="projects" >
+  <li *ngFor="let project of projects" [@pageView]='in' >
     <figure>
-      <img [src]="temp" >
+      <img [src]="temp"  >
     </figure>
     <h3>{{project.title}}</h3>
   </li>

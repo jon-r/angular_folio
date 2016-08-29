@@ -36,6 +36,7 @@ a {
   left:0;
   transition: 600ms ease;
   transform: translate(0);
+  z-index: 10;
 }
 
 /* Site Nav ----------------------------------------------------------------- */
@@ -46,7 +47,7 @@ nav {
   left:20px;
   right:20px;
   border: solid 1px rgba(255,255,255,0.2);
-  z-index: 10;
+
 }
 nav .home{
   right: 0;
