@@ -23,7 +23,8 @@ import { Project } from '../shared/project'
       ])
     ])
   ],
-  styles: [`
+  styleUrls: ['app/list/list.component.css']
+/*  styles: [`
 .projects li {
   display: inline-block;
   width: 20%;
@@ -51,7 +52,7 @@ import { Project } from '../shared/project'
   50% { opacity:1; transform: translateY(-10%); }
   100% { opacity:1; transform: translateY(0); }
 }
-  `]
+  `]*/
 })
 export class ListComponent {
   projects: Project[];
