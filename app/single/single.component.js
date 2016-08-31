@@ -9,10 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var button_service_1 = require('../shared/button.service');
+var project_service_1 = require('../shared/project.service');
 var SingleComponent = (function () {
-    function SingleComponent(buttonService) {
+    function SingleComponent(buttonService, projectService, route) {
         this.buttonService = buttonService;
+        this.projectService = projectService;
+        this.route = route;
         this.buttonService.setButtons({
             home: [-0.5, 0.5],
             about: [1.5, 0.5],
@@ -22,6 +26,15 @@ var SingleComponent = (function () {
     }
     ;
     SingleComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.projectService.getProject(id)
+                .then(function (project) { return _this.project = project; });
+        });
+    };
+    SingleComponent.prototype.goBack = function () {
+        window.history.back();
     };
     SingleComponent = __decorate([
         core_1.Component({
@@ -29,7 +42,7 @@ var SingleComponent = (function () {
             templateUrl: 'app/single/single.component.html',
             styleUrls: ['app/single/single.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, router_1.ActivatedRoute])
     ], SingleComponent);
     return SingleComponent;
 }());

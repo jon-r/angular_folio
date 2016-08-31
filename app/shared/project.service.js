@@ -23,6 +23,10 @@ var ProjectService = (function () {
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
+    ProjectService.prototype.getProject = function (id) {
+        return this.getProjects()
+            .then(function (projects) { return projects.find(function (project) { return project.id === id; }); });
+    };
     ProjectService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);

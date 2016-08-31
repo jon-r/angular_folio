@@ -8,15 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var ng2_lazyload_image_1 = require('ng2-lazyload-image');
 var button_service_1 = require('../shared/button.service');
 var project_service_1 = require('../shared/project.service');
 var ListComponent = (function () {
-    function ListComponent(buttonService, projectService) {
+    function ListComponent(buttonService, projectService, router) {
         this.buttonService = buttonService;
         this.projectService = projectService;
-        this.ph = '';
+        this.router = router;
+        this.listPush = '';
+        this.ph = 'http://placehold.it/10x10';
         this.temp = 'https://placekitten.com/300/300';
         this.buttonService.setButtons({
             home: [-0.5, -0.5],
@@ -33,26 +37,31 @@ var ListComponent = (function () {
     ListComponent.prototype.ngOnInit = function () {
         this.getProjects();
     };
+    ListComponent.prototype.goTo = function (project) {
+        var _this = this;
+        this.listPush = 'push';
+        setTimeout(function () { return _this.router.navigate(['/work', project.id]); }, 600);
+    };
     ListComponent = __decorate([
         core_1.Component({
             selector: 'page-list',
             templateUrl: 'app/list/list.component.html',
             directives: [ng2_lazyload_image_1.LazyLoadImageDirective],
-            animations: [
-                core_1.trigger('pageView', [
-                    core_1.state('in', core_1.style({ transform: 'transform: translateY(0)' })),
-                    core_1.transition('void => *', [
-                        core_1.animate('600ms ease-out', core_1.keyframes([
-                            core_1.style({ opacity: 0, transform: 'translateY(100%)', offset: 0 }),
-                            core_1.style({ opacity: 1, transform: 'translateY(-10%)', offset: 0.7 }),
-                            core_1.style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
-                        ]))
-                    ])
-                ])
-            ],
-            styles: ["\n.projects li {\n  display: inline-block;\n  width: 20%;\n  padding: 15px;\n  text-align: center;\n  vertical-align: top;\n  animation: 1s fadeUp;\n  animation-fill-mode: backwards;\n}\n.projects figure {\n  background-color: white;\n  padding: 15px;\n}\n.projects img {\n  width: 100%;\n  height: auto;\n  transition: opacity 1s;\n  opacity: 0;\n}\n.projects img.ng2-lazyloaded {\n  opacity: 1;\n}\n@keyframes fadeUp {\n  0% { opacity:0; transform: translateY(100%); }\n  50% { opacity:1; transform: translateY(-10%); }\n  100% { opacity:1; transform: translateY(0); }\n}\n  "]
+            //  animations: [
+            //    trigger('pageView', [
+            //      state('in', style({transform: 'transform: translateY(0)' })),
+            //      transition('void => *', [
+            //        animate('600ms ease-out', keyframes([
+            //          style({opacity: 0, transform: 'translateY(100%)', offset: 0}),
+            //          style({opacity: 1, transform: 'translateY(-10%)', offset: 0.7}),
+            //          style({opacity: 1, transform: 'translateY(0)', offset: 1}),
+            //        ]))
+            //      ])
+            //    ])
+            //  ],
+            styleUrls: ['app/list/list.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, router_1.Router])
     ], ListComponent);
     return ListComponent;
 }());

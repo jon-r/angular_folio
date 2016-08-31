@@ -1,6 +1,6 @@
 
-<ul class="projects" >
-  <li *ngFor="let project of projects"
+<ul class="projects" *ngIf="projects" [ngClass]="listPush" >
+  <li *ngFor="let project of projects" (click)="goTo(project)"
     [ngStyle]="{'animation-delay': (project.id * 100) + 'ms' }"  >
     <figure >
       <img [lazyLoad]="temp" [src]="ph" [offset]="0"  >

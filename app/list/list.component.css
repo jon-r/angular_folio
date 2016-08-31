@@ -1,3 +1,8 @@
+
+.projects.push {
+  animation: 0.5s slideOut forwards;
+}
+
 .projects li {
   display: inline-block;
   width: 20%;
@@ -7,6 +12,8 @@
   animation: 1s fadeUp;
   animation-fill-mode: backwards;
 }
+
+
 
 .projects figure {
   background-color: white;
@@ -28,4 +35,10 @@
   0% { opacity:0; transform: translateY(100%); }
   50% { opacity:1; transform: translateY(-10%); }
   100% { opacity:1; transform: translateY(0); }
+}
+
+@keyframes slideOut {
+  0% { opacity:0; transform: translateX(0); }
+  50% { opacity:1; transform: translateX(-10%); }
+  100% { opacity:1; transform: translateX(120%); }
 }

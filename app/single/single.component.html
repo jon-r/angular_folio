@@ -1,1 +1,12 @@
-<h2>work item</h2>
+<article class="work" *ngIf="project">
+  <button (click)="goBack()">Back</button>
+  <section class="work-img"  >
+
+    <h2>work item</h2>
+    <h3>{{project.title}}</h3>
+
+  </section>
+  <section class="work-desc" >
+
+  </section>
+</article>

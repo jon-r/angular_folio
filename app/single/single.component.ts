@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ButtonService } from '../shared/button.service';
+import { ProjectService } from '../shared/project.service';
+import { Project } from '../shared/project';
 
 @Component({
   selector: 'page-about',
@@ -8,7 +11,13 @@ import { ButtonService } from '../shared/button.service';
 })
 export class SingleComponent implements OnInit {
 
-  constructor(private buttonService: ButtonService) {
+  project: Project;
+
+  constructor(
+    private buttonService: ButtonService,
+    private projectService: ProjectService,
+    private route: ActivatedRoute
+  ) {
     this.buttonService.setButtons({
       home: [-0.5,0.5],
       about: [1.5,0.5],
@@ -18,9 +27,15 @@ export class SingleComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.route.params.forEach((params: Params) => {
+      let id = +params['id'];
+      this.projectService.getProject(id)
+        .then(project => this.project = project)
+    })
+  }
 
-
-
+  goBack(): void {
+    window.history.back();
   }
 
 
