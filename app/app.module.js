@@ -8,12 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//rxjs
+require('./rxjs-extensions');
+//angular
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-//import { FormsModule }    from '@angular/forms';
 var http_1 = require('@angular/http');
+var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
-var app_routing_1 = require('./app.routing');
 var about_component_1 = require('./about/about.component');
 var list_component_1 = require('./list/list.component');
 var single_component_1 = require('./single/single.component');
@@ -28,7 +30,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpModule,
-                app_routing_1.routing
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -41,9 +43,8 @@ var AppModule = (function () {
                 button_service_1.ButtonService,
                 project_service_1.ProjectService
             ],
-            bootstrap: [
-                app_component_1.AppComponent
-            ]
+            //  providers: [ ButtonService ],
+            bootstrap: [app_component_1.AppComponent]
         }),
         __metadata('design:paramtypes', [])
     ], AppModule);

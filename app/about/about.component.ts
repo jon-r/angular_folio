@@ -10,7 +10,7 @@ export class AboutComponent {
 
   constructor(private buttonService: ButtonService) {
     this.buttonService.setButtons({
-      home: [-0.5,0.5],
+      home: [-0.5,-0.5],
       about: [0.5,0.5],
       folio: [1.5,0.5],
       framer: [0.5, 1.2]

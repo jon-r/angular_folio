@@ -12,8 +12,8 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var button_service_1 = require('../shared/button.service');
 var project_service_1 = require('../shared/project.service');
-var SingleComponent = (function () {
-    function SingleComponent(buttonService, projectService, route) {
+var SingleComponent /*implements OnInit*/ = (function () {
+    function SingleComponent /*implements OnInit*/(buttonService, projectService, route) {
         this.buttonService = buttonService;
         this.projectService = projectService;
         this.route = route;
@@ -25,7 +25,7 @@ var SingleComponent = (function () {
         });
     }
     ;
-    SingleComponent.prototype.ngOnInit = function () {
+    SingleComponent /*implements OnInit*/.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
@@ -33,18 +33,18 @@ var SingleComponent = (function () {
                 .then(function (project) { return _this.project = project; });
         });
     };
-    SingleComponent.prototype.goBack = function () {
+    SingleComponent /*implements OnInit*/.prototype.goBack = function () {
         window.history.back();
     };
-    SingleComponent = __decorate([
+    SingleComponent /*implements OnInit*/ = __decorate([
         core_1.Component({
             selector: 'page-about',
             templateUrl: 'app/single/single.component.html',
             styleUrls: ['app/single/single.component.css']
         }),
         __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, router_1.ActivatedRoute])
-    ], SingleComponent);
-    return SingleComponent;
+    ], SingleComponent /*implements OnInit*/);
+    return SingleComponent /*implements OnInit*/;
 }());
-exports.SingleComponent = SingleComponent;
+exports.SingleComponent /*implements OnInit*/ = SingleComponent /*implements OnInit*/;
 //# sourceMappingURL=single.component.js.map

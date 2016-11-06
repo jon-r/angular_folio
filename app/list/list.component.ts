@@ -2,10 +2,10 @@
 import { Component, OnInit} from '@angular/core';
 
 import { Router } from '@angular/router';
-import {NgStyle} from '@angular/common';
+//import {NgStyle} from '@angular/common';
 
 
-import { LazyLoadImageDirective } from 'ng2-lazyload-image';
+//import { LazyLoadImageDirective } from 'ng2-lazyload-image';
 
 import { ButtonService } from '../shared/button.service';
 import { ProjectService } from '../shared/project.service';
@@ -15,7 +15,7 @@ import { Project } from '../shared/project';
 @Component({
   selector: 'page-list',
   templateUrl: 'app/list/list.component.html',
-  directives: [ LazyLoadImageDirective ],
+//  directives: [ LazyLoadImageDirective ],
 //  animations: [
 //    trigger('pageView', [
 //      state('in', style({transform: 'transform: translateY(0)' })),
@@ -35,8 +35,8 @@ export class ListComponent {
   listPush: string = '';
 
 
-  ph: string = 'http://placehold.it/10x10';
-  temp: string = 'https://placekitten.com/300/300';
+//  ph: string = 'http://placehold.it/10x10';
+//  temp: string = 'https://placekitten.com/300/300';
 
   constructor(
     private buttonService: ButtonService,

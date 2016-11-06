@@ -9,10 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import { Component, OnInit } from '@angular/core';
+//import {NgStyle, NgClass} from '@angular/common';
+//import {} from '@angular/common';
 var Observable_1 = require('rxjs/Observable');
 var router_1 = require('@angular/router');
-require('rxjs/add/operator/debounceTime');
-require('rxjs/add/observable/fromEvent');
 var button_service_1 = require('./shared/button.service');
 var AppComponent = (function () {
     function AppComponent(buttonService, router) {
@@ -22,7 +23,7 @@ var AppComponent = (function () {
         buttonService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.btnPos = n; });
-        //    this.router = Router;
+        this.router = router_1.Router;
         router.events
             .debounceTime(200)
             .subscribe(function (e) {
@@ -41,6 +42,7 @@ var AppComponent = (function () {
     };
     AppComponent = __decorate([
         core_1.Component({
+            // moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],

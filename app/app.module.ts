@@ -1,10 +1,14 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-//import { FormsModule }    from '@angular/forms';
+//rxjs
+import './rxjs-extensions';
+
+//angular
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { routing }      from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent }   from './app.component';
 
 import { AboutComponent }   from './about/about.component';
 import { ListComponent }    from './list/list.component';
@@ -19,11 +23,12 @@ import { ProjectService }  from './shared/project.service';
   imports: [
     BrowserModule,
     HttpModule,
-    routing
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
     HomeComponent,
+
     AboutComponent,
     ListComponent,
     SingleComponent
@@ -32,8 +37,7 @@ import { ProjectService }  from './shared/project.service';
     ButtonService,
     ProjectService
   ],
-  bootstrap: [
-    AppComponent
-  ]
+//  providers: [ ButtonService ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule {}
+export class AppModule { }

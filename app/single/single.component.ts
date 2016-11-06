@@ -9,7 +9,7 @@ import { Project } from '../shared/project';
   templateUrl: 'app/single/single.component.html',
   styleUrls: ['app/single/single.component.css']
 })
-export class SingleComponent implements OnInit {
+export class SingleComponent /*implements OnInit*/ {
 
   project: Project;
 

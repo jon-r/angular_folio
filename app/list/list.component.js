@@ -11,17 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var ng2_lazyload_image_1 = require('ng2-lazyload-image');
+//import {NgStyle} from '@angular/common';
+//import { LazyLoadImageDirective } from 'ng2-lazyload-image';
 var button_service_1 = require('../shared/button.service');
 var project_service_1 = require('../shared/project.service');
 var ListComponent = (function () {
+    //  ph: string = 'http://placehold.it/10x10';
+    //  temp: string = 'https://placekitten.com/300/300';
     function ListComponent(buttonService, projectService, router) {
         this.buttonService = buttonService;
         this.projectService = projectService;
         this.router = router;
         this.listPush = '';
-        this.ph = 'http://placehold.it/10x10';
-        this.temp = 'https://placekitten.com/300/300';
         this.buttonService.setButtons({
             home: [-0.5, -0.5],
             about: [1.5, 0.5],
@@ -46,7 +47,7 @@ var ListComponent = (function () {
         core_1.Component({
             selector: 'page-list',
             templateUrl: 'app/list/list.component.html',
-            directives: [ng2_lazyload_image_1.LazyLoadImageDirective],
+            //  directives: [ LazyLoadImageDirective ],
             //  animations: [
             //    trigger('pageView', [
             //      state('in', style({transform: 'transform: translateY(0)' })),
