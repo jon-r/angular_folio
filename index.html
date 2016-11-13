@@ -26,5 +26,42 @@
 
   <body>
     <my-app>Loading...</my-app>
+
+    <div id="js_loaderParent" >
+
+      <div class="pre-loader" >
+        <svg xmlns="http://www.w3.org/2000/svg" id="js_headerLogo" class="header-logo"
+    viewBox="-5 0 44 16" >
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
+        </svg>
+      </div>
+    </div>
+
   </body>
+
+
+  <script>
+    window.bootstrapping.then(
+      function handleResolve() {
+        var preBootstrap = document.getElementById("js_loaderParent"),
+          loader = preBootstrap.firstElementChild
+
+       // loader.className = "pre-loader loaded";
+
+        setTimeout(
+          function removeLoadingScreen() {
+            loader.className = "pre-loader loaded";
+            setTimeout(function() {
+              preBootstrap.removeChild(loader)
+            }, 1200);
+          },
+          600
+        );
+      }
+    );
+
+  </script>
+
+  <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><mask id="c"><path fill="#fff" d="M-2-2h30v20H-2"/><path class="lg-cv" d="M7 17l5-9-5-9h20v18"/></mask><style>.lg-br { animation-duration: 600ms; animation-fill-mode: both;} .br-l { animation-name: draw; } .lg-cv { animation: push 500ms ease-out 1.2s both; } .br-r { animation-delay: 600ms, 1.2s; animation-name: draw, push; } @keyframes draw { 50% {stroke-dashoffset: 10; } to { stroke-dashoffset: 0; } } @keyframes push { to { transform: translate(19px) } }</style></defs><symbol id="jr-logo" fill="none" stroke-width="2"><path stroke="#e4e5e7" mask="url(#c)" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/><g stroke-dasharray="21" stroke-dashoffset="21" stroke-linejoin="round" stroke="#B2DFDB"><path class="lg-br br-l" d="M7-1L2 8l5 9"/><path class="lg-br br-r" d="M8 17l5-9-5-9"/></g></symbol></svg>
+
 </html>

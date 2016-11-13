@@ -27,7 +27,7 @@ var AppComponent = (function () {
         router.events
             .debounceTime(200)
             .subscribe(function (e) {
-            _this.pageClass = (e instanceof router_1.NavigationEnd && e.urlAfterRedirects == '/home') ? 'home' : '';
+            _this.pageClass = (e instanceof router_1.NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
         });
         //   router.events.
         //  router.changes.subscribe(console.log(router));
@@ -36,9 +36,10 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.buttonService.setGrid();
+        document.getElementById('js_headerLogo').classList.add('blah');
         Observable_1.Observable.fromEvent(window, 'resize')
             .debounceTime(200)
-            .subscribe(function (e) { return _this.buttonService.setGrid(); });
+            .subscribe(function (e) { _this.buttonService.setGrid(); });
     };
     AppComponent = __decorate([
         core_1.Component({

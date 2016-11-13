@@ -37,4 +37,18 @@
       }
     }
   });
+
+  global.bootstrapping = System
+    .import("app")
+    .then(
+      function handleResolve() {
+        console.info("System.js successfully bootstrapped app.");
+      },
+      function handleReject(error) {
+        console.warn("System.js could not bootstrap the app.");
+        console.error(error);
+        return (Promise.reject(error));
+      }
+    );
+
 })(this);

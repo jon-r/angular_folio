@@ -14,10 +14,10 @@ var HomeComponent = (function () {
     function HomeComponent(buttonService) {
         this.buttonService = buttonService;
         this.buttonService.setButtons({
-            home: [-5, -3.5],
-            about: [5.3, 3.8],
-            folio: [5.3, 3],
-            framer: [5, 1.5, 1]
+            home: [-6, -3.5],
+            about: [4.3, 3.8],
+            folio: [4.3, 3],
+            framer: [4, 1.5, 1]
         });
     }
     ;

@@ -4,10 +4,10 @@
 /* BASE STYLE --------------------------------------------------------------- */
 body {
   font: 300 14px/1 "soleil",sans-serif;
-  color: white;
+  color: #e4e5e7;
   height: 100vh;
   overflow: hidden;
-  background-image: linear-gradient(to top left, #16a085, #0097A7);
+  background-image: linear-gradient(to top left, #4DB6AC, #00897B);
 }
 
 h1, h2 {
@@ -39,6 +39,31 @@ a {
   z-index: 10;
 }
 
+/* Logo + Spalsh ------------------------------------------------------------ */
+
+.header-logo {
+  position: absolute;
+  top: calc(50vh - 175px);
+  left: calc(30vw - 250px);
+  width: 500px;
+}
+
+.pre-loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to top left, #4DB6AC, #00897B);
+  z-index: 99;
+  transition: opacity 1s;
+/*  opacity: 0.8;*/
+}
+
+.pre-loader.loaded {
+  opacity: 0;
+}
+
 /* Site Nav ----------------------------------------------------------------- */
 nav {
   position: absolute;
@@ -64,9 +89,11 @@ nav .home{
   transform-origin: left
 }
 
-.home .framer {
+.home-page .framer {
   width: 60vh;
 }
+
+
 
 /* content ------------------------------------------------------------------ */
 
@@ -76,5 +103,4 @@ main {
   left: 5%;
   right: 5%;
   bottom: 5%;
-
 }
