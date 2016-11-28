@@ -32,23 +32,18 @@ export class AppComponent {
     router.events
       .debounceTime(200)
       .subscribe(e => {
-        this.pageClass = (e instanceof NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
-
+        this.isHome = (e instanceof NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
     });
 
- //   router.events.
-  //  router.changes.subscribe(console.log(router));
   };
 
   router: any;
-  pageClass: string;
+  isHome: string;
+  isLoaded: boolean = false;
   btnPos: Buttons = {home: null,about: null,folio: null,framer: null};
 
   ngOnInit(): void {
     this.buttonService.setGrid();
-
-
-    document.getElementById('js_headerLogo').classList.add('blah');
 
     Observable.fromEvent(window, 'resize')
       .debounceTime(200)

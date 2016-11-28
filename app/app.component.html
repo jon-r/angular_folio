@@ -1,24 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="js_headerLogo" class="header-logo"
-viewBox="-5 0 44 16" >
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
-</svg>
+<a class="jr-logo anim" >
+  <svg xmlns="http://www.w3.org/2000/svg" id="js_headerLogo"
+viewBox="0 0 34 16" >
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
+  </svg>
+</a>
+<nav [ngClass]="isHome" >
 
-<nav [ngClass]="pageClass" >
   <a class="anim home" routerLink="/home" [ngStyle]="btnPos.home" >
+
     <header>
       <h1>Jon Richards</h1>
       <h2>Web Developer</h2>
     </header>
   </a>
+
   <a class="anim" routerLink="/folio" [ngStyle]="btnPos.folio" ><h2>Work</h2></a>
   <a class="anim" routerLink="/about" [ngStyle]="btnPos.about" ><h2>About</h2></a>
   <hr class="anim framer" [ngStyle]="btnPos.framer" >
+
 </nav>
 
 <main >
   <router-outlet ></router-outlet>
 </main>
-
 
 
 

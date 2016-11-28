@@ -57,7 +57,6 @@ export class ListComponent {
 
   ngOnInit(): void {
     this.getProjects();
-
   }
 
   goTo(project: Project): void {

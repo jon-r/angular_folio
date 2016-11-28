@@ -34,19 +34,12 @@ a {
   position: absolute;
   top:0;
   left:0;
-  transition: 600ms ease;
   transform: translate(0);
   z-index: 10;
+  transition: 600ms ease;
 }
 
-/* Logo + Spalsh ------------------------------------------------------------ */
-
-.header-logo {
-  position: absolute;
-  top: calc(50vh - 175px);
-  left: calc(30vw - 250px);
-  width: 500px;
-}
+/* Logo + Splash ------------------------------------------------------------ */
 
 .pre-loader {
   position: absolute;
@@ -57,11 +50,30 @@ a {
   background-image: linear-gradient(to top left, #4DB6AC, #00897B);
   z-index: 99;
   transition: opacity 1s;
-/*  opacity: 0.8;*/
+  opacity: 1;
+  transition-delay: 600ms;
+}
+
+.jr-logo {
+  width: 6vw;
+  transform: translate(20px,20px);
+  transition-delay: transform 200ms;
+}
+
+.pre-loader:not(.loaded) .jr-logo {
+  transform: translate(47vw,47vh) scale(3);
 }
 
 .pre-loader.loaded {
   opacity: 0;
+}
+
+.loader {
+  position: absolute;
+  width: 40px;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0.3;
 }
 
 /* Site Nav ----------------------------------------------------------------- */
