@@ -1,3 +1,9 @@
+.projects {
+  position: absolute;
+  left: 27vw;
+  right: 10vw;
+  top: 2vw;
+}
 
 .projects.push {
   animation: 0.5s slideOut forwards;
@@ -5,7 +11,7 @@
 
 .projects li {
   display: inline-block;
-  width: 20%;
+  width: calc(100% / 3);
   padding: 15px;
   text-align: center;
   vertical-align: top;

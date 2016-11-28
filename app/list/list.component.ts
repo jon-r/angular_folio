@@ -44,10 +44,10 @@ export class ListComponent {
     private router: Router
   ) {
     this.buttonService.setButtons({
-      home: [-0.5,-0.5],
-      about: [1.5,0.5],
-      folio: [0.5,0.5],
-      framer: [0.5, 1.2]
+      home: [-7,-1.5],
+      about: [4.3,1.5],
+      folio: [3.3,1.5],
+      framer: [3, 1.5,1]
     })
   };
 
