@@ -1,11 +1,15 @@
 
 <ul class="projects" *ngIf="projects" [ngClass]="listPush" >
   <li *ngFor="let project of projects" (click)="goTo(project)"
-    [ngStyle]="{'animation-delay': (project.id * 100) + 'ms' }"  >
-    <figure >
-<!--      <img [lazyLoad]="temp" [src]="ph" [offset]="0"  >-->
-    </figure>
-    <h3>{{project.title}}</h3>
-  </li>
+    [ngStyle]="{'animation-delay.ms': (project.id * 100) }" >
 
+    <figure class="project-tile" >
+      <div class="project-photo" [ngStyle]="project.tilePos" ></div>
+      <figcaption class="project-caption">
+        <h3>{{project.title}}</h3>
+        <em>{{project.desc}}</em>
+      </figcaption>
+    </figure>
+
+  </li>
 </ul>

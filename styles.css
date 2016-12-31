@@ -10,15 +10,7 @@ body {
   background-image: linear-gradient(to top left, #4DB6AC, #00897B);
 }
 
-.abs-container {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
-  bottom: 2rem;
-}
-
-h1, h2 {
+h1, h2, h3 {
   font-weight: bold;
 }
 
@@ -30,9 +22,23 @@ h2 {
   font-size: calc(0.8vw + 1.5rem);
 }
 
+h3 {
+  font-size: 1.2rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* helpers ------------------------------------------------------------------ */
+
+.abs-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
 }
 
 /* animations --------------------------------------------------------------- */
@@ -45,6 +51,18 @@ a {
   transform: translate(0);
   z-index: 10;
   transition: 600ms ease;
+}
+
+@keyframes fadeUp {
+  0% { opacity:0; transform: translateY(100%); }
+  50% { opacity:1; transform: translateY(-10%); }
+  100% { opacity:1; transform: translateY(0); }
+}
+
+@keyframes slideOut {
+  0% { opacity:0; transform: translateX(0); }
+  50% { opacity:1; transform: translateX(-10%); }
+  100% { opacity:1; transform: translateX(120%); }
 }
 
 /* Logo + Splash ------------------------------------------------------------ */

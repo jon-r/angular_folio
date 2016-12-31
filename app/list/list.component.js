@@ -25,15 +25,23 @@ var ListComponent = (function () {
         this.listPush = '';
         this.buttonService.setButtons({
             home: [-7, -1.5],
-            about: [9, 0.5],
-            folio: [3, 1.5],
+            about: [9, 9],
+            folio: [3.2, 1.5],
             framer: [3, 1.5, 1]
         });
     }
     ;
     ListComponent.prototype.getProjects = function () {
         var _this = this;
-        this.projectService.getProjects().then(function (projects) { return _this.projects = projects; });
+        this.projectService.getProjects()
+            .then(function (projects) { return _this.projects = projects.map(_this.setTilePos); });
+    };
+    ListComponent.prototype.setTilePos = function (project) {
+        project.tilePos = {
+            'background-image': "url(app/lib/" + project.img.name + ")",
+            'background-position': project.img.centre
+        };
+        return project;
     };
     ListComponent.prototype.ngOnInit = function () {
         this.getProjects();

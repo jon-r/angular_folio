@@ -15,7 +15,7 @@ var ProjectService = (function () {
     function ProjectService(http) {
         this.http = http;
         //private headers = new Headers({'Content-Type' : 'application/json'});
-        this.dataUrl = 'app/shared/projects-list.json';
+        this.dataUrl = 'app/lib/projects-list.json';
     }
     ProjectService.prototype.getProjects = function () {
         return this.http.get(this.dataUrl)

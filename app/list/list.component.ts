@@ -45,14 +45,23 @@ export class ListComponent {
   ) {
     this.buttonService.setButtons({
       home: [-7,-1.5],
-      about: [9,0.5],
-      folio: [3,1.5],
+      about: [9,9],
+      folio: [3.2,1.5],
       framer: [3, 1.5,1]
     })
   };
 
   getProjects(): void {
-    this.projectService.getProjects().then(projects => this.projects = projects);
+    this.projectService.getProjects()
+      .then(projects => this.projects = projects.map(this.setTilePos));
+  }
+
+  setTilePos(project : Project) {
+    project.tilePos = {
+      'background-image' : `url(app/lib/${project.img.name})`,
+      'background-position' : project.img.centre
+    }
+    return project;
   }
 
   ngOnInit(): void {

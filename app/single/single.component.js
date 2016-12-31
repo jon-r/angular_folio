@@ -19,7 +19,7 @@ var SingleComponent /*implements OnInit*/ = (function () {
         this.route = route;
         this.buttonService.setButtons({
             home: [-0.5, -0.5],
-            about: [9, 0.5],
+            about: [9, 9],
             folio: [0.5, 0.5],
             framer: [0.5, 1.2]
         });

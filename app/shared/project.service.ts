@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 export class ProjectService {
 
   //private headers = new Headers({'Content-Type' : 'application/json'});
-  private dataUrl = 'app/shared/projects-list.json';
+  private dataUrl = 'app/lib/projects-list.json';
 
   constructor(private http: Http) { }
 
@@ -17,7 +17,7 @@ export class ProjectService {
     return this.http.get(this.dataUrl)
       .toPromise()
       .then(response => response.json().data as Project[])
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getProject(id: number): Promise<Project> {

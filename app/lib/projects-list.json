@@ -1,0 +1,116 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "BlackJack JS",
+      "sub": "blackjack in vanilla javascript",
+      "cat": "exp",
+      "desc": "Javascript | Games Development",
+      "img" : {
+        //to turn this into ng style notation. skip the step
+        "name" : "ph-3.jpg",
+        "centre" : "center"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Interactive SVG",
+      "sub": "svg features",
+      "cat": "exp",
+      "desc": "SVG | Adobe Illustrator",
+      "img" : {
+        "name" : "ph-3.jpg",
+        "centre" : "top left"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Responsive Book",
+      "sub": "responsive pagination",
+      "cat": "exp",
+      "desc": "Javascript | RWD",
+      "img" : {
+        "name" : "ph-3.jpg",
+        "centre" : "100% 40%"
+      }
+    },
+    {
+      "id": 4,
+      "title": "TilesJS",
+      "sub": "dynamic scale reference",
+      "cat": "exp",
+      "desc": "Javascript | Experiment",
+      "img" : {
+        "name" : "ph-3.jpg",
+        "centre" : "center"
+      }
+    },
+
+    {
+      "id": 5,
+      "title": "Dunalastair Hotel",
+      "sub": "scottish lochs hotel",
+      "cat": "projects",
+      "desc": "Development | Agency | Wordpress",
+      "img" : {
+        "name" : "ph-3.jpg",
+        "centre" : "center"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Red Hot Chilli",
+      "sub": "second hand catering equipment",
+      "cat": "projects",
+      "desc": "Full Stack Design/Development | MySQL | Bespoke PHP/JS Plugins",
+      "img" : {
+        "name" : "ph-2.jpg",
+        "centre" : "center"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Arcane Bar",
+      "sub": "cocktail bar in manchester",
+      "cat": "projects",
+      "desc": "Development | Freelance | Wordpress",
+      "img" : {
+        "name" : "ph-2.jpg",
+        "centre" : "center"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Ambiente",
+      "sub": "ambiente bar & tapas",
+      "cat": "projects",
+      "desc": "Development | Agency | Wordpress",
+      "img" : {
+        "name" : "ph-2.jpg",
+        "centre" : "center"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Barnes Village",
+      "sub": "a contemporary restoration",
+      "cat": "projects",
+      "desc": "Development | Agency | Wordpress",
+      "img" : {
+        "name" : "ph-2.jpg",
+        "centre" : "center"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Buttercup Stables",
+      "sub": "horse riding in cheshire",
+      "cat": "projects",
+      "desc": "Full Stack Design/Development | Wordpress",
+      "img" : {
+        "name" : "ph-2.jpg",
+        "centre" : "center"
+      }
+    }
+  ]
+}
