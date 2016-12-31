@@ -32,12 +32,16 @@ var ButtonService = (function () {
     };
     ButtonService.prototype.calcPos = function (coords) {
         var _this = this;
-        var arr = [], rotate = '';
+        var arr = [], rotate = '', barLength = null;
         if (coords.length > 2) {
             rotate = 'rotate(90deg)';
+            barLength = '60vh';
         }
         coords.forEach(function (el, i) { return arr[i] = _this.grid[i] * el; });
-        return { 'transform': "translate(" + arr[0] + "px, " + arr[1] + "px) " + rotate };
+        return {
+            'transform': "translate(" + arr[0] + "px, " + arr[1] + "px) " + rotate,
+            'width': barLength
+        };
     };
     ButtonService = __decorate([
         core_1.Injectable(),

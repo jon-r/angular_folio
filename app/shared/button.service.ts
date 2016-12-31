@@ -40,16 +40,20 @@ export class ButtonService {
 
   private calcPos(coords:number[]) {
 
-    let arr: number[] = [], rotate: string = '';
+    let arr: number[] = [], rotate: string = '', barLength: string = null;
 
 
     if (coords.length > 2) {
       rotate = 'rotate(90deg)'
+      barLength = '60vh';
     }
 
     coords.forEach((el,i) => arr[i] = this.grid[i] * el);
 
-    return { 'transform' : `translate(${arr[0]}px, ${arr[1]}px) ${rotate}` };
+    return {
+      'transform' : `translate(${arr[0]}px, ${arr[1]}px) ${rotate}`,
+      'width' : barLength
+    };
 
   }
 

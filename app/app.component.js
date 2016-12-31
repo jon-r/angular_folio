@@ -13,10 +13,9 @@ var core_1 = require('@angular/core');
 //import {NgStyle, NgClass} from '@angular/common';
 //import {} from '@angular/common';
 var Observable_1 = require('rxjs/Observable');
-var router_1 = require('@angular/router');
 var button_service_1 = require('./shared/button.service');
 var AppComponent = (function () {
-    function AppComponent(buttonService, router) {
+    function AppComponent(buttonService) {
         var _this = this;
         this.buttonService = buttonService;
         this.isLoaded = false;
@@ -24,12 +23,13 @@ var AppComponent = (function () {
         buttonService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.btnPos = n; });
-        this.router = router_1.Router;
-        router.events
-            .debounceTime(200)
-            .subscribe(function (e) {
-            _this.isHome = (e instanceof router_1.NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
-        });
+        /*    this.router = Router;
+
+            router.events
+              .debounceTime(200)
+              .subscribe(e => {
+                this.isHome = (e instanceof NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
+            });*/
     }
     ;
     AppComponent.prototype.ngOnInit = function () {
@@ -47,7 +47,7 @@ var AppComponent = (function () {
             styleUrls: ['app/app.component.css'],
             providers: [button_service_1.ButtonService]
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, router_1.Router])
+        __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], AppComponent);
     return AppComponent;
 }());

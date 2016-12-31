@@ -10,6 +10,14 @@ body {
   background-image: linear-gradient(to top left, #4DB6AC, #00897B);
 }
 
+.abs-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+}
+
 h1, h2 {
   font-weight: bold;
 }
@@ -77,15 +85,7 @@ a {
 }
 
 /* Site Nav ----------------------------------------------------------------- */
-nav {
-  position: absolute;
-  top:20px;
-  bottom:20px;
-  left:20px;
-  right:20px;
-/*  border: solid 1px rgba(255,255,255,0.2);*/
 
-}
 nav .home{
   right: 0;
   left: auto;
@@ -99,20 +99,4 @@ nav .home{
   border: none;
   width: 90%;
   transform-origin: left
-}
-
-.home-page .framer {
-  width: 60vh;
-}
-
-
-
-/* content ------------------------------------------------------------------ */
-
-main {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-  right: 5%;
-  bottom: 5%;
 }

@@ -25,8 +25,8 @@ var ListComponent = (function () {
         this.listPush = '';
         this.buttonService.setButtons({
             home: [-7, -1.5],
-            about: [4.3, 1.5],
-            folio: [3.3, 1.5],
+            about: [9, 0.5],
+            folio: [3, 1.5],
             framer: [3, 1.5, 1]
         });
     }

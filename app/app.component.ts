@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 //import {NgStyle, NgClass} from '@angular/common';
 //import {} from '@angular/common';
 import {Observable}  from 'rxjs/Observable';
-import { Router, NavigationEnd } from '@angular/router';
+//import { Router, NavigationEnd } from '@angular/router';
 //import 'rxjs/add/operator/debounceTime';
 //import 'rxjs/add/observable/fromEvent';
 
@@ -21,23 +21,23 @@ import { ButtonService } from './shared/button.service';
 
 export class AppComponent {
 
-  constructor(private buttonService: ButtonService, router: Router) {
+  constructor(private buttonService: ButtonService) {
 
     buttonService.buttonOutput$
       .debounceTime(200)
       .subscribe(n => this.btnPos = n );
 
-    this.router = Router;
+/*    this.router = Router;
 
     router.events
       .debounceTime(200)
       .subscribe(e => {
         this.isHome = (e instanceof NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
-    });
+    });*/
 
   };
 
-  router: any;
+//  router: any;
   isHome: string;
   isLoaded: boolean = false;
   btnPos: Buttons = {home: null,about: null,folio: null,framer: null};
