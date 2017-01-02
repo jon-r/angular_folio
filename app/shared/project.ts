@@ -1,3 +1,7 @@
+interface styleList {
+  string : string
+}
+
 export class Project {
   constructor(
     public id : number,
@@ -5,10 +9,6 @@ export class Project {
     public sub : string ,
     public cat : string ,
     public desc : string[],
-    public img : {
-      name : string,
-      centre : string
-     },
-    public tilePos : {}
+    public tileStyle : Object
   ) {}
 }

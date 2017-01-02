@@ -31,7 +31,9 @@ import { Project } from '../shared/project';
   styleUrls: ['app/list/list.component.css']
 })
 export class ListComponent {
-  projects: Project[];
+  projects: Project[][] = [];
+  page: number = 0;
+
   listPush: string = '';
 
 
@@ -53,16 +55,29 @@ export class ListComponent {
 
   getProjects(): void {
     this.projectService.getProjects()
-      .then(projects => this.projects = projects.map(this.setTilePos));
+    .then(projects => {
+      while (projects.length > 0) {
+        console.log(this);
+        this.projects.push(projects.splice(0, 6));
+      }
+    });
   }
 
-  setTilePos(project : Project) {
-    project.tilePos = {
-      'background-image' : `url(app/lib/${project.img.name})`,
-      'background-position' : project.img.centre
-    }
-    return project;
+  pageUp(): void {
+    console.log(this.page);
+    this.page = (this.page + 1) % this.projects.length;
   }
+
+
+
+
+//  setTilePos(project : Project) {
+//    project.tilePos = {
+//      'background-image' : `url(app/lib/${project.img.name})`,
+//      'background-position' : project.img.centre
+//    }
+//    return project;
+//  }
 
   ngOnInit(): void {
     this.getProjects();

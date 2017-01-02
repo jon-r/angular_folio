@@ -1,10 +1,10 @@
 
 <ul class="projects" *ngIf="projects" [ngClass]="listPush" >
-  <li *ngFor="let project of projects" (click)="goTo(project)"
-    [ngStyle]="{'animation-delay.ms': (project.id * 100) }" >
+  <li *ngFor="let project of projects[page]; let i = index" (click)="goTo(project)"
+    [ngStyle]="{'animation-delay.ms': (i%3 * 100) }" >
 
     <figure class="project-tile" >
-      <div class="project-photo" [ngStyle]="project.tilePos" ></div>
+      <div class="project-photo" [ngStyle]="project.tileStyle" ></div>
       <figcaption class="project-caption">
         <h3>{{project.title}}</h3>
         <em>{{project.desc}}</em>
@@ -13,3 +13,5 @@
 
   </li>
 </ul>
+
+<button class="next-btn" (click)="pageUp()" >&rarr;</button>

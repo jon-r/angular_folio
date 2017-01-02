@@ -22,6 +22,8 @@ var ListComponent = (function () {
         this.buttonService = buttonService;
         this.projectService = projectService;
         this.router = router;
+        this.projects = [];
+        this.page = 0;
         this.listPush = '';
         this.buttonService.setButtons({
             home: [-7, -1.5],
@@ -34,15 +36,24 @@ var ListComponent = (function () {
     ListComponent.prototype.getProjects = function () {
         var _this = this;
         this.projectService.getProjects()
-            .then(function (projects) { return _this.projects = projects.map(_this.setTilePos); });
+            .then(function (projects) {
+            while (projects.length > 0) {
+                console.log(_this);
+                _this.projects.push(projects.splice(0, 6));
+            }
+        });
     };
-    ListComponent.prototype.setTilePos = function (project) {
-        project.tilePos = {
-            'background-image': "url(app/lib/" + project.img.name + ")",
-            'background-position': project.img.centre
-        };
-        return project;
+    ListComponent.prototype.pageUp = function () {
+        console.log(this.page);
+        this.page = (this.page + 1) % this.projects.length;
     };
+    //  setTilePos(project : Project) {
+    //    project.tilePos = {
+    //      'background-image' : `url(app/lib/${project.img.name})`,
+    //      'background-position' : project.img.centre
+    //    }
+    //    return project;
+    //  }
     ListComponent.prototype.ngOnInit = function () {
         this.getProjects();
     };

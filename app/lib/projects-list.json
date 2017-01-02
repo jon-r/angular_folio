@@ -6,10 +6,9 @@
       "sub": "blackjack in vanilla javascript",
       "cat": "exp",
       "desc": "Javascript | Games Development",
-      "img" : {
-        //to turn this into ng style notation. skip the step
-        "name" : "ph-3.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -18,9 +17,9 @@
       "sub": "svg features",
       "cat": "exp",
       "desc": "SVG | Adobe Illustrator",
-      "img" : {
-        "name" : "ph-3.jpg",
-        "centre" : "top left"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -29,9 +28,9 @@
       "sub": "responsive pagination",
       "cat": "exp",
       "desc": "Javascript | RWD",
-      "img" : {
-        "name" : "ph-3.jpg",
-        "centre" : "100% 40%"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -40,9 +39,9 @@
       "sub": "dynamic scale reference",
       "cat": "exp",
       "desc": "Javascript | Experiment",
-      "img" : {
-        "name" : "ph-3.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
 
@@ -52,9 +51,9 @@
       "sub": "scottish lochs hotel",
       "cat": "projects",
       "desc": "Development | Agency | Wordpress",
-      "img" : {
-        "name" : "ph-3.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -63,9 +62,9 @@
       "sub": "second hand catering equipment",
       "cat": "projects",
       "desc": "Full Stack Design/Development | MySQL | Bespoke PHP/JS Plugins",
-      "img" : {
-        "name" : "ph-2.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -74,9 +73,9 @@
       "sub": "cocktail bar in manchester",
       "cat": "projects",
       "desc": "Development | Freelance | Wordpress",
-      "img" : {
-        "name" : "ph-2.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -85,9 +84,9 @@
       "sub": "ambiente bar & tapas",
       "cat": "projects",
       "desc": "Development | Agency | Wordpress",
-      "img" : {
-        "name" : "ph-2.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -96,9 +95,9 @@
       "sub": "a contemporary restoration",
       "cat": "projects",
       "desc": "Development | Agency | Wordpress",
-      "img" : {
-        "name" : "ph-2.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     },
     {
@@ -107,9 +106,9 @@
       "sub": "horse riding in cheshire",
       "cat": "projects",
       "desc": "Full Stack Design/Development | Wordpress",
-      "img" : {
-        "name" : "ph-2.jpg",
-        "centre" : "center"
+      "tileStyle": {
+        "background-image": "url(app/lib/ph-3.jpg)",
+        "background-position": "center"
       }
     }
   ]
