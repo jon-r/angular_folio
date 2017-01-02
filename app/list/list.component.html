@@ -2,7 +2,7 @@
 <ul class="projects" *ngIf="projects" [ngClass]="listPush" >
   <li *ngFor="let project of projects[page]; let i = index"
     [ngStyle]="{'animation-delay.ms': (i%3 * 100) }"
-    (click)="goTo(project)" >
+    (click)="goTo(project, $event)" >
 
     <figure class="project-tile" >
       <div class="project-photo" [ngStyle]="project.tileStyle" ></div>

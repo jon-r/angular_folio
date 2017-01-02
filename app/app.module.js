@@ -23,6 +23,7 @@ var single_component_1 = require('./single/single.component');
 var home_component_1 = require('./home/home.component');
 var grid_service_1 = require('./shared/grid.service');
 var project_service_1 = require('./shared/project.service');
+var transition_service_1 = require('./list/transition.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -43,6 +44,7 @@ var AppModule = (function () {
             ],
             providers: [
                 grid_service_1.GridService,
+                transition_service_1.TransitionService,
                 project_service_1.ProjectService
             ],
             //  providers: [ ButtonService ],

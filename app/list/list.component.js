@@ -15,12 +15,14 @@ var router_1 = require('@angular/router');
 //import { LazyLoadImageDirective } from 'ng2-lazyload-image';
 var grid_service_1 = require('../shared/grid.service');
 var project_service_1 = require('../shared/project.service');
+var transition_service_1 = require('./transition.service');
 var ListComponent = (function () {
     //  ph: string = 'http://placehold.it/10x10';
     //  temp: string = 'https://placekitten.com/300/300';
-    function ListComponent(gridService, projectService, router) {
+    function ListComponent(gridService, projectService, transitionService, router) {
         this.gridService = gridService;
         this.projectService = projectService;
+        this.transitionService = transitionService;
         this.router = router;
         this.projects = [];
         this.page = 0;
@@ -38,13 +40,11 @@ var ListComponent = (function () {
         this.projectService.getProjects()
             .then(function (projects) {
             while (projects.length > 0) {
-                console.log(_this);
                 _this.projects.push(projects.splice(0, 6));
             }
         });
     };
     ListComponent.prototype.pageUp = function () {
-        console.log(this.page);
         this.page = (this.page + 1) % this.projects.length;
     };
     //  setTilePos(project : Project) {
@@ -57,10 +57,10 @@ var ListComponent = (function () {
     ListComponent.prototype.ngOnInit = function () {
         this.getProjects();
     };
-    ListComponent.prototype.goTo = function (project) {
-        var _this = this;
-        this.listPush = 'push';
-        setTimeout(function () { return _this.router.navigate(['/work', project.id]); }, 600);
+    ListComponent.prototype.goTo = function (project, e) {
+        //this.listPush = 'push';
+        this.transitionService.setProject(project, e.target);
+        //setTimeout(() =>this.router.navigate(['/work', project.id]), 600);
     };
     ListComponent = __decorate([
         core_1.Component({
@@ -81,7 +81,7 @@ var ListComponent = (function () {
             //  ],
             styleUrls: ['app/list/list.component.css']
         }),
-        __metadata('design:paramtypes', [grid_service_1.GridService, project_service_1.ProjectService, router_1.Router])
+        __metadata('design:paramtypes', [grid_service_1.GridService, project_service_1.ProjectService, transition_service_1.TransitionService, router_1.Router])
     ], ListComponent);
     return ListComponent;
 }());

@@ -1,1 +1,11 @@
-<h1>hello</h1>
+<div *ngIf="project" class="projects"  >
+  <div class="tile-float" [ngStyle]="tilePosition" >
+    <figure class="project-tile" >
+      <div class="project-photo" [ngStyle]="project.tileStyle" ></div>
+      <figcaption class="project-caption">
+        <h3>{{project.title}}</h3>
+        <em>{{project.desc}}</em>
+      </figcaption>
+    </figure>
+  </div>
+</div>

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { GridService } from '../shared/grid.service';
 import { ProjectService } from '../shared/project.service';
 import { Project } from '../shared/project';
-
+import { TransitionService } from './transition.service';
 
 @Component({
   selector: 'page-list',
@@ -33,6 +33,7 @@ import { Project } from '../shared/project';
 export class ListComponent {
   projects: Project[][] = [];
   page: number = 0;
+  activeProject: Project;
 
   listPush: string = '';
 
@@ -43,6 +44,7 @@ export class ListComponent {
   constructor(
     private gridService: GridService,
     private projectService: ProjectService,
+    private transitionService: TransitionService,
     private router: Router
   ) {
     this.gridService.setButtons({
@@ -57,14 +59,12 @@ export class ListComponent {
     this.projectService.getProjects()
     .then(projects => {
       while (projects.length > 0) {
-        console.log(this);
         this.projects.push(projects.splice(0, 6));
       }
     });
   }
 
   pageUp(): void {
-    console.log(this.page);
     this.page = (this.page + 1) % this.projects.length;
   }
 
@@ -83,9 +83,12 @@ export class ListComponent {
     this.getProjects();
   }
 
-  goTo(project: Project): void {
-    this.listPush = 'push';
-    setTimeout(() =>this.router.navigate(['/work', project.id]), 600);
+  goTo(project: Project, e: Event): void {
+    //this.listPush = 'push';
+
+    this.transitionService.setProject(project, e.target);
+
+    //setTimeout(() =>this.router.navigate(['/work', project.id]), 600);
 
   }
 

@@ -9,27 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import { Component, OnInit } from '@angular/core';
-//import {NgStyle, NgClass} from '@angular/common';
-//import {} from '@angular/common';
 var Observable_1 = require('rxjs/Observable');
 var grid_service_1 = require('./shared/grid.service');
+var transition_service_1 = require('./list/transition.service');
 var AppComponent = (function () {
-    function AppComponent(gridService) {
+    function AppComponent(gridService, transitionService) {
         var _this = this;
         this.gridService = gridService;
+        this.transitionService = transitionService;
         this.isLoaded = false;
         this.btnPos = { home: null, about: null, folio: null, framer: null };
         gridService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.btnPos = n; });
-        /*    this.router = Router;
-
-            router.events
-              .debounceTime(200)
-              .subscribe(e => {
-                this.isHome = (e instanceof NavigationEnd && e.urlAfterRedirects == '/home') ? 'home-page' : '';
-            });*/
+        transitionService.projectOutput$
+            .subscribe(function (n) { return _this.activeProject = n; });
     }
     ;
     AppComponent.prototype.ngOnInit = function () {
@@ -45,9 +39,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [grid_service_1.GridService]
+            providers: [grid_service_1.GridService, transition_service_1.TransitionService]
         }),
-        __metadata('design:paramtypes', [grid_service_1.GridService])
+        __metadata('design:paramtypes', [grid_service_1.GridService, transition_service_1.TransitionService])
     ], AppComponent);
     return AppComponent;
 }());

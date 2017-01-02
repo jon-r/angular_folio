@@ -18,6 +18,7 @@ import { HomeComponent }    from './home/home.component';
 
 import { GridService } from './shared/grid.service';
 import { ProjectService }  from './shared/project.service';
+import { TransitionService }  from './list/transition.service';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ProjectService }  from './shared/project.service';
   ],
   providers: [
     GridService,
+    TransitionService,
     ProjectService
   ],
 //  providers: [ ButtonService ],
