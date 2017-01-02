@@ -18,9 +18,10 @@ var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
 var about_component_1 = require('./about/about.component');
 var list_component_1 = require('./list/list.component');
+var transition_component_1 = require('./list/transition.component');
 var single_component_1 = require('./single/single.component');
 var home_component_1 = require('./home/home.component');
-var button_service_1 = require('./shared/button.service');
+var grid_service_1 = require('./shared/grid.service');
 var project_service_1 = require('./shared/project.service');
 var AppModule = (function () {
     function AppModule() {
@@ -37,10 +38,11 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 about_component_1.AboutComponent,
                 list_component_1.ListComponent,
+                transition_component_1.TransitionComponent,
                 single_component_1.SingleComponent
             ],
             providers: [
-                button_service_1.ButtonService,
+                grid_service_1.GridService,
                 project_service_1.ProjectService
             ],
             //  providers: [ ButtonService ],

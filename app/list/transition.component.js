@@ -9,27 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var grid_service_1 = require('../shared/grid.service');
-var AboutComponent = (function () {
-    function AboutComponent(gridService) {
-        this.gridService = gridService;
-        this.gridService.setButtons({
-            home: [-0.5, -0.5],
-            about: [0.5, 0.5],
-            folio: [1.5, 0.5],
-            framer: [0.5, 1.2]
-        });
+var TransitionComponent = (function () {
+    function TransitionComponent() {
     }
-    ;
-    AboutComponent = __decorate([
+    TransitionComponent = __decorate([
         core_1.Component({
-            selector: 'page-about',
-            templateUrl: 'app/about/about.component.html',
-            styleUrls: ['app/about/about.component.css']
+            selector: 'transition-helper',
+            templateUrl: 'app/list/transition.component.html',
+            styleUrls: ['app/list/list.component.css']
         }),
-        __metadata('design:paramtypes', [grid_service_1.GridService])
-    ], AboutComponent);
-    return AboutComponent;
+        __metadata('design:paramtypes', [])
+    ], TransitionComponent);
+    return TransitionComponent;
 }());
-exports.AboutComponent = AboutComponent;
-//# sourceMappingURL=about.component.js.map
+exports.TransitionComponent = TransitionComponent;
+//# sourceMappingURL=transition.component.js.map

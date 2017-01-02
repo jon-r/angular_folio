@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ButtonService } from '../shared/button.service';
+import { GridService } from '../shared/grid.service';
 import { ProjectService } from '../shared/project.service';
 import { Project } from '../shared/project';
 
@@ -14,11 +14,11 @@ export class SingleComponent /*implements OnInit*/ {
   project: Project;
 
   constructor(
-    private buttonService: ButtonService,
+    private gridService: GridService,
     private projectService: ProjectService,
     private route: ActivatedRoute
   ) {
-    this.buttonService.setButtons({
+    this.gridService.setButtons({
       home: [-0.5,-0.5],
       about: [9,9],
       folio: [0.5,0.5],

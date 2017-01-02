@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonService } from '../shared/button.service';
+import { GridService } from '../shared/grid.service';
 
 @Component({
   selector: 'page-home',
@@ -8,8 +8,8 @@ import { ButtonService } from '../shared/button.service';
 })
 export class HomeComponent {
 
-  constructor(private buttonService: ButtonService) {
-    this.buttonService.setButtons({
+  constructor(private gridService: GridService) {
+    this.gridService.setButtons({
       home: [-6,-3.5],
       about: [4.3,3.8],
       folio: [4.3,3],

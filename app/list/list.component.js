@@ -13,19 +13,19 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 //import {NgStyle} from '@angular/common';
 //import { LazyLoadImageDirective } from 'ng2-lazyload-image';
-var button_service_1 = require('../shared/button.service');
+var grid_service_1 = require('../shared/grid.service');
 var project_service_1 = require('../shared/project.service');
 var ListComponent = (function () {
     //  ph: string = 'http://placehold.it/10x10';
     //  temp: string = 'https://placekitten.com/300/300';
-    function ListComponent(buttonService, projectService, router) {
-        this.buttonService = buttonService;
+    function ListComponent(gridService, projectService, router) {
+        this.gridService = gridService;
         this.projectService = projectService;
         this.router = router;
         this.projects = [];
         this.page = 0;
         this.listPush = '';
-        this.buttonService.setButtons({
+        this.gridService.setButtons({
             home: [-7, -1.5],
             about: [9, 9],
             folio: [3.2, 1.5],
@@ -81,7 +81,7 @@ var ListComponent = (function () {
             //  ],
             styleUrls: ['app/list/list.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, router_1.Router])
+        __metadata('design:paramtypes', [grid_service_1.GridService, project_service_1.ProjectService, router_1.Router])
     ], ListComponent);
     return ListComponent;
 }());

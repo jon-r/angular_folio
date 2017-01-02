@@ -9,4 +9,4 @@ var Buttons = (function () {
     return Buttons;
 }());
 exports.Buttons = Buttons;
-//# sourceMappingURL=button.js.map
+//# sourceMappingURL=buttons.js.map

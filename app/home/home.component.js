@@ -9,11 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var button_service_1 = require('../shared/button.service');
+var grid_service_1 = require('../shared/grid.service');
 var HomeComponent = (function () {
-    function HomeComponent(buttonService) {
-        this.buttonService = buttonService;
-        this.buttonService.setButtons({
+    function HomeComponent(gridService) {
+        this.gridService = gridService;
+        this.gridService.setButtons({
             home: [-6, -3.5],
             about: [4.3, 3.8],
             folio: [4.3, 3],
@@ -27,7 +27,7 @@ var HomeComponent = (function () {
             templateUrl: 'app/home/home.component.html',
             styleUrls: ['app/home/home.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [grid_service_1.GridService])
     ], HomeComponent);
     return HomeComponent;
 }());

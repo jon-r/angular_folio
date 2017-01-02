@@ -12,10 +12,11 @@ import { AppComponent }   from './app.component';
 
 import { AboutComponent }   from './about/about.component';
 import { ListComponent }    from './list/list.component';
+import { TransitionComponent }    from './list/transition.component';
 import { SingleComponent }  from './single/single.component';
 import { HomeComponent }    from './home/home.component';
 
-import { ButtonService }  from './shared/button.service';
+import { GridService } from './shared/grid.service';
 import { ProjectService }  from './shared/project.service';
 
 
@@ -31,10 +32,11 @@ import { ProjectService }  from './shared/project.service';
 
     AboutComponent,
     ListComponent,
+    TransitionComponent,
     SingleComponent
   ],
   providers: [
-    ButtonService,
+    GridService,
     ProjectService
   ],
 //  providers: [ ButtonService ],

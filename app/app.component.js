@@ -13,14 +13,14 @@ var core_1 = require('@angular/core');
 //import {NgStyle, NgClass} from '@angular/common';
 //import {} from '@angular/common';
 var Observable_1 = require('rxjs/Observable');
-var button_service_1 = require('./shared/button.service');
+var grid_service_1 = require('./shared/grid.service');
 var AppComponent = (function () {
-    function AppComponent(buttonService) {
+    function AppComponent(gridService) {
         var _this = this;
-        this.buttonService = buttonService;
+        this.gridService = gridService;
         this.isLoaded = false;
         this.btnPos = { home: null, about: null, folio: null, framer: null };
-        buttonService.buttonOutput$
+        gridService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.btnPos = n; });
         /*    this.router = Router;
@@ -34,10 +34,10 @@ var AppComponent = (function () {
     ;
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.buttonService.setGrid();
+        this.gridService.setGrid();
         Observable_1.Observable.fromEvent(window, 'resize')
             .debounceTime(200)
-            .subscribe(function (e) { _this.buttonService.setGrid(); });
+            .subscribe(function (e) { _this.gridService.setGrid(); });
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -45,9 +45,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [button_service_1.ButtonService]
+            providers: [grid_service_1.GridService]
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [grid_service_1.GridService])
     ], AppComponent);
     return AppComponent;
 }());

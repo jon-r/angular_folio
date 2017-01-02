@@ -10,14 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var button_service_1 = require('../shared/button.service');
+var grid_service_1 = require('../shared/grid.service');
 var project_service_1 = require('../shared/project.service');
 var SingleComponent /*implements OnInit*/ = (function () {
-    function SingleComponent /*implements OnInit*/(buttonService, projectService, route) {
-        this.buttonService = buttonService;
+    function SingleComponent /*implements OnInit*/(gridService, projectService, route) {
+        this.gridService = gridService;
         this.projectService = projectService;
         this.route = route;
-        this.buttonService.setButtons({
+        this.gridService.setButtons({
             home: [-0.5, -0.5],
             about: [9, 9],
             folio: [0.5, 0.5],
@@ -42,7 +42,7 @@ var SingleComponent /*implements OnInit*/ = (function () {
             templateUrl: 'app/single/single.component.html',
             styleUrls: ['app/single/single.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [grid_service_1.GridService, project_service_1.ProjectService, router_1.ActivatedRoute])
     ], SingleComponent /*implements OnInit*/);
     return SingleComponent /*implements OnInit*/;
 }());

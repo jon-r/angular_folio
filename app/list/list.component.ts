@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 //import { LazyLoadImageDirective } from 'ng2-lazyload-image';
 
-import { ButtonService } from '../shared/button.service';
+import { GridService } from '../shared/grid.service';
 import { ProjectService } from '../shared/project.service';
 import { Project } from '../shared/project';
 
@@ -41,11 +41,11 @@ export class ListComponent {
 //  temp: string = 'https://placekitten.com/300/300';
 
   constructor(
-    private buttonService: ButtonService,
+    private gridService: GridService,
     private projectService: ProjectService,
     private router: Router
   ) {
-    this.buttonService.setButtons({
+    this.gridService.setButtons({
       home: [-7,-1.5],
       about: [9,9],
       folio: [3.2,1.5],

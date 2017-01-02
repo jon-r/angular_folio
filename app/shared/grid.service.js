@@ -10,19 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Subject_1 = require('rxjs/Subject');
-var ButtonService = (function () {
-    function ButtonService() {
+var GridService = (function () {
+    function GridService() {
         this.btnSrc = new Subject_1.Subject();
         this.buttonOutput$ = this.btnSrc.asObservable();
     }
-    ButtonService.prototype.setGrid = function () {
+    GridService.prototype.setGrid = function () {
         this.grid = [window.innerWidth / 10, window.innerHeight / 10];
         if (this.btnStore) {
             this.setButtons(this.btnStore);
         }
     };
-    ButtonService.prototype.setButtons = function (buttons) {
-        var out = { home: null, about: null, folio: null, framer: null };
+    GridService.prototype.setButtons = function (buttons) {
+        var out = {
+            home: null, about: null, folio: null, framer: null
+        };
         this.btnStore = buttons;
         for (var btn in buttons) {
             out[btn] = this.calcPos(buttons[btn]);
@@ -30,7 +32,7 @@ var ButtonService = (function () {
         this.btnSrc.next(out);
         // setTimeout(() => this.btnSrc.next(out), 200);
     };
-    ButtonService.prototype.calcPos = function (coords) {
+    GridService.prototype.calcPos = function (coords) {
         var _this = this;
         var arr = [], rotate = '', barLength = null;
         if (coords.length > 2) {
@@ -43,11 +45,11 @@ var ButtonService = (function () {
             'width': barLength
         };
     };
-    ButtonService = __decorate([
+    GridService = __decorate([
         core_1.Injectable(),
         __metadata('design:paramtypes', [])
-    ], ButtonService);
-    return ButtonService;
+    ], GridService);
+    return GridService;
 }());
-exports.ButtonService = ButtonService;
-//# sourceMappingURL=button.service.js.map
+exports.GridService = GridService;
+//# sourceMappingURL=grid.service.js.map

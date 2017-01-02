@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Buttons } from './button';
+import { Buttons } from './buttons';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class ButtonService {
+export class GridService {
 
   private grid : number[];
   private btnStore: Buttons;
@@ -23,7 +23,9 @@ export class ButtonService {
   }
 
   setButtons(buttons:Buttons) {
-    let out : Buttons = {home: null ,about: null ,folio: null,framer: null };
+    let out : Buttons = {
+      home: null ,about: null ,folio: null,framer: null
+    };
 
     this.btnStore = buttons;
 
