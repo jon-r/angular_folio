@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewGridService } from '../shared/grid.service';
+import { GridService } from '../shared/grid.service';
 
 @Component({
   selector: 'page-home',
@@ -8,7 +8,7 @@ import { NewGridService } from '../shared/grid.service';
 })
 export class HomeComponent {
 
-  constructor(private gridService: NewGridService) {
+  constructor(private gridService: GridService) {
     this.gridService.setButtons({
       home: [-6,-3.5],
       about: [4.3,3.8],

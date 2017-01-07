@@ -12,38 +12,16 @@ var core_1 = require('@angular/core');
 var Subject_1 = require('rxjs/Subject');
 var GridService = (function () {
     function GridService() {
+        this.grid = new Subject_1.Subject();
+        this.gridOutput$ = this.grid.asObservable();
         this.btnSrc = new Subject_1.Subject();
         this.buttonOutput$ = this.btnSrc.asObservable();
     }
     GridService.prototype.setGrid = function () {
-        this.grid = [window.innerWidth / 10, window.innerHeight / 10];
-        if (this.btnStore) {
-            this.setButtons(this.btnStore);
-        }
+        this.grid.next([window.innerWidth / 10, window.innerHeight / 10]);
     };
     GridService.prototype.setButtons = function (buttons) {
-        var out = {
-            home: null, about: null, folio: null, framer: null
-        };
-        this.btnStore = buttons;
-        for (var btn in buttons) {
-            out[btn] = this.calcPos(buttons[btn]);
-        }
-        this.btnSrc.next(out);
-        // setTimeout(() => this.btnSrc.next(out), 200);
-    };
-    GridService.prototype.calcPos = function (coords) {
-        var _this = this;
-        var arr = [], rotate = '', barLength = null;
-        if (coords.length > 2) {
-            rotate = 'rotate(90deg)';
-            barLength = '60vh';
-        }
-        coords.forEach(function (el, i) { return arr[i] = _this.grid[i] * el; });
-        return {
-            'transform': "translate(" + arr[0] + "px, " + arr[1] + "px) " + rotate,
-            'width': barLength
-        };
+        this.btnSrc.next(buttons);
     };
     GridService = __decorate([
         core_1.Injectable(),
@@ -52,31 +30,5 @@ var GridService = (function () {
     return GridService;
 }());
 exports.GridService = GridService;
-var NewGridService = (function () {
-    function NewGridService() {
-        this.grid = new Subject_1.Subject();
-        this.gridOutput$ = this.grid.asObservable();
-        this.btnSrc = new Subject_1.Subject();
-        this.buttonOutput$ = this.btnSrc.asObservable();
-    }
-    NewGridService.prototype.setGrid = function () {
-        this.grid.next([window.innerWidth / 10, window.innerHeight / 10]);
-    };
-    NewGridService.prototype.setButtons = function (buttons) {
-        /*    let out : Buttons = {
-              home: null ,about: null ,folio: null,framer: null
-            };*/
-        /*    for (let btn in buttons) {
-              out[btn] = this.calcPos(buttons[btn]);
-            }*/
-        this.btnSrc.next(buttons);
-        // setTimeout(() => this.btnSrc.next(out), 200);
-    };
-    NewGridService = __decorate([
-        core_1.Injectable(),
-        __metadata('design:paramtypes', [])
-    ], NewGridService);
-    return NewGridService;
-}());
-exports.NewGridService = NewGridService;
+//TODO SEPERATE THE BUTTON SERVICE
 //# sourceMappingURL=grid.service.js.map

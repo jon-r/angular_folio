@@ -15,17 +15,16 @@ var grid_item_service_1 = require('./shared/grid-item.service');
 //import { NewGridService } from './shared/newgrid.service';
 var transition_service_1 = require('./list/transition.service');
 var AppComponent = (function () {
-    function AppComponent(gridService, newGridService, transitionService) {
+    function AppComponent(gridService, transitionService) {
         var _this = this;
         this.gridService = gridService;
-        this.newGridService = newGridService;
         this.transitionService = transitionService;
         this.isLoaded = false;
         this.btnPos = { home: null, about: null, folio: null, framer: null };
-        newGridService.gridOutput$
+        gridService.gridOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updateGrid(n); });
-        newGridService.buttonOutput$
+        gridService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updatePos(n); });
         transitionService.projectOutput$
@@ -48,7 +47,6 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.gridService.setGrid();
-        this.newGridService.setGrid();
         ['home', 'about', 'folio', 'framer']
             .forEach(function (el) { return _this.btnPos[el] = new grid_item_service_1.GridItemService([0, 0]); });
         /*    this.els = {
@@ -60,10 +58,7 @@ var AppComponent = (function () {
         console.log(this.btnPos);
         Observable_1.Observable.fromEvent(window, 'resize')
             .debounceTime(200)
-            .subscribe(function (e) {
-            _this.gridService.setGrid();
-            _this.newGridService.setGrid();
-        });
+            .subscribe(function (e) { return _this.gridService.setGrid(); });
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -71,9 +66,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [grid_service_1.NewGridService, grid_service_1.GridService, transition_service_1.TransitionService]
+            providers: [grid_service_1.GridService, transition_service_1.TransitionService]
         }),
-        __metadata('design:paramtypes', [grid_service_1.GridService, grid_service_1.NewGridService, transition_service_1.TransitionService])
+        __metadata('design:paramtypes', [grid_service_1.GridService, transition_service_1.TransitionService])
     ], AppComponent);
     return AppComponent;
 }());

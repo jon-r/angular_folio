@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { GridItem } from './grid-item';
-import { NewGridService } from './newgrid.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -11,8 +10,7 @@ export class GridItemService {
     this.el = {
       coords : coords,
       rotation: '',
-      extraStyle: {},
-      //style: {}
+      extraStyle: {}
     }
     this.style = {}
   }

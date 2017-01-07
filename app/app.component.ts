@@ -4,7 +4,7 @@ import {Observable}  from 'rxjs/Observable';
 import { Buttons } from './shared/buttons';
 import { Project } from './shared/project';
 import { GridItem } from './shared/grid-item';
-import { GridService, NewGridService } from './shared/grid.service';
+import { GridService } from './shared/grid.service';
 import { GridItemService } from './shared/grid-item.service'
 //import { NewGridService } from './shared/newgrid.service';
 import { TransitionService } from './list/transition.service';
@@ -15,23 +15,22 @@ import { TransitionService } from './list/transition.service';
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  providers: [NewGridService, GridService, TransitionService]
+  providers: [GridService, TransitionService]
 })
 
 export class AppComponent {
 
   constructor(
     private gridService: GridService,
-    private newGridService: NewGridService,
     private transitionService: TransitionService
 
   ) {
 
-    newGridService.gridOutput$
+    gridService.gridOutput$
       .debounceTime(200)
       .subscribe(n => this.updateGrid(n));
 
-    newGridService.buttonOutput$
+    gridService.buttonOutput$
       .debounceTime(200)
       .subscribe(n => this.updatePos(n) );
 
@@ -64,7 +63,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.gridService.setGrid();
-    this.newGridService.setGrid();
 
     ['home', 'about','folio','framer']
       .forEach(el => this.btnPos[el] = new GridItemService([0,0]));
@@ -82,10 +80,6 @@ export class AppComponent {
 
     Observable.fromEvent(window, 'resize')
       .debounceTime(200)
-      .subscribe(e => {
-      this.gridService.setGrid()
-      this.newGridService.setGrid();
-
-    });
+      .subscribe(e => this.gridService.setGrid());
   }
 }

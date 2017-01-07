@@ -27,7 +27,7 @@ var HomeComponent = (function () {
             templateUrl: 'app/home/home.component.html',
             styleUrls: ['app/home/home.component.css']
         }),
-        __metadata('design:paramtypes', [grid_service_1.NewGridService])
+        __metadata('design:paramtypes', [grid_service_1.GridService])
     ], HomeComponent);
     return HomeComponent;
 }());

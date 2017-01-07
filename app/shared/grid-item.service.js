@@ -14,7 +14,7 @@ var GridItemService = (function () {
         this.el = {
             coords: coords,
             rotation: '',
-            extraStyle: {},
+            extraStyle: {}
         };
         this.style = {};
     }
