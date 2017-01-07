@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Buttons } from './buttons';
+import { Buttons } from './buttons'; //
+import { GridItem } from './grid-item'; //
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class GridService {
+
+
+
+
+  //OLD ------
 
   private grid : number[];
   private btnStore: Buttons;
@@ -21,6 +27,7 @@ export class GridService {
     }
 
   }
+
 
   setButtons(buttons:Buttons) {
     let out : Buttons = {
@@ -58,5 +65,38 @@ export class GridService {
     };
 
   }
+
+
+
+}
+
+
+@Injectable()
+export class NewGridService {
+
+  private grid = new Subject<number[]>();
+  gridOutput$ = this.grid.asObservable();
+
+  setGrid() : void {
+    this.grid.next([ window.innerWidth / 10, window.innerHeight / 10 ]);
+  }
+
+  private btnSrc = new Subject<Buttons>();
+  buttonOutput$ = this.btnSrc.asObservable();
+
+  setButtons(buttons:Buttons) {
+/*    let out : Buttons = {
+      home: null ,about: null ,folio: null,framer: null
+    };*/
+
+/*    for (let btn in buttons) {
+      out[btn] = this.calcPos(buttons[btn]);
+    }*/
+
+    this.btnSrc.next(buttons);
+
+   // setTimeout(() => this.btnSrc.next(out), 200);
+  }
+
 
 }

@@ -52,4 +52,31 @@ var GridService = (function () {
     return GridService;
 }());
 exports.GridService = GridService;
+var NewGridService = (function () {
+    function NewGridService() {
+        this.grid = new Subject_1.Subject();
+        this.gridOutput$ = this.grid.asObservable();
+        this.btnSrc = new Subject_1.Subject();
+        this.buttonOutput$ = this.btnSrc.asObservable();
+    }
+    NewGridService.prototype.setGrid = function () {
+        this.grid.next([window.innerWidth / 10, window.innerHeight / 10]);
+    };
+    NewGridService.prototype.setButtons = function (buttons) {
+        /*    let out : Buttons = {
+              home: null ,about: null ,folio: null,framer: null
+            };*/
+        /*    for (let btn in buttons) {
+              out[btn] = this.calcPos(buttons[btn]);
+            }*/
+        this.btnSrc.next(buttons);
+        // setTimeout(() => this.btnSrc.next(out), 200);
+    };
+    NewGridService = __decorate([
+        core_1.Injectable(),
+        __metadata('design:paramtypes', [])
+    ], NewGridService);
+    return NewGridService;
+}());
+exports.NewGridService = NewGridService;
 //# sourceMappingURL=grid.service.js.map

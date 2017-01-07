@@ -9,27 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var grid_service_1 = require('../shared/grid.service');
-var HomeComponent = (function () {
-    function HomeComponent(gridService) {
-        this.gridService = gridService;
-        this.gridService.setButtons({
-            home: [-6, -3.5],
-            about: [4.3, 3.8],
-            folio: [4.3, 3],
-            framer: [4, 1.5, 1]
-        });
+var Subject_1 = require('rxjs/Subject');
+var NewGridService = (function () {
+    function NewGridService() {
+        this.grid = new Subject_1.Subject();
+        this.gridOutput$ = this.grid.asObservable();
     }
-    ;
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: 'page-home',
-            templateUrl: 'app/home/home.component.html',
-            styleUrls: ['app/home/home.component.css']
-        }),
-        __metadata('design:paramtypes', [grid_service_1.NewGridService])
-    ], HomeComponent);
-    return HomeComponent;
+    NewGridService.prototype.setGrid = function () {
+        var out = [window.innerWidth / 10, window.innerHeight / 10];
+        this.grid.next(out);
+    };
+    NewGridService = __decorate([
+        core_1.Injectable(),
+        __metadata('design:paramtypes', [])
+    ], NewGridService);
+    return NewGridService;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.NewGridService = NewGridService;
+//# sourceMappingURL=newgrid.service.js.map
