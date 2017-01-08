@@ -12,27 +12,30 @@ import { Project } from '../shared/project';
 })
 export class TransitionComponent {
 
-  tilePosition: Object;
-
   constructor(private transitionService: TransitionService) {
     transitionService.tileOutput$.subscribe(n => {
-      console.log(n);
-      this.tilePosition = n
-    });
 
+
+      this.tilePosition = n;
+
+
+      setTimeout(() => {this.fillOut(n)}, 500);
+
+    });
+    this.tileTransition = new GridService();
   }
 
-
+  tilePosition;
+  tileTransition;
 
   @Input() project: Project;
 
+  fillOut(n) {
 
+    this.tileTransition.setPos([1,2], {'width.px' : n['width.px']});
 
+    this.tilePosition = this.tileTransition.style;
 
-
-
-
-//       transitionService.projectOutput$
-//      .subscribe(n => this.activeProject = n);
+  }
 
 }

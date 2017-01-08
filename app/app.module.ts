@@ -9,6 +9,7 @@ import { HttpModule }    from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }   from './app.component';
+import { ScreenGridPipe } from './shared/grid.pipe';
 
 import { AboutComponent }   from './about/about.component';
 import { ListComponent }    from './list/list.component';
@@ -31,11 +32,12 @@ import { TransitionService }  from './list/transition.service';
   declarations: [
     AppComponent,
     HomeComponent,
-
     AboutComponent,
     ListComponent,
     TransitionComponent,
-    SingleComponent
+    SingleComponent,
+
+    ScreenGridPipe
   ],
   providers: [
     ButtonService,

@@ -15,10 +15,10 @@ export class TransitionService {
 
   setProject(project:Project, el) {
     let out = {
-      "top.px": el.offsetTop,
-      "left.px": el.offsetLeft,
+      "transform": `translate(${el.offsetLeft}px, ${el.offsetTop}px)`,
       "width.px" : el.offsetWidth
     }
+
 
     this.tileStyle.next(out);
 

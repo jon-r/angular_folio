@@ -86,11 +86,11 @@ export class ListComponent {
   }
 
   goTo(project: Project, e: Event): void {
-    //this.listPush = 'push';
+    this.listPush = 'push';
 
     this.transitionService.setProject(project, e.target);
 
-    //setTimeout(() =>this.router.navigate(['/work', project.id]), 600);
+    setTimeout(() =>this.router.navigate(['/work', project.id]), 300);
 
   }
 

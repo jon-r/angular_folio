@@ -9,14 +9,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Subject_1 = require('rxjs/Subject');
+var grid_pipe_1 = require('./grid.pipe');
+//import { Subject } from 'rxjs/Subject';
+//import { Observable } from 'rxjs/Observable';
 var GridService = (function () {
     function GridService() {
-        this.grid = new Subject_1.Subject();
-        this.gridOutput$ = this.grid.asObservable();
+        this.el = {
+            coords: [],
+            rotation: '',
+            extraStyle: {}
+        };
+        this.style = {};
     }
-    GridService.prototype.setGrid = function () {
-        this.grid.next([window.innerWidth / 10, window.innerHeight / 10]);
+    GridService.prototype.setPos = function (coords, extra) {
+        this.el.coords = coords;
+        if (extra) {
+            if ('reset' in extra) {
+                this.el.extraStyle = {};
+                this.el.rotation = '';
+                this.style = {};
+            }
+            else {
+                this.el.extraStyle = extra;
+                if ('rotate' in extra) {
+                    this.el.rotation = "rotate(" + extra.rotate + "deg)";
+                }
+            }
+        }
+        this.update();
+    };
+    GridService.prototype.setGrid = function (grid) {
+        this.grid = grid;
+        this.update();
+    };
+    GridService.prototype.update = function () {
+        var arr = [0, 0], coordStr;
+        arr = new grid_pipe_1.ScreenGridPipe().transform(this.el.coords);
+        coordStr = "translate(" + arr[0] + "px, " + arr[1] + "px) " + this.el.rotation;
+        this.style.transform = coordStr;
+        for (var attr in this.el.extraStyle) {
+            this.style[attr] = this.el.extraStyle[attr];
+        }
     };
     GridService = __decorate([
         core_1.Injectable(),

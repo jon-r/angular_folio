@@ -60,9 +60,10 @@ var ListComponent = (function () {
         this.getProjects();
     };
     ListComponent.prototype.goTo = function (project, e) {
-        //this.listPush = 'push';
+        var _this = this;
+        this.listPush = 'push';
         this.transitionService.setProject(project, e.target);
-        //setTimeout(() =>this.router.navigate(['/work', project.id]), 600);
+        setTimeout(function () { return _this.router.navigate(['/work', project.id]); }, 300);
     };
     ListComponent = __decorate([
         core_1.Component({

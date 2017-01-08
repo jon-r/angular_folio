@@ -3,10 +3,9 @@
 }
 
 .projects {
-  position: absolute;
-  left: 31vw;
-  right: 10vw;
-  top: 10vw;
+  padding-left: 31vw;
+  padding-right: 10vw;
+  padding-top: 10vw;
 }
 
 .projects.push {
@@ -18,12 +17,7 @@
   width: calc(100% / 3);
   animation: 1s enterUp backwards;
   padding: 15px;
-  text-align: center;
-}
 
-.tile-float {
-  position: absolute;
-  text-align: center;
 }
 
 .project-photo.tile {

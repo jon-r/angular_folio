@@ -9,27 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Subject_1 = require('rxjs/Subject');
-var TransitionService = (function () {
-    function TransitionService() {
-        this.projectSrc = new Subject_1.Subject();
-        this.tileStyle = new Subject_1.Subject();
-        this.projectOutput$ = this.projectSrc.asObservable();
-        this.tileOutput$ = this.tileStyle.asObservable();
+var ScreenGridPipe = (function () {
+    function ScreenGridPipe() {
     }
-    TransitionService.prototype.setProject = function (project, el) {
-        var out = {
-            "transform": "translate(" + el.offsetLeft + "px, " + el.offsetTop + "px)",
-            "width.px": el.offsetWidth
-        };
-        this.tileStyle.next(out);
-        this.projectSrc.next(project);
+    ScreenGridPipe.prototype.transform = function (value) {
+        var x = value[0] * window.innerWidth / 10, y = value[1] * window.innerHeight / 10;
+        return [x, y];
     };
-    TransitionService = __decorate([
-        core_1.Injectable(),
+    ScreenGridPipe = __decorate([
+        core_1.Pipe({ name: 'screenGrid' }),
         __metadata('design:paramtypes', [])
-    ], TransitionService);
-    return TransitionService;
+    ], ScreenGridPipe);
+    return ScreenGridPipe;
 }());
-exports.TransitionService = TransitionService;
-//# sourceMappingURL=transition.service.js.map
+exports.ScreenGridPipe = ScreenGridPipe;
+//# sourceMappingURL=grid.pipe.js.map

@@ -13,18 +13,15 @@ var Observable_1 = require('rxjs/Observable');
 var button_service_1 = require('./home/button.service');
 var transition_service_1 = require('./list/transition.service');
 var grid_service_1 = require('./shared/grid.service');
-var grid_item_service_1 = require('./shared/grid-item.service');
 var AppComponent = (function () {
-    function AppComponent(gridService, btnService, transitionService) {
+    function AppComponent(btnService,
+        // private grisService: ButtonService,
+        transitionService) {
         var _this = this;
-        this.gridService = gridService;
         this.btnService = btnService;
         this.transitionService = transitionService;
         this.isLoaded = false;
         this.btnPos = { home: null, about: null, folio: null, framer: null };
-        gridService.gridOutput$
-            .debounceTime(200)
-            .subscribe(function (n) { return _this.updateGrid(n); });
         btnService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updatePos(n); });
@@ -34,33 +31,24 @@ var AppComponent = (function () {
     ;
     //  router: any;
     //btnPos;
-    AppComponent.prototype.updateGrid = function (coords) {
+    AppComponent.prototype.updateGrid = function () {
         for (var el in this.btnPos) {
-            this.btnPos[el].setGrid(coords);
+            this.btnPos[el].update();
         }
     };
     AppComponent.prototype.updatePos = function (pos) {
         for (var el in this.btnPos) {
-            var extra = pos[el][2] ? { rotate: 90, width: '60vh' } : { reset: true };
+            var extra = pos[el][2] ? { rotate: 90, 'width.vh': 60 } : { reset: true };
             this.btnPos[el].setPos(pos[el], extra);
         }
-        console.log(this.btnPos.home);
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.gridService.setGrid();
         ['home', 'about', 'folio', 'framer']
-            .forEach(function (el) { return _this.btnPos[el] = new grid_item_service_1.GridItemService([0, 0]); });
-        /*    this.els = {
-              home : new GridItemService(),
-              about : new GridItemService(),
-              folio : new GridItemService(),
-              framer : new GridItemService()
-            }*/
-        console.log(this.btnPos);
+            .forEach(function (el) { return _this.btnPos[el] = new grid_service_1.GridService(); });
         Observable_1.Observable.fromEvent(window, 'resize')
             .debounceTime(200)
-            .subscribe(function (e) { return _this.gridService.setGrid(); });
+            .subscribe(function (e) { return _this.updateGrid(); });
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -68,9 +56,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [grid_service_1.GridService, transition_service_1.TransitionService, button_service_1.ButtonService]
+            providers: [transition_service_1.TransitionService, button_service_1.ButtonService]
         }),
-        __metadata('design:paramtypes', [grid_service_1.GridService, button_service_1.ButtonService, transition_service_1.TransitionService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, transition_service_1.TransitionService])
     ], AppComponent);
     return AppComponent;
 }());

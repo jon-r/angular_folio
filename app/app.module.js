@@ -16,6 +16,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
+var grid_pipe_1 = require('./shared/grid.pipe');
 var about_component_1 = require('./about/about.component');
 var list_component_1 = require('./list/list.component');
 var transition_component_1 = require('./list/transition.component');
@@ -41,7 +42,8 @@ var AppModule = (function () {
                 about_component_1.AboutComponent,
                 list_component_1.ListComponent,
                 transition_component_1.TransitionComponent,
-                single_component_1.SingleComponent
+                single_component_1.SingleComponent,
+                grid_pipe_1.ScreenGridPipe
             ],
             providers: [
                 button_service_1.ButtonService,

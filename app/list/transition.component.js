@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var grid_service_1 = require('../shared/grid.service');
 var transition_service_1 = require('./transition.service');
 var project_1 = require('../shared/project');
 var TransitionComponent = (function () {
@@ -16,10 +17,15 @@ var TransitionComponent = (function () {
         var _this = this;
         this.transitionService = transitionService;
         transitionService.tileOutput$.subscribe(function (n) {
-            console.log(n);
             _this.tilePosition = n;
+            setTimeout(function () { _this.fillOut(n); }, 500);
         });
+        this.tileTransition = new grid_service_1.GridService();
     }
+    TransitionComponent.prototype.fillOut = function (n) {
+        this.tileTransition.setPos([1, 2], { 'width.px': n['width.px'] });
+        this.tilePosition = this.tileTransition.style;
+    };
     __decorate([
         core_1.Input(),
         __metadata('design:type', project_1.Project)
