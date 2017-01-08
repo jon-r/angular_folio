@@ -21,6 +21,7 @@ var list_component_1 = require('./list/list.component');
 var transition_component_1 = require('./list/transition.component');
 var single_component_1 = require('./single/single.component');
 var home_component_1 = require('./home/home.component');
+var button_service_1 = require('./home/button.service');
 var grid_service_1 = require('./shared/grid.service');
 var project_service_1 = require('./shared/project.service');
 var transition_service_1 = require('./list/transition.service');
@@ -43,11 +44,11 @@ var AppModule = (function () {
                 single_component_1.SingleComponent
             ],
             providers: [
+                button_service_1.ButtonService,
                 grid_service_1.GridService,
                 transition_service_1.TransitionService,
                 project_service_1.ProjectService
             ],
-            //  providers: [ ButtonService ],
             bootstrap: [app_component_1.AppComponent]
         }),
         __metadata('design:paramtypes', [])

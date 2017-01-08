@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GridItem } from './grid-item';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+//import { Subject } from 'rxjs/Subject';
+//import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class GridItemService {
@@ -23,10 +23,17 @@ export class GridItemService {
     this.el.coords = coords;
 
     if (extra) {
-      this.el.extraStyle = extra;
+      if ('reset' in extra) {
+        this.el.extraStyle = {}
+        this.el.rotation = '';
+        this.style = {}
+      } else {
 
-      this.el.rotation = ('rotate' in extra)
-        ? `rotate(${extra.rotate}deg)` : '';
+        this.el.extraStyle = extra;
+        if ('rotate' in extra) {
+          this.el.rotation = `rotate(${extra.rotate}deg)`;
+        }
+      }
 
     }
     if (this.grid) this.update();

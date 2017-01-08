@@ -16,6 +16,7 @@ import { TransitionComponent }    from './list/transition.component';
 import { SingleComponent }  from './single/single.component';
 import { HomeComponent }    from './home/home.component';
 
+import { ButtonService } from './home/button.service';
 import { GridService } from './shared/grid.service';
 import { ProjectService }  from './shared/project.service';
 import { TransitionService }  from './list/transition.service';
@@ -37,11 +38,12 @@ import { TransitionService }  from './list/transition.service';
     SingleComponent
   ],
   providers: [
+    ButtonService,
     GridService,
     TransitionService,
     ProjectService
   ],
-//  providers: [ ButtonService ],
+
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

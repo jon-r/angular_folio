@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import { Subject } from 'rxjs/Subject';
+//import { Observable } from 'rxjs/Observable';
 var GridItemService = (function () {
     function GridItemService(coords) {
         this.el = {
@@ -21,9 +23,17 @@ var GridItemService = (function () {
     GridItemService.prototype.setPos = function (coords, extra) {
         this.el.coords = coords;
         if (extra) {
-            this.el.extraStyle = extra;
-            this.el.rotation = ('rotate' in extra)
-                ? "rotate(" + extra.rotate + "deg)" : '';
+            if ('reset' in extra) {
+                this.el.extraStyle = {};
+                this.el.rotation = '';
+                this.style = {};
+            }
+            else {
+                this.el.extraStyle = extra;
+                if ('rotate' in extra) {
+                    this.el.rotation = "rotate(" + extra.rotate + "deg)";
+                }
+            }
         }
         if (this.grid)
             this.update();

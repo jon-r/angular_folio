@@ -10,20 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Subject_1 = require('rxjs/Subject');
-var NewGridService = (function () {
-    function NewGridService() {
-        this.grid = new Subject_1.Subject();
-        this.gridOutput$ = this.grid.asObservable();
+var ButtonService = (function () {
+    function ButtonService() {
+        this.btnSrc = new Subject_1.Subject();
+        this.buttonOutput$ = this.btnSrc.asObservable();
     }
-    NewGridService.prototype.setGrid = function () {
-        var out = [window.innerWidth / 10, window.innerHeight / 10];
-        this.grid.next(out);
+    ButtonService.prototype.setButtons = function (buttons) {
+        this.btnSrc.next(buttons);
     };
-    NewGridService = __decorate([
+    ButtonService = __decorate([
         core_1.Injectable(),
         __metadata('design:paramtypes', [])
-    ], NewGridService);
-    return NewGridService;
+    ], ButtonService);
+    return ButtonService;
 }());
-exports.NewGridService = NewGridService;
-//# sourceMappingURL=newgrid.service.js.map
+exports.ButtonService = ButtonService;
+//# sourceMappingURL=button.service.js.map

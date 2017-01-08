@@ -14,14 +14,9 @@ var GridService = (function () {
     function GridService() {
         this.grid = new Subject_1.Subject();
         this.gridOutput$ = this.grid.asObservable();
-        this.btnSrc = new Subject_1.Subject();
-        this.buttonOutput$ = this.btnSrc.asObservable();
     }
     GridService.prototype.setGrid = function () {
         this.grid.next([window.innerWidth / 10, window.innerHeight / 10]);
-    };
-    GridService.prototype.setButtons = function (buttons) {
-        this.btnSrc.next(buttons);
     };
     GridService = __decorate([
         core_1.Injectable(),
@@ -30,5 +25,4 @@ var GridService = (function () {
     return GridService;
 }());
 exports.GridService = GridService;
-//TODO SEPERATE THE BUTTON SERVICE
 //# sourceMappingURL=grid.service.js.map

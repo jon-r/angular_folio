@@ -10,21 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Observable_1 = require('rxjs/Observable');
+var button_service_1 = require('./home/button.service');
+var transition_service_1 = require('./list/transition.service');
 var grid_service_1 = require('./shared/grid.service');
 var grid_item_service_1 = require('./shared/grid-item.service');
-//import { NewGridService } from './shared/newgrid.service';
-var transition_service_1 = require('./list/transition.service');
 var AppComponent = (function () {
-    function AppComponent(gridService, transitionService) {
+    function AppComponent(gridService, btnService, transitionService) {
         var _this = this;
         this.gridService = gridService;
+        this.btnService = btnService;
         this.transitionService = transitionService;
         this.isLoaded = false;
         this.btnPos = { home: null, about: null, folio: null, framer: null };
         gridService.gridOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updateGrid(n); });
-        gridService.buttonOutput$
+        btnService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updatePos(n); });
         transitionService.projectOutput$
@@ -40,7 +41,8 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.updatePos = function (pos) {
         for (var el in this.btnPos) {
-            this.btnPos[el].setPos(pos[el]);
+            var extra = pos[el][2] ? { rotate: 90, width: '60vh' } : { reset: true };
+            this.btnPos[el].setPos(pos[el], extra);
         }
         console.log(this.btnPos.home);
     };
@@ -66,9 +68,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [grid_service_1.GridService, transition_service_1.TransitionService]
+            providers: [grid_service_1.GridService, transition_service_1.TransitionService, button_service_1.ButtonService]
         }),
-        __metadata('design:paramtypes', [grid_service_1.GridService, transition_service_1.TransitionService])
+        __metadata('design:paramtypes', [grid_service_1.GridService, button_service_1.ButtonService, transition_service_1.TransitionService])
     ], AppComponent);
     return AppComponent;
 }());
