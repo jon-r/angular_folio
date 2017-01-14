@@ -6,8 +6,9 @@ body {
   font: 300 14px/1 "soleil",sans-serif;
   color: #e4e5e7;
   height: 100vh;
-  overflow: hidden;
+  background-color: #4DB6AC;
   background-image: linear-gradient(to top left, #4DB6AC, #00897B);
+  background-attachment: fixed;
 }
 
 h1, h2, h3 {
@@ -23,7 +24,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: calc(0.8vw + 0.8rem);
 }
 
 a {
@@ -33,13 +34,26 @@ a {
 
 /* helpers ------------------------------------------------------------------ */
 
-.abs-container {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
-  bottom: 2rem;
+.frame-container {
+  bottom:0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
+.frame-container.abs {
+  position: absolute;
+  margin-top: 12.5vh;
+  margin-left: 10vw;
+  margin-right: 30vw;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.frame-container.fixed {
+  position: fixed;
+}
+
 
 /* animations --------------------------------------------------------------- */
 
@@ -81,9 +95,10 @@ a {
 }
 
 .jr-logo {
+  position: fixed;
   width: 6vw;
   transform: translate(20px,20px);
-  transition-delay: transform 200ms;
+  transition-delay: 200ms;
 }
 
 .pre-loader:not(.loaded) .jr-logo {
@@ -111,10 +126,15 @@ nav .home{
   top: auto;
   text-align: right;
 }
+
+.nav-link {
+  z-index: 99;
+}
+
 .framer {
-  background-color: white;
+  background-color: currentColor;
   height: 4px;
   border: none;
-  width: 90%;
-  transform-origin: left
+  width: 60%;
+  transform-origin: left;
 }

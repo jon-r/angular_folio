@@ -20,9 +20,9 @@ export class SingleComponent /*implements OnInit*/ {
   ) {
     this.btnService.setButtons({
       home: [-0.5,-0.5],
-      about: [9,9],
-      folio: [0.5,0.5],
-      framer: [0.5, 1.2]
+      about: [2,0.5],
+      folio: [1,0.5],
+      framer: [1, 1.2]
     })
   };
 

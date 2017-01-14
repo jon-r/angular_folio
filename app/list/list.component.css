@@ -3,20 +3,20 @@
 }
 
 .projects {
-  padding-left: 31vw;
-  padding-right: 10vw;
-  padding-top: 10vw;
+  overflow: hidden;
 }
 
 .projects.push {
   animation: 0.5s slideOut forwards;
+  height: 80vh;
+  transition: height 300ms;
 }
 
 .projects li {
   display: inline-block;
-  width: calc(100% / 3);
+  width: 50%;
   animation: 1s enterUp backwards;
-  padding: 15px;
+  padding: 10px 0 0 10px;
 
 }
 
@@ -25,15 +25,15 @@
 }
 
 .project-tile {
-  padding-bottom: 61.8%;
+  padding-bottom: 45%;
   position: relative;
+  background-color: rgba(32, 85, 80, 0.3);
 }
 
 .project-photo,
 .project-caption,
 .project-tile::after {
   position: absolute;
-
   left:0;
   right:0;
 }
@@ -53,6 +53,9 @@
 .project-caption {
   top: 61.8%;
   padding: 10px;
+}
+.project-caption em {
+  text-align: right;
 }
 
 

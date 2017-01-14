@@ -14,9 +14,7 @@ var button_service_1 = require('./home/button.service');
 var transition_service_1 = require('./list/transition.service');
 var grid_service_1 = require('./shared/grid.service');
 var AppComponent = (function () {
-    function AppComponent(btnService,
-        // private grisService: ButtonService,
-        transitionService) {
+    function AppComponent(btnService, transitionService) {
         var _this = this;
         this.btnService = btnService;
         this.transitionService = transitionService;
@@ -38,12 +36,15 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.updatePos = function (pos) {
         for (var el in this.btnPos) {
-            var extra = pos[el][2] ? { rotate: 90, 'width.vh': 60 } : { reset: true };
+            var extra = pos[el][2] ?
+                pos[el][2] : { reset: true };
             this.btnPos[el].setPos(pos[el], extra);
         }
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
+        new slimScroll(document.getElementById('content'));
+        console.log(document.getElementById('content'));
         ['home', 'about', 'folio', 'framer']
             .forEach(function (el) { return _this.btnPos[el] = new grid_service_1.GridService(); });
         Observable_1.Observable.fromEvent(window, 'resize')

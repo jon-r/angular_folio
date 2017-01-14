@@ -32,8 +32,7 @@ import { TransitionService } from './transition.service';
   styleUrls: ['app/list/list.component.css']
 })
 export class ListComponent {
-  projects: Project[][] = [];
-  page: number = 0;
+  projects: Project[] = [];
   activeProject: Project;
 
   listPush: string = '';
@@ -50,25 +49,22 @@ export class ListComponent {
     private router: Router
   ) {
     this.btnService.setButtons({
-      home: [-7,-1.5],
-      about: [9,9],
-      folio: [3.2,1.5],
-      framer: [3, 1.5,1]
+      home: [-0.5,-0.5],
+      about: [2,0.5],
+      folio: [1,0.5],
+      framer: [1, 1.2]
     })
   };
 
   getProjects(): void {
     this.projectService.getProjects()
-    .then(projects => {
-      while (projects.length > 0) {
-        this.projects.push(projects.splice(0, 6));
-      }
-    });
+      .then(projects => this.projects = projects);
+//      while (projects.length > 0) {
+//        this.projects.push(projects.splice(0, 6));
+//      }
+   // });
   }
 
-  pageUp(): void {
-    this.page = (this.page + 1) % this.projects.length;
-  }
 
 
 
@@ -89,6 +85,8 @@ export class ListComponent {
     this.listPush = 'push';
 
     this.transitionService.setProject(project, e.target);
+
+    document.scrollTop = 0;
 
     setTimeout(() =>this.router.navigate(['/work', project.id]), 300);
 

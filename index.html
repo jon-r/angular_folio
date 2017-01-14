@@ -11,7 +11,8 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="./web-animations.min.js"></script>
+    <script src="./app/lib/web-animations.min.js"></script>
+    <script src="./app/lib/slimscroll.min.js"></script>
 
     <!-- Angular 2 -->
     <script src="systemjs.config.js"></script>
@@ -54,6 +55,7 @@
 
 
   <script>
+
     window.bootstrapping.then(
       function handleResolve() {
         var preBootstrap = document.getElementById("js_loaderParent"),

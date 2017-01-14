@@ -32,7 +32,7 @@ export class TransitionComponent {
 
   fillOut(n) {
 
-    this.tileTransition.setPos([1,2], {'width.px' : n['width.px']});
+    this.tileTransition.setPos([0,0], {'width.px' : n['width.px']});
 
     this.tilePosition = this.tileTransition.style;
 

@@ -23,7 +23,7 @@ var TransitionComponent = (function () {
         this.tileTransition = new grid_service_1.GridService();
     }
     TransitionComponent.prototype.fillOut = function (n) {
-        this.tileTransition.setPos([1, 2], { 'width.px': n['width.px'] });
+        this.tileTransition.setPos([0, 0], { 'width.px': n['width.px'] });
         this.tilePosition = this.tileTransition.style;
     };
     __decorate([

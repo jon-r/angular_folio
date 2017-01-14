@@ -22,7 +22,6 @@ export class AppComponent {
 
   constructor(
     private btnService: ButtonService,
-   // private grisService: ButtonService,
     private transitionService: TransitionService
   ) {
 
@@ -49,7 +48,8 @@ export class AppComponent {
 
   updatePos(pos) {
     for (let el in this.btnPos) {
-      let extra = pos[el][2] ? {rotate: 90, 'width.vh': 60} : {reset: true};
+      let extra = pos[el][2] ?
+          pos[el][2] : {reset: true};
       this.btnPos[el].setPos(pos[el], extra);
     }
   }
@@ -60,6 +60,9 @@ export class AppComponent {
   activeProject
 
   ngOnInit(): void {
+
+    new slimScroll(document.getElementById('content'));
+    console.log(document.getElementById('content'));
 
     ['home', 'about','folio','framer']
       .forEach(el => this.btnPos[el] = new GridService());

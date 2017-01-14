@@ -27,27 +27,23 @@ var ListComponent = (function () {
         this.transitionService = transitionService;
         this.router = router;
         this.projects = [];
-        this.page = 0;
         this.listPush = '';
         this.btnService.setButtons({
-            home: [-7, -1.5],
-            about: [9, 9],
-            folio: [3.2, 1.5],
-            framer: [3, 1.5, 1]
+            home: [-0.5, -0.5],
+            about: [2, 0.5],
+            folio: [1, 0.5],
+            framer: [1, 1.2]
         });
     }
     ;
     ListComponent.prototype.getProjects = function () {
         var _this = this;
         this.projectService.getProjects()
-            .then(function (projects) {
-            while (projects.length > 0) {
-                _this.projects.push(projects.splice(0, 6));
-            }
-        });
-    };
-    ListComponent.prototype.pageUp = function () {
-        this.page = (this.page + 1) % this.projects.length;
+            .then(function (projects) { return _this.projects = projects; });
+        //      while (projects.length > 0) {
+        //        this.projects.push(projects.splice(0, 6));
+        //      }
+        // });
     };
     //  setTilePos(project : Project) {
     //    project.tilePos = {
@@ -63,6 +59,7 @@ var ListComponent = (function () {
         var _this = this;
         this.listPush = 'push';
         this.transitionService.setProject(project, e.target);
+        document.scrollTop = 0;
         setTimeout(function () { return _this.router.navigate(['/work', project.id]); }, 300);
     };
     ListComponent = __decorate([
