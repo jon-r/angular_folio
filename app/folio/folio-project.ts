@@ -1,4 +1,4 @@
-export class Project {
+export class FolioProject {
   constructor(
     public id : number,
     public title : string,

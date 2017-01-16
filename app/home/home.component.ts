@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonService } from '../home/button.service';
+import { ButtonService } from '../shared/button.service';
 
 @Component({
   selector: 'page-home',

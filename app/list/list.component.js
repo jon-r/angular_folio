@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-//import {NgStyle} from '@angular/common';
 //import { LazyLoadImageDirective } from 'ng2-lazyload-image';
 var grid_service_1 = require('../shared/grid.service');
 var button_service_1 = require('../home/button.service');
@@ -54,12 +53,13 @@ var ListComponent = (function () {
     //  }
     ListComponent.prototype.ngOnInit = function () {
         this.getProjects();
+        this.scroller = document.getElementById('content');
     };
     ListComponent.prototype.goTo = function (project, e) {
         var _this = this;
         this.listPush = 'push';
         this.transitionService.setProject(project, e.target);
-        document.scrollTop = 0;
+        this.scroller.scrollTop = 0;
         setTimeout(function () { return _this.router.navigate(['/work', project.id]); }, 300);
     };
     ListComponent = __decorate([

@@ -2,13 +2,11 @@
 import { Component, OnInit} from '@angular/core';
 
 import { Router } from '@angular/router';
-//import {NgStyle} from '@angular/common';
-
 
 //import { LazyLoadImageDirective } from 'ng2-lazyload-image';
 
 import { GridService } from '../shared/grid.service';
-import { ButtonService } from '../home/button.service';
+import { ButtonService } from '../shared/button.service';
 import { ProjectService } from '../shared/project.service';
 import { Project } from '../shared/project';
 import { TransitionService } from './transition.service';
@@ -34,6 +32,7 @@ import { TransitionService } from './transition.service';
 export class ListComponent {
   projects: Project[] = [];
   activeProject: Project;
+  scroller;
 
   listPush: string = '';
 
@@ -67,8 +66,6 @@ export class ListComponent {
 
 
 
-
-
 //  setTilePos(project : Project) {
 //    project.tilePos = {
 //      'background-image' : `url(app/lib/${project.img.name})`,
@@ -79,6 +76,7 @@ export class ListComponent {
 
   ngOnInit(): void {
     this.getProjects();
+    this.scroller = document.getElementById('content');
   }
 
   goTo(project: Project, e: Event): void {
@@ -86,9 +84,9 @@ export class ListComponent {
 
     this.transitionService.setProject(project, e.target);
 
-    document.scrollTop = 0;
+    this.scroller.scrollTop = 0;
 
-    setTimeout(() =>this.router.navigate(['/work', project.id]), 300);
+    setTimeout(() => this.router.navigate(['/work', project.id]), 300);
 
   }
 

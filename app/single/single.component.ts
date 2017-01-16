@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ButtonService } from '../home/button.service';
+import { ButtonService } from '../shared/button.service';
 import { ProjectService } from '../shared/project.service';
 import { Project } from '../shared/project';
+import { TransitionService } from '../list/transition.service';
 
 @Component({
   selector: 'page-about',
@@ -16,6 +17,7 @@ export class SingleComponent /*implements OnInit*/ {
   constructor(
     private btnService: ButtonService,
     private projectService: ProjectService,
+    private transitionService: TransitionService,
     private route: ActivatedRoute
   ) {
     this.btnService.setButtons({
@@ -26,17 +28,24 @@ export class SingleComponent /*implements OnInit*/ {
     })
   };
 
+
+  goBack(): void {
+    window.history.back();
+  }
+
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
       this.projectService.getProject(id)
         .then(project => this.project = project)
-    })
+    });
+
+    setTimeout(() => this.transitionService.unsetProject(), 2000);
+
+
   }
 
-  goBack(): void {
-    window.history.back();
-  }
+
 
 
 

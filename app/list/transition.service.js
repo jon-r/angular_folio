@@ -25,6 +25,9 @@ var TransitionService = (function () {
         this.tileStyle.next(out);
         this.projectSrc.next(project);
     };
+    TransitionService.prototype.unsetProject = function () {
+        this.projectSrc.next(null);
+    };
     TransitionService = __decorate([
         core_1.Injectable(),
         __metadata('design:paramtypes', [])

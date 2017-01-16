@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var button_service_1 = require('../home/button.service');
 var project_service_1 = require('../shared/project.service');
+var transition_service_1 = require('../list/transition.service');
 var SingleComponent /*implements OnInit*/ = (function () {
-    function SingleComponent /*implements OnInit*/(btnService, projectService, route) {
+    function SingleComponent /*implements OnInit*/(btnService, projectService, transitionService, route) {
         this.btnService = btnService;
         this.projectService = projectService;
+        this.transitionService = transitionService;
         this.route = route;
         this.btnService.setButtons({
             home: [-0.5, -0.5],
@@ -25,6 +27,9 @@ var SingleComponent /*implements OnInit*/ = (function () {
         });
     }
     ;
+    SingleComponent /*implements OnInit*/.prototype.goBack = function () {
+        window.history.back();
+    };
     SingleComponent /*implements OnInit*/.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
@@ -32,9 +37,7 @@ var SingleComponent /*implements OnInit*/ = (function () {
             _this.projectService.getProject(id)
                 .then(function (project) { return _this.project = project; });
         });
-    };
-    SingleComponent /*implements OnInit*/.prototype.goBack = function () {
-        window.history.back();
+        setTimeout(function () { return _this.transitionService.unsetProject(); }, 2000);
     };
     SingleComponent /*implements OnInit*/ = __decorate([
         core_1.Component({
@@ -42,7 +45,7 @@ var SingleComponent /*implements OnInit*/ = (function () {
             templateUrl: 'app/single/single.component.html',
             styleUrls: ['app/single/single.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, transition_service_1.TransitionService, router_1.ActivatedRoute])
     ], SingleComponent /*implements OnInit*/);
     return SingleComponent /*implements OnInit*/;
 }());

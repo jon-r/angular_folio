@@ -17,7 +17,7 @@ import { TransitionComponent }    from './list/transition.component';
 import { SingleComponent }  from './single/single.component';
 import { HomeComponent }    from './home/home.component';
 
-import { ButtonService } from './home/button.service';
+import { ButtonService } from './shared/button.service';
 import { GridService } from './shared/grid.service';
 import { ProjectService }  from './shared/project.service';
 import { TransitionService }  from './list/transition.service';

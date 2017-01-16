@@ -25,6 +25,10 @@ export class TransitionService {
     this.projectSrc.next(project);
   }
 
+  unsetProject() {
+    this.projectSrc.next(null);
+  }
+
 
 
 }

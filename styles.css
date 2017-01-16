@@ -46,7 +46,7 @@ a {
   margin-left: 10vw;
   margin-right: 30vw;
   bottom: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

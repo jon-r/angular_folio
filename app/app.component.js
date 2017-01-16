@@ -29,6 +29,7 @@ var AppComponent = (function () {
     ;
     //  router: any;
     //btnPos;
+    //
     AppComponent.prototype.updateGrid = function () {
         for (var el in this.btnPos) {
             this.btnPos[el].update();
@@ -43,8 +44,6 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        new slimScroll(document.getElementById('content'));
-        console.log(document.getElementById('content'));
         ['home', 'about', 'folio', 'framer']
             .forEach(function (el) { return _this.btnPos[el] = new grid_service_1.GridService(); });
         Observable_1.Observable.fromEvent(window, 'resize')
