@@ -13,19 +13,15 @@ require('./rxjs-extensions');
 //angular
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
+var folio_module_1 = require('./folio/folio.module');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
 var grid_pipe_1 = require('./shared/grid.pipe');
 var about_component_1 = require('./about/about.component');
-var list_component_1 = require('./list/list.component');
-var transition_component_1 = require('./list/transition.component');
-var single_component_1 = require('./single/single.component');
 var home_component_1 = require('./home/home.component');
-var button_service_1 = require('./home/button.service');
+var notfound_component_1 = require('./notfound/notfound.component');
+var button_service_1 = require('./shared/button.service');
 var grid_service_1 = require('./shared/grid.service');
-var project_service_1 = require('./shared/project.service');
-var transition_service_1 = require('./list/transition.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,23 +29,19 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                http_1.HttpModule,
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                folio_module_1.FolioModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 about_component_1.AboutComponent,
-                list_component_1.ListComponent,
-                transition_component_1.TransitionComponent,
-                single_component_1.SingleComponent,
+                notfound_component_1.NotFoundComponent,
                 grid_pipe_1.ScreenGridPipe
             ],
             providers: [
                 button_service_1.ButtonService,
                 grid_service_1.GridService,
-                transition_service_1.TransitionService,
-                project_service_1.ProjectService
             ],
             bootstrap: [app_component_1.AppComponent]
         }),

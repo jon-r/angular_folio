@@ -9,35 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var home_component_1 = require('./home/home.component');
-var about_component_1 = require('./about/about.component');
-var appRoutes = [
-    {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-    },
-    {
-        path: 'home',
-        component: home_component_1.HomeComponent
-    },
-    {
-        path: 'about',
-        component: about_component_1.AboutComponent
-    },
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
-            exports: [router_1.RouterModule]
+    NotFoundComponent = __decorate([
+        core_1.Component({
+            selector: 'page-notFound',
+            template: "<h1>404</h1>"
         }),
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], NotFoundComponent);
+    return NotFoundComponent;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.NotFoundComponent = NotFoundComponent;
+//# sourceMappingURL=notfound.component.js.map

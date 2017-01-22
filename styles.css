@@ -35,25 +35,14 @@ a {
 /* helpers ------------------------------------------------------------------ */
 
 .frame-container {
-  bottom:0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.frame-container.abs {
   position: absolute;
-  margin-top: 12.5vh;
-  margin-left: 10vw;
-  margin-right: 30vw;
-  bottom: 0;
+  top: 12.5vh;
+  bottom:0;
+  left: 10vw;
+  right: 30vw;
   overflow-y: auto;
   overflow-x: hidden;
 }
-
-.frame-container.fixed {
-  position: fixed;
-}
-
 
 /* animations --------------------------------------------------------------- */
 

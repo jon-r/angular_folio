@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import {Observable}  from 'rxjs/Observable';
+import { Observable }  from 'rxjs/Observable';
 
 
 
 import { Buttons } from './shared/buttons';
 import { ButtonService } from './shared/button.service';
-
-import { Project } from './shared/project';
-import { TransitionService } from './list/transition.service';
 
 import { GridService } from './shared/grid.service';
 
@@ -17,22 +14,19 @@ import { GridService } from './shared/grid.service';
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  providers: [TransitionService, ButtonService]
+  providers: [ButtonService]
 })
 
 export class AppComponent {
 
   constructor(
-    private btnService: ButtonService,
-    private transitionService: TransitionService
+    private btnService: ButtonService
   ) {
 
     btnService.buttonOutput$
       .debounceTime(200)
       .subscribe(n => this.updatePos(n));
 
-    transitionService.projectOutput$
-      .subscribe(n => this.activeProject = n);
 
   };
 
@@ -55,11 +49,8 @@ export class AppComponent {
     }
   }
 
-
-
   isLoaded: boolean = false;
   btnPos: Buttons = {home: null,about: null,folio: null,framer: null};
-  activeProject;
 
   ngOnInit(): void {
 

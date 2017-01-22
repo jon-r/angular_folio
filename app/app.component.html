@@ -4,7 +4,7 @@ viewBox="0 0 34 16" >
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
   </svg>
 </a>
-<nav class="frame-container fixed" >
+<nav>
 
   <a class="anim home nav-link" routerLink="/home" [ngStyle]="btnPos.home.style" >
 
@@ -14,7 +14,7 @@ viewBox="0 0 34 16" >
     </header>
   </a>
 
-  <a class="anim nav-link" routerLink="/folio" [ngStyle]="btnPos.folio.style" >
+  <a class="anim nav-link" routerLink="/work" [ngStyle]="btnPos.folio.style" >
     <h2>Work</h2>
   </a>
   <a class="anim nav-link" routerLink="/about" [ngStyle]="btnPos.about.style" >
@@ -24,7 +24,6 @@ viewBox="0 0 34 16" >
 
 </nav>
 
-<main id="content" class="frame-container abs" >
+<main id="content" class="frame-container" >
   <router-outlet ></router-outlet>
-  <transition-helper [project]="activeProject" ></transition-helper>
 </main>

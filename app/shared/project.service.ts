@@ -8,7 +8,6 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ProjectService {
 
-  //private headers = new Headers({'Content-Type' : 'application/json'});
   private dataUrl = 'app/lib/projects-list.json';
 
   constructor(private http: Http) { }

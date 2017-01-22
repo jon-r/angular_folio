@@ -8,18 +8,15 @@ import { FolioProjectService } from './folio-project.service';
 
 @Component({
   selector: 'page-list',
-  templateUrl: 'app/list/list.component.html',
-  styleUrls: ['app/list/list.component.css']
+  templateUrl: 'app/folio/folio-list.component.html',
+  styleUrls: ['app/folio/folio-list.component.css']
 })
-export class folioListComponent {
+export class FolioListComponent {
+
 
   constructor(
     private btnService: ButtonService,
     private projectService: FolioProjectService,
-    private projects: FolioProject[],
-    private activeProject: FolioProject,
-   // private router: Router,
-    private listPush: string
   ) {
     this.btnService.setButtons({
       home: [-0.5,-0.5],
@@ -29,19 +26,13 @@ export class folioListComponent {
     });
   };
 
+  projects = [];
+
   getProjects(): void {
     this.projectService.getProjects()
       .then(projects => this.projects = projects);
   }
 
-/*  goTo(project: Project, e: Event): void {
-    //this.listPush = 'push';
-
-    //this.transitionService.setProject(project, e.target);
-    //document.getElementById('content').scrollTop = 0;
-
-    //setTimeout(() => this.router.navigate(['/work', project.id]), 300);
-  }*/
 
   ngOnInit(): void {
     this.getProjects();

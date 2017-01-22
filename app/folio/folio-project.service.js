@@ -11,30 +11,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var ProjectService = (function () {
-    function ProjectService(http) {
+var FolioProjectService = (function () {
+    function FolioProjectService(http) {
         this.http = http;
         this.dataUrl = 'app/lib/projects-list.json';
     }
-    ProjectService.prototype.getProjects = function () {
+    FolioProjectService.prototype.getProjects = function () {
         return this.http.get(this.dataUrl)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    ProjectService.prototype.getProject = function (id) {
+    FolioProjectService.prototype.getProject = function (id) {
         return this.getProjects()
             .then(function (projects) { return projects.find(function (project) { return project.id === id; }); });
     };
-    ProjectService.prototype.handleError = function (error) {
+    FolioProjectService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    ProjectService = __decorate([
-        core_1.Injectable(), 
+    FolioProjectService = __decorate([
+        core_1.Injectable(),
         __metadata('design:paramtypes', [http_1.Http])
-    ], ProjectService);
-    return ProjectService;
+    ], FolioProjectService);
+    return FolioProjectService;
 }());
-exports.ProjectService = ProjectService;
-//# sourceMappingURL=project.service.js.map
+exports.FolioProjectService = FolioProjectService;
+//# sourceMappingURL=folio-project.service.js.map

@@ -1,0 +1,55 @@
+.projects {
+  overflow: hidden;
+}
+
+.projects.push {
+  animation: 0.5s slideOut forwards;
+  height: 80vh;
+  transition: height 300ms;
+}
+
+.projects li {
+  display: inline-block;
+  width: 50%;
+  animation: 1s enterUp backwards;
+  padding: 10px 0 0 10px;
+
+}
+
+.project-photo.tile {
+  background-size: 100vh;
+}
+
+.project-tile {
+  padding-bottom: 45%;
+  position: relative;
+  background-color: rgba(32, 85, 80, 0.3);
+}
+
+.project-photo,
+.project-caption,
+.project-tile::after {
+  position: absolute;
+  left:0;
+  right:0;
+}
+
+.project-tile::after {
+  top:0;
+  height:100%;
+  border: solid 2px;
+  content:'';
+}
+
+.project-photo {
+  top:0;
+  height:61.8%;
+}
+
+.project-caption {
+  top: 61.8%;
+  padding: 10px;
+}
+.project-caption em {
+  text-align: right;
+}

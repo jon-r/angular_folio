@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ListComponent } from './list/list.component';
-import { SingleComponent } from './single/single.component';
+import { NotFoundComponent } from './notfound/notfound.component';
 
 const appRoutes: Routes = [
   {
@@ -20,18 +19,12 @@ const appRoutes: Routes = [
     path: 'about',
     component: AboutComponent
   },
-  {
-    path: 'folio',
-    component: ListComponent
-  },
-  {
-    path: 'work/:id',
-    component: SingleComponent
+/*  {
+    path: '**',
+    component: NotFoundComponent
   }
-
+  */
 ];
-
-//export const routing = RouterModule.forRoot(appRoutes);
 
 @NgModule({
   imports: [ RouterModule.forRoot(appRoutes) ],

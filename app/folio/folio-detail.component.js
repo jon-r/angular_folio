@@ -8,16 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var core_1 = require('@angular/core');
 var button_service_1 = require('../shared/button.service');
-var project_service_1 = require('../shared/project.service');
-var transition_service_1 = require('../list/transition.service');
-var SingleComponent /*implements OnInit*/ = (function () {
-    function SingleComponent /*implements OnInit*/(btnService, projectService, transitionService, route) {
+var folio_project_service_1 = require('./folio-project.service');
+var FolioDetailComponent = (function () {
+    function FolioDetailComponent(btnService, projectService, route) {
         this.btnService = btnService;
         this.projectService = projectService;
-        this.transitionService = transitionService;
         this.route = route;
         this.btnService.setButtons({
             home: [-0.5, -0.5],
@@ -27,27 +25,26 @@ var SingleComponent /*implements OnInit*/ = (function () {
         });
     }
     ;
-    SingleComponent /*implements OnInit*/.prototype.goBack = function () {
+    FolioDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
-    SingleComponent /*implements OnInit*/.prototype.ngOnInit = function () {
+    FolioDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
             _this.projectService.getProject(id)
                 .then(function (project) { return _this.project = project; });
         });
-        setTimeout(function () { return _this.transitionService.unsetProject(); }, 2000);
     };
-    SingleComponent /*implements OnInit*/ = __decorate([
+    FolioDetailComponent = __decorate([
         core_1.Component({
             selector: 'page-about',
-            templateUrl: 'app/single/single.component.html',
-            styleUrls: ['app/single/single.component.css']
+            templateUrl: 'app/folio/folio-detail.component.html',
+            styleUrls: ['app/folio/folio-detail.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.ProjectService, transition_service_1.TransitionService, router_1.ActivatedRoute])
-    ], SingleComponent /*implements OnInit*/);
-    return SingleComponent /*implements OnInit*/;
+        __metadata('design:paramtypes', [button_service_1.ButtonService, folio_project_service_1.FolioProjectService, router_1.ActivatedRoute])
+    ], FolioDetailComponent);
+    return FolioDetailComponent;
 }());
-exports.SingleComponent /*implements OnInit*/ = SingleComponent /*implements OnInit*/;
-//# sourceMappingURL=single.component.js.map
+exports.FolioDetailComponent = FolioDetailComponent;
+//# sourceMappingURL=folio-detail.component.js.map

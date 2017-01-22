@@ -10,34 +10,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var home_component_1 = require('./home/home.component');
-var about_component_1 = require('./about/about.component');
-var appRoutes = [
+var folio_list_component_1 = require('./folio-list.component');
+var folio_detail_component_1 = require('./folio-detail.component');
+var folioRoutes = [
     {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-    },
-    {
-        path: 'home',
-        component: home_component_1.HomeComponent
-    },
-    {
-        path: 'about',
-        component: about_component_1.AboutComponent
-    },
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+        path: 'work',
+        component: folio_list_component_1.FolioListComponent,
+        children: [
+            {
+                path: '',
+            },
+            {
+                path: ':id',
+                component: folio_detail_component_1.FolioDetailComponent
+            },
+        ]
     }
-    AppRoutingModule = __decorate([
+];
+var FolioRoutingModule = (function () {
+    function FolioRoutingModule() {
+    }
+    FolioRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
-            exports: [router_1.RouterModule]
+            imports: [
+                router_1.RouterModule.forChild(folioRoutes)
+            ],
+            exports: [
+                router_1.RouterModule
+            ]
         }),
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], FolioRoutingModule);
+    return FolioRoutingModule;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.FolioRoutingModule = FolioRoutingModule;
+//# sourceMappingURL=folio-routing.module.js.map

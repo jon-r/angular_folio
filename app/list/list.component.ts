@@ -1,4 +1,3 @@
-//import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { Component, OnInit} from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -14,19 +13,6 @@ import { TransitionService } from './transition.service';
 @Component({
   selector: 'page-list',
   templateUrl: 'app/list/list.component.html',
-//  directives: [ LazyLoadImageDirective ],
-//  animations: [
-//    trigger('pageView', [
-//      state('in', style({transform: 'transform: translateY(0)' })),
-//      transition('void => *', [
-//        animate('600ms ease-out', keyframes([
-//          style({opacity: 0, transform: 'translateY(100%)', offset: 0}),
-//          style({opacity: 1, transform: 'translateY(-10%)', offset: 0.7}),
-//          style({opacity: 1, transform: 'translateY(0)', offset: 1}),
-//        ]))
-//      ])
-//    ])
-//  ],
   styleUrls: ['app/list/list.component.css']
 })
 export class ListComponent {
@@ -58,10 +44,6 @@ export class ListComponent {
   getProjects(): void {
     this.projectService.getProjects()
       .then(projects => this.projects = projects);
-//      while (projects.length > 0) {
-//        this.projects.push(projects.splice(0, 6));
-//      }
-   // });
   }
 
 

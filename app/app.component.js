@@ -10,21 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Observable_1 = require('rxjs/Observable');
-var button_service_1 = require('./home/button.service');
-var transition_service_1 = require('./list/transition.service');
+var button_service_1 = require('./shared/button.service');
 var grid_service_1 = require('./shared/grid.service');
 var AppComponent = (function () {
-    function AppComponent(btnService, transitionService) {
+    function AppComponent(btnService) {
         var _this = this;
         this.btnService = btnService;
-        this.transitionService = transitionService;
         this.isLoaded = false;
         this.btnPos = { home: null, about: null, folio: null, framer: null };
         btnService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updatePos(n); });
-        transitionService.projectOutput$
-            .subscribe(function (n) { return _this.activeProject = n; });
     }
     ;
     //  router: any;
@@ -56,9 +52,9 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [transition_service_1.TransitionService, button_service_1.ButtonService]
+            providers: [button_service_1.ButtonService]
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, transition_service_1.TransitionService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], AppComponent);
     return AppComponent;
 }());
