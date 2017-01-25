@@ -11,10 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var http_1 = require('@angular/http');
-var folio_routing_module_1 = require('./folio-routing.module');
-var folio_list_component_1 = require('./folio-list.component');
-var folio_detail_component_1 = require('./folio-detail.component');
-var folio_project_service_1 = require('./folio-project.service');
+var routing_module_1 = require('./routing.module');
+var list_component_1 = require('./list.component');
+var detail_component_1 = require('./detail.component');
+var project_service_1 = require('./project.service');
+var transition_directive_1 = require('./transition.directive');
 var FolioModule = (function () {
     function FolioModule() {
     }
@@ -22,15 +23,16 @@ var FolioModule = (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
-                folio_routing_module_1.FolioRoutingModule,
+                routing_module_1.FolioRoutingModule,
                 http_1.HttpModule
             ],
             declarations: [
-                folio_list_component_1.FolioListComponent,
-                folio_detail_component_1.FolioDetailComponent,
+                list_component_1.FolioListComponent,
+                detail_component_1.FolioDetailComponent,
+                transition_directive_1.FolioTransitionDirective
             ],
             providers: [
-                folio_project_service_1.FolioProjectService
+                project_service_1.FolioProjectService
             ]
         }),
         __metadata('design:paramtypes', [])

@@ -10,19 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var folio_list_component_1 = require('./folio-list.component');
-var folio_detail_component_1 = require('./folio-detail.component');
+var list_component_1 = require('./list.component');
+var detail_component_1 = require('./detail.component');
 var folioRoutes = [
     {
         path: 'work',
-        component: folio_list_component_1.FolioListComponent,
+        component: list_component_1.FolioListComponent,
         children: [
             {
                 path: '',
             },
             {
                 path: ':id',
-                component: folio_detail_component_1.FolioDetailComponent
+                component: detail_component_1.FolioDetailComponent
             },
         ]
     }
@@ -44,4 +44,4 @@ var FolioRoutingModule = (function () {
     return FolioRoutingModule;
 }());
 exports.FolioRoutingModule = FolioRoutingModule;
-//# sourceMappingURL=folio-routing.module.js.map
+//# sourceMappingURL=routing.module.js.map

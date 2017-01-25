@@ -2,13 +2,13 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { Component, OnInit} from '@angular/core';
 import { ButtonService } from '../shared/button.service';
-import { FolioProject } from './folio-project';
-import { FolioProjectService } from './folio-project.service';
+import { FolioProject } from './project';
+import { FolioProjectService } from './project.service';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'app/folio/folio-detail.component.html',
-  styleUrls: ['app/folio/folio-detail.component.css']
+  templateUrl: 'app/folio/detail.component.html',
+  styleUrls: ['app/folio/detail.component.css']
 })
 export class FolioDetailComponent {
 

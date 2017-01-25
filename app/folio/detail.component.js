@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var button_service_1 = require('../shared/button.service');
-var folio_project_service_1 = require('./folio-project.service');
+var project_service_1 = require('./project.service');
 var FolioDetailComponent = (function () {
     function FolioDetailComponent(btnService, projectService, route) {
         this.btnService = btnService;
@@ -39,12 +39,12 @@ var FolioDetailComponent = (function () {
     FolioDetailComponent = __decorate([
         core_1.Component({
             selector: 'page-about',
-            templateUrl: 'app/folio/folio-detail.component.html',
-            styleUrls: ['app/folio/folio-detail.component.css']
+            templateUrl: 'app/folio/detail.component.html',
+            styleUrls: ['app/folio/detail.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, folio_project_service_1.FolioProjectService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService, router_1.ActivatedRoute])
     ], FolioDetailComponent);
     return FolioDetailComponent;
 }());
 exports.FolioDetailComponent = FolioDetailComponent;
-//# sourceMappingURL=folio-detail.component.js.map
+//# sourceMappingURL=detail.component.js.map

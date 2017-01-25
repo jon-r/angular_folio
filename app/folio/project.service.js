@@ -37,4 +37,4 @@ var FolioProjectService = (function () {
     return FolioProjectService;
 }());
 exports.FolioProjectService = FolioProjectService;
-//# sourceMappingURL=folio-project.service.js.map
+//# sourceMappingURL=project.service.js.map

@@ -11,4 +11,4 @@ var FolioProject = (function () {
     return FolioProject;
 }());
 exports.FolioProject = FolioProject;
-//# sourceMappingURL=folio-project.js.map
+//# sourceMappingURL=project.js.map

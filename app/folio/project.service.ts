@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { FolioProject } from './folio-project';
+import { FolioProject } from './project';
 
 @Injectable()
 export class FolioProjectService {

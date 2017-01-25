@@ -1,7 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FolioListComponent } from './folio-list.component';
-import { FolioDetailComponent } from './folio-detail.component';
+import { FolioListComponent } from './list.component';
+import { FolioDetailComponent } from './detail.component';
 
 const folioRoutes: Routes = [
   {

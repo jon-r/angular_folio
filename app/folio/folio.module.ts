@@ -2,10 +2,11 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { HttpModule }    from '@angular/http';
 
-import { FolioRoutingModule } from './folio-routing.module';
-import { FolioListComponent }    from './folio-list.component';
-import { FolioDetailComponent }    from './folio-detail.component';
-import { FolioProjectService }  from './folio-project.service';
+import { FolioRoutingModule } from './routing.module';
+import { FolioListComponent }    from './list.component';
+import { FolioDetailComponent }    from './detail.component';
+import { FolioProjectService }  from './project.service';
+import { FolioTransitionDirective }  from './transition.directive';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FolioProjectService }  from './folio-project.service';
   declarations: [
     FolioListComponent,
     FolioDetailComponent,
+    FolioTransitionDirective
   ],
   providers: [
     FolioProjectService

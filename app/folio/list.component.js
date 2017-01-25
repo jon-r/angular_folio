@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 //import { Router } from '@angular/router';
 var button_service_1 = require('../shared/button.service');
-var folio_project_service_1 = require('./folio-project.service');
+var project_service_1 = require('./project.service');
+//import { FolioTransitionDirective }  from './transition.directive';
 var FolioListComponent = (function () {
     function FolioListComponent(btnService, projectService) {
         this.btnService = btnService;
@@ -23,6 +24,9 @@ var FolioListComponent = (function () {
             folio: [1, 0.5],
             framer: [1, 1.2]
         });
+        this.projectPosition = {
+            display: 'none'
+        };
     }
     ;
     FolioListComponent.prototype.getProjects = function () {
@@ -33,15 +37,25 @@ var FolioListComponent = (function () {
     FolioListComponent.prototype.ngOnInit = function () {
         this.getProjects();
     };
+    FolioListComponent.prototype.setActive = function (e) {
+        var el = e.target;
+        /*      out = {
+                "transform": `translate(${el.offsetLeft}px, ${el.offsetTop}px)`,
+                "width.px" : el.offsetWidth
+              }*/
+        console.log(el);
+        // this.activeProject = out;
+        //this.transitionService.setProject(project, e.target);
+    };
     FolioListComponent = __decorate([
         core_1.Component({
             selector: 'page-list',
-            templateUrl: 'app/folio/folio-list.component.html',
-            styleUrls: ['app/folio/folio-list.component.css']
+            templateUrl: 'app/folio/list.component.html',
+            styleUrls: ['app/folio/list.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, folio_project_service_1.FolioProjectService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService])
     ], FolioListComponent);
     return FolioListComponent;
 }());
 exports.FolioListComponent = FolioListComponent;
-//# sourceMappingURL=folio-list.component.js.map
+//# sourceMappingURL=list.component.js.map
