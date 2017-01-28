@@ -1,19 +1,30 @@
-.projects {
-  overflow: hidden;
+@keyframes enterUp {
+  0% { opacity:0; transform: translateY(100%); }
+  100% { opacity:1; transform: translateY(0); }
 }
 
-.projects.push {
-  animation: 0.5s slideOut forwards;
-  height: 80vh;
-  transition: height 300ms;
+@keyframes slideOut {
+  0% { opacity:1; transform: translateX(0); }
+  100% { opacity:0; transform: translateX(120%); }
+}
+
+.projects {
+  overflow: hidden;
+  transition: height 300ms, transform 600ms ease-in-out;
+}
+
+.active-child {
+  transform: translateX(120%);
 }
 
 .projects li {
   display: inline-block;
   width: 50%;
-  animation: 1s enterUp backwards;
-  padding: 10px 0 0 10px;
+  animation: 600ms enterUp backwards ease-out;
+}
 
+.projects li.is-active {
+  opacity: 0;
 }
 
 .project-photo.tile {
@@ -21,7 +32,7 @@
 }
 
 .project-tile {
-  padding-bottom: 45%;
+  height: 250px;
   position: relative;
   background-color: rgba(32, 85, 80, 0.3);
 }
@@ -52,4 +63,8 @@
 }
 .project-caption em {
   text-align: right;
+}
+
+.project-frame {
+  width: 100%;
 }

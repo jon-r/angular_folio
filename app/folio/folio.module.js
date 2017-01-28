@@ -15,7 +15,7 @@ var routing_module_1 = require('./routing.module');
 var list_component_1 = require('./list.component');
 var detail_component_1 = require('./detail.component');
 var project_service_1 = require('./project.service');
-var transition_directive_1 = require('./transition.directive');
+//import { FolioTransitionDirective }  from './transition.directive';
 var FolioModule = (function () {
     function FolioModule() {
     }
@@ -29,7 +29,6 @@ var FolioModule = (function () {
             declarations: [
                 list_component_1.FolioListComponent,
                 detail_component_1.FolioDetailComponent,
-                transition_directive_1.FolioTransitionDirective
             ],
             providers: [
                 project_service_1.FolioProjectService

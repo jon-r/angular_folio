@@ -8,7 +8,7 @@ import { FolioProjectService } from './project.service';
 @Component({
   selector: 'page-about',
   templateUrl: 'app/folio/detail.component.html',
-  styleUrls: ['app/folio/detail.component.css']
+  styleUrls: ['app/folio/list.component.css']
 })
 export class FolioDetailComponent {
 

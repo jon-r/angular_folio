@@ -2,11 +2,11 @@
 
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-@Directive({ selector: '[activePosition]' })
+@Directive({ selector: '[projectItem]' })
 export class FolioTransitionDirective {
   constructor(private el: ElementRef) {}
 
-  @Input('activePosition') position;
+  @Input('projectItem') position;
 
   @HostListener('click') onClick() {
     console.log(this);

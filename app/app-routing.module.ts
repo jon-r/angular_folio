@@ -6,24 +6,9 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './notfound/notfound.component';
 
 const appRoutes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
-  },
-/*  {
-    path: '**',
-    component: NotFoundComponent
-  }
-  */
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({

@@ -40,7 +40,7 @@ var FolioDetailComponent = (function () {
         core_1.Component({
             selector: 'page-about',
             templateUrl: 'app/folio/detail.component.html',
-            styleUrls: ['app/folio/detail.component.css']
+            styleUrls: ['app/folio/list.component.css']
         }),
         __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService, router_1.ActivatedRoute])
     ], FolioDetailComponent);

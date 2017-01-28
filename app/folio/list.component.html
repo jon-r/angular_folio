@@ -1,8 +1,8 @@
-<ul class="projects" *ngIf="projects" routerLinkActive="active-child" >
+<ul class="project-container projects" *ngIf="projects" routerLinkActive="active-child" >
   <li *ngFor="let project of projects; let i = index"
       [ngStyle]="{'animation-delay.ms': (i * 50) }"
       routerLinkActive="is-active" >
-    <a [routerLink]="[project.id]" >
+    <a [routerLink]="[project.id]" (click)="clickEvent($event)" >
 
       <figure class="project-tile" >
         <div class="project-photo" [ngStyle]="project.tileStyle" ></div>
@@ -16,6 +16,6 @@
   </li>
 </ul>
 
-<article class="project-frame anim" [activePosition]="position" >
+<article class="project-frame anim" [ngStyle]="projectPosition" >
   <router-outlet></router-outlet>
 </article>

@@ -17,13 +17,8 @@ var folioRoutes = [
         path: 'work',
         component: list_component_1.FolioListComponent,
         children: [
-            {
-                path: '',
-            },
-            {
-                path: ':id',
-                component: detail_component_1.FolioDetailComponent
-            },
+            { path: '' },
+            { path: ':id', component: detail_component_1.FolioDetailComponent },
         ]
     }
 ];

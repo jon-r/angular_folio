@@ -8,14 +8,8 @@ const folioRoutes: Routes = [
     path: 'work',
     component: FolioListComponent,
     children: [
-      {
-        path: '',
-
-      },
-      {
-        path: ':id',
-        component: FolioDetailComponent
-      },
+      { path: '' },
+      { path: ':id', component: FolioDetailComponent },
     ]
   }
 ];

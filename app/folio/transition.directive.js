@@ -22,7 +22,7 @@ var FolioTransitionDirective = (function () {
         this.el.nativeElement.style.backgroundColor = 'red';
     };
     __decorate([
-        core_1.Input('activePosition'),
+        core_1.Input('projectItem'),
         __metadata('design:type', Object)
     ], FolioTransitionDirective.prototype, "position", void 0);
     __decorate([
@@ -32,7 +32,7 @@ var FolioTransitionDirective = (function () {
         __metadata('design:returntype', void 0)
     ], FolioTransitionDirective.prototype, "onClick", null);
     FolioTransitionDirective = __decorate([
-        core_1.Directive({ selector: '[activePosition]' }),
+        core_1.Directive({ selector: '[projectItem]' }),
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], FolioTransitionDirective);
     return FolioTransitionDirective;

@@ -1,22 +1,25 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, AfterContentInit, OnDestroy } from '@angular/core';
 //import { Router } from '@angular/router';
+//import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { ButtonService } from '../shared/button.service';
 
 import { FolioProject } from './project';
 import { FolioProjectService } from './project.service';
-//import { FolioTransitionDirective }  from './transition.directive';
+import { FolioTransitionDirective }  from './transition.directive';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'app/folio/list.component.html',
   styleUrls: ['app/folio/list.component.css']
 })
-export class FolioListComponent {
+export class FolioListComponent implements OnInit {
 
   constructor(
     private btnService: ButtonService,
     private projectService: FolioProjectService,
+    private router: Router
   ) {
     this.btnService.setButtons({
       home: [-0.5,-0.5],
@@ -25,34 +28,61 @@ export class FolioListComponent {
       framer: [1, 1.2]
     });
 
-      this.projectPosition = {
-        display : 'none'
-      }
+    this.sub = router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe((event) => {
+        if (event.url.endsWith('work')) {
+          this.resetActive();
+        } else {
+          this.setActive(false);
+        }
+      })
+
   };
 
   projects = [];
   projectPosition;
+  sub;
 
   getProjects(): void {
     this.projectService.getProjects()
       .then(projects => this.projects = projects);
+
   }
 
   ngOnInit(): void {
     this.getProjects();
+    this.resetActive();
   }
 
-  setActive(e: Event): void {
-    let el = e.target;
-/*      out = {
-        "transform": `translate(${el.offsetLeft}px, ${el.offsetTop}px)`,
-        "width.px" : el.offsetWidth
-      }*/
-    console.log(el);
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
-   // this.activeProject = out;
+  resetActive() {
+    this.projectPosition = {
+      display : 'none'
+    }
+  }
+
+  clickEvent(e: Event): void {
+    this.setActive(e.target);
+  }
+
+  setActive(origin: any): void {
+    if (origin) {
+      this.projectPosition = {
+        "transform": `translate(${origin.offsetLeft}px, ${origin.offsetTop}px)`,
+        "width.px" : origin.offsetWidth
+      };
+    } else {
+      this.projectPosition.display = 'block';
+    }
+
+
+
+//    this.router.navigate(['work', id]);
     //this.transitionService.setProject(project, e.target);
-
   }
 
 }
