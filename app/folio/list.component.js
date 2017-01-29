@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import 'npm:simplebar/umd/simplebar';
 //import { Router } from '@angular/router';
 //import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
 var router_1 = require('@angular/router');
@@ -61,8 +62,9 @@ var FolioListComponent = (function () {
     };
     FolioListComponent.prototype.setActive = function (origin) {
         if (origin) {
+            var scrolled = this.list.nativeElement.scrollTop;
             this.projectPosition = {
-                "transform": "translate(" + origin.offsetLeft + "px, " + origin.offsetTop + "px)",
+                "transform": "translate(" + origin.offsetLeft + "px, " + (origin.offsetTop - scrolled) + "px)",
                 "width.px": origin.offsetWidth
             };
         }
@@ -72,6 +74,10 @@ var FolioListComponent = (function () {
         //    this.router.navigate(['work', id]);
         //this.transitionService.setProject(project, e.target);
     };
+    __decorate([
+        core_1.ViewChild('folioList'),
+        __metadata('design:type', core_1.ElementRef)
+    ], FolioListComponent.prototype, "list", void 0);
     FolioListComponent = __decorate([
         core_1.Component({
             selector: 'page-list',

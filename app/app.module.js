@@ -37,7 +37,7 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 about_component_1.AboutComponent,
                 notfound_component_1.NotFoundComponent,
-                grid_pipe_1.ScreenGridPipe
+                grid_pipe_1.ScreenGridPipe,
             ],
             providers: [
                 button_service_1.ButtonService,

@@ -1,4 +1,8 @@
-import { Component, OnInit, Input, ElementRef, AfterContentInit, OnDestroy } from '@angular/core';
+import {
+  Component, Input, ViewChild,
+  ElementRef, OnInit, OnDestroy } from '@angular/core';
+
+//import 'npm:simplebar/umd/simplebar';
 //import { Router } from '@angular/router';
 //import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
@@ -7,7 +11,6 @@ import { ButtonService } from '../shared/button.service';
 
 import { FolioProject } from './project';
 import { FolioProjectService } from './project.service';
-import { FolioTransitionDirective }  from './transition.directive';
 
 @Component({
   selector: 'page-list',
@@ -15,6 +18,7 @@ import { FolioTransitionDirective }  from './transition.directive';
   styleUrls: ['app/folio/list.component.css']
 })
 export class FolioListComponent implements OnInit {
+  @ViewChild('folioList') list: ElementRef;
 
   constructor(
     private btnService: ButtonService,
@@ -40,6 +44,7 @@ export class FolioListComponent implements OnInit {
 
   };
 
+
   projects = [];
   projectPosition;
   sub;
@@ -53,6 +58,7 @@ export class FolioListComponent implements OnInit {
   ngOnInit(): void {
     this.getProjects();
     this.resetActive();
+
   }
 
   ngOnDestroy(): void {
@@ -71,8 +77,9 @@ export class FolioListComponent implements OnInit {
 
   setActive(origin: any): void {
     if (origin) {
+      let scrolled = this.list.nativeElement.scrollTop;
       this.projectPosition = {
-        "transform": `translate(${origin.offsetLeft}px, ${origin.offsetTop}px)`,
+        "transform": `translate(${origin.offsetLeft}px, ${origin.offsetTop - scrolled }px)`,
         "width.px" : origin.offsetWidth
       };
     } else {

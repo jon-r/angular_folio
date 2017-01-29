@@ -1,4 +1,4 @@
-<ul class="project-container projects" *ngIf="projects" routerLinkActive="active-child" >
+<ul #folioList class="project-container projects" *ngIf="projects" routerLinkActive="active-child">
   <li *ngFor="let project of projects; let i = index"
       [ngStyle]="{'animation-delay.ms': (i * 50) }"
       routerLinkActive="is-active" >

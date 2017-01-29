@@ -8,9 +8,12 @@
   100% { opacity:0; transform: translateX(120%); }
 }
 
+
 .projects {
-  overflow: hidden;
-  transition: height 300ms, transform 600ms ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform 600ms ease-in-out;
+  height: 100%;
 }
 
 .active-child {

@@ -8,9 +8,9 @@ import { FolioModule }    from './folio/folio.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
-
 import { AppComponent }   from './app.component';
 import { ScreenGridPipe } from './shared/grid.pipe';
+
 
 import { AboutComponent }   from './about/about.component';
 import { HomeComponent }    from './home/home.component';
@@ -33,7 +33,8 @@ import { GridService } from './shared/grid.service';
     AboutComponent,
     NotFoundComponent,
 
-    ScreenGridPipe
+    ScreenGridPipe,
+
   ],
   providers: [
     ButtonService,

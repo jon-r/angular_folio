@@ -37,11 +37,10 @@ a {
 .frame-container {
   position: absolute;
   top: 12.5vh;
-  bottom:0;
+  bottom:16px;
   left: 10vw;
   right: 30vw;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* animations --------------------------------------------------------------- */
