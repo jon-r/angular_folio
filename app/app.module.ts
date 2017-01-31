@@ -9,6 +9,7 @@ import { FolioModule }    from './folio/folio.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }   from './app.component';
+import { WindowRefService }   from './shared/window-ref.service';
 import { ScreenGridPipe } from './shared/grid.pipe';
 
 
@@ -39,6 +40,7 @@ import { GridService } from './shared/grid.service';
   providers: [
     ButtonService,
     GridService,
+    WindowRefService
   ],
 
   bootstrap: [ AppComponent ]

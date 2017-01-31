@@ -21,7 +21,6 @@ var FolioListComponent = (function () {
         this.btnService = btnService;
         this.projectService = projectService;
         this.router = router;
-        this.projects = [];
         this.btnService.setButtons({
             home: [-0.5, -0.5],
             about: [2, 0.5],
@@ -32,10 +31,7 @@ var FolioListComponent = (function () {
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })
             .subscribe(function (event) {
             if (event.url.endsWith('work')) {
-                _this.resetActive();
-            }
-            else {
-                _this.setActive(false);
+                _this.clearPosition();
             }
         });
     }
@@ -47,32 +43,32 @@ var FolioListComponent = (function () {
     };
     FolioListComponent.prototype.ngOnInit = function () {
         this.getProjects();
-        this.resetActive();
     };
     FolioListComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    FolioListComponent.prototype.resetActive = function () {
-        this.projectPosition = {
-            display: 'none'
-        };
-    };
     FolioListComponent.prototype.clickEvent = function (e) {
-        this.setActive(e.target);
+        var target = e.target;
+        this.startPosition(target);
     };
-    FolioListComponent.prototype.setActive = function (origin) {
-        if (origin) {
-            var scrolled = this.list.nativeElement.scrollTop;
-            this.projectPosition = {
-                "transform": "translate(" + origin.offsetLeft + "px, " + (origin.offsetTop - scrolled) + "px)",
-                "width.px": origin.offsetWidth
-            };
-        }
-        else {
-            this.projectPosition.display = 'block';
-        }
-        //    this.router.navigate(['work', id]);
-        //this.transitionService.setProject(project, e.target);
+    FolioListComponent.prototype.clearPosition = function () {
+        this.projectPosition = { display: 'none' };
+    };
+    FolioListComponent.prototype.startPosition = function (origin) {
+        var _this = this;
+        var scrolled = this.list.nativeElement.scrollTop;
+        this.projectPosition = {
+            "transform": "translate(" + origin.offsetLeft + "px, " + (origin.offsetTop - scrolled) + "px)",
+            "width.px": origin.offsetWidth
+        };
+        setTimeout(function () { return _this.finalPosition(); }, 300);
+    };
+    FolioListComponent.prototype.finalPosition = function () {
+        var fullWidth = this.list.nativeElement.offsetWidth;
+        this.projectPosition = {
+            display: 'block',
+            "width.px": fullWidth
+        };
     };
     __decorate([
         core_1.ViewChild('folioList'),

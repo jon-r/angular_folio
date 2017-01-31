@@ -16,6 +16,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var folio_module_1 = require('./folio/folio.module');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
+var window_ref_service_1 = require('./shared/window-ref.service');
 var grid_pipe_1 = require('./shared/grid.pipe');
 var about_component_1 = require('./about/about.component');
 var home_component_1 = require('./home/home.component');
@@ -42,6 +43,7 @@ var AppModule = (function () {
             providers: [
                 button_service_1.ButtonService,
                 grid_service_1.GridService,
+                window_ref_service_1.WindowRefService
             ],
             bootstrap: [app_component_1.AppComponent]
         }),

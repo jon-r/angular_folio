@@ -36,8 +36,8 @@ a {
 
 .frame-container {
   position: absolute;
-  top: 12.5vh;
-  bottom:16px;
+  top: 13vh;
+  bottom: 2vh;
   left: 10vw;
   right: 30vw;
   overflow: hidden;
@@ -111,6 +111,6 @@ nav .home{
   background-color: currentColor;
   height: 4px;
   border: none;
-  width: 60%;
+  width: 60vw;
   transform-origin: left;
 }

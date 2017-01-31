@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable }  from 'rxjs/Observable';
 
-
+import { WindowRefService }   from './shared/window-ref.service';
 
 import { Buttons } from './shared/buttons';
 import { ButtonService } from './shared/button.service';
@@ -19,21 +19,22 @@ import { GridService } from './shared/grid.service';
 
 export class AppComponent {
 
-  constructor(
-    private btnService: ButtonService
-  ) {
+  private _window: Window;
+  private isLoaded: boolean; // = false;
+  private btnPos: Buttons;
 
+  constructor(
+    private btnService: ButtonService,
+    private windowRef: WindowRefService
+  ) {
     btnService.buttonOutput$
       .debounceTime(200)
       .subscribe(n => this.updatePos(n));
 
-
+    this._window = windowRef.nativeWindow;
+    this.btnPos = {home: null, about: null,folio: null,framer: null};
   };
 
-//  router: any;
-
-  //btnPos;
- //
 
   updateGrid() {
     for (let el in this.btnPos) {
@@ -49,8 +50,7 @@ export class AppComponent {
     }
   }
 
-  isLoaded: boolean = false;
-  btnPos: Buttons = {home: null,about: null,folio: null,framer: null};
+
 
   ngOnInit(): void {
 
@@ -60,7 +60,7 @@ export class AppComponent {
       .forEach(el => this.btnPos[el] = new GridService());
 
 
-    Observable.fromEvent(window, 'resize')
+    Observable.fromEvent(this._window, 'resize')
       .debounceTime(200)
       .subscribe(e => this.updateGrid());
   }

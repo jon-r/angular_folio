@@ -9,23 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ScreenGridPipe = (function () {
-    function ScreenGridPipe() {
+function getWindow() {
+    return window;
+}
+var WindowRefService = (function () {
+    function WindowRefService() {
     }
-    /*  private _window: Window;
-
-      constructor(private windowRef: WindowRefService) {
-        this._window = windowRef.nativeWindow;
-      }*/
-    ScreenGridPipe.prototype.transform = function (value) {
-        var x = value[0] * window.innerWidth / 10, y = value[1] * window.innerHeight / 10;
-        return [x, y];
-    };
-    ScreenGridPipe = __decorate([
-        core_1.Pipe({ name: 'screenGrid' }),
+    Object.defineProperty(WindowRefService.prototype, "nativeWindow", {
+        get: function () {
+            return getWindow();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    WindowRefService = __decorate([
+        core_1.Injectable(),
         __metadata('design:paramtypes', [])
-    ], ScreenGridPipe);
-    return ScreenGridPipe;
+    ], WindowRefService);
+    return WindowRefService;
 }());
-exports.ScreenGridPipe = ScreenGridPipe;
-//# sourceMappingURL=grid.pipe.js.map
+exports.WindowRefService = WindowRefService;
+//# sourceMappingURL=window-ref.service.js.map

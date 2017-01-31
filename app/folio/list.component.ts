@@ -36,16 +36,13 @@ export class FolioListComponent implements OnInit {
       .filter(event => event instanceof NavigationEnd)
       .subscribe((event) => {
         if (event.url.endsWith('work')) {
-          this.resetActive();
-        } else {
-          this.setActive(false);
+          this.clearPosition();
         }
       })
-
   };
 
 
-  projects = [];
+  projects: FolioProject[];
   projectPosition;
   sub;
 
@@ -57,39 +54,39 @@ export class FolioListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjects();
-    this.resetActive();
-
   }
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 
-  resetActive() {
-    this.projectPosition = {
-      display : 'none'
-    }
-  }
-
   clickEvent(e: Event): void {
-    this.setActive(e.target);
+    let target = <HTMLSelectElement> e.target;
+    this.startPosition(target);
   }
 
-  setActive(origin: any): void {
-    if (origin) {
-      let scrolled = this.list.nativeElement.scrollTop;
-      this.projectPosition = {
-        "transform": `translate(${origin.offsetLeft}px, ${origin.offsetTop - scrolled }px)`,
-        "width.px" : origin.offsetWidth
-      };
-    } else {
-      this.projectPosition.display = 'block';
-    }
+  clearPosition() {
+    this.projectPosition = { display : 'none' }
+  }
 
+  startPosition(origin: HTMLElement): void {
 
+    let scrolled = this.list.nativeElement.scrollTop;
+    this.projectPosition = {
+      "transform": `translate(${origin.offsetLeft}px, ${origin.offsetTop - scrolled }px)`,
+      "width.px" : origin.offsetWidth
+    };
 
-//    this.router.navigate(['work', id]);
-    //this.transitionService.setProject(project, e.target);
+    setTimeout(() => this.finalPosition(), 300);
+
+  }
+
+  finalPosition(): void {
+    let fullWidth = this.list.nativeElement.offsetWidth;
+    this.projectPosition = {
+      display : 'block',
+      "width.px" : fullWidth
+    };
   }
 
 }

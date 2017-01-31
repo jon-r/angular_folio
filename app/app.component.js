@@ -10,22 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Observable_1 = require('rxjs/Observable');
+var window_ref_service_1 = require('./shared/window-ref.service');
 var button_service_1 = require('./shared/button.service');
 var grid_service_1 = require('./shared/grid.service');
 var AppComponent = (function () {
-    function AppComponent(btnService) {
+    function AppComponent(btnService, windowRef) {
         var _this = this;
         this.btnService = btnService;
-        this.isLoaded = false;
-        this.btnPos = { home: null, about: null, folio: null, framer: null };
+        this.windowRef = windowRef;
         btnService.buttonOutput$
             .debounceTime(200)
             .subscribe(function (n) { return _this.updatePos(n); });
+        this._window = windowRef.nativeWindow;
+        this.btnPos = { home: null, about: null, folio: null, framer: null };
     }
     ;
-    //  router: any;
-    //btnPos;
-    //
     AppComponent.prototype.updateGrid = function () {
         for (var el in this.btnPos) {
             this.btnPos[el].update();
@@ -42,7 +41,7 @@ var AppComponent = (function () {
         var _this = this;
         ['home', 'about', 'folio', 'framer']
             .forEach(function (el) { return _this.btnPos[el] = new grid_service_1.GridService(); });
-        Observable_1.Observable.fromEvent(window, 'resize')
+        Observable_1.Observable.fromEvent(this._window, 'resize')
             .debounceTime(200)
             .subscribe(function (e) { return _this.updateGrid(); });
     };
@@ -54,7 +53,7 @@ var AppComponent = (function () {
             styleUrls: ['app/app.component.css'],
             providers: [button_service_1.ButtonService]
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [button_service_1.ButtonService, window_ref_service_1.WindowRefService])
     ], AppComponent);
     return AppComponent;
 }());
