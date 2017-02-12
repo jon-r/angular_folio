@@ -6,7 +6,7 @@ viewBox="0 0 34 16" >
 </a>
 <nav>
 
-  <a class="anim home nav-link" routerLink="/home" [ngStyle]="btnPos.home.style" >
+  <a class="home nav-link" routerLink="/home" >
 
     <header>
       <h1>Jon Richards</h1>
@@ -14,13 +14,13 @@ viewBox="0 0 34 16" >
     </header>
   </a>
 
-  <a class="anim nav-link" routerLink="/work" [ngStyle]="btnPos.folio.style" >
+  <a class="anim nav-link work-link" routerLink="/work" >
     <h2>Work</h2>
   </a>
-  <a class="anim nav-link" routerLink="/about" [ngStyle]="btnPos.about.style" >
+  <a class="anim nav-link about-link" routerLink="/about"  >
     <h2>About</h2>
   </a>
-  <div class="anim framer" [ngStyle]="btnPos.framer.style" ></div>
+  <div class="anim framer" [ngStyle]="framerPos" ></div>
 
 </nav>
 

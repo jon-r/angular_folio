@@ -10,19 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
-var button_service_1 = require('../shared/button.service');
 var project_service_1 = require('./project.service');
 var FolioDetailComponent = (function () {
-    function FolioDetailComponent(btnService, projectService, route) {
-        this.btnService = btnService;
+    function FolioDetailComponent(projectService, route) {
         this.projectService = projectService;
         this.route = route;
-        this.btnService.setButtons({
-            home: [-0.5, -0.5],
-            about: [2, 0.5],
-            folio: [1, 0.5],
-            framer: [1, 1.2]
-        });
     }
     ;
     FolioDetailComponent.prototype.goBack = function () {
@@ -42,7 +34,7 @@ var FolioDetailComponent = (function () {
             templateUrl: 'app/folio/detail.component.html',
             styleUrls: ['app/folio/list.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [project_service_1.FolioProjectService, router_1.ActivatedRoute])
     ], FolioDetailComponent);
     return FolioDetailComponent;
 }());

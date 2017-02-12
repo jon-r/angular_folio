@@ -1,7 +1,6 @@
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Component, OnInit} from '@angular/core';
-import { ButtonService } from '../shared/button.service';
 import { FolioProject } from './project';
 import { FolioProjectService } from './project.service';
 
@@ -13,16 +12,10 @@ import { FolioProjectService } from './project.service';
 export class FolioDetailComponent {
 
   constructor(
-    private btnService: ButtonService,
     private projectService: FolioProjectService,
     private route: ActivatedRoute
   ) {
-    this.btnService.setButtons({
-      home: [-0.5,-0.5],
-      about: [2,0.5],
-      folio: [1,0.5],
-      framer: [1, 1.2]
-    })
+
   };
 
   project: FolioProject;

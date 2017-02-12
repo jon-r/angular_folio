@@ -2,12 +2,8 @@ import {
   Component, Input, ViewChild,
   ElementRef, OnInit, OnDestroy } from '@angular/core';
 
-//import 'npm:simplebar/umd/simplebar';
-//import { Router } from '@angular/router';
-//import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { ButtonService } from '../shared/button.service';
 
 import { FolioProject } from './project';
 import { FolioProjectService } from './project.service';
@@ -21,16 +17,9 @@ export class FolioListComponent implements OnInit {
   @ViewChild('folioList') list: ElementRef;
 
   constructor(
-    private btnService: ButtonService,
     private projectService: FolioProjectService,
     private router: Router
   ) {
-    this.btnService.setButtons({
-      home: [-0.5,-0.5],
-      about: [2,0.5],
-      folio: [1,0.5],
-      framer: [1, 1.2]
-    });
 
     this.sub = router.events
       .filter(event => event instanceof NavigationEnd)
@@ -86,6 +75,7 @@ export class FolioListComponent implements OnInit {
     this.projectPosition = {
       display : 'block',
       "width.px" : fullWidth
+      //to update this size dynamically? maybe use grid sevice
     };
   }
 

@@ -9,16 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var button_service_1 = require('../shared/button.service');
 var HomeComponent = (function () {
-    function HomeComponent(btnService) {
-        this.btnService = btnService;
-        this.btnService.setButtons({
-            home: [-6.4, -3],
-            about: [3.8, 4],
-            folio: [3.8, 3],
-            framer: [3.7, 2, { rotate: 90, 'width.vh': 60 }]
-        });
+    function HomeComponent() {
     }
     ;
     HomeComponent = __decorate([
@@ -27,7 +19,7 @@ var HomeComponent = (function () {
             templateUrl: 'app/home/home.component.html',
             styleUrls: ['app/home/home.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
+        __metadata('design:paramtypes', [])
     ], HomeComponent);
     return HomeComponent;
 }());

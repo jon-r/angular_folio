@@ -9,24 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import 'npm:simplebar/umd/simplebar';
-//import { Router } from '@angular/router';
-//import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
 var router_1 = require('@angular/router');
-var button_service_1 = require('../shared/button.service');
 var project_service_1 = require('./project.service');
 var FolioListComponent = (function () {
-    function FolioListComponent(btnService, projectService, router) {
+    function FolioListComponent(projectService, router) {
         var _this = this;
-        this.btnService = btnService;
         this.projectService = projectService;
         this.router = router;
-        this.btnService.setButtons({
-            home: [-0.5, -0.5],
-            about: [2, 0.5],
-            folio: [1, 0.5],
-            framer: [1, 1.2]
-        });
         this.sub = router.events
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })
             .subscribe(function (event) {
@@ -80,7 +69,7 @@ var FolioListComponent = (function () {
             templateUrl: 'app/folio/list.component.html',
             styleUrls: ['app/folio/list.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService, router_1.Router])
+        __metadata('design:paramtypes', [project_service_1.FolioProjectService, router_1.Router])
     ], FolioListComponent);
     return FolioListComponent;
 }());

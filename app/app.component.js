@@ -9,51 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Observable_1 = require('rxjs/Observable');
 var window_ref_service_1 = require('./shared/window-ref.service');
-var button_service_1 = require('./shared/button.service');
-var grid_service_1 = require('./shared/grid.service');
 var AppComponent = (function () {
-    function AppComponent(btnService, windowRef) {
-        var _this = this;
-        this.btnService = btnService;
+    function AppComponent(windowRef) {
         this.windowRef = windowRef;
-        btnService.buttonOutput$
-            .debounceTime(200)
-            .subscribe(function (n) { return _this.updatePos(n); });
         this._window = windowRef.nativeWindow;
-        this.btnPos = { home: null, about: null, folio: null, framer: null };
     }
     ;
-    AppComponent.prototype.updateGrid = function () {
-        for (var el in this.btnPos) {
-            this.btnPos[el].update();
-        }
-    };
-    AppComponent.prototype.updatePos = function (pos) {
-        for (var el in this.btnPos) {
-            var extra = pos[el][2] ?
-                pos[el][2] : { reset: true };
-            this.btnPos[el].setPos(pos[el], extra);
-        }
-    };
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        ['home', 'about', 'folio', 'framer']
-            .forEach(function (el) { return _this.btnPos[el] = new grid_service_1.GridService(); });
-        Observable_1.Observable.fromEvent(this._window, 'resize')
-            .debounceTime(200)
-            .subscribe(function (e) { return _this.updateGrid(); });
     };
     AppComponent = __decorate([
         core_1.Component({
             // moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
-            styleUrls: ['app/app.component.css'],
-            providers: [button_service_1.ButtonService]
+            styleUrls: ['app/app.component.css']
         }),
-        __metadata('design:paramtypes', [button_service_1.ButtonService, window_ref_service_1.WindowRefService])
+        __metadata('design:paramtypes', [window_ref_service_1.WindowRefService])
     ], AppComponent);
     return AppComponent;
 }());
