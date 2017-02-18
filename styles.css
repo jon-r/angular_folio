@@ -32,17 +32,6 @@ a {
   color: inherit;
 }
 
-/* helpers ------------------------------------------------------------------ */
-
-.frame-container {
-  position: absolute;
-  top: 13vh;
-  bottom: 2vh;
-  left: 10vw;
-  right: 30vw;
-  overflow: hidden;
-}
-
 /* animations --------------------------------------------------------------- */
 
 .anim {
@@ -73,7 +62,7 @@ a {
 .jr-logo {
   position: fixed;
   width: 6vw;
-  transform: translate(20px,20px);
+  transform: translate(16px,16px);
   transition-delay: 200ms;
 }
 
@@ -93,24 +82,4 @@ a {
   opacity: 0.3;
 }
 
-/* Site Nav ----------------------------------------------------------------- */
 
-nav .home{
-  right: 0;
-  left: auto;
-  bottom: 0;
-  top: auto;
-  text-align: right;
-}
-
-.nav-link {
-  z-index: 99;
-}
-
-.framer {
-  background-color: currentColor;
-  height: 4px;
-  border: none;
-  width: 60vw;
-  transform-origin: left;
-}
