@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { GridItem } from './grid-item';
-import { ScreenGridPipe } from './grid.pipe';
-//import { Subject } from 'rxjs/Subject';
-//import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class GridService {
@@ -17,7 +14,6 @@ export class GridService {
 
   }
 
-  private grid : number[];
   private el : GridItem;
   public style;
 
@@ -41,20 +37,14 @@ export class GridService {
     this.update();
   }
 
-  setGrid(grid) {
-    this.grid = grid;
-
-    this.update();
-  }
-
   private update() {
 
 
     let arr: number[] = [0,0], coordStr: string;
 
-    arr = new ScreenGridPipe().transform(this.el.coords);
+    arr = this.el.coords.map(x => x * 10);
 
-    coordStr = `translate(${arr[0]}px, ${arr[1]}px) ${this.el.rotation}`;
+    coordStr = `translate(${arr[0]}vw, ${arr[1]}vh) ${this.el.rotation}`;
 
     this.style.transform = coordStr;
 

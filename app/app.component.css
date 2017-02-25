@@ -1,0 +1,30 @@
+
+.frame-container {
+  position: absolute;
+  top: 13vh;
+  bottom: 2vh;
+  left: 10vw;
+  right: 30vw;
+  overflow: hidden;
+}
+nav .home{
+  right: 0;
+  left: auto;
+  bottom: 0;
+  top: auto;
+  text-align: right;
+}
+
+.nav-link {
+  z-index: 99;
+}
+
+.framer {
+  background-color: currentColor;
+  left: 50vw;
+  height: 4px;
+  border: none;
+  width: 142vw; /* IE fallback */
+  width: 142vmax;
+  transform-origin: center;
+}

@@ -1,8 +1,9 @@
-<ul #folioList class="project-container projects" *ngIf="projects" routerLinkActive="active-child">
+<ul #folioList class="projects" *ngIf="projects" routerLinkActive="active-child">
   <li *ngFor="let project of projects; let i = index"
       [ngStyle]="{'animation-delay.ms': (i * 50) }"
-      routerLinkActive="is-active" >
-    <a [routerLink]="[project.id]" (click)="clickEvent($event)" >
+      routerLinkActive="is-active"   >
+    <a class="project-container" [routerLink]="[project.id]"
+    (click)="tileTransition($event)"   >
 
       <figure class="project-tile" >
         <div class="project-photo" [ngStyle]="project.tileStyle" ></div>

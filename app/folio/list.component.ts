@@ -29,7 +29,7 @@ export class FolioListComponent implements OnInit {
       home: [-0.5,-0.5],
       about: [2,0.5],
       folio: [1,0.5],
-      framer: [1, 1.2]
+      framer: [-7, 1]
     });
 
     this.sub = router.events
@@ -60,7 +60,7 @@ export class FolioListComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
-  clickEvent(e: Event): void {
+  tileTransition(e: Event): void {
     let target = <HTMLSelectElement> e.target;
     this.startPosition(target);
   }
@@ -70,11 +70,12 @@ export class FolioListComponent implements OnInit {
   }
 
   startPosition(origin: HTMLElement): void {
+    const TILEPAD = 8
 
     let scrolled = this.list.nativeElement.scrollTop;
     this.projectPosition = {
-      "transform": `translate(${origin.offsetLeft}px, ${origin.offsetTop - scrolled }px)`,
-      "width.px" : origin.offsetWidth
+      "transform": `translate(${origin.offsetLeft - TILEPAD}px, ${origin.offsetTop - scrolled - TILEPAD}px)`,
+      "width.px" : origin.offsetWidth + (TILEPAD * 2)
     };
 
     setTimeout(() => this.finalPosition(), 300);

@@ -10,10 +10,10 @@ export class HomeComponent {
 
   constructor(private btnService: ButtonService) {
     this.btnService.setButtons({
-      home: [-6.4,-3],
-      about: [3.8,4],
+      home: [-6,-3],
+      about: [4,4],
       folio: [3.8,3],
-      framer: [3.7, 2, {rotate: 90, 'width.vh': 60} ]
+      framer: [-8.2, 5, {rotate: 70} ]
     })
   };
 

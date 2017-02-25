@@ -25,7 +25,7 @@ var FolioListComponent = (function () {
             home: [-0.5, -0.5],
             about: [2, 0.5],
             folio: [1, 0.5],
-            framer: [1, 1.2]
+            framer: [-7, 1]
         });
         this.sub = router.events
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })
@@ -47,7 +47,7 @@ var FolioListComponent = (function () {
     FolioListComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    FolioListComponent.prototype.clickEvent = function (e) {
+    FolioListComponent.prototype.tileTransition = function (e) {
         var target = e.target;
         this.startPosition(target);
     };
@@ -56,10 +56,11 @@ var FolioListComponent = (function () {
     };
     FolioListComponent.prototype.startPosition = function (origin) {
         var _this = this;
+        var TILEPAD = 8;
         var scrolled = this.list.nativeElement.scrollTop;
         this.projectPosition = {
-            "transform": "translate(" + origin.offsetLeft + "px, " + (origin.offsetTop - scrolled) + "px)",
-            "width.px": origin.offsetWidth
+            "transform": "translate(" + (origin.offsetLeft - TILEPAD) + "px, " + (origin.offsetTop - scrolled - TILEPAD) + "px)",
+            "width.px": origin.offsetWidth + (TILEPAD * 2)
         };
         setTimeout(function () { return _this.finalPosition(); }, 300);
     };

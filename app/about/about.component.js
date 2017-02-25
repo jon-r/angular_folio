@@ -17,7 +17,7 @@ var AboutComponent = (function () {
             home: [-0.5, -0.5],
             about: [2, 0.5],
             folio: [1, 0.5],
-            framer: [1, 1.2]
+            framer: [-7, 1]
         });
     }
     ;
