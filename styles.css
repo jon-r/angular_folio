@@ -10,21 +10,13 @@ body {
   overflow: hidden;
 }
 
-h1, h2, h3 {
-  font-weight: bold;
-}
+h1, h2, h3 { font-weight: bold; }
 
-h1 {
-  font-size: calc(0.8vw + 3rem);
-}
+h1 { font-size: calc(1vw + 3rem); }
 
-h2 {
-  font-size: calc(0.8vw + 1.5rem);
-}
+h2 { font-size: calc(1vw + 1.5rem); }
 
-h3 {
-  font-size: calc(0.8vw + 0.8rem);
-}
+h3 { font-size: calc(1vw + 0.8rem); }
 
 a {
   text-decoration: none;
@@ -64,7 +56,7 @@ a {
 .jr-logo {
   position: fixed;
   width: 6vw;
-  transform: translate(20px,20px);
+  transform: translate(1vw,2vh);
   transition-delay: 200ms;
 }
 

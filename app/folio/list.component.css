@@ -8,6 +8,29 @@
   100% { opacity:0; transform: translateX(120%); }
 }
 
+.folio-title {
+  position: absolute;
+  top: 66vh;
+  transform: rotate(-8deg);
+  z-index: 10;
+}
+
+.folio-title > * {
+  display: inline-block;
+}
+
+.folio-title > * {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.page-title {
+  font-size: calc(1vw + 5rem)
+}
+
+
+.folio-filter {}
+
 
 .projects {
   overflow-y: auto;

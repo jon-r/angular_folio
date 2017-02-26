@@ -1,12 +1,11 @@
 "use strict";
 var FolioProject = (function () {
-    function FolioProject(id, title, sub, cat, desc, tileStyle) {
+    function FolioProject(id, title, desc, slug, cat) {
         this.id = id;
         this.title = title;
-        this.sub = sub;
-        this.cat = cat;
         this.desc = desc;
-        this.tileStyle = tileStyle;
+        this.slug = slug;
+        this.cat = cat;
     }
     return FolioProject;
 }());

@@ -1,12 +1,19 @@
-<ul #folioList class="projects" *ngIf="projects" routerLinkActive="active-child">
-  <li *ngFor="let project of projects; let i = index"
+<header class="folio-title">
+  <h1 class="page-title">Portfolio</h1>
+  <h2 class="folio-filter" (click)="filterProjects('work')" >Work</h2>
+  <h2 class="folio-filter" (click)="filterProjects('play')" >Play</h2>
+</header>
+
+
+<ul #folioList class="projects" *ngIf="filteredProjects" routerLinkActive="active-child">
+  <li *ngFor="let project of filteredProjects; let i = index"
       [ngStyle]="{'animation-delay.ms': (i * 50) }"
       routerLinkActive="is-active"   >
     <a class="project-container" [routerLink]="[project.id]"
     (click)="tileTransition($event)"   >
 
       <figure class="project-tile" >
-        <div class="project-photo" [ngStyle]="project.tileStyle" ></div>
+        <div class="project-photo" ></div>
         <figcaption class="project-caption">
           <h3>{{project.title}}</h3>
           <em>{{project.desc}}</em>

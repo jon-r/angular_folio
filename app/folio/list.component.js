@@ -9,9 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import 'npm:simplebar/umd/simplebar';
-//import { Router } from '@angular/router';
-//import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
 var router_1 = require('@angular/router');
 var button_service_1 = require('../shared/button.service');
 var project_service_1 = require('./project.service');
@@ -23,9 +20,9 @@ var FolioListComponent = (function () {
         this.router = router;
         this.btnService.setButtons({
             home: [-0.5, -0.5],
-            about: [2, 0.5],
-            folio: [1, 0.5],
-            framer: [-7, 1]
+            about: [2, 0.3],
+            folio: [1, 0.3],
+            framer: [-7, 8, { rotate: -8 }]
         });
         this.sub = router.events
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })
@@ -35,11 +32,17 @@ var FolioListComponent = (function () {
             }
         });
     }
-    ;
     FolioListComponent.prototype.getProjects = function () {
         var _this = this;
-        this.projectService.getProjects()
-            .then(function (projects) { return _this.projects = projects; });
+        this.projectService.getProjects().then(function (projects) {
+            _this.allProjects = projects;
+            _this.filterProjects('work');
+        });
+    };
+    FolioListComponent.prototype.filterProjects = function (category) {
+        this.filteredProjects = this.allProjects.filter(function (project) {
+            return project.cat === category;
+        });
     };
     FolioListComponent.prototype.ngOnInit = function () {
         this.getProjects();

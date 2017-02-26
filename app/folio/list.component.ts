@@ -1,10 +1,8 @@
 import {
   Component, Input, ViewChild,
-  ElementRef, OnInit, OnDestroy } from '@angular/core';
+  ElementRef, OnInit, OnDestroy
+} from '@angular/core';
 
-//import 'npm:simplebar/umd/simplebar';
-//import { Router } from '@angular/router';
-//import { Component, OnInit, Input, ElementRef, Directive, ContentChildren, QueryList, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { ButtonService } from '../shared/button.service';
@@ -20,6 +18,8 @@ import { FolioProjectService } from './project.service';
 export class FolioListComponent implements OnInit {
   @ViewChild('folioList') list: ElementRef;
 
+
+
   constructor(
     private btnService: ButtonService,
     private projectService: FolioProjectService,
@@ -27,9 +27,9 @@ export class FolioListComponent implements OnInit {
   ) {
     this.btnService.setButtons({
       home: [-0.5,-0.5],
-      about: [2,0.5],
-      folio: [1,0.5],
-      framer: [-7, 1]
+      about: [2,0.3],
+      folio: [1,0.3],
+      framer: [-7, 8, {rotate:-8}]
     });
 
     this.sub = router.events
@@ -39,17 +39,24 @@ export class FolioListComponent implements OnInit {
           this.clearPosition();
         }
       })
-  };
+  }
 
-
-  projects: FolioProject[];
+  allProjects: FolioProject[];
+  filteredProjects
   projectPosition;
   sub;
 
   getProjects(): void {
-    this.projectService.getProjects()
-      .then(projects => this.projects = projects);
+    this.projectService.getProjects().then(projects => {
+      this.allProjects = projects;
+      this.filterProjects('work');
+    });
+  }
 
+  filterProjects(category) {
+    this.filteredProjects = this.allProjects.filter(project => {
+      return project.cat === category;
+    });
   }
 
   ngOnInit(): void {
@@ -64,6 +71,8 @@ export class FolioListComponent implements OnInit {
     let target = <HTMLSelectElement> e.target;
     this.startPosition(target);
   }
+
+
 
   clearPosition() {
     this.projectPosition = { display : 'none' }
