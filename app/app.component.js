@@ -16,9 +16,8 @@ var AppComponent = (function () {
         var _this = this;
         this.btnService = btnService;
         btnService.buttonOutput$
-            .debounceTime(200)
             .subscribe(function (n) { return _this.updatePos(n); });
-        this.btnPos = { home: null, about: null, folio: null, framer: null };
+        this.btnPos = { home: null, framer: null };
     }
     ;
     AppComponent.prototype.updatePos = function (pos) {
@@ -30,7 +29,7 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        ['home', 'about', 'folio', 'framer']
+        ['home', 'framer']
             .forEach(function (el) { return _this.btnPos[el] = new grid_service_1.GridService(); });
     };
     AppComponent = __decorate([

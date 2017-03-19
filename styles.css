@@ -5,8 +5,7 @@
 body {
   font: 300 14px/1 "soleil", sans-serif;
   color: #e4e5e7;
-  background-color: #4DB6AC;
-  background-image: linear-gradient(to top left, #4DB6AC, #00897B);
+  background-color: #00897B;
   overflow: hidden;
 }
 

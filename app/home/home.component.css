@@ -1,0 +1,14 @@
+.page-link {
+  position: absolute;
+}
+
+.page-link.work {
+  top: 30vh;
+  left: 40vw;
+
+}
+
+.page-link.about {
+  top: 45vh;
+  left: 43vw;
+}

@@ -19,10 +19,8 @@ var FolioListComponent = (function () {
         this.projectService = projectService;
         this.router = router;
         this.btnService.setButtons({
-            home: [-0.5, -0.5],
-            about: [2, 0.3],
-            folio: [1, 0.3],
-            framer: [-7, 8, { rotate: -8 }]
+            home: [-.5, -.5],
+            framer: [-7, 8, { rotate: -10 }]
         });
         this.sub = router.events
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })

@@ -26,10 +26,8 @@ export class FolioListComponent implements OnInit {
     private router: Router
   ) {
     this.btnService.setButtons({
-      home: [-0.5,-0.5],
-      about: [2,0.3],
-      folio: [1,0.3],
-      framer: [-7, 8, {rotate:-8}]
+      home: [-.5,-.5],
+      framer: [-7, 8, {rotate:-10}]
     });
 
     this.sub = router.events

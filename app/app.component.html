@@ -1,28 +1,29 @@
-<a class="jr-logo anim" >
-  <svg xmlns="http://www.w3.org/2000/svg" id="js_headerLogo"
-viewBox="0 0 34 16" >
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
-  </svg>
+<a class="anim home-link" routerLink="/home" [ngStyle]="btnPos.home.style" >
+  <header>
+    <h1>Jon Richards</h1>
+    <h2>Web Developer</h2>
+  </header>
 </a>
-<nav>
 
-  <a class="anim home nav-link" routerLink="/home" [ngStyle]="btnPos.home.style" >
+<nav class="site-nav">
 
-    <header>
-      <h1>Jon Richards</h1>
-      <h2>Web Developer</h2>
-    </header>
+  <a class="home-logo" routerLink="/home" >
+    <svg xmlns="http://www.w3.org/2000/svg" id="js_headerLogo"
+  viewBox="0 0 34 16" >
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
+    </svg>
   </a>
 
-  <a class="anim nav-link" routerLink="/work" [ngStyle]="btnPos.folio.style" >
-    <h2>Work</h2>
+  <a class="nav-link" routerLink="/folio" routerLinkActive="active" >
+    <h3>Folio</h3>
   </a>
-  <a class="anim nav-link" routerLink="/about" [ngStyle]="btnPos.about.style" >
-    <h2>About</h2>
+  <a class="nav-link" routerLink="/about" routerLinkActive="active" >
+    <h3>About</h3>
   </a>
-  <div class="anim framer" [ngStyle]="btnPos.framer.style" ></div>
 
 </nav>
+
+<div class="anim framer" [ngStyle]="btnPos.framer.style" ></div>
 
 <main >
   <router-outlet ></router-outlet>

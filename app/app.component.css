@@ -1,30 +1,53 @@
-
-.frame-container {
-  position: absolute;
-  top: 13vh;
-  bottom: 2vh;
-  left: 10vw;
-  right: 30vw;
-  overflow: hidden;
-}
-nav .home{
+.home-link {
+  text-align: right;
+  top: auto;
   right: 0;
   left: auto;
   bottom: 0;
-  top: auto;
-  text-align: right;
+  z-index: 20;
+}
+
+.home-logo {
+  display: inline-block;
+  width: 6vw;
+  transition-delay: 200ms;
 }
 
 .nav-link {
-  z-index: 99;
+    color: #B2DFDB;
+    transition: color 300ms;
+    margin-left: 48px;
+}
+
+.nav-link.work {
+  left: calc(1vw + 9rem);
+}
+
+.nav-link.about {
+    left: calc(1vw + 16rem);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: inherit;
 }
 
 .framer {
-  background-color: currentColor;
+  background-color: #26A094;
   left: 50vw;
   height: 4px;
-  border: none;
-  width: 142vw; /* IE fallback */
+  padding-bottom: 100%;
+  width: 142vw; /* vmax fallback */
   width: 142vmax;
-  transform-origin: center;
+  transform-origin: top;
+  box-shadow: -10px 0 20px #28615a;
+  z-index: 10;
+}
+
+.site-nav {
+  position: relative;
+  padding: 2vh 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 20;
 }

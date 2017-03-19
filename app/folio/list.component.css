@@ -10,9 +10,8 @@
 
 .folio-title {
   position: absolute;
-  top: 66vh;
-  transform: rotate(-8deg);
-  z-index: 10;
+  top: 80vh;
+  transform: rotate(-10deg);
 }
 
 .folio-title > * {

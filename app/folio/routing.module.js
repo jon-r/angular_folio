@@ -14,7 +14,7 @@ var list_component_1 = require('./list.component');
 var detail_component_1 = require('./detail.component');
 var folioRoutes = [
     {
-        path: 'work',
+        path: 'folio',
         component: list_component_1.FolioListComponent,
         children: [
             { path: '' },
