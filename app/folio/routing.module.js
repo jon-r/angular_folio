@@ -33,7 +33,7 @@ var FolioRoutingModule = (function () {
             exports: [
                 router_1.RouterModule
             ]
-        }),
+        }), 
         __metadata('design:paramtypes', [])
     ], FolioRoutingModule);
     return FolioRoutingModule;

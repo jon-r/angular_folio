@@ -33,7 +33,7 @@ var FolioModule = (function () {
             providers: [
                 project_service_1.FolioProjectService
             ]
-        }),
+        }), 
         __metadata('design:paramtypes', [])
     ], FolioModule);
     return FolioModule;

@@ -24,7 +24,7 @@ var AppRoutingModule = (function () {
         core_1.NgModule({
             imports: [router_1.RouterModule.forRoot(appRoutes)],
             exports: [router_1.RouterModule]
-        }),
+        }), 
         __metadata('design:paramtypes', [])
     ], AppRoutingModule);
     return AppRoutingModule;

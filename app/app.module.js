@@ -40,7 +40,7 @@ var AppModule = (function () {
                 grid_service_1.GridService
             ],
             bootstrap: [app_component_1.AppComponent]
-        }),
+        }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;

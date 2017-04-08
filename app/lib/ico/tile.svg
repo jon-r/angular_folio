@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+  <mask id="arc-clip">
+    <path fill="#FFF" d="M0 38.6L100 21v40.4L0 79.03z"/>
+  </mask>
+  <image mask="url(#arc-clip)" xlink:href="./ph-3.jpg" preserveAspectRatio="xMinYMid slice" height="100" width="100"/>
+</svg>

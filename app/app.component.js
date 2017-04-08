@@ -38,7 +38,7 @@ var AppComponent = (function () {
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
             providers: [button_service_1.ButtonService]
-        }),
+        }), 
         __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], AppComponent);
     return AppComponent;

@@ -31,7 +31,7 @@ var FolioProjectService = (function () {
         return Promise.reject(error.message || error);
     };
     FolioProjectService = __decorate([
-        core_1.Injectable(),
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
     ], FolioProjectService);
     return FolioProjectService;

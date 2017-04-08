@@ -18,15 +18,15 @@ var FolioListComponent = (function () {
         this.btnService = btnService;
         this.projectService = projectService;
         this.router = router;
-        this.btnService.setButtons({
-            home: [-.5, -.5],
-            framer: [-7, 8, { rotate: -10 }]
-        });
         this.sub = router.events
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })
             .subscribe(function (event) {
-            if (event.url.endsWith('work')) {
+            if (event.url.endsWith('folio')) {
                 _this.clearPosition();
+                _this.btnService.setButtons({
+                    home: [-.5, -.5],
+                    framer: [-7, 8, { rotate: -10 }]
+                });
             }
         });
     }
@@ -73,7 +73,7 @@ var FolioListComponent = (function () {
         };
     };
     __decorate([
-        core_1.ViewChild('folioList'),
+        core_1.ViewChild('folioList'), 
         __metadata('design:type', core_1.ElementRef)
     ], FolioListComponent.prototype, "list", void 0);
     FolioListComponent = __decorate([
@@ -81,7 +81,7 @@ var FolioListComponent = (function () {
             selector: 'page-list',
             templateUrl: 'app/folio/list.component.html',
             styleUrls: ['app/folio/list.component.css']
-        }),
+        }), 
         __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService, router_1.Router])
     ], FolioListComponent);
     return FolioListComponent;

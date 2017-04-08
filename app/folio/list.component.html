@@ -12,13 +12,14 @@
     <a class="project-container" [routerLink]="[project.id]"
     (click)="tileTransition($event)"   >
 
-      <figure class="project-tile" >
-        <div class="project-photo" ></div>
-        <figcaption class="project-caption">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+      <image height="100" width="100"
+      [attr.mask]="'url(#mask-' + project.slug + ')'"
+      [attr.xlink:href]="'app/lib/' + project.slug + '/ph-3.jpg'" preserveAspectRatio="xMidYMid slice" />
+    </svg>
+
           <h3>{{project.title}}</h3>
           <em>{{project.desc}}</em>
-        </figcaption>
-      </figure>
 
     </a>
   </li>
@@ -27,3 +28,14 @@
 <section class="project-frame anim" [ngStyle]="projectPosition" >
   <router-outlet></router-outlet>
 </section>
+
+<svg><defs>
+  <mask id="mask-rec"><path fill="#FFF" d="M0 11.45L66 0v88.55L0 100z"/></mask>
+  <mask id="mask-arc"><path fill="#FFF" d="M0 38.6L100 21v40.4L0 79.03z"/></mask>
+  <mask id="mask-cam"><path fill="#FFF" d="M0 33.82l100-17.64v50L0 83.82z"/></mask>
+  <mask id="mask-rhc"><path fill="#FFF" d="M13 15.48L100 0v84.52L13 100z"/></mask>
+  <mask id="mask-jst"><path fill="#FFF" d="M0 32.67l100-17.7v52.36L0 85.03z"/></mask>
+  <mask id="mask-til"><path fill="#FFF" d="M40 10.57L100 0v89.43L40 100z"/></mask>
+  <mask id="mask-ico"><path fill="#FFF" d="M0 15L85 0v85L0 100z"/></mask>
+  <mask id="mask-blk"><path fill="#FFF" d="M0 26L100 8.35V74L0 91.65z"/></mask>
+</defs></svg>

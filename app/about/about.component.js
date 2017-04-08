@@ -24,7 +24,7 @@ var AboutComponent = (function () {
             selector: 'page-about',
             templateUrl: 'app/about/about.component.html',
             styleUrls: ['app/about/about.component.css']
-        }),
+        }), 
         __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], AboutComponent);
     return AboutComponent;

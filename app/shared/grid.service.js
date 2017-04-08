@@ -45,7 +45,7 @@ var GridService = (function () {
         }
     };
     GridService = __decorate([
-        core_1.Injectable(),
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
     ], GridService);
     return GridService;

@@ -24,7 +24,7 @@ var HomeComponent = (function () {
             selector: 'page-home',
             templateUrl: 'app/home/home.component.html',
             styleUrls: ['app/home/home.component.css']
-        }),
+        }), 
         __metadata('design:paramtypes', [button_service_1.ButtonService])
     ], HomeComponent);
     return HomeComponent;

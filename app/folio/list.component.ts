@@ -18,23 +18,24 @@ import { FolioProjectService } from './project.service';
 export class FolioListComponent implements OnInit {
   @ViewChild('folioList') list: ElementRef;
 
-
-
   constructor(
     private btnService: ButtonService,
     private projectService: FolioProjectService,
     private router: Router
   ) {
-    this.btnService.setButtons({
-      home: [-.5,-.5],
-      framer: [-7, 8, {rotate:-10}]
-    });
+
 
     this.sub = router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe((event) => {
-        if (event.url.endsWith('work')) {
+        if (event.url.endsWith('folio')) {
           this.clearPosition();
+
+          this.btnService.setButtons({
+            home: [-.5,-.5],
+            framer: [-7, 8, {rotate:-10}]
+          });
+
         }
       })
   }
@@ -46,7 +47,7 @@ export class FolioListComponent implements OnInit {
 
   getProjects(): void {
     this.projectService.getProjects().then(projects => {
-      this.allProjects = projects;
+      this.allProjects = projects;      
       this.filterProjects('work');
     });
   }
@@ -59,6 +60,9 @@ export class FolioListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjects();
+
+
+
   }
 
   ngOnDestroy(): void {
