@@ -1,17 +1,17 @@
 @keyframes enterUp {
-  0% { opacity:0; transform: translateY(100%); }
-  100% { opacity:1; transform: translateY(0); }
+  from { opacity:0; transform: translateY(50vw); }
 }
 
-@keyframes slideOut {
+/*@keyframes slideOut {
   0% { opacity:1; transform: translateX(0); }
   100% { opacity:0; transform: translateX(120%); }
-}
+}*/
 
 .folio-title {
   position: absolute;
-  top: 80vh;
+  bottom: calc(20vh - 9vw + 20px); /* trigonometry bitches. 50tan(30deg) */
   transform: rotate(-10deg);
+  transform-origin: top left;
 }
 
 .folio-title > * {
@@ -32,42 +32,67 @@
 
 
 .projects {
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: transform 600ms ease-in-out;
-  height: 100%;
+  position: absolute;
+  left: 45vw;
+  top: calc(40vh - 1vw);
+  background: magenta;
+  widtH: 1vw;
+  height: 1vw;
+  transition: transform 600ms ease-out;
 }
 
 .active-child {
-  transform: translateX(120%);
+  transform: translateY(50vh);
 }
 
-.projects li {
-  display: inline-block;
-  width: 50%;
+.project {
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
   animation: 600ms enterUp backwards ease-out;
 }
 
-.projects li.is-active {
-  opacity: 0;
+/*4.4vw offset*/
+
+.project:nth-child(even) { left:100%; }
+.project:nth-child(odd) { right:100%; }
+
+.project-rhc { bottom: calc(100% - 7.3vw); }
+.project-cam { bottom: 100% }
+.project-arc { top: calc(100% + 2vw); }
+.project-rec { top: calc(100% - 5.3vw); }
+.project-blk { bottom: calc(100% - 3vw); }
+.project-ico { bottom: calc(100% - 6vw); }
+.project-til { top: calc(100% - 2.3vw); }
+.project-jst { top: calc(100% + 0.7vw); }
+
+.project-label {
+  position: absolute;
+  padding: 4px;
+  background-color: rgba(32, 85, 80, 0.8);
 }
 
-.project-container {
-  padding: 8px;
-  display: block;
-}
+.project-rhc .project-label { left: 37%; top: calc(5.3vw + 14%); }
+.project-cam .project-label { left: -1%; top: calc(5.3vw + 34%);  }
+.project-arc .project-label { left: 17%; top:calc(5.3vw - 2%) }
+.project-rec .project-label { left: -1%; top:calc(5.3vw + 1%) }
+.project-blk .project-label { left: -1%; top:calc(5.3vw + 34%) }
+.project-ico .project-label { left: -1%; top:calc(5.3vw + 19%) }
+.project-til .project-label { left: 46%; top:calc(5.3vw - 7%) }
+.project-jst .project-label { left: -1%; top:calc(5.3vw + 1%) }
 
-.project-photo.tile {
-  background-size: 100vh;
-}
 
-.project-tile {
+
+
+
+
+
+/*.project-tile {
   height: 256px;
   position: relative;
   background-color: rgba(32, 85, 80, 0.3);
 }
 
-.project-photo,
 .project-caption,
 .project-tile::after {
   position: absolute;
@@ -82,11 +107,6 @@
   content:'';
 }
 
-.project-photo {
-  top:0;
-  height:61.8%;
-}
-
 .project-caption {
   top: 61.8%;
   padding: 8px;
@@ -97,4 +117,4 @@
 
 .project-frame {
   width: 100%;
-}
+}*/
