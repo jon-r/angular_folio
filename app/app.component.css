@@ -33,7 +33,8 @@
 
 .framer {
   background-color: #26A094;
-  left: 50vw;
+  left: -71vw;
+  left: -71vmax;
   height: 4px;
   padding-bottom: 100%;
   width: 142vw; /* vmax fallback */
@@ -41,6 +42,17 @@
   transform-origin: top;
   box-shadow: -10px 0 20px #28615a;
   z-index: 10;
+}
+
+.framer::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: calc(50% - 2px);
+  height: 4px;
+  width: 4px;
+  display: block;
+  background-color: magenta;
 }
 
 .site-nav {

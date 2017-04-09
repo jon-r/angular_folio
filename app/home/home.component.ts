@@ -11,7 +11,7 @@ export class HomeComponent {
   constructor(private btnService: ButtonService) {
     this.btnService.setButtons({
       home: [-6,-3],
-      framer: [-8, 5, {rotate: 70} ]
+      framer: [4, 5, {rotate: 70} ]
     })
   };
 

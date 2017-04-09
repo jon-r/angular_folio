@@ -19,7 +19,7 @@ var FolioDetailComponent = (function () {
         this.route = route;
         this.btnService.setButtons({
             home: [-.5, -.5],
-            framer: [-7, 1]
+            framer: [5, 1]
         });
     }
     ;

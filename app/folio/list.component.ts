@@ -33,7 +33,7 @@ export class FolioListComponent implements OnInit {
 
           this.btnService.setButtons({
             home: [-.5,-.5],
-            framer: [-7, 8, {rotate:-10}]
+            framer: [5, 8, {rotate:-10}]
           });
 
         }
@@ -47,7 +47,7 @@ export class FolioListComponent implements OnInit {
 
   getProjects(): void {
     this.projectService.getProjects().then(projects => {
-      this.allProjects = projects;      
+      this.allProjects = projects;
       this.filterProjects('work');
     });
   }

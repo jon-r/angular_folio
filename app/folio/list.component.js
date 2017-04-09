@@ -25,7 +25,7 @@ var FolioListComponent = (function () {
                 _this.clearPosition();
                 _this.btnService.setButtons({
                     home: [-.5, -.5],
-                    framer: [-7, 8, { rotate: -10 }]
+                    framer: [5, 8, { rotate: -10 }]
                 });
             }
         });

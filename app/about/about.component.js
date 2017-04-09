@@ -15,7 +15,7 @@ var AboutComponent = (function () {
         this.btnService = btnService;
         this.btnService.setButtons({
             home: [-.5, -.5],
-            framer: [-7, 1]
+            framer: [3, 5, { rotate: -90 }]
         });
     }
     ;
