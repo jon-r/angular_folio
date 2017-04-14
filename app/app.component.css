@@ -5,6 +5,7 @@
   left: auto;
   bottom: 0;
   z-index: 20;
+  transform: translate(-1vw, -2vh);
 }
 
 .home-logo {
@@ -19,13 +20,13 @@
     margin-left: 48px;
 }
 
-.nav-link.work {
+/*.nav-link.work {
   left: calc(1vw + 9rem);
 }
 
 .nav-link.about {
     left: calc(1vw + 16rem);
-}
+}*/
 
 .nav-link:hover, .nav-link.active {
   color: inherit;
@@ -40,6 +41,7 @@
   width: 142vw; /* vmax fallback */
   width: 142vmax;
   transform-origin: top;
+  transform: translate(100vw, 50vh) rotate(90deg);
   box-shadow: -10px 0 20px #28615a;
   z-index: 10;
 }

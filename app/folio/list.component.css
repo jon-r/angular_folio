@@ -72,14 +72,14 @@
   background-color: rgba(32, 85, 80, 0.8);
 }
 
-.project-rhc .project-label { left: 37%; top: calc(5.3vw + 14%); }
-.project-cam .project-label { left: -1%; top: calc(5.3vw + 34%);  }
-.project-arc .project-label { left: 17%; top:calc(5.3vw - 2%) }
-.project-rec .project-label { left: -1%; top:calc(5.3vw + 1%) }
-.project-blk .project-label { left: -1%; top:calc(5.3vw + 34%) }
-.project-ico .project-label { left: -1%; top:calc(5.3vw + 19%) }
-.project-til .project-label { left: 46%; top:calc(5.3vw - 7%) }
-.project-jst .project-label { left: -1%; top:calc(5.3vw + 1%) }
+.project-rhc .project-label { left: 37%; top: 32% }
+.project-cam .project-label { left: -1%; top: 52% }
+.project-arc .project-label { left: 17%; top: 15% }
+.project-rec .project-label { left: -1%; top: 18% }
+.project-blk .project-label { left: -1%; top: 51% }
+.project-ico .project-label { left: -1%; top: 36% }
+.project-til .project-label { left: 46%; top: 10% }
+.project-jst .project-label { left: -1%; top: 18% }
 
 
 

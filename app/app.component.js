@@ -15,7 +15,8 @@ var AppComponent = (function () {
     function AppComponent(btnService) {
         var _this = this;
         this.btnService = btnService;
-        btnService.buttonOutput$
+        this.btnService.buttonOutput$
+            .debounceTime(100)
             .subscribe(function (n) { return _this.updatePos(n); });
         this.btnPos = { home: null, framer: null };
     }

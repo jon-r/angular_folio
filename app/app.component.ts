@@ -21,14 +21,13 @@ export class AppComponent {
   constructor(
     private btnService: ButtonService
   ) {
-    btnService.buttonOutput$
-      //.debounceTime(200)
+
+    this.btnService.buttonOutput$
+     .debounceTime(100)
       .subscribe(n => this.updatePos(n));
 
     this.btnPos = {home: null, framer: null};
   };
-
-
 
   updatePos(pos) {
     for (let el in this.btnPos) {
@@ -38,12 +37,10 @@ export class AppComponent {
     }
   }
 
-
-
   ngOnInit(): void {
+      ['home', 'framer']
+        .forEach(el => this.btnPos[el] = new GridService());
 
-    ['home', 'framer']
-      .forEach(el => this.btnPos[el] = new GridService());
 
   }
 }

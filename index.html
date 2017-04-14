@@ -1,3 +1,4 @@
+<!DOCTYPE html >
 <html>
   <head>
     <base href="/" >
@@ -16,29 +17,33 @@
     <!-- Angular 2 -->
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+    System.import('app').catch(function(err){ console.error(err); });
     </script>
 
+    <!-- Typekit -->
     <script src="https://use.typekit.net/qgo6zhu.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
   </head>
 
-  <body>
+  <body id="js_appFrame" class="loading">
+
     <my-app>Loading...</my-app>
 
     <div id="js_loaderParent" >
 
       <div class="pre-loader" >
         <div class="jr-logo anim" >
-          <svg xmlns="http://www.w3.org/2000/svg" id="js_headerLogo"
-      viewBox="0 0 34 16" >
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jr-logo" />
+          <svg viewBox="0 0 34 16" xmlns="http://www.w3.org/2000/svg" >
+            <g fill="none" stroke-width="2"><path class="lg-jr" stroke="#e4e5e7" mask="url(#c)" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/><g stroke-dasharray="21" stroke-linejoin="round" stroke="#B2DFDB"><path class="lg-br br-l" d="M7-1L2 8l5 9"/><path class="lg-br br-r" d="M27 17l5-9-5-9"/></g></g>
+            <!-- <use xlink:href="#jrLogo"/> -->
           </svg>
+
         </div>
 
-        <svg class="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" >
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#load" />
+        <svg class="loader" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+            <use  xlink:href="#load" ></use>
         </svg>
       </div>
 
@@ -46,29 +51,73 @@
 
   </body>
   <style>
-    @keyframes pulse{ from{stroke-dasharray:5 40} to{stroke-dasharray:40 40} } @keyframes spin{ from{transform:rotate(0)} to{transform:rotate(360deg)} } .spin{stroke-dashoffset:-20; animation-duration:1.5s,1.2s; transform-origin:10px; animation-name:pulse,spin; animation-iteration-count:infinite; animation-timing-function:ease-in,linear; animation-direction:alternate-reverse,normal }.lg-br {animation-duration: 600ms;animation-fill-mode: both;}.br-l {animation-name: draw;}.lg-cv {animation: push 500ms ease-out 1.2s both;}.br-r {animation-delay: 600ms, 1.2s;animation-name: draw, push;}@keyframes draw {50% { stroke-dashoffset: 10; }to { stroke-dashoffset: 0; }}@keyframes push {to { transform: translate(19px) }}
+    @keyframes pulse{ from{stroke-dasharray:5 40} to{stroke-dasharray:40 40} } @keyframes spin{ from{transform:rotate(0)} to{transform:rotate(360deg)} } .spin { stroke-dashoffset:-20; animation-duration:1.5s,1.2s; transform-origin:10px; animation-name:pulse,spin; animation-iteration-count:infinite; animation-timing-function:ease-in,linear; animation-direction:alternate-reverse,normal }
   </style>
-  <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><mask id="c"><path fill="#fff" d="M-2-2h30v20H-2"/><path class="lg-cv" d="M7 17l5-9-5-9h20v18"/></mask><circle id="load" stroke="#fff" stroke-width="2" fill="none" cx="10" cy="10" r="8" class="spin"/></defs><symbol id="jr-logo" fill="none" stroke-width="2"><path stroke="#e4e5e7" mask="url(#c)" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/><g stroke-dasharray="21" stroke-dashoffset="21" stroke-linejoin="round" stroke="#B2DFDB"><path class="lg-br br-l" d="M7-1L2 8l5 9"/><path class="lg-br br-r" d="M8 17l5-9-5-9"/></g></symbol></svg>
+  <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg"><circle id="load" stroke="#fff" stroke-width="2" fill="none" cx="10" cy="10" r="8" class="spin"/></svg>
+
+  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 44 16"><defs><style>.lg-jr { animation: appear 500ms 1.2s both } .lg-br { animation-duration: 600ms; animation-fill-mode: both;} .br-l { animation-name: draw; } .br-r { animation-delay: 600ms, 1.2s; animation-name: draw, push; } @keyframes draw { from { stroke-dashoffset: 21; } 50% {stroke-dashoffset: 10; } to { stroke-dashoffset: 0; } } @keyframes push { from { transform: translatex(-19px) } } @keyframes appear { from {opacity: 0} to { opacity: 1} }</style><symbol id="jrLogo" fill="none" stroke-width="2"><path class="lg-jr" stroke="#e4e5e7" mask="url(#c)" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/><g stroke-dasharray="21" stroke-linejoin="round" stroke="#B2DFDB"><path class="lg-br br-l" d="M7-1L2 8l5 9"/><path class="lg-br br-r" d="M27 17l5-9-5-9"/></g></symbol></defs></svg>
 
 
-  <script>
+  <script >
+  var body = document.getElementById('js_appFrame'),
+    preBootstrap = document.getElementById('js_loaderParent');
+
+    function delay(fn, t) {
+        // private instance variables
+        var queue = [], self, timer;
+
+        function schedule(fn, t) {
+            timer = setTimeout(function() {
+                timer = null;
+                fn();
+                if (queue.length) {
+                    var item = queue.shift();
+                    schedule(item.fn, item.t);
+                }
+            }, t);
+        }
+        self = {
+            delay: function(fn, t) {
+                // if already queuing things or running a timer,
+                //   then just add to the queue
+            	  if (queue.length || timer) {
+                    queue.push({fn: fn, t: t});
+                } else {
+                    // no queue or timer yet, so schedule the timer
+                    schedule(fn, t);
+                }
+                return self;
+            },
+            cancel: function() {
+                clearTimeout(timer);
+                queue = [];
+            }
+        };
+        return self.delay(fn, t);
+    }
 
     window.bootstrapping.then(
-      function handleResolve() {
-        var preBootstrap = document.getElementById("js_loaderParent"),
-          loader = preBootstrap.firstElementChild
 
-        setTimeout(
-          function removeLoadingScreen() {
-            loader.className = "pre-loader loaded";
-            setTimeout(function() {
-              preBootstrap.removeChild(loader)
-            }, 1200);
-          },
-          1200
-        );
-      }
-    );
+        function handleResolve () {
+          var loader = preBootstrap.firstElementChild;
+
+          var d = delay(function () { body.classList.remove('loading')}, 600 )
+          .delay(function () { body.classList.add('ready')}, 900 )
+          .delay(function () { preBootstrap.removeChild(loader)}, 600 );
+
+            // setTimeout( function () {
+            //   body.classList.remove('loading');
+            //
+            //   setTimeout( function () {
+            //     body.classList.add('ready');
+            //     preBootstrap.removeChild(loader);
+            //   }, 900)
+            //
+            //
+            // }, 600);
+
+     }
+   )
 
   </script>
 
