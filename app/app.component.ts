@@ -5,7 +5,8 @@ import { Buttons } from './shared/buttons';
 import { ButtonService } from './shared/button.service';
 
 import { GridService } from './shared/grid.service';
-
+//inline svg
+import { InlineSVGModule } from 'ng-inline-svg';
 
 @Component({
   selector: 'my-app',

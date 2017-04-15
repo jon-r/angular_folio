@@ -14,6 +14,8 @@ var list_component_1 = require("./list.component");
 var detail_component_1 = require("./detail.component");
 var project_service_1 = require("./project.service");
 //import { FolioTransitionDirective }  from './transition.directive';
+//inline svg
+var index_js_1 = require("../ng-inline-svg/lib/index.js");
 var FolioModule = (function () {
     function FolioModule() {
     }
@@ -24,7 +26,8 @@ FolioModule = __decorate([
         imports: [
             common_1.CommonModule,
             routing_module_1.FolioRoutingModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            index_js_1.InlineSVGModule
         ],
         declarations: [
             list_component_1.FolioListComponent,

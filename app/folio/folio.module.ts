@@ -8,12 +8,16 @@ import { FolioDetailComponent }    from './detail.component';
 import { FolioProjectService }  from './project.service';
 //import { FolioTransitionDirective }  from './transition.directive';
 
+//inline svg
+import { InlineSVGModule } from '../ng-inline-svg/lib/index.js';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FolioRoutingModule,
-    HttpModule
+    HttpModule,
+    InlineSVGModule
   ],
   declarations: [
     FolioListComponent,

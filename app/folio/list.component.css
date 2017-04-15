@@ -32,17 +32,29 @@
 
 
 .projects {
-  width: 120vh;
-  height: 120vh;
+  display: grid;
+  grid-template-columns: 50vmin 50vmin;
+  grid-gap: 16px;
+  justify-content: center;
+  /*align-content: center;*/
+  position: absolute;
+  top: 2vh;
+  width: 100%;
 }
 
 .project {
-  float: left;
-  width: 50%;
-  height: 50%;
+  /*float: left;*/
+  /*width: 50%;
+  height: 50%;*/
   border: solid 1px white;
-  padding: 8px;
+  /*padding: 8px;*/
+  position: relative;
 }
+
+.project:nth-child(1) { align-self: end; }
+.project:nth-child(2) { align-self: end }
+.project:nth-child(3) { align-self: start }
+.project:nth-child(4) { align-self: start;}
 
 
 /*.projects {
@@ -82,6 +94,8 @@
 
 .project-label {
   position: absolute;
+  top: 4px;
+  left: 4px;
   padding: 4px;
   background-color: rgba(32, 85, 80, 0.8);
 }

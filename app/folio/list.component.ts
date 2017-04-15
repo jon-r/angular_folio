@@ -10,6 +10,8 @@ import { ButtonService } from '../shared/button.service';
 import { FolioProject } from './project';
 import { FolioProjectService } from './project.service';
 
+import { InlineSVGModule } from 'ng-inline-svg';
+
 @Component({
   selector: 'page-list',
   templateUrl: 'app/folio/list.component.html',

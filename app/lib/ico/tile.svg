@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
-  <mask id="arc-clip">
-    <path fill="#FFF" d="M0 38.6L100 21v40.4L0 79.03z"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 23 100 78">
+
+  <mask id="ico">
+    <polygon fill="#FFFFFF" points="0,35.3539314 67,23.511549 67,88.1576157 0,100 "/>
   </mask>
-  <image mask="url(#arc-clip)" xlink:href="./ph-3.jpg" preserveAspectRatio="xMinYMid slice" height="100" width="100"/>
+  <image mask="url(#ico)" xlink:href="/app/lib/ph-3.jpg" preserveAspectRatio="xMidYMid slice" height="78" width="67" y="23"/>
+
 </svg>

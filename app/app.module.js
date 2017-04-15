@@ -8,6 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 //rxjs
 require("./rxjs-extensions");
+//inline svg
+var index_js_1 = require("./ng-inline-svg/lib/index.js");
 //angular
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
@@ -28,6 +30,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRoutingModule,
+            index_js_1.InlineSVGModule,
             folio_module_1.FolioModule
         ],
         declarations: [

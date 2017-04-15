@@ -1,6 +1,9 @@
 //rxjs
 import './rxjs-extensions';
 
+//inline svg
+import { InlineSVGModule } from './ng-inline-svg/lib/index.js';
+
 //angular
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +25,7 @@ import { GridService } from './shared/grid.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    InlineSVGModule,
     FolioModule
   ],
   declarations: [
