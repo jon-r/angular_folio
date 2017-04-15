@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var button_service_1 = require('../shared/button.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var button_service_1 = require("../shared/button.service");
 var HomeComponent = (function () {
     function HomeComponent(btnService) {
         this.btnService = btnService;
@@ -19,15 +20,15 @@ var HomeComponent = (function () {
         });
     }
     ;
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: 'page-home',
-            templateUrl: 'app/home/home.component.html',
-            styleUrls: ['app/home/home.component.css']
-        }), 
-        __metadata('design:paramtypes', [button_service_1.ButtonService])
-    ], HomeComponent);
     return HomeComponent;
 }());
+HomeComponent = __decorate([
+    core_1.Component({
+        selector: 'page-home',
+        templateUrl: 'app/home/home.component.html',
+        styleUrls: ['app/home/home.component.css']
+    }),
+    __metadata("design:paramtypes", [button_service_1.ButtonService])
+], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map

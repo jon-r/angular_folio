@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var GridItem = (function () {
     function GridItem(coords, rotation, extraStyle) {
         this.coords = coords;

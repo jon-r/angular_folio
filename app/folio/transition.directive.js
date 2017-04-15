@@ -9,7 +9,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var FolioTransitionDirective = (function () {
     function FolioTransitionDirective(el) {
         this.el = el;
@@ -21,21 +22,21 @@ var FolioTransitionDirective = (function () {
     FolioTransitionDirective.prototype.setPos = function () {
         this.el.nativeElement.style.backgroundColor = 'red';
     };
-    __decorate([
-        core_1.Input('projectItem'), 
-        __metadata('design:type', Object)
-    ], FolioTransitionDirective.prototype, "position", void 0);
-    __decorate([
-        core_1.HostListener('click'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
-        __metadata('design:returntype', void 0)
-    ], FolioTransitionDirective.prototype, "onClick", null);
-    FolioTransitionDirective = __decorate([
-        core_1.Directive({ selector: '[projectItem]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], FolioTransitionDirective);
     return FolioTransitionDirective;
 }());
+__decorate([
+    core_1.Input('projectItem'),
+    __metadata("design:type", Object)
+], FolioTransitionDirective.prototype, "position", void 0);
+__decorate([
+    core_1.HostListener('click'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FolioTransitionDirective.prototype, "onClick", null);
+FolioTransitionDirective = __decorate([
+    core_1.Directive({ selector: '[projectItem]' }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], FolioTransitionDirective);
 exports.FolioTransitionDirective = FolioTransitionDirective;
 //# sourceMappingURL=transition.directive.js.map

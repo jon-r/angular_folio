@@ -32,6 +32,20 @@
 
 
 .projects {
+  width: 120vh;
+  height: 120vh;
+}
+
+.project {
+  float: left;
+  width: 50%;
+  height: 50%;
+  border: solid 1px white;
+  padding: 8px;
+}
+
+
+/*.projects {
   position: absolute;
   left: 45vw;
   top: calc(40vh - 1vw);
@@ -39,22 +53,22 @@
   widtH: 1vw;
   height: 1vw;
   transition: transform 600ms ease-out;
-}
+}*/
 
 .active-child {
   transform: translateY(50vh);
 }
 
-.project {
+/*.project {
   position: absolute;
   width: 30vw;
   height: 30vw;
   animation: 600ms enterUp backwards ease-out;
-}
+} */
 
 /*4.4vw offset*/
 
-.project:nth-child(even) { left:100%; }
+/*.project:nth-child(even) { left:100%; }
 .project:nth-child(odd) { right:100%; }
 
 .project-rhc { bottom: calc(100% - 7.3vw); }
@@ -64,7 +78,7 @@
 .project-blk { bottom: calc(100% - 3vw); }
 .project-ico { bottom: calc(100% - 6vw); }
 .project-til { top: calc(100% - 2.3vw); }
-.project-jst { top: calc(100% + 0.7vw); }
+.project-jst { top: calc(100% + 0.7vw); }*/
 
 .project-label {
   position: absolute;
@@ -72,14 +86,14 @@
   background-color: rgba(32, 85, 80, 0.8);
 }
 
-.project-rhc .project-label { left: 37%; top: 32% }
+/*.project-rhc .project-label { left: 37%; top: 32% }
 .project-cam .project-label { left: -1%; top: 52% }
 .project-arc .project-label { left: 17%; top: 15% }
 .project-rec .project-label { left: -1%; top: 18% }
 .project-blk .project-label { left: -1%; top: 51% }
 .project-ico .project-label { left: -1%; top: 36% }
 .project-til .project-label { left: 46%; top: 10% }
-.project-jst .project-label { left: -1%; top: 18% }
+.project-jst .project-label { left: -1%; top: 18% }*/
 
 
 

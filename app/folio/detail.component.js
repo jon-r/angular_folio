@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_1 = require('@angular/router');
-var core_1 = require('@angular/core');
-var button_service_1 = require('../shared/button.service');
-var project_service_1 = require('./project.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = require("@angular/router");
+var core_1 = require("@angular/core");
+var button_service_1 = require("../shared/button.service");
+var project_service_1 = require("./project.service");
 var FolioDetailComponent = (function () {
     function FolioDetailComponent(btnService, projectService, route) {
         this.btnService = btnService;
@@ -34,15 +35,17 @@ var FolioDetailComponent = (function () {
                 .then(function (project) { return _this.project = project; });
         });
     };
-    FolioDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'page-about',
-            templateUrl: 'app/folio/detail.component.html',
-            styleUrls: ['app/folio/list.component.css']
-        }), 
-        __metadata('design:paramtypes', [button_service_1.ButtonService, project_service_1.FolioProjectService, router_1.ActivatedRoute])
-    ], FolioDetailComponent);
     return FolioDetailComponent;
 }());
+FolioDetailComponent = __decorate([
+    core_1.Component({
+        selector: 'page-about',
+        templateUrl: 'app/folio/detail.component.html',
+        styleUrls: ['app/folio/list.component.css']
+    }),
+    __metadata("design:paramtypes", [button_service_1.ButtonService,
+        project_service_1.FolioProjectService,
+        router_1.ActivatedRoute])
+], FolioDetailComponent);
 exports.FolioDetailComponent = FolioDetailComponent;
 //# sourceMappingURL=detail.component.js.map

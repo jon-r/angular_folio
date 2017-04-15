@@ -5,10 +5,9 @@ import { FolioDetailComponent } from './detail.component';
 
 const folioRoutes: Routes = [
   {
-    path: 'folio',
-    component: FolioListComponent,
+    path: 'folio',    
     children: [
-      { path: '' },
+      { path: '', component: FolioListComponent },
       { path: ':id', component: FolioDetailComponent },
     ]
   }

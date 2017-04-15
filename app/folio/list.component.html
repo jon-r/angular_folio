@@ -1,15 +1,22 @@
+
+
 <ul #folioList class="projects" *ngIf="filteredProjects" routerLinkActive="active-child">
   <li class="project" *ngFor="let project of filteredProjects; let i = index"
       [ngStyle]="{'animation-delay.ms': (i * 50) }" [ngClass]="'project-' + project.slug"
       routerLinkActive="is-active"   >
     <a class="project-container" [routerLink]="[project.id]"
     (click)="tileTransition($event)"   >
+      <img [attr.src]="'app/lib/' + project.slug + '/tile.svg'"  />
 
-      <svg class="project-photo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-        <image height="100" width="100"
-        [attr.mask]="'url(#mask-' + project.slug + ')'"
-        [attr.xlink:href]="'app/lib/' + project.slug + '/ph-3.jpg'" preserveAspectRatio="xMidYMid slice" />
-      </svg>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 32 100 69">
+        <mask id="blk">
+          <polygon fill="#FFFFFF" points="0,50.1948547 100,32.6308746 100,82.4360199 0,100 "/>
+        </mask>
+
+        <rect height="68" width="100" y="32" mask="url(#blk)" />
+        <image mask="url(#blk)" xlink:href="/app/lib/ph-3.jpg" preserveAspectRatio="xMinYMid slice" height="68" width="100" y="32" />
+      </svg> -->
+
       <div class="project-label" >
         <h3>{{project.title}}</h3>
         <em>{{project.desc}}</em>

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var FolioProject = (function () {
     function FolioProject(id, title, desc, slug, cat) {
         this.id = id;
