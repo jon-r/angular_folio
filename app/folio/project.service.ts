@@ -8,7 +8,7 @@ import { FolioProject } from './project';
 @Injectable()
 export class FolioProjectService {
 
-  private dataUrl = 'app/lib/projects-list.json';
+  private dataUrl = 'static/projects-list.json';
 
   constructor(private http: Http) {}
 

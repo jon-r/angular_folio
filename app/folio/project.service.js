@@ -15,7 +15,7 @@ require("rxjs/add/operator/toPromise");
 var FolioProjectService = (function () {
     function FolioProjectService(http) {
         this.http = http;
-        this.dataUrl = 'app/lib/projects-list.json';
+        this.dataUrl = 'static/projects-list.json';
     }
     FolioProjectService.prototype.getProjects = function () {
         return this.http.get(this.dataUrl)

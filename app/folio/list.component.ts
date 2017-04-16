@@ -29,12 +29,15 @@ export class FolioListComponent implements OnInit {
 
     this.sub = router.events
       .filter(event => event instanceof NavigationEnd)
-      .subscribe((event) => {
+      .subscribe((event: NavigationEnd) => {
 
-        this.btnService.setButtons({
-          home: [-.5,-.5],
-          framer: [5, 8, {rotate:-10}]
-        });
+        if (event.url.endsWith('folio')) {
+
+          this.btnService.setButtons({
+            home: [-.5,-.5],
+            framer: [5, 8, {rotate:-10}]
+          });
+        }
 
       })
   }

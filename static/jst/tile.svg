@@ -1,0 +1,9 @@
+<svg viewBox="0 18 100 40" class="no-clip" width="100%">
+
+
+  <mask id="jst"  >
+    <polygon fill="#FFFFFF" points="0,17.564518 100,0 100,39.9318199 0,57.4963379 "/>
+  </mask>
+  <image mask="url(#jst)" xlink:href="/static/ph-3.jpg" preserveAspectRatio="xMidYMid slice" width="100" height="58"/>
+
+</svg>

@@ -8,6 +8,7 @@ import { FolioDetailComponent }    from './detail.component';
 import { FolioProjectService }  from './project.service';
 //import { FolioTransitionDirective }  from './transition.directive';
 
+import { HtmlTemplateComponent } from '../shared/htmlTemplate.component';
 //inline svg
 import { InlineSVGModule } from '../ng-inline-svg/lib/index.js';
 
@@ -23,6 +24,7 @@ import { InlineSVGModule } from '../ng-inline-svg/lib/index.js';
     FolioListComponent,
     FolioDetailComponent,
     //FolioTransitionDirective
+    HtmlTemplateComponent
   ],
   providers: [
     FolioProjectService

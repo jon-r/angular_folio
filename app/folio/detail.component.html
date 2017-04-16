@@ -1,9 +1,18 @@
-<article class="project-container" >
-<figure *ngIf="project" class="project-tile single" >
-  <div class="project-photo" ></div>
-  <figcaption class="project-caption">
-    <h3>{{project.title}}</h3>
-    <em>{{project.desc}}</em>
-  </figcaption>
-</figure>
+
+<section class="project-frame" >
+
+<article class="project-container"  >
+
+  <html-template *ngIf="temp" [url]="temp" ></html-template>
+
+{{temp}}
+
 </article>
+
+
+
+
+</section>
+
+
+http://codepen.io/api/oembed?url=http://codepen.io/inspironix/pen/MpBXYG

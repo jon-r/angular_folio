@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 23 100 78">
-
-  <mask id="ico">
-    <polygon fill="#FFFFFF" points="0,35.3539314 67,23.511549 67,88.1576157 0,100 "/>
-  </mask>
-  <image mask="url(#ico)" xlink:href="/app/lib/ph-3.jpg" preserveAspectRatio="xMidYMid slice" height="78" width="67" y="23"/>
-
-</svg>

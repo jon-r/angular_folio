@@ -22,10 +22,12 @@ var FolioListComponent = (function () {
         this.sub = router.events
             .filter(function (event) { return event instanceof router_1.NavigationEnd; })
             .subscribe(function (event) {
-            _this.btnService.setButtons({
-                home: [-.5, -.5],
-                framer: [5, 8, { rotate: -10 }]
-            });
+            if (event.url.endsWith('folio')) {
+                _this.btnService.setButtons({
+                    home: [-.5, -.5],
+                    framer: [5, 8, { rotate: -10 }]
+                });
+            }
         });
     }
     FolioListComponent.prototype.getProjects = function () {

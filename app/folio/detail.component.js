@@ -22,6 +22,7 @@ var FolioDetailComponent = (function () {
             home: [-.5, -.5],
             framer: [5, 1]
         });
+        this.temp = '/static/arc/index.html';
     }
     ;
     FolioDetailComponent.prototype.goBack = function () {
@@ -39,9 +40,9 @@ var FolioDetailComponent = (function () {
 }());
 FolioDetailComponent = __decorate([
     core_1.Component({
-        selector: 'page-about',
+        selector: 'page-detail',
         templateUrl: 'app/folio/detail.component.html',
-        styleUrls: ['app/folio/list.component.css']
+        styleUrls: ['app/folio/detail.component.css']
     }),
     __metadata("design:paramtypes", [button_service_1.ButtonService,
         project_service_1.FolioProjectService,

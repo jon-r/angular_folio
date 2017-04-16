@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":3,"metadata":{},"exports":[{"from":"./inline-svg.directive","export":["InlineSVGDirective"]},{"from":"./inline-svg.module","export":["InlineSVGModule"]}]},{"__symbolic":"module","version":1,"metadata":{},"exports":[{"from":"./inline-svg.directive","export":["InlineSVGDirective"]},{"from":"./inline-svg.module","export":["InlineSVGModule"]}]}]

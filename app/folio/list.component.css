@@ -36,25 +36,41 @@
   grid-template-columns: 50vmin 50vmin;
   grid-gap: 16px;
   justify-content: center;
-  /*align-content: center;*/
   position: absolute;
-  top: 2vh;
-  width: 100%;
+  top: 0;
+  height: 85vmin;
+  width: 100vw;
+  transition: transform 600ms ease-out;
+}
+
+.active-child {
+  transform: translateY(50vh);
 }
 
 .project {
-  /*float: left;*/
-  /*width: 50%;
-  height: 50%;*/
-  border: solid 1px white;
-  /*padding: 8px;*/
   position: relative;
+  animation: 600ms enterUp backwards ease-out;
 }
 
-.project:nth-child(1) { align-self: end; }
-.project:nth-child(2) { align-self: end }
-.project:nth-child(3) { align-self: start }
+.project:nth-child(1) { align-self: end; text-align: right; }
+.project:nth-child(2) { align-self: end;}
+.project:nth-child(3) { align-self: start; text-align: right; }
 .project:nth-child(4) { align-self: start;}
+
+
+/*.project:nth-child(3) .project-label {  }
+.project:nth-child(4) .project-label {  }*/
+
+.project-label {
+  position: absolute;
+  /*top: 4px;
+  left: 4px;*/
+  padding: 4px;
+  background-color: rgba(32, 85, 80, 0.8);
+}
+
+.project:nth-child(even) .project-label { top: 4px; right: -4px }
+.project:nth-child(odd) .project-label { bottom: 4px; left: -4px }
 
 
 /*.projects {
@@ -64,12 +80,10 @@
   background: magenta;
   widtH: 1vw;
   height: 1vw;
-  transition: transform 600ms ease-out;
+
 }*/
 
-.active-child {
-  transform: translateY(50vh);
-}
+
 
 /*.project {
   position: absolute;
@@ -92,13 +106,7 @@
 .project-til { top: calc(100% - 2.3vw); }
 .project-jst { top: calc(100% + 0.7vw); }*/
 
-.project-label {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  padding: 4px;
-  background-color: rgba(32, 85, 80, 0.8);
-}
+
 
 /*.project-rhc .project-label { left: 37%; top: 32% }
 .project-cam .project-label { left: -1%; top: 52% }

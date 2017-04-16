@@ -40,7 +40,7 @@ AppModule = __decorate([
         ],
         providers: [
             button_service_1.ButtonService,
-            grid_service_1.GridService
+            grid_service_1.GridService,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

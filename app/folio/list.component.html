@@ -6,7 +6,7 @@
       routerLinkActive="is-active"   >
     <a class="project-container" (click)="tileTransition($event)"
     [routerLink]="[project.id]" >
-    <div class="project-thumb" [inlineSVG]="'app/lib/' + project.slug + '/tile.svg'" >
+    <div class="project-thumb" [inlineSVG]="'/static/' + project.slug + '/tile.svg'" >
 
     </div>
       <div class="project-label" >
@@ -23,33 +23,4 @@
   <h2 class="folio-filter" (click)="filterProjects('play')" >Play</h2>
 </header>
 
-<section class="project-frame anim" [ngStyle]="projectPosition" >
-  <router-outlet></router-outlet>
-</section>
-
-<svg version="1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
-  <mask id="mask-rec">
-    <polygon fill="#FFFFFF" points="0,17.4674225 59,7 59,88.5424805 0,99.009903 "/>
-  </mask>
-  <mask id="mask-arc">
-    <polygon id="arc_1_"  fill="#F2F2F2" points="18,14.4592371 100,0 100,42.7619934 18,57.2212296 "/>
-  </mask>
-  <mask id="mask-cam">
-    <polygon fill="#FFFFFF" points="0,50.9494781 75,37.7764931 75,86.8270111 0,100 "/>
-  </mask>
-  <mask id="mask-rhc">
-    <polygon fill="#FFFFFF" points="38,30.6147175 100,19.5263462 100,82.4116287 38,93.5 "/>
-  </mask>
-  <mask id="mask-jst">
-    <polygon fill="#FFFFFF" points="0,17.563982 100,0 100,40.246582 0,57.8105621 "/>
-  </mask>
-  <mask id="mask-til">
-    <polygon fill="#FFFFFF" points="47,9.4029398 100,0 100,72.6953888 47,82.0983276 "/>
-  </mask>
-  <mask id="mask-ico">
-    <polygon fill="#FFFFFF" points="0,35.3539314 67,23.511549 67,88.1576157 0,100 "/>
-  </mask>
-  <mask id="mask-blk">
-    <polygon fill="#FFFFFF" points="0,50.1948547 100,32.6308746 100,82.4360199 0,100 "/>
-  </mask>
-</svg>
+<router-outlet></router-outlet>

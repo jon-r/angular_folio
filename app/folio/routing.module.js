@@ -13,8 +13,8 @@ var detail_component_1 = require("./detail.component");
 var folioRoutes = [
     {
         path: 'folio',
+        component: list_component_1.FolioListComponent,
         children: [
-            { path: '', component: list_component_1.FolioListComponent },
             { path: ':id', component: detail_component_1.FolioDetailComponent },
         ]
     }

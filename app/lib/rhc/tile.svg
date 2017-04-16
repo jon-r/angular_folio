@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 19 100 82">
-<mask id="rhc">
-  <polygon fill="#FFFFFF" points="38,30.6147175 100,19.5263462 100,82.4116287 38,93.5 "/>
-</mask>
-  <image mask="url(#rhc)" xlink:href="app/lib/ph-3.jpg" preserveAspectRatio="xMidYMid slice" x="38" y="19" height="75" width="62"/>
-
-</svg>

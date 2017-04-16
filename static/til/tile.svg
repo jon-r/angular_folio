@@ -1,0 +1,8 @@
+<svg viewBox="0 0 53 72" class="no-clip" width="53%">
+  <!-- <rect height="200" width="200" x="-50" y="-50" fill="red" /> -->
+
+<mask id="til">
+  <polygon id="til" fill="#FFFFFF" points="0,9.4023428 53,0 53,71.9429855 0,81.3453293 "/>
+</mask>
+  <image mask="url(#til)" xlink:href="/static/ph-3.jpg" preserveAspectRatio="xMidYMid slice"  width="53" height="82" />
+</svg>

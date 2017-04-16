@@ -1,0 +1,8 @@
+
+.project-frame {
+  position: absolute;
+  top: 20vh;
+  left: 30vh;
+  border: solid 2px red;
+  z-index: 20;
+}

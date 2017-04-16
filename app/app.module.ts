@@ -21,6 +21,7 @@ import { ButtonService } from './shared/button.service';
 import { GridService } from './shared/grid.service';
 
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -33,11 +34,12 @@ import { GridService } from './shared/grid.service';
     HomeComponent,
     AboutComponent,
 
+  
 
   ],
   providers: [
     ButtonService,
-    GridService
+    GridService,
   ],
 
   bootstrap: [ AppComponent ]
