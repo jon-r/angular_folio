@@ -10,35 +10,81 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
+require("rxjs/observable/of");
+require("rxjs/add/operator/share");
+require("rxjs/add/operator/map");
+// class HTMLcached {
+//   constructor(
+//     public url: string,
+//     public value: string
+//   ) {}
+// }
 var HtmlTemplateComponent = (function () {
     function HtmlTemplateComponent(http, sanitizer) {
         this.http = http;
         this.sanitizer = sanitizer;
     }
     ;
-    HtmlTemplateComponent.prototype.getRaw = function () {
-        return this.http.get(this.url)
-            .toPromise()
-            .then(function (response) { return response.text(); })
-            .catch(this.handleError);
-    };
+    // private getRaw(): Promise<string> {
+    //
+    //   return this.http.get(this.url)
+    //     .toPromise()
+    //     .then(response => response.text())
+    //     .catch(this.handleError)
+    // }
     HtmlTemplateComponent.prototype.getCached = function () {
         var _this = this;
-        this.getRaw()
-            .then(function (response) {
-            _this._cached = response;
-            _this.myTemplate = _this.sanitizer.bypassSecurityTrustHtml(response);
-            return _this._cached;
-        });
+        console.log(this.cached);
+        if (this.cached) {
+            return Observable_1.Observable.of(this.cached);
+        }
+        if (this.observable) {
+            return this.observable;
+        }
+        this.observable = this.http.get(this.url)
+            .map(function (response) {
+            _this.observable = null;
+            if (response.status == 400)
+                return "FAILURE";
+            if (response.status == 200)
+                _this.cached = response.text();
+            return _this.cached;
+        })
+            .share();
+        return this.observable;
     };
+    // this.getRaw()
+    //   .then(response => {
+    //     let responseHtml = response;
+    //
+    //
+    //     //console.log(response);
+    //
+    //     return response;
+    //   });
+    // }
+    //
+    // private strToHtml(str, filterTag?): HTMLElement {
+    //   let el = document.createElement('ul');
+    //   el.insertAdjacentHTML('afterbegin', str);
+    //
+    //   return filterTag ? el.getElementsByTagName(filterTag)[0] : el;
+    // }
     // SAFE HTML = http://stackoverflow.com/a/41089093
-    HtmlTemplateComponent.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-    };
+    //
+    // private handleError(error: any): Promise<any> {
+    //     console.error('An error occurred', error); // for demo purposes only
+    //     return Promise.reject(error.message || error);
+    //   }
     HtmlTemplateComponent.prototype.ngOnInit = function () {
-        this.getCached();
+        var _this = this;
+        this.getCached().subscribe(function (data) {
+            _this.myTemplate = _this.sanitizer.bypassSecurityTrustHtml(data);
+            console.log(_this.myTemplate);
+        });
     };
     return HtmlTemplateComponent;
 }());
@@ -52,7 +98,7 @@ HtmlTemplateComponent = __decorate([
         template: "<div [innerHtml]=\"myTemplate\"></div>"
     }),
     __metadata("design:paramtypes", [http_1.Http,
-        core_1.Sanitizer])
+        platform_browser_1.DomSanitizer])
 ], HtmlTemplateComponent);
 exports.HtmlTemplateComponent = HtmlTemplateComponent;
 // @Input() evalScripts: 'always' | 'once' | 'never' = 'always';
