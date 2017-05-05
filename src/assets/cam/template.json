@@ -2,7 +2,9 @@
   "data": {
     "id": 1,
     "rows": [{
-      "background-color": "#336699",
+      "style": {
+        "background-color": "#336699"
+      },
       "content": [{
         "type": "text",
         "class": "intro-text",

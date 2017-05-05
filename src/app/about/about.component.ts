@@ -1,17 +1,21 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { DynamicTemplateComponent } from '../dynamic-template/dynamic-template.component';
+import { TemplateComponent } from '../template/template.component';
 import { AppMotionService } from '../app-motion.service';
+import { CachedHttpService } from '../shared/cached-http.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
 
 
 
-  constructor(private motionService: AppMotionService) { }
+  constructor(
+    private motionService: AppMotionService,
+    private cachedHttpService: CachedHttpService
+  ) { }
 
   ngOnInit() {
 

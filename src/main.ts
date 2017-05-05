@@ -18,14 +18,10 @@ const loaderFrame = document.getElementById('js_preLoader');
 
   loaderFrame.classList.add('going');
 
-  // loaderFrame.addEventListener('animationend', () => {
-
   setTimeout(() => {
     loaderFrame.innerHTML = '';
     jr_bootstrap();
   }, 300);
-// });
-
 
   return true;
 })();

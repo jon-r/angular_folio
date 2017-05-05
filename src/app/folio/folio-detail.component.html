@@ -1,7 +1,5 @@
-<article class="project-wrapper" *ngIf="project" >
-  <h1>{{project.title}}</h1>
+<article class="project-wrapper" *ngIf="projectTemplate" >
 
-  <app-dynamic-template [template]="projectTemplate" >
-  </app-dynamic-template>
+  <app-template [template]="projectTemplate" ></app-template>
 
 </article>

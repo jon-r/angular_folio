@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 
 import { FolioProject } from '../folio/folio-project';
-import { TemplateContent } from '../dynamic-template/template-content';
+import { TemplateContent } from '../template/template-content';
 
 @Injectable()
 export class CachedHttpService {

@@ -9,7 +9,8 @@ import jr_grid from '../assets/jr_grid';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ AppMotionService ]
 })
 export class AppComponent implements OnInit {
 

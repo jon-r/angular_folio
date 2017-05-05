@@ -1,0 +1,7 @@
+<section class="content-row" *ngFor="let row of template.rows" [ngStyle]="row.style" >
+  <div class="content-row-inner" >
+    <div *ngFor="let content of row.content" >
+      {{content.value}}
+    </div>
+  </div>
+</section>
