@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jr-ngFolio</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="full-screen" >
+    <svg id="js_gridBox" class="grid-box" viewbox="0 0 300 300" height="100%" width="100%" preserveAspectRatio="xMidYMid slice" >
+      <rect height="100%" width="100%" fill="transparent"  />
+    </svg>
+  </div>
+
+  <app-root>.</app-root>
+
+  <div id="js_preLoader" class="pre-loader-frame full-screen" >
+    <div class="pre-loader-slide full-screen" ></div>
+
+
+    <svg class="loader-logo" viewBox="-5 0 44 16">
+      <g fill="none" stroke-width="2"><path id="js_loaderLogo" class="lg-jr" stroke="#E4E5E7" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/><g stroke-dasharray="21" stroke-linejoin="round" stroke="#B2DFDB"><path class="lg-br br-l" d="M7-1L2 8l5 9"/><path class="lg-br br-r" d="M27 17l5-9-5-9"/></g></g>
+    </svg>
+
+    <svg class="loader-spin" viewBox="0 0 20 20" >
+        <circle id="load" stroke="#fff" opacity="0.5" stroke-width="2" fill="none" cx="10" cy="10" r="8" class="spin"/>
+    </svg>
+
+
+  </div>
+
+
+  <script>
+  (function() {
+  var loaderLogo = document.getElementById('js_loaderLogo');
+  var loaderFrame = document.getElementById('js_preLoader');
+  var ready = [false,true]; // TEMPORARY TO SKIP LOADING
+
+  function readyCheck(n) {
+    ready[n] = true;
+    if (ready.every(function(check) { return check === true })) {
+      loaderFrame.dataset.ready = true;
+      ready.forEach(function(check) { return check = false });
+    }
+  }
+
+    loaderLogo.addEventListener('animationend', function() {
+      setTimeout(function() { readyCheck(1) }, 500);
+
+    });
+    window.addEventListener('load', function() {
+      readyCheck(0);
+    });
+  })();
+  </script>
+
+
+  <!-- typekit -->
+  <script src="https://use.typekit.net/qgo6zhu.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</body>
+</html>

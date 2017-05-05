@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Blackjack JS",
+      "desc": "Javascript ES6 | Games Development",
+      "slug" : "blk",
+      "cat" : "play"
+    },
+    {
+      "id": 2,
+      "title": "Interactive Icons",
+      "desc": "Bespoke SVG | CSS3",
+      "slug" : "ico",
+      "cat" : "play"
+    },
+    {
+      "id": 3,
+      "title": "TilesJS",
+      "desc": "Javascript | Games?? | Vue??",
+      "slug" : "til",
+      "cat" : "play"
+    },
+    {
+      "id": 4,
+      "title": "Javascript Toolkit",
+      "desc": "Javascript | RWD",
+      "slug" : "jst",
+      "cat" : "play"
+    },
+    {
+      "id": 5,
+      "title": "Red Hot Chilli",
+      "desc": "In-House | Fully bespoke full stack design",
+      "slug" : "rhc",
+      "cat" : "work"
+    },
+    {
+      "id": 6,
+      "title": "CAMMS",
+      "desc": "Agency | Wordpress Development",
+      "slug" : "cam",
+      "cat" : "work"
+    },
+    {
+      "id": 7,
+      "title": "Arcane Bar",
+      "desc": "Freelance | Wordpress Development",
+      "slug" : "arc",
+      "cat" : "work"
+    },
+    {
+      "id": 8,
+      "title": "The Recruitment Room",
+      "desc": "Agency | Wordpress Development",
+      "slug" : "rec",
+      "cat" : "work"
+    }
+  ]
+}

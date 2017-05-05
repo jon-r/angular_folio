@@ -1,0 +1,81 @@
+<header class="site-header anim" [ngStyle]="els.home" >
+  <a routerLink="/" >
+    <h1>Jon Richards</h1>
+    <h2>Web Developer</h2>
+  </a>
+</header>
+
+<nav class="site-nav" >
+  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/jr-logo-static.min.svg'" >
+    logo
+  </a>
+
+  <a class="nav-link site-link" routerLink="folio" routerLinkActive="active">
+    <h3>Folio</h3>
+  </a>
+
+  <a class="nav-link site-link" routerLink="about" routerLinkActive="active">
+    <h3>About</h3>
+  </a>
+</nav>
+
+<div class="site-framer anim" [ngStyle]="els.framer" ></div>
+
+<main class="site-container" >
+  <router-outlet></router-outlet>
+</main>
+
+
+
+
+<!--
+
+appComponent
+appModule
+- home
+- about
+- folio
+  projectClass
+- folio-sub
+
+routingModule
+
+templaterModule
+  CSS (shared)
+  templateClass
+- template-text
+  Component
+- template-image
+  Component
+- template-codepen
+  Component
+
+shared
+- layout-updateService <- EVENT EMITTER????
+  layoutClass
+- commsService
+  commsClass
+
+
+TEMPLATES
+>Header
+  - BG image
+  - Text Left
+  - Image Right
+>Columns block
+  - image/text
+>Gallery block
+  - image link array
+>Codepen block
+  - codepen link
+> big image block
+  - image link
+
+  STYLES (based on above)
+  - grid-1 grid-2 grid-flex
+  - image frame
+  - large margins on rows, to make space for overlapping images
+  - AOS effects??
+
+
+-->

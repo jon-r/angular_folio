@@ -1,0 +1,9 @@
+<svg viewBox="0 13 75 50" class="no-clip" width="75%">
+
+  <mask id="cam">
+    <polygon fill="#FFFFFF" points="0,13.1720438 75,0 75,49.9475212 0,63.1195641 "/>
+  </mask>
+
+  <image mask="url(#cam)" xlink:href="/assets/ph-3.jpg" preserveAspectRatio="xMidYMid slice" width="75" height="64"/>
+
+</svg>

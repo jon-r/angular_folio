@@ -1,0 +1,16 @@
+<p>
+  dynamic-template works!
+</p>
+
+<h1 *ngIf="ref">{{ref}}</h1>
+
+<button (click)="ping()" >Ping</button>
+
+<section class="content-container" *ngFor="let row of template.rows | async" >
+  {{template.id}}<br />
+  rows: {{row.length}}
+  <div ngFor="let content of row.content" >
+    {{content}}
+  </div>
+
+</section>

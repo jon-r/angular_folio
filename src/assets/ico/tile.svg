@@ -1,0 +1,9 @@
+<svg viewBox="0 12 67 64" class="no-clip" width="67%">
+
+
+  <mask id="ico">
+    <polygon fill="#FFFFFF" points="0,11.8420839 67,0 67,63.9718246 0,75.8139114 "/>
+  </mask>
+  <image mask="url(#ico)" xlink:href="/assets/ph-3.jpg" preserveAspectRatio="xMidYMid slice" width="67" height="76"/>
+
+</svg>

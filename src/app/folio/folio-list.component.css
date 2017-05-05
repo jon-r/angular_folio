@@ -1,0 +1,44 @@
+.folio-title {
+  position: absolute;
+  bottom: calc(20vh - 9vw + 20px); /* trigonometry bitches. 50tan(30deg) */
+  transform: rotate(-10deg);
+  transform-origin: top left;
+
+}
+
+.folio-title > * {
+  display: inline-block;
+}
+
+.folio-title > * {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 50vmin 50vmin;
+  grid-gap: 16px;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  height: 85vmin;
+  width: 100vw;
+  transition: transform 600ms ease-out;
+}
+
+.project {
+  position: relative;
+}
+
+.project-label {
+  position: absolute;
+  padding: 4px;
+  top: 0;
+  background-color: rgba(32, 85, 80, 0.8);
+}
+
+.project:nth-child(1) { align-self: end; text-align: right; }
+.project:nth-child(2) { align-self: end;}
+.project:nth-child(3) { align-self: start; text-align: right; }
+.project:nth-child(4) { align-self: start;}

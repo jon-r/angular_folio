@@ -1,0 +1,153 @@
+/*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img,embed,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+/* BASE STYLE --------------------------------------------------------------- */
+
+body {
+  font: 300 14px/1 "soleil", sans-serif;
+  color: #e4e5e7;
+  background-color: #00897B;
+  overflow: hidden;
+}
+
+h1, h2, h3 { font-weight: bold; }
+
+h1 { font-size: calc(1vw + 3rem); }
+
+h2 { font-size: calc(1vw + 1.5rem); }
+
+h3 { font-size: calc(1vw + 0.8rem); }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link {
+  color: #B2DFDB;
+}
+.nav-link:hover, .nav-link:focus, .nav-link.active {
+  color: inherit;
+}
+
+/* helpers ------------------------------------------------------------------ */
+
+.no-clip {
+    overflow: visible;
+}
+
+.full-screen {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* preloader ---------------------------------------------------------------- */
+
+.pre-loader-frame {
+  /*z-index: 99;*/
+  /*background-color: white;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: transform 400ms ease-out;
+
+}
+
+.pre-loader-frame.going {
+  transform: translateX(-150%);
+}
+
+.pre-loader-slide {
+  transform: translateX(150%) scaleX(1.5);
+  background-color: #26A094;
+  box-shadow: -10px 0 20px #28615a;
+}
+
+.loader-logo {
+  width: 20%;
+}
+
+
+
+.loader-spin {
+  height: 5%;
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 21 }
+  50% { stroke-dashoffset: 10 }
+  to { stroke-dashoffset: 0 }
+}
+
+@keyframes push {
+  from { transform: translatex(-19px) }
+}
+
+@keyframes appear {
+  from {opacity: 0 }
+  to {opacity: 1 }
+}
+
+
+@keyframes ring-pulse {
+  from { stroke-dasharray: 5 40}
+  to { stroke-dasharray: 40 40}
+}
+
+@keyframes spin {
+  /*from { transform: rotate(0)}*/
+  to { transform: rotate(360deg)}
+}
+
+.lg-jr {
+  animation: appear 400ms 1s both
+}
+
+.lg-br {
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}
+
+.br-l {
+  animation-name: draw;
+}
+
+.br-r {
+  animation-delay: 500ms, 1s;
+  animation-name: draw, push;
+}
+
+.spin {
+  stroke-dashoffset: -20;
+  animation-duration: 1.5s, 1.2s;
+  transform-origin: 10px;
+  animation-name: ring-pulse, spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in, linear;
+  animation-direction: alternate-reverse, normal
+}
+
+/* jr-grid ------------------------------------------------------------------ */
+
+.grid-box {
+  position: absolute;
+  box-sizing: content-box;
+  /*height: 100%;
+  width:100%;*/
+}
+.grid-rect {
+  fill: #119486;
+  opacity: 0.1;
+  cursor: pointer;
+}
+.grid-rect:not(.glow) {
+  transition: opacity 1s linear 1s;
+}
+
+.grid-rect:hover, .grid-rect.glow {
+  opacity: 1;
+  transition: opacity .1s
+}

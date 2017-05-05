@@ -1,0 +1,23 @@
+<header class="folio-title">
+  <h1 class="page-title">Folio</h1>
+  <h2 class="folio-filter nav-link" [ngClass]="{'active': category === 'work'}" (click)="filterProjects('work')" >Work</h2>
+  <h2 class="folio-filter nav-link" [ngClass]="{'active': category === 'play'}" (click)="filterProjects('play')" >Play</h2>
+</header>
+
+<ul class="projects"  routerLinkActive="active-child">
+  <li class="project" *ngFor="let project of projects | async; let i = index"
+      [ngStyle]="{'animation-delay.ms': (i * 50) }" [ngClass]="'project-' + project.slug"
+      routerLinkActive="active"   >
+    <a class="project-container" [routerLink]="project.id" >
+    <!-- <a class="project-container" (click)="testParam(project.id)" > -->
+    <div class="project-thumb" [inlineSVG]="'../assets/' + project.slug + '/tile.svg'" ></div>
+      <div class="project-label" >
+        <h3>{{project.title}}</h3>
+        <em>{{project.desc}}</em>
+      </div>
+    </a>
+  </li>
+</ul>
+
+
+<!-- <router-outlet></router-outlet> -->
