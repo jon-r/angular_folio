@@ -1,0 +1,17 @@
+.content-row-inner {
+  max-width: 1200px;
+  min-height: 240px;
+  margin: 32px auto;
+  display: flex;
+  justify-content:space-around;
+  align-items: stretch;
+}
+
+.image {
+  border: solid 1px red;
+  display: block;
+}
+
+.overhang {
+  margin-bottom: -40px;
+}

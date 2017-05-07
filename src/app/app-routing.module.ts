@@ -8,7 +8,7 @@ import { FolioDetailComponent } from './folio/folio-detail.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'folio', component: FolioListComponent },
+  { path: 'folio', component: FolioListComponent, pathMatch: 'full' },
   { path: 'folio/:slug', component: FolioDetailComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

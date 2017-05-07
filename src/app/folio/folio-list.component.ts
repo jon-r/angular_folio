@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { fadeInOutAnimation } from '../animations';
 
-import { AppMotionService } from '../app-motion.service';
+import { MotionService } from '../shared/motion.service';
 import { CachedHttpService } from '../shared/cached-http.service';
 import { FolioProject } from './folio-project';
 
@@ -12,6 +12,7 @@ import { FolioProject } from './folio-project';
   selector: 'app-folio-list',
   templateUrl: './folio-list.component.html',
   styleUrls: ['./folio-list.component.css'],
+  providers: [CachedHttpService],
   animations: [ fadeInOutAnimation ],
 })
 export class FolioListComponent implements OnInit {
@@ -26,7 +27,7 @@ export class FolioListComponent implements OnInit {
   category: 'work';
 
   constructor(
-    private motionService: AppMotionService,
+    private motionService: MotionService,
     private cachedHttpService: CachedHttpService,
   ) { }
 
@@ -53,6 +54,7 @@ export class FolioListComponent implements OnInit {
     this.filterProjects('work');
 
   }
+
 
 
 }

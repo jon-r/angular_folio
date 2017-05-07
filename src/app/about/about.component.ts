@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { TemplateComponent } from '../template/template.component';
-import { AppMotionService } from '../app-motion.service';
+import { TemplateComponent } from '../shared/template.component';
+import { MotionService } from '../shared/motion.service';
 import { CachedHttpService } from '../shared/cached-http.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class AboutComponent implements OnInit {
 
 
   constructor(
-    private motionService: AppMotionService,
+    private motionService: MotionService,
     private cachedHttpService: CachedHttpService
   ) { }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AppMotionService } from '../app-motion.service';
+import { MotionService } from '../shared/motion.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { AppMotionService } from '../app-motion.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private motionService: AppMotionService ) { }
+  constructor( private motionService: MotionService ) { }
 
   ngOnInit() {
     const homePos = { home: [-6, -3], framer: [4, 5, '70deg'] };

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { ElTransform } from './el-transform';
 
 @Injectable()
-export class AppMotionService {
+export class MotionService {
 
   private motionSrc = new Subject<ElTransform>();
   motionOutput$ = this.motionSrc.asObservable();

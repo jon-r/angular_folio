@@ -1,5 +1,6 @@
 {
   "data": {
+    "id": 1,
     "rows": [{
       "style": {
         "background-color": "#336699"
@@ -10,12 +11,12 @@
         "value": "some text"
       }, {
         "type": "image",
-        "class": "overhang",
+        "class": "img-oversized",
         "value": "some text"
       }]
     }, {
       "content": [{
-        "type": "text",
+        "type": "text|image|codepen",
         "value": "some text"
       }, {
         "type": "text|image|codepen",

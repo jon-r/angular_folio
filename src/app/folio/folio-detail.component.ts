@@ -4,16 +4,17 @@ import {ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
-import { TemplateComponent } from '../template/template.component';
-import { TemplateContent } from '../template/template-content';
+import { TemplateComponent } from '../shared/template.component';
+import { TemplateContent } from '../shared/template-content';
 
-import { AppMotionService } from '../app-motion.service';
+import { MotionService } from '../shared/motion.service';
 import { CachedHttpService } from '../shared/cached-http.service';
 
 @Component({
   selector: 'app-folio-detail',
   templateUrl: './folio-detail.component.html',
   styleUrls: ['./folio-detail.component.css'],
+  providers: [CachedHttpService],
 })
 export class FolioDetailComponent implements OnInit {
 
@@ -23,7 +24,7 @@ export class FolioDetailComponent implements OnInit {
   projectTemplate: TemplateContent;
 
   constructor(
-    private motionService: AppMotionService,
+    private motionService: MotionService,
     private activatedRoute: ActivatedRoute,
     private cachedHttpService: CachedHttpService,
   ) { }

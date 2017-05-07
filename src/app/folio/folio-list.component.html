@@ -5,9 +5,8 @@
 </header>
 
 <ul class="projects"  routerLinkActive="active-child">
-  <li class="project" *ngFor="let project of projects | async; let i = index"
-      [ngStyle]="{'animation-delay.ms': (i * 50) }" [ngClass]="'project-' + project.slug"
-      routerLinkActive="active"   >
+  <li class="project" *ngFor="let project of projects | async;"
+    [ngClass]="'project-' + project.slug" routerLinkActive="active" >
     <a class="project-container" [routerLink]="project.slug" >
 
       <div class="project-thumb" [inlineSVG]="'../assets/' + project.slug + '/tile.svg'" ></div>

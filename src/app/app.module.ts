@@ -9,11 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { TemplateComponent } from './template/template.component';
 import { FolioListComponent } from './folio/folio-list.component';
 import { FolioDetailComponent } from './folio/folio-detail.component';
+import { TemplateComponent } from './shared/template.component';
 
-import { AppMotionService } from './app-motion.service';
+import { MotionService } from './shared/motion.service';
 import { CachedHttpService } from './shared/cached-http.service';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { CachedHttpService } from './shared/cached-http.service';
     InlineSVGModule
   ],
   providers: [
-    AppMotionService,
+    MotionService,
     CachedHttpService
   ],
   bootstrap: [AppComponent]

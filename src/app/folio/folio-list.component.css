@@ -27,14 +27,16 @@
   transition: transform 600ms ease-out;
 }
 
+
 .project {
   position: relative;
+  animation: fade-in 300ms ease-in both;
 }
 
 .project-label {
   position: absolute;
   padding: 4px;
-  top: 0;
+  top: calc(50% - 30px);
   background-color: rgba(32, 85, 80, 0.8);
 }
 

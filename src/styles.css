@@ -70,40 +70,14 @@ a {
   width: 20%;
 }
 
-
-
 .loader-spin {
   height: 5%;
 }
 
-@keyframes draw {
-  from { stroke-dashoffset: 21 }
-  50% { stroke-dashoffset: 10 }
-  to { stroke-dashoffset: 0 }
-}
 
-@keyframes push {
-  from { transform: translatex(-19px) }
-}
-
-@keyframes appear {
-  from {opacity: 0 }
-  to {opacity: 1 }
-}
-
-
-@keyframes ring-pulse {
-  from { stroke-dasharray: 5 40}
-  to { stroke-dasharray: 40 40}
-}
-
-@keyframes spin {
-  /*from { transform: rotate(0)}*/
-  to { transform: rotate(360deg)}
-}
 
 .lg-jr {
-  animation: appear 400ms 1s both
+  animation: fade-in 400ms 1s both
 }
 
 .lg-br {
@@ -112,19 +86,19 @@ a {
 }
 
 .br-l {
-  animation-name: draw;
+  animation-name: svg-draw;
 }
 
 .br-r {
   animation-delay: 500ms, 1s;
-  animation-name: draw, push;
+  animation-name: svg-draw, nudge-right;
 }
 
 .spin {
   stroke-dashoffset: -20;
   animation-duration: 1.5s, 1.2s;
   transform-origin: 10px;
-  animation-name: ring-pulse, spin;
+  animation-name: svg-ring-pulse, spin;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in, linear;
   animation-direction: alternate-reverse, normal
@@ -150,4 +124,56 @@ a {
 .grid-rect:hover, .grid-rect.glow {
   opacity: 1;
   transition: opacity .1s
+}
+
+/* folio list svg ----------------------------------------------------------- */
+
+.wipe-out {
+  animation: wipe 1s both .3s;
+}
+
+.appear {
+  animation: fade-in-instant 1s both .3s;
+}
+
+/* css animations ----------------------------------------------------------- */
+
+@keyframes svg-draw {
+  from { stroke-dashoffset: 21 }
+  50% { stroke-dashoffset: 10 }
+  to { stroke-dashoffset: 0 }
+}
+
+@keyframes nudge-right {
+  from { transform: translatex(-19px) }
+}
+
+@keyframes fade-in {
+  from {opacity: 0 }
+  to {opacity: 1 }
+}
+
+@keyframes svg-ring-pulse {
+  from { stroke-dasharray: 5 40}
+  to { stroke-dasharray: 40 40}
+}
+
+@keyframes spin {
+  /*from { transform: rotate(0)}*/
+  to { transform: rotate(360deg)}
+}
+@keyframes wipe {
+  from { transform: translateX(-100%) }
+  30% { transform: none }
+  to { transform: translate(100%) }
+}
+@keyframes fade-in-instant {
+  from, 29% { opacity: 0 }
+  30% { opacity: 1 }
+}
+
+@keyframes enter-left {
+  from { opacity: 0; transform: translateX(-50%);}
+  10% { opacity: 1 }
+  to { transform: none;}
 }

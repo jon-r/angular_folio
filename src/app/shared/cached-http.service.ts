@@ -7,14 +7,14 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 
 import { FolioProject } from '../folio/folio-project';
-import { TemplateContent } from '../template/template-content';
+import { TemplateContent } from './template-content';
 
 @Injectable()
 export class CachedHttpService {
 
-  private dataCache: Observable<any> = null;
+  private dataCache: Observable<any>;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) { };
 
   private getCached(url): Observable<any> {
 
