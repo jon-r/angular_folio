@@ -6,13 +6,12 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 
-import { FolioProject } from '../folio/folio-project';
-import { TemplateContent } from './template-content';
 
 @Injectable()
 export class CachedHttpService {
 
   private dataCache: Observable<any>;
+  data: Observable<any>;
 
   constructor(private http: Http) { };
 
@@ -49,28 +48,18 @@ export class CachedHttpService {
     return Observable.throw(errMsg);
   }
 
-
-  getProjects(): Observable<FolioProject[]> {
-    const url = '../assets/projects-list.json';
-    return this.getCached(url);
+  getFrom(url) {
+    this.data = this.getCached(url);
+    return this;
   }
 
-  getFilterProjects(cat): Observable<FolioProject[]> {
-    return this.getProjects()
-    .map(projects => projects
-      .filter(project => project['cat'] === cat ));
-  }
+  filterBy(key, value): Observable<any> {
+    if (!this.data) {
+      return this.handleError('no data set');
+    }
 
-// depreciated
-  getProject(n) {
-    return this.getProjects()
-    .map(projects => projects
-      .find(project => project['id'] === +n ));
-  }
-
-  getTemplate(ref): Observable<TemplateContent> {
-    const url = `../assets/${ref}/template.json`;
-    return this.getCached(url);
+    return this.data
+      .map(arrs => arrs.filter(arr => arr[key] === value));
   }
 
 }
