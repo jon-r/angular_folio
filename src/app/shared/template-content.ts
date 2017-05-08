@@ -1,4 +1,4 @@
-interface StyleObj {
+export interface StyleObj {
   [key: string]: string;
 }
 

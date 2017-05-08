@@ -19,11 +19,7 @@ export class FolioListComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation = true;
 
-  // private sub;
-  private id: Number;
-
   projects: Observable<FolioProject[]>;
-  errorMessage: string;
   category: 'work';
 
   constructor(
@@ -33,24 +29,17 @@ export class FolioListComponent implements OnInit {
 
 
   filterProjects(cat) {
+    const url = '../assets/projects-list.json';
     this.category = cat;
-    this.projects = this.cachedHttpService.getFilterProjects(cat);
+    this.projects = this.cachedHttpService.getFrom(url).filterBy('cat', cat);
   }
 
-  setMotion(id) {
-    const listPos = { home: [-.5, -.5], framer: [5, 8, '-10deg'] };
-    const detailPos = { home: [-.5, -.5], framer: [5, 1] };
-    const pos = id ? detailPos : listPos;
-
-    this.motionService.updatePosition(pos);
-  }
 
   ngOnInit() {
 
     const listPos = { home: [-.5, -.5], framer: [5, 8, '-10deg'] };
 
     this.motionService.updatePosition(listPos);
-
     this.filterProjects('work');
 
   }
