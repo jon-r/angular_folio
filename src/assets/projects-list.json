@@ -44,16 +44,16 @@
     },
     {
       "id": 7,
-      "title": "Arcane Bar",
-      "desc": "Freelance | Wordpress Development",
-      "slug" : "arc",
+      "title": "The Recruitment Room",
+      "desc": "Agency | Wordpress Development",
+      "slug" : "rec",
       "cat" : "work"
     },
     {
       "id": 8,
-      "title": "The Recruitment Room",
-      "desc": "Agency | Wordpress Development",
-      "slug" : "rec",
+      "title": "Other Websites",
+      "desc": "Freelance/Agency | Wordpress/Static HTML Development",
+      "slug" : "web",
       "cat" : "work"
     }
   ]

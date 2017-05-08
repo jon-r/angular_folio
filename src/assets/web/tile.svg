@@ -1,10 +1,10 @@
 <svg viewBox="0 0 82 42" class="no-clip" width="82%" >
 
-  <mask id="arc">
+  <mask id="web">
     <polygon fill="#FFFFFF" points="0,14.4588127 82,0 82,42 0,56.4588127 "/>
   </mask>
 
-  <g mask="url(#arc)" >
+  <g mask="url(#web)" >
     <image class="appear" xlink:href="/assets/arc/tile.jpg" preserveAspectRatio="xMidYMid slice" width="82" height="57" />
     <rect class="wipe-out" fill="#B2DFDB"  width="82" height="57"  />
   </g>
