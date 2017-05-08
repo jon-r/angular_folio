@@ -1,3 +1,5 @@
-<p>
-  about works!
-</p>
+<article class="about-wrapper" *ngIf="aboutTemplate" >
+
+  <app-template [template]="aboutTemplate" ></app-template>
+
+</article>
