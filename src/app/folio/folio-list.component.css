@@ -33,6 +33,19 @@
   animation: fade-in 300ms ease-in both;
 }
 
+/*.project-rhc {
+  align-self: end;
+  text-align: right;
+}
+
+.project-cam {
+  align-self: end;
+}
+
+.project-web {
+  grid-column: 0 / 2;
+}*/
+
 .project-label {
   position: absolute;
   padding: 4px;

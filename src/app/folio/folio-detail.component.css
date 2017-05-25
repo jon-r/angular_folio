@@ -1,5 +1,7 @@
 .project-wrapper {
   position: relative;
   margin-top: 15vh;
+  max-height: 85vh;
+  overflow: auto;
   z-index: 20;
 }

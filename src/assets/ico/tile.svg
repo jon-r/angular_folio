@@ -1,12 +1,12 @@
 <svg viewBox="0 12 67 64" class="no-clip" width="67%">
 
   <mask id="ico">
-    <polygon fill="#FFFFFF" points="0,11.8420839 67,0 67,63.9718246 0,75.8139114 "/>
+    <polygon fill="#FFFFFF" points="0,11.8 67,0 67,74 0,85.8 "/>
   </mask>
   
   <g mask="url(#ico)" >
-    <image class="appear" xlink:href="/assets/ico/tile.jpg" preserveAspectRatio="xMidYMid slice" width="67" height="76" />
-    <rect class="wipe-out" fill="#B2DFDB" width="67" height="76" />
+    <image class="appear" xlink:href="/assets/ico/tile.jpg" preserveAspectRatio="xMidYMid slice" width="67" height="86" />
+    <rect class="wipe-out" fill="#B2DFDB" width="67" height="86" />
   </g>
 
 </svg>

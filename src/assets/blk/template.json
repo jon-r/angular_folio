@@ -1,29 +1,8 @@
-/*
-# BLACKJACK
-
-## header:
-intro
-  - desc: BlackJack Game build on VueJS
-  - toolkit: Vue, ES6, Bespoke SVG
-img: cards (steal hover from ult homes?)
-bg: felt table svg
-
-## row1:
-codepen: (set up with babel/vue. can i use projects?)
-
-## row2
-module breakdown
-what modules are what
-
-## row3
-svgs. just simple row. link to SVG project?
-*/
-
 {
   "data": {
     "rows": [{
       "style": {
-        "background-image": "url(location/to/felt-bg.svg)",
+        "background-image": "url(location/to/felt-bg.svg)"
       },
       "content": [{
         "type": "text",
@@ -47,6 +26,12 @@ svgs. just simple row. link to SVG project?
         "type": "image",
         "value": "location/to/module-breakdown.jpg"
       }]
+    }, {
+      "content": [{
+        "type": "image",
+        "value": "location/to/svgs.svg"
+      }]
     }]
 
+  }
 }

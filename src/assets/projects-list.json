@@ -9,50 +9,39 @@
     },
     {
       "id": 2,
-      "title": "Interactive Icons",
+      "title": "SVG Inconography",
       "desc": "Bespoke SVG | CSS3",
       "slug" : "ico",
       "cat" : "play"
     },
     {
       "id": 3,
-      "title": "TilesJS",
-      "desc": "Javascript | Games?? | Vue??",
-      "slug" : "til",
+      "title": "Wordpress Toolkit",
+      "desc": "Javascript | PHP",
+      "slug" : "kit",
       "cat" : "play"
     },
-    {
-      "id": 4,
-      "title": "Javascript Toolkit",
-      "desc": "Javascript | RWD",
-      "slug" : "jst",
-      "cat" : "play"
-    },
+
+
+
     {
       "id": 5,
       "title": "Red Hot Chilli",
-      "desc": "In-House | Fully bespoke full stack design",
+      "desc": "Catering Equipment E-Catalogue",
       "slug" : "rhc",
       "cat" : "work"
     },
     {
       "id": 6,
       "title": "CAMMS",
-      "desc": "Agency | Wordpress Development",
+      "desc": "SAAS Corporate Site &amp; Software Portfolio",
       "slug" : "cam",
       "cat" : "work"
     },
     {
       "id": 7,
-      "title": "The Recruitment Room",
-      "desc": "Agency | Wordpress Development",
-      "slug" : "rec",
-      "cat" : "work"
-    },
-    {
-      "id": 8,
       "title": "Other Websites",
-      "desc": "Freelance/Agency | Wordpress/Static HTML Development",
+      "desc": "Assorted sites, primarily in hospitality",
       "slug" : "web",
       "cat" : "work"
     }

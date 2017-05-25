@@ -1,7 +1,7 @@
 <section class="content-row" *ngFor="let row of template.rows" [ngStyle]="row.style" >
   <div class="content-row-inner" >
-    <div class="content" *ngFor="let content of row.content" [ngClass]="[content.type, content.class || '']" >
-      {{content.value}}
+    <div class="content" *ngFor="let content of row.content" [ngClass]="[content.type, content.class || '']"
+    [innerHTML]="content.value" >
     </div>
   </div>
 </section>

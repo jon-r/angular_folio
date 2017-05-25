@@ -1,7 +1,7 @@
-<svg viewBox="0 0 100 50" class="no-clip" width="100%">
+<svg viewBox="0 0 100 67.5" class="no-clip" width="100%">
 
   <mask id="blk">
-    <polygon fill="#FFFFFF" points="0,17.564518 100,0.0007112 100,49.9318199 0,67.4956284 "/>
+    <polygon fill="#FFFFFF" points="0,17.5 100,0 100,50 0,67.5 "/>
   </mask>
 
   <g mask="url(#blk)" >

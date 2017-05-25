@@ -17,27 +17,6 @@ what modules are what
 ## row3
 svgs. just simple row. link to SVG project?
 
-# CAMMS
-
-## header
-intro
-  - desc: SAAS Company website. | Wordpress
-  - role: Senior Web Developer
-  - type: Agency Work [minerva-creative]()
-img: camms homepage
-bg: some blue tinted screenshot
-
-## row1
-multi-template posts
-
-## row2
-Interactive map (codepen?)
-
-## row3
-svgs: simple row
-
-
-
 # SVG ICONOGRAPHY
 
 ## header
@@ -78,24 +57,6 @@ copy pasta functions
   - basic post query
   - fontawesome/column shortcodes
 
-# RECRUITMENT ROOM
-
-## header
-intro:
-  - desc: Catering & Hospitality recruitment site | Wordpress
-  - role: snr web dev
-  - type: Agency
-img: ridings homepage
-bg: slider plates?
-
-## row1
-sloped sections
-
-## row2
-
-
-## row3
-
 # RED HOT CHILLI
 
 ## header
@@ -118,17 +79,38 @@ technical
 ## row3
 svgs: custom icons
 
+# CAMMS
 
-# OTHER SITES (bonus)
-  - arcane
-  - cuzina
+## header
+intro
+  - desc: SAAS Company website. | Wordpress
+  - role: Senior Web Developer
+  - type: Agency Work [minerva-creative]()
+img: camms homepage
+bg: some blue tinted screenshot
+
+## row1
+multi-template posts
+
+## row2
+Interactive map (codepen?)
+
+## row3
+svgs: simple row
+
+# OTHER SITES
+  - *arcane*
+  - *cuzina*
   - villa romana
   - charlie chapatti (concept)
-  - MAYBE PUT REC ROOM AS PART OF THIS??
+  - *dunalastair v2 (concept?)*
+  - *REC ROOM*
 
-## header 
+## header
 intro:
-  - ok
+  - desc: Catering & Hospitality recruitment site | Wordpress
+  - role: snr web dev
+  - type: Agency
 img:
 bg:
 
@@ -140,20 +122,10 @@ bg:
 
 ## row3
 
-# TILESJS ??? (bonus)
 
+---
 
-## header
-intro:
-  - desc: interactive animations
-  - toolkit: ES6, Webkit
-img: smaller version of the background?
-bg:
+bonus thoughts
 
-## row1
-
-
-## row2
-
-
-## row3
+this site as a project?
+pick

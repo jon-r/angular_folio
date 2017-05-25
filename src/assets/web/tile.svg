@@ -1,12 +1,12 @@
-<svg viewBox="0 0 82 42" class="no-clip" width="82%" >
+<svg viewBox="0 7 82 42" class="no-clip" style="overflow:visible" width="82%" >
 
   <mask id="web">
-    <polygon fill="#FFFFFF" points="0,14.4588127 82,0 82,42 0,56.4588127 "/>
+    <polygon fill="#FFFFFF" points="0,21.75 123,0 123,43 0,64.75"/>
   </mask>
 
   <g mask="url(#web)" >
-    <image class="appear" xlink:href="/assets/arc/tile.jpg" preserveAspectRatio="xMidYMid slice" width="82" height="57" />
-    <rect class="wipe-out" fill="#B2DFDB"  width="82" height="57"  />
+    <image class="appear" xlink:href="/assets/web/tile.jpg" preserveAspectRatio="xMidYMid slice" width="164" height="73" />
+    <rect class="wipe-out" fill="#B2DFDB"  width="164" height="73"  />
   </g>
 
 </svg>
