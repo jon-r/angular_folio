@@ -5,21 +5,24 @@
       "title": "Blackjack JS",
       "desc": "Javascript ES6 | Games Development",
       "slug" : "blk",
-      "cat" : "play"
+      "cat" : "play",
+      "grid": "1/1/3/4"
     },
     {
       "id": 2,
       "title": "SVG Inconography",
       "desc": "Bespoke SVG | CSS3",
       "slug" : "ico",
-      "cat" : "play"
+      "cat" : "play",
+      "grid": "1/4/2/7"
     },
     {
       "id": 3,
       "title": "Wordpress Toolkit",
       "desc": "Javascript | PHP",
       "slug" : "kit",
-      "cat" : "play"
+      "cat" : "play",
+      "grid": "2/4/3/7"
     },
 
 
@@ -29,21 +32,24 @@
       "title": "Red Hot Chilli",
       "desc": "Catering Equipment E-Catalogue",
       "slug" : "rhc",
-      "cat" : "work"
+      "cat" : "work",
+      "grid": "1 / 1 / 3 / 3"
     },
     {
       "id": 6,
       "title": "CAMMS",
       "desc": "SAAS Corporate Site &amp; Software Portfolio",
       "slug" : "cam",
-      "cat" : "work"
+      "cat" : "work",
+      "grid": "1 / 3 / 3 / 5"
     },
     {
       "id": 7,
-      "title": "Other Websites",
+      "title": "More",
       "desc": "Assorted sites, primarily in hospitality",
       "slug" : "web",
-      "cat" : "work"
+      "cat" : "work",
+      "grid": "1 / 5 / 3 / 7"
     }
   ]
 }

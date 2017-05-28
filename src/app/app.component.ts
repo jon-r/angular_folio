@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
       // .debounceTime(200)
       .subscribe(els => this.els = els);
 
-    jr_grid();
+    // jr_grid();
 
   }
 

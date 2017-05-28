@@ -4,6 +4,7 @@ export class FolioProject {
     public title: string,
     public desc: string,
     public slug: string,
-    public cat: string
+    public cat: string,
+    public grid: string
   ) {}
 }

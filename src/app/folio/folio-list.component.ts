@@ -12,14 +12,14 @@ import { FolioProject } from './folio-project';
   selector: 'app-folio-list',
   templateUrl: './folio-list.component.html',
   styleUrls: ['./folio-list.component.css'],
-  providers: [CachedHttpService],
-  animations: [ fadeInOutAnimation ],
+  animations: [fadeInOutAnimation],
 })
 export class FolioListComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation = true;
 
   projects: Observable<FolioProject[]>;
+  projectsUrl = '../assets/projects-list.json';
   category: 'work';
 
   constructor(
@@ -29,15 +29,15 @@ export class FolioListComponent implements OnInit {
 
 
   filterProjects(cat) {
-    const url = '../assets/projects-list.json';
     this.category = cat;
-    this.projects = this.cachedHttpService.getFrom(url).filterBy('cat', cat);
+    this.projects = this.cachedHttpService.getFrom(this.projectsUrl)
+      .filterBy('cat', cat);
   }
 
 
   ngOnInit() {
 
-    const listPos = { home: [-.5, -.5], framer: [5, 8, '-10deg'] };
+    const listPos = { home: [-.5, -.5], framer: [5, 8] };
 
     this.motionService.updatePosition(listPos);
     this.filterProjects('work');

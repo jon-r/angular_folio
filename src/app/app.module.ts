@@ -5,14 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InlineSVGModule } from 'ng-inline-svg';
 import { AppRoutingModule } from './app-routing.module';
+import { TemplateModule } from './template/template.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FolioListComponent } from './folio/folio-list.component';
 import { FolioDetailComponent } from './folio/folio-detail.component';
-import { TemplateComponent } from './shared/template.component';
-
 import { MotionService } from './shared/motion.service';
 import { CachedHttpService } from './shared/cached-http.service';
 
@@ -21,16 +20,16 @@ import { CachedHttpService } from './shared/cached-http.service';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    TemplateComponent,
     FolioListComponent,
-    FolioDetailComponent
+    FolioDetailComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-    InlineSVGModule
+    InlineSVGModule,
+    TemplateModule,
   ],
   providers: [
     MotionService,

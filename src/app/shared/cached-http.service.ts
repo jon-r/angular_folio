@@ -6,26 +6,36 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 
+interface CacheObj {
+  [key: string]: Observable<any>;
+}
 
 @Injectable()
 export class CachedHttpService {
 
-  private dataCache: Observable<any>;
+  private static dataCache: Map<string, any>;
   data: Observable<any>;
 
-  constructor(private http: Http) { };
+  constructor(private http: Http) {
+    if (!CachedHttpService.dataCache) {
+      CachedHttpService.dataCache = new Map<string, any>();
+    }
+  };
+
 
   private getCached(url): Observable<any> {
 
-    if (!this.dataCache) {
-      this.dataCache = this.http.get(url)
+    if (!CachedHttpService.dataCache.has(url)) {
+       const result = this.http.get(url)
         .map(this.extractData)
         .publishReplay(1)
         .refCount()
         .catch(this.handleError);
+
+      CachedHttpService.dataCache.set(url, result);
     }
 
-    return this.dataCache;
+    return CachedHttpService.dataCache.get(url);
 
   }
 
@@ -51,6 +61,10 @@ export class CachedHttpService {
   getFrom(url) {
     this.data = this.getCached(url);
     return this;
+  }
+
+  getObservable(url) {
+    return this.getCached(url);
   }
 
   filterBy(key, value): Observable<any> {
