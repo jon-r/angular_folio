@@ -64,7 +64,7 @@ export class CachedHttpService {
   }
 
   getObservable(url) {
-    return this.getCached(url);
+    return this.getCached(url).publishReplay(1).refCount();
   }
 
   filterBy(key, value): Observable<any> {

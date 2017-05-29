@@ -4,25 +4,23 @@ import { TemplateContent } from './template-content';
 import { CachedHttpService } from '../shared/cached-http.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
-
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.css'],
-  // providers: [CachedHttpService],
 })
 export class TemplateComponent implements OnInit {
   @Input() templateUrl: string;
 
-  template: TemplateComponent;
-  // test:;
+  template: any;
 
   constructor(
     private cachedHttpService: CachedHttpService,
-  ) { }
-
-
+  ) {
+    this.template = new Subject();
+  }
 
   ngOnInit() {
     this.cachedHttpService.getObservable(this.templateUrl)

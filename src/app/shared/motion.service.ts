@@ -37,7 +37,6 @@ export class MotionService {
     } );
 
     this.motionSrc.next(out);
-    return true;
 
   }
 

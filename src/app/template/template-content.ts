@@ -4,18 +4,30 @@ export interface StyleObj {
 
 export class TemplateContent {
 
-  constructor(
-    public rows: [{
-      'style'?: StyleObj,
-      'background-image'?: string,
-      'background-color'?: string,
-      'content': [{
-        'style'?: StyleObj,
-        'type': string,
-        'class': string,
-        'value': string
-      }]
+  rows: [{
+    style?: StyleObj,
+    content?: [{
+        style?: StyleObj,
+        type: string,
+        class: string,
+        value: string
     }]
-  ) {}
+  }];
+
+  constructor(
+    options: {
+      rows?: [{
+        style?: StyleObj,
+        content: [{
+            style?: StyleObj,
+            type: string,
+            class: string,
+            value: string
+        }]
+      }]
+    } = {}
+  ) {
+    this.rows = options.rows || [{}];
+  }
 
 }

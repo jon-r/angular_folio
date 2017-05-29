@@ -9,13 +9,13 @@
         "class": "intro-text",
         "value": "<h5>About</h5> <p>Learning Vue.JS by building BlackJack, the cardgame.</p> <h5>Tools</h5> <p>Vue.JS | ES6 | Webpack</p>"
       }, {
-        "type": "image",
+        "type": "svg",
         "class": "img-icon",
         "value": "location/to/blackjack-cards.svg"
       }]
     }, {
       "content": [{
-        "type": "codepen",
+        "type": "iframe",
         "value": "codepen iframe url"
       }]
     }, {
@@ -28,7 +28,7 @@
       }]
     }, {
       "content": [{
-        "type": "image",
+        "type": "svg",
         "value": "location/to/svgs.svg"
       }]
     }]
