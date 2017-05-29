@@ -2,9 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { TemplateContent } from './template-content';
 import { CachedHttpService } from '../shared/cached-http.service';
-import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-template',
@@ -14,13 +12,11 @@ import { Subject } from 'rxjs/Subject';
 export class TemplateComponent implements OnInit {
   @Input() templateUrl: string;
 
-  template: any;
+  template: TemplateContent;
 
   constructor(
     private cachedHttpService: CachedHttpService,
-  ) {
-    this.template = new Subject();
-  }
+  ) {}
 
   ngOnInit() {
     this.cachedHttpService.getObservable(this.templateUrl)
