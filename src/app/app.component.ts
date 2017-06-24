@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.appMotion.motionOutput$
-      // .debounceTime(200)
+      .debounceTime(50)
       .subscribe(els => this.els = els);
 
     // jr_grid();

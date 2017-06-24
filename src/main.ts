@@ -20,7 +20,8 @@ const loaderFrame = document.getElementById('js_preLoader');
 
   setTimeout(() => {
     loaderFrame.innerHTML = '';
-    jr_bootstrap();
+    // jr_bootstrap();
+    platformBrowserDynamic().bootstrapModule(AppModule);
   }, 300);
 
   return true;
