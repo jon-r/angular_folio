@@ -8,41 +8,41 @@
       "cat" : "play"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "SVG Inconography",
       "desc": "Bespoke SVG | CSS3",
       "slug" : "ico",
       "cat" : "play"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Wordpress Toolkit",
       "desc": "Javascript | PHP",
       "slug" : "kit",
       "cat" : "play",
       "style" : {
-        "background": "red" 
+        "background": "red"
       }
     },
 
 
 
     {
-      "id": 5,
+      "id": 2,
       "title": "Red Hot Chilli",
       "desc": "Catering Equipment E-Catalogue",
       "slug" : "rhc",
       "cat" : "work"
     },
     {
-      "id": 6,
+      "id": 4,
       "title": "CAMMS",
       "desc": "SAAS Corporate Site &amp; Software Portfolio",
       "slug" : "cam",
       "cat" : "work"
     },
     {
-      "id": 7,
+      "id": 6,
       "title": "More",
       "desc": "Assorted sites, primarily in hospitality",
       "slug" : "web",

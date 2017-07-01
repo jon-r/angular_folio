@@ -11,23 +11,17 @@
 
   <section class="folio-container"  >
 
-  <!-- <div class="projects-container" > -->
 
-
-  {{focus}}
-    <ul class="projects-list" >
+    <ul class="projects-list" *ngIf="projects" >
 
         <li *ngFor="let project of projects | async; let i=index"
           class="project"
           [ngClass]="'project-' + project.slug"
           [ngStyle]="listPosition(i)"
-          [@listState]
+          [@listAnim]
           routerLinkActive="active" >
 
-          <!--  TODO: set onclick rather than editing router (detail component) https://angular.io/guide/router#optional-route-parameters -->
-
-          <a class="project-container" [ngStyle]="project.style" [routerLink]="{project: project.slug}" >
-            <!-- <div class="project-thumb" [inlineSVG]="'../assets/' + project.slug + '/tile.svg'" ></div> -->
+          <a class="project-container" [ngStyle]="project.style" [routerLink]="project.slug" >
 
             <div class="project-label" >
               <h3>{{project.title}} {{i}}</h3>
@@ -36,12 +30,8 @@
           </a>
         </li>
     </ul>
-  <!-- </div> -->
 
-  <!-- project template here. -->
+
+  <router-outlet></router-outlet>
 
 </section>
-
-
-
-<!-- <router-outlet></router-outlet> -->

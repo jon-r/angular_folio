@@ -58,8 +58,9 @@ export class CachedHttpService {
     return Observable.throw(errMsg);
   }
 
-  getFrom(url) {
-    this.data = this.getCached(url);
+  getFrom({ url, sort }) {
+    const data = this.getCached(url);
+    this.data = sort ? data.map(arrs => arrs.sort((a, b) => a[sort] - b[sort])) : data;
     return this;
   }
 
@@ -75,5 +76,12 @@ export class CachedHttpService {
     return this.data
       .map(arrs => arrs.filter(arr => arr[key] === value));
   }
+
+  // sorted(key): Observable<any> {
+  //   if (!this.data) return this.handleError('no data set');
+  //
+  //   return this.data
+  //
+  // }
 
 }

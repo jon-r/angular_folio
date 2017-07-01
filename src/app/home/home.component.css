@@ -5,11 +5,10 @@
 
 .work {
   top: 30vh;
-  left: 40vw;
-
+  left: calc(50vw - 200px);
 }
 
 .about {
   top: 45vh;
-  left: 43vw;
+  left: calc(50vw - 130px);
 }

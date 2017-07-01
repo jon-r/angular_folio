@@ -37,25 +37,19 @@
 .site-framer {
   background-color: #00897B;
   top:0;
-  left: -71vw;  /* vmax fallback */
-  left: -71vmax;
-  height: 142vw;
-  height: 142vmax;
-  width: 142vw;
-  width: 142vmax;
-  transform-origin: top;
-  transform: translate(100%, 50vh) rotate(90deg);
-  box-shadow: -10px 0 20px #000;
+  left: 0;
+  height: 150vh;
+  width: 110vw;
+  transform-origin: center;
+  transform: translate(-5vw, -25vh);
+  box-shadow: 0 0 20px #000;
 }
 
-
-
-/*
-.site-framer::after {
+/*.site-framer::after {
   content: '';
   position: absolute;
-  top: -2px;
-  left: calc(50% - 2px);
+  right: -2px;
+  top: calc(50% - 2px);
   height: 4px;
   width: 4px;
   display: block;

@@ -9,35 +9,10 @@ export class MotionService {
   private motionSrc = new Subject<ElTransform>();
   motionOutput$ = this.motionSrc.asObservable();
 
-  private setPosition(coords: number[], rotate?: string) {
-
-    const fullCoords = coords.map(n => n * 10);
-    const str = `translate(${fullCoords[0]}vw, ${fullCoords[1]}vh)`;
-
-    if (!rotate) {
-      return str;
-    }
-
-    return `${str} rotate(${rotate})`;
-  }
-
-  updatePosition(elements: ElTransform) {
-
-    const out: ElTransform = {
-      home: {transform: ''},
-      framer: {transform: ''}
-    };
-
-    Object.keys(elements).forEach(key => {
-
-      const rotate = elements[key].splice(2)[0];
-
-      out[key].transform = this.setPosition(elements[key], rotate);
-
-    } );
-
+  transform(elements: ElTransform) {
+    const out: ElTransform = { home: null, framer: null };
+    Object.keys(elements).forEach(el => out[el] = {transform: elements[el] });
     this.motionSrc.next(out);
-
   }
 
 }

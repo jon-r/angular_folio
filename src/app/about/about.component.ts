@@ -15,9 +15,10 @@ export class AboutComponent implements OnInit {
   constructor(private motionService: MotionService) { }
 
   ngOnInit() {
-    const aboutPos = { home: [-.5, -.5], framer: [3, 5, '-90deg'] };
-
-    this.motionService.updatePosition(aboutPos);
+    this.motionService.transform({
+      home: 'translate(-32px, calc(142px - 100vh))',
+      framer: 'translate(500px, -25vh)',
+    });
   }
 
 }
