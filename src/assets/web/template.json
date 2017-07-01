@@ -1,5 +1,5 @@
 {
-  "data": {
+  "data": [{
     "id": 1,
     "rows": [{
       "style": {
@@ -29,5 +29,5 @@
         "value": "some text"
       }]
     }]
-  }
+  }]
 }

@@ -20,7 +20,7 @@ export class TemplateComponent implements OnInit {
 
   ngOnInit() {
     this.cachedHttpService.getObservable(this.templateUrl)
-      .subscribe(template => this.template = template);
+      .subscribe(template => this.template = template[0]);
   }
 
 };

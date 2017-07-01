@@ -1,5 +1,5 @@
 {
-  "data": {
+  "data": [{
     "rows": [{
       "style": {
         "background-image": "url(location/to/felt-bg.svg)"
@@ -33,5 +33,5 @@
       }]
     }]
 
-  }
+  }]
 }

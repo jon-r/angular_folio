@@ -40,7 +40,8 @@ export class FolioListComponent implements OnInit {
 
   filters = ['all', 'work', 'play'];
   category;
-
+  allProjects;
+  projectStates: string[];
   // focus = '';
   // focusSlug;
 
@@ -53,13 +54,15 @@ export class FolioListComponent implements OnInit {
 
 
   filterProjects(cat) {
-    this.category = cat;
-    const sort = 'id';
-    const url = this.projectsUrl;
+    if (!this.allProjects) {
+      const sort = 'id';
+      const url = this.projectsUrl;
+      this.allProjects = this.cachedHttpService.getFrom({ url, sort });
+    }
 
-    const allProjects = this.cachedHttpService.getFrom({ url, sort });
-    //
-    this.projects = (cat === 'all') ? allProjects.data : allProjects.filterBy('cat', cat);
+    this.category = cat;
+
+    this.projects = (cat === 'all') ? this.allProjects.data : this.allProjects.filterBy('cat', cat);
   }
 
   listPosition(n) {
