@@ -19,10 +19,10 @@ export class FolioDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.motionService.updatePosition({
-      home: [-.5, -.5],
-      framer: [5, 1.5]
-    });
+    // this.motionService.updatePosition({
+    //   home: [-.5, -.5],
+    //   framer: [5, 1.5]
+    // });
     this.activatedRoute.params
       .subscribe(params =>
         this.projectTemplateUrl = `../assets/${params.slug}/template.json`

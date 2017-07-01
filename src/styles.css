@@ -4,8 +4,8 @@
 
 body {
   font: 300 14px/1 "soleil", sans-serif;
-  color: #e4e5e7;
-  background-color: #00897B;
+  color: #B2DFDB;
+  background-color: #202121;
   overflow: hidden;
 }
 
@@ -17,6 +17,8 @@ h2 { font-size: calc(1vw + 1.5rem); }
 
 h3 { font-size: calc(1vw + 0.8rem); }
 
+h4 { font-size: calc(1vw); }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -27,6 +29,23 @@ a {
 }
 .nav-link:hover, .nav-link:focus, .nav-link.active {
   color: inherit;
+  position: relative;
+}
+
+.nav-link.active::after {
+    /* border-bottom: solid 2px; */
+    content: "";
+    display: block;
+    background-color: currentColor;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    width: 100%;
+}
+
+.fixed-overlay {
+  position: fixed;
+  z-index: 25;
 }
 
 /* helpers ------------------------------------------------------------------ */
@@ -113,7 +132,7 @@ a {
   width:100%;*/
 }
 .grid-rect {
-  fill: #119486;
+  fill: #333030;;
   opacity: 0.1;
   cursor: pointer;
 }

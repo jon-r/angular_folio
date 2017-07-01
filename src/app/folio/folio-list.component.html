@@ -1,39 +1,47 @@
-<header class="folio-title">
-  <h1 class="page-title">Folio</h1>
-  <h2 class="folio-filter nav-link"
-    [ngClass]="{'active': category === 'work'}"
-    (click)="filterProjects('work')" >
-    Work
-  </h2>
 
-  <h2 class="folio-filter nav-link"
-    [ngClass]="{'active': category === 'play'}"
-    (click)="filterProjects('play')" >
-    Play
-  </h2>
-</header>
 
-<article class="projects-wrapper" >
+  <nav class="folio-title fixed-overlay">
+    <h4 *ngFor="let filter of filters"
+    class="folio-filter nav-link"
+      [ngClass]="{'active': category === filter}"
+      (click)="filterProjects(filter)" >
+      {{filter | titlecase}}
+    </h4>
+  </nav>
 
-  <ul class="projects-grid"  routerLinkActive="active-child">
-    <li class="project"
-      *ngFor="let project of projects | async;"
-      [ngClass]="'project-' + project.slug"
-      [ngStyle]="{ 'grid-area': project.grid }"
-      routerLinkActive="active" >
+  <section class="folio-container"  >
 
-      <a class="project-container" [routerLink]="project.slug" >
+  <!-- <div class="projects-container" > -->
 
-        <!-- <div class="project-thumb" [inlineSVG]="'../assets/' + project.slug + '/tile.svg'" ></div> -->
 
-        <div class="project-label" >
-          <h3>{{project.title}}</h3>
-          <em>{{project.desc}}</em>
-        </div>
-      </a>
-    </li>
-  </ul>
+  {{focus}}
+    <ul class="projects-list" >
 
-</article>
+        <li *ngFor="let project of projects | async; let i=index"
+          class="project"
+          [ngClass]="'project-' + project.slug"
+          [ngStyle]="listPosition(i)"
+          [@listState]
+          routerLinkActive="active" >
 
-<router-outlet></router-outlet>
+          <!--  TODO: set onclick rather than editing router (detail component) https://angular.io/guide/router#optional-route-parameters -->
+
+          <a class="project-container" [ngStyle]="project.style" [routerLink]="{project: project.slug}" >
+            <!-- <div class="project-thumb" [inlineSVG]="'../assets/' + project.slug + '/tile.svg'" ></div> -->
+
+            <div class="project-label" >
+              <h3>{{project.title}} {{i}}</h3>
+              <em>{{project.desc}}</em>
+            </div>
+          </a>
+        </li>
+    </ul>
+  <!-- </div> -->
+
+  <!-- project template here. -->
+
+</section>
+
+
+
+<!-- <router-outlet></router-outlet> -->

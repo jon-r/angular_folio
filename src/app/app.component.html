@@ -1,4 +1,5 @@
-<header class="site-header anim" [ngStyle]="els.home" >
+
+<header class="site-header anim fixed-overlay" [ngStyle]="els.home" >
   <a routerLink="/" >
     <h1>Jon Richards</h1>
     <h2>Web Developer</h2>
@@ -21,8 +22,10 @@
 
 <div class="site-framer anim" [ngStyle]="els.framer" ></div>
 
-<main class="site-container" >
+<main class="site-content" >
+
   <router-outlet></router-outlet>
+
 </main>
 
 

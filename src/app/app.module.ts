@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { AppRoutingModule } from './app-routing.module';
 import { TemplateModule } from './template/template.module';
+import { SlimScrollModule } from 'ng2-slimscroll';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +31,7 @@ import { CachedHttpService } from './shared/cached-http.service';
     AppRoutingModule,
     InlineSVGModule,
     TemplateModule,
+    SlimScrollModule,
   ],
   providers: [
     MotionService,

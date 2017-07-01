@@ -1,4 +1,10 @@
 
+:host {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .anim {
   transition: transform 300ms ease-out;
   position: absolute;
@@ -7,18 +13,17 @@
 .site-header {
   right:0;
   bottom: 0;
-  z-index: 20;
+  z-index: 25;
   text-align: right;
   transform: translate(-48px, -48px);
 }
 
 .site-nav {
   position: absolute;
-  top:48px;
-  left:32px;
+  top:16px;
+  left:16px;
   display: flex;
   align-items: center;
-  z-index: 5;
 }
 
 .site-logo {
@@ -26,11 +31,11 @@
 }
 
 .site-link {
-  margin-left: 24px;
+  margin-left: 16px;
 }
 
 .site-framer {
-  background-color: #26A094;
+  background-color: #00897B;
   top:0;
   left: -71vw;  /* vmax fallback */
   left: -71vmax;
@@ -40,9 +45,11 @@
   width: 142vmax;
   transform-origin: top;
   transform: translate(100%, 50vh) rotate(90deg);
-  box-shadow: -10px 0 20px #28615a;
-  z-index: 10;
+  box-shadow: -10px 0 20px #000;
 }
+
+
+
 /*
 .site-framer::after {
   content: '';

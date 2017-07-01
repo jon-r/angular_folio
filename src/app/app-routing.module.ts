@@ -12,10 +12,10 @@ const routes: Routes = [
     path: 'folio',
     component: FolioListComponent,
     // pathMatch: 'full',
-    children: [
-      { path: ':slug', component: FolioDetailComponent },
-      // { path: '', redirectTo: 'folio' },
-    ],
+    // children: [
+    //   { path: ':slug', component: FolioDetailComponent },
+    //   // { path: '', redirectTo: 'folio' },
+    // ],
   },
   // { path: 'folio/:slug', component: FolioDetailComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
