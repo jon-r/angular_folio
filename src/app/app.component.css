@@ -43,6 +43,7 @@
   transform-origin: center;
   transform: translate(-5vw, -25vh);
   box-shadow: 0 0 20px #000;
+  z-index: 10;
 }
 
 /*.site-framer::after {

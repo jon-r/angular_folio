@@ -12,6 +12,7 @@
   margin: 0 auto;
   height: calc(100vh - 144px);
   overflow-y: auto;
+  z-index: 20;
   /*max-width: 1200px;*/
 }
 

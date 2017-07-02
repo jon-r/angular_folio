@@ -24,11 +24,11 @@ export class FolioListDirective implements OnChanges {
 
     return this.builder.build([
       style({
-        opacity: fadeIn,
+        // opacity: fadeIn,
         transform: oldPosition,
       }),
       animate('300ms ease-out', style({
-        opacity: 1,
+        // opacity: 1,
         transform: this.currPosition,
       })),
     ]);
@@ -64,8 +64,8 @@ export class FolioListDirective implements OnChanges {
     // console.log(changes);
 
     if (changes.appFolioListItem) {
-      const listOrder = changes.appFolioListItem;
-      this.runBuilder(this.setListPosition(listOrder));
+      // const listOrder = changes.appFolioListItem;
+      // this.runBuilder(this.setListPosition(listOrder));
     }
     // else if (changes.folioListFocus) {
     //   const focusChange = changes.folioListFocus;

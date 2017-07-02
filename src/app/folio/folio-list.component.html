@@ -11,19 +11,18 @@
 
   <section class="folio-container"  >
 
+    <button (click)="clearActive()" >reset</button>
 
     <ul class="projects-list" >
 
-        <li *ngFor="let project of projects | async; index as i"
+        <li *ngFor="let project of projects"
           class="project"
-          [ngClass]="'project-' + project.slug"
-          [appFolioListItem]="i"
-          [@listAnim]="{ value: activeChild === project.slug }"
-          routerLinkActive="active" >
+          [ngStyle]="project.computed.style"
+          [@listAnim]="project.computed.state" >
 
           <a class="project-container"
           [ngStyle]="project.style"
-          [routerLink]="project.slug" >
+          [routerLink]="[{project: project.slug}]" >
             <div class="project-label" >
               <h3>{{project.title}} {{i}}</h3>
               <em>{{project.desc}}</em>
@@ -32,7 +31,8 @@
         </li>
     </ul>
 
+    <app-folio-detail *ngIf="activeChild" [activeChild]="activeChild" ></app-folio-detail>
 
-  <router-outlet ></router-outlet>
+  <!-- <router-outlet ></router-outlet> -->
 
 </section>

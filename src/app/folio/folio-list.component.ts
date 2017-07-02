@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, ElementRef } from '@angular/core';
-import {useAnimation, transition, trigger, query, animateChild, group, state,
+import {useAnimation, transition, trigger, query, animateChild, group, state, stagger,
   style, animate } from '@angular/animations';
 
 
@@ -10,13 +10,13 @@ import { Subject } from 'rxjs/Subject';
 import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
 
 // import { fadeInOutAnimation, slideInOutAnimation } from '../animations';
-import { fadeAnimation, widthAnimation } from '../animations';
+import { enter, leave } from '../animations';
 import { MotionService } from '../shared/motion.service';
 import { CachedHttpService } from '../shared/cached-http.service';
 import { FolioProject } from './folio-project';
-import { FolioListDirective } from './folio-list.directive';
+// import { FolioListDirective } from './folio-list.directive';
 
-
+import { FolioService } from './folio.service';
 
 @Component({
   selector: 'app-folio-list',
@@ -25,23 +25,18 @@ import { FolioListDirective } from './folio-list.directive';
   animations: [
     trigger('listAnim', [
       transition(':enter', [
-          useAnimation(fadeAnimation, {params: { from: 0, to: 1 }}),
+        useAnimation(enter),
       ]),
       transition(':leave', [
-          useAnimation(fadeAnimation, {params: { from: 1, to: 0 }}),
+        useAnimation(leave),
       ]),
-      transition('*=>true', [
 
-        // style({ width: '768px'  }),
-          useAnimation(widthAnimation, {params: { width: 1200, left: -600 }}),
-          // useAnimation(fadeAnimation, {params: { from: 1, to: 0 }}),
-      ]),
     ])
   ],
 })
 export class FolioListComponent implements OnInit, AfterViewInit {
 
-  projects: Observable<FolioProject[]>;
+  projects;
   // projectsList$ = this.projects.asObservable();
 
   projectsUrl = '../assets/projects-list.json';
@@ -49,43 +44,68 @@ export class FolioListComponent implements OnInit, AfterViewInit {
   filters = ['all', 'work', 'play'];
   category = 'all';
   allProjects;
-  activeChild = '';
+  activeChild;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private motionService: MotionService,
     private cachedHttpService: CachedHttpService,
+    private folioService: FolioService,
   ) { }
 
 
   filterProjects({key = 'cat', value}) {
-
-    const sort = 'id';
-    const url = this.projectsUrl;
-    const getProjects = this.cachedHttpService.getFrom({ url, sort });
-
     if (key === 'cat') {
       this.category = value;
     }
 
-    this.projects = (value === 'all') ? getProjects.data : getProjects.filterBy(key, value);
+    this.projects = this.folioService.getFilteredList({ key, value });
+    this.projects.forEach((project, n) => {
+      project.computed = {
+        style: this.setPosition(n),
+        state: 'list',
+      };
+    });
   }
 
+  setPosition(n) {
+    return { transform: `translateY(${n * 250}px)` };
+  }
 
-  setLayout(folioChild) {
-    if (!folioChild) {
-      this.activeChild = null;
-      return this.filterProjects({value: this.category});
-    }
+  // goTo(slug) {
+  //   this.router.navigate();
+  // }
 
-    const slug = folioChild.snapshot.paramMap.get('slug');
-
-    this.activeChild = slug;
-
+  setActive(slug) {
     this.filterProjects({ key: 'slug', value: slug });
-    console.log(slug);
+    this.projects[0].computed.state = 'focus';
+    // project.computed.state = 'focus';
+    this.activeChild = slug;
   }
+
+  clearActive() {
+    this.filterProjects({ value: this.category });
+    // this.activeChild.computed.state = 'list';
+    this.router.navigate(['/folio']);
+
+    this.activeChild = false;
+  }
+
+
+  // setLayout(folioChild) {
+  //   if (!folioChild) {
+  //     this.activeChild = null;
+  //     return this.filterProjects({value: this.category});
+  //   }
+  //
+  //   const slug = folioChild.snapshot.paramMap.get('slug');
+  //
+  //   this.activeChild = slug;
+  //
+  //   this.filterProjects({ key: 'slug', value: slug });
+  //   console.log(slug);
+  // }
 
   ngOnInit() {
 
@@ -94,12 +114,22 @@ export class FolioListComponent implements OnInit, AfterViewInit {
       framer: 'translate(-5vw, 96px)',
     });
 
-    this.setLayout(this.route.firstChild);
+    this.filterProjects({value: 'all'});
 
-    this.router.events
-      .filter(event => event instanceof NavigationEnd)
-      .map(() => this.route.firstChild)
-      .subscribe(folioChild => this.setLayout(folioChild));
+    // this.setLayout(this.route.firstChild);
+
+    this.route.paramMap.subscribe(paramMap => {
+      if (paramMap.has('project')) {
+        this.setActive(paramMap.get('project'));
+      } else {
+        this.clearActive();
+      }
+    });
+
+    // this.router.events
+    //   .filter(event => event instanceof NavigationEnd)
+    //   .map(() => this.route.firstChild)
+    //   .subscribe(folioChild => this.setLayout(folioChild));
 
   }
 

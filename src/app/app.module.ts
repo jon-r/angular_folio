@@ -16,6 +16,7 @@ import { FolioDetailComponent } from './folio/folio-detail.component';
 import { MotionService } from './shared/motion.service';
 import { CachedHttpService } from './shared/cached-http.service';
 import { FolioListDirective } from './folio/folio-list.directive';
+import { FolioService } from './folio/folio.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FolioListDirective } from './folio/folio-list.directive';
   ],
   providers: [
     MotionService,
-    CachedHttpService
+    CachedHttpService,
+    FolioService,
   ],
   bootstrap: [AppComponent]
 })

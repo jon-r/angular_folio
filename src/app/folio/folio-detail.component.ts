@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { MotionService } from '../shared/motion.service';
@@ -9,7 +9,8 @@ import { MotionService } from '../shared/motion.service';
   templateUrl: './folio-detail.component.html',
   styleUrls: ['./folio-detail.component.css'],
 })
-export class FolioDetailComponent implements OnInit {
+export class FolioDetailComponent implements OnInit, OnChanges {
+  @Input() activeChild;
 
   projectTemplateUrl: string;
 
@@ -19,15 +20,14 @@ export class FolioDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.motionService.updatePosition({
-    //   home: [-.5, -.5],
-    //   framer: [5, 1.5]
-    // });
-    this.activatedRoute.paramMap
-      .subscribe(paramsMap => {
-        const slug = paramsMap.get('slug');
-        this.projectTemplateUrl = `../assets/${slug}/template.json`;
-      });
+
+  }
+
+  ngOnChanges(changes) {
+    if (changes.activeChild) {
+      const slug = this.activeChild;
+      this.projectTemplateUrl = `../assets/${slug}/template.json`;
+    }
   }
 
 }
