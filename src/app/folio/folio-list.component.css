@@ -43,16 +43,21 @@
   transition: transform 0.3s ease-in-out;
   /*-webkit-animation: fade-in 300ms ease-in both;
   animation: fade-in 300ms ease-in both;*/
-  padding: 32px;
-  width: 100%;
+  width: 768px;
+  left: calc(50% - 384px);
 }
+
+/*.project.active {
+  background: red;
+}*/
 
 .project-container {
   /*position: relative;*/
   display: block;
   height: 192px;
-  max-width: 768px;
-  margin: auto;
+  max-width:100%;
+  /*width: 768px;*/
+  margin: 32px auto;
   padding: 8px;
   background-color: #e4e5e7;
   border-radius: 2px;

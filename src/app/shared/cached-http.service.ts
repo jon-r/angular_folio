@@ -41,9 +41,6 @@ export class CachedHttpService {
 
   private extractData(res: Response) {
     const body = res.json();
-    if (body && body.data) {
-      body.data.forEach(item => item.data = { state: null });
-    }
     return body.data || { };
   }
 

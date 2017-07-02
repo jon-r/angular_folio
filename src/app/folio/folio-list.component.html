@@ -4,7 +4,7 @@
     <h4 *ngFor="let filter of filters"
     class="folio-filter nav-link"
       [ngClass]="{'active': category === filter}"
-      (click)="filterProjects(filter)" >
+      (click)="filterProjects({value: filter})" >
       {{filter | titlecase}}
     </h4>
   </nav>
@@ -12,17 +12,18 @@
   <section class="folio-container"  >
 
 
-    <ul class="projects-list" *ngIf="projects" >
+    <ul class="projects-list" >
 
-        <li *ngFor="let project of projects | async; let i=index"
+        <li *ngFor="let project of projects | async; index as i"
           class="project"
           [ngClass]="'project-' + project.slug"
-          [ngStyle]="listPosition(i)"
-          [@listAnim]
+          [appFolioListItem]="i"
+          [@listAnim]="{ value: activeChild === project.slug }"
           routerLinkActive="active" >
 
-          <a class="project-container" [ngStyle]="project.style" [routerLink]="project.slug" >
-
+          <a class="project-container"
+          [ngStyle]="project.style"
+          [routerLink]="project.slug" >
             <div class="project-label" >
               <h3>{{project.title}} {{i}}</h3>
               <em>{{project.desc}}</em>
@@ -32,6 +33,6 @@
     </ul>
 
 
-  <router-outlet></router-outlet>
+  <router-outlet ></router-outlet>
 
 </section>

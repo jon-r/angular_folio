@@ -1,16 +1,20 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import {useAnimation, transition, trigger} from '@angular/animations';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, ElementRef } from '@angular/core';
+import {useAnimation, transition, trigger, query, animateChild, group, state,
+  style, animate } from '@angular/animations';
 
 
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/filter';
 import { Observable } from 'rxjs/Observable';
-// import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
+import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
 
 // import { fadeInOutAnimation, slideInOutAnimation } from '../animations';
-import { fadeAnimation } from '../animations';
+import { fadeAnimation, widthAnimation } from '../animations';
 import { MotionService } from '../shared/motion.service';
 import { CachedHttpService } from '../shared/cached-http.service';
 import { FolioProject } from './folio-project';
+import { FolioListDirective } from './folio-list.directive';
 
 
 
@@ -21,55 +25,67 @@ import { FolioProject } from './folio-project';
   animations: [
     trigger('listAnim', [
       transition(':enter', [
-        useAnimation(fadeAnimation, {params: { from: 0, to: 1 }}),
+          useAnimation(fadeAnimation, {params: { from: 0, to: 1 }}),
       ]),
       transition(':leave', [
-        useAnimation(fadeAnimation, {params: { from: 1, to: 0 }}),
-      ])
+          useAnimation(fadeAnimation, {params: { from: 1, to: 0 }}),
+      ]),
+      transition('*=>true', [
+
+        // style({ width: '768px'  }),
+          useAnimation(widthAnimation, {params: { width: 1200, left: -600 }}),
+          // useAnimation(fadeAnimation, {params: { from: 1, to: 0 }}),
+      ]),
     ])
   ],
-  // animations: [fadeInOutAnimation, slideInOutAnimation],
 })
-export class FolioListComponent implements OnInit {
-
-  // @HostBinding('@routeAnimation') routeAnimation = true;
+export class FolioListComponent implements OnInit, AfterViewInit {
 
   projects: Observable<FolioProject[]>;
+  // projectsList$ = this.projects.asObservable();
 
   projectsUrl = '../assets/projects-list.json';
 
   filters = ['all', 'work', 'play'];
-  category;
+  category = 'all';
   allProjects;
-  projectStates: string[];
-  // focus = '';
-  // focusSlug;
-
+  activeChild = '';
 
   constructor(
-    // private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private route: ActivatedRoute,
     private motionService: MotionService,
     private cachedHttpService: CachedHttpService,
   ) { }
 
 
-  filterProjects(cat) {
-    if (!this.allProjects) {
-      const sort = 'id';
-      const url = this.projectsUrl;
-      this.allProjects = this.cachedHttpService.getFrom({ url, sort });
+  filterProjects({key = 'cat', value}) {
+
+    const sort = 'id';
+    const url = this.projectsUrl;
+    const getProjects = this.cachedHttpService.getFrom({ url, sort });
+
+    if (key === 'cat') {
+      this.category = value;
     }
 
-    this.category = cat;
-
-    this.projects = (cat === 'all') ? this.allProjects.data : this.allProjects.filterBy('cat', cat);
+    this.projects = (value === 'all') ? getProjects.data : getProjects.filterBy(key, value);
   }
 
-  listPosition(n) {
-    const offset = n * 250;
-    return { transform: `translateY(${offset}px)` };
-  }
 
+  setLayout(folioChild) {
+    if (!folioChild) {
+      this.activeChild = null;
+      return this.filterProjects({value: this.category});
+    }
+
+    const slug = folioChild.snapshot.paramMap.get('slug');
+
+    this.activeChild = slug;
+
+    this.filterProjects({ key: 'slug', value: slug });
+    console.log(slug);
+  }
 
   ngOnInit() {
 
@@ -78,8 +94,16 @@ export class FolioListComponent implements OnInit {
       framer: 'translate(-5vw, 96px)',
     });
 
-    this.filterProjects('all');
+    this.setLayout(this.route.firstChild);
 
+    this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .map(() => this.route.firstChild)
+      .subscribe(folioChild => this.setLayout(folioChild));
+
+  }
+
+  ngAfterViewInit() {
 
   }
 

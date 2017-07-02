@@ -23,10 +23,11 @@ export class FolioDetailComponent implements OnInit {
     //   home: [-.5, -.5],
     //   framer: [5, 1.5]
     // });
-    this.activatedRoute.params
-      .subscribe(params =>
-        this.projectTemplateUrl = `../assets/${params.slug}/template.json`
-      );
+    this.activatedRoute.paramMap
+      .subscribe(paramsMap => {
+        const slug = paramsMap.get('slug');
+        this.projectTemplateUrl = `../assets/${slug}/template.json`;
+      });
   }
 
 }

@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { AppRoutingModule } from './app-routing.module';
 import { TemplateModule } from './template/template.module';
-import { SlimScrollModule } from 'ng2-slimscroll';
+// import { SlimScrollModule } from 'ng2-slimscroll';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +15,7 @@ import { FolioListComponent } from './folio/folio-list.component';
 import { FolioDetailComponent } from './folio/folio-detail.component';
 import { MotionService } from './shared/motion.service';
 import { CachedHttpService } from './shared/cached-http.service';
+import { FolioListDirective } from './folio/folio-list.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CachedHttpService } from './shared/cached-http.service';
     AboutComponent,
     FolioListComponent,
     FolioDetailComponent,
+    FolioListDirective,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { CachedHttpService } from './shared/cached-http.service';
     AppRoutingModule,
     InlineSVGModule,
     TemplateModule,
-    SlimScrollModule,
+    // SlimScrollModule,
   ],
   providers: [
     MotionService,

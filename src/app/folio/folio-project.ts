@@ -1,3 +1,5 @@
+
+
 export class FolioProject {
   constructor(
     public id: number,
@@ -6,6 +8,5 @@ export class FolioProject {
     public slug: string,
     public cat: string,
     public style?: string,
-    public data = {},
   ) {}
 }
