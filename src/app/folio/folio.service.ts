@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { projectsList } from './projects/list.data';
+// import { projectsList } from './projects/list.data';
+import projectsList from './projects';
 
 @Injectable()
 export class FolioService {

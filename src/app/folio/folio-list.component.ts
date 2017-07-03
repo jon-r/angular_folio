@@ -45,6 +45,7 @@ export class FolioListComponent implements OnInit, AfterViewInit {
   category = 'all';
   allProjects;
   activeChild;
+  projectTemplateUrl;
 
   constructor(
     private router: Router,
@@ -73,23 +74,25 @@ export class FolioListComponent implements OnInit, AfterViewInit {
     return { transform: `translateY(${n * 250}px)` };
   }
 
-  // goTo(slug) {
-  //   this.router.navigate();
-  // }
 
   setActive(slug) {
     this.filterProjects({ key: 'slug', value: slug });
     this.projects[0].computed.state = 'focus';
-    // project.computed.state = 'focus';
     this.activeChild = slug;
+    this.projectTemplateUrl = `../assets/${slug}/template.json`;
+  }
+
+  setCategory(category) {
+    this.filterProjects({ value: category });
+    this.activeChild = false;
   }
 
   clearActive() {
-    this.filterProjects({ value: this.category });
-    // this.activeChild.computed.state = 'list';
-    this.router.navigate(['/folio']);
 
-    this.activeChild = false;
+    // this.activeChild.computed.state = 'list';
+    // this.router.navigate(['/folio']);
+
+
   }
 
 
@@ -107,6 +110,21 @@ export class FolioListComponent implements OnInit, AfterViewInit {
   //   console.log(slug);
   // }
 
+  updateFilter(paramMap) {
+    switch (true) {
+    case (paramMap.has('project')):
+      return this.setActive(paramMap.get('project'));
+    case (paramMap.has('category')):
+      return this.setCategory(paramMap.get('category'));
+    default:
+      return this.setCategory('all');
+    }
+  }
+
+// http://slides.yearofmoo.com/ng4-animations-preview/demo/
+
+
+
   ngOnInit() {
 
     this.motionService.transform({
@@ -118,13 +136,7 @@ export class FolioListComponent implements OnInit, AfterViewInit {
 
     // this.setLayout(this.route.firstChild);
 
-    this.route.paramMap.subscribe(paramMap => {
-      if (paramMap.has('project')) {
-        this.setActive(paramMap.get('project'));
-      } else {
-        this.clearActive();
-      }
-    });
+    this.route.paramMap.subscribe(paramMap => this.updateFilter(paramMap));
 
     // this.router.events
     //   .filter(event => event instanceof NavigationEnd)

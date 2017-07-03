@@ -1,17 +1,16 @@
 
 
   <nav class="folio-title fixed-overlay">
-    <h4 *ngFor="let filter of filters"
-    class="folio-filter nav-link"
-      [ngClass]="{'active': category === filter}"
-      (click)="filterProjects({value: filter})" >
-      {{filter | titlecase}}
-    </h4>
+    <a class="folio-filter nav-link" *ngFor="let filter of filters" [routerLink]="[{category: filter}]" >
+        {{filter | titlecase}}
+    </a>
   </nav>
 
   <section class="folio-container"  >
 
-    <button (click)="clearActive()" >reset</button>
+    <a [routerLink]="[{category: category}]" >reset</a>
+
+    {{activeChild}}
 
     <ul class="projects-list" >
 
@@ -24,15 +23,18 @@
           [ngStyle]="project.style"
           [routerLink]="[{project: project.slug}]" >
             <div class="project-label" >
-              <h3>{{project.title}} {{i}}</h3>
-              <em>{{project.desc}}</em>
+              <h3>{{project.intro.title}} {{i}}</h3>
+              <em>{{project.intro.desc}}</em>
             </div>
           </a>
+
+          <article class="project-wrapper" *ngIf="activeChild === project.slug" >
+
+            <app-template [templateUrl]="projectTemplateUrl" ></app-template>
+
+          </article>
+
         </li>
     </ul>
-
-    <app-folio-detail *ngIf="activeChild" [activeChild]="activeChild" ></app-folio-detail>
-
-  <!-- <router-outlet ></router-outlet> -->
 
 </section>
