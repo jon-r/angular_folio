@@ -1,20 +1,10 @@
-import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, ElementRef } from '@angular/core';
-import {useAnimation, transition, trigger, query, animateChild, group, state, stagger,
-  style, animate } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import { useAnimation, transition, trigger } from '@angular/animations';
 
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/filter';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
-
-// import { fadeInOutAnimation, slideInOutAnimation } from '../animations';
 import { enter, leave } from '../animations';
 import { MotionService } from '../shared/motion.service';
-import { CachedHttpService } from '../shared/cached-http.service';
-import { FolioProject } from './folio-project';
-// import { FolioListDirective } from './folio-list.directive';
 
 import { FolioService } from './folio.service';
 
@@ -34,27 +24,20 @@ import { FolioService } from './folio.service';
     ])
   ],
 })
-export class FolioListComponent implements OnInit, AfterViewInit {
+export class FolioListComponent implements OnInit {
 
+  projectStore;
   projects;
-  // projectsList$ = this.projects.asObservable();
-
-  projectsUrl = '../assets/projects-list.json';
+  activeProject;
 
   filters = ['all', 'work', 'play'];
   category = 'all';
-  allProjects;
-  activeChild;
-  projectTemplateUrl;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private motionService: MotionService,
-    private cachedHttpService: CachedHttpService,
     private folioService: FolioService,
   ) { }
-
 
   filterProjects({key = 'cat', value}) {
     if (key === 'cat') {
@@ -62,53 +45,30 @@ export class FolioListComponent implements OnInit, AfterViewInit {
     }
 
     this.projects = this.folioService.getFilteredList({ key, value });
+
     this.projects.forEach((project, n) => {
       project.computed = {
-        style: this.setPosition(n),
-        state: 'list',
+        style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
+        active: false,
       };
     });
   }
 
-  setPosition(n) {
-    return { transform: `translateY(${n * 250}px)` };
-  }
-
-
   setActive(slug) {
     this.filterProjects({ key: 'slug', value: slug });
-    this.projects[0].computed.state = 'focus';
-    this.activeChild = slug;
-    this.projectTemplateUrl = `../assets/${slug}/template.json`;
+    const project = this.projects[0];
+
+    project.computed.active = true;
+
+    this.activeProject = project;
+
   }
 
   setCategory(category) {
+    const project = this.projects[0];
+    project.computed.active = false;
     this.filterProjects({ value: category });
-    this.activeChild = false;
   }
-
-  clearActive() {
-
-    // this.activeChild.computed.state = 'list';
-    // this.router.navigate(['/folio']);
-
-
-  }
-
-
-  // setLayout(folioChild) {
-  //   if (!folioChild) {
-  //     this.activeChild = null;
-  //     return this.filterProjects({value: this.category});
-  //   }
-  //
-  //   const slug = folioChild.snapshot.paramMap.get('slug');
-  //
-  //   this.activeChild = slug;
-  //
-  //   this.filterProjects({ key: 'slug', value: slug });
-  //   console.log(slug);
-  // }
 
   updateFilter(paramMap) {
     switch (true) {
@@ -123,8 +83,6 @@ export class FolioListComponent implements OnInit, AfterViewInit {
 
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/
 
-
-
   ngOnInit() {
 
     this.motionService.transform({
@@ -134,19 +92,9 @@ export class FolioListComponent implements OnInit, AfterViewInit {
 
     this.filterProjects({value: 'all'});
 
-    // this.setLayout(this.route.firstChild);
-
     this.route.paramMap.subscribe(paramMap => this.updateFilter(paramMap));
 
-    // this.router.events
-    //   .filter(event => event instanceof NavigationEnd)
-    //   .map(() => this.route.firstChild)
-    //   .subscribe(folioChild => this.setLayout(folioChild));
-
   }
 
-  ngAfterViewInit() {
-
-  }
 
 }

@@ -1,5 +1,7 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';
+
+
+import About from './about';
 
 import { MotionService } from '../shared/motion.service';
 
@@ -10,7 +12,7 @@ import { MotionService } from '../shared/motion.service';
 })
 export class AboutComponent implements OnInit {
 
-  aboutTemplateUrl = '../assets/about-me.json';
+  about = About;
 
   constructor(private motionService: MotionService) { }
 

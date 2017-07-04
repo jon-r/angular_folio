@@ -5,18 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InlineSVGModule } from 'ng-inline-svg';
 import { AppRoutingModule } from './app-routing.module';
-import { TemplateModule } from './template/template.module';
-// import { SlimScrollModule } from 'ng2-slimscroll';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FolioListComponent } from './folio/folio-list.component';
-import { FolioDetailComponent } from './folio/folio-detail.component';
 import { MotionService } from './shared/motion.service';
-import { CachedHttpService } from './shared/cached-http.service';
-import { FolioListDirective } from './folio/folio-list.directive';
 import { FolioService } from './folio/folio.service';
+import { TemplateComponent } from './template/template.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +19,7 @@ import { FolioService } from './folio/folio.service';
     HomeComponent,
     AboutComponent,
     FolioListComponent,
-    FolioDetailComponent,
-    FolioListDirective,
+    TemplateComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,12 +27,9 @@ import { FolioService } from './folio/folio.service';
     HttpModule,
     AppRoutingModule,
     InlineSVGModule,
-    TemplateModule,
-    // SlimScrollModule,
   ],
   providers: [
     MotionService,
-    CachedHttpService,
     FolioService,
   ],
   bootstrap: [AppComponent]

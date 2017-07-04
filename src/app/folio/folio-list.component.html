@@ -17,7 +17,7 @@
         <li *ngFor="let project of projects"
           class="project"
           [ngStyle]="project.computed.style"
-          [@listAnim]="project.computed.state" >
+          [@listAnim]="project.computed.active" >
 
           <a class="project-container"
           [ngStyle]="project.style"
@@ -28,9 +28,9 @@
             </div>
           </a>
 
-          <article class="project-wrapper" *ngIf="activeChild === project.slug" >
+          <article class="project-wrapper" *ngIf="project.computed.active" >
 
-            <app-template [templateUrl]="projectTemplateUrl" ></app-template>
+            <app-template [template]="project" ></app-template>
 
           </article>
 
