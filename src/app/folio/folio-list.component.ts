@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { useAnimation, transition, trigger } from '@angular/animations';
+import { useAnimation, transition, trigger, state, style } from '@angular/animations';
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { enter, leave } from '../animations';
+import { enter, leave, focus, unfocus } from '../animations';
 import { MotionService } from '../shared/motion.service';
 
 import { FolioService } from './folio.service';
@@ -14,21 +14,25 @@ import { FolioService } from './folio.service';
   styleUrls: ['./folio-list.component.css'],
   animations: [
     trigger('listAnim', [
+      state('focus', style({ width: '1200px', left: 'calc(50% - 600px)' })),
       transition(':enter', [
         useAnimation(enter),
       ]),
       transition(':leave', [
         useAnimation(leave),
       ]),
-
+      transition('*=>focus', [
+        useAnimation(focus),
+      ]),
+      transition('focus=>*', [
+        useAnimation(unfocus),
+      ]),
     ])
   ],
 })
 export class FolioListComponent implements OnInit {
 
-  projectStore;
   projects;
-  activeProject;
 
   filters = ['all', 'work', 'play'];
   category = 'all';
@@ -49,7 +53,7 @@ export class FolioListComponent implements OnInit {
     this.projects.forEach((project, n) => {
       project.computed = {
         style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
-        active: false,
+        active: null,
       };
     });
   }
@@ -58,15 +62,12 @@ export class FolioListComponent implements OnInit {
     this.filterProjects({ key: 'slug', value: slug });
     const project = this.projects[0];
 
-    project.computed.active = true;
-
-    this.activeProject = project;
-
+    project.computed.active = 'focus';
   }
 
   setCategory(category) {
     const project = this.projects[0];
-    project.computed.active = false;
+    project.computed.active = null;
     this.filterProjects({ value: category });
   }
 
