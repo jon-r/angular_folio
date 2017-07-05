@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.motionService.transform({
       home: 'translate(calc(-50vw - 200px), -25vh)',
-      framer: 'translate(calc(-60vw - 200px)) rotate(-20deg)',
+      framer: 'translate(calc(-50vw - 200px)) skew(20deg)',
     });
   }
 

@@ -15,19 +15,20 @@
   bottom: 0;
   z-index: 25;
   text-align: right;
-  transform: translate(-48px, -48px);
+  transform: translate(-32px, -16px);
 }
 
 .site-nav {
   position: absolute;
-  top:16px;
-  left:16px;
+  top: 0;
+  left: 16px;
+  height: 96px;
   display: flex;
   align-items: center;
 }
 
 .site-logo {
-  width: 6vw;
+  width: 110px;
 }
 
 .site-link {
@@ -36,12 +37,8 @@
 
 .site-framer {
   background-color: #00897B;
-  top:0;
-  left: 0;
-  height: 150vh;
-  width: 110vw;
   transform-origin: center;
-  transform: translate(-5vw, -25vh);
+  /*transform: translateX(100%);*/
   box-shadow: 0 0 20px #000;
   z-index: 10;
 }

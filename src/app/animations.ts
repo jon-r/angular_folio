@@ -2,29 +2,30 @@
 import {animation, style, animate, stagger } from '@angular/animations';
 
 const defaultTime = '300ms ease-out';
+const defaultStagger = '200ms';
 
-export const enter = animation([
-  style({ opacity: 0, transform: 'none' }),
-  animate(defaultTime, style('*')),
-]);
+export const fade = animation([
+  style({ opacity: '{{from}}' }),
+  animate('{{ time }}', style({ opacity: '{{to}}' }))
+], {params: { time: defaultTime }});
 
-export const leave = animation([
-  style('*'),
-  animate(defaultTime, style({ opacity: 0 })),
-]);
-
-export const focus = animation([
+export const expand = animation([
   style('*'),
   animate(defaultTime, style({ width: '1200px', left: 'calc(50% - 600px)' })),
 ]);
 
 // todo this wont work responsively. probably redo with percentages/vw and media query the content
-export const unfocus = animation([
+export const shrink = animation([
   style({ width: '1200px', left: 'calc(50% - 600px)' }),
   animate(defaultTime, style('*')),
 ]);
 
-
+export const fadeStagger = animation([
+  style({ opacity: '{{from}}' }),
+  stagger(defaultStagger, [
+    animate('{{ time }}', style({ opacity: '{{to}}' }))
+  ])
+], {params: { time: defaultTime }});
 
 
 

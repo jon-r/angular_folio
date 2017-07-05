@@ -1,4 +1,6 @@
-<ng-container *ngIf="template.rows" >
+<ng-container *ngIf="template.rows"  >
+<div [@rowAnim]>
+
 
 <section class="content-row"
   *ngFor="let row of template.rows"
@@ -36,5 +38,6 @@
   </div>
 
 </section>
+</div>
 
 </ng-container>

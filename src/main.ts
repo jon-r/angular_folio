@@ -18,19 +18,15 @@ const loaderFrame = document.getElementById('js_preLoader');
 
   loaderFrame.classList.add('going');
 
-  setTimeout(() => {
-    loaderFrame.innerHTML = '';
-    jr_bootstrap();
-    // platformBrowserDynamic().bootstrapModule(AppModule);
-  }, 300);
+  setTimeout(jr_bootstrap, 500);
+
+  // loaderFrame.addEventListener('transitionend', jr_bootstrap);
 
   return true;
 })();
 
-
-
 function jr_bootstrap() {
-
+    loaderFrame.innerHTML = '';
     platformBrowserDynamic().bootstrapModule(AppModule);
 
 }

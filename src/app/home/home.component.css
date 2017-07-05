@@ -12,3 +12,11 @@
   top: 45vh;
   left: calc(50vw - 130px);
 }
+
+.logo-home {
+    width: 50%;
+    position: absolute;
+    right: -13%;
+    bottom: 0;
+    opacity: 0.1;
+}

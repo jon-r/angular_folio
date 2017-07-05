@@ -2,25 +2,25 @@
 <header class="site-header anim fixed-overlay" [ngStyle]="els.home" >
   <a routerLink="/" >
     <h1>Jon Richards</h1>
-    <h2>Web Developer</h2>
+    <h3>Web Developer</h3>
   </a>
 </header>
 
 <nav class="site-nav" >
-  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/jr-logo-static.min.svg'" >
+  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/jr-logo-fun.min.svg'" >
     logo
   </a>
 
   <a class="nav-link site-link" routerLink="folio" routerLinkActive="active">
-    <h3>Folio</h3>
+    <h4>Folio</h4>
   </a>
 
   <a class="nav-link site-link" routerLink="about" routerLinkActive="active">
-    <h3>About</h3>
+    <h4>About</h4>
   </a>
 </nav>
 
-<div class="site-framer anim" [ngStyle]="els.framer" ></div>
+<div class="site-framer full-screen anim" [ngStyle]="els.framer" ></div>
 
 <main class="site-content" >
 

@@ -18,7 +18,7 @@
     </svg>
   </div>
 
-  <app-root>.</app-root>
+  <app-root></app-root>
 
   <div id="js_preLoader" class="pre-loader-frame full-screen" >
     <div class="pre-loader-slide full-screen" ></div>
@@ -44,7 +44,7 @@
 
   function readyCheck(n) {
     ready[n] = true;
-    if (ready.every(function(check) { return check === true })) {
+    if (ready[0] === ready[1]) {
       loaderFrame.dataset.ready = true;
       ready.forEach(function(check) { return check = false });
     }
@@ -52,11 +52,8 @@
 
     loaderLogo.addEventListener('animationend', function() {
       setTimeout(function() { readyCheck(1) }, 500);
-
     });
-    window.addEventListener('load', function() {
-      readyCheck(0);
-    });
+    window.addEventListener('load', readyCheck);
   })();
   </script>
 

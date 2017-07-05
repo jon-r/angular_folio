@@ -5,6 +5,7 @@
   display: flex;
   justify-content:space-around;
   align-items: stretch;
+  border: solid 1px white; /* temp */
 }
 
 .image {

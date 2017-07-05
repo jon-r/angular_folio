@@ -3,7 +3,7 @@ import { useAnimation, transition, trigger, state, style } from '@angular/animat
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { enter, leave, focus, unfocus } from '../animations';
+import { expand, shrink, fade } from '../animations';
 import { MotionService } from '../shared/motion.service';
 
 import { FolioService } from './folio.service';
@@ -16,16 +16,16 @@ import { FolioService } from './folio.service';
     trigger('listAnim', [
       state('focus', style({ width: '1200px', left: 'calc(50% - 600px)' })),
       transition(':enter', [
-        useAnimation(enter),
+        useAnimation(fade, {params: { from: 0, to: 1 }}),
       ]),
       transition(':leave', [
-        useAnimation(leave),
+        useAnimation(fade, {params: { from: 1, to: 0 }}),
       ]),
       transition('*=>focus', [
-        useAnimation(focus),
+        useAnimation(expand),
       ]),
       transition('focus=>*', [
-        useAnimation(unfocus),
+        useAnimation(shrink),
       ]),
     ])
   ],
@@ -88,7 +88,7 @@ export class FolioListComponent implements OnInit {
 
     this.motionService.transform({
       home: 'translate(-32px, -16px)',
-      framer: 'translate(-5vw, 96px)',
+      framer: 'translateY(96px)',
     });
 
     this.filterProjects({value: 'all'});
