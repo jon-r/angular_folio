@@ -1,0 +1,15 @@
+:host {
+  padding-top: 96px;
+  display: block;
+  height: 100vh;
+}
+
+.about-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  z-index: 20;
+  max-width: 1000px;
+}

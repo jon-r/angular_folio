@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { useAnimation, transition, trigger, query } from '@angular/animations';
 
-import { fadeStagger } from '../animations';
+import { fadeStagger } from '../shared/animations';
 
 @Component({
   selector: 'app-template',

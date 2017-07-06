@@ -6,7 +6,7 @@
     </a>
   </nav>
 
-  <section class="folio-container"  >
+  <section class="folio-container" [scrollTop]="scrollPos" #listContainer >
 
     <a [routerLink]="[{category: category}]" >reset</a>
 
@@ -17,18 +17,19 @@
         <li *ngFor="let project of projects"
           class="project"
           [ngStyle]="project.computed.style"
-          [@listAnim]="project.computed.active" >
+          [@listAnim] >
 
           <a class="project-container"
           [ngStyle]="project.style"
-          [routerLink]="[{project: project.slug}]" >
+          [routerLink]="[{project: project.slug}]"
+          [@listInner]="project.computed.active" >
             <div class="project-label" >
               <h3>{{project.intro.title}} {{i}}</h3>
               <em>{{project.intro.desc}}</em>
             </div>
           </a>
 
-          <article class="project-wrapper" *ngIf="project.computed.active" >
+          <article class="project-wrapper" *ngIf="project.computed.active === '1'" >
 
             <app-template [template]="project" ></app-template>
 

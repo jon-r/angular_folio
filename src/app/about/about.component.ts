@@ -19,7 +19,7 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.motionService.transform({
       home: 'translate(-32px, calc(142px - 100vh))',
-      framer: 'translateX(calc(50% - 500px))',
+      framer: 'translateX(calc(50% - 512px))',
     });
   }
 

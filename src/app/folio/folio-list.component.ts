@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { useAnimation, transition, trigger, state, style } from '@angular/animations';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { useAnimation, transition, trigger, state, style, query, animate } from '@angular/animations';
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { expand, shrink, fade } from '../animations';
+import { fade, duration } from '../shared/animations';
 import { MotionService } from '../shared/motion.service';
 
 import { FolioService } from './folio.service';
@@ -14,25 +14,21 @@ import { FolioService } from './folio.service';
   styleUrls: ['./folio-list.component.css'],
   animations: [
     trigger('listAnim', [
-      state('focus', style({ width: '1200px', left: 'calc(50% - 600px)' })),
-      transition(':enter', [
-        useAnimation(fade, {params: { from: 0, to: 1 }}),
-      ]),
-      transition(':leave', [
-        useAnimation(fade, {params: { from: 1, to: 0 }}),
-      ]),
-      transition('*=>focus', [
-        useAnimation(expand),
-      ]),
-      transition('focus=>*', [
-        useAnimation(shrink),
-      ]),
+      transition(':enter', useAnimation(fade, {params: { from: 0, to: 1 }})),
+      transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
+    ]),
+    trigger('listInner', [
+      state('1', style({ width: '1200px'})),
+      state('0', style({ width: '*' })),
+      transition('*=>*', useAnimation(duration)),
     ])
   ],
 })
 export class FolioListComponent implements OnInit {
+  @ViewChild('listContainer') container: ElementRef;
 
   projects;
+  scrollPos = 0;
 
   filters = ['all', 'work', 'play'];
   category = 'all';
@@ -53,7 +49,7 @@ export class FolioListComponent implements OnInit {
     this.projects.forEach((project, n) => {
       project.computed = {
         style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
-        active: null,
+        active: '0',
       };
     });
   }
@@ -61,14 +57,22 @@ export class FolioListComponent implements OnInit {
   setActive(slug) {
     this.filterProjects({ key: 'slug', value: slug });
     const project = this.projects[0];
+    project.computed.active = '1';
 
-    project.computed.active = 'focus';
+    // this.pageScroll = 0;
+    console.log(this.container.nativeElement);
+
+    this.scrollTo(0);
+    // lerpLoop({ from: 0, to: 200 }, 200);
   }
+
+
 
   setCategory(category) {
     const project = this.projects[0];
-    project.computed.active = null;
+    project.computed.active = '0';
     this.filterProjects({ value: category });
+    // lerpLoop({ from: 200, to: 0 }, 200);
   }
 
   updateFilter(paramMap) {
@@ -80,6 +84,22 @@ export class FolioListComponent implements OnInit {
     default:
       return this.setCategory('all');
     }
+  }
+
+// inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
+  scrollTo(to) {
+    const from = this.container.nativeElement.scrollTop;
+    // todo maybe set this as variable?
+    const multiplier = .2;
+
+    if (Math.abs(from - to) < 1) {
+      return false;
+    }
+
+    const lerp = (start, finish) => ((1 - multiplier) * start) + (multiplier * finish);
+    this.scrollPos = lerp(from, to);
+
+    requestAnimationFrame(() => this.scrollTo(to));
   }
 
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/
