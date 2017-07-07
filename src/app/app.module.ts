@@ -12,6 +12,7 @@ import { FolioListComponent } from './folio/folio-list.component';
 import { MotionService } from './shared/motion.service';
 import { FolioService } from './folio/folio.service';
 import { TemplateComponent } from './template/template.component';
+import { SafePipe } from './shared/safeURL.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TemplateComponent } from './template/template.component';
     AboutComponent,
     FolioListComponent,
     TemplateComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

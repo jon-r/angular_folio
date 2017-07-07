@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 160 160" class="svg-overhang" >
+  <style>
+    @keyframes stem-grow { from { stroke-dashoffset: 90; } } @keyframes leaf-grow { from { transform: scale(0) } } .stem-grow { stroke-dasharray: 90; stroke-dashoffset: 180; }
+    .hover-trigger:hover .stem-grow { animation: stem-grow 1s; }
+    .hover-trigger:hover .leaf-grow { animation: leaf-grow 0.5s backwards; }
+    .hover-trigger:hover .grow-1 { transform-origin: 70px 100px; animation-delay: 0.1s; }
+    .hover-trigger:hover .grow-2 { transform-origin: 70px 90px; animation-delay: 0.3s; }
+    .hover-trigger:hover .grow-3 { transform-origin: 70px 80px; animation-delay: 0.5s; }
+    .hover-trigger:hover .grow-4 { transform-origin: 83px 44px; animation-delay: 0.8s; animation-duration: 1s; }
+  </style>
+  <circle cx="75" cy="75" r="80" fill="#fff"/>
+  <circle cx="75" cy="75" r="71" fill="#fff" stroke="#9ac437" stroke-width="6"/>
+  <g id="Stem" stroke="#9ac437" stroke-width="4">
+    <path fill="none" d="M83.14 44.08S62.4 72.02 72.22 117.75" class="stem-grow" stroke-linecap="round"/>
+    <path fill="#fff" d="M69.57 79.8c-14.24.4-13.78-13.04-13.78-13.04s13.36-1.2 13.75 13.03z" class="leaf-grow grow-3"/>
+    <path fill="#fff" d="M71.16 89.28c13.55 4.42 16.9-8.6 16.9-8.6s-12.48-4.95-16.9 8.6z" class="leaf-grow grow-2"/>
+    <path fill="#fff" d="M68.9 99.4c-11.9 7.85-18.58-3.8-18.58-3.8s10.73-8.1 18.58 3.8z" class="leaf-grow grow-1"/>
+  </g>
+  <g id="Coin" class="leaf-grow grow-4">
+    <circle cx="83.14" cy="44.08" r="16.55" fill="#fff" stroke="#9ac437" stroke-width="4"/>
+    <path fill="#9ac437" d="M88.77 48.05v3.28h-11.5v-3.28h1.4V45.6h-1.2v-3h1.2v-1.78a4.53 4.53 0 0 1 4.8-4.7 4.98 4.98 0 0 1 4.8 3.17L85.32 41c-.3-1.03-.77-1.56-1.73-1.56a1.4 1.4 0 0 0-1.5 1.53v1.64h4.12v3H82.1v2.47z"/>
+  </g>
+</svg>

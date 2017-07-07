@@ -8,10 +8,6 @@
 
   <section class="folio-container" [scrollTop]="scrollPos" #listContainer >
 
-    <a [routerLink]="[{category: category}]" >reset</a>
-
-    {{activeChild}}
-
     <ul class="projects-list" >
 
         <li *ngFor="let project of projects"
@@ -19,13 +15,19 @@
           [ngStyle]="project.computed.style"
           [@listAnim] >
 
-          <a class="project-container"
-          [ngStyle]="project.style"
-          [routerLink]="[{project: project.slug}]"
-          [@listInner]="project.computed.active" >
-            <div class="project-label" >
-              <h3>{{project.intro.title}} {{i}}</h3>
-              <em>{{project.intro.desc}}</em>
+          <a class="project-header hover-trigger"
+            [routerLink]="[{project: project.slug}]"
+            [@listInner]="project.computed.active"
+            [ngStyle]="project.intro.style" >
+            <div class="project-intro" >
+              <div class="project-intro-label"  >
+                <h2>{{project.intro.title}} {{i}}</h2>
+                <em>{{project.intro.desc}}</em>
+              </div>
+              <div class="project-intro-icon"
+               *ngIf="project.intro.icon"
+               [inlineSVG]="project.intro.icon" >
+              </div>
             </div>
           </a>
 

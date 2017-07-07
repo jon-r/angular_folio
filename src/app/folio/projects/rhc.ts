@@ -1,3 +1,5 @@
+const fileRoot = '../assets/rhc/';
+
 export default {
   id: 2,
   cat: 'work',
@@ -5,7 +7,11 @@ export default {
   intro: {
     title: 'Red Hot Chilli',
     desc: 'Catering Equipment E-Catalogue',
-    style: {},
+    icon: `${fileRoot}monitor-2.svg`,
+    style: {
+      'background-image': 'linear-gradient(#af1d1d, #640202)',
+      'color': '#f2f2f2',
+    },
   },
   rows: [{
     style: {
@@ -15,10 +21,17 @@ export default {
       type: 'text',
       class: 'intro-text',
       value: `
-      <h5>About</h5>
-      <p>Learning Vue.JS by building BlackJack, the cardgame.</p>
-      <h5>Tools</h5>
-      <p>Vue.JS | ES6 | Webpack</p>
+      <h4>The Project</h4>
+      <p>Online catalogue for used catering equipment.</p>
+      <h4>The Tools</h4>
+      <p>MySQL | AWS</p>
+      <h4>The Role</h4>
+      <ul>
+        <li>In-house work (initially a solo side project, progressing on to full scale design/development)</li>
+        <li>Full Stack Design / Development</li>
+        <li>Database build / Management</li>
+        <li>Setup of Amazon S3 hosting + WAMP server</li>
+      </ul>
       `,
     }, {
       type: 'image',
@@ -41,3 +54,6 @@ export default {
     }]
   }]
 };
+
+
+// todo: better text styling? look at how bulma did it

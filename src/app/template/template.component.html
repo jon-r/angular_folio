@@ -1,7 +1,4 @@
-<ng-container *ngIf="template.rows"  >
-<div [@rowAnim]>
-
-
+<div [@rowAnim] *ngIf="template.rows" >
 <section class="content-row"
   *ngFor="let row of template.rows"
   [ngStyle]="row.style" >
@@ -11,7 +8,6 @@
     <ng-container
       *ngFor="let content of row.content"
       [ngSwitch]="content.type" >
-
 
       <div class="content text" *ngSwitchCase="'text'"
         [innerHTML]="content.value"
@@ -29,8 +25,8 @@
       </div>
 
       <div class="content iframe" *ngSwitchCase="'iframe'"
-        [innerHTML]="content.value"
         [ngClass]="[content.class || '']">
+        <iframe [src]="content.value | safe" ></iframe>
       </div>
 
     </ng-container>
@@ -39,5 +35,3 @@
 
 </section>
 </div>
-
-</ng-container>

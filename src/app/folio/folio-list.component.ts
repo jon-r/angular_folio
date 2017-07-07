@@ -18,8 +18,8 @@ import { FolioService } from './folio.service';
       transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
     ]),
     trigger('listInner', [
-      state('1', style({ width: '1200px'})),
-      state('0', style({ width: '*' })),
+      state('1', style({ width: '100%' })),
+      state('0', style('*')),
       transition('*=>*', useAnimation(duration)),
     ])
   ],
@@ -48,7 +48,7 @@ export class FolioListComponent implements OnInit {
 
     this.projects.forEach((project, n) => {
       project.computed = {
-        style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
+        style: { transform: `translateY(${n * 280}px)`, 'transition-delay': `${n * 50}ms` },
         active: '0',
       };
     });

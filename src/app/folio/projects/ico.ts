@@ -1,12 +1,16 @@
+const fileRoot = '../assets/ico/';
+
 export default {
   id: 3,
   cat: 'play',
   slug: 'ico',
   intro: {
     title: 'SVG Inconography',
-    desc: 'Bespoke SVG | CSS3',
+    desc: 'Bespoke SVG | CSS3 Animations',
+    icon: `${fileRoot}investments-isas.svg`,
     style: {
-      'background-color': 'red',
+      'background-color': '#fff',
+      'color': '#9ac437',
     },
   },
   rows: [{
@@ -17,10 +21,10 @@ export default {
       type: 'text',
       class: 'intro-text',
       value: `
-      <h5>About</h5>
-      <p>Learning Vue.JS by building BlackJack, the cardgame.</p>
-      <h5>Tools</h5>
-      <p>Vue.JS | ES6 | Webpack</p>
+      <h4>The Project</h4>
+      <p>A variety of SVGs that I either animated, or hand coded.</p>
+      <h4>The Tools</h4>
+      <p>Illustrator | SVGOMG | Brackets</p>
       `,
     }, {
       type: 'image',

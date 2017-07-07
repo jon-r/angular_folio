@@ -41,6 +41,7 @@
 .project {
   position: absolute;
   /*position: relative;*/
+
   transition: transform 0.3s ease-in-out;
   /*-webkit-animation: fade-in 300ms ease-in both;
   animation: fade-in 300ms ease-in both;*/
@@ -53,22 +54,33 @@
   background: red;
 }*/
 
-.project-container {
+.project-header {
   /*position: relative;*/
   display: block;
-  height: 192px;
   max-width:100%;
   width: 768px;
-  margin: 32px auto;
-  padding: 8px;
-  background-color: #e4e5e7;
-  border-radius: 2px;
+  margin: 16px auto;
+  border-radius: 5px;
   box-shadow: 0 0 20px #28615a;
+  overflow: hidden;
 }
 
-.project-label {
-  position: absolute;
-  padding: 4px;
-  top: calc(50% - 30px);
-  background-color: rgba(32, 85, 80, 0.8);
+.project-intro {
+  max-width: 1200px;
+  margin: auto;
+  padding: 8px;
+  height: 224px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
+.project-intro-label {
+  flex: auto;
+}
+.project-intro-icon {
+  flex: auto;
+  height: 175px;
+  height: 100%;
+}
+
+
