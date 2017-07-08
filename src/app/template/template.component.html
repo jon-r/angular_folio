@@ -1,43 +1,42 @@
-<ng-container *ngIf="template.rows"  >
-<div [@rowAnim]>
+<div [@rowAnim] *ngIf="template.rows" >
+<!-- <div > -->
+
+  <section class="content-row"
+    *ngFor="let row of template.rows"
+    [ngClass]="row.class"
+    [ngStyle]="row.style" >
+
+    <div class="content-row-inner container content-pad" >
+
+      <ng-container
+        *ngFor="let content of row.content"
+        [ngSwitch]="content.type" >
 
 
-<section class="content-row"
-  *ngFor="let row of template.rows"
-  [ngStyle]="row.style" >
+        <div class="content content-text" *ngSwitchCase="'text'"
+          [ngClass]="content.class"
+          [innerHTML]="content.value" >
+        </div>
 
-  <div class="content-row-inner" >
+        <div class="content content-svg" *ngSwitchCase="'svg'"
+          [ngClass]="content.class"
+          [inlineSVG]="content.value" >
+        </div>
 
-    <ng-container
-      *ngFor="let content of row.content"
-      [ngSwitch]="content.type" >
+        <div class="content content-image" *ngSwitchCase="'image'"
+          [ngClass]="content.class">
+          <img [src]="content.value" />
+        </div>
 
+        <div class="content content-iframe" *ngSwitchCase="'iframe'"
+          [ngClass]="content.class"
+          [innerHTML]="content.value" >
+        </div>
 
-      <div class="content text" *ngSwitchCase="'text'"
-        [innerHTML]="content.value"
-        [ngClass]="[content.class || '']">
-      </div>
+      </ng-container>
 
-      <div class="content svg" *ngSwitchCase="'svg'"
-        [inlineSVG]="content.value"
-        [ngClass]="[content.class || '']">
-      </div>
+    </div>
 
-      <div class="content image" *ngSwitchCase="'image'"
-        [ngClass]="[content.class || '']">
-        <img [src]="content.value" />
-      </div>
-
-      <div class="content iframe" *ngSwitchCase="'iframe'"
-        [innerHTML]="content.value"
-        [ngClass]="[content.class || '']">
-      </div>
-
-    </ng-container>
-
-  </div>
-
-</section>
+  </section>
+  <!-- </div> -->
 </div>
-
-</ng-container>

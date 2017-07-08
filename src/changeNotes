@@ -1,0 +1,7 @@
+
+icon svgs:
+
+preserveAspectRatio="xMinYMin slice"
+  - trial and error till sizes work?
+
+review svg style. either move to a seperate location or rename. eg ID gradients are causing issues

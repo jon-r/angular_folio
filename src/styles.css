@@ -3,19 +3,21 @@
 /* BASE STYLE --------------------------------------------------------------- */
 
 body {
-  font: 300 14px/1 "soleil", sans-serif;
+  font: 300 18px/1.375 "soleil", sans-serif;
   color: #B2DFDB;
   background-color: #202121;
   overflow: hidden;
 }
 
-h1, h2, h3, h4 { font-weight: bold; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2}
 
 h1 { font-size: 4.21rem }
 h2 { font-size: 3.16rem }
 h3 { font-size: 2.37rem }
 h4 { font-size: 1.77rem }
 h5 { font-size: 1.33rem }
+
+
 
 a {
   text-decoration: none;
@@ -24,13 +26,13 @@ a {
 
 .nav-link {
   color: #B2DFDB;
-}
-.nav-link:hover, .nav-link:focus, .nav-link.active {
-  color: inherit;
   position: relative;
 }
+.nav-link:hover, .nav-link:focus, .nav-link.active {
+  color: #00897B;
+}
 
-.nav-link.active::after {
+.nav-link:hover::after, .nav-link.active::after {
     /* border-bottom: solid 2px; */
     content: "";
     display: block;
@@ -39,12 +41,9 @@ a {
     position: absolute;
     bottom: -4px;
     width: 100%;
+    left: 0;
 }
 
-.fixed-overlay {
-  position: fixed;
-  z-index: 25;
-}
 
 /* helpers ------------------------------------------------------------------ */
 
@@ -58,6 +57,25 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.fixed-overlay {
+  position: fixed;
+  z-index: 25;
+}
+
+.content-pad {
+  padding: 8px;
+}
+
+/* grid --------------------------------------------------------------------- */
+
+/* TODO added here to set up consistent sizes throughout site */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* preloader ---------------------------------------------------------------- */
@@ -142,13 +160,13 @@ a {
 
 /* folio list svg ----------------------------------------------------------- */
 
-.wipe-out {
+/*.wipe-out {
   animation: wipe 1s both .3s;
 }
 
 .appear {
   animation: fade-in-instant 1s both .3s;
-}
+}*/
 
 /* css animations ----------------------------------------------------------- */
 

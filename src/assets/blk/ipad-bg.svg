@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1440 900" >
+  <defs>
+    <rect id="a" width="1271" height="853" x="83" y="22" rx="58" stroke="#2e363f" stroke-width="2"/>
+    <clipPath id="d">
+      <use xlink:href="#a"/>
+    </clipPath>
+    <linearGradient id="b" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232c35"/>
+      <stop offset="50%" stop-color="#010c15"/>
+      <stop offset="100%" stop-color="#050f18"/>
+    </linearGradient>
+    <linearGradient id="c" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="e" r="4" cy="-1.5">
+      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#fff" stop-opacity=".5"/>
+    </radialGradient>
+  </defs>
+  <rect fill="url(#b)" width="1291" height="873" x="73" y="12" rx="64"/>
+  <use xlink:href="#a"/>
+  <path fill="#191919" stroke="#252525" stroke-width="2" d="M208 66h1024v768H208z"/>
+  <path fill="url(#c)" d="M73 12h1100L73 512" clip-path="url(#d)"/>
+  <circle cx="1304" cy="450" r="32" fill="url(#e)" stroke="#171719"/>
+  <rect width="22" height="22" x="1292" y="439" fill="none" stroke="#78787d" rx="4" stroke-width="3"/>
+  <circle cx="145" cy="450" r="8" fill="url(#e)" stroke="#171719"/>
+  <circle cx="145" cy="450" r="4"/>
+</svg>

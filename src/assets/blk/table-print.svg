@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="5 5 215 140">
+  <defs>
+    <path id="curve-lg" d="M33.5 8a1 1 0 1 0 158 0 a1 1 0 1 0-158 0"/>
+    <path id="curve-sm" d="M50.5 8a1 1 0 1 0 124 0 a1 1 0 1 0-124 0"/>
+  </defs>
+
+  <g opacity=".5" >
+    <g stroke="#f9a825" fill="none">
+      <path d="M112.6 92.43c35.18 0 65.25-21.88 77.34-52.78.4-1.05-.13-2.22-1.18-2.6l-11.7-4.26c-1.02-.4-2.14.1-2.54 1.1-9.77 24.64-33.8 42.1-61.92 42.1S60.44 58.53 50.68 33.9c-.4-1-1.52-1.5-2.54-1.14L36.44 37c-1.05.4-1.6 1.56-1.18 2.6 12.1 30.9 42.16 52.8 77.34 52.8z"/>
+      <circle cx="25" cy="65" r="12"/>
+      <circle cx="56" cy="107" r="12"/>
+      <circle cx="113" cy="116" r="12"/>
+      <circle cx="168" cy="107" r="12"/>
+      <circle cx="200" cy="65" r="12"/>
+    </g>
+    <g fill="#f9a825" text-anchor="middle" font-family="Georgia" letter-spacing=".8" >
+      <text>
+        <textPath xlink:href="#curve-lg" startOffset="25%" font-size="10">BLACKJACK PAYS 3 TO 2</textPath>
+      </text>
+      <text>
+        <textPath xlink:href="#curve-sm" startOffset="25%" font-size="6">DEALER MUST STAND ON 17</textPath>
+      </text>
+    </g>
+  </g>
+</svg>

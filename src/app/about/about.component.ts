@@ -16,10 +16,12 @@ export class AboutComponent implements OnInit {
 
   constructor(private motionService: MotionService) { }
 
+// TODO need to consider the main maenu responisively on this page
+
   ngOnInit() {
     this.motionService.transform({
       home: 'translate(-32px, calc(142px - 100vh))',
-      framer: 'translateX(calc(50% - 512px))',
+      framer: 'translateX(calc(50% - 612px))',
     });
   }
 

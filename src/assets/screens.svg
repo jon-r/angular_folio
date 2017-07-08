@@ -1,0 +1,67 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="none" >
+  <!-- width="1400" height="640" -viewBox="-1 -1 1402 642" >-->
+ <defs>
+    <linearGradient id="gloss" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shineB" x2="0" y2="1">
+      <stop offset="30%" stop-color="#ddd"/>
+      <stop offset="70%" stop-color="#fff"/>
+    </linearGradient>
+   <linearGradient id="table" x2="0" y2="1">
+      <stop offset="0.2" stop-color="#222"/>
+      <stop offset="1" stop-color="#444"/>
+    </linearGradient>
+
+    <radialGradient id="shineC" cx="0.5" cy="0.3" r="0.6" >
+      <stop stop-color="#444" offset="0" />
+      <stop stop-color="#111" offset="1"/>
+    </radialGradient>
+    <radialGradient id="screenBase" cx="0.25" cy="0.4" r="0.6" gradientTransform="scale(2,1)">
+      <stop stop-color="#1a4b83" offset="0.6" />
+      <stop stop-color="#222" offset="0.95"/>
+      <stop stop-color="#111" offset="1"/>
+    </radialGradient>
+  </defs>
+
+ <g id="samsung">
+    <path d="m248 628 v10 h344 v-10"/>
+    <path fill="url(#shineC)" stroke="#666" stroke-width="0.5" d="m264 586 h312 q8 0 16 44 h-344 q8 -44 16 -44z" />
+    <path fill="url(#screenBase)" d="m400 504 v75q0 16-8 16v4q26 8 52 0v-4q-8 0 -8 -16v-75z" />
+    <path fill="#3e7abf" d="m360 490 l28 20 q3 2 6 2h46 q3 0 6 -2l28 -20z" />
+    <path stroke="#3e7abf" stroke-linejoin="round" stroke-width="16" d="m8 8h824v480h-824z"/>
+    <path stroke="#222" fill="#222" stroke-linejoin="round" stroke-width="8" d="m8 8h824v480h-824z"/>
+    <path fill="url(#gloss)" d="m0 480v-472q0-8 8-8 h700z" opacity="0.3"/>
+    <path fill="url(#shineC)" stroke="#000" stroke-linejoin="round" stroke-width="2" d="m16 16h808v456h-808z"/>
+  </g>
+
+
+ <g id="nexus7">
+    <path stroke="#222" stroke-linejoin="round" stroke-width="32" d="m16 16h240v448h-240z"/>
+    <path fill="#111" stroke="#111" stroke-linejoin="round" stroke-width="22" d="m16 16h240v448h-240z"/>
+    <path fill="url(#gloss)" d="m0 396v-380q0-16 16-16 h170z" opacity=".2"/>
+    <path d="m20 55h232v368h-232z"/>
+    <circle stroke-width="2" stroke="#222" fill="#113" cx="195" cy="40" r="6"/>
+    <circle fill="#222" cx="136" cy="450" r="4"/>
+  </g>
+
+
+    <!-- <path id="tableTop" fill="url(#table)" d="m0 20 l10-19 h80 l10 19 z" /> -->
+
+ <g id="iphone5">
+    <path fill="#777" d="M115 0v4h30v-4M0 52h4v17h-4M0 85h4v11h-4M0 114h4v11h-4"/>
+    <path stroke="#aaa" stroke-linejoin="round" stroke-width="24" d="m14 14h144v336h-144z"/>
+    <path stroke="#eaeaea" fill="#eaeaea" stroke-linejoin="round" stroke-width="20" d="m14 14h144v336h-144z"/>
+    <path fill="url(#shineB)" d="m99 30q4 0 4 4t-4 4h-24q-4 0-4-4t4-4z"/>
+    <circle fill="url(#shineB)" cx="87" cy="22" r="5"/>
+    <path fill="url(#gloss)" d="m2 236v-220q0-14 14-14 h90z" opacity=".7"/>
+    <path fill="#222" stroke="#000" stroke-width="2" d="m13 53h144v252h-144z"/>
+    <circle fill="#777" cx="87" cy="22" r="4"/>
+    <circle fill="url(#shineB)" cx="86" cy="332" r="16"/>
+    <path fill="#333" d="m99 32q2 0 2 2t-2 2h-24q-2 0-2-2t2-2z"/>
+    <circle fill="#222" cx="64" cy="34" r="3"/>
+    <path stroke="#bbb" fill="transparent" stroke-linejoin="round" stroke-width="2" d="m81 328h10v10h-10z"/>
+  </g>
+</svg>

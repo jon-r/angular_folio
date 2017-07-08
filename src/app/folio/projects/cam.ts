@@ -1,43 +1,127 @@
+import { linkAttrs } from './index';
+const rootLink = '../assets/blk/';
+
 export default {
   id: 4,
   cat: 'work',
   slug: 'cam',
   intro: {
     title: 'CAMMS',
-    desc: 'SAAS Corporate Site &amp; Software Portfolio',
+    desc: 'SAAS Corporate Site & Software Portfolio',
     style: {},
   },
-  rows: [{
-    style: {
-      'background-color': '#336699',
+  rows: [
+    {
+      class: 'text-row',
+      content: [{
+        type: 'text',
+        class: 'intro-text',
+        value: `
+        <h4>The Project</h4>
+        <p>A corporate ‘brochure’ website for an international SAAS company.</p>
+        <h4>The Role</h4>
+        <p>Senior Web Developer at [Minerva creative]</p>
+        <h4>The Toolkit</h4>
+        <p>WordPress | Foundation</p>
+        `,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }]
+    }, {
+      class: 'text-row',
+      content: [{
+        type: 'text',
+        class: 'text-center',
+        value: `
+        <h4>View
+          <a class="nav-link" href="https://www.cammsgroup.com/" ${linkAttrs} >live site</a>
+        </h4>
+        `,
+      }],
+    }, {
+      content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }],
+    }, {
+      class: 'text-row',
+      content: [{
+        type: 'text',
+        value: `
+        <p>The task was a complete modernisation of the existing CAMMS site. The original site was
+        overflowing with text-only content, and our role was to present this information to the
+        customers in a site that was clearer for the user and easier to maintain by the team at CAMMS.</p>
+        <p>The project was built under a short timescale, from concept to deployment in three months.</p>
+        `,
+      }],
+    }, {
+      class: 'row-gallery',
+      content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }],
+    }, {
+      content: [{
+        type: 'svg',
+        value: `${rootLink}chip.svg`,
+      }, {
+        type: 'svg',
+        value: `${rootLink}table-print.svg`,
+      }, {
+        type: 'image',
+        class: 'flex-double',
+        value: `${rootLink}logo.png`,
+      }],
+    }, {
+      class: 'text-row',
+      content: [{
+        type: 'text',
+        value: `
+        <p>My role as lead developer was to oversee production of a number of highly modular and
+        customisable templates. CAMMS offers a large number of software solutions, tools, and services
+        at varying levels of detail. This information is presented on the site with only a few, highly
+        flexible templates.</p>
+        <p>I also animated all SVG icons on the site, and an interactive map showcasing the company’s
+        international offices.</p>
+        `,
+      }],
+    }, {
+      class: 'row-gallery',
+      content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }],
+    }, {
+      content: [{
+        type: 'svg',
+        value: `${rootLink}chip.svg`,
+      }, {
+        type: 'svg',
+        value: `${rootLink}table-print.svg`,
+      }, {
+        type: 'image',
+        class: 'flex-double',
+        value: `${rootLink}logo.png`,
+      }],
     },
-    content: [{
-      type: 'text',
-      class: 'intro-text',
-      value: `
-      <h5>About</h5>
-      <p>Learning Vue.JS by building BlackJack, the cardgame.</p>
-      <h5>Tools</h5>
-      <p>Vue.JS | ES6 | Webpack</p>
-      `,
-    }, {
-      type: 'image',
-      class: 'overhang',
-      value: 'some text',
-    }]
-  }, {
-    content: [{
-      type: 'text',
-      value: 'some text',
-    }, {
-      type: 'text|image|codepen',
-      value: 'some text',
-    }, {
-      type: 'text|image|codepen',
-      value: 'some text',
-    }, {
-      type: 'text|image|codepen',
-      value: 'some text',
-    }]
-  }]
+  ]
 };

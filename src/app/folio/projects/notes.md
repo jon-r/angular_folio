@@ -18,7 +18,7 @@
         ## row3
         svgs. just simple row. link to SVG project?
 
-        # SVG ICONOGRAPHY
+# SVG ICONOGRAPHY
 
         ## header
         intro
@@ -80,7 +80,7 @@
         ## row3
         svgs: custom icons
 
-        # CAMMS
+# CAMMS
 
         ## header
         intro
@@ -99,7 +99,7 @@
         ## row3
         svgs: simple row
 
-        # OTHER SITES
+# OTHER SITES
           - *arcane*
           - *cuzina*
           - villa romana

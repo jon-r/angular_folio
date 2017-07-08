@@ -18,8 +18,13 @@ import { FolioService } from './folio.service';
       transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
     ]),
     trigger('listInner', [
-      state('1', style({ width: '1200px'})),
-      state('0', style({ width: '*' })),
+      state('in', style({
+        width: '100%',
+        'height': '320px',
+        // 'border-radius': '0',
+        // 'margin-top': '0',
+      })),
+      state('out', style('*')),
       transition('*=>*', useAnimation(duration)),
     ])
   ],
@@ -49,7 +54,7 @@ export class FolioListComponent implements OnInit {
     this.projects.forEach((project, n) => {
       project.computed = {
         style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
-        active: '0',
+        active: 'out',
       };
     });
   }
@@ -57,7 +62,7 @@ export class FolioListComponent implements OnInit {
   setActive(slug) {
     this.filterProjects({ key: 'slug', value: slug });
     const project = this.projects[0];
-    project.computed.active = '1';
+    project.computed.active = 'in';
 
     // this.pageScroll = 0;
     console.log(this.container.nativeElement);
@@ -70,7 +75,7 @@ export class FolioListComponent implements OnInit {
 
   setCategory(category) {
     const project = this.projects[0];
-    project.computed.active = '0';
+    project.computed.active = 'out';
     this.filterProjects({ value: category });
     // lerpLoop({ from: 200, to: 0 }, 200);
   }
