@@ -10,9 +10,9 @@ export class MotionService {
   motionOutput$ = this.motionSrc.asObservable();
 
   transform(elements: ElTransform) {
-    const out: ElTransform = { home: null, framer: null };
-    Object.keys(elements).forEach(el => out[el] = {transform: elements[el] });
-    this.motionSrc.next(out);
+    // const out: ElTransform = { home: null, framer: null,  };
+    // Object.keys(elements).forEach(el => out[el] = { transform: elements[el] });
+    this.motionSrc.next(elements);
   }
 
 }

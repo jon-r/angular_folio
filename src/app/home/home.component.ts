@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     this.motionService.transform({
       home: 'translate(calc(-50vw - 200px), -25vh)',
       framer: 'translate(calc(-50vw - 200px)) skew(20deg)',
+      gridMask: { from: [0.2, 0], to: [1, 1] },
     });
   }
 

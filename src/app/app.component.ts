@@ -3,8 +3,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 
 import { MotionService } from './shared/motion.service';
+import { ElTransform } from './shared/el-transform';
 
-import jr_grid from '../assets/jr_grid';
+import JRGrid from '../assets/jr_grid';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,13 @@ import jr_grid from '../assets/jr_grid';
 })
 export class AppComponent implements OnInit {
 
-  els = {
+  els: ElTransform = {
     home: null,
-    framer: null
+    gridMask: null,
+    framer: null,
   };
+
+  grid;
 
   constructor( private appMotion: MotionService) {}
 
@@ -25,9 +29,13 @@ export class AppComponent implements OnInit {
 
     this.appMotion.motionOutput$
       .debounceTime(50)
-      .subscribe(els => this.els = els);
+      .subscribe(els => {
+        this.els = els;
+        this.grid.setRange(els.gridMask);
+      });
 
-    jr_grid();
+    this.grid = new JRGrid({});
+    this.grid.begin();
 
   }
 

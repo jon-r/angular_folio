@@ -1,10 +1,7 @@
-import opts from './config';
-import { getRandom, randomFrom, addArr } from './utils';
-import buildGrid from './grid';
+import { randomFrom, addArr } from './utils';
+
 import { cacheGet } from './cache';
 
-
-let pointsActive = 0;
 
 const directionTo = {
   u: [0, -1],
@@ -33,79 +30,65 @@ function setDirection(el) {
   if (currSpecial === 'start' && currDirection) return false;
 
   const possibleRoutes = currRoutes
-  // .filter(x => x !== directionFrom[currDirection]);
   .map((x) => {
-    if (x === directionFrom[currDirection]) {
-      return currDirection;
-    }
-    return x;
+    const isReverse = (x === directionFrom[currDirection]);
+    return isReverse ? currDirection : x;
   });
 
   return randomFrom(possibleRoutes);
 }
 
 
-function nextPoint(currEl) {
+function nextPoint(currEl, obj) {
   const newDirection = setDirection(currEl);
+
   if (!newDirection) {
     return false;
   }
 
   const currCoords = currEl.dataset.coords.split(',');
   const offset = directionTo[newDirection];
-  const newCoords = addArr(currCoords, offset).join(',');
-  const newEl = cacheGet(newCoords);
+  const newCoords = addArr(currCoords, offset);
+
+  if (!obj.withinRange(newCoords)) {
+    return false;
+  }
+
+  const newEl = cacheGet(newCoords.join(','));
 
   newEl.dataset.direction = newDirection;
 
   return newEl;
 }
 
-function activatePoint(el) {
-  requestAnimationFrame(() => {
-    const nextEl = nextPoint(el);
+export function activatePoint(el, obj) {
+  const nextEl = nextPoint(el, obj);
 
-    if (!nextEl) {
-      pointsActive = Math.max(pointsActive - 1, 0);
-      return false;
-    }
-
-    el.classList.add('glow');
-
-    setTimeout(() => {
-      activatePoint(nextEl);
-      el.classList.remove('glow');
-    }, opts.runSpeed);
-
-    return true;
-  });
-}
-
-function manualActivate(e) {
-  const target = e.target;
-
-  if (!target.dataset.routes) {
+  if (!nextEl) {
+    // pointsActive = Math.max(pointsActive - 1, 0);
+    obj.remPoint();
     return false;
   }
 
-  activatePoint(target);
+  requestAnimationFrame(() => {
+    el.classList.add('glow');
+
+    setTimeout(() => {
+      activatePoint(nextEl, obj);
+
+      el.classList.remove('glow');
+    }, obj.config.runSpeed);
+  });
+
   return true;
 }
 
-export default function activatePoints(targetEl) {
-  const pointsAll = Array.from(buildGrid(targetEl));
+export function activatePoints(grid) {
+  const pointsAll = Array.from(grid);
   const pointsStarts = pointsAll.filter(point => point.dataset.special === 'start');
-  const pointsStartCount = pointsStarts.length;
 
-  pointsAll[0].parentElement.addEventListener('click', manualActivate, true);
-
-  return setInterval(() => {
-  // return setTimeout(() => {
-    if (pointsActive < opts.limit) {
-      const rng = getRandom(pointsStartCount);
-
-      if (pointsStarts) activatePoint(pointsStarts[rng], false);
-      pointsActive += 1;
-    }
-  }, opts.spawnSpeed);
+  return {
+    all: pointsAll,
+    starts: pointsStarts,
+  };
 }

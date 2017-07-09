@@ -1,6 +1,7 @@
 export class ElTransform {
   constructor(
-    public home: any,
-    public framer: any
+    public home: string,
+    public framer: string,
+    public gridMask: any,
   ) {}
 }

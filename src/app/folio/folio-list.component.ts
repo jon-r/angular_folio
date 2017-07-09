@@ -114,6 +114,7 @@ export class FolioListComponent implements OnInit {
     this.motionService.transform({
       home: 'translate(-32px, -16px)',
       framer: 'translateY(96px)',
+      gridMask: { from: [0, 0], to: [1, 0.25] },
     });
 
     this.filterProjects({value: 'all'});
