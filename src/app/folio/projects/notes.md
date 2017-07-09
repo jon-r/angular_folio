@@ -1,4 +1,24 @@
-image list to get
+#overall
+RWD
+TODO: clean up old data assets
+TODO: bonus Consider into setting all this as a file not included in the main build?
+TODO: -wait till the bg is in place to trigger the rest of page.
+  - maybe use angular animationBuilder for  page tranisitions
+
+#home
+TODO: something on the home page. interactive logo? (eg superdeper simple hover effect).
+  - comes to mind is < > expand and the content changes through assorted... things. looks like an old flipping clock?
+
+#about
+TODO: about page basics
+  - consider non-template elements, outside the frame?, mimic cv layout?
+
+#projects
+re-add the colors/icons from work
+general style improve. (best to do after more images)
+setup iframe pipe. add codepens/blackjack etc
+
+
 #blk
 player hand
 Blackjack
@@ -44,11 +64,23 @@ dynamic scaler -- https://codepen.io/inspironix/pen/oXqezg
 
 
 #web
+need some intro icon(s)
+
 homepage - recroom
 homepage - Arcane
 homepage - cuzina
 homepage - villa
 
+
+##Later
+- kit
+    SLIDER
+    RWD tabbed pagination (arcane book)
+- billieJS
+- portfolioception (the site)
+- weatherapp (talk to will for getting 1-2 art pieces)
+- barnes?
+- dunalastair remix?
 
 ----------------------------------------------
 ----------------------------------------------
