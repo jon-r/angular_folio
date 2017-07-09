@@ -40,33 +40,25 @@
 
 .project {
   position: absolute;
-  /*position: relative;*/
   transition: transform 0.3s ease-in-out;
-  /*-webkit-animation: fade-in 300ms ease-in both;
-  animation: fade-in 300ms ease-in both;*/
   width: 100%;
   left: 0;
+
 }
-
-
-/*.project.active {
-  background: red;
-}*/
 
 .project-container {
   position: relative;
   display: block;
   height: 192px;
-  max-width:100%;
+  max-width: 1366px;
   width: 768px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
-  /*padding: 8px;*/
   background-color: #B2DFDB;
   color: #0e4c46;
-  border-radius: 5px;
-  overflow: hidden;
+  border-radius: 8px;
+  /*overflow: hidden;*/
 
 }
 
@@ -78,44 +70,47 @@
   position: absolute;
   box-shadow: 0 10px 20px #28615a;
   transition: opacity 300ms ease-out;
+  pointer-events: none;
 }
 
-/* todo make the outer background match the inner somehow? */
 .project-container.in::before {
   opacity: 0;
 }
-
-/*.project-label {
-  position: absolute;
-  padding: 4px;
-  top: calc(50% - 30px);
-  background-color: rgba(32, 85, 80, 0.8);
-}*/
 
 
 .project-inner {
   padding: 8px;
   display: flex;
   height: 100%;
-  align-items: flex-end;
+  margin: auto;
   justify-content: space-between;
-  /*max-width: 1200px;
-  margin: auto;*/
+  align-items: flex-start;
+  overflow: hidden;
  }
+
 .project-label {
   flex: auto;
-
-  /*border: solid 1px red;*/
+  align-self: center;
  }
 
-.project-logo {
-  height: 100%;
-  width: 320px;
-  /*flex: auto;*/
-  /*border: solid 1px blue;*/
-}
+ .project-logo {
+   width: 320px;
+   height: 320px;
+   z-index: 5;
+ }
+
+
+
 
 .project-logo >>> svg {
   width: 100%;
   height: 100%;
+}
+
+.project-wrapper {
+  max-width: 1366px;
+  margin: -64px auto 128px;
+  position: relative;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
 }

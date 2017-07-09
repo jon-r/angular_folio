@@ -1,0 +1,16 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="-15 -15 300 512" preserveAspectRatio="none" >
+    <linearGradient id="gloss" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+<g id="nexus7">
+    <path stroke="#222" stroke-linejoin="round" stroke-width="32" d="m16 16h240v448h-240z"/>
+    <path fill="#111" stroke="#111" stroke-linejoin="round" stroke-width="22" d="m16 16h240v448h-240z"/>
+    
+    <path d="m20 55h232v368h-232z"/>
+    <circle stroke-width="2" stroke="#222" fill="#113" cx="195" cy="40" r="6"/>
+    <circle fill="#222" cx="136" cy="450" r="4"/>
+    <path fill="url(#gloss)" d="m0 396v-380q0-16 16-16 h170z" opacity=".2"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg id="camms-chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+    <style>
+      
+      @keyframes slide-up {
+  to{transform:translateY(-18px)}
+  from{transform:translateY(18px)} }
+@keyframes write {
+  from,10%{stroke-dashoffset:20}
+  20%,to{stroke-dashoffset:0} }
+.chat-lines{animation:slide-up 6s steps(6) infinite both;animation-play-state:paused}
+.lines-1{animation-delay:-1s}
+.lines-2{animation-delay:2s}
+.chat-line{animation:write 6s ease-out infinite both;stroke-dasharray:18;animation-play-state:paused}
+.content-svg:hover .chat-lines,.content-svg:hover .chat-line{animation-play-state:running}
+.content-svg:hover .lines-init { opacity: 0 }
+.line-1{animation-delay:-.2s}
+.line-2{animation-delay:.8s}
+.line-3{animation-delay:1.8s}
+.line-4{animation-delay:2.8s}
+.line-5{animation-delay:3.8s}
+.line-6{animation-delay:4.8s}
+  
+  </style>
+  
+  <clipPath id="chatMask"><path d="M20 20h20v20H20z"></path></clipPath>
+    <circle cx="30" cy="30" r="29" fill="#2079bf" />
+    <g class="bg" fill="#fff">
+      <ellipse cx="30" cy="30" rx="22" ry="15"></ellipse>
+      <path d="M45 40l1 8-7-5" stroke-linejoin="round"></path>
+    </g>
+    <g clip-path="url(#chatMask)" stroke="#9CBCD3" stroke-width="4" stroke-linecap="round">
+      <g class="chat-lines lines-1">
+        <path class="chat-line line-1" d="M22 24h15"></path>
+        <path stroke="#719ab7" class="chat-line line-2" d="M22 30h10"></path>
+        <path class="chat-line line-3" d="M22 36h13"></path>
+      </g>
+      <g class="chat-lines lines-2">
+        <path stroke="#719ab7" class="chat-line line-4" d="M22 24h15"></path>
+        <path class="chat-line line-5" d="M22 30h10"></path>
+        <path stroke="#719ab7" class="chat-line line-6" d="M22 36h13"></path>
+      </g>
+      <g class="lines-init">
+        <path fill="#fff" stroke="none" d="M20 20h20v20H20z"></path>
+        <path d="M22 24h15"></path>
+        <path stroke="#719ab7" d="M22 30h9"></path>
+        <path d="M22 36h12"></path>
+      </g>
+    </g>
+  </svg>

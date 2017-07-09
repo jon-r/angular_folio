@@ -15,10 +15,13 @@ export default {
   },
   rows: [
     {
-      class: 'text-row',
+      class: 'text-row row-collapse',
       content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
         type: 'text',
-        class: 'intro-text',
+        class: 'intro-text row-collapse',
         value: `
         <h4>The Project</h4>
         <p>A web app game of Blackjack. Fully playable for up to 5 players.</p>
@@ -30,9 +33,6 @@ export default {
           <li>Built with webpack - postCSS and babel</li>
         </ul>
         `,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
       }]
     }, {
       class: 'text-row',
@@ -49,7 +49,7 @@ export default {
       style: {
         'padding-top': '120px',
         'padding-bottom': '120px',
-        background: `url(${rootLink}ipad-bg.svg) center 64px /1440px 900px no-repeat`,
+        background: `url(${rootLink}ipad-bg.svg) center 64px /1440px 900px no-repeat, #B2DFDB`,
       },
       content: [{
         type: 'iframe',
@@ -69,7 +69,7 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery',
+      class: 'row-gallery image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -84,6 +84,7 @@ export default {
         value: `${rootLink}logo.png`,
       }],
     }, {
+      class: 'image-row',
       content: [{
         type: 'svg',
         value: `${rootLink}chip.svg`,

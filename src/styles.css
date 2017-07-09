@@ -9,7 +9,7 @@ body {
   overflow: hidden;
 }
 
-h1, h2, h3, h4 { font-weight: bold; line-height: 1.2}
+h1, h2, h3, h4, h5 { font-weight: bold; line-height: 1.2}
 
 h1 { font-size: 4.21rem }
 h2 { font-size: 3.16rem }
@@ -73,7 +73,7 @@ a {
 /* TODO added here to set up consistent sizes throughout site */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }

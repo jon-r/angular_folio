@@ -1,27 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -60 120 120">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-60 -60 500 120">
+  <defs>
+    <style>
+      .chip-5 { filter: url(#red) }
+      .chip-10 { filter: url(#blue) }
+      .chip-25 { filter: url(#green) }
+      .chip-100 { filter: url(#black) }
+      .chip-500 { filter: url(#pink) }
+      .chip-1000 { filter: url(#yellow) }
+      .disabled { filter: url(#grey) }
+    </style>
+    <filter id="multiply">
+      <feBlend in2="BackgroundImage" in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <filter id="pink">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="-20"/>
+    </filter>
+    <filter id="blue">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="240"/>
+    </filter>
+    <filter id="red">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="0"/>
+    </filter>
+    <filter id="yellow">
+      <feColorMatrix values="1.2 0 .8 0 0 1.2 .8 0 0 0 0 .8 .8 0 0 0 0 0 1 0"/>
+    </filter>
+    <filter id="green">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="120"/>
+    </filter>
+    <filter id="black">
+      <feColorMatrix values="0.1 1 0 0 0 0.1 1 0 0 0 0.1 1 0 0 0 0 0 0 1 0"/>
+    </filter>
+    <filter id="grey">
+      <feColorMatrix values="1 0 0.5 0 0 1 0 0.5 0 0 1 0 0.5 0 0 0 0 0 1 0"/>
+    </filter>
+    
+    <g id="mrChips">
+      <circle r="48" fill="#c00" />
+      <circle r="42" fill="transparent" stroke="#ddd" stroke-width="12" stroke-dasharray="22" />
+      <circle r="40" opacity="0.2" filter="url(#mlt)" />
+      <path fill="#555" d="m0 -40a1 1 0 1 0 0 80h2a1 1 0 1 1 0 -80" opacity=".2" filter="url(#multiply)" />
+    </g>
+    
+  </defs>
 
-  <filter id="multiply">
-    <feBlend in2="BackgroundImage" in="SourceGraphic" mode="multiply" />
-  </filter>
-
-  <filter id="grey">
-    <feColorMatrix values="1 0 0.5 0 0 1 0 0.5 0 0 1 0 0.5 0 0 0 0 0 1 0"/>
-  </filter>
-
-  <filter id="black">
-    <feColorMatrix values="0.1 1 0 0 0 0.1 1 0 0 0 0.1 1 0 0 0 0 0 0 1 0"/>
-  </filter>
-
-  <filter id="yel">
-    <feColorMatrix values="1.2 0 .8 0 0 1.2 .8 0 0 0 0 .8 .8 0 0 0 0 0 1 0"/>
-<!--    <feColorMatrix in="SourceGraphic" type="hueRotate" values="50"/>-->
-  </filter>
-
-  <g filter="url(#yel)" >
-<!--  </g><g >-->
-    <circle r="48" fill="#c00" />
-    <circle r="42" fill="transparent" stroke="#ddd" stroke-width="12" stroke-dasharray="22" />
-    <circle r="40" opacity="0.2" filter="url(#multiply)" />
-    <path fill="#555" d="m0 -40a1 1 0 1 0 0 80h2a1 1 0 1 1 0 -80" opacity=".2" filter="url(#multiply)" />
+  <g transform="translate()" class="chip-5">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(60)" class="chip-10">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(120)" class="chip-25">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(180)" class="chip-100">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(240)" class="chip-500">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(300)" class="chip-1000">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(360)" class="disabled">
+    <use xlink:href="#mrChips" />
   </g>
 </svg>

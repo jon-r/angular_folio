@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="-10 -10 860 660" preserveAspectRatio="none" >
+    <linearGradient id="gloss" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="shineC" cx="0.5" cy="0.3" r="0.6" >
+      <stop stop-color="#444" offset="0" />
+      <stop stop-color="#111" offset="1"/>
+    </radialGradient>
+    <radialGradient id="screenBase" cx="0.25" cy="0.4" r="0.6" gradientTransform="scale(2,1)">
+      <stop stop-color="#1a4b83" offset="0.6" />
+      <stop stop-color="#222" offset="0.95"/>
+      <stop stop-color="#111" offset="1"/>
+    </radialGradient>
+ <g id="samsung">
+    <path d="m248 628 v10 h344 v-10"/>
+    <path fill="url(#shineC)" stroke="#666" stroke-width="0.5" d="m264 586 h312 q8 0 16 44 h-344 q8 -44 16 -44z" />
+    <path fill="url(#screenBase)" d="m400 504 v75q0 16-8 16v4q26 8 52 0v-4q-8 0 -8 -16v-75z" />
+    <path fill="#3e7abf" d="m360 490 l28 20 q3 2 6 2h46 q3 0 6 -2l28 -20z" />
+    <path stroke="#3e7abf" stroke-linejoin="round" stroke-width="16" d="m8 8h824v480h-824z"/>
+    <path stroke="#222" fill="#222" stroke-linejoin="round" stroke-width="8" d="m8 8h824v480h-824z"/>
+    <path fill="url(#shineC)" stroke="#000" stroke-linejoin="round" stroke-width="2" d="m16 16h808v456h-808z"/>
+   <path fill="url(#gloss)" d="m0 480v-472q0-8 8-8 h700z" opacity="0.3"/>
+  </g>
+</svg>

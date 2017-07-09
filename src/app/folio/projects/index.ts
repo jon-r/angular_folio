@@ -32,11 +32,6 @@ Later
 - barnes?
 - dunalastair remix?
 
-CONTENT
-TODO stripped back down for most things
-- description + siteshot/codepen
-- 1-2 key features
-- gallery
 
 data to dos
 TODO: clean up old data assets
@@ -46,9 +41,8 @@ code to dos
 TODO: RWD needs considering
 TODO: about page basics
   - consider non-template elements, outside the frame?, mimic cv layout?
-TODO: stagger in animation. non-template animation
-  -wait till the bg is in place to trigger the rest of page.
-  - maybe use angular animationBuilder for the page slider
+TODO: -wait till the bg is in place to trigger the rest of page.
+  - maybe use angular animationBuilder for  page tranisitions
 TODO: something on the home page. interactive logo? (eg superdeper simple hover effect).
   - comes to mind is < > expand and the content changes through assorted... things. looks like an old flipping clock?
 

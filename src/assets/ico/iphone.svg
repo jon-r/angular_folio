@@ -1,0 +1,25 @@
+ 
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="-14 -13 200 390" preserveAspectRatio="none" >
+<linearGradient id="gloss" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shineB" x2="0" y2="1">
+      <stop offset="30%" stop-color="#ddd"/>
+      <stop offset="70%" stop-color="#fff"/>
+    </linearGradient>
+ <g id="iphone5">
+    <path fill="#777" d="M115 0v4h30v-4M0 52h4v17h-4M0 85h4v11h-4M0 114h4v11h-4"/>
+    <path stroke="#aaa" stroke-linejoin="round" stroke-width="24" d="m14 14h144v336h-144z"/>
+    <path stroke="#eaeaea" fill="#eaeaea" stroke-linejoin="round" stroke-width="20" d="m14 14h144v336h-144z"/>
+    <path fill="url(#shineB)" d="m99 30q4 0 4 4t-4 4h-24q-4 0-4-4t4-4z"/>
+    <circle fill="url(#shineB)" cx="87" cy="22" r="5"/>
+    
+    <path fill="#222" stroke="#000" stroke-width="2" d="m13 53h144v252h-144z"/>
+    <circle fill="#777" cx="87" cy="22" r="4"/>
+    <circle fill="url(#shineB)" cx="86" cy="332" r="16"/>
+    <path fill="#333" d="m99 32q2 0 2 2t-2 2h-24q-2 0-2-2t2-2z"/>
+    <circle fill="#222" cx="64" cy="34" r="3"/>
+    <path stroke="#bbb" fill="transparent" stroke-linejoin="round" stroke-width="2" d="m81 328h10v10h-10z"/>
+   <path fill="url(#gloss)" d="m2 236v-220q0-14 14-14 h90z" opacity=".7"/>
+  </g>

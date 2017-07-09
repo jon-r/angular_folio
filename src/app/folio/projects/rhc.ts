@@ -12,8 +12,11 @@ export default {
   },
   rows: [
     {
-      class: 'text-row',
+      class: 'text-row row-collapse',
       content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -29,9 +32,6 @@ export default {
           <li>Illustrator SVG icons</li>
         </ul>
         `,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
       }]
     }, {
       class: 'text-row',
@@ -45,6 +45,7 @@ export default {
         `,
       }],
     }, {
+      class: 'image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -64,7 +65,7 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery',
+      class: 'row-gallery image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -79,6 +80,7 @@ export default {
         value: `${rootLink}logo.png`,
       }],
     }, {
+      class: 'image-row',
       content: [{
         type: 'svg',
         value: `${rootLink}chip.svg`,
@@ -105,7 +107,7 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery',
+      class: 'row-gallery image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -120,6 +122,7 @@ export default {
         value: `${rootLink}logo.png`,
       }],
     }, {
+      class: 'image-row',
       content: [{
         type: 'svg',
         value: `${rootLink}chip.svg`,

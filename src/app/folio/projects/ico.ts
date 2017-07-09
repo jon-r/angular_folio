@@ -16,6 +16,9 @@ export default {
     {
       class: 'text-row',
       content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -28,16 +31,9 @@ export default {
           <li>[SVGOMG] online configurable optimisation and minification of SVG’s.</li>
         </ul>
         `,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
       }]
     }, {
-      style: {
-        'padding-top': '120px',
-        'padding-bottom': '120px',
-        background: `url(${rootLink}ipad-bg.svg) center 64px /1440px 900px no-repeat`,
-      },
+      class: 'image-row',
       content: [{
         type: 'iframe',
         class: 'iframe-1024',
@@ -52,7 +48,7 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery',
+      class: 'row-gallery image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -67,6 +63,7 @@ export default {
         value: `${rootLink}logo.png`,
       }],
     }, {
+      class: 'image-row',
       content: [{
         type: 'svg',
         value: `${rootLink}chip.svg`,

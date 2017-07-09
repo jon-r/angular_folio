@@ -2,7 +2,7 @@
 import {animation, style, animate, stagger, query } from '@angular/animations';
 
 const defaultTime = '300ms ease-out';
-const defaultStagger = '300ms';
+const defaultStagger = '100ms';
 
 export const fade = animation([
   style({ opacity: '{{from}}' }),

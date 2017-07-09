@@ -1,3 +1,58 @@
+image list to get
+#blk
+player hand
+Blackjack
+control rows
+options menu
+_svg_
+~~chips~~
+~~card faces~~
+~~card back~~
+~~table~~
+
+#cam
+home page
+1-2 solutions  (!animated)
+about page
+_svg_
+~~pig~~
+~~demo~~
+~~chat~~
+map (!codepen interactive)
+
+#ico
+_svg_
+charlie
+~~ridings coin/flower (take minerva)~~
+pro install (home sec/maintenance)
+~~rebrandt (take from minerva)~~
+jr-logo
+~~computer drawn then entering~~
+~~screen/tablet/phone~~ (!redo !!!animated)
+weather (!animated) https://codepen.io/inspironix/pen/MpBXYG
+
+
+#rhc
+homepage
+category page
+detail page
+~~style guide~~
+
+_svg_
+~~icons (from old site)~~
+dynamic scaler -- https://codepen.io/inspironix/pen/oXqezg
+
+
+#web
+homepage - recroom
+homepage - Arcane
+homepage - cuzina
+homepage - villa
+
+
+----------------------------------------------
+----------------------------------------------
+
 # BLACKJACK
 
         ## header:

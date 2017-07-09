@@ -1,5 +1,5 @@
 import { linkAttrs } from './index';
-const rootLink = '../assets/blk/';
+const rootLink = '../assets/cam/';
 
 export default {
   id: 4,
@@ -12,8 +12,11 @@ export default {
   },
   rows: [
     {
-      class: 'text-row',
+      class: 'text-row row-collapse',
       content: [{
+        type: 'image',
+        value: `${rootLink}logo.png`,
+      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -24,9 +27,6 @@ export default {
         <h4>The Toolkit</h4>
         <p>WordPress | Foundation</p>
         `,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
       }]
     }, {
       class: 'text-row',
@@ -40,6 +40,7 @@ export default {
         `,
       }],
     }, {
+      class: 'image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -56,7 +57,7 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery',
+      class: 'row-gallery image-row',
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -68,18 +69,6 @@ export default {
         value: `${rootLink}logo.png`,
       }, {
         type: 'image',
-        value: `${rootLink}logo.png`,
-      }],
-    }, {
-      content: [{
-        type: 'svg',
-        value: `${rootLink}chip.svg`,
-      }, {
-        type: 'svg',
-        value: `${rootLink}table-print.svg`,
-      }, {
-        type: 'image',
-        class: 'flex-double',
         value: `${rootLink}logo.png`,
       }],
     }, {
@@ -96,30 +85,19 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery',
-      content: [{
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }],
-    }, {
+      class: 'row-gallery image-row',
       content: [{
         type: 'svg',
-        value: `${rootLink}chip.svg`,
+        value: `${rootLink}ico-chat.svg`,
       }, {
         type: 'svg',
-        value: `${rootLink}table-print.svg`,
+        value: `${rootLink}ico-finance.svg`,
+      }, {
+        type: 'svg',
+        value: `${rootLink}ico-screen.svg`,
       }, {
         type: 'image',
-        class: 'flex-double',
+        class: 'flex-triple',
         value: `${rootLink}logo.png`,
       }],
     },
