@@ -1,16 +1,19 @@
+
 import { linkAttrs } from './index';
 const rootLink = '../assets/blk/';
+
 
 export default {
   id: 1,
   cat: 'play',
   slug: 'blk',
   intro: {
-    title: 'Blackjack JS',
-    desc: 'Javascript ES6 | Games Development',
+    title: 'Blackjack Vue.js',
+    desc: 'Vue.js | ES6 | Games Development',
+    icon: `${rootLink}card-pop.svg`,
     style: {
-      'background-color': '#004a28',
-      'color': '#f9a825',
+      color: '#f9a825',
+      'background': 'linear-gradient(transparent, rgba(0,0,0,.1),rgba(0,0,0,.5)), url(../assets/noise.png), #2a5a30',
     },
   },
   rows: [
@@ -114,3 +117,7 @@ export default {
     },
   ]
 };
+
+
+// ideally make a version that is in the middle of a game?
+// some styled iframe to seperate the site? perhaps some screen

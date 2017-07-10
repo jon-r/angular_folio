@@ -1,5 +1,6 @@
 import { linkAttrs } from './index';
-const rootLink = '../assets/blk/';
+const rootLink = '../assets/ico/';
+
 
 export default {
   id: 3,
@@ -7,9 +8,11 @@ export default {
   slug: 'ico',
   intro: {
     title: 'SVG Inconography',
-    desc: 'Bespoke SVG | CSS3',
+    desc: 'Bespoke SVG | CSS3 Animations',
+    icon: `${rootLink}investments-isas.svg`,
     style: {
-      'background-color': 'red',
+      'background-color': '#fff',
+      'color': '#9ac437',
     },
   },
   rows: [

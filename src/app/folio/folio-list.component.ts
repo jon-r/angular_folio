@@ -20,9 +20,7 @@ import { FolioService } from './folio.service';
     trigger('listInner', [
       state('in', style({
         width: '100%',
-        'height': '320px',
-        // 'border-radius': '0',
-        // 'margin-top': '0',
+        height: '320px',
       })),
       state('out', style('*')),
       transition('*=>*', useAnimation(duration)),
@@ -53,7 +51,7 @@ export class FolioListComponent implements OnInit {
 
     this.projects.forEach((project, n) => {
       project.computed = {
-        style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
+        style: { transform: `translateY(${n * 280}px)`, 'transition-delay': `${n * 50}ms` },
         active: 'out',
       };
     });

@@ -1,14 +1,19 @@
 import { linkAttrs } from './index';
 const rootLink = '../assets/cam/';
 
+
 export default {
   id: 4,
   cat: 'work',
   slug: 'cam',
   intro: {
     title: 'CAMMS',
-    desc: 'SAAS Corporate Site & Software Portfolio',
-    style: {},
+    desc: 'SAAS Corporate Site &amp; Software Portfolio',
+    icon: `${rootLink}monitor-2.svg`,
+    style: {
+      'color': '#fff',
+      'background-image': 'linear-gradient(to right, #055492 50%, #143B53)'
+    },
   },
   rows: [
     {

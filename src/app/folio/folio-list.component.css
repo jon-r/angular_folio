@@ -114,3 +114,34 @@
   border-radius: 0 0 8px 8px;
   overflow: hidden;
 }
+
+.project-header {
+  /*position: relative;*/
+  display: block;
+  max-width:100%;
+  width: 768px;
+  margin: 16px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #28615a;
+  overflow: hidden;
+}
+
+.project-intro {
+  max-width: 1200px;
+  margin: auto;
+  padding: 8px;
+  height: 224px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.project-intro-label {
+  flex: auto;
+}
+.project-intro-icon {
+  flex: auto;
+  height: 175px;
+  height: 100%;
+}
+
+

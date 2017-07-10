@@ -3,6 +3,7 @@
 /* BASE STYLE --------------------------------------------------------------- */
 
 body {
+
   font: 300 18px/1.375 "soleil", sans-serif;
   color: #B2DFDB;
   background-color: #202121;
@@ -141,11 +142,9 @@ a {
 .grid-box {
   position: absolute;
   box-sizing: content-box;
-  /*height: 100%;
-  width:100%;*/
 }
 .grid-rect {
-  fill: #333030;;
+  fill: #333030;
   opacity: 0.1;
   cursor: pointer;
 }
@@ -158,15 +157,25 @@ a {
   transition: opacity .1s
 }
 
-/* folio list svg ----------------------------------------------------------- */
+/* inline svg --------------------------------------------------------------- */
 
-/*.wipe-out {
+/*
+
+.svg-overhang {
+  height: 150%;
+  width: 100%;
+}
+
+
+.wipe-out {
   animation: wipe 1s both .3s;
 }
 
 .appear {
   animation: fade-in-instant 1s both .3s;
-}*/
+}
+*/
+
 
 /* css animations ----------------------------------------------------------- */
 
@@ -194,6 +203,7 @@ a {
   /*from { transform: rotate(0)}*/
   to { transform: rotate(360deg)}
 }
+/*
 @keyframes wipe {
   from { transform: translateX(-100%) }
   30% { transform: none }
@@ -203,6 +213,7 @@ a {
   from, 29% { opacity: 0 }
   30% { opacity: 1 }
 }
+*/
 
 @keyframes enter-left {
   from { opacity: 0; transform: translateX(-50%);}

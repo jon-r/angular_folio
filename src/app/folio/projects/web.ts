@@ -20,6 +20,11 @@ export default {
         value: '<h4>A range of smaller sites that I worked as sole developer</h4>',
       }]
     },  {
+      style: {
+        'background-color': '#31b0bd',
+        background: `url(${rootLink}bg.svg) center/cover`,
+        color: '#fff',
+      },
       content: [{
         type: 'text',
         class: 'intro-text',
@@ -38,6 +43,11 @@ export default {
         value: `${rootLink}logo.png`,
       }]
     }, {
+      style: {
+        color: '#4c0f11',
+        'background-color': '#ddab0f',
+        background: `url(${rootLink}paper_tile_yellow.jpg)`,
+      },
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -56,6 +66,10 @@ export default {
         `,
       }]
     }, {
+      style: {
+        'background-color': '#CF5446',
+        color: '#fff',
+      },
       content: [{
         type: 'text',
         class: 'intro-text',
@@ -74,6 +88,10 @@ export default {
         value: `${rootLink}logo.png`,
       }]
     }, {
+      style: {
+        'background-color': '#eee',
+        color: '#BB7726',
+      },
       content: [{
         type: 'image',
         value: `${rootLink}logo.png`,
@@ -94,3 +112,10 @@ export default {
     },
   ]
 };
+
+/*
+    RECROOM
+    ARCANE
+    CUZINA
+    VILLA
+*/

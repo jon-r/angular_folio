@@ -1,6 +1,5 @@
 
 
-
 /* row classes */
 
 .content-row {
@@ -29,11 +28,6 @@
   background-color: #b2dfdb;
 }
 
-/*.text-row + .text-row {
-  padding-top: 0;
-}*/
-
-/* content classes */
 
 .content {
   flex: 1;
@@ -71,6 +65,21 @@
   margin-right: auto;
 }
 
+.content-row {
+  padding: 16px;
+}
+
+.content-row-inner {
+  max-width: 1200px;
+  min-height: 240px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content:space-between;
+  align-items: stretch;
+}
+
+
 .overhang {
   margin-bottom: -40px;
 }
@@ -81,4 +90,23 @@
 
 .flex-triple {
   flex: 3;
+}
+
+
+/* NEW Iframe layout?? */
+.content.iframe {
+  position: relative;
+}
+
+.content.iframe iframe {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+
+.iframe-4-3 {
+  width:100%;
+  padding-bottom: 75%;
 }

@@ -1,15 +1,25 @@
 import blk from './blk';
 import ico from './ico';
-import kit from './kit';
+// import kit from './kit';
 import rhc from './rhc';
 import cam from './cam';
 import web from './web';
 
 export const linkAttrs = 'target="_blank" rel="nofollow"';
 
-export default  [ blk, ico, kit, rhc, cam, web ];
+export default  [
+  blk,
+  ico,
+//  kit,
+  rhc,
+  cam,
+  web
+];
+
 
 /*
+
+BIG TODO: plan the content in word or publisher. something easier than trying to visualise the TS object
 
 Priority
 - rhc

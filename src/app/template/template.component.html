@@ -1,5 +1,5 @@
 <div [@rowAnim] *ngIf="template.rows" >
-<!-- <div > -->
+
 
   <section class="content-row"
     *ngFor="let row of template.rows"
@@ -12,7 +12,6 @@
         *ngFor="let content of row.content"
         [ngSwitch]="content.type" >
 
-
         <div class="content content-text" *ngSwitchCase="'text'"
           [ngClass]="content.class"
           [innerHTML]="content.value" >
@@ -23,16 +22,16 @@
           [inlineSVG]="content.value" >
         </div>
 
+
         <div class="content content-image" *ngSwitchCase="'image'"
           [ngClass]="content.class">
           <img [src]="content.value" />
         </div>
 
         <div class="content content-iframe" *ngSwitchCase="'iframe'"
-          [ngClass]="content.class"
-          [innerHTML]="content.value" >
+          [ngClass]="content.class" >
+          <iframe [src]="content.value | safe" ></iframe>
         </div>
-
       </ng-container>
 
     </div>

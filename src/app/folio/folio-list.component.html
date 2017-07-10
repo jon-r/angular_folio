@@ -17,18 +17,21 @@
 
           <a class="project-container"
             [ngClass]="project.computed.active"
-            [ngStyle]="project.style"
+            [ngStyle]="project.intro.style"
             [routerLink]="[{project: project.slug}]"
             [@listInner]="project.computed.active" >
 
-            <div class="project-inner container content-pad PLACEHOLDCODE">
+            <div class="project-intro container content-pad"  >
 
-              <div class="project-label" >
+              <div class="project-intro-label" >
                 <h3>{{project.intro.title}} {{i}}</h3>
                 <em>{{project.intro.desc}}</em>
               </div>
 
-              <div class="project-logo PLACEHOLD-CODE" [inlineSVG]="'../assets/monitor-01.svg'" ></div>
+              <div class="project-intro-icon"
+               *ngIf="project.intro.icon"
+               [inlineSVG]="project.intro.icon" >
+              </div>
 
             </div>
           </a>

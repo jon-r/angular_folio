@@ -1,5 +1,5 @@
 import { linkAttrs } from './index';
-const rootLink = '../assets/blk/';
+const rootLink = '../assets/rhc/';
 
 export default {
   id: 2,
@@ -8,7 +8,11 @@ export default {
   intro: {
     title: 'Red Hot Chilli',
     desc: 'Catering Equipment E-Catalogue',
-    style: {},
+    icon: `${rootLink}monitor-2.svg`,
+    style: {
+      'background-image': 'linear-gradient(#af1d1d, #640202)',
+      'color': '#f2f2f2',
+    },
   },
   rows: [
     {
@@ -136,4 +140,8 @@ export default {
       }],
     },
   ]
+
 };
+
+
+// todo: better text styling? look at how bulma did it
