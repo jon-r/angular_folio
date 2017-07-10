@@ -16,7 +16,6 @@
     .coin-2 { animation-name: dropper2; transform-origin: 77.31px 61.59px; } 
     .coin-3 { animation-name: dropper3; transform-origin: 77.31px 72.34px; }
   </style>
-  <rect x="-20" y="-20" height="100%" width="100%" fill="#fff"/>
   <g fill="#fff" stroke="#9ac437">
     <circle cx="75" cy="75" r="71" stroke-width="6"/>
     

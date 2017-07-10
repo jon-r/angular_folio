@@ -17,6 +17,7 @@ TODO: about page basics
 re-add the colors/icons from work
 general style improve. (best to do after more images)
 setup iframe pipe. add codepens/blackjack etc
+for 'intro' logos, perhaps make taller, remove the first image?
 
 
 #blk
@@ -42,13 +43,19 @@ map (!codepen interactive)
 
 #ico
 _svg_
-charlie
+
+ALWAYS ANIM OR HOVER ANIM. one or the other
+
+~~charlie~~
 ~~ridings coin/flower (take minerva)~~
-pro install (home sec/maintenance)
+~~pro install (home sec/maintenance)~~
 ~~rebrandt (take from minerva)~~
-jr-logo
+
+
+
 ~~computer drawn then entering~~
 ~~screen/tablet/phone~~ (!redo !!!animated)
+jr-logo
 weather (!animated) https://codepen.io/inspironix/pen/MpBXYG
 
 

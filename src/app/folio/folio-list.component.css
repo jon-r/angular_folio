@@ -63,6 +63,7 @@
 }
 
 .project-container::before {
+  border-radius: 8px;
   top: 0;
   height: 100%;
   width: 100%;
@@ -78,6 +79,7 @@
 }
 
 
+/*
 .project-inner {
   padding: 8px;
   display: flex;
@@ -87,25 +89,19 @@
   align-items: flex-start;
   overflow: hidden;
  }
+*/
 
+/*
 .project-label {
   flex: auto;
   align-self: center;
  }
 
- .project-logo {
-   width: 320px;
-   height: 320px;
-   z-index: 5;
- }
+
+*/
 
 
 
-
-.project-logo >>> svg {
-  width: 100%;
-  height: 100%;
-}
 
 .project-wrapper {
   max-width: 1366px;
@@ -115,8 +111,9 @@
   overflow: hidden;
 }
 
+/*
 .project-header {
-  /*position: relative;*/
+  position: relative;
   display: block;
   max-width:100%;
   width: 768px;
@@ -125,8 +122,19 @@
   box-shadow: 0 0 20px #28615a;
   overflow: hidden;
 }
+*/
 
 .project-intro {
+
+  padding: 8px;
+  display: flex;
+  height: 100%;
+  margin: auto;
+  justify-content: space-between;
+/*  align-items: flex-start;*/
+  overflow: hidden;
+
+/*
   max-width: 1200px;
   margin: auto;
   padding: 8px;
@@ -134,14 +142,19 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+*/
 }
 .project-intro-label {
   flex: auto;
+  align-self: center;
 }
 .project-intro-icon {
-  flex: auto;
-  height: 175px;
-  height: 100%;
+   width: 320px;
+   height: 320px;
+   z-index: 5;
 }
 
-
+.project-intro-icon >>> svg {
+  width: 100%;
+  height: 100%;
+}

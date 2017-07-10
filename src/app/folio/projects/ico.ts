@@ -9,7 +9,7 @@ export default {
   intro: {
     title: 'SVG Inconography',
     desc: 'Bespoke SVG | CSS3 Animations',
-    icon: `${rootLink}investments-isas.svg`,
+    icon: '',
     style: {
       'background-color': '#fff',
       'color': '#9ac437',
@@ -38,9 +38,21 @@ export default {
     }, {
       class: 'image-row',
       content: [{
-        type: 'iframe',
-        class: 'iframe-1024',
-        value: 'http://jon-richards.com/blackjack-2/',
+        type: 'svg',
+        value: `${rootLink}rem-logo.svg`,
+      }, {
+        type: 'svg',
+        class: 'flex-double',
+        value: `${rootLink}ridings-ico.svg`,
+      }],
+    }, {
+      class: 'image-row row-collapse',
+      content: [{
+        type: 'svg',
+        value: `${rootLink}pro-icons.svg`,
+      }, {
+        type: 'svg',
+        value: `${rootLink}charlie-sign-anim.svg`,
       }],
     }, {
       class: 'text-row',
@@ -53,17 +65,17 @@ export default {
     }, {
       class: 'row-gallery image-row',
       content: [{
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        type: 'svg',
+        value: `${rootLink}monitor_anim.svg`,
       }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        type: 'svg',
+        value: `${rootLink}screen.svg`,
       }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        type: 'svg',
+        value: `${rootLink}tablet.svg`,
       }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        type: 'svg',
+        value: `${rootLink}iphone.svg`,
       }],
     }, {
       class: 'image-row',

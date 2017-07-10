@@ -17,7 +17,6 @@
     .grow-4 { transform-origin: 83px 44px; animation-name: leaf-grow4 }
   </style>
 
-  <rect x="-20" y="-20" height="100%" width="100%" fill="#fff"/>
   <circle cx="75" cy="75" r="71" fill="#fff" stroke="#9ac437" stroke-width="6"/>
   <g class="anim-grp">
     <g id="Stem" stroke="#9ac437" stroke-width="4">

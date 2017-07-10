@@ -50,13 +50,13 @@ export default {
       }],
     }, {
       style: {
-        'padding-top': '120px',
-        'padding-bottom': '120px',
+        'padding-top': '128px',
+        'padding-bottom': '128px',
         background: `url(${rootLink}ipad-bg.svg) center 64px /1440px 900px no-repeat, #B2DFDB`,
       },
       content: [{
         type: 'iframe',
-        class: 'iframe-1024',
+        class: 'iframe-4-3',
         value: 'http://jon-richards.com/blackjack-2/',
       }],
     }, {

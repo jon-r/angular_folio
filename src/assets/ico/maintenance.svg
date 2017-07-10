@@ -1,0 +1,26 @@
+<svg class="service-tile" xmlns="http://www.w3.org/2000/svg" viewBox="15 15 120 120">
+  <style>
+  .service-tile:hover .pro-icon-stroke {
+    transition: stroke 600ms;
+    stroke: #2BEDBA;
+  }
+  .service-tile:hover .pro-icon-fill {
+    transition: fill 600ms;
+    fill: #2BEDBA;
+  }
+  .service-tile:hover .heat {
+    animation: hot 1s ease-in-out infinite alternate;
+    transform-origin: 75px 104px;
+  }
+  @keyframes hot {
+    from { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
+    to { transform: scaleY(0.5); }
+  }
+  </style>
+  <g  class="pro-icon-stroke" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" >
+    <path  d="M83 97.5c5.4 3 9 8.5 9 15 0 9.5-7.6 17.2-17 17.2s-17-7.7-17-17c0-6.5 3.4-12 8.6-15l.4-69.5c0-4.4 2.5-8 5.7-8H77c3 0 5.6 3.6 5.7 8l.3 69.3z"/>
+    <path class="heat" d="M74.8 36v67.8"/>
+  </g>
+  <circle class="pro-icon-fill" fill="#fff" cx="75" cy="112.6" r="9.5"/>
+</svg>

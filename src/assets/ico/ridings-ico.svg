@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 380 190">
+  <defs>
+    <clipPath id="clippy">
+      <circle cx="75" cy="75" r="68"/>
+    </clipPath>
+  </defs>
+  <style>
+    @keyframes dropper1 { from, 15% { transform: translatey(-200px) rotate(180deg) } 35% { transform: none } }
+    @keyframes dropper2 { from, 5% { transform: translatey(-200px) rotate(180deg) } 25% { transform: none } }
+    @keyframes dropper3 { from { transform: translatey(-200px) rotate(180deg) } 20% { transform: none } }
+    @keyframes vanish { from, 80% { opacity: 1 } to { opacity: 0 } }
+
+    .anim-grp { animation: vanish 3s infinite }
+    .coin-drop { animation: 3s backwards ease-in-out infinite; }
+    .coin-1 { animation-name: dropper1; transform-origin: 71.31px 46px; }
+    .coin-2 { animation-name: dropper2; transform-origin: 77.31px 61.59px; }
+    .coin-3 { animation-name: dropper3; transform-origin: 77.31px 72.34px; }
+
+    @keyframes stem-grow { from { stroke-dashoffset: -85; } 25%, to { stroke-dashoffset: 0; } }
+    @keyframes leaf-grow1 { from, 5% { transform: scale(0) }  12%, to { transform: none } }
+    @keyframes leaf-grow2 { from, 10% { transform: scale(0) }  17%, to { transform: none } }
+    @keyframes leaf-grow3 { from, 15% { transform: scale(0) }  22%, to { transform: none } }
+    @keyframes leaf-grow4 { from, 25% { transform: scale(0) }  35%, to { transform: none } }
+    @keyframes vanish { from, 80% { opacity: 1 } to { opacity: 0 } }
+
+    .stem-grow, .leaf-grow { animation-duration: 4s; animation-iteration-count: infinite }
+
+    .stem-grow { stroke-dasharray: 90; animation-name: stem-grow}
+    .grow-1 { transform-origin: 70px 100px; animation-name: leaf-grow1 }
+    .grow-2 { transform-origin: 70px 90px; animation-name: leaf-grow2 }
+    .grow-3 { transform-origin: 70px 80px; animation-name: leaf-grow3 }
+    .grow-4 { transform-origin: 83px 44px; animation-name: leaf-grow4 }
+  </style>
+
+  <rect height="100%" width="100%" fill="#fff" rx="5%" x="-20" y="-20" />
+
+
+  <circle cx="265" cy="75" r="71" fill="#fff" stroke="#9ac437" stroke-width="6"/>
+  <g class="anim-grp" transform="translate(190)">
+    <g id="Stem" stroke="#9ac437" stroke-width="4">
+      <path fill="none" d="M83.14 44.08S62.4 72.02 72.22 117.75" class="stem-grow" stroke-linecap="round"/>
+      <path fill="#fff" d="M69.57 79.8c-14.24.4-13.78-13.04-13.78-13.04s13.36-1.2 13.75 13.03z" class="leaf-grow grow-3"/>
+      <path fill="#fff" d="M71.16 89.28c13.55 4.42 16.9-8.6 16.9-8.6s-12.48-4.95-16.9 8.6z" class="leaf-grow grow-2"/>
+      <path fill="#fff" d="M68.9 99.4c-11.9 7.85-18.58-3.8-18.58-3.8s10.73-8.1 18.58 3.8z" class="leaf-grow grow-1"/>
+    </g>
+    <g id="Coin" class="leaf-grow grow-4">
+      <circle cx="83.14" cy="44.08" r="16.55" fill="#fff" stroke="#9ac437" stroke-width="4"/>
+      <path fill="#9ac437" d="M88.77 48.05v3.28h-11.5v-3.28h1.4V45.6h-1.2v-3h1.2v-1.78a4.53 4.53 0 0 1 4.8-4.7 4.98 4.98 0 0 1 4.8 3.17L85.32 41c-.3-1.03-.77-1.56-1.73-1.56a1.4 1.4 0 0 0-1.5 1.53v1.64h4.12v3H82.1v2.47z"/>
+    </g>
+  </g>
+  <g fill="#fff" stroke="#9ac437">
+    <circle cx="75" cy="75" r="71" stroke-width="6"/>
+
+
+
+    <g stroke-width="3" class="coin-stack" clip-path="url(#clippy)">
+      <path d="M77.74 88.13c-17.18 0-31.1 3.02-31.1 6.73v10.24c0 3.72 13.92 6.73 31.1 6.73s31.1-3 31.1-6.73V94.86c0-3.7-13.92-6.73-31.1-6.73z"/>
+      <ellipse cx="77.74" cy="94.86" rx="31.11" ry="6.73"/>
+      <path d="M71.3 77.02c-17.17 0-31.1 3.02-31.1 6.73V94c0 3.7 13.93 6.72 31.1 6.72s31.1-3 31.1-6.73V83.7c0-3.7-13.9-6.73-31.1-6.73z"/>
+      <ellipse cx="71.31" cy="83.75" rx="31.11" ry="6.73"/>
+
+      <g class="anim-grp">
+        <g class="coin-drop coin-3">
+          <path d="M77.3 65.6c-17.17 0-31.1 3.03-31.1 6.74v10.24c0 3.72 13.93 6.73 31.1 6.73s31.1-3 31.1-6.7V72.38c0-3.7-13.9-6.73-31.1-6.73z"/>
+          <ellipse cx="77.31" cy="72.34" rx="31.11" ry="6.73"/>
+        </g>
+        <g class="coin-drop coin-2">
+          <path d="M77.3 54.86c-17.17 0-31.1 3-31.1 6.73v10.2c0 3.7 13.93 6.7 31.1 6.7s31.1-3 31.1-6.75V61.6c0-3.73-13.9-6.74-31.1-6.74z"/>
+          <ellipse cx="77.31" cy="61.59" rx="31.11" ry="6.73"/>
+        </g>
+        <g class="coin-drop coin-1">
+          <path d="M71.3 39.27c-17.17 0-31.1 3-31.1 6.73v10.24c0 3.7 13.93 6.73 31.1 6.73s31.1-3.02 31.1-6.73V46c0-3.72-13.9-6.73-31.1-6.73z"/>
+          <ellipse cx="71.31" cy="46" rx="31.11" ry="6.73"/>
+        </g>
+      </g>
+
+    </g>
+  </g>
+</svg>

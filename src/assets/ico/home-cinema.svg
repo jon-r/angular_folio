@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15 15 120 120">
+  <style>
+
+  .service-tile:hover .spin-left {
+  -webkit-transform-origin: 48.8px 56.7px;
+  transform-origin: 48.8px 56.7px;
+  -webkit-animation: spinner 2s linear infinite;
+  animation: spinner 2s linear infinite;
+}
+
+.service-tile:hover .spin-right {
+  -webkit-transform-origin: 92.3px 56.7px;
+  transform-origin: 92.3px 56.7px;
+  -webkit-animation: spinner 2s linear infinite;
+  animation: spinner 2s linear infinite;
+}
+@keyframes looker {
+  from { -webkit-transform: translateX(-20px) skew(15deg); transform: translateX(-20px) skew(15deg); }
+  50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+  to { -webkit-transform: translateX(20px) skew(-15deg); transform: translateX(20px) skew(-15deg); }
+}
+  </style>
+
+    <path d="M42.4 78.7h58.2V114H42.4z" class="st0"/>
+    <path d="M100.6 99.7L122 109V76.3L100.5 86z" class="st0"/>
+    <g class="spin-right">
+      <circle cx="92.3" cy="56.7" r="20.8" class="st0"/>
+      <circle cx="92.3" cy="56.7" r="7.7" class="st0"/>
+      <circle cx="92.3" cy="42.7" r="4" class="st1"/>
+      <circle cx="104.4" cy="63.7" r="4" class="st1"/>
+      <circle cx="80.2" cy="63.7" r="4" class="st1"/>
+    </g>
+    <g class="spin-left">
+      <circle cx="48.8" cy="56.7" r="20.8" class="st0"/>
+      <circle cx="48.8" cy="56.7" r="7.7" class="st0"/>
+      <circle cx="48.8" cy="70.7" r="4" class="st1"/>
+      <circle cx="36.7" cy="49.7" r="4" class="st1"/>
+      <circle cx="60.9" cy="49.7" r="4" class="st1"/>
+    </g>
+</svg>

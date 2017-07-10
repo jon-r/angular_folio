@@ -52,31 +52,11 @@
   margin-bottom: 1.2rem;
 }
 
-.iframe-1024 {
-  height: 768px;
-  width: 1024px;
-  border: solid 1px red;
-  margin: 0 auto;
-}
 
 .text-center {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
-
-.content-row {
-  padding: 16px;
-}
-
-.content-row-inner {
-  max-width: 1200px;
-  min-height: 240px;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content:space-between;
-  align-items: stretch;
 }
 
 
@@ -94,11 +74,13 @@
 
 
 /* NEW Iframe layout?? */
-.content.iframe {
+.content-iframe {
   position: relative;
+  margin: 0 auto;
+    width: 1024px;
 }
 
-.content.iframe iframe {
+.content-iframe iframe {
   position: absolute;
   top: 0;
   width: 100%;
@@ -107,6 +89,5 @@
 }
 
 .iframe-4-3 {
-  width:100%;
   padding-bottom: 75%;
 }

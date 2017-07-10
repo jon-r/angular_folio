@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15 15 120 120">
+
+  <style>
+    .st0 {
+  fill: none;
+  stroke: white;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.glow {
+  opacity: 0;
+}
+svg:hover .st0 {
+  -webkit-transition: stroke 600ms;
+  transition: stroke 600ms;
+  stroke: #2BEDBA;
+}
+svg:hover .glow {
+  -webkit-animation: glowing 1s linear infinite alternate;
+  animation: glowing 1s linear infinite alternate;
+}
+@keyframes glowing {
+  from { opacity: 0; }
+  to { opacity: 0.9; }
+}
+
+  </style>
+
+
+  <defs>
+    <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+    </filter>
+    <mask id="hollow">
+      <path fill="white" d="m0 0h200v200h-200" />
+      <path fill="black" d="M85 44.4c11 4 19 14.8 19 27.6 0 16-13 29-29.2 29s-29-13-29-29c0-12.8 8-23.5 19.3-27.6M68 27s0-7.3 7.3-7.3c0 0 6.7 0 6.7 6.8"/>
+      <path fill="black" d="M87.5 35.7h-25c-2.4 0-4.3-2-4.3-4.3 0-2.4 2-4.4 4.3-4.4h25c2.4 0 4.3 2 4.3 4.4 0 2.4-2 4.3-4.3 4.3zm0 8.7h-25c-2.4 0-4.3-2-4.3-4.3s2-4 4.3-4h25c2.4 0 4.3 2 4.3 4.4 0 2.5-2 4.4-4.3 4.4z"/>
+    </mask>
+  </defs>
+  <circle class="glow st1"  cx="75" cy="72" r="42" mask="url(#hollow)" filter="url(#blur)" />
+  <path class="st0" d="M85 44.4c11 4 19 14.8 19 27.6 0 16-13 29-29.2 29s-29-13-29-29c0-12.8 8-23.5 19.3-27.6M68 27s0-7.3 7.3-7.3c0 0 6.7 0 6.7 6.8"/>
+  <path class="st0" d="M68.5 45L82 71.3H68l14-27"/>
+  <path class="st0" d="M87.5 35.7h-25c-2.4 0-4.3-2-4.3-4.3 0-2.4 2-4.4 4.3-4.4h25c2.4 0 4.3 2 4.3 4.4 0 2.4-2 4.3-4.3 4.3zm0 8.7h-25c-2.4 0-4.3-2-4.3-4.3s2-4 4.3-4h25c2.4 0 4.3 2 4.3 4.4 0 2.5-2 4.4-4.3 4.4z"/>
+
+
+
+</svg>

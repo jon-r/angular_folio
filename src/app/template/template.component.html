@@ -6,13 +6,13 @@
     [ngClass]="row.class"
     [ngStyle]="row.style" >
 
-    <div class="content-row-inner container content-pad" >
+    <div class="content-row-inner container" >
 
       <ng-container
         *ngFor="let content of row.content"
         [ngSwitch]="content.type" >
 
-        <div class="content content-text" *ngSwitchCase="'text'"
+        <div class="content content-text content-pad" *ngSwitchCase="'text'"
           [ngClass]="content.class"
           [innerHTML]="content.value" >
         </div>

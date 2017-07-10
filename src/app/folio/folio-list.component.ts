@@ -51,7 +51,7 @@ export class FolioListComponent implements OnInit {
 
     this.projects.forEach((project, n) => {
       project.computed = {
-        style: { transform: `translateY(${n * 280}px)`, 'transition-delay': `${n * 50}ms` },
+        style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
         active: 'out',
       };
     });

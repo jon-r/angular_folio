@@ -1,3 +1,6 @@
+// TODO: https://material.io/guidelines/style/typography.html#
+// review this for layout styling?
+
 export default {
   rows: [{
     class: 'row-collapse',
@@ -23,6 +26,7 @@ export default {
       value: `<h3>Skills</h3>`,
     }]
   }, {
+    class: 'row-collapse',
     content: [{
       type: 'text',
       value: `
@@ -52,6 +56,7 @@ export default {
       value: `<h3>Education</h3>`,
     }]
   }, {
+    class: 'row-collapse',
     content: [{
       type: 'text',
       value: `

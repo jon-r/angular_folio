@@ -33,17 +33,17 @@
     <filter id="grey">
       <feColorMatrix values="1 0 0.5 0 0 1 0 0.5 0 0 1 0 0.5 0 0 0 0 0 1 0"/>
     </filter>
-    
+
     <g id="mrChips">
       <circle r="48" fill="#c00" />
       <circle r="42" fill="transparent" stroke="#ddd" stroke-width="12" stroke-dasharray="22" />
       <circle r="40" opacity="0.2" filter="url(#mlt)" />
       <path fill="#555" d="m0 -40a1 1 0 1 0 0 80h2a1 1 0 1 1 0 -80" opacity=".2" filter="url(#multiply)" />
     </g>
-    
+
   </defs>
 
-  <g transform="translate()" class="chip-5">
+  <g class="chip-5">
     <use xlink:href="#mrChips" />
   </g>
   <g transform="translate(60)" class="chip-10">

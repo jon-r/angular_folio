@@ -1,5 +1,5 @@
 import { linkAttrs } from './index';
-const rootLink = '../assets/blk/';
+const rootLink = '../assets/web/';
 
 export default {
   id: 6,
