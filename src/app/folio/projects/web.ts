@@ -16,7 +16,7 @@ export default {
       class: 'text-row',
       content: [{
         type: 'text',
-        class: 'intro-text text-center',
+        class: 'intro-text',
         value: '<h4>A range of smaller sites that I worked as sole developer</h4>',
       }]
     },  {

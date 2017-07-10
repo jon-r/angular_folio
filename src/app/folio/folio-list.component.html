@@ -1,6 +1,6 @@
 
 
-  <nav class="folio-title fixed-overlay">
+  <nav class="folio-title">
     <a class="folio-filter nav-link" *ngFor="let filter of filters" [routerLink]="[{category: filter}]" >
         {{filter | titlecase}}
     </a>
@@ -21,7 +21,7 @@
             [routerLink]="[{project: project.slug}]"
             [@listInner]="project.computed.active" >
 
-            <div class="project-intro container content-pad"  >
+            <div class="project-intro container content-pad hover-trigger"  >
 
               <div class="project-intro-label" >
                 <h3>{{project.intro.title}} {{i}}</h3>

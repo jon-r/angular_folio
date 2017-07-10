@@ -20,9 +20,6 @@ export default {
     {
       class: 'text-row row-collapse',
       content: [{
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
         type: 'text',
         class: 'intro-text row-collapse',
         value: `

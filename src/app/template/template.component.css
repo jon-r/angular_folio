@@ -88,6 +88,9 @@
   height: 100%;
 }
 
-.iframe-4-3 {
+.iframe-4-3::after {
+  content: "";
+  display: block;
+  width: 100%;
   padding-bottom: 75%;
 }

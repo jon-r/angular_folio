@@ -30,7 +30,7 @@
 
         <div class="content content-iframe" *ngSwitchCase="'iframe'"
           [ngClass]="content.class" >
-          <iframe [src]="content.value | safe" ></iframe>
+          <iframe [src]="content.value | safe" frameborde="no" allowtransparency="true" scrolling="no" ></iframe>
         </div>
       </ng-container>
 

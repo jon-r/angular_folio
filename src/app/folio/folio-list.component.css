@@ -149,7 +149,7 @@
   align-self: center;
 }
 .project-intro-icon {
-   width: 320px;
+   flex: auto;
    height: 320px;
    z-index: 5;
 }

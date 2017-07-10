@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">    
-<g class="line-monitor" fill="none" stroke="red" stroke-width="2">
+<svg class="screen-anim" xmlns="http://www.w3.org/2000/svg" viewBox="-128 -32 1024 768">    
+<rect height="100%" width="100%" x="-128" y="-32" ry="10%" fill="#7dbab6" />
+<g class="line-monitor" fill="none" stroke="#064541" stroke-width="2">
 <path d="M617.23 519.7l-3.4 61.06c-.43 7.68-5.73 13.9-12.7 15.9 8.87-.4 16.2-7.48 16.7-16.56L648.5 33.17c.3-5.35-3.1-9.83-7.73-11.38" class="linedraw_0"></path>
 <path d="M589.34 483.64l-494-4.67L118 153.64l498-100z" class="linedraw_1"></path>
 <path d="M644.5 30.83c.43-7.47-6.4-13.3-13.7-11.7L117.62 130.3c-7.3 1.6-12.7 7.76-13.3 15.2l-29.2 358.77 542.1 15.43L644.5 30.83z" class="linedraw_2"></path>
@@ -7,7 +8,7 @@
 <path d="M347.18 581.08c1.38 12.57 3.78 34.02 5.16 45.4 1.44 11.84-5.54 34.18-17.37 35.74-32.1 4.23-127.93 16.98-127.93 16.98-2.63.35-2.63 4.17 0 4.5l112.84 14.73" class="linedraw_4"></path>
 <path d="M75.12 504.27l-3.6 44.2c-.65 7.98 5.35 14.93 13.32 15.45l510.3 33.4c9.75.63 18.14-6.8 18.7-16.56" class="linedraw_5"></path>
 </g>
-<g class="color-monitor" opacity="0" >
+<g class="color-monitor" opacity="1" >
 <path fill="#C6CACD" d="M458.67 576.64l20.9 72.1c5.15 17.78-6.68 36-25 38.52l-91.6 12.6c-12.52 1.73-25.23 1.7-37.75-.08l-119.88-17.06 173-25.75-3-89.75 83.33 9.42z"/>
 <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="336.73" y1="700.26" x2="350.78" y2="566.6">
 <stop offset="0" stop-color="#C5C9CC"/>
@@ -25,45 +26,48 @@
 .linedraw_0 {
   stroke-dasharray: 672 674;
   stroke-dashoffset: 673;
-  animation: draw 1200ms ease-out 0ms forwards;
 }
 .linedraw_1 {
   stroke-dasharray: 1759 1761;
   stroke-dashoffset: 1760;
-  animation: draw 1200ms ease-out 100ms forwards;
 }
-
 .linedraw_2 {
   stroke-dasharray: 1960 1962;
   stroke-dashoffset: 1961;
-  animation: draw 1200ms ease-out 200ms forwards;
 }
-
 .linedraw_3 {
   stroke-dasharray: 595 597;
   stroke-dashoffset: 596;
-  animation: draw 1200ms ease-out 400ms forwards;
 }
-
 .linedraw_4 {
   stroke-dasharray: 338 340;
   stroke-dashoffset: 339;
-  animation: draw 1200ms ease-out 500ms forwards;
 }
-
 .linedraw_5 {
   stroke-dasharray: 607 609;
   stroke-dashoffset: 608;
-  animation: draw 600ms ease-out 700ms forwards;
+}  
+.screen-anim:hover .line-monitor { animation: enter 1.5s linear 2s both; }
+.screen-anim:hover .color-monitor { animation: enter 1.5s linear 2s both; }
+.screen-anim:hover .line-monitor { animation-direction: reverse; }
+  
+.screen-anim:hover .linedraw_0,
+.screen-anim:hover .linedraw_1,
+.screen-anim:hover .linedraw_2,
+.screen-anim:hover .linedraw_3,
+.screen-anim:hover .linedraw_4,
+.screen-anim:hover .linedraw_5 {
+  animation: draw 1200ms ease-out forwards;
 }
   
-.line-monitor {
-  animation: enter 1.5s ease-out 2s reverse forwards;
-}
-.color-monitor {
-  animation: enter 1.5s ease-out 2s forwards;
-}
-
+.screen-anim:hover .linedraw_0 { animation-delay: 0}
+.screen-anim:hover .linedraw_1 { animation-delay: 1000ms }
+.screen-anim:hover .linedraw_2 { animation-delay: 200ms }
+.screen-anim:hover .linedraw_3 { animation-delay: 300ms }
+.screen-anim:hover .linedraw_4 { animation-delay: 400ms }
+.screen-anim:hover .linedraw_5 { animation-delay: 700ms; animation-duration: 600ms }
+  
+  
 @keyframes draw { 100% { stroke-dashoffset: 0;} }
 @keyframes enter { 0% { opacity: 0 } 100% { opacity: 1} }
 
