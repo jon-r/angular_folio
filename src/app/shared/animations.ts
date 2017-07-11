@@ -1,5 +1,5 @@
 
-import {animation, style, animate, stagger, query, animateChild } from '@angular/animations';
+import {animation, style, animate, stagger, query, animateChild, useAnimation } from '@angular/animations';
 
 const defaultTime = '300ms ease-out';
 const defaultStagger = '150ms';
@@ -9,10 +9,11 @@ export const fade = animation([
   animate('{{ time }}', style({ opacity: '{{to}}' }))
 ], {params: { time: defaultTime }});
 
-export const slideIn = animation([
+export const slide = animation([
   style({ transform: '{{from}}'}),
-  animate('{{ time }}', style({ transform: '*' })),
-], {params: { time: defaultTime }});
+  animate('{{ time }}', style({ transform: '{{to}}' })),
+], {params: { time: defaultTime, to: '*', from: '*' }});
+
 
 export const duration = animation(
   animate('{{ time }}'), {params: { time: defaultTime }}
@@ -25,9 +26,23 @@ export const fadeStagger = animation([
   ])
 ]);
 
-export const staggerChildren = animation([
+export const staggerChildren = animation(
   query('@*', stagger(defaultStagger, animateChild()))
-]);
+);
+
+export const slideInChild = animation(
+  query(':enter', useAnimation(slide, {params: { from: '{{ from }}' }}))
+);
+export const slideOutChild = animation(
+  query(':leave', useAnimation(slide, {params: { to: '{{ to }}' }}))
+);
+
+export const fadeInChild = animation(
+  query(':enter', useAnimation(fade, {params: { from: 0, to: 1 }}))
+);
+export const fadeOutChild = animation(
+  query(':leave', useAnimation(fade, {params: { from: 1, to: 0 }}), { optional: true })
+);
 
 
 

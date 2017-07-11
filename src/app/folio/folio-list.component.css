@@ -2,28 +2,23 @@
 :host {
   padding-top: 96px;
   display: block;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
 .folio-container {
-  display: block;
   position: relative;
-  width: 100%;
-  margin: 0 auto;
   height: calc(100vh - 144px);
   overflow-y: auto;
-  z-index: 20;
-  /*max-width: 1200px;*/
 }
 
 .folio-title {
     text-align: center;
     padding: 8px;
     width: 100%;
-    z-index: 25;
     position: relative;
     background-color: #0e4c46;
     height: 48px;
+    z-index: 24;
 }
 
 .nav-link, .page-title {
@@ -43,86 +38,25 @@
   transition: transform 0.3s ease-in-out;
   width: 100%;
   left: 0;
-
+  height: 256px;
+/*padding: 48px 0;*/
 }
 
 .project-container {
   position: relative;
   display: block;
   height: 192px;
-  max-width: 1366px;
   width: 768px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 32px;
-  background-color: #B2DFDB;
-  color: #0e4c46;
+  margin: 32px auto;
   border-radius: 8px;
-  /*overflow: hidden;*/
-
-}
-
-.project-container::before {
-  border-radius: 8px;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  content: "";
-  position: absolute;
   box-shadow: 0 10px 20px #28615a;
-  transition: opacity 300ms ease-out;
-  pointer-events: none;
 }
-
-.project-container.in::before {
-  opacity: 0;
-}
-
-
-/*
-.project-inner {
-  padding: 8px;
-  display: flex;
-  height: 100%;
-  margin: auto;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow: hidden;
- }
-*/
-
-/*
-.project-label {
-  flex: auto;
-  align-self: center;
- }
-
-
-*/
-
-
 
 
 .project-wrapper {
-  max-width: 1366px;
-  margin: -64px auto 128px;
+  margin-top: -96px;
   position: relative;
-  border-radius: 0 0 8px 8px;
-  overflow: hidden;
 }
-
-/*
-.project-header {
-  position: relative;
-  display: block;
-  max-width:100%;
-  width: 768px;
-  margin: 16px auto;
-  border-radius: 5px;
-  box-shadow: 0 0 20px #28615a;
-  overflow: hidden;
-}
-*/
 
 .project-intro {
 
@@ -134,22 +68,14 @@
 /*  align-items: flex-start;*/
   overflow: hidden;
 
-/*
-  max-width: 1200px;
-  margin: auto;
-  padding: 8px;
-  height: 224px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-*/
+
 }
 .project-intro-label {
-  flex: auto;
+  flex: 1;
   align-self: center;
 }
 .project-intro-icon {
-   flex: auto;
+   flex: 1;
    height: 320px;
    z-index: 5;
 }

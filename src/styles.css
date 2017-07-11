@@ -64,6 +64,15 @@ a {
 /* grid --------------------------------------------------------------------- */
 
 /* TODO added here to set up consistent sizes throughout site */
+
+.outer-frame {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 32px;
+  position: relative;
+}
+
 .container {
   width: 100%;
   max-width: 1024px;

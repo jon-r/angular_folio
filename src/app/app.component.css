@@ -40,8 +40,13 @@
   transform-origin: right;
   /*transform: translateX(100%);*/
   box-shadow: 0 0 20px #000;
-  z-index: 10;
+  /*z-index: 10;*/
 }
+
+/*.site-content {
+  max-width: 1366px;
+  margin: 128p auto 128px;
+}*/
 
 /*.site-framer::after {
   content: '';

@@ -2,12 +2,13 @@
   display: block;
   height: 100vh;
   overflow-y: auto;
+  padding-top: 96px;
+
 }
 
 .about-container {
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  z-index: 20;
-  margin: 96px auto 128px;
+
+  /*z-index: 20;*/
+  /*margin: 96px auto 128px;*/
 }

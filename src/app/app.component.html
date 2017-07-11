@@ -22,9 +22,9 @@
 
 <div class="site-framer full-screen anim" [ngStyle]="{ transform: els.framer }" ></div>
 
-<main class="site-content" >
+<main class="site-content" [@routeAnimation]="getRouterState(routerOutlet)" >
 
-  <router-outlet></router-outlet>
+  <router-outlet #routerOutlet="outlet" ></router-outlet>
 
 </main>
 

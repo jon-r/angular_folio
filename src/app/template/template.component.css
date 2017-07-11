@@ -1,12 +1,19 @@
 
+:host {
+  background-color: #e4e5e7;
+  color: #202121;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 10px 20px #28615a;
+}
 
 /* row classes */
 
 .content-row {
   padding-top: 64px;
   padding-bottom: 64px;
-  background-color: #e4e5e7;
-  color: #202121;
+  /*background-color: #e4e5e7;*/
+
 }
 
 .content-row-inner {
@@ -15,27 +22,47 @@
   align-items: center;
 }
 
+.push-right .content-row-inner {
+  justify-content: flex-end;
+}
+
 .row-collapse {
   padding-bottom: 0;
 }
 
-.text-row {
-
-
-}
 
 .image-row {
   background-color: #b2dfdb;
 }
 
+/* content classes */
 
 .content {
   flex: 1;
   padding: 8px;
 }
 
+.flex-double {
+  flex: 2;
+}
+
+.flex-triple {
+  flex: 3;
+}
+
+.content-overlap >>> > * {
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+.content-overlap {
+    margin-top: -32px;
+    margin-bottom: -128px;
+}
+
+/*text specific */
+
 .content-text {
-  max-width: 640px;
+  max-width: 512px;
 }
 
 .content-text >>> p {
@@ -52,7 +79,6 @@
   margin-bottom: 1.2rem;
 }
 
-
 .text-center {
   text-align: center;
   margin-left: auto;
@@ -60,20 +86,7 @@
 }
 
 
-.overhang {
-  margin-bottom: -40px;
-}
-
-.flex-double {
-  flex: 2;
-}
-
-.flex-triple {
-  flex: 3;
-}
-
-
-/* NEW Iframe layout?? */
+/* iframe specific */
 .content-iframe {
   position: relative;
   margin: 0 auto;

@@ -3,7 +3,7 @@ import { useAnimation, transition, trigger, state, style, group } from '@angular
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { fade, duration, staggerChildren, slideIn } from '../shared/animations';
+import { fade, duration, staggerChildren, slide } from '../shared/animations';
 import { MotionService } from '../shared/motion.service';
 
 import { FolioService } from './folio.service';
@@ -25,7 +25,7 @@ import { FolioService } from './folio.service';
     ]),
     trigger('projectDetail', [
       transition(':enter', group([
-        useAnimation(slideIn, {params: { from: 'translateY(-40px)' }}),
+        useAnimation(slide, {params: { from: 'translateY(-40px)'}}),
         useAnimation(fade, {params: { from: 0, to: 1 }}),
       ])),
       transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
@@ -56,7 +56,7 @@ export class FolioListComponent implements OnInit {
 
     this.projects.forEach((project, n) => {
       project.computed = {
-        style: { transform: `translateY(${n * 250}px)`, 'transition-delay': `${n * 50}ms` },
+        style: { transform: `translateY(${n * 256}px)`, 'transition-delay': `${n * 50}ms` },
         active: 'out',
       };
     });
