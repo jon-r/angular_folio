@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
     this.motionService.transform({
       home: 'translate(calc(512px - 50vw), calc(256px - 100vh))',
       framer: 'skewY(-10deg)',
-      gridMask: { from: [0, 0], to: [0.4, 1] },
+      gridMask: { from: [0, 0], to: [1, 0.5] },
     });
   }
 

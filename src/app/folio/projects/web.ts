@@ -19,8 +19,7 @@ export default {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h3>The Recruitment Room</h3>
-        <h4>The Project</h4>
+        <h2>The<br> Recruitment Room</h2>
         <p>Recuitment Agency Site.</p>
         <h4>The Role</h4>
         <p>Senior Web Developer at [Minerva creative]</p>
@@ -31,7 +30,7 @@ export default {
       }, {
         type: 'image',
         class: 'content-overlap',
-        value: `${rootLink}recruitment.png`,
+        value: `${rootLink}recruitment.jpg`,
       }]
     }, {
       style: {
@@ -42,13 +41,12 @@ export default {
       content: [{
         type: 'image',
         class: 'content-overlap',
-        value: `${rootLink}arcane.png`,
+        value: `${rootLink}arcane.jpg`,
       }, {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h3>Arcane Bar</h3>
-        <h4>The Project</h4>
+        <h2>Arcane Bar</h2>
         <p>Cocktail Bar in Manchester</p>
         <h4>The Role</h4>
         <p>Senior Web Developer (freelance)</p>
@@ -60,14 +58,13 @@ export default {
     }, {
       style: {
         'background-color': '#CF5446',
-        color: '#fff',
+        color: '#fdf3eb',
       },
       content: [{
         type: 'text',
         class: 'intro-text',
         value: `
-        <h3>Villa Romana</h3>
-        <h4>The Project</h4>
+        <h2>Villa Romana</h2>
         <p>Italian Restaurant in Liverpool.</p>
         <h4>The Role</h4>
         <p>Senior Web Developer at [Minerva creative]</p>
@@ -78,7 +75,7 @@ export default {
       }, {
         type: 'image',
         class: 'content-overlap',
-        value: `${rootLink}villa.png`,
+        value: `${rootLink}villa.jpg`,
       }]
     }, {
       style: {
@@ -88,13 +85,12 @@ export default {
       content: [{
         type: 'image',
         class: 'content-overlap',
-        value: `${rootLink}cuzina.png`,
+        value: `${rootLink}cuzina.jpg`,
       }, {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h3>Cuzina</h3>
-        <h4>The Project</h4>
+        <h2>Cuzina</h2>
         <p>Greek Restaurant in Nottingham</p>
         <h4>The Role</h4>
         <p>Senior Web Developer at [Minerva creative]</p>

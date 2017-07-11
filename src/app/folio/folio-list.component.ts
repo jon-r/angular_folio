@@ -66,9 +66,6 @@ export class FolioListComponent implements OnInit {
     this.filterProjects({ key: 'slug', value: slug });
     const project = this.projects[0];
     project.computed.active = 'in';
-
-    this.scrollTo(0);
-    // lerpLoop({ from: 0, to: 200 }, 200);
   }
 
 
@@ -77,10 +74,11 @@ export class FolioListComponent implements OnInit {
     const project = this.projects[0];
     project.computed.active = 'out';
     this.filterProjects({ value: category });
-    // lerpLoop({ from: 200, to: 0 }, 200);
   }
 
   updateFilter(paramMap) {
+    this.scrollTo(0);
+
     switch (true) {
     case (paramMap.has('project')):
       return this.setActive(paramMap.get('project'));
@@ -114,7 +112,7 @@ export class FolioListComponent implements OnInit {
     this.motionService.transform({
       home: 'translate(-32px, -16px)',
       framer: 'translateY(96px)',
-      gridMask: { from: [0, 0], to: [1, 0.25] },
+      gridMask: { from: [0, 0], to: [1, 0.5] },
     });
 
     this.filterProjects({value: 'all'});

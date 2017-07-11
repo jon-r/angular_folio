@@ -13,10 +13,10 @@ export default {
       type: 'text',
       value: `
       <p>I am a skilled & motivated technical developer, with experience in full stack web development
-      and digital design. I am a self-taught coder with a strong lean towards web languages, picking
+      and digital design. I am a self-taught coder with a strong lean towards web, picking
       up samples of other languages along the way.</p>
-      <p>I like to combine my past design experience and game development knowledge to produce optimised
-      code and pleasing results.</p>
+      <p>When working in development, I like to combine my past design experience and game
+development knowledge to produce clear, optimised code and pleasing results.</p>
       `,
     }]
   }, {
@@ -33,18 +33,18 @@ export default {
       <h5>Fluent In</h5>
       <ul>
         <li>HTML5 | SVG (hand written)</li>
-        <li>JavaScript | ES6 | Angular 4 | Vue.js</li>
+        <li>JavaScript | ES6 | Angular 4 | Vue.js | jQuery</li>
         <li>CSS3 | SASS | Bootstrap | Foundation | PostCSS</li>
-        <li>PHP | WordPress | SQL</li>
+        <li>PHP | WordPress</li>
         <li>Adobe Photoshop | Illustrator</li>
         <li>Microsoft Office | Visio | Access</li>
       </ul>
       <h5>Working Knowledge of</h5>
       <ul>
         <li>NPM | Gulp | webpack</li>
-        <li>WAMP | Amazon AWS</li>
+        <li>WAMP | Amazon AWS | SQL</li>
         <li>VBA | Python | Lua</li>
-        <li>Other Adobe Products</li>
+        <li>Adobe Creative Suite</li>
         <li>Autodesk 3Ds Max</li>
       </ul>
       `,
