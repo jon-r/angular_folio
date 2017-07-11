@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.motionService.transform({
       home: 'translate(-32px, calc(142px - 100vh))',
-      framer: 'translateX(calc(50% - 612px))',
+      framer: 'skewY(-10deg)',
       gridMask: { from: [0, 0], to: [0.4, 1] },
     });
   }
