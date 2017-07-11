@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { useAnimation, transition, trigger, state, style, query, animate } from '@angular/animations';
+import { useAnimation, transition, trigger, state, style, group } from '@angular/animations';
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { fade, duration } from '../shared/animations';
+import { fade, duration, staggerChildren, slideIn } from '../shared/animations';
 import { MotionService } from '../shared/motion.service';
 
 import { FolioService } from './folio.service';
@@ -16,14 +16,19 @@ import { FolioService } from './folio.service';
     trigger('listAnim', [
       transition(':enter', useAnimation(fade, {params: { from: 0, to: 1 }})),
       transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
+      transition('out=>in', useAnimation(staggerChildren)), // staggers entry
     ]),
     trigger('listInner', [
-      state('in', style({
-        width: '100%',
-        height: '320px',
-      })),
+      state('in', style({ width: '100%', height: '320px' })),
       state('out', style('*')),
       transition('*=>*', useAnimation(duration)),
+    ]),
+    trigger('projectDetail', [
+      transition(':enter', group([
+        useAnimation(slideIn, {params: { from: 'translateY(-40px)' }}),
+        useAnimation(fade, {params: { from: 0, to: 1 }}),
+      ])),
+      transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
     ])
   ],
 })
@@ -61,9 +66,6 @@ export class FolioListComponent implements OnInit {
     this.filterProjects({ key: 'slug', value: slug });
     const project = this.projects[0];
     project.computed.active = 'in';
-
-    // this.pageScroll = 0;
-    console.log(this.container.nativeElement);
 
     this.scrollTo(0);
     // lerpLoop({ from: 0, to: 200 }, 200);

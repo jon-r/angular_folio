@@ -1,12 +1,17 @@
 
-import {animation, style, animate, stagger, query } from '@angular/animations';
+import {animation, style, animate, stagger, query, animateChild } from '@angular/animations';
 
 const defaultTime = '300ms ease-out';
-const defaultStagger = '100ms';
+const defaultStagger = '150ms';
 
 export const fade = animation([
   style({ opacity: '{{from}}' }),
   animate('{{ time }}', style({ opacity: '{{to}}' }))
+], {params: { time: defaultTime }});
+
+export const slideIn = animation([
+  style({ transform: '{{from}}'}),
+  animate('{{ time }}', style({ transform: '*' })),
 ], {params: { time: defaultTime }});
 
 export const duration = animation(
@@ -18,9 +23,11 @@ export const fadeStagger = animation([
   stagger(defaultStagger, [
     animate('{{ time }}', style({ opacity: '{{to}}' }))
   ])
-], {params: { time: defaultTime }});
+]);
 
-
+export const staggerChildren = animation([
+  query('@*', stagger(defaultStagger, animateChild()))
+]);
 
 
 

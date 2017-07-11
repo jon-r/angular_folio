@@ -13,7 +13,7 @@
         <li *ngFor="let project of projects"
           class="project"
           [ngStyle]="project.computed.style"
-          [@listAnim] >
+          [@listAnim]="project.computed.active" >
 
           <a class="project-container"
             [ngClass]="project.computed.active"
@@ -36,7 +36,7 @@
             </div>
           </a>
 
-          <article class="project-wrapper" *ngIf="project.computed.active === 'in'" >
+          <article class="project-wrapper" *ngIf="project.computed.active === 'in'" [@projectDetail] >
 
             <app-template [template]="project" ></app-template>
 

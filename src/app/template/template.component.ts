@@ -11,11 +11,11 @@ import { fadeStagger } from '../shared/animations';
   styleUrls: ['./template.component.css'],
   animations: [
     trigger('rowAnim', [
-      transition(':enter', [
-        query('section', [
-          useAnimation(fadeStagger, {params: { from: 0, to: 1 }}),
-        ])
-      ]),
+      // transition(':enter', [
+      //   query('section', [
+      //     useAnimation(fadeStagger, {params: { from: 0, to: 1 }}),
+      //   ])
+      // ]),
     ])
   ],
 })
