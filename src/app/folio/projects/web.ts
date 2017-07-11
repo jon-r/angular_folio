@@ -10,20 +10,10 @@ export default {
     desc: 'Assorted sites, primarily in hospitality',
     style: {},
   },
-  rows: [
-
-    {
-      class: 'text-row',
-      content: [{
-        type: 'text',
-        class: 'intro-text',
-        value: '<h4>A range of smaller sites that I worked as sole developer</h4>',
-      }]
-    },  {
+  rows: [{
       style: {
-        'background-color': '#31b0bd',
         background: `url(${rootLink}bg.svg) center/cover`,
-        color: '#fff',
+        color: '#31b0bd',
       },
       content: [{
         type: 'text',
@@ -40,7 +30,8 @@ export default {
         `,
       }, {
         type: 'image',
-        value: `${rootLink}logo.png`,
+        class: 'content-overlap',
+        value: `${rootLink}recruitment.png`,
       }]
     }, {
       style: {
@@ -50,7 +41,8 @@ export default {
       },
       content: [{
         type: 'image',
-        value: `${rootLink}logo.png`,
+        class: 'content-overlap',
+        value: `${rootLink}arcane.png`,
       }, {
         type: 'text',
         class: 'intro-text',
@@ -85,7 +77,8 @@ export default {
         `,
       }, {
         type: 'image',
-        value: `${rootLink}logo.png`,
+        class: 'content-overlap',
+        value: `${rootLink}villa.png`,
       }]
     }, {
       style: {
@@ -94,7 +87,8 @@ export default {
       },
       content: [{
         type: 'image',
-        value: `${rootLink}logo.png`,
+        class: 'content-overlap',
+        value: `${rootLink}cuzina.png`,
       }, {
         type: 'text',
         class: 'intro-text',
