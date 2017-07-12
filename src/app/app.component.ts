@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/throttleTime';
+import 'rxjs/add/observable/fromEvent';
 
 import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
 
@@ -42,7 +44,7 @@ import JRGrid from '../assets/jr_grid';
     ])
   ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('routesContainer') container: ElementRef;
 
   states: RouteMsg = {
@@ -53,7 +55,11 @@ export class AppComponent implements OnInit {
   grid;
   scrollPos;
 
-  constructor(private routerComms: RouteCommsService) {}
+  constructor(
+    private routerComms: RouteCommsService,
+    private ngZone: NgZone,
+    private cdRef: ChangeDetectorRef,
+  ) {}
 
 
   updateLayout(data: RouteMsg) {
@@ -61,6 +67,14 @@ export class AppComponent implements OnInit {
     this.states = data;
   }
 
+  // source: https://stackoverflow.com/a/36849347
+  scrollWatch(element: Element) {
+    if (this.states.page !== 'folio') {
+      return false;
+      // only interested if is on the template page;
+    }
+    this.routerComms.emitScrollPos(element.scrollTop);
+  }
 
 
 // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
@@ -82,15 +96,33 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.routerComms.scrollOutput$
+    this.routerComms.scrollToOutput$
       .subscribe(scroll => this.scrollTo(scroll));
 
     this.routerComms.msgOutput$
       .subscribe(data => this.updateLayout(data));
 
-    this.grid = new JRGrid({});
-    this.grid.begin();
+// TODO optimise this grid, since it seems laggy AF on weaker pcs. check pocket
+    // this.grid = new JRGrid({});
+    // this.grid.begin();
 
+  }
+
+  /* better debounce credit:
+  - https://stackoverflow.com/a/36849347
+  */
+
+  ngAfterViewInit() {
+    this.ngZone.runOutsideAngular(() => {
+      const container = this.container.nativeElement;
+
+      Observable.fromEvent(container, 'scroll')
+        .throttleTime(150)
+        .subscribe(() => {
+          this.scrollWatch(container);
+          this.cdRef.detectChanges();
+        });
+    });
   }
 
 

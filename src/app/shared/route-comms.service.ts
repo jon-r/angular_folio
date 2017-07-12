@@ -15,15 +15,22 @@ export class RouteCommsService {
   private msgSrc = new Subject<RouteMsg>();
   msgOutput$ = this.msgSrc.asObservable();
 
-  private scrollSrc = new Subject<number>();
-  scrollOutput$ = this.scrollSrc.asObservable();
+  private scrollToSrc = new Subject<number>();
+  scrollToOutput$ = this.scrollToSrc.asObservable();
+
+  private scrollPosSrc = new Subject<number>();
+  scrollPosOutput$ = this.scrollPosSrc.asObservable();
 
   emitStates(msg: RouteMsg) {
     this.msgSrc.next(msg);
   }
 
-  emitScroll(scroll: number) {
-    this.scrollSrc.next(scroll);
+  emitScrollTo(scrollTo: number) {
+    this.scrollToSrc.next(scrollTo);
+  }
+
+  emitScrollPos(scrollPos: number) {
+    this.scrollPosSrc.next(scrollPos);
   }
 
 }

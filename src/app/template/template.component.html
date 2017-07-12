@@ -2,37 +2,25 @@
 
 
   <section class="content-row"
-    *ngFor="let row of template.rows"
+    *ngFor="let row of template.rows; index as i"
     [ngClass]="row.class"
-    [ngStyle]="row.style" >
+    [ngStyle]="row.style"
+    (appLOD)="row.isActive = true" >
 
-    <div class="content-row-inner container" >
+    <div class="content-row-inner container"   >
 
-      <ng-container
-        *ngFor="let content of row.content"
-        [ngSwitch]="content.type" >
+      <div class="content content-pad" *ngFor="let content of row.content"
+        [ngClass]="[ 'content-' + content.type , content.class||'' ]" >
 
-        <div class="content content-text content-pad" *ngSwitchCase="'text'"
-          [ngClass]="content.class"
-          [innerHTML]="content.value" >
+            <ng-container [ngSwitch]="content.type" *ngIf="row.isActive || content.type === 'text'"  >
+
+              <div *ngSwitchCase="'text'" [innerHTML]="content.value" ></div>
+              <div *ngSwitchCase="'svg'" [inlineSVG]="content.value" ></div>
+              <img *ngSwitchCase="'image'" [src]="content.value" />
+              <iframe *ngSwitchCase="'iframe'" [src]="content.value | safe" frameborder="no" allowtransparency="true" scrolling="no" ></iframe>
+
+            </ng-container>
         </div>
-
-        <div class="content content-svg" *ngSwitchCase="'svg'"
-          [ngClass]="content.class"
-          [inlineSVG]="content.value" >
-        </div>
-
-
-        <div class="content content-image" *ngSwitchCase="'image'"
-          [ngClass]="content.class">
-          <img [src]="content.value" />
-        </div>
-
-        <div class="content content-iframe" *ngSwitchCase="'iframe'"
-          [ngClass]="content.class" >
-          <iframe [src]="content.value | safe" frameborde="no" allowtransparency="true" scrolling="no" ></iframe>
-        </div>
-      </ng-container>
 
     </div>
 

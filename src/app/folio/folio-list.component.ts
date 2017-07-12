@@ -59,6 +59,7 @@ export class FolioListComponent implements OnInit {
         style: { transform: `translateY(${n * 256}px)`, 'transition-delay': `${n * 50}ms` },
         active: 'out',
       };
+      project.rows.forEach(row => row.isActive = false);
     });
   }
 
@@ -83,7 +84,7 @@ export class FolioListComponent implements OnInit {
 
   updateFilter(paramMap) {
 //    this.scrollTo(0);
-    this.routeCommsService.emitScroll(0);
+    this.routeCommsService.emitScrollTo(0);
 
     switch (true) {
     case (paramMap.has('project')):

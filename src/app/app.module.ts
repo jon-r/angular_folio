@@ -13,6 +13,7 @@ import { FolioService } from './folio/folio.service';
 import { TemplateComponent } from './template/template.component';
 import { SafePipe } from './shared/safeURL.pipe';
 import { RouteCommsService } from './shared/route-comms.service';
+import { LODDirective } from './shared/lod.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RouteCommsService } from './shared/route-comms.service';
     FolioListComponent,
     TemplateComponent,
     SafePipe,
+    LODDirective,
   ],
   imports: [
     BrowserModule,
