@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MotionService } from '../shared/motion.service';
-
+import { RouteCommsService } from '../shared/route-comms.service';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +9,15 @@ import { MotionService } from '../shared/motion.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private motionService: MotionService ) { }
+  constructor(
+    private routeCommsService: RouteCommsService,
+  ) { }
 
   ngOnInit() {
-    this.motionService.transform({
-      home: 'translate(calc(-50vw - 200px), -25vh)',
-      framer: 'translate(calc(-50vw - 200px)) skew(20deg)',
-      gridMask: { from: [0.2, 0], to: [1, 1] },
-    });
+
+
+    this.routeCommsService.emit({ sidebarState: 'open', currentPage: 'home' });
+
   }
 
 }

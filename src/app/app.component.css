@@ -20,27 +20,41 @@
 
 .site-nav {
   position: absolute;
-  top: 0;
-  left: 16px;
-  height: 96px;
-  display: flex;
-  align-items: center;
+}
+
+.nav-icon {
+  width: 32px;
 }
 
 .site-logo {
-  width: 110px;
+  width: 128px;
+  padding: 8px;
+  display: block;
 }
 
 .site-link {
-  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-top: solid 1px black;
 }
 
-.site-framer {
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-bg {
   background-color: #00897B;
-  transform-origin: right;
-  /*transform: translateX(100%);*/
+  transform-origin: top right;
+  top: 0;
+  width: 100vw;
+  right: 0;
+  height: 100vh;
   box-shadow: 0 0 20px #000;
-  /*z-index: 10;*/
+/*  temp */
+  transform: translateX(256px) skewX(15deg);
 }
 
 /*.site-content {

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/debounceTime';
+
 import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
 
-import { slideInChild, slideOutChild, fadeInChild, fadeOutChild } from './shared/animations';
-import { MotionService } from './shared/motion.service';
-import { ElTransform } from './shared/el-transform';
+import { duration, slide, slideInChild, slideOutChild, fadeInChild, fadeOutChild } from './shared/animations';
+
+import { RouteCommsService, RouteMsg } from './shared/route-comms.service';
+
 
 import JRGrid from '../assets/jr_grid';
 
@@ -17,46 +18,60 @@ import JRGrid from '../assets/jr_grid';
     trigger('routeAnimation', [
       transition(':enter', []),
 
-      transition('*=>folioPage', group([
+      transition('*=>folio', group([
         useAnimation(fadeOutChild),
         useAnimation(slideInChild, { params : { from: 'translateX(-100vw)' }}),
       ])),
-      transition('*=>homePage', group([
+      // todo about + folio both slide vertically only.
+      transition('*=>home', group([
         useAnimation(fadeOutChild),
         useAnimation(slideInChild, { params: { from: 'translateX(100vw)' } }),
       ])),
-      transition('*=>aboutPage', group([
+      transition('*=>about', group([
         useAnimation(fadeOutChild),
         useAnimation(slideInChild, { params: { from: 'translateY(100vh)' } }),
       ])),
       // transition('*=>*', useAnimation(fadeOutChild)),
     ]),
+    trigger('sidebar', [
+      // todo: fix this up, perhaps need child [@]'s to set final state?
+      transition('*=>open', query('#sideBG', [
+        useAnimation(slide, { params: { to: 'translateX(256px) skewX(10deg)' } }),
+        style({ transform: 'translateX(256px) skewX(10deg)' })
+      ])),
+
+      transition('*=>closed', query('#sideBG', [
+        useAnimation(slide, { params: { to: 'translateX(64px)' } }),
+        style({ transform: 'translateX(64px)' })
+      ])),
+
+//      state('closed', query('#sideBG', style({ transform: 'translateX(64px)' }))),
+//      transition('open<=>closed', useAnimation(duration)),
+//      transition(':enter', useAnimation(slide, { params: { from: 'translateX(100vw)' } })),
+    ])
   ]
 })
 export class AppComponent implements OnInit {
 
-  els: ElTransform = {
-    home: null,
-    gridMask: null,
-    framer: null,
+  states: RouteMsg = {
+    currentPage: null,
+    sidebarState: null,
   };
 
   grid;
 
-  constructor( private appMotion: MotionService) {}
+  constructor(private routerComms: RouteCommsService) {}
 
-  getRouterState(outlet: any) {
-    return outlet.activatedRouteData['anim'] || 'home';
+
+  updateLayout(data: RouteMsg) {
+    this.states = data;
   }
+
 
   ngOnInit(): void {
 
-    this.appMotion.motionOutput$
-      .debounceTime(50)
-      .subscribe(els => {
-        this.els = els;
-        this.grid.setRange(els.gridMask);
-      });
+    this.routerComms.msgOutput$
+      .subscribe(data => this.updateLayout(data));
 
     this.grid = new JRGrid({});
     this.grid.begin();

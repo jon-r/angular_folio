@@ -2,9 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { useAnimation, transition, trigger, state, style, group } from '@angular/animations';
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
+import { RouteCommsService } from '../shared/route-comms.service';
 import { fade, duration, staggerChildren, slide } from '../shared/animations';
-import { MotionService } from '../shared/motion.service';
 
 import { FolioService } from './folio.service';
 
@@ -43,8 +42,8 @@ export class FolioListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private motionService: MotionService,
     private folioService: FolioService,
+    private routeCommsService: RouteCommsService,
   ) { }
 
   filterProjects({key = 'cat', value}) {
@@ -90,6 +89,7 @@ export class FolioListComponent implements OnInit {
   }
 
 // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
+   // todo bonus = set this up as service? not needed but better organised
   scrollTo(to) {
     const from = this.container.nativeElement.scrollTop;
     // todo maybe set this as variable?
@@ -109,11 +109,7 @@ export class FolioListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.motionService.transform({
-      home: 'translate(-32px, -16px)',
-      framer: 'translateY(96px)',
-      gridMask: { from: [0, 0], to: [1, 0.5] },
-    });
+    this.routeCommsService.emit({ sidebarState: 'closed', currentPage: 'folio' });
 
     this.filterProjects({value: 'all'});
 

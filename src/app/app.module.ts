@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FolioListComponent } from './folio/folio-list.component';
-import { MotionService } from './shared/motion.service';
 import { FolioService } from './folio/folio.service';
 import { TemplateComponent } from './template/template.component';
 import { SafePipe } from './shared/safeURL.pipe';
+import { RouteCommsService } from './shared/route-comms.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { SafePipe } from './shared/safeURL.pipe';
     InlineSVGModule,
   ],
   providers: [
-    MotionService,
     FolioService,
+    RouteCommsService,
   ],
   bootstrap: [AppComponent]
 })

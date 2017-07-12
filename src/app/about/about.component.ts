@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-
 import About from './about';
 
-import { MotionService } from '../shared/motion.service';
+import { RouteCommsService } from '../shared/route-comms.service';
 
 @Component({
   selector: 'app-about',
@@ -14,16 +13,12 @@ export class AboutComponent implements OnInit {
 
   about = About;
 
-  constructor(private motionService: MotionService) { }
-
-// TODO need to consider the main maenu responisively on this page
+  constructor(
+    private routeCommsService: RouteCommsService,
+  ) { }
 
   ngOnInit() {
-    this.motionService.transform({
-      home: 'translate(calc(512px - 50vw), calc(256px - 100vh))',
-      framer: 'skewY(-10deg)',
-      gridMask: { from: [0, 0], to: [1, 0.5] },
-    });
+    this.routeCommsService.emit({ sidebarState: 'closed', currentPage: 'about' });
   }
 
 }
