@@ -72,6 +72,8 @@ export default {
         type: 'svg',
         value: `${rootLink}screen.svg`,
       }],
-    },
+    }, {
+      class: 'footer-row',
+    }
   ]
 };

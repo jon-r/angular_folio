@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
 
-    this.routeCommsService.emit({ sidebarState: 'open', currentPage: 'home' });
+    this.routeCommsService.emitStates({ sidebar: 'open', page: 'home' });
 
   }
 

@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.routeCommsService.emit({ sidebarState: 'closed', currentPage: 'about' });
+    this.routeCommsService.emitStates({ sidebar: 'closed', page: 'about' });
   }
 
 }

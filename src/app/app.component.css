@@ -1,8 +1,8 @@
 
 :host {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+/*  position: absolute;*/
+/*  height: 100%;*/
+/*  width: 100%;*/
 }
 
 .anim {
@@ -11,11 +11,12 @@
 }
 
 .site-header {
-  right:0;
-  bottom: 0;
+  right: 32px;
+  bottom: 16px;
   z-index: 25;
   text-align: right;
-  transform: translate(-32px, -16px);
+/*  transform: translate(-32px, -16px);*/
+  position: fixed;
 }
 
 .site-nav {
@@ -41,6 +42,7 @@
 
 .sidebar {
   position: fixed;
+  z-index: 99;
   top: 0;
   left: 0;
 }
@@ -54,7 +56,12 @@
   height: 100vh;
   box-shadow: 0 0 20px #000;
 /*  temp */
-  transform: translateX(256px) skewX(15deg);
+  transform: translateX(64px)
+/*  transform: translateX(256px) skewX(15deg);*/
+}
+
+.site-content {
+  overflow-y: auto;
 }
 
 /*.site-content {

@@ -32,10 +32,11 @@ import { FolioService } from './folio.service';
   ],
 })
 export class FolioListComponent implements OnInit {
-  @ViewChild('listContainer') container: ElementRef;
+  @ViewChild('projectFrame') projectEl: ElementRef;
 
-  projects;
-  scrollPos = 0;
+  projects: Array<any>;
+  folioHeight = 0;
+//  scrollPos = 0;
 
   filters = ['all', 'work', 'play'];
   category = 'all';
@@ -65,18 +66,24 @@ export class FolioListComponent implements OnInit {
     this.filterProjects({ key: 'slug', value: slug });
     const project = this.projects[0];
     project.computed.active = 'in';
+
+    setTimeout(() => {
+      const h = this.projectEl ? this.projectEl.nativeElement.clientHeight : 0;
+      this.folioHeight = h;
+    }, 400);
   }
-
-
 
   setCategory(category) {
     const project = this.projects[0];
     project.computed.active = 'out';
     this.filterProjects({ value: category });
+
+    this.folioHeight = this.projects.length * 256;
   }
 
   updateFilter(paramMap) {
-    this.scrollTo(0);
+//    this.scrollTo(0);
+    this.routeCommsService.emitScroll(0);
 
     switch (true) {
     case (paramMap.has('project')):
@@ -88,34 +95,21 @@ export class FolioListComponent implements OnInit {
     }
   }
 
-// inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
-   // todo bonus = set this up as service? not needed but better organised
-  scrollTo(to) {
-    const from = this.container.nativeElement.scrollTop;
-    // todo maybe set this as variable?
-    const multiplier = .2;
 
-    if (Math.abs(from - to) < 1) {
-      return false;
-    }
-
-    const lerp = (start, finish) => ((1 - multiplier) * start) + (multiplier * finish);
-    this.scrollPos = lerp(from, to);
-
-    requestAnimationFrame(() => this.scrollTo(to));
-  }
 
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/
 
   ngOnInit() {
 
-    this.routeCommsService.emit({ sidebarState: 'closed', currentPage: 'folio' });
+    this.routeCommsService.emitStates({ sidebar: 'closed', page: 'folio' });
 
     this.filterProjects({value: 'all'});
 
     this.route.paramMap.subscribe(paramMap => this.updateFilter(paramMap));
 
   }
+
+
 
 
 }

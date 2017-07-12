@@ -135,7 +135,9 @@ export default {
         class: 'flex-double',
         value: `${rootLink}logo.png`,
       }],
-    },
+    }, {
+      class: 'footer-row',
+    }
   ]
 
 };

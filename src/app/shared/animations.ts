@@ -1,5 +1,5 @@
 
-import {animation, style, animate, stagger, query, animateChild, useAnimation } from '@angular/animations';
+import {animation, style, animate, stagger, query, animateChild, useAnimation, AnimationReferenceMetadata } from '@angular/animations';
 
 const defaultTime = '300ms ease-out';
 const defaultStagger = '150ms';
@@ -30,12 +30,18 @@ export const staggerChildren = animation(
   query('@*', stagger(defaultStagger, animateChild()))
 );
 
+export const hideInChild = animation(
+  query(':enter', style({ transform: '{{ from }}' }))
+);
+
 export const slideInChild = animation(
   query(':enter', useAnimation(slide, {params: { from: '{{ from }}' }}))
 );
 export const slideOutChild = animation(
-  query(':leave', useAnimation(slide, {params: { to: '{{ to }}' }}))
+  query(':leave', useAnimation(slide, {params: { to: '{{ to }}' }}), { optional: true })
 );
+
+
 
 export const fadeInChild = animation(
   query(':enter', useAnimation(fade, {params: { from: 0, to: 1 }}))

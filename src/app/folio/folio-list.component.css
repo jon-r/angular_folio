@@ -1,14 +1,14 @@
 
 :host {
-  padding-top: 96px;
-  display: block;
-  /*height: 100vh;*/
+  position: absolute;
+/*  height: 100%;*/
+  width: 100%;
 }
 
 .folio-container {
   position: relative;
-  height: calc(100vh - 144px);
-  overflow-y: auto;
+/*  height: calc(100vh - 144px);*/
+/*  overflow-y: auto;*/
 }
 
 .folio-title {
@@ -30,6 +30,7 @@
 
 .projects-list {
   height: 100%;
+  position: relative;
 }
 
 
@@ -38,8 +39,7 @@
   transition: transform 0.3s ease-in-out;
   width: 100%;
   left: 0;
-  height: 256px;
-/*padding: 48px 0;*/
+  top: 0;
 }
 
 .project-container {
@@ -49,7 +49,7 @@
   width: 768px;
   margin: 32px auto;
   border-radius: 8px;
-  box-shadow: 0 10px 20px #28615a;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 

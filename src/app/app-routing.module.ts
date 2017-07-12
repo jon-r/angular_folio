@@ -5,9 +5,9 @@ import { AboutComponent } from './about/about.component';
 import { FolioListComponent } from './folio/folio-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'folio', component: FolioListComponent },
+  { path: '', component: HomeComponent, data: { anim: 'home' } },
+  { path: 'about', component: AboutComponent, data: { anim: 'about' } },
+  { path: 'folio', component: FolioListComponent, data: { anim: 'folio' } },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

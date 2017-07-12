@@ -99,7 +99,9 @@ export default {
         <h4>View [live site]</h4>
         `,
       }]
-    },
+    }, {
+      class: 'footer-row',
+    }
   ]
 };
 

@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 export class RouteMsg {
   constructor(
-    public sidebarState: string,
-    public currentPage: string,
+    public sidebar: string,
+    public page: string,
   ) {}
 }
 
@@ -15,8 +15,15 @@ export class RouteCommsService {
   private msgSrc = new Subject<RouteMsg>();
   msgOutput$ = this.msgSrc.asObservable();
 
-  emit(msg: RouteMsg) {
+  private scrollSrc = new Subject<number>();
+  scrollOutput$ = this.scrollSrc.asObservable();
+
+  emitStates(msg: RouteMsg) {
     this.msgSrc.next(msg);
+  }
+
+  emitScroll(scroll: number) {
+    this.scrollSrc.next(scroll);
   }
 
 }

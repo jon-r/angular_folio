@@ -113,7 +113,9 @@ export default {
         too (losing one hand doesn’t knock the player out instantly)</p>
         `,
       }],
-    },
+    }, {
+      class: 'footer-row',
+    }
   ]
 };
 

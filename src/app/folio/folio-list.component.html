@@ -1,16 +1,17 @@
 
 
   <nav class="folio-title">
+<!--    todo this filter bar needs moving somewhere in relation to the sidebar -->
     <a class="folio-filter nav-link" *ngFor="let filter of filters" [routerLink]="[{category: filter}]" >
         {{filter | titlecase}}
     </a>
   </nav>
 
-  <section class="folio-container" [scrollTop]="scrollPos" #listContainer >
+  <section class="folio-container outer-frame"  [scrollTop]="scrollPos" #listContainer >
 
-    <ul class="projects-list outer-frame" >
+    <ul class="projects-list" [ngStyle]="{ 'height.px' : folioHeight }" >
 
-        <li *ngFor="let project of projects"
+        <li *ngFor="let project of projects" #projectFrame
           class="project"
           [ngStyle]="project.computed.style"
           [@listAnim]="project.computed.active" >

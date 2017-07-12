@@ -102,6 +102,8 @@ export default {
         class: 'flex-triple',
         value: `${rootLink}logo.png`,
       }],
-    },
+    }, {
+      class: 'footer-row',
+    }
   ]
 };
