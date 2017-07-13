@@ -21,7 +21,7 @@ export class LODDirective implements AfterViewInit {
     const rect = this.el.nativeElement.getBoundingClientRect();
 
     return (
-      rect.top >= 0 &&
+//      rect.top >= 0 &&
       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
     );
   }

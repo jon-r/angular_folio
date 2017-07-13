@@ -85,21 +85,46 @@
   margin-right: auto;
 }
 
+/* content preload sizes */
+.content:not(.content-text) {
+  position: relative;
+}
+
+.content:not(.content-text)::after {
+  content: "";
+  display: block;
+}
+.frame-1-1::after {
+  padding-bottom: 100%;
+}
+
+.frame-4-3::after {
+  padding-bottom: 75%;
+}
+.frame-1-2::after {
+  padding-bottom: 50%;
+}
+.frame-16-9::after {
+  padding-bottom: 56.25%;
+}
+
+.content-inner {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+}
 
 /* iframe specific */
+
+/*
 .content-iframe {
   position: relative;
   margin: 0 auto;
     width: 1024px;
 }
 
-.content-iframe iframe {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  left: 0;
-  height: 100%;
-}
 
 .iframe-4-3::after {
   content: "";
@@ -107,3 +132,4 @@
   width: 100%;
   padding-bottom: 75%;
 }
+*/

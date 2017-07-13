@@ -1,23 +1,22 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { useAnimation, transition, trigger, query } from '@angular/animations';
+import { useAnimation, transition, trigger, group } from '@angular/animations';
 
 import { RouteCommsService } from '../shared/route-comms.service';
 
-import { fadeStagger } from '../shared/animations';
+import { fade, slide } from '../shared/animations';
 
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.css'],
   animations: [
-    trigger('rowAnim', [
-      // transition(':enter', [
-      //   query('section', [
-      //     useAnimation(fadeStagger, {params: { from: 0, to: 1 }}),
-      //   ])
-      // ]),
+    trigger('lod', [
+      transition(':enter', group([
+        useAnimation(fade, {params: { from: 0, to: 1 }}),
+        useAnimation(slide, {params: { from: 'translateY(-50px)' }}),
+      ]))
     ])
   ],
 })

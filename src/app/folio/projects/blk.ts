@@ -55,7 +55,7 @@ export default {
       },
       content: [{
         type: 'iframe',
-        class: 'iframe-4-3',
+        class: 'frame-4-3',
         value: 'http://jon-richards.com/blackjack-2/',
       }],
     }, {

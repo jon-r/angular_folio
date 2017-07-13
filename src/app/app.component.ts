@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/throttleTime';
+import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
 
 import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
@@ -67,7 +67,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.states = data;
   }
 
-  // source: https://stackoverflow.com/a/36849347
   scrollWatch(element: Element) {
     if (this.states.page !== 'folio') {
       return false;
@@ -113,11 +112,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   */
 
   ngAfterViewInit() {
+
     this.ngZone.runOutsideAngular(() => {
       const container = this.container.nativeElement;
 
       Observable.fromEvent(container, 'scroll')
-        .throttleTime(150)
+        .debounceTime(150)
         .subscribe(() => {
           this.scrollWatch(container);
           this.cdRef.detectChanges();

@@ -1,4 +1,4 @@
-<div [@rowAnim] *ngIf="template.rows" >
+<div *ngIf="template.rows" >
 
 
   <section class="content-row"
@@ -7,7 +7,7 @@
     [ngStyle]="row.style"
     (appLOD)="row.isActive = true" >
 
-    <div class="content-row-inner container"   >
+    <div class="content-row-inner container" >
 
       <div class="content content-pad" *ngFor="let content of row.content"
         [ngClass]="[ 'content-' + content.type , content.class||'' ]" >
@@ -15,9 +15,9 @@
             <ng-container [ngSwitch]="content.type" *ngIf="row.isActive || content.type === 'text'"  >
 
               <div *ngSwitchCase="'text'" [innerHTML]="content.value" ></div>
-              <div *ngSwitchCase="'svg'" [inlineSVG]="content.value" ></div>
-              <img *ngSwitchCase="'image'" [src]="content.value" />
-              <iframe *ngSwitchCase="'iframe'" [src]="content.value | safe" frameborder="no" allowtransparency="true" scrolling="no" ></iframe>
+              <div class="content-inner" *ngSwitchCase="'svg'" [inlineSVG]="content.value" [@lod] ></div>
+              <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" [@lod] />
+              <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe" frameborder="no" allowtransparency="true" scrolling="no" [@lod] ></iframe>
 
             </ng-container>
         </div>
