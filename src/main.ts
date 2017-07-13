@@ -18,15 +18,22 @@ const loaderFrame = document.getElementById('js_preLoader');
 
   loaderFrame.classList.add('going');
 
-  setTimeout(jr_bootstrap, 500);
+//  setTimeout(() => {
+//    loaderFrame.innerHTML = '';
+//  }, 500);
 
-  // loaderFrame.addEventListener('transitionend', jr_bootstrap);
+  // jr_bootstrap();
+
+  platformBrowserDynamic().bootstrapModule(AppModule);
+
+//  loaderFrame.addEventListener('transitio', () => {
+//    console.log(loaderFrame, 'animationend');
+//
+//  });
 
   return true;
 })();
 
-function jr_bootstrap() {
-    loaderFrame.innerHTML = '';
-    platformBrowserDynamic().bootstrapModule(AppModule);
-
-}
+// function jr_bootstrap() {
+//  platformBrowserDynamic().bootstrapModule(AppModule);
+// }

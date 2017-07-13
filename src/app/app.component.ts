@@ -19,28 +19,26 @@ import JRGrid from '../assets/jr_grid';
   animations: [
     trigger('routeAnimation', [
       transition(':enter', []),
-
-      // todo 'home<=>*'
+      transition('home=>*', group([
+        useAnimation(slideOutChild, { params: { to: 'translateX(-100%)'} }),
+        useAnimation(slideInChild, { params: { from: 'translateY(100%)' }}),
+      ])),
+      transition('*=>home', group([
+        useAnimation(slideOutChild, { params: { to: 'translateX(100%)'} }),
+        useAnimation(slideInChild, { params: { from: 'translateX(-100%)' }}),
+      ])),
       transition('about<=>folio', group([
         useAnimation(slideOutChild, { params: { to: 'translateY(-100%)'} }),
-        useAnimation(slideInChild, { params : { from: 'translateY(100%)' }}),
+        useAnimation(slideInChild, { params: { from: 'translateY(100%)' }}),
       ])),
     ]),
     trigger('sidebar', [
-      // todo: fix this up, perhaps need child [@]'s to set final state?
-      transition('*=>open', query('#sideBG', [
-        useAnimation(slide, { params: { to: 'translateX(256px) skewX(10deg)' } }),
-        style({ transform: 'translateX(256px) skewX(10deg)' })
-      ])),
-
-      transition('*=>closed', query('#sideBG', [
-        useAnimation(slide, { params: { to: 'translateX(64px)' } }),
-        style({ transform: 'translateX(64px)' })
-      ])),
-
-//      state('closed', query('#sideBG', style({ transform: 'translateX(64px)' }))),
-//      transition('open<=>closed', useAnimation(duration)),
-//      transition(':enter', useAnimation(slide, { params: { from: 'translateX(100vw)' } })),
+      state('home', style({ transform: 'translateX(300px) skew(20deg)' })),
+      transition('*<=>*', useAnimation(duration)),
+    ]),
+    trigger('nav', [
+      state('home', style({ transform: 'translateX(-100%)' })),
+      transition('*<=>*', useAnimation(duration)),
     ])
   ]
 })
@@ -48,8 +46,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('routesContainer') container: ElementRef;
 
   states: RouteMsg = {
-    page: null,
-    sidebar: null,
+    page: '',
+    sidebar: '',
   };
 
   grid;
@@ -75,6 +73,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.routerComms.emitScrollPos(element.scrollTop);
   }
 
+  prepRouteState(outlet) {
+    const page = outlet.activatedRouteData['anim'];
+    return page;
+  }
+
 
 // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
    // todo bonus = set this up as service? not needed but better organised
@@ -98,8 +101,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.routerComms.scrollToOutput$
       .subscribe(scroll => this.scrollTo(scroll));
 
-    this.routerComms.msgOutput$
-      .subscribe(data => this.updateLayout(data));
 
 // TODO optimise this grid, since it seems laggy AF on weaker pcs. check pocket
     // this.grid = new JRGrid({});
@@ -112,6 +113,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   */
 
   ngAfterViewInit() {
+    this.routerComms.msgOutput$
+      .subscribe(data => this.updateLayout(data));
 
     this.ngZone.runOutsideAngular(() => {
       const container = this.container.nativeElement;

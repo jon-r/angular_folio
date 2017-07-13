@@ -1,37 +1,33 @@
 
 <header class="site-header"  >
-<!--  <a routerLink="/" >-->
     <h1>Jon Richards</h1>
     <h3>Web Developer</h3>
-<!--  </a>-->
 </header>
 
-<div class="sidebar">
-<!--</div><div class="sidebar" [@sidebar]="states.state" > TODO fix consider css grid? since the layout is pretty griddy right now -->
-  <div id="sideBG" class="sidebar-bg anim" ></div>
-  <nav id="sideNav" class="site-nav" >
-    <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/jr-logo-fun.min.svg'" >
-      logo
-    </a>
+<div class="sidebar" >
+  <div class="sidebar-bg" [@sidebar]="prepRouteState(routerOutlet)" ></div>
 
+  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/jr-logo-fun.min.svg'" >
+    logo
+  </a>
+
+  <nav id="sideNav" class="site-nav" [@nav]="prepRouteState(routerOutlet)" >
     <a class="nav-link site-link" routerLink="folio" routerLinkActive="active">
-      <i class="nav-icon" [inlineSVG]="'../assets/ph.svg'" ></i>
       <h4>Folio</h4>
     </a>
 
     <a class="nav-link site-link" routerLink="about" routerLinkActive="active">
-      <i class="nav-icon" [inlineSVG]="'../assets/ph.svg'" ></i>
       <h4>About</h4>
     </a>
   </nav>
 </div>
 
 <main class="site-content full-screen"
-[@routeAnimation]="states.page"
+[@routeAnimation]="prepRouteState(routerOutlet)"
 [scrollTop]="scrollPos"
 #routesContainer >
 
-  <router-outlet ></router-outlet>
+  <router-outlet #routerOutlet="outlet" ></router-outlet>
 
 </main>
 

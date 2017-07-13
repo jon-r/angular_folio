@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import About from './about';
 
-import { RouteCommsService } from '../shared/route-comms.service';
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -13,12 +11,8 @@ export class AboutComponent implements OnInit {
 
   about = About;
 
-  constructor(
-    private routeCommsService: RouteCommsService,
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.routeCommsService.emitStates({ sidebar: 'closed', page: 'about' });
-  }
+  ngOnInit() { }
 
 }

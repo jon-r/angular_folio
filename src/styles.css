@@ -91,17 +91,24 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  transition: transform 400ms linear;
+  transition: transform 400ms ease-out;
+  background-color: #00897B;
+/*  box-shadow: 0 0 20px #000;*/
+  z-index: 99;
+}
+
+@keyframes disappear {
+  80% { transform: translateX(calc(96px - 100%)); opacity: 1 }
+  to { transform: translateX(calc(96px - 100%)); opacity: 0 }
 }
 
 .pre-loader-frame.going {
   transform: translateX(-100%);
+/*  animation: disappear 400ms ease-out forwards;*/
 }
 
 .pre-loader-slide {
-  transform: translateX(100%);
-  background-color: #00897B;
-  box-shadow: 0 0 20px #000;
+
 }
 
 .loader-logo {

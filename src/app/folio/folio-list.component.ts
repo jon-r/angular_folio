@@ -36,7 +36,6 @@ export class FolioListComponent implements OnInit {
 
   projects: Array<any>;
   folioHeight = 0;
-//  scrollPos = 0;
 
   filters = ['all', 'work', 'play'];
   category = 'all';
@@ -101,8 +100,6 @@ export class FolioListComponent implements OnInit {
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/
 
   ngOnInit() {
-
-    this.routeCommsService.emitStates({ sidebar: 'closed', page: 'folio' });
 
     this.filterProjects({value: 'all'});
 

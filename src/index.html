@@ -21,8 +21,6 @@
   <app-root></app-root>
 
   <div id="js_preLoader" class="pre-loader-frame full-screen" >
-    <div class="pre-loader-slide full-screen" ></div>
-
 
     <svg class="loader-logo" viewBox="-5 0 44 16">
       <g fill="none" stroke-width="2"><path id="js_loaderLogo" class="lg-jr" stroke="#E4E5E7" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/><g stroke-dasharray="21" stroke-linejoin="round" stroke="#B2DFDB"><path class="lg-br br-l" d="M7-1L2 8l5 9"/><path class="lg-br br-r" d="M27 17l5-9-5-9"/></g></g>
@@ -40,11 +38,14 @@
   (function() {
   var loaderLogo = document.getElementById('js_loaderLogo');
   var loaderFrame = document.getElementById('js_preLoader');
-  var ready = [false,false]; // TEMPORARY TO SKIP LOADING
+//  var ready = [false, false];
+  var ready = [false, true]; // TEMPORARY [false,true] TO SKIP LOADING
 
   function readyCheck(n) {
     ready[n] = true;
-    if (ready[0] === ready[1]) {
+
+    if (ready[0] && ready[1]) {
+      console.log('both ready');
       loaderFrame.dataset.ready = true;
       ready.forEach(function(check) { return check = false });
     }
@@ -53,7 +54,7 @@
     loaderLogo.addEventListener('animationend', function() {
       setTimeout(function() { readyCheck(1) }, 500);
     });
-    window.addEventListener('load', readyCheck);
+    window.addEventListener('load', function() { readyCheck(0) });
   })();
   </script>
 

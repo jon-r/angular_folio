@@ -1,15 +1,3 @@
-
-:host {
-/*  position: absolute;*/
-/*  height: 100%;*/
-/*  width: 100%;*/
-}
-
-.anim {
-  transition: transform 300ms ease-out;
-  position: absolute;
-}
-
 .site-header {
   right: 32px;
   bottom: 16px;
@@ -19,63 +7,50 @@
   position: fixed;
 }
 
-.site-nav {
-  position: absolute;
-}
-
-.nav-icon {
-  width: 32px;
-}
-
 .site-logo {
-  width: 128px;
+  width:100%;
   padding: 8px;
   display: block;
+  position: relative;
 }
-
-.site-link {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  border-top: solid 1px black;
-}
-
 .sidebar {
   position: fixed;
-  z-index: 99;
+  z-index: 5;
   top: 0;
   left: 0;
+  width: calc(64px + 5vw);
+  min-width: 100px;
+  height: 100vh;
 }
 
 .sidebar-bg {
-  background-color: #00897B;
+  position: absolute;
   transform-origin: top right;
-  top: 0;
   width: 100vw;
   right: 0;
-  height: 100vh;
+  top: 0;
+  height: 100%;
+  background-color: #00897B;
   box-shadow: 0 0 20px #000;
-/*  temp */
-  transform: translateX(64px)
-/*  transform: translateX(256px) skewX(15deg);*/
 }
+
+.site-nav {
+  position: absolute;
+  width: 100%;
+}
+
+
+
+
+.site-link {
+  padding: 8px;
+  border-top: solid 1px black;
+  display: block;
+  text-align: center;
+}
+
+
 
 .site-content {
   overflow-y: auto;
 }
-
-/*.site-content {
-  max-width: 1366px;
-  margin: 128p auto 128px;
-}*/
-
-/*.site-framer::after {
-  content: '';
-  position: absolute;
-  right: -2px;
-  top: calc(50% - 2px);
-  height: 4px;
-  width: 4px;
-  display: block;
-  background-color: magenta;
-}*/

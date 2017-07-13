@@ -2,8 +2,11 @@
 
   <nav class="folio-title">
 <!--    todo this filter bar needs moving somewhere in relation to the sidebar -->
-    <a class="folio-filter nav-link" *ngFor="let filter of filters" [routerLink]="[{category: filter}]" >
-        {{filter | titlecase}}
+    <a class="folio-filter nav-link"
+      *ngFor="let filter of filters"
+      [routerLink]="[{category: filter}]"
+      [ngClass]="{ active: category == filter }" >
+      {{filter | titlecase}}
     </a>
   </nav>
 

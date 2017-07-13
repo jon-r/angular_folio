@@ -1,7 +1,7 @@
 
 :host {
   position: absolute;
-/*  height: 100%;*/
+  height: 100%;
   width: 100%;
 }
 
@@ -10,13 +10,13 @@
 }
 
 .work {
-  top: 30vh;
-  left: calc(50vw - 200px);
+  top: 320px;
+  left: calc(530px + 5vw);
 }
 
 .about {
-  top: 45vh;
-  left: calc(50vw - 130px);
+  top: 500px;
+  left: calc(600px + 5vw);
 }
 
 .logo-home {
