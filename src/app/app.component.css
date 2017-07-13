@@ -31,7 +31,6 @@
   top: 0;
   height: 100%;
   background-color: #00897B;
-  box-shadow: 0 0 20px #000;
 }
 
 .site-nav {
@@ -39,16 +38,26 @@
   width: 100%;
 }
 
-
-
-
 .site-link {
   padding: 8px;
-  border-top: solid 1px black;
+  border-bottom: solid 1px black;
   display: block;
   text-align: center;
 }
+.site-link:first-of-type {
+  border-top: solid 1px black;
+}
+.site-link:hover {
+  background-color: #1c6b63;
+}
+.site-link.active {
+  background-color: #0e4c46;
+}
 
+.navicon {
+  width: 48px;
+  display: inline-block;
+}
 
 
 .site-content {

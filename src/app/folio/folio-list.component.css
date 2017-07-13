@@ -7,24 +7,28 @@
 
 .folio-container {
   position: relative;
-/*  height: calc(100vh - 144px);*/
-/*  overflow-y: auto;*/
+  margin-top: 48px;
 }
 
-.folio-title {
+.folio-header {
     text-align: center;
-    padding: 8px;
     width: 100%;
-    position: relative;
+    position: fixed;
     background-color: #0e4c46;
-    height: 48px;
-    z-index: 24;
+    z-index: 5;
 }
 
-.nav-link, .page-title {
+.folio-filter {
   display: inline-block;
-  margin: 0 8px;
-  z-index: 20;
+  min-width: calc(64px + 5vw);
+}
+
+.folio-filter:hover {
+  background-color: #1c6b63;
+}
+
+.folio-filter.active {
+  background-color: #00897B;
 }
 
 
@@ -49,7 +53,6 @@
   width: 768px;
   margin: 32px auto;
   border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 

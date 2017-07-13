@@ -5,14 +5,15 @@
 </header>
 
 <div class="sidebar" >
-  <div class="sidebar-bg" [@sidebar]="prepRouteState(routerOutlet)" ></div>
+  <div class="sidebar-bg frame-shadow" [@sidebar]="prepRouteState(routerOutlet)" ></div>
 
-  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/jr-logo-fun.min.svg'" >
+  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >
     logo
   </a>
 
   <nav id="sideNav" class="site-nav" [@nav]="prepRouteState(routerOutlet)" >
     <a class="nav-link site-link" routerLink="folio" routerLinkActive="active">
+      <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>Folio</h4>
     </a>
 

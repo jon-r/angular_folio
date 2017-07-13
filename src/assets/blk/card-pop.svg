@@ -4,30 +4,32 @@
       <path d="M0 0h50v70H0z"/>
     </clipPath>
     <filter id="dropShadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
-      <feOffset dy="2"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+      <feOffset dy="1"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <style>
-      .playing-card { transform-origin: 25px 70px; transition: transform 300ms cubic-bezier(.5, -.2, .5, 2); filter: url(#dropShadow);
-      } .playing-card.left { transform: translateX(-8px) rotate(-5deg) } .playing-card.right { transform: translateX(8px) rotate(5deg) } .hover-trigger:hover .left { transform: rotate(-20deg) translate(-10px, -20px); } .hover-trigger:hover .right { transform: rotate(20deg) translate(10px, -20px); } @keyframes spin { from { transform: rotate(0) } to { transform: rotate(360deg) } }
+      .playing-card { transform-origin: 25px 70px; transition: transform 300ms cubic-bezier(.5,-.2,.5,2); filter: url(#dropShadow) }
+      .playing-card.left { transform: translateX(-8px) rotate(-5deg) }
+      .playing-card.right { transform: translateX(8px) rotate(5deg) }
+      .hover-trigger:hover .left { transform: rotate(-20deg) translate(-10px, -20px); }
+      .hover-trigger:hover .right { transform: rotate(20deg) translate(10px, -20px); }
+      @keyframes spin { from { transform: rotate(0) } to { transform: rotate(360deg) } }
     </style>
   </defs>
-  <g class="playing-card left">
-    <rect fill="#fff" height="70" width="50" rx="3"/>
-    <path id="spades" d="M35 50a1 1 0 0 0 20 0q0-7-9-14t-8-14q0 7-9 14t-8 14a1 1 0 0 0 20 0m-3 8l5 8H33z" clip-path="url(#cut)"/>
-    <text font-weight="600" x="5" y="15">
-      A
-    </text>
-  </g>
-  <g class="playing-card right">
-    <rect fill="#fff" height="70" width="50" rx="3"/>
-    <path id="hearts" fill="red" d="M40 37a1 1 0 0 0-20 0q0 7 9 14t8 14q0-7 9-14t8-14a1 1 0 0 0-20 0z" clip-path="url(#cut)"/>
-    <text font-weight="600" x="5" y="15" fill="red">
-      Q
-    </text>
+  <g font-weight="600" font-family="georgia" >
+    <g class="playing-card left" font-weight="600"  >
+      <rect fill="#fff" height="70" width="50" rx="3"/>
+      <path id="spades" d="M35 50a1 1 0 0 0 20 0q0-7-9-14t-8-14q0 7-9 14t-8 14a1 1 0 0 0 20 0m-3 8l5 8H33z" clip-path="url(#cut)"/>
+      <text x="5" y="15">A</text>
+    </g>
+    <g class="playing-card right">
+      <rect fill="#fff" height="70" width="50" rx="3"/>
+      <path id="hearts" fill="red" d="M40 37a1 1 0 0 0-20 0q0 7 9 14t8 14q0-7 9-14t8-14a1 1 0 0 0-20 0z" clip-path="url(#cut)"/>
+      <text  x="5" y="15" fill="red">Q</text>
+    </g>
   </g>
 </svg>

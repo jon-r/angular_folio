@@ -2,7 +2,7 @@
 
 
   <section class="content-row"
-    *ngFor="let row of template.rows; index as i"
+    *ngFor="let row of template.rows"
     [ngClass]="row.class"
     [ngStyle]="row.style"
     (appLOD)="row.isActive = true" >

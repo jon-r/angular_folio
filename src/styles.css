@@ -26,11 +26,11 @@ a {
 }
 
 .nav-link {
-  color: #B2DFDB;
   position: relative;
-}
-.nav-link:hover, .nav-link:focus, .nav-link.active {
-  color: #00897B;
+  display: block;
+  text-align: center;
+  padding: 8px 16px;
+  transition-duration: 300ms;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
@@ -40,7 +40,7 @@ a {
     background-color: currentColor;
     height: 2px;
     position: absolute;
-    bottom: -4px;
+    bottom: 0;
     width: 100%;
     left: 0;
 }
@@ -58,6 +58,16 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+
+/* from */
+.content-shadow {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.frame-shadow {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -163,25 +173,6 @@ a {
   transition: opacity .1s
 }
 
-/* inline svg --------------------------------------------------------------- */
-
-/*
-
-.svg-overhang {
-  height: 150%;
-  width: 100%;
-}
-
-
-.wipe-out {
-  animation: wipe 1s both .3s;
-}
-
-.appear {
-  animation: fade-in-instant 1s both .3s;
-}
-*/
-
 
 /* css animations ----------------------------------------------------------- */
 
@@ -209,17 +200,7 @@ a {
   /*from { transform: rotate(0)}*/
   to { transform: rotate(360deg)}
 }
-/*
-@keyframes wipe {
-  from { transform: translateX(-100%) }
-  30% { transform: none }
-  to { transform: translate(100%) }
-}
-@keyframes fade-in-instant {
-  from, 29% { opacity: 0 }
-  30% { opacity: 1 }
-}
-*/
+
 
 @keyframes enter-left {
   from { opacity: 0; transform: translateX(-50%);}
