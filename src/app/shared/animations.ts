@@ -1,8 +1,8 @@
 
 import {animation, style, animate, stagger, query, animateChild, useAnimation, AnimationReferenceMetadata } from '@angular/animations';
 
-const defaultTime = '300ms ease-out';
-const defaultStagger = '150ms';
+const defaultTime = '400ms ease-out';
+const defaultStagger = '200ms';
 
 export const fade = animation([
   style({ opacity: '{{from}}' }),

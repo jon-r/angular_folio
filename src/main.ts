@@ -13,7 +13,7 @@ const loaderFrame = document.getElementById('js_preLoader');
 (function bootsrapNagging() {
 
   if (!loaderFrame.dataset.ready) {
-    return setTimeout(bootsrapNagging, 100);
+    return setTimeout(bootsrapNagging, 50);
   }
 
   loaderFrame.classList.add('going');
@@ -23,8 +23,10 @@ const loaderFrame = document.getElementById('js_preLoader');
 //  }, 500);
 
   // jr_bootstrap();
+  setTimeout(() => {
+    platformBrowserDynamic().bootstrapModule(AppModule);
+  }, 400);
 
-  platformBrowserDynamic().bootstrapModule(AppModule);
 
 //  loaderFrame.addEventListener('transitio', () => {
 //    console.log(loaderFrame, 'animationend');

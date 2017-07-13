@@ -34,10 +34,12 @@ import JRGrid from '../assets/jr_grid';
     ]),
     trigger('sidebar', [
       state('home', style({ transform: 'translateX(300px) skew(20deg)' })),
+      transition(':enter', useAnimation(slide, { params: { from: 'translateX(-200px)'}})),
       transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('nav', [
       state('home', style({ transform: 'translateX(-100%)' })),
+      transition(':enter', useAnimation(slide, { params: { from: 'translateX(-100%)'}})),
       transition('*<=>*', useAnimation(duration)),
     ])
   ]
