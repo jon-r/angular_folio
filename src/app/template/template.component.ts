@@ -5,7 +5,7 @@ import { useAnimation, transition, trigger, group } from '@angular/animations';
 
 import { RouteCommsService } from '../shared/route-comms.service';
 
-import { fade, slide } from '../shared/animations';
+import { fadeIn, slide } from '../shared/animations';
 
 @Component({
   selector: 'app-template',
@@ -14,7 +14,7 @@ import { fade, slide } from '../shared/animations';
   animations: [
     trigger('lod', [
       transition(':enter', group([
-        useAnimation(fade, {params: { from: 0, to: 1 }}),
+        fadeIn,
         useAnimation(slide, {params: { from: 'translateY(-50px)' }}),
       ]))
     ])

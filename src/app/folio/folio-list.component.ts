@@ -5,7 +5,7 @@ import { useAnimation, transition, trigger, state, style, group } from '@angular
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { RouteCommsService } from '../shared/route-comms.service';
-import { fade, duration, staggerChildren, slide } from '../shared/animations';
+import { fade, duration, staggerChildren, slide, fadeIn, fadeOut } from '../shared/animations';
 
 import { FolioService } from './folio.service';
 
@@ -15,8 +15,8 @@ import { FolioService } from './folio.service';
   styleUrls: ['./folio-list.component.css'],
   animations: [
     trigger('listAnim', [
-      transition(':enter', useAnimation(fade, {params: { from: 0, to: 1 }})),
-      transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
+      transition(':enter', fadeIn),
+      transition(':leave', fadeOut),
       transition('out=>in', useAnimation(staggerChildren)), // staggers entry
     ]),
     trigger('listInner', [
@@ -27,9 +27,9 @@ import { FolioService } from './folio.service';
     trigger('projectDetail', [
       transition(':enter', group([
         useAnimation(slide, {params: { from: 'translateY(-40px)'}}),
-        useAnimation(fade, {params: { from: 0, to: 1 }}),
+        fadeIn,
       ])),
-      transition(':leave', useAnimation(fade, {params: { from: 1, to: 0 }})),
+      transition(':leave', fadeOut),
     ])
   ],
 })
@@ -62,6 +62,10 @@ export class FolioListComponent implements OnInit {
       };
       project.rows.forEach(row => row.isActive = false);
     });
+  }
+
+  trackProjects(n, project) {
+    return project.id;
   }
 
   setActive(slug) {

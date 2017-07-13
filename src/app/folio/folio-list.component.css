@@ -87,3 +87,22 @@
   width: 100%;
   height: 100%;
 }
+
+.project-close,
+.project-close-footer {
+    position: absolute;
+    font-size: 2.37rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+.project-close {
+  top: 32px;
+  right: 16px;
+}
+
+.project-close-footer {
+  bottom: 32px;
+  width: 100%;
+  color: #202121;
+}

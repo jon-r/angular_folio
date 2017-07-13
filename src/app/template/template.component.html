@@ -1,5 +1,3 @@
-<div *ngIf="template.rows" >
-
 
   <section class="content-row"
     *ngFor="let row of template.rows"
@@ -20,10 +18,9 @@
               <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe" frameborder="no" allowtransparency="true" scrolling="no" [@lod] ></iframe>
 
             </ng-container>
+
         </div>
 
     </div>
 
   </section>
-  <!-- </div> -->
-</div>

@@ -11,13 +11,14 @@
     logo
   </a>
 
-  <nav id="sideNav" class="site-nav" [@nav]="prepRouteState(routerOutlet)" >
-    <a class="nav-link site-link" routerLink="folio" routerLinkActive="active">
+  <nav id="sideNav" class="site-nav" [@nav] *ngIf="prepRouteState(routerOutlet) !== 'home'" >
+    <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
       <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>Folio</h4>
     </a>
 
-    <a class="nav-link site-link" routerLink="about" routerLinkActive="active">
+    <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
+      <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>About</h4>
     </a>
   </nav>

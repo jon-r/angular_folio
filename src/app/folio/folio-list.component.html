@@ -4,7 +4,7 @@
 <!--    todo this filter bar needs moving somewhere in relation to the sidebar -->
     <a class="folio-filter nav-link"
       *ngFor="let filter of filters"
-      [routerLink]="[{category: filter}]"
+      [routerLink]="{category: filter}"
       [ngClass]="{ active: category == filter }" >
       {{filter | titlecase}}
     </a>
@@ -14,7 +14,7 @@
 
     <ul class="projects-list" [ngStyle]="{ 'height.px' : folioHeight }" >
 
-        <li *ngFor="let project of projects" #projectFrame
+        <li *ngFor="let project of projects; trackBy: trackProjects" #projectFrame
           class="project"
           [ngStyle]="project.computed.style"
           [@listAnim]="project.computed.active" >
@@ -22,7 +22,7 @@
           <a class="project-container frame-shadow"
             [ngClass]="project.computed.active"
             [ngStyle]="project.intro.style"
-            [routerLink]="[{project: project.slug}]"
+            [routerLink]="{project: project.slug}"
             [@listInner]="project.computed.active" >
 
             <div class="project-intro container content-pad hover-trigger"  >
@@ -40,11 +40,16 @@
             </div>
           </a>
 
-          <article class="project-wrapper" *ngIf="project.computed.active === 'in'" [@projectDetail] >
+          <ng-container *ngIf="project.computed.active === 'in'" >
+            <article class="project-wrapper"  [@projectDetail] >
 
-            <app-template [template]="project" ></app-template>
+              <app-template [template]="project" ></app-template>
 
-          </article>
+            </article>
+
+            <a class="project-close" [routerLink]="{category: category}" >&times;</a>
+            <a class="project-close-footer" [routerLink]="{category: category}" >Back</a>
+          </ng-container>
 
         </li>
     </ul>

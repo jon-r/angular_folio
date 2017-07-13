@@ -5,10 +5,9 @@ import 'rxjs/add/observable/fromEvent';
 
 import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
 
-import { duration, slide, slideInChild, slideOutChild, fadeInChild, fadeOutChild, hideInChild } from './shared/animations';
+import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from } from './shared/animations';
 
 import { RouteCommsService, RouteMsg } from './shared/route-comms.service';
-
 
 import JRGrid from '../assets/jr_grid';
 
@@ -20,16 +19,16 @@ import JRGrid from '../assets/jr_grid';
     trigger('routeAnimation', [
       transition(':enter', []),
       transition('home=>*', group([
-        useAnimation(slideOutChild, { params: { to: 'translateX(-100%)'} }),
-        useAnimation(slideInChild, { params: { from: 'translateY(100%)' }}),
+        useAnimation(slideOutChild, to.left),
+        useAnimation(slideInChild, from.down),
       ])),
       transition('*=>home', group([
-        useAnimation(slideOutChild, { params: { to: 'translateX(100%)'} }),
-        useAnimation(slideInChild, { params: { from: 'translateX(-100%)' }}),
+        useAnimation(slideOutChild, to.right),
+        useAnimation(slideInChild, from.left),
       ])),
       transition('about<=>folio', group([
-        useAnimation(slideOutChild, { params: { to: 'translateY(-100%)'} }),
-        useAnimation(slideInChild, { params: { from: 'translateY(100%)' }}),
+        useAnimation(slideOutChild, to.up),
+        useAnimation(slideInChild, from.down),
       ])),
     ]),
     trigger('sidebar', [
@@ -38,9 +37,8 @@ import JRGrid from '../assets/jr_grid';
       transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('nav', [
-      state('home', style({ transform: 'translateX(-100%)' })),
-      transition(':enter', useAnimation(slide, { params: { from: 'translateX(-100%)'}})),
-      transition('*<=>*', useAnimation(duration)),
+      transition(':enter', query('a', useAnimation(slideStagger, from.left) )),
+      transition(':leave', useAnimation(slide, to.left)),
     ])
   ]
 })
@@ -96,9 +94,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       .subscribe(scroll => this.scrollTo(scroll));
 
 
-// TODO more grid optimise?
-//     this.grid = new JRGrid({});
-//     this.grid.begin();
+// TODO more grid optimise? perhaps just pause when not on homepage, since it cant be seen elsewhere much
+    this.grid = new JRGrid({ rectSize: 4, spawnSpeed: 300 });
+    this.grid.begin();
 
   }
 
