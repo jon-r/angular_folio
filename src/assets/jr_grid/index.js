@@ -123,10 +123,8 @@ export default class JRGrid {
 
         if ((fps < 30) && (this.counter.max > 1)) {
           this.counter.max -= 1;
-
         } else if ((fps > 45) && (this.counter.max < this.config.limit)) {
           this.counter.max += 1;
-
         }
       }
       this.checkFrameRate();
@@ -145,7 +143,3 @@ export default class JRGrid {
     this.counter.active = Math.max(this.counter.active - 1, 0);
   }
 }
-
-const grid = new JRGrid({});
-
-window.addEventListener('load', grid.begin());
