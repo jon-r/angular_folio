@@ -10,10 +10,10 @@ export default class JRGrid {
 
   constructor({
     selector = '#js_gridBox',
-    gridLines = 10,
-    rectSize = 4, // including 1px pad
-    spawnSpeed = 1000, // time per dot spawn
-    runSpeed = 40, // time per dot activate the next dot
+    gridLines = 6,
+    rectSize = 5, // including 1px pad
+    spawnSpeed = 500, // time per dot spawn
+    runSpeed = 60, // time per dot activate the next dot
     limit = 10, // number of active lines
   }) {
     this.config = {
@@ -37,8 +37,14 @@ export default class JRGrid {
     this.points = activatePoints(grid.points);
 
     this.counter = {
-      max: this.config.limit,
+      max: 1,
       active: 0,
+    };
+
+    this.framerateTest = {
+      sum: 0,
+      counter: 0,
+      safeCap: 30, // min 30fps target
     };
   }
 
@@ -60,6 +66,8 @@ export default class JRGrid {
 
     const starts = points.starts;
     const startCount = starts.length;
+
+    this.checkFrameRate();
 
     setInterval(() => {
     // setTimeout(() => {
@@ -96,6 +104,35 @@ export default class JRGrid {
     });
   }
 
+  checkFrameRate() {
+    const rate = this.framerateTest;
+
+    const start = Date.now();
+
+    requestAnimationFrame(() => {
+      rate.counter += 1;
+
+      const end = Date.now();
+      rate.sum += (end - start);
+
+      if (rate.counter === 300) {
+        const fps = (3e5 / rate.sum); // 300 frames * 1000ms
+
+        rate.counter = 0;
+        rate.sum = 0;
+
+        if ((fps < 30) && (this.counter.max > 1)) {
+          this.counter.max -= 1;
+
+        } else if ((fps > 45) && (this.counter.max < this.config.limit)) {
+          this.counter.max += 1;
+
+        }
+      }
+      this.checkFrameRate();
+    });
+  }
+
   checkPoints() {
     return (this.counter.active < this.counter.max);
   }
@@ -111,4 +148,4 @@ export default class JRGrid {
 
 const grid = new JRGrid({});
 
-// window.addEventListener('load', grid.begin());
+window.addEventListener('load', grid.begin());
