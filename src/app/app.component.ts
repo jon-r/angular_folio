@@ -45,10 +45,7 @@ import JRGrid from '../assets/jr_grid';
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('routesContainer') container: ElementRef;
 
-  states: RouteMsg = {
-    page: '',
-    sidebar: '',
-  };
+  page: string;
 
   grid;
   scrollPos;
@@ -59,14 +56,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     private cdRef: ChangeDetectorRef,
   ) {}
 
-
-  updateLayout(data: RouteMsg) {
-    this.scrollTo(0);
-    this.states = data;
-  }
-
   scrollWatch(element: Element) {
-    if (this.states.page !== 'folio') {
+    if (this.page !== 'folio') {
       return false;
       // only interested if is on the template page;
     }
@@ -75,6 +66,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   prepRouteState(outlet) {
     const page = outlet.activatedRouteData['anim'];
+    this.page = page;
     return page;
   }
 
@@ -102,9 +94,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       .subscribe(scroll => this.scrollTo(scroll));
 
 
-// TODO optimise this grid, since it seems laggy AF on weaker pcs. check pocket
-    // this.grid = new JRGrid({});
-    // this.grid.begin();
+// TODO more grid optimise?
+//     this.grid = new JRGrid({});
+//     this.grid.begin();
 
   }
 
@@ -113,8 +105,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   */
 
   ngAfterViewInit() {
-    this.routerComms.msgOutput$
-      .subscribe(data => this.updateLayout(data));
 
     this.ngZone.runOutsideAngular(() => {
       const container = this.container.nativeElement;

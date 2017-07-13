@@ -14,10 +14,9 @@ TODO: about page basics
   - consider non-template elements, outside the frame?, mimic cv layout?
 
 #projects
-re-add the colors/icons from work
 general style improve. (best to do after more images)
-setup iframe pipe. add codepens/blackjack etc
-for 'intro' logos, perhaps make taller, remove the first image?
+first of each project to have super dark bg of part of the site (behind a little screenshot)
+fix the little screens - multi matte (can find exact px height of the white)
 
 
 #blk
@@ -44,7 +43,7 @@ map (!codepen interactive)
 #ico
 _svg_
 
-ALWAYS ANIM OR HOVER ANIM. one or the other
+ALWAYS ANIM - can load hover ones on start
 
 ~~charlie~~
 ~~ridings coin/flower (take minerva)~~
@@ -56,7 +55,7 @@ ALWAYS ANIM OR HOVER ANIM. one or the other
 ~~computer drawn then entering~~
 ~~screen/tablet/phone~~ (!redo !!!animated)
 jr-logo
-weather (!animated) https://codepen.io/inspironix/pen/MpBXYG
+~~weather (!animated) https://codepen.io/inspironix/pen/MpBXYG~~
 
 
 #rhc
@@ -71,7 +70,7 @@ dynamic scaler -- https://codepen.io/inspironix/pen/oXqezg
 
 
 #web
-need some intro icon(s)
+need some intro icon(s). just use one of the 4 sites, and take color from folio site
 
 homepage - recroom
 homepage - Arcane

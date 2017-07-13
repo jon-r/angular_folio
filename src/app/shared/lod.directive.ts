@@ -1,7 +1,6 @@
 import { Directive, ElementRef, Output, AfterViewInit, EventEmitter } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-// import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 
 import { RouteCommsService } from '../shared/route-comms.service';
@@ -21,19 +20,18 @@ export class LODDirective implements AfterViewInit {
     const rect = this.el.nativeElement.getBoundingClientRect();
 
     return (
-//      rect.top >= 0 &&
       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
     );
   }
 
   ngAfterViewInit() {
     this.routeComms.scrollPosOutput$
-      .takeUntil(this.appLOD) // only needs to watch once
-      .subscribe(() => {
-        if (this.isInViewPort()) {
-          this.appLOD.emit(true);
-        }
-      });
+    .takeUntil(this.appLOD) // only needs to watch once
+    .subscribe(() => {
+      if (this.isInViewPort()) {
+        this.appLOD.emit(true);
+      }
+    });
   }
 
 }

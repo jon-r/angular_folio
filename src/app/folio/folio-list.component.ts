@@ -1,3 +1,5 @@
+// todo -> clicking outside a focussed element closes it. some background element?
+
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { useAnimation, transition, trigger, state, style, group } from '@angular/animations';
 

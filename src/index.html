@@ -45,7 +45,6 @@
     ready[n] = true;
 
     if (ready[0] && ready[1]) {
-      console.log('both ready');
       loaderFrame.dataset.ready = true;
       ready.forEach(function(check) { return check = false });
     }

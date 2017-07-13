@@ -19,8 +19,6 @@ export default  [
 
 /*
 
-BIG TODO: plan the content in word or publisher. something easier than trying to visualise the TS object
-
 Priority
 - rhc
 - cam
@@ -32,7 +30,7 @@ Priority
     VILLA
 - ico
 
-Later
+Later (after deploy)
 - kit
     SLIDER
     RWD tabbed pagination (arcane book)
@@ -53,7 +51,7 @@ TODO: about page basics
   - consider non-template elements, outside the frame?, mimic cv layout?
 TODO: -wait till the bg is in place to trigger the rest of page.
   - maybe use angular animationBuilder for  page tranisitions
-TODO: something on the home page. interactive logo? (eg superdeper simple hover effect).
+TODO: (!) something on the home page. interactive logo? (eg superdeper simple hover effect).
   - comes to mind is < > expand and the content changes through assorted... things. looks like an old flipping clock?
 
 */
