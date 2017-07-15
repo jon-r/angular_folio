@@ -1,0 +1,37 @@
+<li #projectFrame class="project"
+  [ngStyle]="style"
+  [@listAnim]="state" >
+
+  <a class="project-container frame-shadow"
+    [ngClass]="state"
+    [ngStyle]="project.intro.style"
+    [@listInner]="state"
+     >
+
+    <div class="project-intro container content-pad hover-trigger"  >
+
+      <div class="project-intro-label" >
+        <h3>{{project.intro.title}} {{i}}</h3>
+        <em>{{project.intro.desc}}</em>
+      </div>
+
+      <div class="project-intro-icon"
+       *ngIf="project.intro.icon"
+       [inlineSVG]="project.intro.icon" >
+      </div>
+
+    </div>
+  </a>
+
+  <ng-container *ngIf="state === 'in'" >
+    <article class="project-wrapper" [@projectDetail] >
+
+      <app-template [template]="project" ></app-template>
+
+    </article>
+
+    <a class="project-close" [routerLink]="{category: category}" >&times;</a>
+    <a class="project-close-footer" [routerLink]="{category: category}" >Back</a>
+  </ng-container>
+
+</li>

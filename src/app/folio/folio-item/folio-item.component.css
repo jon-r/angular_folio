@@ -1,0 +1,68 @@
+.project {
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.project-container {
+  position: relative;
+  display: block;
+  height: 192px;
+  width: 768px;
+  margin: 32px auto;
+  border-radius: 8px;
+}
+
+
+.project-wrapper {
+  margin-top: -96px;
+  position: relative;
+}
+
+.project-intro {
+
+  padding: 8px;
+  display: flex;
+  height: 100%;
+  margin: auto;
+  justify-content: space-between;
+/*  align-items: flex-start;*/
+  overflow: hidden;
+
+
+}
+.project-intro-label {
+  flex: 1;
+  align-self: center;
+}
+.project-intro-icon {
+   flex: 1;
+   height: 320px;
+   z-index: 5;
+}
+
+.project-intro-icon >>> svg {
+  width: 100%;
+  height: 100%;
+}
+
+.project-close,
+.project-close-footer {
+    position: absolute;
+    font-size: 2.37rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+.project-close {
+  top: 32px;
+  right: 16px;
+}
+
+.project-close-footer {
+  bottom: 32px;
+  width: 100%;
+  color: #202121;
+}

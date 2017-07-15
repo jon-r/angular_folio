@@ -14,6 +14,7 @@ import { TemplateComponent } from './template/template.component';
 import { SafePipe } from './shared/safeURL.pipe';
 import { RouteCommsService } from './shared/route-comms.service';
 import { LODDirective } from './shared/lod.directive';
+import { FolioItemComponent } from './folio/folio-item/folio-item.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LODDirective } from './shared/lod.directive';
     TemplateComponent,
     SafePipe,
     LODDirective,
+    FolioItemComponent,
   ],
   imports: [
     BrowserModule,

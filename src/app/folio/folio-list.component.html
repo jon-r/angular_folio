@@ -14,44 +14,15 @@
 
     <ul class="projects-list" [ngStyle]="{ 'height.px' : folioHeight }" >
 
-        <li *ngFor="let project of projects; trackBy: trackProjects" #projectFrame
-          class="project"
-          [ngStyle]="project.computed.style"
-          [@listAnim]="project.computed.active" >
+      <app-folio-item
+        *ngFor="let project of projects; index as n; trackBy: trackProjects"
+        [routerLink]="{project: project.slug}"
+        [project]="project"
+        [listIndex]="n"
+        [activeProject]="activeProject"
+        (updateActive)="setFolioHeight($event)" >
+      </app-folio-item>
 
-          <a class="project-container frame-shadow"
-            [ngClass]="project.computed.active"
-            [ngStyle]="project.intro.style"
-            [routerLink]="{project: project.slug}"
-            [@listInner]="project.computed.active" >
-
-            <div class="project-intro container content-pad hover-trigger"  >
-
-              <div class="project-intro-label" >
-                <h3>{{project.intro.title}} {{i}}</h3>
-                <em>{{project.intro.desc}}</em>
-              </div>
-
-              <div class="project-intro-icon"
-               *ngIf="project.intro.icon"
-               [inlineSVG]="project.intro.icon" >
-              </div>
-
-            </div>
-          </a>
-
-          <ng-container *ngIf="project.computed.active === 'in'" >
-            <article class="project-wrapper"  [@projectDetail] >
-
-              <app-template [template]="project" ></app-template>
-
-            </article>
-
-            <a class="project-close" [routerLink]="{category: category}" >&times;</a>
-            <a class="project-close-footer" [routerLink]="{category: category}" >Back</a>
-          </ng-container>
-
-        </li>
     </ul>
 
 </section>
