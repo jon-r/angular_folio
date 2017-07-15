@@ -9,7 +9,7 @@ import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from } 
 
 import { RouteCommsService, RouteMsg } from './shared/route-comms.service';
 
-import JRGrid from '../assets/jr_grid';
+import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
 
 @Component({
   selector: 'app-root',
@@ -95,8 +95,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
 // TODO more grid optimise? perhaps just pause when not on homepage, since it cant be seen elsewhere much
-    this.grid = new JRGrid({ rectSize: 4, spawnSpeed: 300 });
-    this.grid.begin();
+    this.grid = new JRGrid({ target: 'jr_grid' }).build().play();
 
   }
 

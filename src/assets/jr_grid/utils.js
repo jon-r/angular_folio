@@ -22,6 +22,18 @@ export function randomFrom(arr) {
   return arr[rng];
 }
 
+export function biasedRNG(arr, biasIdx, biasedMultiplier = 2) {
+  const boosted = arr[biasIdx];
+
+  let n = 0;
+  while (n < biasedMultiplier) {
+    arr.push(boosted);
+    n += 1;
+  }
+
+  return randomFrom(arr);
+}
+
 export function addArr(arr1, arr2) {
   return arr1.map((n, i) => Number(n) + Number(arr2[i]));
 }
