@@ -1,30 +1,27 @@
-<li #projectFrame class="project"
-  [ngStyle]="style"
-  [@listAnim]="state" >
+<li #float class="project-float" [ngStyle]="style" >
 
-  <a class="project-container frame-shadow"
-    [ngClass]="state"
-    [ngStyle]="project.intro.style"
-    [@listInner]="state"
-     >
+  <div #introBG class="project-intro-bg frame-shadow"
+    [style.background]="project.intro.style.background" >
+  </div>
 
-    <div class="project-intro container content-pad hover-trigger"  >
+  <a class="project-intro container content-pad hover-trigger"
+    [style.color]="project.intro.style.color" >
 
-      <div class="project-intro-label" >
-        <h3>{{project.intro.title}} {{i}}</h3>
-        <em>{{project.intro.desc}}</em>
-      </div>
-
-      <div class="project-intro-icon"
-       *ngIf="project.intro.icon"
-       [inlineSVG]="project.intro.icon" >
-      </div>
-
+    <div #label class="project-intro-label" >
+      <h3>{{project.intro.title}} {{i}}</h3>
+      <em>{{project.intro.desc}}</em>
     </div>
+
+    <div #icon class="project-intro-icon"
+      [ngClass]="state"
+     [inlineSVG]="project.intro.icon" >
+    </div>
+
   </a>
 
+
   <ng-container *ngIf="state === 'in'" >
-    <article class="project-wrapper" [@projectDetail] >
+    <article class="project-wrapper" [@content] >
 
       <app-template [template]="project" ></app-template>
 

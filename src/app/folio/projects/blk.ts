@@ -15,7 +15,7 @@ export default {
     icon: `${rootLink}card-pop.svg`,
     style: {
       color: '#f9a825',
-      'background': 'linear-gradient(transparent, rgba(0,0,0,.1),rgba(0,0,0,.5)), url(../assets/noise.png), #2a5a30',
+      background: 'linear-gradient(#2a5a30, #152e18)',
     },
   },
   rows: [

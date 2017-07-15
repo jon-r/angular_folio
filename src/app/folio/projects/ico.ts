@@ -11,8 +11,8 @@ export default {
     desc: 'Bespoke SVG | CSS3 Animations',
     icon: `${rootLink}sapp-logo.svg`,
     style: {
-      'background-image': 'linear-gradient(#222, #000)',
-      'color': '#ff8c39',
+      background: 'linear-gradient(#222, #000)',
+      color: '#ff8c39',
     },
   },
   rows: [

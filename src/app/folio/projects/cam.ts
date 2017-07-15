@@ -11,8 +11,8 @@ export default {
     desc: 'SAAS Corporate Site &amp; Software Portfolio',
     icon: `${rootLink}monitor-2.svg`,
     style: {
-      'color': '#fff',
-      'background-image': 'linear-gradient(to right, #055492 50%, #143B53)'
+      color: '#fff',
+      background: 'linear-gradient(to right, #055492 50%, #143B53)'
     },
   },
   rows: [

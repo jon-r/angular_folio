@@ -58,23 +58,3 @@ export const slideInChild = animation(
 export const slideOutChild = animation(
   query(':leave', useAnimation(slide, {params: { to: '{{ to }}' }}), { optional: true })
 );
-
-// keeping if needed later
-
-// export const fadeStagger = animation([
-//   style({ opacity: '{{from}}' }),
-//   stagger(defaultStagger, [
-//     animate('{{ time }}', style({ opacity: '{{to}}' }))
-//   ])
-// ]);
-
-// export const fadeInChild = animation(
-//   query(':enter', useAnimation(fade, {params: { from: 0, to: 1 }}))
-// );
-// export const fadeOutChild = animation(
-//   query(':leave', useAnimation(fade, {params: { from: 1, to: 0 }}), { optional: true })
-// );
-
-
-// https://www.yearofmoo.com/2017/06/new-wave-of-animation-features.html#programmatic-animations-with-animationbuilder
-//  look into this for varible positions???

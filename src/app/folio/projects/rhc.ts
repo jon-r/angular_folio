@@ -10,8 +10,8 @@ export default {
     desc: 'Catering Equipment E-Catalogue',
     icon: `${rootLink}monitor-2.svg`,
     style: {
-      'background-image': 'linear-gradient(#af1d1d, #640202)',
-      'color': '#f2f2f2',
+      background: 'linear-gradient(#af1d1d, #640202)',
+      color: '#f2f2f2',
     },
   },
   rows: [
