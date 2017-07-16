@@ -73,6 +73,16 @@ a {
 
 /* helpers ------------------------------------------------------------------ */
 
+.navicon {
+  width: 48px;
+  display: inline-block;
+}
+
+.navicon.inline {
+  width: 1.5em;
+  vertical-align: middle;
+}
+
 .no-clip {
     overflow: visible;
 }

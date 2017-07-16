@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 256">
+  <style>
+    @keyframes reveal {
+      from, 5%, 30%, to { opacity: 0 }
+      10%, 25% { opacity: 1 }
+    }
+    .switcheroo {
+      animation: reveal 10s infinite;
+    }
+    .une { animation-delay: }
+    .deux { animation-delay: -2.5s }
+    .trois { animation-delay: -5s }
+    .quatre { animation-delay: -7.5s }
+
+  </style>
+
+  <g font-family="'SoleilW01-Bold'" >
+    <g fill="#B2DFDB" font-size="48" >
+      <text class="switcheroo une" transform="translate(203.937 234.012)">
+        Front End
+      </text>
+      <text class="switcheroo deux" transform="translate(190.377 234.012)">
+        Wordpress
+      </text>
+      <text class="switcheroo trois" transform="translate(209.576 234.012)">
+        Angular4
+      </text>
+      <text class="switcheroo quatre" transform="translate(246.008 234.012)">
+        VueJS
+      </text>
+
+      <text transform="translate(55.43 91.83)" font-size="67">
+        Jon Richards
+      </text>
+      <text transform="translate(173.138 132.208)" font-size="38">
+        Web Developer
+      </text>
+
+      <path  d="M176.03 217l11.02-20h-9.1L168 214.57c-.67 1.2-.67 3 0 4.2l9.95 18.23h9.1l-11.02-20zm274.37 0l-11 20h9.1l9.94-18.32c.67-1.2.67-2.62 0-3.82L448.5 197h-9.1l11 20z"/>
+    </g>
+    <g fill="#00897B" font-size="24" >
+      <text transform="translate(171.338 175.29)" >
+        specialising in
+      </text>
+      <text transform="translate(52.482 28.452)" >
+        Hi I my name is
+      </text>
+      <text transform="translate(46.463 132.208)" >
+        and I am a
+      </text>
+    </g>
+
+  </g>
+</svg>

@@ -37,7 +37,6 @@
   position: absolute;
   width: 100%;
 }
-
 .site-link {
   padding: 8px;
   border-bottom: solid 1px black;
@@ -54,11 +53,12 @@
   background-color: #0e4c46;
 }
 
-.navicon {
-  width: 48px;
-  display: inline-block;
+.home-nav {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  white-space: nowrap;
 }
-
 
 .site-content {
   overflow-y: auto;

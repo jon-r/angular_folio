@@ -6,6 +6,15 @@
   overflow: hidden;
 }
 
+.home-nav-bg {
+  position: absolute;
+  width: 500px;
+  left: calc(360px + 5vw);
+  height: 100%;
+  transform: skewX(30deg);
+  background-color: rgba(14, 76, 70, 0.7);
+}
+
 .home-link {
   position: absolute;
 }
@@ -20,10 +29,9 @@
   left: calc(600px + 5vw);
 }
 
-.logo-home {
-    width: 50%;
-    position: absolute;
-    right: -13%;
-    bottom: 0;
-    opacity: 0.1;
+.welcome {
+  position: absolute;
+  width: 30%;
+  right: 4vw;
+  top: 4vh;
 }

@@ -2,8 +2,6 @@
 RWD
 TODO: clean up old data assets
 TODO: bonus Consider into setting all this as a file not included in the main build?
-TODO: -wait till the bg is in place to trigger the rest of page.
-  - maybe use angular animationBuilder for  page tranisitions
 
 #home
 TODO: something on the home page. interactive logo? (eg superdeper simple hover effect).
@@ -14,7 +12,6 @@ TODO: about page basics
   - consider non-template elements, outside the frame?, mimic cv layout?
 
 #projects
-general style improve. (best to do after more images)
 first of each project to have super dark bg of part of the site (behind a little screenshot)
 fix the little screens - multi matte (can find exact px height of the white)
 

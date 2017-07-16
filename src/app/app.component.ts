@@ -5,7 +5,7 @@ import 'rxjs/add/observable/fromEvent';
 
 import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
 
-import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from } from './shared/animations';
+import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from, fadeIn } from './shared/animations';
 
 import { RouteCommsService, RouteMsg } from './shared/route-comms.service';
 
@@ -34,6 +34,11 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
     trigger('sidebar', [
       state('home', style({ transform: 'translateX(300px) skew(20deg)' })),
       transition(':enter', useAnimation(slide, { params: { from: 'translateX(-200px)'}})),
+      transition('*<=>*', useAnimation(duration)),
+    ]),
+    trigger('header', [
+      state('home', style({ transform: 'translateX(120%)' })),
+      transition(':enter', fadeIn),
       transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('nav', [
