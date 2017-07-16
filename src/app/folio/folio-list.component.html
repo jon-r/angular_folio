@@ -16,7 +16,6 @@
 
       <app-folio-item
         *ngFor="let project of projects; index as n; trackBy: trackProjects"
-        [routerLink]="{project: project.slug}"
         [project]="project"
         [listIndex]="n"
         [activeProject]="activeProject"

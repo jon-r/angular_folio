@@ -1,11 +1,14 @@
+<div class="project-wrapper-bg full-screen" *ngIf="state === 'in'" (click)="goBack()" ></div>
+
 <li #float class="project-float" [ngStyle]="style" >
 
   <div #introBG class="project-intro-bg frame-shadow"
     [style.background]="project.intro.style.background" >
   </div>
 
-  <a class="project-intro container content-pad hover-trigger"
-    [style.color]="project.intro.style.color" >
+  <a class="project-intro content-pad hover-trigger"
+    [style.color]="project.intro.style.color"
+    [routerLink]="{project: project.slug}" >
 
     <div #label class="project-intro-label" >
       <h3>{{project.intro.title}} {{i}}</h3>
@@ -14,21 +17,21 @@
 
     <div #icon class="project-intro-icon"
       [ngClass]="state"
-     [inlineSVG]="project.intro.icon" >
+      [inlineSVG]="project.intro.icon" >
     </div>
 
   </a>
 
 
   <ng-container *ngIf="state === 'in'" >
+
     <article class="project-wrapper" [@content] >
 
       <app-template [template]="project" ></app-template>
 
     </article>
 
-    <a class="project-close" [routerLink]="{category: category}" >&times;</a>
-    <a class="project-close-footer" [routerLink]="{category: category}" >Back</a>
+    <a class="project-close" (click)="goBack()" [style.color]="project.intro.style.color" >&times;</a>
   </ng-container>
 
 </li>

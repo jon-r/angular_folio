@@ -79,6 +79,9 @@ export default {
       }],
     }, {
       class: 'footer-row',
+      content: [{
+        type: 'footer'
+      }]
     }
   ]
 };

@@ -22,10 +22,10 @@ export default {
         <h2>The<br> Recruitment Room</h2>
         <p>Recuitment Agency Site.</p>
         <h4>The Role</h4>
-        <p>Senior Web Developer at [Minerva creative]</p>
+        <p>Senior Web Developer at <a href="http://www.minerva-creative.com/" ${linkAttrs} >Minerva Creative</a></p>
         <h4>The Toolkit</h4>
         <p>Wordpress | Foundation</p>
-        <h4>View [live site]</h4>
+        <h4>View <a href="http://therecruitmentroom.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
       }, {
         type: 'image',
@@ -51,8 +51,8 @@ export default {
         <h4>The Role</h4>
         <p>Senior Web Developer (freelance)</p>
         <h4>The Toolkit</h4>
-        <p>Wordpress | [Bulma CSS]</p>
-        <h4>View [live site]</h4>
+        <p>Wordpress | <a href="http://bulma.io/" ${linkAttrs} >Bulma</a></p>
+        <h4>View <a href="http://www.minerva-creative.com/" ${linkAttrs} >Live Site</a></h4>
         `,
       }]
     }, {
@@ -67,10 +67,10 @@ export default {
         <h2>Villa Romana</h2>
         <p>Italian Restaurant in Liverpool.</p>
         <h4>The Role</h4>
-        <p>Senior Web Developer at [Minerva creative]</p>
+        <p>Senior Web Developer at <a href="http://www.minerva-creative.com/" ${linkAttrs} >Minerva Creative</a></p>
         <h4>The Toolkit</h4>
         <p>Wordpress | Bootstrap</p>
-        <h4>View [live site]</h4>
+        <h4>View <a href="http://www.villaromanaliverpool.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
       }, {
         type: 'image',
@@ -93,14 +93,17 @@ export default {
         <h2>Cuzina</h2>
         <p>Greek Restaurant in Nottingham</p>
         <h4>The Role</h4>
-        <p>Senior Web Developer at [Minerva creative]</p>
+        <p>Senior Web Developer at <a href="http://www.minerva-creative.com/" ${linkAttrs} >Minerva Creative</a></p>
         <h4>The Toolkit</h4>
         <p>Wordpress | Foundation</p>
-        <h4>View [live site]</h4>
+        <h4>View <a href="http://cuzina.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
       }]
     }, {
       class: 'footer-row',
+      content: [{
+        type: 'footer'
+      }]
     }
   ]
 };

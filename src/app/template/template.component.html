@@ -10,12 +10,18 @@
       <div class="content content-pad" *ngFor="let content of row.content"
         [ngClass]="[ 'content-' + content.type , content.class||'' ]" >
 
-            <ng-container [ngSwitch]="content.type" *ngIf="row.isActive || content.type === 'text'"  >
+            <ng-container [ngSwitch]="content.type" *ngIf="row.isActive || content.type === 'text' || content.type === 'footer'"  >
 
               <div *ngSwitchCase="'text'" [innerHTML]="content.value" ></div>
               <div class="content-inner" *ngSwitchCase="'svg'" [inlineSVG]="content.value" [@lod] ></div>
               <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" [@lod] />
-              <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe" frameborder="no" allowtransparency="true" scrolling="no" [@lod] ></iframe>
+
+              <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe"
+                frameborder="no" allowtransparency="true" scrolling="no" [@lod] ></iframe>
+
+              <div class="text-center" *ngSwitchCase="'footer'" >
+                <h4 ><a class="nav-link" (click)="goBack()" >Back</a></h4>
+              </div>
 
             </ng-container>
 

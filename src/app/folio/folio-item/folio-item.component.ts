@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter, ElementRef } from '@angular/core';
+import { Location } from '@angular/common';
 
 // todo close button(s) arent getting the category?
 // todo slidy masks for all svgs
@@ -48,7 +49,10 @@ export class FolioItemComponent implements OnInit {
   style;
   state;
 
-  constructor(private builder: AnimationBuilder) {}
+  constructor(
+    private builder: AnimationBuilder,
+    private location: Location,
+  ) {}
 
   activate() {
     this.state = 'in';
@@ -98,12 +102,18 @@ export class FolioItemComponent implements OnInit {
   }
 
   emitHeight() {
+    console.log(this.project);
       const h = this.float.nativeElement.clientHeight || 0;
       this.updateActive.emit(h);
   }
 
+  goBack() {
+    this.location.back();
+  }
+
   ngOnInit() {
     this.project.rows.forEach(row => row.isActive = false);
+
   }
 
 }

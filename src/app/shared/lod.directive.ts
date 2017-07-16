@@ -16,22 +16,20 @@ export class LODDirective implements AfterViewInit {
     private routeComms: RouteCommsService,
   ) {}
 
-  private isInViewPort(): boolean {
-    const rect = this.el.nativeElement.getBoundingClientRect();
-
-    return (
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-  }
-
   ngAfterViewInit() {
+    const rect = this.el.nativeElement.getBoundingClientRect();
+    const offset =  rect.top - window.innerHeight;
+
     this.routeComms.scrollPosOutput$
     .takeUntil(this.appLOD) // only needs to watch once
-    .subscribe(() => {
-      if (this.isInViewPort()) {
+    .subscribe((n) => {
+      if (n > offset) {
         this.appLOD.emit(true);
       }
     });
+
+
+
   }
 
 }

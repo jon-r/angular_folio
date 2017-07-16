@@ -1,14 +1,8 @@
 :host {
-/*  display: block;*/
   position: absolute;
-/*  height: 100%;*/
   width: 100%;
-
 }
 
 .about-container {
   position: relative;
-
-  /*z-index: 20;*/
-  /*margin: 96px auto 128px;*/
 }

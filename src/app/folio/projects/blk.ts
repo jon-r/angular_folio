@@ -43,7 +43,7 @@ export default {
         class: 'text-center',
         value: `
         <h4>View source on
-          <a class="nav-link" href="https://github.com/jon-r/jr_blackJackVue" ${linkAttrs} >Github</a>
+          <a href="https://github.com/jon-r/jr_blackJackVue" ${linkAttrs} >Github</a>
         </h4>
         `,
       }],
@@ -115,6 +115,9 @@ export default {
       }],
     }, {
       class: 'footer-row',
+      content: [{
+        type: 'footer'
+      }]
     }
   ]
 };

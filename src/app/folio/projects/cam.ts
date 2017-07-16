@@ -37,7 +37,7 @@ export default {
         class: 'text-center',
         value: `
         <h4>View
-          <a class="nav-link" href="https://www.cammsgroup.com/" ${linkAttrs} >live site</a>
+          <a href="https://www.cammsgroup.com/" ${linkAttrs} >live site</a>
         </h4>
         `,
       }],
@@ -104,6 +104,9 @@ export default {
       }],
     }, {
       class: 'footer-row',
+      content: [{
+        type: 'footer'
+      }]
     }
   ]
 };

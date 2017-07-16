@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs/Observable';
 import { useAnimation, transition, trigger, group } from '@angular/animations';
@@ -28,10 +29,15 @@ export class TemplateComponent implements OnInit {
 
   constructor(
     private routeComms: RouteCommsService,
+    private location: Location,
   ) {}
 
   activateRow(row) {
     row.isActive = true;
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   ngOnInit() {}
