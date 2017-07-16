@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs/Observable';
-import { useAnimation, transition, trigger, group } from '@angular/animations';
+import { useAnimation, transition, trigger, group, query } from '@angular/animations';
 
 
 import { RouteCommsService } from '../shared/route-comms.service';
@@ -15,11 +14,11 @@ import { fadeIn, slide } from '../shared/animations';
   styleUrls: ['./template.component.css'],
   animations: [
     trigger('lod', [
-      transition(':enter', group([
+      transition('*=>*', query(':enter', group([
         fadeIn,
         useAnimation(slide, {params: { from: 'translateY(-50px)' }}),
-      ]))
-    ])
+      ]), { optional: true })),
+    ]),
   ],
 })
 export class TemplateComponent implements OnInit {
@@ -29,16 +28,12 @@ export class TemplateComponent implements OnInit {
 
   constructor(
     private routeComms: RouteCommsService,
-    private location: Location,
   ) {}
 
   activateRow(row) {
     row.isActive = true;
   }
 
-  goBack() {
-    this.location.back();
-  }
 
   ngOnInit() {}
 

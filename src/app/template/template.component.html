@@ -7,20 +7,20 @@
 
     <div class="content-row-inner container" >
 
-      <div class="content content-pad" *ngFor="let content of row.content"
-        [ngClass]="[ 'content-' + content.type , content.class||'' ]" >
+      <div class="content" *ngFor="let content of row.content; index as i"
+        [ngClass]="[ 'content-' + content.type , content.class||'' ]" [@lod]="row.isActive" >
 
             <ng-container [ngSwitch]="content.type" *ngIf="row.isActive || content.type === 'text' || content.type === 'footer'"  >
 
               <div *ngSwitchCase="'text'" [innerHTML]="content.value" ></div>
-              <div class="content-inner" *ngSwitchCase="'svg'" [inlineSVG]="content.value" [@lod] ></div>
-              <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" [@lod] />
+              <div class="content-inner" *ngSwitchCase="'svg'" [inlineSVG]="content.value" ></div>
+              <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" />
 
               <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe"
-                frameborder="no" allowtransparency="true" scrolling="no" [@lod] ></iframe>
+                frameborder="no" allowtransparency="true" scrolling="no" ></iframe>
 
               <div class="text-center" *ngSwitchCase="'footer'" >
-                <h4 ><a class="nav-link" (click)="goBack()" >Back</a></h4>
+                <h4 ><a class="nav-link" [routerLink]="{category: 'all'}" >Back</a></h4>
               </div>
 
             </ng-container>

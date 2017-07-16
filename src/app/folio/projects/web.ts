@@ -6,9 +6,13 @@ export default {
   cat: 'work',
   slug: 'web',
   intro: {
-    title: 'More',
-    desc: 'Assorted sites, primarily in hospitality',
-    style: {},
+    title: 'Wordpress Development',
+    desc: 'Assorted sites I worked on as primary developer',
+    icon: `${rootLink}monitor-2.svg`,
+    style: {
+      background: '#23282d',
+      color: '#ddd',
+    },
   },
   rows: [{
       style: {
@@ -16,6 +20,10 @@ export default {
         color: '#31b0bd',
       },
       content: [{
+        type: 'image',
+        class: 'image-shadow frame-1-1',
+        value: `${rootLink}recruitment.jpg`,
+      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -27,10 +35,6 @@ export default {
         <p>Wordpress | Foundation</p>
         <h4>View <a href="http://therecruitmentroom.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
-      }, {
-        type: 'image',
-        class: 'content-overlap',
-        value: `${rootLink}recruitment.jpg`,
       }]
     }, {
       style: {
@@ -39,10 +43,6 @@ export default {
         background: `url(${rootLink}paper_tile_yellow.jpg)`,
       },
       content: [{
-        type: 'image',
-        class: 'content-overlap',
-        value: `${rootLink}arcane.jpg`,
-      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -52,7 +52,33 @@ export default {
         <p>Senior Web Developer (freelance)</p>
         <h4>The Toolkit</h4>
         <p>Wordpress | <a href="http://bulma.io/" ${linkAttrs} >Bulma</a></p>
-        <h4>View <a href="http://www.minerva-creative.com/" ${linkAttrs} >Live Site</a></h4>
+        <h4>View <a href="http://arcanebar.com/" ${linkAttrs} >Live Site</a></h4>
+        `,
+      }, {
+        type: 'image',
+        class: 'image-shadow frame-1-1',
+        value: `${rootLink}arcane.jpg`,
+      }]
+    }, {
+      style: {
+        'background-color': '#eee',
+        color: '#BB7726',
+      },
+      content: [{
+        type: 'image',
+        class: 'image-shadow frame-1-1',
+        value: `${rootLink}cuzina.jpg`,
+      }, {
+        type: 'text',
+        class: 'intro-text',
+        value: `
+        <h2>Cuzina</h2>
+        <p>Greek Restaurant in Nottingham</p>
+        <h4>The Role</h4>
+        <p>Senior Web Developer at <a href="http://www.minerva-creative.com/" ${linkAttrs} >Minerva Creative</a></p>
+        <h4>The Toolkit</h4>
+        <p>Wordpress | Foundation</p>
+        <h4>View <a href="http://cuzina.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
       }]
     }, {
@@ -74,30 +100,8 @@ export default {
         `,
       }, {
         type: 'image',
-        class: 'content-overlap',
+        class: 'image-shadow frame-1-1',
         value: `${rootLink}villa.jpg`,
-      }]
-    }, {
-      style: {
-        'background-color': '#eee',
-        color: '#BB7726',
-      },
-      content: [{
-        type: 'image',
-        class: 'content-overlap',
-        value: `${rootLink}cuzina.jpg`,
-      }, {
-        type: 'text',
-        class: 'intro-text',
-        value: `
-        <h2>Cuzina</h2>
-        <p>Greek Restaurant in Nottingham</p>
-        <h4>The Role</h4>
-        <p>Senior Web Developer at <a href="http://www.minerva-creative.com/" ${linkAttrs} >Minerva Creative</a></p>
-        <h4>The Toolkit</h4>
-        <p>Wordpress | Foundation</p>
-        <h4>View <a href="http://cuzina.co.uk/" ${linkAttrs} >Live Site</a></h4>
-        `,
       }]
     }, {
       class: 'footer-row',

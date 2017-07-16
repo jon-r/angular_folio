@@ -3,7 +3,7 @@ const rootLink = '../assets/cam/';
 
 
 export default {
-  id: 4,
+  id: 2,
   cat: 'work',
   slug: 'cam',
   intro: {
@@ -31,24 +31,21 @@ export default {
         `,
       }]
     }, {
-      class: 'text-row',
+      class: 'text-row push-right',
       content: [{
         type: 'text',
-        class: 'text-center',
         value: `
-        <h4>View
+        <h4 class="text-center" >View
           <a href="https://www.cammsgroup.com/" ${linkAttrs} >live site</a>
         </h4>
         `,
       }],
     }, {
-      class: 'image-row',
-      content: [{
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }],
-    }, {
-      class: 'text-row',
+      class: 'align-tops',
+      style: {
+        background: `url(${rootLink}bg-health.jpg) top/cover`,
+        color: '#fff',
+      },
       content: [{
         type: 'text',
         value: `
@@ -57,21 +54,10 @@ export default {
         customers in a site that was clearer for the user and easier to maintain by the team at CAMMS.</p>
         <p>The project was built under a short timescale, from concept to deployment in three months.</p>
         `,
-      }],
-    }, {
-      class: 'row-gallery image-row',
-      content: [{
-        type: 'image',
-        value: `${rootLink}logo.png`,
       }, {
         type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        class: 'content-overlap frame-2-1',
+        value: `${rootLink}home.jpg`,
       }],
     }, {
       class: 'text-row',
@@ -87,19 +73,47 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery image-row',
+      style: {
+        backgroundColor: '#2079bf',
+      },
+      class: 'row-gallery align-tops',
       content: [{
+        class: 'frame-21-9',
+        type: 'image',
+        value: `${rootLink}about.jpg`,
+      }, {
+        class: 'frame-21-9',
+        type: 'image',
+        value: `${rootLink}solutions.jpg`,
+      }, {
+        class: 'frame-21-9',
+        type: 'image',
+        value: `${rootLink}budget.jpg`,
+      }, {
+        class: 'frame-21-9',
+        type: 'image',
+        value: `${rootLink}community.jpg`,
+      }],
+    }, {
+      class: 'row-gallery',
+      style: {
+        backgroundColor: '#fff',
+      },
+      content: [{
+        class: 'frame-1-1',
         type: 'svg',
         value: `${rootLink}ico-chat.svg`,
       }, {
+        class: 'frame-1-1',
         type: 'svg',
         value: `${rootLink}ico-finance.svg`,
       }, {
+        class: 'frame-1-1',
         type: 'svg',
         value: `${rootLink}ico-screen.svg`,
       }, {
+        class: 'flex-triple frame-1-3',
         type: 'image',
-        class: 'flex-triple',
         value: `${rootLink}logo.png`,
       }],
     }, {

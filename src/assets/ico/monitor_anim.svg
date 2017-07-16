@@ -47,25 +47,25 @@
   stroke-dasharray: 607 609;
   stroke-dashoffset: 608;
 }  
-.screen-anim:hover .line-monitor { animation: enter 1.5s linear 2s both; }
-.screen-anim:hover .color-monitor { animation: enter 1.5s linear 2s both; }
-.screen-anim:hover .line-monitor { animation-direction: reverse; }
+.line-monitor { animation: enter 1.5s linear 2s both; }
+.color-monitor { animation: enter 1.5s linear 2s both; }
+.line-monitor { animation-direction: reverse; }
   
-.screen-anim:hover .linedraw_0,
-.screen-anim:hover .linedraw_1,
-.screen-anim:hover .linedraw_2,
-.screen-anim:hover .linedraw_3,
-.screen-anim:hover .linedraw_4,
-.screen-anim:hover .linedraw_5 {
+.linedraw_0,
+.linedraw_1,
+.linedraw_2,
+.linedraw_3,
+.linedraw_4,
+.linedraw_5 {
   animation: draw 1200ms ease-out forwards;
 }
   
-.screen-anim:hover .linedraw_0 { animation-delay: 0}
-.screen-anim:hover .linedraw_1 { animation-delay: 1000ms }
-.screen-anim:hover .linedraw_2 { animation-delay: 200ms }
-.screen-anim:hover .linedraw_3 { animation-delay: 300ms }
-.screen-anim:hover .linedraw_4 { animation-delay: 400ms }
-.screen-anim:hover .linedraw_5 { animation-delay: 700ms; animation-duration: 600ms }
+.linedraw_0 { animation-delay: 0}
+.linedraw_1 { animation-delay: 1000ms }
+.linedraw_2 { animation-delay: 200ms }
+.linedraw_3 { animation-delay: 300ms }
+.linedraw_4 { animation-delay: 400ms }
+.linedraw_5 { animation-delay: 700ms; animation-duration: 600ms }
   
   
 @keyframes draw { 100% { stroke-dashoffset: 0;} }

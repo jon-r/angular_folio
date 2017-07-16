@@ -51,7 +51,6 @@ export const slideStagger = animation([
   ])
 ], {params: { time: defaultTime, to: '*', from: '*' }});
 
-
 export const slideInChild = animation(
   query(':enter', useAnimation(slide, {params: { from: '{{ from }}' }}))
 );

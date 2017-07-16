@@ -12,21 +12,14 @@
       </feMerge>
     </filter>
     <style>
-      .playing-card { transform-origin: 25px 70px; transition: transform 300ms cubic-bezier(.5,-.2,.5,2); filter: url(#dropShadow) }
+      .playing-card { transform-origin: 25px 70px; transition: transform 300ms 500ms cubic-bezier(.5,-.2,.5,2); filter: url(#dropShadow); }
       .playing-card.left { transform: translateX(-8px) rotate(-5deg) }
       .playing-card.right { transform: translateX(8px) rotate(5deg) }
-      .hover-trigger:hover .left { transform: rotate(-20deg) translate(-10px, -20px); }
-      .hover-trigger:hover .right { transform: rotate(20deg) translate(10px, -20px); }
-      @keyframes spin { from { transform: rotate(0) } to { transform: rotate(360deg) } }
-      .slidy-mask { transform: translateY(-45%); transition: transform 300ms ease-out;}
-      .in .slidy-mask { transform: none; }
+      .in .left { transform: rotate(-20deg) translate(-10px, -10px); }
+      .in .right { transform: rotate(20deg) translate(10px, -10px); }
     </style>
-    <clipPath id="ico-mask"  >
-      <rect class="slidy-mask" x="-45" y="-45" width="150" height="150"/>
-    </clipPath>
-
   </defs>
-  <g font-weight="600" font-family="georgia" clip-path="url(#ico-mask)" >
+  <g font-weight="600" font-family="georgia" >
     <g class="playing-card left" font-weight="600"  >
       <rect fill="#fff" height="70" width="50" rx="3"/>
       <path id="spades" d="M35 50a1 1 0 0 0 20 0q0-7-9-14t-8-14q0 7-9 14t-8 14a1 1 0 0 0 20 0m-3 8l5 8H33z" clip-path="url(#cut)"/>

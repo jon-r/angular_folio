@@ -2,7 +2,7 @@ import { linkAttrs } from './index';
 const rootLink = '../assets/rhc/';
 
 export default {
-  id: 2,
+  id: 4,
   cat: 'work',
   slug: 'rhc',
   intro: {
@@ -16,7 +16,7 @@ export default {
   },
   rows: [
     {
-      class: 'text-row row-collapse',
+      class: 'text-row',
       content: [ {
         type: 'text',
         class: 'intro-text',
@@ -32,25 +32,21 @@ export default {
           <li>Amazon AWS Hosting</li>
           <li>Illustrator SVG icons</li>
         </ul>
-        `,
-      }]
-    }, {
-      class: 'text-row',
-      content: [{
-        type: 'text',
-        class: 'text-center',
-        value: `
         <h4>View
           <a href="http://redhotchilli.catering/" ${linkAttrs} >live site</a>
         </h4>
         `,
-      }],
+      }]
     }, {
-      class: 'image-row',
+      class: 'row-collapse',
+      style: {
+        background: 'linear-gradient(to right, #20252d 25%, #5a6372 75%)',
+      },
       content: [{
         type: 'image',
-        value: `${rootLink}logo.png`,
-      }],
+        class: 'frame-9-16 content-overlap',
+        value: `${rootLink}first-hd.jpg`,
+      }]
     }, {
       class: 'text-row',
       content: [{
@@ -59,42 +55,37 @@ export default {
         <p>The Website at Red Hot Chilli is an online catalogue, using a custom-made CMS system built
         around the WordPress database functions. The site’s frontend is a responsive, fully featured
         design with a very lightweight footprint.</p>
-        <p>The custom backend consists of a number of separate PHP modules that combine to create the
-         shop catalogue environment. While each component can work independently, the more complex
-         functions rely on a library of core variables. For example, the navigation relies on unique
-         page references, and the category pages rely on pre-assigned filters.</p>
         `,
       }],
     }, {
-      class: 'row-gallery image-row',
+      style: {
+        backgroundColor: '#640202',
+      },
+      class: 'row-collapse',
       content: [{
+        class: 'frame-2-1 image-shadow',
         type: 'image',
-        value: `${rootLink}logo.png`,
+        value: `${rootLink}detail.jpg`,
       }, {
+        class: 'frame-2-1 image-shadow',
         type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        value: `${rootLink}style-guide.png`,
       }],
     }, {
-      class: 'image-row',
+      style: {
+        backgroundColor: '#640202',
+      },
       content: [{
-        type: 'svg',
-        value: `${rootLink}chip.svg`,
-      }, {
-        type: 'svg',
-        value: `${rootLink}table-print.svg`,
-      }, {
+        class: 'frame-ultra image-shadow',
         type: 'image',
-        class: 'flex-double',
-        value: `${rootLink}logo.png`,
-      }],
-    }, {
-      class: 'text-row',
+        value: `${rootLink}home.jpg`,
+      }, {
+        class: 'frame-ultra image-shadow',
+        type: 'image',
+        value: `${rootLink}category.jpg`,
+      }]
+    },   {
+      class: 'text-row align-tops',
       content: [{
         type: 'text',
         value: `
@@ -106,35 +97,58 @@ export default {
         included clear specs and descriptions. A large number of customers still prefer measurements
         in feet and inches, so I have made sure to include a simple mm to feet/inch converter.</p>
         `,
+      }, {
+        type: 'iframe',
+        class: 'frame-3-2',
+        value: '//codepen.io/inspironix/embed/preview/oXqezg/?height=600&theme-id=light&default-tab=result&embed-version=2',
       }],
     }, {
-      class: 'row-gallery image-row',
+      class: 'row-collapse',
       content: [{
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
+        type: 'svg',
+        class: 'frame-1-4',
+        value: `${rootLink}rhc-icons.svg`,
       }],
     }, {
-      class: 'image-row',
+      class: 'text-row',
       content: [{
-        type: 'svg',
-        value: `${rootLink}chip.svg`,
-      }, {
-        type: 'svg',
-        value: `${rootLink}table-print.svg`,
-      }, {
-        type: 'image',
-        class: 'flex-double',
-        value: `${rootLink}logo.png`,
+        type: 'text',
+        value: `
+        <p>The custom backend consists of a number of separate PHP modules that combine to create the
+        shop catalogue environment. While each component can work independently, the more complex
+        functions rely on a library of core variables. For example, the navigation relies on unique
+        page references, and the category pages rely on pre-assigned filters.</p>
+        `,
       }],
+    }, {
+      class: 'row-collapse',
+      style: {
+        backgroundColor: '#640202',
+      },
+      content: [{
+        type: 'image',
+        class: 'frame-9-16 image-shadow',
+        value: `${rootLink}modular.jpg`,
+      }]
+    }, {
+      class: 'row-collapse',
+      style: {
+        backgroundColor: '#640202',
+      },
+      content: [{
+        type: 'image',
+        class: 'frame-9-16 image-shadow',
+        value: `${rootLink}shop_flow.jpg`,
+      }]
+    }, {
+      style: {
+        backgroundColor: '#640202',
+      },
+      content: [{
+        type: 'image',
+        class: 'frame-9-16 image-shadow',
+        value: `${rootLink}shop_compile.jpg`,
+      }]
     }, {
       class: 'footer-row',
       content: [{

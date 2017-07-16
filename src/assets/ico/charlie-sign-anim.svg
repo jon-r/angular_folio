@@ -5,7 +5,6 @@
       from { transform: rotate(5deg) translateY(10px) }
       50% { transform: translateY(-2px) }
       to { transform: rotate(-5deg) translateY(10px) }
-
     }
     @keyframes armbounce {
       from { transform: translate(5px,10px) }
@@ -20,32 +19,23 @@
     }
     .anim-body {
       transform-origin: 235px 240px;
-    }
-    .charlie:hover .anim-body {
       animation: bodybounce 1s infinite ease-in-out alternate;
     }
-
     .anim-arm {
       transform-origin: 600px 550px;
-    }
-    .charlie:hover .anim-arm {
       animation: armbounce 1s infinite ease-in-out alternate;
     }
-
-
     .anim-tache {
       transform-origin: 236px 130px;
     }
-    .charlie:hover .tache-left {
+    .tache-left {
       animation: tache-left .5s infinite ease-in-out alternate;
     }
-    .charlie:hover .tache-right {
+    .tache-right {
       animation: tache-right .5s infinite ease-in-out alternate;
     }
     .anim-brows {
       transform-origin: 235px 95px;
-    }
-    .charlie:hover .anim-brows {
       animation: brows .3s infinite alternate;
     }
 

@@ -8,7 +8,7 @@ export default {
   slug: 'ico',
   intro: {
     title: 'SVG Inconography',
-    desc: 'Bespoke SVG | CSS3 Animations',
+    desc: 'Bespoke SVG elements that I have produced or animated',
     icon: `${rootLink}sapp-logo.svg`,
     style: {
       background: 'linear-gradient(#222, #000)',
@@ -22,8 +22,6 @@ export default {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h4>The Project</h4>
-        <p>A presentation and live demo of a number of SVG elements that I have produced.</p>
         <h4>The Toolkit</h4>
         <ul>
           <li>Illustrator (preparing and tidying vector illustrations)</li>
@@ -33,7 +31,10 @@ export default {
         `,
       }]
     }, {
-      class: 'image-row row-collapse',
+      style: {
+        backgroundColor: '#B2DFDB',
+      },
+      class: 'row-collapse',
       content: [{
         type: 'svg',
         class: 'frame-1-1',
@@ -44,7 +45,9 @@ export default {
         value: `${rootLink}ridings-ico.svg`,
       }],
     }, {
-      class: 'image-row',
+      style: {
+        backgroundColor: '#B2DFDB',
+      },
       content: [{
         type: 'svg',
         class: 'frame-1-1',
@@ -63,18 +66,20 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery image-row',
+      style: {
+        backgroundColor: '#B2DFDB',
+      },
       content: [{
         type: 'svg',
-        class: 'frame-4-3',
+        class: 'frame-3-4',
         value: `${rootLink}monitor_anim.svg`,
       }, {
         type: 'iframe',
-        class: 'frame-4-3',
+        class: 'frame-3-4',
         value: '//codepen.io/inspironix/embed/preview/MpBXYG/?height=265&theme-id=light&default-tab=result&embed-version=2',
       }, {
         type: 'svg',
-        class: 'frame-4-3',
+        class: 'frame-3-4',
         value: `${rootLink}screen.svg`,
       }],
     }, {

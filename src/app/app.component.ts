@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, NgZone, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
@@ -42,7 +42,7 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
     ])
   ]
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements AfterViewInit {
   @ViewChild('routesContainer') container: ElementRef;
 
   page: string;
@@ -89,25 +89,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
 
-  ngOnInit(): void {
+  ngAfterViewInit() {
+
     this.routerComms.scrollToOutput$
       .subscribe(scroll => this.scrollTo(scroll));
 
-
-// TODO more grid optimise? perhaps just pause when not on homepage, since it cant be seen elsewhere much
     this.grid = new JRGrid({ target: 'jr_grid' }).build().play();
 
-  }
+    const container = this.container.nativeElement;
 
-  /* better debounce credit:
-  - https://stackoverflow.com/a/36849347
-  */
-
-  ngAfterViewInit() {
-
+    /* better debounce credit:
+    - https://stackoverflow.com/a/36849347
+    */
     this.ngZone.runOutsideAngular(() => {
-      const container = this.container.nativeElement;
-
       Observable.fromEvent(container, 'scroll')
         .debounceTime(150)
         .subscribe(() => {

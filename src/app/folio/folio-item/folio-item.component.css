@@ -1,12 +1,27 @@
 
 /* TODO >>> is obsolete */
 
+.project-wrapper-bg {
+  cursor: pointer;
+  background-color: #0e4c46;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.project-wrapper-bg:hover {
+  opacity: 0.3
+}
+
 .project-float {
   position: absolute;
   transition: transform 0.3s ease-in-out;
   width: 100%;
   left: 0;
   top: 0;
+  overflow: hidden;
+}
+
+.project-float.in {
+  overflow: visible;
 }
 
 .project-intro-bg {

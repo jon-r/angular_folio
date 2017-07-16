@@ -1,6 +1,6 @@
 /*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img,embed,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
 
-/* BASE STYLE --------------------------------------------------------------- */
+/* BASE STYLE/TYPOGRAPHY ---------------------------------------------------- */
 
 body {
 
@@ -18,8 +18,6 @@ h3 { font-size: 2.37rem }
 h4 { font-size: 1.77rem }
 h5 { font-size: 1.33rem }
 
-
-
 a {
   text-decoration: none;
   color: inherit;
@@ -30,20 +28,48 @@ a {
   text-align: center;
   padding: 8px 16px;
   transition-duration: 300ms;
+  cursor: pointer;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
-    /* border-bottom: solid 2px; */
-    content: "";
-    display: block;
+.nav-link::after, .content a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover::after, .nav-link.active::after, .content a:hover::after {
     background-color: currentColor;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+/* style-free content formatting -------------------------------------------- */
+
+.content p {
+  margin-bottom: 1.2rem;
+}
+
+.content a {
+  color: #00897B;
+  position: relative;
+}
+
+.content ul {
+  padding-left: 32px;
+  list-style: circle;
+  margin-bottom: 1.2rem;
+}
 
 /* helpers ------------------------------------------------------------------ */
 
@@ -60,8 +86,8 @@ a {
 }
 
 
-/* from */
-.content-shadow {
+/* from material design */
+.content-shadow, .image-shadow img {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -105,7 +131,6 @@ a {
   z-index: 99;
 }
 
-
 .pre-loader-frame.going {
   transform: translateX(100%);
 }
@@ -121,9 +146,6 @@ a {
 .loader-spin {
   height: 5%;
 }
-
-
-
 .lg-jr {
   animation: fade-in 400ms 1s both
 }
@@ -171,7 +193,6 @@ a {
   opacity: 1;
   transition: opacity .1s
 }
-
 
 /* css animations ----------------------------------------------------------- */
 

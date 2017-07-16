@@ -1,18 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 10 80 80">
   <style>
-    @keyframes coinDrop { from {opacity: 0} 20% {opacity: 1} to {transform: rotate(-50deg) } } 
-    .coins {  }
-    .coin-1 { transform:none } 
-    .coin-2 { transform:rotate(20deg) } 
-    .content-svg:hover .coins { transition: fill 500ms; transform-origin: 100px 40px; animation: coinDrop 1s infinite linear both; } 
-    .content-svg:hover .coin-2 { animation-delay: 500ms}
+    @keyframes coinDrop { from {opacity: 0} 20% {opacity: 1} to {transform: rotate(-50deg) } }
+    .coins { transform-origin: 100px 40px; animation: coinDrop 1s infinite linear both }
+    .coin-2 { transform:rotate(20deg); animation-delay: 500ms }
   </style>
   <mask id="pig-hole" maskUnits="userSpaceOnUse">
     <path d="M0 0h100v100H0" fill="#fff"></path>
     <circle cx="50" cy="60" r="15"></circle>
   </mask>
   <path fill="#2079bf" d="M73.303 55.184H69.55a19.765 19.765 0 0 0-4.993-9.015c-.09-1.153-.182-4.6 1.67-6.448a1.03 1.03 0 0 0-.655-1.754c-.155-.01-3.943-.218-7.66 3.677a19.807 19.807 0 0 0-27.395 18.292 19.87 19.87 0 0 0 4.286 12.3l3.702 11.305a1.027 1.027 0 0 0 .977.708h6.937a1.03 1.03 0 0 0 1.028-1.03v-3.687a19.8 19.8 0 0 0 5.458.04v3.648a1.03 1.03 0 0 0 1.03 1.03h6.937a1.026 1.026 0 0 0 .976-.703l3.617-10.856a19.7 19.7 0 0 0 3.393-5.784h4.443a1.03 1.03 0 0 0 1.03-1.028v-9.666a1.03 1.03 0 0 0-1.03-1.028zm-18.338 24.26l.782-.507a1.03 1.03 0 0 0-.827-1.857 17.763 17.763 0 0 1-9.61-.118 1.03 1.03 0 0 0-.865 1.843l.946.63v2.757h-5.16l-3.496-10.664a1.042 1.042 0 0 0-.205-.427A17.743 17.743 0 0 1 50.32 42.19a17.59 17.59 0 0 1 7.453 1.643 1.02 1.02 0 0 0 1.32-.437 10.298 10.298 0 0 1 4.25-2.995 13.396 13.396 0 0 0-.802 6.33 1.032 1.032 0 0 0 .225.548v.06l.104.053a17.66 17.66 0 0 1 4.847 9.03 1.037 1.037 0 0 0 1.085.82h3.468v7.61l-3.96.003a1.026 1.026 0 0 0-1.153.688 17.617 17.617 0 0 1-3.386 5.965 1.036 1.036 0 0 0-.196.346L60.13 82.193h-5.165z"></path>
-  <g fill="transparent" stroke="#2079bf" stroke-width="2">
+  <g fill="#fff" stroke="#2079bf" stroke-width="2">
     <path d="M49 45h2a16 16 0 0 0-15 10"></path>
     <g mask="url(#pig-hole)">
       <circle class="coins coin-2" cx="45" cy="20" r="5"></circle>

@@ -22,6 +22,10 @@ export default {
     {
       class: 'text-row row-collapse',
       content: [{
+        type: 'svg',
+        class: 'frame-1-1',
+        value: `${rootLink}vuejs.svg`,
+      }, {
         type: 'text',
         class: 'intro-text row-collapse',
         value: `
@@ -48,15 +52,13 @@ export default {
         `,
       }],
     }, {
-      style: {
-        'padding-top': '128px',
-        'padding-bottom': '128px',
-        background: `url(${rootLink}ipad-bg.svg) center 64px /1440px 900px no-repeat, #B2DFDB`,
-      },
+
+      // TODO: be nice to link to a demo version of the game that plays automatically
+      class: 'blackjack-row',
       content: [{
         type: 'iframe',
-        class: 'frame-4-3',
-        value: 'http://jon-richards.com/blackjack-2/',
+        class: 'frame-3-4',
+        value: '//jon-richards.com/blackjack-2/',
       }],
     }, {
       class: 'text-row',
@@ -71,32 +73,13 @@ export default {
         `,
       }],
     }, {
-      class: 'row-gallery image-row',
+      style: {
+        backgroundColor: '#fff',
+      },
       content: [{
         type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }, {
-        type: 'image',
-        value: `${rootLink}logo.png`,
-      }],
-    }, {
-      class: 'image-row',
-      content: [{
-        type: 'svg',
-        value: `${rootLink}chip.svg`,
-      }, {
-        type: 'svg',
-        value: `${rootLink}table-print.svg`,
-      }, {
-        type: 'image',
-        class: 'flex-double',
-        value: `${rootLink}logo.png`,
+        class: 'frame-3-4 content-overlap',
+        value: `${rootLink}results.png`,
       }],
     }, {
       class: 'text-row',
@@ -112,6 +95,49 @@ export default {
         ‘win/lose’ conditions that treated the hands independently from each other, and bets had to be adjusted
         too (losing one hand doesn’t knock the player out instantly)</p>
         `,
+      }],
+    }, {
+      style: {
+        background: `url(${rootLink}/noise.png) #2a5a30`,
+      },
+      class: 'row-collapse',
+      content: [{
+        type: 'svg',
+        class: 'frame-1-4',
+        value: `${rootLink}chip.svg`,
+      }, {
+        type: 'image',
+        class: 'frame-1-4',
+        value: `${rootLink}cards.svg`,
+      }],
+    }, {
+      style: {
+        background: `url(${rootLink}/noise.png) #2a5a30`,
+      },
+      content: [{
+        type: 'svg',
+        class: 'frame-1-2',
+        value: `${rootLink}table-print.svg`,
+      }],
+    }, {
+      content: [{
+        type: 'image',
+        class: 'frame-4-3 content-overlap flex-double',
+        value: `${rootLink}options.png`,
+      }, {
+        type: 'image',
+        class: 'frame-1-1 image-shadow',
+        value: `${rootLink}hand.png`,
+      }],
+    }, {
+      style: {
+        backgroundColor: '#fff',
+      },
+      class: 'row-collapse',
+      content: [{
+        type: 'image',
+        class: 'frame-1-4 image-shadow',
+        value: `${rootLink}ctrls.png`,
       }],
     }, {
       class: 'footer-row',

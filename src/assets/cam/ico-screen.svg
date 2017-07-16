@@ -1,25 +1,22 @@
 <svg class="ico-screen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <style>
     @keyframes mousey-mover {
-      10% { transform: translateY(-50px)}
+      from, 10%, to { transform: translateY(-50px)}
       40% { transform: translate(-210px, -80px)}
       45% { transform: translate(-210px, -80px)}
       70% { transform: translate(50px, -140px)}
       75% { transform: translate(50px, -140px)}
-      10% { transform: translateY(-50px)}
     }
     @keyframes pop {
       from, 79% { opacity: 0}
       80% { transform: none;opacity: 1}
       to { transform: scale(2); opacity: 0}
     }
-    .content-svg:hover .pointer { animation: mousey-mover 2s infinite;}
-    .content-svg:hover .ping { animation: pop 2s infinite both;}
-    .pointer { transform: translateY(-50px)}
-    .ping-1 { transform-origin: 102px 145px; opacity: 0}
-    .ping-2 { transform-origin: 363px 85px; opacity: 0}
-    .content-svg:hover .ping-1 { animation-delay: -0.9s}
-    .content-svg:hover .ping-2 { animation-delay: -0.2s}
+    .pointer { animation: mousey-mover 2s infinite;}
+    .ping { animation: pop 2s infinite both;}
+    /*.pointer { transform: translateY(-50px)}*/
+    .ping-1 { transform-origin: 102px 145px; opacity: 0; animation-delay: -0.9s}
+    .ping-2 { transform-origin: 363px 85px; opacity: 0; animation-delay: -0.2s}
   </style>
   <g fill="#055492">
     <path d="M481 28H31C14 28 0 41.7 0 58.7v310.8c0 17 14 31 31 31h154V423c0 20.6-16.8 37.4-37.4 37.4h-34c-6.5 0-11.8 5.3-11.8 11.8S107 484 113.6 484H398c6.5 0 11.8-5.3 11.8-11.8s-5.3-11.8-11.8-11.8h-34c-20.6 0-37.4-16.8-37.4-37.4v-22.5H481c17 0 31-14 31-31V59c0-17-14-31-31-31zM196 460.4c8-10.3 12.8-23.3 12.8-37.4v-22.4h94.4V423c0 14.2 4.8 27.2 13 37.5H195.8zm292.4-90.8c0 4-3.3 7.3-7.3 7.3H31c-4 0-7.4-3.7-7.4-7.7v-62h464.8v62zm0-85.7H23.6V58.4c0-4 3.3-7.3 7.3-7.3h450c4 0 7 3.3 7 7.3V284z"></path>

@@ -16,7 +16,9 @@ export class LODDirective implements AfterViewInit {
     private routeComms: RouteCommsService,
   ) {}
 
+
   ngAfterViewInit() {
+
     const rect = this.el.nativeElement.getBoundingClientRect();
     const offset =  rect.top - window.innerHeight;
 
@@ -27,7 +29,6 @@ export class LODDirective implements AfterViewInit {
         this.appLOD.emit(true);
       }
     });
-
 
 
   }

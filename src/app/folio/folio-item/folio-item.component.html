@@ -1,6 +1,6 @@
-<div class="project-wrapper-bg full-screen" *ngIf="state === 'in'" (click)="goBack()" ></div>
+<div class="project-wrapper-bg full-screen" *ngIf="state === 'in'" [routerLink]="{category: 'all'}" ></div>
 
-<li #float class="project-float" [ngStyle]="style" >
+<li #float class="project-float" [ngStyle]="style" [ngClass]="state" >
 
   <div #introBG class="project-intro-bg frame-shadow"
     [style.background]="project.intro.style.background" >
@@ -31,7 +31,7 @@
 
     </article>
 
-    <a class="project-close" (click)="goBack()" [style.color]="project.intro.style.color" >&times;</a>
+    <a class="project-close" [routerLink]="{category: 'all'}" [style.color]="project.intro.style.color" >&times;</a>
   </ng-container>
 
 </li>

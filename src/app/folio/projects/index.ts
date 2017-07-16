@@ -9,10 +9,9 @@ export const linkAttrs = 'target="_blank" rel="nofollow"';
 
 export default  [
   blk,
-  ico,
-//  kit,
-  rhc,
   cam,
+  ico,
+  rhc,
   web
 ];
 

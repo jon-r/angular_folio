@@ -1,7 +1,19 @@
 <svg class="pro-ico" xmlns="http://www.w3.org/2000/svg" viewBox="15 15 240 240">
   <defs>
     <style>
-      .pro-st { fill: none; stroke: #ddd; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; } .pro-fl { fill: #ddd; } .pro-ico:hover .looking { animation: looker 1s ease-in-out infinite alternate; transform-origin: 75px 84px; } .pro-ico:hover .pro-st { transition: stroke 600ms; stroke: #2BEDBA; } .pro-ico:hover .pro-fl { transition: fill 600ms; fill: #2BEDBA; } .pro-ico:hover .heat { animation: hot 1s ease-in-out infinite alternate; transform-origin: 75px 104px; } .pro-ico:hover .spin-left { transform-origin: 48.8px 56.7px; animation: spinner 2s linear infinite; } .pro-ico:hover .spin-right { transform-origin: 92.3px 56.7px; animation: spinner 2s linear infinite; } .glow { opacity: 0; } .pro-ico:hover .glow { animation: glowing 1s linear infinite alternate; } @keyframes spinner { from { transform: rotate(0); } 50% { transform: rotate(180deg); } to { transform: rotate(360deg); } } @keyframes looker { from { transform: translateX(-20px) skew(15deg); } 50% { transform: scale(1.2); } to { transform: translateX(20px) skew(-15deg); } } @keyframes hot { from { transform: scaleY(0.3); } 50% { transform: scaleY(1); } to { transform: scaleY(0.5); } } @keyframes glowing { from { opacity: 0; } to { opacity: 0.9; } }
+      .pro-st { fill: none; stroke: #2BEDBA; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; } 
+      .pro-fl { fill: #2BEDBA; } 
+      
+      .looking { animation: looker 1s ease-in-out infinite alternate; transform-origin: 75px 84px; } 
+      .heat { animation: hot 1s ease-in-out infinite alternate; transform-origin: 75px 104px; } 
+      .spin-left { transform-origin: 48.8px 56.7px; animation: spinner 2s linear infinite; } 
+      .spin-right { transform-origin: 92.3px 56.7px; animation: spinner 2s linear infinite; } 
+      .glow { opacity: 0; animation: glowing 1s linear infinite alternate; }     
+      
+      @keyframes spinner { from { transform: rotate(0); } 50% { transform: rotate(180deg); } to { transform: rotate(360deg); } } 
+      @keyframes looker { from { transform: translateX(-20px) skew(15deg); } 50% { transform: scale(1.2); } to { transform: translateX(20px) skew(-15deg); } } 
+      @keyframes hot { from { transform: scaleY(0.3); } 50% { transform: scaleY(1); } to { transform: scaleY(0.5); } } 
+      @keyframes glowing { to { opacity: 0.9; } }
     </style>
     <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>

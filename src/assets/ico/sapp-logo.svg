@@ -14,7 +14,7 @@
     </mask>
     <style>
       @keyframes rise { from { transform: translateY(30px) } to { transform: none } }
-      .hover-trigger:hover .sunrise {animation: rise 5s ease-out }
+      .in .sunrise {animation: rise 4s ease-out }
     </style>
   </defs>
 
