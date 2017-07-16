@@ -67,6 +67,9 @@
 .content-text, .no-expand {
   max-width: 512px;
 }
+.folio-content .content-text {
+  max-width: 768px;
+}
 
 
 /* content preload sizes */

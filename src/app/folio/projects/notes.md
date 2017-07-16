@@ -3,20 +3,20 @@ RWD
 TODO: clean up old data assets
 TODO: bonus Consider into setting all this as a file not included in the main build?
 
-#home
+~~#home
 TODO: something on the home page. interactive logo? (eg superdeper simple hover effect).
-  - comes to mind is < > expand and the content changes through assorted... things. looks like an old flipping clock?
+  - comes to mind is < > expand and the content changes through assorted... things. looks like an old flipping clock?~~
 
 #about
 TODO: about page basics
   - consider non-template elements, outside the frame?, mimic cv layout?
 
-#projects
+~~#projects
 first of each project to have super dark bg of part of the site (behind a little screenshot)
-fix the little screens - multi matte (can find exact px height of the white)
+fix the little screens - multi matte (can find exact px height of the white)~~
 
 
-#blk
+~~#blk
 player hand
 Blackjack
 control rows
@@ -27,17 +27,17 @@ _svg_
 ~~card back~~
 ~~table~~
 
-#cam
-home page
-1-2 solutions  (!animated)
-about page
+~~#cam
+home page~~
+~~1-2 solutions~~  (!animated)
+~~about page
 _svg_
 ~~pig~~
 ~~demo~~
 ~~chat~~
 map (!codepen interactive)
 
-#ico
+~~#ico
 _svg_
 
 ALWAYS ANIM - can load hover ones on start
@@ -63,7 +63,7 @@ detail page
 
 _svg_
 ~~icons (from old site)~~
-dynamic scaler -- https://codepen.io/inspironix/pen/oXqezg
+~~dynamic scaler -- https://codepen.io/inspironix/pen/oXqezg
 
 
 #web
@@ -72,7 +72,7 @@ need some intro icon(s). just use one of the 4 sites, and take color from folio 
 homepage - recroom
 homepage - Arcane
 homepage - cuzina
-homepage - villa
+homepage - villa~~
 
 
 ##Later

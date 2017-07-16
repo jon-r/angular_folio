@@ -3,15 +3,26 @@
 
 export default {
   rows: [{
-    class: 'row-collapse',
-    content: [{
-      type: 'text',
-      value: `<h3>About Me</h3>`,
-    }]
-  }, {
+    style: {
+      backgroundColor: '#0e4c46',
+      color: '#B2DFDB',
+      borderBottom: 'solid 8px',
+      borderRadius: '8px 8px 0 0'
+    },
+    class: 'folio-content',
     content: [{
       type: 'text',
       value: `
+      <h1>Jon Richards <sub>BA (hons)</h1>
+      `,
+    }]
+  }, {
+    class: 'folio-content row-collapse',
+    content: [{
+      type: 'text',
+      value: `
+      <h3>About Me</h3>
+      <hr>
       <p>I am a skilled & motivated technical developer, with experience in full stack web development
       and digital design. I am a self-taught coder with a strong lean towards web, picking
       up samples of other languages along the way.</p>
@@ -20,16 +31,12 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
       `,
     }]
   }, {
-    class: 'row-collapse',
-    content: [{
-      type: 'text',
-      value: `<h3>Skills</h3>`,
-    }]
-  }, {
-    class: 'row-collapse',
+    class: 'folio-content row-collapse',
     content: [{
       type: 'text',
       value: `
+      <h3>Skills</h3>
+      <hr>
       <h5>Fluent In</h5>
       <ul>
         <li>HTML5 | SVG (hand written)</li>
@@ -50,49 +57,12 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
       `,
     }]
   }, {
-    class: 'row-collapse',
-    content: [{
-      type: 'text',
-      value: `<h3>Education</h3>`,
-    }]
-  }, {
-    class: 'row-collapse',
+    class: 'folio-content row-collapse',
     content: [{
       type: 'text',
       value: `
-      <h5>2012 – University of Bolton</h5>
-      <ul>
-        <li>3D Games Art – Bachelors (Honors) First Class</li>
-      </ul>
-      <h5>2009 Bay House Sixth Form, Gosport (A Levels)</h5>
-      <ul>
-        <li>A - Maths</li>
-        <li>C - Graphic Design</li>
-        <li>D - Physics</li>
-      </ul>
-      <h5>2007 Bay House Secondary School, Gosport</h5>
-      <ul>
-        <li>12 A*-C grades, including</li>
-        <li>A* - Maths</li>
-        <li>A – Graphic Design</li>
-        <li>A – Physics</li>
-        <li>A – ICT</li>
-        <li>A – Chemistry </li>
-        <li>B – English</li>
-      </ul>
-      `,
-    }]
-  }, {
-    class: 'row-collapse',
-    content: [{
-      type: 'text',
-      value: `<h3>Employment</h3>`,
-    }]
-  }, {
-    class: 'folio-content',
-    content: [{
-      type: 'text',
-      value: `
+      <h3>Employment</h3>
+      <hr>
       <h5>Present Minerva Creative - Design Agency Manchester</h5>
       <em>- Senior Web Developer (Full Stack Wordpress)</em>
       <ul>
@@ -126,6 +96,35 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
       </ul>
       `,
     }]
-  },
+  }, {
+    class: 'folio-content',
+    content: [{
+      type: 'text',
+      value: `
+      <h3>Education</h3>
+      <hr>
+      <h5>2012 – University of Bolton</h5>
+      <ul>
+        <li>3D Games Art – Bachelors (Honors) First Class</li>
+      </ul>
+      <h5>2009 Bay House Sixth Form, Gosport (A Levels)</h5>
+      <ul>
+        <li>A - Maths</li>
+        <li>C - Graphic Design</li>
+        <li>D - Physics</li>
+      </ul>
+      <h5>2007 Bay House Secondary School, Gosport</h5>
+      <ul>
+        <li>12 A*-C grades, including</li>
+        <li>A* - Maths</li>
+        <li>A – Graphic Design</li>
+        <li>A – Physics</li>
+        <li>A – ICT</li>
+        <li>A – Chemistry </li>
+        <li>B – English</li>
+      </ul>
+      `,
+    }]
+  }
 ]
 };
