@@ -1,9 +1,4 @@
 
-<header class="site-header" [@header]="prepRouteState(routerOutlet)" >
-    <h1>Jon Richards</h1>
-    <h3>Web Developer</h3>
-</header>
-
 <div class="sidebar" >
   <div class="sidebar-bg frame-shadow" [@sidebar]="prepRouteState(routerOutlet)" ></div>
 
@@ -24,7 +19,7 @@
 
     <a class="nav-link site-link" href="mailto:jon.richards@outlook.com" >
       <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
-      <h4>Email Me</h4>
+      <h4>Email</h4>
     </a>
 
     <a class="nav-link site-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
@@ -47,9 +42,9 @@
 
 
 <main class="site-content full-screen"
-[@routeAnimation]="prepRouteState(routerOutlet)"
-[scrollTop]="scrollPos"
-#routesContainer >
+  [@routeAnimation]="prepRouteState(routerOutlet)"
+  [scrollTop]="scrollPos"
+  #routesContainer >
 
   <router-outlet #routerOutlet="outlet" ></router-outlet>
 

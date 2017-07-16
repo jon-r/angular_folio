@@ -1,14 +1,13 @@
 #overall
 RWD
-TODO: clean up old data assets
 TODO: bonus Consider into setting all this as a file not included in the main build?
 
 ~~#home
-TODO: something on the home page. interactive logo? (eg superdeper simple hover effect).
+something on the home page. interactive logo? (eg superdeper simple hover effect).
   - comes to mind is < > expand and the content changes through assorted... things. looks like an old flipping clock?~~
 
-#about
-TODO: about page basics
+~~#about
+about page basics
   - consider non-template elements, outside the frame?, mimic cv layout?
 
 ~~#projects

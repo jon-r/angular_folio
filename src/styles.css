@@ -71,6 +71,18 @@ a {
   margin-bottom: 1.2rem;
 }
 
+.content sub {
+  font-size: 0.4em;
+  vertical-align: baseline;
+}
+
+.content hr {
+  margin: 2rem -5rem 2rem -13px;
+  border: none;
+  background: #00897B;
+  height: 8px;
+}
+
 /* helpers ------------------------------------------------------------------ */
 
 .navicon {
@@ -83,21 +95,13 @@ a {
   vertical-align: middle;
 }
 
-.no-clip {
-    overflow: visible;
+.project-intro-icon svg {
+  width: 100%;
+  height: 100%;
 }
-
-.full-screen {
-  position: fixed;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 
 /* from material design */
-.content-shadow, .image-shadow img {
+.content-shadow, .image-shadow img, .content-overlap img {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -106,9 +110,17 @@ a {
 }
 
 
+
+
 /* grid --------------------------------------------------------------------- */
 
-/* TODO added here to set up consistent sizes throughout site */
+.full-screen {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 .outer-frame {
   width: 100%;
@@ -184,28 +196,9 @@ a {
   animation-direction: alternate-reverse, normal
 }
 
-/* jr-grid ------------------------------------------------------------------ */
-
-.grid-box {
-  position: absolute;
-  box-sizing: content-box;
-}
-.grid-rect {
-  fill: #333030;
-  opacity: 0.1;
-  cursor: pointer;
-}
-.grid-rect:not(.glow) {
-  transition: opacity 1s linear 1s;
-}
-
-.grid-rect:hover, .grid-rect.glow {
-  opacity: 1;
-  transition: opacity .1s
-}
-
 /* css animations ----------------------------------------------------------- */
 
+/* todo - reorganise, check whats here and whats no longer used. */
 @keyframes svg-draw {
   from { stroke-dashoffset: 21 }
   50% { stroke-dashoffset: 10 }
@@ -236,4 +229,16 @@ a {
   from { opacity: 0; transform: translateX(-50%);}
   10% { opacity: 1 }
   to { transform: none;}
+}
+
+/* media querys ------------------------------------------------------------- */
+
+@media screen and (max-width: 1100px) {
+
+  .outer-frame {
+    padding: 16px;
+  }
+  .hide-small {
+    display: none !important;
+  }
 }

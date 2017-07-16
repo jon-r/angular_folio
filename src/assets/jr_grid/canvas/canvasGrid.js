@@ -1,4 +1,4 @@
-import { debounce } from 'lodash';
+// import { debounce } from 'lodash';
 
 import GridRect from './rect';
 
@@ -33,7 +33,7 @@ export default class CanvasGrid {
 
     this.isPaused = false;
 
-    window.addEventListener('resize', debounce(() => this.build(), 500));
+    // window.addEventListener('resize', debounce(() => this.build(), 500));
   }
 
   getContainer() {
@@ -69,6 +69,9 @@ export default class CanvasGrid {
         }
       });
     });
+
+    // todo : update this in the main snake file (reseting the starter, reomving the resize event watch)
+    this.gridStarters = [];
 
     grid.forEach((rect) => {
       rect.drawRect(0.1).setCanTrigger(grid, cfg, container);

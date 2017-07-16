@@ -40,7 +40,5 @@ export class TemplateComponent implements OnInit {
 };
 
 /*
-NEW TODO:
-fix to work for ipad dummy screen (is too big to fully fit, needs to only tagrer bottom or smt)
-clean up old code. does the scroll trigger still need to be through service? can listen to scroll some other way?
+TODO: bonus: lightboxes. similar to the old folio site? but with better positioning from NG
 */

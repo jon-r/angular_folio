@@ -1,5 +1,3 @@
-// TODO: https://material.io/guidelines/style/typography.html#
-// review this for layout styling?
 
 export default {
   rows: [{

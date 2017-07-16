@@ -26,8 +26,10 @@ export class FolioItemComponent implements OnInit {
   @Input() project;
   @Input('listIndex')
   set updateStyle(n: number) {
+    const isBigScreen = window.innerWidth > 1100;
+    const size = isBigScreen ? 256 : 192;
     this.style = {
-      transform: `translateY(${n * 256}px)`,
+      transform: `translateY(${n * size}px)`,
       'transition-delay.ms': n * 50,
     };
   }
@@ -58,11 +60,14 @@ export class FolioItemComponent implements OnInit {
 
     const start = introBG.clientWidth;
     const fin = this.float.nativeElement.clientWidth;
+    const offset = ((fin - start) / 2) - 16;
+
+    // todo: update on screen resize
 
     const anims = [
       { el: introBG, to: `scale(${ fin / start })` },
-      { el: label, to: `translateX(${ -fin / 10 }px)` },
-      { el: icon, to: `translateX(${ fin / 10 }px)` },
+      { el: label, to: `translateX(${ -offset }px)` },
+      { el: icon, to: `translateX(${ offset }px)` },
     ]
     .forEach(({ el, to }, i) => {
       const anim = useAnimation(slide, { params : { to: to, time: `300ms ${i * 100}ms ease-out` }});

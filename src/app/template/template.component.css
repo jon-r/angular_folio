@@ -10,25 +10,9 @@
 /* row classes */
 
 .content-row {
-  padding-top: 64px;
-  padding-bottom: 64px;
-  /*background-color: #e4e5e7;*/
-
+  padding: 64px 16px;
 }
 
-.content-row-inner {
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-}
-
-.align-tops .content-row-inner {
-  align-items: flex-start;
-}
-
-.push-right .content-row-inner {
-  justify-content: flex-end;
-}
 
 .row-collapse {
   padding-bottom: 0;
@@ -47,26 +31,7 @@
   padding: 8px;
 }
 
-.flex-double {
-  flex: 2;
-}
 
-.flex-triple {
-  flex: 3;
-}
-
-.content-overlap >>> > * {
-  box-shadow: 0 0 5px rgba(0,0,0,0.4);
-}
-
-.content-overlap {
-    margin-top: -128px;
-    margin-bottom: -128px;
-}
-
-.content-text, .no-expand {
-  max-width: 512px;
-}
 .folio-content .content-text {
   max-width: 768px;
 }
@@ -82,7 +47,6 @@
   display: block;
 }
 
-/* todo bonus: set these in th templates? since theyre getting many */
 .frame-ultra::after { padding-bottom: 260%; }
 .frame-21-9::after { padding-bottom: 230%; }
 .frame-2-1::after { padding-bottom: 200%;}
@@ -113,12 +77,73 @@ iframe.content-inner {
 }
 
 .blackjack-row {
-  background: url(/assets/blk/ipad-bg.svg) center / 90% no-repeat,
-  url(/assets/blk/noise.png),
-  #2a5a30;
+  background: url(/assets/blk/noise.png), #2a5a30;
 }
 
 .blackjack-row .content {
-  transform: scale(0.8);
-  margin: -1%;
+  border: solid 2px;
 }
+
+
+@media screen and (min-width: 1500px) {
+  .blackjack-row .content {
+    border: none;
+    transform: scale(0.8);
+    margin: -1%;
+  }
+
+  .blackjack-row {
+    background: url(/assets/blk/ipad-bg.svg) center / 90% no-repeat,
+    url(/assets/blk/noise.png),
+    #2a5a30;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content-row-inner {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+
+  .align-tops .content-row-inner {
+    align-items: flex-start;
+  }
+
+  .push-right .content-row-inner {
+    justify-content: flex-end;
+  }
+
+  .content-overlap {
+      margin-top: -128px;
+      margin-bottom: -128px;
+  }
+  .flex-double {
+    flex: 2;
+  }
+
+  .flex-triple {
+    flex: 3;
+  }
+
+  .content-text, .no-expand {
+    max-width: 512px;
+  }
+}
+
+/*
+TODO:
+programmed content heights - (replace pseudo with a div to set height by style)
+(thisll fix many issues)
+
+MQ todo: below 800 fixes:
+reducing section pad
+smaller header/icon
+icons too big. some multi column shindig? some :not(flex-triple/double)
+hide blackjack
+smaller title fonts. mdl design have sizes??
+fix bg on recRoom
+folio header isnt centered
+
+reloacate sidebar? perhaps as header, perhaps as a toggle (since have toggle home already)
+*/

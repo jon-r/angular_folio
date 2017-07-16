@@ -38,7 +38,6 @@ export default {
         `,
       }]
     }, {
-      class: 'row-collapse',
       style: {
         background: 'linear-gradient(to right, #20252d 25%, #5a6372 75%)',
       },
@@ -158,6 +157,3 @@ export default {
   ]
 
 };
-
-
-// todo: better text styling? look at how bulma did it

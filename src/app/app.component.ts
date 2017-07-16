@@ -32,7 +32,7 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
       ])),
     ]),
     trigger('sidebar', [
-      state('home', style({ transform: 'translateX(300px) skew(20deg)' })),
+      state('home', style({ transform: 'translateX(10vw) skew(20deg)' })),
       transition(':enter', useAnimation(slide, { params: { from: 'translateX(-200px)'}})),
       transition('*<=>*', useAnimation(duration)),
     ]),
@@ -79,8 +79,9 @@ export class AppComponent implements AfterViewInit {
 // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
    // todo bonus = set this up as service? not needed but better organised
   scrollTo(to) {
+    console.log('scrolling');
+
     const from = this.container.nativeElement.scrollTop;
-    // todo maybe set this as variable?
     const multiplier = .2;
 
     if (Math.abs(from - to) < 1) {
@@ -99,14 +100,29 @@ export class AppComponent implements AfterViewInit {
     this.routerComms.scrollToOutput$
       .subscribe(scroll => this.scrollTo(scroll));
 
-    this.grid = new JRGrid({ target: 'jr_grid' }).build().play();
-
-    const container = this.container.nativeElement;
-
     /* better debounce credit:
     - https://stackoverflow.com/a/36849347
     */
     this.ngZone.runOutsideAngular(() => {
+      const container = this.container.nativeElement;
+      const grid = new JRGrid({ target: 'jr_grid' });
+
+      if (container.offsetWidth > 1100) {
+        grid.build().play();
+      }
+
+      Observable.fromEvent(window, 'resize')
+        .debounceTime(150)
+        .subscribe((e) => {
+          // todo: 1100 = constant for other anims?
+          if (container.offsetWidth < 1100) {
+            grid.pause();
+            // console.log(grid);
+          } else {
+            grid.build();
+          }
+        });
+
       Observable.fromEvent(container, 'scroll')
         .debounceTime(150)
         .subscribe(() => {

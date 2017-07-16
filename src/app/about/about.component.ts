@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import About from './about';
+import { RouteCommsService } from '../shared/route-comms.service';
 
 @Component({
   selector: 'app-about',
@@ -11,8 +12,12 @@ export class AboutComponent implements OnInit {
 
   about = About;
 
-  constructor() { }
+  constructor(
+    private routeCommsService: RouteCommsService,
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.routeCommsService.emitScrollTo(0);
+  }
 
 }

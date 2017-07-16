@@ -1,5 +1,4 @@
 
-// TODO scale the screen down. cant this be done without messing @media?
 
 import { linkAttrs } from './index';
 const rootLink = '../assets/blk/';

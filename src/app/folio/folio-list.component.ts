@@ -1,4 +1,3 @@
-// todo -> clicking outside a focussed element should close it. some background element?
 
 import { Component, OnInit } from '@angular/core';
 
@@ -45,9 +44,14 @@ export class FolioListComponent implements OnInit {
   }
 
   setCategory(category) {
+    const isBigScreen = window.innerWidth > 1100;
+    const size = isBigScreen ? 256 : 192;
+
+    console.log(window.innerWidth);
+
     this.activeProject = null;
     this.filterProjects({ value: category });
-    this.setFolioHeight(this.projects.length * 256);
+    this.setFolioHeight(this.projects.length * size);
   }
 
   setFolioHeight(n) {

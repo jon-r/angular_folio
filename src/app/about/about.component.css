@@ -7,15 +7,19 @@
   position: relative;
 }
 
-.about-container::before {
-  content: "";
-  display: block;
-  left: 32px;
-  right: 1200px;
-  opacity: 0.5;
-  background-color: #00897B;
-  top: 32px;
-  position: absolute;
-  bottom: 32px;
-  border-radius: 8px 0 0 0;
+@media screen and (min-width: 1500px) {
+
+  .about-container::before {
+    content: "";
+    display: block;
+    left: 32px;
+    right: 1200px;
+    opacity: 0.5;
+    background-color: #00897B;
+    top: 32px;
+    position: absolute;
+    bottom: 32px;
+    border-radius: 8px 0 0 0;
+  }
+
 }

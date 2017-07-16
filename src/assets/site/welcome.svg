@@ -16,16 +16,16 @@
 
   <g font-family="'SoleilW01-Bold'" >
     <g fill="#B2DFDB" font-size="48" >
-      <text class="switcheroo une" transform="translate(203.937 234.012)">
+      <text class="hide-small switcheroo une" transform="translate(203.937 234.012)">
         Front End
       </text>
-      <text class="switcheroo deux" transform="translate(190.377 234.012)">
+      <text class="hide-small switcheroo deux" transform="translate(190.377 234.012)">
         Wordpress
       </text>
-      <text class="switcheroo trois" transform="translate(209.576 234.012)">
+      <text class="hide-small switcheroo trois" transform="translate(209.576 234.012)">
         Angular4
       </text>
-      <text class="switcheroo quatre" transform="translate(246.008 234.012)">
+      <text class="hide-small switcheroo quatre" transform="translate(246.008 234.012)">
         VueJS
       </text>
 
@@ -36,14 +36,14 @@
         Web Developer
       </text>
 
-      <path  d="M176.03 217l11.02-20h-9.1L168 214.57c-.67 1.2-.67 3 0 4.2l9.95 18.23h9.1l-11.02-20zm274.37 0l-11 20h9.1l9.94-18.32c.67-1.2.67-2.62 0-3.82L448.5 197h-9.1l11 20z"/>
+      <path class="hide-small" d="M176.03 217l11.02-20h-9.1L168 214.57c-.67 1.2-.67 3 0 4.2l9.95 18.23h9.1l-11.02-20zm274.37 0l-11 20h9.1l9.94-18.32c.67-1.2.67-2.62 0-3.82L448.5 197h-9.1l11 20z"/>
     </g>
     <g fill="#00897B" font-size="24" >
-      <text transform="translate(171.338 175.29)" >
+      <text class="hide-small" transform="translate(171.338 175.29)" >
         specialising in
       </text>
       <text transform="translate(52.482 28.452)" >
-        Hi I my name is
+        My name is
       </text>
       <text transform="translate(46.463 132.208)" >
         and I am a
