@@ -56,7 +56,8 @@ export default {
         `,
       }, {
         type: 'image',
-        class: 'content-overlap frame-2-1',
+        class: 'content-overlap',
+        height: '200%',
         value: `${rootLink}home.jpg`,
       }],
     }, {
@@ -78,20 +79,16 @@ export default {
       },
       class: 'row-gallery align-tops',
       content: [{
-        class: 'frame-21-9',
         type: 'image',
-        value: `${rootLink}about.jpg`,
-      }, {
-        class: 'frame-21-9',
-        type: 'image',
+        height: '209%',
         value: `${rootLink}solutions.jpg`,
       }, {
-        class: 'frame-21-9',
         type: 'image',
+        height: '141%',
         value: `${rootLink}budget.jpg`,
       }, {
-        class: 'frame-21-9',
         type: 'image',
+        height: '192%',
         value: `${rootLink}community.jpg`,
       }],
     }, {
@@ -100,21 +97,22 @@ export default {
         backgroundColor: '#fff',
       },
       content: [{
-        class: 'frame-1-1',
-        type: 'svg',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}ico-chat.svg`,
       }, {
-        class: 'frame-1-1',
-        type: 'svg',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}ico-finance.svg`,
       }, {
-        class: 'frame-1-1',
-        type: 'svg',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}ico-screen.svg`,
       }, {
-        class: 'flex-triple frame-1-3',
+        class: 'flex-triple',
         type: 'image',
-        value: `${rootLink}logo.png`,
+        height: '50%',
+        value: `${rootLink}map.svg`,
       }],
     }, {
       class: 'footer-row',
@@ -124,3 +122,5 @@ export default {
     }
   ]
 };
+
+// todo - SIMPLIFY MAP ??

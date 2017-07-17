@@ -54,5 +54,27 @@
 .site-content {
   overflow-y: auto;
   overflow-x: hidden;
-  left: calc(64px + 5vw);
+  left: 0;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  /* todo use an icon */
+}
+
+@media screen and (min-width: 800px) {
+  .site-content {
+    left: calc(64px + 5vw);
+  }
+  .menu-toggle {
+    display: none;
+  }
+
 }

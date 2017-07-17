@@ -43,7 +43,8 @@ export default {
       },
       content: [{
         type: 'image',
-        class: 'frame-9-16 content-overlap',
+        height: '56.28%',
+        class: 'content-overlap',
         value: `${rootLink}first-hd.jpg`,
       }]
     }, {
@@ -62,12 +63,14 @@ export default {
       },
       class: 'row-collapse',
       content: [{
-        class: 'frame-2-1 image-shadow',
+        class: 'image-shadow',
+        height: '187%',
         type: 'image',
         value: `${rootLink}detail.jpg`,
       }, {
-        class: 'frame-2-1 image-shadow',
+        class: 'image-shadow',
         type: 'image',
+        height: '189%',
         value: `${rootLink}style-guide.png`,
       }],
     }, {
@@ -75,12 +78,14 @@ export default {
         backgroundColor: '#640202',
       },
       content: [{
-        class: 'frame-ultra image-shadow',
+        class: 'image-shadow',
         type: 'image',
+        height: '263%',
         value: `${rootLink}home.jpg`,
       }, {
-        class: 'frame-ultra image-shadow',
+        class: 'image-shadow',
         type: 'image',
+        height: '247%',
         value: `${rootLink}category.jpg`,
       }]
     },   {
@@ -98,14 +103,14 @@ export default {
         `,
       }, {
         type: 'iframe',
-        class: 'frame-3-2',
+        height: '150%',
         value: '//codepen.io/inspironix/embed/preview/oXqezg/?height=600&theme-id=light&default-tab=result&embed-version=2',
       }],
     }, {
       class: 'row-collapse',
       content: [{
-        type: 'svg',
-        class: 'frame-1-4',
+        type: 'image',
+        height: '18%',
         value: `${rootLink}rhc-icons.svg`,
       }],
     }, {
@@ -126,7 +131,8 @@ export default {
       },
       content: [{
         type: 'image',
-        class: 'frame-9-16 image-shadow',
+        class: 'image-shadow',
+        height: '56.28%',
         value: `${rootLink}modular.jpg`,
       }]
     }, {
@@ -136,7 +142,8 @@ export default {
       },
       content: [{
         type: 'image',
-        class: 'frame-9-16 image-shadow',
+        class: 'image-shadow',
+        height: '56.28%',
         value: `${rootLink}shop_flow.jpg`,
       }]
     }, {
@@ -145,7 +152,8 @@ export default {
       },
       content: [{
         type: 'image',
-        class: 'frame-9-16 image-shadow',
+        class: 'image-shadow',
+        height: '56.28%',
         value: `${rootLink}shop_compile.jpg`,
       }]
     }, {

@@ -29,38 +29,13 @@
 .content {
   flex: 1;
   padding: 8px;
+  position: relative;
 }
 
 
 .folio-content .content-text {
   max-width: 768px;
 }
-
-
-/* content preload sizes */
-.content:not(.content-text) {
-  position: relative;
-}
-
-.content:not(.content-text)::after {
-  content: "";
-  display: block;
-}
-
-.frame-ultra::after { padding-bottom: 260%; }
-.frame-21-9::after { padding-bottom: 230%; }
-.frame-2-1::after { padding-bottom: 200%;}
-.frame-3-2::after { padding-bottom: 150% }
-.frame-4-3::after { padding-bottom: 133.33%; }
-
-.frame-1-1::after { padding-bottom: 100%; }
-
-.frame-3-4::after { padding-bottom: 75%; }
-.frame-9-16::after { padding-bottom: 56.25%; }
-.frame-1-2::after { padding-bottom: 50%; }
-.frame-1-3::after { padding-bottom: 33.33%; }
-.frame-1-4::after { padding-bottom: 25%; }
-
 
 
 .content-inner {
@@ -132,18 +107,21 @@ iframe.content-inner {
 }
 
 /*
-TODO:
-programmed content heights - (replace pseudo with a div to set height by style)
-(thisll fix many issues)
+
+
+TODO URGENT!!!
+review svgs on firefox/edge. any that break just set as images. seems to be issue with use?
 
 MQ todo: below 800 fixes:
 reducing section pad
-smaller header/icon
+smaller intro header/icon
 icons too big. some multi column shindig? some :not(flex-triple/double)
 hide blackjack
 smaller title fonts. mdl design have sizes??
 fix bg on recRoom
-folio header isnt centered
+fix homepage
+
+lose filter on mobile? not doing much
 
 reloacate sidebar? perhaps as header, perhaps as a toggle (since have toggle home already)
 */

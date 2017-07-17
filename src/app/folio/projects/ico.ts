@@ -36,12 +36,13 @@ export default {
       },
       class: 'row-collapse',
       content: [{
-        type: 'svg',
-        class: 'frame-1-1',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}rem-logo.svg`,
       }, {
-        type: 'svg',
-        class: 'flex-double frame-1-2',
+        type: 'image',
+        class: 'flex-double',
+        height: '50%',
         value: `${rootLink}ridings-ico.svg`,
       }],
     }, {
@@ -49,12 +50,12 @@ export default {
         backgroundColor: '#B2DFDB',
       },
       content: [{
-        type: 'svg',
-        class: 'frame-1-1',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}pro-icons.svg`,
       }, {
-        type: 'svg',
-        class: 'frame-1-1',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}charlie-sign-anim.svg`,
       }],
     }, {
@@ -70,16 +71,16 @@ export default {
         backgroundColor: '#B2DFDB',
       },
       content: [{
-        type: 'svg',
-        class: 'frame-3-4',
+        type: 'image',
+        height: '75%',
         value: `${rootLink}monitor_anim.svg`,
       }, {
         type: 'iframe',
-        class: 'frame-3-4',
+        height: '75%',
         value: '//codepen.io/inspironix/embed/preview/MpBXYG/?height=265&theme-id=light&default-tab=result&embed-version=2',
       }, {
-        type: 'svg',
-        class: 'frame-3-4',
+        type: 'image',
+        height: '75%',
         value: `${rootLink}screen.svg`,
       }],
     }, {

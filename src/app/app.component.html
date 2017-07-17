@@ -1,5 +1,7 @@
 
-<div class="sidebar" >
+<button class="menu-toggle" (click)="mobileShow != mobileShow" >=</button>
+
+<div class="sidebar" *ngIf="!isMobile || mobileShow" >
   <div class="sidebar-bg frame-shadow" [@sidebar]="prepRouteState(routerOutlet)" ></div>
 
   <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >

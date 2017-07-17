@@ -33,11 +33,12 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
     ]),
     trigger('sidebar', [
       state('home', style({ transform: 'translateX(10vw) skew(20deg)' })),
-      transition(':enter', useAnimation(slide, { params: { from: 'translateX(-200px)'}})),
+      transition(':enter', useAnimation(slide, from.left)),
+      transition(':leave', useAnimation(slide, to.left)),
       transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('header', [
-      state('home', style({ transform: 'translateX(120%)' })),
+      state('home, closed', style({ transform: 'translateX(120%)' })),
       transition(':enter', fadeIn),
       transition('*<=>*', useAnimation(duration)),
     ]),
@@ -52,8 +53,11 @@ export class AppComponent implements AfterViewInit {
 
   page: string;
 
-  grid;
   scrollPos;
+
+  isMobile: Boolean;
+  mobileShow: Boolean;
+
 
   constructor(
     private routerComms: RouteCommsService,
@@ -96,31 +100,48 @@ export class AppComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
+    const container = this.container.nativeElement;
+    const vwInit = container.offsetWidth;
 
     this.routerComms.scrollToOutput$
       .subscribe(scroll => this.scrollTo(scroll));
+
+
+    this.isMobile = vwInit < 800;
+
+    const grid = new JRGrid({ target: 'jr_grid' });
+
+    if (vwInit > 1100) {
+      grid.build().play();
+    }
 
     /* better debounce credit:
     - https://stackoverflow.com/a/36849347
     */
     this.ngZone.runOutsideAngular(() => {
-      const container = this.container.nativeElement;
-      const grid = new JRGrid({ target: 'jr_grid' });
-
-      if (container.offsetWidth > 1100) {
-        grid.build().play();
-      }
-
       Observable.fromEvent(window, 'resize')
         .debounceTime(150)
         .subscribe((e) => {
+          const vw = container.offsetWidth;
+          const isMobile = (vw < 800);
           // todo: 1100 = constant for other anims?
-          if (container.offsetWidth < 1100) {
+          if (vw < 1100) {
             grid.pause();
             // console.log(grid);
           } else {
             grid.build();
           }
+
+          // todo = ping this across the site for other updates (routerComms)
+          // also seperate from the listener to be TRIGGERED by the listener
+
+          // todo screw state animation, use a JS/CSS toggle
+
+          this.isMobile = isMobile;
+          this.mobileShow = isMobile;
+
+
+          this.cdRef.detectChanges();
         });
 
       Observable.fromEvent(container, 'scroll')

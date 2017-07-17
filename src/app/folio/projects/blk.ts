@@ -21,8 +21,8 @@ export default {
     {
       class: 'text-row row-collapse',
       content: [{
-        type: 'svg',
-        class: 'frame-1-1',
+        type: 'image',
+        height: '100%',
         value: `${rootLink}vuejs.svg`,
       }, {
         type: 'text',
@@ -56,7 +56,7 @@ export default {
       class: 'blackjack-row',
       content: [{
         type: 'iframe',
-        class: 'frame-3-4',
+        height: '75%',
         value: '//jon-richards.com/blackjack-2/',
       }],
     }, {
@@ -77,7 +77,8 @@ export default {
       },
       content: [{
         type: 'image',
-        class: 'frame-3-4 content-overlap',
+        height: '75%',
+        class: 'content-overlap',
         value: `${rootLink}results.png`,
       }],
     }, {
@@ -101,12 +102,12 @@ export default {
       },
       class: 'row-collapse',
       content: [{
-        type: 'svg',
-        class: 'frame-1-4',
+        type: 'image',
+        height: '24%',
         value: `${rootLink}chip.svg`,
       }, {
         type: 'image',
-        class: 'frame-1-4',
+        height: '25%',
         value: `${rootLink}cards.svg`,
       }],
     }, {
@@ -114,28 +115,30 @@ export default {
         background: `url(${rootLink}/noise.png) #2a5a30`,
       },
       content: [{
-        type: 'svg',
-        class: 'frame-1-2',
+        type: 'image',
+        height: '50%',
         value: `${rootLink}table-print.svg`,
       }],
     }, {
       content: [{
         type: 'image',
-        class: 'frame-4-3 content-overlap flex-double',
+        height: '107%',
+        class: 'content-overlap flex-double',
         value: `${rootLink}options.png`,
       }, {
         type: 'image',
-        class: 'frame-1-1 image-shadow',
+        height: '85%',
+        class: 'image-shadow',
         value: `${rootLink}hand.png`,
       }],
     }, {
       style: {
         backgroundColor: '#fff',
       },
-      class: 'row-collapse',
       content: [{
         type: 'image',
-        class: 'frame-1-4 image-shadow',
+        height: '13%',
+        class: 'image-shadow',
         value: `${rootLink}ctrls.png`,
       }],
     }, {

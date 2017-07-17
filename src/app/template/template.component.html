@@ -10,12 +10,13 @@
       <div class="content" *ngFor="let content of row.content; index as i"
         [ngClass]="[ 'content-' + content.type , content.class||'' ]" [@lod]="row.isActive" >
 
-            <ng-container [ngSwitch]="content.type" *ngIf="row.isActive || content.type === 'text' || content.type === 'footer'"  >
+            <div class="content-filler" *ngIf="content.height" [style.paddingBottom]="content.height" ></div>
+
+            <ng-container [ngSwitch]="content.type"
+              *ngIf="row.isActive || content.type === 'text' || content.type === 'footer'" >
 
               <div *ngSwitchCase="'text'" [innerHTML]="content.value" ></div>
 
-              <div class="content-inner" *ngSwitchCase="'svg'" [inlineSVG]="content.value" ></div>
-              
               <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" />
 
               <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe"
@@ -26,6 +27,7 @@
               </div>
 
             </ng-container>
+
 
         </div>
 

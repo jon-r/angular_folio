@@ -1,18 +1,18 @@
 <svg class="pro-ico" xmlns="http://www.w3.org/2000/svg" viewBox="15 15 240 240">
   <defs>
     <style>
-      .pro-st { fill: none; stroke: #2BEDBA; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; } 
-      .pro-fl { fill: #2BEDBA; } 
-      
-      .looking { animation: looker 1s ease-in-out infinite alternate; transform-origin: 75px 84px; } 
-      .heat { animation: hot 1s ease-in-out infinite alternate; transform-origin: 75px 104px; } 
-      .spin-left { transform-origin: 48.8px 56.7px; animation: spinner 2s linear infinite; } 
-      .spin-right { transform-origin: 92.3px 56.7px; animation: spinner 2s linear infinite; } 
-      .glow { opacity: 0; animation: glowing 1s linear infinite alternate; }     
-      
-      @keyframes spinner { from { transform: rotate(0); } 50% { transform: rotate(180deg); } to { transform: rotate(360deg); } } 
-      @keyframes looker { from { transform: translateX(-20px) skew(15deg); } 50% { transform: scale(1.2); } to { transform: translateX(20px) skew(-15deg); } } 
-      @keyframes hot { from { transform: scaleY(0.3); } 50% { transform: scaleY(1); } to { transform: scaleY(0.5); } } 
+      .pro-st { fill: none; stroke: #2BEDBA; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .pro-fl { fill: #2BEDBA; }
+
+      .looking { animation: looker 1s ease-in-out infinite alternate; transform-origin: 75px 84px; }
+      .heat { animation: hot 1s ease-in-out infinite alternate; transform-origin: 75px 104px; }
+      .spin-left { transform-origin: 48.8px 56.7px; animation: spinner 2s linear infinite; }
+      .spin-right { transform-origin: 92.3px 56.7px; animation: spinner 2s linear infinite; }
+      .glow { opacity: 0; animation: glowing 1s linear infinite alternate; }
+
+      @keyframes spinner { from { transform: rotate(0); } 50% { transform: rotate(180deg); } to { transform: rotate(360deg); } }
+      @keyframes looker { from { transform: translateX(-20px) skew(15deg); } 50% { transform: scale(1.2); } to { transform: translateX(20px) skew(-15deg); } }
+      @keyframes hot { from { transform: scaleY(0.3); } 50% { transform: scaleY(1); } to { transform: scaleY(0.5); } }
       @keyframes glowing { to { opacity: 0.9; } }
     </style>
     <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
@@ -43,7 +43,7 @@
       <circle cx="104.4" cy="63.7" r="4" class="pro-fl"/>
       <circle cx="80.2" cy="63.7" r="4" class="pro-fl"/>
     </g>
-    <g class="spin-left" t>
+    <g class="spin-left" >
       <circle cx="48.8" cy="56.7" r="20.8" class="pro-st"/>
       <circle cx="48.8" cy="56.7" r="7.7" class="pro-st"/>
       <circle cx="48.8" cy="70.7" r="4" class="pro-fl"/>

@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="5 25 215 110">
-  <defs>
-    <path id="curve-lg" d="M33.5 8a1 1 0 1 0 158 0 a1 1 0 1 0-158 0"/>
-    <path id="curve-sm" d="M50.5 8a1 1 0 1 0 124 0 a1 1 0 1 0-124 0"/>
-  </defs>
+
+    <path id="curv-sm" fill="none" d="M50.5 8a1 1 0 1 0 124 0 a1 1 0 1 0-124 0"/>
+    <path id="curv-lg" fill="none" d="M33.5 8a1 1 0 1 0 158 0 a1 1 0 1 0-158 0"/>
 
   <g opacity=".5" >
     <g stroke="#f9a825" fill="none">
@@ -15,10 +14,10 @@
     </g>
     <g fill="#f9a825" text-anchor="middle" font-family="Georgia" letter-spacing=".8" >
       <text>
-        <textPath xlink:href="#curve-lg" startOffset="25%" font-size="10">BLACKJACK PAYS 3 TO 2</textPath>
+        <textPath xlink:href="#curv-lg" startOffset="25%" font-size="10">BLACKJACK PAYS 3 TO 2</textPath>
       </text>
       <text>
-        <textPath xlink:href="#curve-sm" startOffset="25%" font-size="6">DEALER MUST STAND ON 17</textPath>
+        <textPath xlink:href="#curv-sm" startOffset="25%" font-size="6">DEALER MUST STAND ON 17</textPath>
       </text>
     </g>
   </g>
