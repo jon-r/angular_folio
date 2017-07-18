@@ -1,16 +1,20 @@
 .site-logo {
   width:100%;
   padding: 8px;
+}
+.site-logo a {
   display: block;
   position: relative;
+  max-width: 110px;
+  margin: auto;
 }
 .sidebar {
   position: fixed;
   z-index: 5;
   top: 0;
   left: 0;
-  width: calc(64px + 5vw);
-  min-width: 100px;
+  width: 50vw;
+  min-width: 150px;
   height: 100vh;
 }
 
@@ -61,7 +65,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 1;
   background: none;
   border: none;
   color: white;
@@ -70,6 +74,12 @@
 }
 
 @media screen and (min-width: 800px) {
+
+  .sidebar {
+    width: calc(64px + 5vw);
+    min-width: 100px;
+  }
+
   .site-content {
     left: calc(64px + 5vw);
   }

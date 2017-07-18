@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, ViewChild, EventEmitter, ElementRef }
 
 import { AnimationBuilder, AnimationPlayer, useAnimation, transition, trigger, group } from '@angular/animations';
 import { slide, fadeIn, fadeOut } from '../../shared/animations';
+import { RouteCommsService } from '../../shared/route-comms.service';
 
 @Component({
   selector: 'app-folio-item',
@@ -23,13 +24,14 @@ export class FolioItemComponent implements OnInit {
   @ViewChild('label') label: ElementRef;
   @ViewChild('icon') icon: ElementRef;
 
+  @Input() listScale;
   @Input() project;
   @Input('listIndex')
   set updateStyle(n: number) {
-    const isBigScreen = window.innerWidth > 1100;
-    const size = isBigScreen ? 256 : 192;
+    // const isBigScreen = window.innerWidth > 1100;
+    console.log(n, this.listScale);
     this.style = {
-      transform: `translateY(${n * size}px)`,
+      transform: `translateY(${n * this.listScale}px)`,
       'transition-delay.ms': n * 50,
     };
   }
@@ -49,6 +51,7 @@ export class FolioItemComponent implements OnInit {
 
   constructor(
     private builder: AnimationBuilder,
+    private routeCommsService: RouteCommsService,
   ) {}
 
   activate() {
@@ -101,6 +104,12 @@ export class FolioItemComponent implements OnInit {
     });
   }
 
+  updateSizes(screen) {
+    // only to be needed if active ...
+
+    // this.scale = sizes[screen];
+  }
+
   emitHeight() {
     const h = this.float.nativeElement.clientHeight || 0;
     this.updateActive.emit(h);
@@ -108,6 +117,9 @@ export class FolioItemComponent implements OnInit {
 
   ngOnInit() {
     this.project.rows.forEach(row => row.isActive = false);
+
+    // todo - check if this has been send before? some cache?
+    this.routeCommsService.widthOutput$.subscribe(width => this.updateSizes(width));
 
   }
 

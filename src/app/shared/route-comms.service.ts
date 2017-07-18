@@ -21,6 +21,9 @@ export class RouteCommsService {
   private scrollPosSrc = new Subject<number>();
   scrollPosOutput$ = this.scrollPosSrc.asObservable();
 
+  private width = new Subject<string>();
+  widthOutput$ = this.width.asObservable();
+
   emitStates(msg: RouteMsg) {
     this.msgSrc.next(msg);
   }
@@ -31,6 +34,11 @@ export class RouteCommsService {
 
   emitScrollPos(scrollPos: number) {
     this.scrollPosSrc.next(scrollPos);
+  }
+
+  emitWidth(vw: string) {
+    console.log(vw);
+    this.width.next(vw);
   }
 
 }

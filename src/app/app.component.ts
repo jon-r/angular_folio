@@ -32,9 +32,10 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
       ])),
     ]),
     trigger('sidebar', [
+      state('void', style({ transform: 'translateX(-100%)' })),
       state('home', style({ transform: 'translateX(10vw) skew(20deg)' })),
-      transition(':enter', useAnimation(slide, from.left)),
-      transition(':leave', useAnimation(slide, to.left)),
+      // transition(':enter', useAnimation(slide, from.left)),
+      // transition(':leave', useAnimation(slide, to.left)),
       transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('header', [
@@ -51,12 +52,12 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
 export class AppComponent implements AfterViewInit {
   @ViewChild('routesContainer') container: ElementRef;
 
-  page: string;
+  page: String;
 
-  scrollPos;
-
-  isMobile: Boolean;
+  scrollPos: Number;
   mobileShow: Boolean;
+  isMobile: Boolean;
+  grid: JRGrid;
 
 
   constructor(
@@ -73,17 +74,34 @@ export class AppComponent implements AfterViewInit {
     this.routerComms.emitScrollPos(element.scrollTop);
   }
 
+  widthWatch() {
+    const vw = window.innerWidth;
+
+    switch (true) {
+    case (vw < 800):
+      return 'mobile';
+    case (vw < 1100):
+      return 'tablet';
+    default:
+      return 'screen';
+    }
+  }
+
   prepRouteState(outlet) {
     const page = outlet.activatedRouteData['anim'];
     this.page = page;
     return page;
   }
 
+// todo use this to close the menu more often (route changes i guess)
+  toggleSidebar(bool: Boolean) {
+    this.mobileShow = bool;
+  }
+
 
 // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
    // todo bonus = set this up as service? not needed but better organised
   scrollTo(to) {
-    console.log('scrolling');
 
     const from = this.container.nativeElement.scrollTop;
     const multiplier = .2;
@@ -100,57 +118,50 @@ export class AppComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
+
     const container = this.container.nativeElement;
-    const vwInit = container.offsetWidth;
 
     this.routerComms.scrollToOutput$
       .subscribe(scroll => this.scrollTo(scroll));
 
 
-    this.isMobile = vwInit < 800;
+    this.grid = new JRGrid({ target: 'jr_grid' });
+    const width = this.widthWatch();
 
-    const grid = new JRGrid({ target: 'jr_grid' });
+    if (width === 'screen') {
+      this.grid.build().play();
+    } else {
+      this.grid.pause();
+    };
 
-    if (vwInit > 1100) {
-      grid.build().play();
-    }
-
-    /* better debounce credit:
-    - https://stackoverflow.com/a/36849347
-    */
-    this.ngZone.runOutsideAngular(() => {
-      Observable.fromEvent(window, 'resize')
-        .debounceTime(150)
-        .subscribe((e) => {
-          const vw = container.offsetWidth;
-          const isMobile = (vw < 800);
-          // todo: 1100 = constant for other anims?
-          if (vw < 1100) {
-            grid.pause();
-            // console.log(grid);
-          } else {
-            grid.build();
-          }
-
-          // todo = ping this across the site for other updates (routerComms)
-          // also seperate from the listener to be TRIGGERED by the listener
-
-          // todo screw state animation, use a JS/CSS toggle
-
-          this.isMobile = isMobile;
-          this.mobileShow = isMobile;
+    this.mobileShow = false;
+    this.isMobile = (width === 'mobile');
 
 
-          this.cdRef.detectChanges();
-        });
+    this.cdRef.detectChanges();
+    this.routerComms.emitWidth(width);
 
-      Observable.fromEvent(container, 'scroll')
-        .debounceTime(150)
-        .subscribe(() => {
-          this.scrollWatch(container);
-          this.cdRef.detectChanges();
-        });
-    });
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(150)
+      .subscribe((e) => {
+        const width2 = this.widthWatch();
+
+        if (width2 === 'screen') {
+          this.grid.pause();
+        } else {
+          this.grid.build();
+        }
+
+        this.mobileShow = (width2 === 'mobile');
+        this.routerComms.emitWidth(width2);
+      });
+
+    Observable.fromEvent(container, 'scroll')
+      .debounceTime(150)
+      .subscribe(() => {
+        this.scrollWatch(container);
+      });
+
   }
 
 

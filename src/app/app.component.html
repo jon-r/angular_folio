@@ -1,31 +1,35 @@
 
-<button class="menu-toggle" (click)="mobileShow != mobileShow" >=</button>
+<button class="menu-toggle" (click)="toggleSidebar(true)" >=</button>
 
-<div class="sidebar" *ngIf="!isMobile || mobileShow" >
+<div class="sidebar" [@nav] *ngIf="mobileShow || !isMobile" >
   <div class="sidebar-bg frame-shadow" [@sidebar]="prepRouteState(routerOutlet)" ></div>
 
-  <a class="site-logo" routerLink="/" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >
-    logo
-  </a>
+  <button class="menu-toggle" (click)="toggleSidebar(false)" >X</button>
 
-  <nav id="sideNav" class="site-nav" [@nav] *ngIf="prepRouteState(routerOutlet) !== 'home'; else homeContact" >
+  <div class="site-logo"  >
+    <a routerLink="home" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >
+      logo
+    </a>
+  </div>
+
+  <nav id="sideNav" class="site-nav" *ngIf="prepRouteState(routerOutlet) !== 'home'; else homeContact" >
     <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
-      <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>Folio</h4>
     </a>
 
     <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
-      <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>About</h4>
     </a>
 
     <a class="nav-link site-link" href="mailto:jon.richards@outlook.com" >
-      <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>Email</h4>
     </a>
 
     <a class="nav-link site-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-      <div class="navicon" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>Github</h4>
     </a>
   </nav>

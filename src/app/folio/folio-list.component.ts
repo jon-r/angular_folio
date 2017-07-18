@@ -16,6 +16,7 @@ export class FolioListComponent implements OnInit {
   projects: Array<any>;
   folioHeight;
   activeProject;
+  size;
 
   filters = ['all', 'work', 'play'];
   category = 'all';
@@ -44,18 +45,16 @@ export class FolioListComponent implements OnInit {
   }
 
   setCategory(category) {
-    const isBigScreen = window.innerWidth > 1100;
-    const size = isBigScreen ? 256 : 192;
-
-    console.log(window.innerWidth);
-
     this.activeProject = null;
     this.filterProjects({ value: category });
-    this.setFolioHeight(this.projects.length * size);
+    this.setFolioHeight(this.projects.length);
   }
 
   setFolioHeight(n) {
-    this.folioHeight = n;
+
+
+
+    this.folioHeight = n * this.size;
   }
 
   setFilter(paramMap) {
@@ -76,10 +75,18 @@ export class FolioListComponent implements OnInit {
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/
 
   ngOnInit() {
+    const sizes = {
+      mobile: 168,
+      tablet: 192,
+      screen: 256,
+    };
 
     this.filterProjects({value: 'all'});
 
     this.route.paramMap.subscribe(paramMap => this.setFilter(paramMap));
+    this.routeCommsService.widthOutput$.subscribe(screen => {
+      this.size = sizes[screen];
+    });
 
   }
 

@@ -17,6 +17,7 @@
         *ngFor="let project of projects; index as n; trackBy: trackProjects"
         [project]="project"
         [listIndex]="n"
+        [listScale]="size"
         [activeProject]="activeProject"
         (updateActive)="setFolioHeight($event)" >
       </app-folio-item>
