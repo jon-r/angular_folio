@@ -57,7 +57,7 @@ export default {
       content: [{
         type: 'iframe',
         height: '75%',
-        value: '//jon-richards.com/blackjack-2/',
+        value: '//jon-richards.com/blackjack/?demo',
       }],
     }, {
       class: 'text-row',
