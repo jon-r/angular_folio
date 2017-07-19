@@ -16,12 +16,13 @@ export default {
   },
   rows: [{
       style: {
-        background: `url(${rootLink}bg.svg) center/cover`,
+        background: `url(${rootLink}bg.svg) right/cover`,
         color: '#31b0bd',
       },
       content: [{
         type: 'image',
-        class: 'image-shadow frame-1-1',
+        height: '127%',
+        class: 'image-shadow',
         value: `${rootLink}recruitment.jpg`,
       }, {
         type: 'text',
@@ -56,7 +57,8 @@ export default {
         `,
       }, {
         type: 'image',
-        class: 'image-shadow frame-1-1',
+        height: '127%',
+        class: 'image-shadow',
         value: `${rootLink}arcane.jpg`,
       }]
     }, {
@@ -66,7 +68,8 @@ export default {
       },
       content: [{
         type: 'image',
-        class: 'image-shadow frame-1-1',
+        height: '127%',
+        class: 'image-shadow',
         value: `${rootLink}cuzina.jpg`,
       }, {
         type: 'text',
@@ -100,7 +103,8 @@ export default {
         `,
       }, {
         type: 'image',
-        class: 'image-shadow frame-1-1',
+        height: '127%',
+        class: 'image-shadow',
         value: `${rootLink}villa.jpg`,
       }]
     }, {

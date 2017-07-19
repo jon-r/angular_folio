@@ -4,7 +4,7 @@
 import {animation, style, animate, stagger, query, animateChild, useAnimation, AnimationReferenceMetadata } from '@angular/animations';
 
 const defaultTime = '400ms ease-out';
-const defaultStagger = '200ms';
+const defaultStagger = '100ms';
 
 export const to = {
   left:  { params: { to: 'translateX(-100%)'}},
@@ -27,6 +27,7 @@ export const fade = animation([
   style({ opacity: '{{from}}' }),
   animate('{{ time }}', style({ opacity: '{{to}}' }))
 ], {params: { time: defaultTime }});
+
 export const fadeIn = useAnimation(fade, fIn);
 export const fadeOut = useAnimation(fade, fOut);
 
@@ -52,7 +53,7 @@ export const slideStagger = animation([
 ], {params: { time: defaultTime, to: '*', from: '*' }});
 
 export const slideInChild = animation(
-  query(':enter', useAnimation(slide, {params: { from: '{{ from }}' }}))
+  query(':enter', useAnimation(slide, {params: { from: '{{ from }}' }}), { optional: true })
 );
 export const slideOutChild = animation(
   query(':leave', useAnimation(slide, {params: { to: '{{ to }}' }}), { optional: true })

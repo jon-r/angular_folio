@@ -9,7 +9,7 @@ import { FolioService } from './folio.service';
 @Component({
   selector: 'app-folio-list',
   templateUrl: './folio-list.component.html',
-  styleUrls: ['./folio-list.component.css'],
+  styleUrls: ['./folio-list.component.css', '../shared/content-style.css'],
 })
 export class FolioListComponent implements OnInit {
 
@@ -47,18 +47,18 @@ export class FolioListComponent implements OnInit {
   setCategory(category) {
     this.activeProject = null;
     this.filterProjects({ value: category });
-    this.setFolioHeight(this.projects.length);
+
+    if (this.size) {
+      this.setFolioHeight(this.projects.length * this.size);
+    }
   }
 
   setFolioHeight(n) {
-
-
-
-    this.folioHeight = n * this.size;
+    this.folioHeight = n;
   }
 
   setFilter(paramMap) {
-    this.routeCommsService.emitScrollTo(0);
+    this.routeCommsService.updateScrollPos(0);
 
     switch (true) {
     case (paramMap.has('project')):
@@ -75,18 +75,20 @@ export class FolioListComponent implements OnInit {
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/
 
   ngOnInit() {
-    const sizes = {
-      mobile: 168,
-      tablet: 192,
-      screen: 256,
-    };
-
-    this.filterProjects({value: 'all'});
 
     this.route.paramMap.subscribe(paramMap => this.setFilter(paramMap));
-    this.routeCommsService.widthOutput$.subscribe(screen => {
-      this.size = sizes[screen];
+
+    this.routeCommsService.listDimensions$.subscribe(dims => {
+      const n = this.projects.length;
+      // todo have this wait till after the previous filter? 'wait until' ?
+
+      this.size = dims.height;
+
+      this.setFolioHeight(n * this.size);
+
     });
+
+
 
   }
 

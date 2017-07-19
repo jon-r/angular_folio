@@ -31,7 +31,7 @@ export default class CanvasGrid {
     this.activePoints = [];
     this.gridStarters = [];
 
-    this.isPaused = false;
+    this.isPaused = true;
 
     // window.addEventListener('resize', debounce(() => this.build(), 500));
   }
@@ -70,7 +70,7 @@ export default class CanvasGrid {
       });
     });
 
-    // todo : update this in the main snake file (reseting the starter, reomving the resize event watch)
+    // todo : update this in the main snake file (reseting the starter, reomving the resize event watch, play IF not already playing)
     this.gridStarters = [];
 
     grid.forEach((rect) => {
@@ -82,9 +82,11 @@ export default class CanvasGrid {
   }
 
   play() {
-    this.isPaused = false;
-    this.maintainPoints();
-    this.updateGrid();
+    if (this.isPaused) {
+      this.isPaused = false;
+      this.maintainPoints();
+      this.updateGrid();
+    }
   }
 
   maintainPoints() {

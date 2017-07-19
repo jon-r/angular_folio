@@ -1,8 +1,8 @@
 
 <button class="menu-toggle" (click)="toggleSidebar(true)" >=</button>
 
-<div class="sidebar" [@nav] *ngIf="mobileShow || !isMobile" >
-  <div class="sidebar-bg frame-shadow" [@sidebar]="prepRouteState(routerOutlet)" ></div>
+<div class="sidebar" [@nav] *ngIf="showSidebar" >
+  <div class="sidebar-bg frame-shadow" [@sidebar]="page" ></div>
 
   <button class="menu-toggle" (click)="toggleSidebar(false)" >X</button>
 
@@ -12,7 +12,7 @@
     </a>
   </div>
 
-  <nav id="sideNav" class="site-nav" *ngIf="prepRouteState(routerOutlet) !== 'home'; else homeContact" >
+  <nav id="sideNav" class="site-nav" *ngIf="page !== 'home'; else homeContact" >
     <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
       <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
       <h4>Folio</h4>
@@ -48,11 +48,11 @@
 
 
 <main class="site-content full-screen"
-  [@routeAnimation]="prepRouteState(routerOutlet)"
+  [@routeAnimation]="page"
   [scrollTop]="scrollPos"
   #routesContainer >
 
-  <router-outlet #routerOutlet="outlet" ></router-outlet>
+  <router-outlet #routerOutlet="outlet" (activate)="updateRoute(routerOutlet)" ></router-outlet>
 
 </main>
 

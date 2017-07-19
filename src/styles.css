@@ -4,7 +4,7 @@
 
 body {
 
-  font: 300 18px/1.375 "soleil", sans-serif;
+  font: 300 16px/1.375 "soleil", sans-serif;
   color: #B2DFDB;
   background-color: #202121;
 /*  overflow: hidden;*/
@@ -12,11 +12,11 @@ body {
 
 h1, h2, h3, h4, h5 { font-weight: bold; line-height: 1.2}
 
-h1 { font-size: 4.21rem }
-h2 { font-size: 3.16rem }
-h3 { font-size: 2.37rem }
-h4 { font-size: 1.77rem }
-h5 { font-size: 1.33rem }
+h1 { font-size: 2rem }
+h2 { font-size: 1.625rem }
+h3 { font-size: 1.375rem }
+h4 { font-size: 1.125rem }
+h5 { font-size: 1rem }
 
 a {
   text-decoration: none;
@@ -53,6 +53,15 @@ a {
   text-align: right;
 }
 
+@media screen and (min-width: 800px) {
+  h1 { font-size: 4.21rem }
+  h2 { font-size: 3.16rem }
+  h3 { font-size: 2.37rem }
+  h4 { font-size: 1.77rem }
+  h5 { font-size: 1.33rem }
+  body { font-size: 18px }
+}
+
 
 /* style-free content formatting -------------------------------------------- */
 
@@ -66,13 +75,13 @@ a {
 }
 
 .content ul {
-  padding-left: 32px;
+  padding-left: 2rem;
   list-style: circle;
   margin-bottom: 1.2rem;
 }
 
 .content sub {
-  font-size: 0.4em;
+  font-size: 0.5em;
   vertical-align: baseline;
 }
 
@@ -80,13 +89,13 @@ a {
   margin: 2rem -5rem 2rem -13px;
   border: none;
   background: #00897B;
-  height: 8px;
+  height: 0.5rem;
 }
 
 /* helpers ------------------------------------------------------------------ */
 
 .navicon {
-  width: 48px;
+  width: 3em;
   display: inline-block;
 }
 
@@ -126,7 +135,7 @@ a {
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 2rem;
   position: relative;
 }
 
@@ -138,7 +147,7 @@ a {
 }
 
 .content-pad {
-  padding: 16px;
+  padding: 1rem;
 }
 
 /* preloader ---------------------------------------------------------------- */

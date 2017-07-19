@@ -2,7 +2,7 @@
 :host {
   background-color: #e4e5e7;
   color: #202121;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: block;
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
@@ -10,7 +10,7 @@
 /* row classes */
 
 .content-row {
-  padding: 64px 16px;
+  padding: 2rem 1rem;
 }
 
 
@@ -28,7 +28,7 @@
 
 .content {
   flex: 1;
-  padding: 8px;
+  padding: .5rem;
   position: relative;
 }
 
@@ -40,10 +40,10 @@
 
 .content-inner {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: .5rem;
+  left: .5rem;
   height: auto;
-  width: calc(100% - 16px);
+  width: calc(100% - 1rem);
 }
 
 iframe.content-inner {
@@ -63,7 +63,7 @@ iframe.content-inner {
 @media screen and (min-width: 1500px) {
   .blackjack-row .content {
     border: none;
-    transform: scale(0.8);
+    transform: scale(.8);
     margin: -1%;
   }
 
@@ -75,6 +75,10 @@ iframe.content-inner {
 }
 
 @media screen and (min-width: 800px) {
+  .content-row {
+    padding: 4rem 1rem;
+  }
+
   .content-row-inner {
     display: flex;
     justify-content:space-between;
@@ -90,8 +94,8 @@ iframe.content-inner {
   }
 
   .content-overlap {
-      margin-top: -128px;
-      margin-bottom: -128px;
+      margin-top: -8rem;
+      margin-bottom: -8rem;
   }
   .flex-double {
     flex: 2;
@@ -109,19 +113,12 @@ iframe.content-inner {
 /*
 
 
-TODO URGENT!!!
-review svgs on firefox/edge. any that break just set as images. seems to be issue with use?
-
 MQ todo: below 800 fixes:
-reducing section pad
 smaller intro header/icon
 icons too big. some multi column shindig? some :not(flex-triple/double)
-hide blackjack
-smaller title fonts. mdl design have sizes??
-fix bg on recRoom
+hide blackjack ** need to disable loading (see LOD)
 fix homepage
 
-lose filter on mobile? not doing much
+faster sidebar on open/close
 
-reloacate sidebar? perhaps as header, perhaps as a toggle (since have toggle home already)
 */
