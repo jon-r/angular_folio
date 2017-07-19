@@ -1,10 +1,6 @@
 
-<button class="menu-toggle" (click)="toggleSidebar(true)" >=</button>
-
 <div class="sidebar" [@nav] *ngIf="showSidebar" >
   <div class="sidebar-bg frame-shadow" [@sidebar]="page" ></div>
-
-  <button class="menu-toggle" (click)="toggleSidebar(false)" >X</button>
 
   <div class="site-logo"  >
     <a routerLink="home" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >
@@ -14,22 +10,22 @@
 
   <nav id="sideNav" class="site-nav" *ngIf="page !== 'home'; else homeContact" >
     <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/work.svg'" ></div>
       <h4>Folio</h4>
     </a>
 
     <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/about.svg'" ></div>
       <h4>About</h4>
     </a>
 
     <a class="nav-link site-link" href="mailto:jon.richards@outlook.com" >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/email.svg'" ></div>
       <h4>Email</h4>
     </a>
 
     <a class="nav-link site-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/ph.svg'" ></div>
+      <div class="navicon hide-small" [inlineSVG]="'../assets/site/github.svg'" ></div>
       <h4>Github</h4>
     </a>
   </nav>
@@ -37,14 +33,20 @@
   <ng-template #homeContact>
     <nav [@nav] class="home-nav" >
       <a href="mailto:jon.richards@outlook.com" >
-        <h3><i class="navicon inline" [inlineSVG]="'../assets/site/ph.svg'" ></i> jon.richards@outlook.com</h3>
+        <h5><i class="navicon inline" [inlineSVG]="'../assets/site/email.svg'" ></i> jon.richards@outlook.com</h5>
       </a>
       <a href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-        <h3><i class="navicon inline" [inlineSVG]="'../assets/site/ph.svg'" ></i> github.io/jon-r</h3>
+        <h5><i class="navicon inline" [inlineSVG]="'../assets/site/github.svg'" ></i> github.io/jon-r</h5>
       </a>
     </nav>
   </ng-template>
 </div>
+
+<button class="menu-toggle"
+  (click)="toggleSidebar()"
+  [ngClass]="{ 'on': showSidebar }"
+  [inlineSVG]="'../assets/site/burger.svg'" >
+</button>
 
 
 <main class="site-content full-screen"

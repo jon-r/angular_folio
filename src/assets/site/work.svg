@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <mask id="b">
+    <path fill="#fff" d="M0 0h36v36H0z"/>
+    <rect x="8" y="11" height="12" fill="#fff" stroke="#000" width="20" rx="1"/>
+    <path stroke="#000" d="M10 14h6m-6 2h5m-5 2h7"/>
+    <path d="M22 13h4v8h-4zm-7 12h6l1 4h-8"/>
+  </mask>
+  <circle class="ico" cx="18" cy="18.5" r="16" mask="url(#b)" fill="#202121"/>
+</svg>

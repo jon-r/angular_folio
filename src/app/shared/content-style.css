@@ -10,17 +10,28 @@
 
 .page-header {
   text-align: center;
-  left: 0;
+  width: 100%;
   right: 0;
   position: fixed;
   background-color: #0e4c46;
   z-index: 5;
   padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
+
+.page-tile {
+  line-height: 1;
+  align-self: center;
+}
+
 
 @media screen and (min-width: 800px) {
   .page-header {
-    left: calc(64px + 5vw);
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: space-between;
+    width: calc(95vw - 64px);
   }
 }

@@ -116,9 +116,11 @@ iframe.content-inner {
 MQ todo: below 800 fixes:
 smaller intro header/icon
 icons too big. some multi column shindig? some :not(flex-triple/double)
-hide blackjack ** need to disable loading (see LOD)
 fix homepage
 
+flex reverse class? to have better columns on mobile
+
 faster sidebar on open/close
+move email/github lower down to seperate form the nav. prehaps reuse the home page versions so always two sepreate elements
 
 */

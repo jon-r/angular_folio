@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit, NgZone } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -66,6 +66,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   constructor(
     private routerComms: RouteCommsService,
+    private ngZone: NgZone,
   ) {
 //    this.mobileShow = false;
     this.showSidebar = true;
@@ -87,12 +88,17 @@ export class AppComponent implements AfterViewInit, OnInit {
   updateRoute(outlet) {
     const ref = outlet.activatedRouteData.anim;
     this.pageSub.next(ref);
-    this.toggleSidebar(false);
+    this.closeSidebar();
   }
 
 
-  toggleSidebar(bool: Boolean) {
-    this.showSidebar = bool || !this.isMobile;
+  toggleSidebar() {
+    const bool = this.showSidebar;
+    this.showSidebar = !bool || !this.isMobile;
+  }
+
+  closeSidebar() {
+    this.showSidebar = false || !this.isMobile;
   }
 
 
@@ -119,13 +125,13 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.routerComms.listDimensions$.subscribe(dims => {
       const mq = dims.query;
       this.isMobile = mq === 'mobile';
+
       if (mq === 'screen') {
-        this.grid.build().play();
+        this.ngZone.runOutsideAngular(() => this.grid.build().play());
       } else {
         this.grid.pause();
-
       }
-      this.toggleSidebar(false);
+      this.closeSidebar();
     });
 
     this.routerComms.scrollPosition$.subscribe(pos => {

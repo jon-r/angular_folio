@@ -86,22 +86,36 @@ a {
 }
 
 .content hr {
-  margin: 2rem -5rem 2rem -13px;
+  margin: 1rem 0;
   border: none;
   background: #00897B;
   height: 0.5rem;
 }
 
+@media screen and (min-width: 800px) {
+  .content hr {
+    margin: 2rem -5rem 2rem -13px;
+  }
+
+}
+
 /* helpers ------------------------------------------------------------------ */
 
 .navicon {
-  width: 3em;
+  width: 2em;
   display: inline-block;
 }
 
 .navicon.inline {
-  width: 1.5em;
+  width: 1em;
   vertical-align: middle;
+}
+.ico {
+  transition: fill 300ms;
+}
+
+.active .ico  {
+  fill: currentColor;
 }
 
 .project-intro-icon svg {
@@ -118,6 +132,11 @@ a {
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
+@media screen and (max-width: 800px) {
+  .hide-small {
+    display: none !important;
+  }
+}
 
 
 
@@ -135,7 +154,7 @@ a {
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
 }
 
@@ -148,6 +167,12 @@ a {
 
 .content-pad {
   padding: 1rem;
+}
+
+@media screen and (min-width: 1100px) {
+  .outer-frame {
+    padding: 2rem;
+  }
 }
 
 /* preloader ---------------------------------------------------------------- */
@@ -234,20 +259,4 @@ a {
 }
 
 
-@keyframes enter-left {
-  from { opacity: 0; transform: translateX(-50%);}
-  10% { opacity: 1 }
-  to { transform: none;}
-}
-
 /* media querys ------------------------------------------------------------- */
-
-@media screen and (max-width: 1100px) {
-
-  .outer-frame {
-    padding: 16px;
-  }
-  .hide-small {
-    display: none !important;
-  }
-}

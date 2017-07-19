@@ -1,0 +1,15 @@
+<svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6">
+  <style>
+    .b-1, .b-2, .b-3 { transition: transform 300ms }
+    .b-1 { transform-origin: 1px 1px }
+    .b-3 { transform-origin: 1px 5px }
+    .on .b-1 { transform: rotate(45deg) }
+    .on .b-2 { transform: translateX(10px) }
+    .on .b-3 { transform: rotate(-45deg) }
+  </style>
+  <g stroke="#B2DFDB" stroke-width="1" >
+    <path class="b-1" d="m-1 1h10"/>
+    <path class="b-2" d="m-1 3h8"/>
+    <path class="b-3" d="m-1 5h10"/>
+  </g>
+</svg>

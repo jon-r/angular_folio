@@ -32,13 +32,12 @@ export class TemplateComponent implements OnInit {
     private cdRef: ChangeDetectorRef,
   ) {}
 
-  activateRow(row) {
-    row.isActive = true;
+  activateRow(row, $event) {
+    row.isActive = $event;
   }
 
   ngOnInit() {
     this.template.rows.forEach(row => row.isActive = false);
-//    this.cdRef.detectChanges();
   }
 
 };

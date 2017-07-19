@@ -80,7 +80,6 @@ export class FolioListComponent implements OnInit {
 
     this.routeCommsService.listDimensions$.subscribe(dims => {
       const n = this.projects.length;
-      // todo have this wait till after the previous filter? 'wait until' ?
 
       this.size = dims.height;
 

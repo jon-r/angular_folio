@@ -78,7 +78,8 @@ export class FolioItemComponent implements OnInit {
       const player: AnimationPlayer = factory.create(el, {});
 
       player.play();
-      if (this.state = 'in') {
+
+      if (i === 0) {
         player.onDone(() => this.emitHeight());
       }
     });
@@ -86,6 +87,7 @@ export class FolioItemComponent implements OnInit {
 
   deactivate() {
     this.state = 'out';
+
 
     const introBG = this.introBG.nativeElement;
     const label = this.label.nativeElement;
@@ -112,15 +114,16 @@ export class FolioItemComponent implements OnInit {
       'transition-delay.ms': n * 50,
     };
 
-    // only to be needed if active ...
     if (this.state === 'in') {
       this.activate();
     }
   }
 
   emitHeight() {
-    const h = this.float.nativeElement.clientHeight || 0;
-    this.updateActive.emit(h);
+    if (this.state === 'in') {
+      const h = this.float.nativeElement.clientHeight || 0;
+      this.updateActive.emit(h);
+    }
   }
 
   ngOnInit() {

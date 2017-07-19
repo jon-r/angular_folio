@@ -33,7 +33,7 @@
   width: 100%;
 }
 .site-link {
-  padding: 8px;
+  padding: 1rem;
   border-bottom: solid 1px black;
   display: block;
   text-align: center;
@@ -63,14 +63,17 @@
 
 .menu-toggle {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 5;
   background: none;
   border: none;
   color: white;
-  font-size: 2em;
-  /* todo use an icon */
+  width: 2em;
+  padding: 0;
+}
+.menu-toggle:focus {
+  outline: none;
 }
 
 @media screen and (min-width: 800px) {
@@ -78,6 +81,10 @@
   .sidebar {
     width: calc(64px + 5vw);
     min-width: 100px;
+  }
+
+  .site-link {
+    padding: 0.5rem;
   }
 
   .site-content {

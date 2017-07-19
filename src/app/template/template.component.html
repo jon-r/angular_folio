@@ -3,7 +3,7 @@
     *ngFor="let row of template.rows"
     [ngClass]="row.class"
     [ngStyle]="row.style"
-    (appLOD)="row.isActive = true" >
+    (appLOD)="activateRow(row, $event)" >
 
     <div class="content-row-inner container" >
 
