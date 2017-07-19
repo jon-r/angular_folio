@@ -10,14 +10,16 @@ import { RouteCommsService } from '../shared/route-comms.service';
 })
 export class AboutComponent implements OnInit {
 
-  about = About;
+  about;
 
   constructor(
     private routeCommsService: RouteCommsService,
   ) { }
 
   ngOnInit() {
-    this.routeCommsService.emitScrollTo(0);
+//    this.routeCommsService.updateScrollPos(0);
+
+    this.about = About;
   }
 
 }

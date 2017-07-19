@@ -52,8 +52,7 @@ export default {
       }],
     }, {
 
-      // TODO: be nice to link to a demo version of the game that plays automatically
-      class: 'blackjack-row',
+      class: 'blackjack-row hide-small',
       content: [{
         type: 'iframe',
         height: '75%',

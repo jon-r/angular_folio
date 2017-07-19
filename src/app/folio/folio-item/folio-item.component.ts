@@ -24,17 +24,16 @@ export class FolioItemComponent implements OnInit {
   @ViewChild('label') label: ElementRef;
   @ViewChild('icon') icon: ElementRef;
 
-  @Input() listScale;
   @Input() project;
   @Input('listIndex')
   set updateStyle(n: number) {
-    // const isBigScreen = window.innerWidth > 1100;
-    console.log(n, this.listScale);
-    this.style = {
-      transform: `translateY(${n * this.listScale}px)`,
-      'transition-delay.ms': n * 50,
-    };
+    this.listIndex = n;
+    if (this.dims) {
+      this.updateSizes();
+    }
   }
+
+
   @Input('activeProject')
   set setActive(slug: string) {
     if (slug === this.project.slug) {
@@ -46,8 +45,10 @@ export class FolioItemComponent implements OnInit {
 
   @Output() updateActive = new EventEmitter<number>();
 
+  listIndex;
   style;
   state;
+  dims;
 
   constructor(
     private builder: AnimationBuilder,
@@ -65,7 +66,6 @@ export class FolioItemComponent implements OnInit {
     const fin = this.float.nativeElement.clientWidth;
     const offset = ((fin - start) / 2) - 16;
 
-    // todo: update on screen resize
 
     const anims = [
       { el: introBG, to: `scale(${ fin / start })` },
@@ -104,10 +104,18 @@ export class FolioItemComponent implements OnInit {
     });
   }
 
-  updateSizes(screen) {
-    // only to be needed if active ...
+  updateSizes() {
+    const n = this.listIndex;
 
-    // this.scale = sizes[screen];
+    this.style = {
+      transform: `translateY(${n * this.dims.height}px)`,
+      'transition-delay.ms': n * 50,
+    };
+
+    // only to be needed if active ...
+    if (this.state === 'in') {
+      this.activate();
+    }
   }
 
   emitHeight() {
@@ -116,11 +124,10 @@ export class FolioItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.project.rows.forEach(row => row.isActive = false);
-
-    // todo - check if this has been send before? some cache?
-    this.routeCommsService.widthOutput$.subscribe(width => this.updateSizes(width));
-
+    this.routeCommsService.listDimensions$.subscribe(dims => {
+      this.dims = dims;
+      this.updateSizes();
+    });
   }
 
 }

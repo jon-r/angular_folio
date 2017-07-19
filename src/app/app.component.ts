@@ -1,13 +1,17 @@
-import { Component, ViewChild, ElementRef, NgZone, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/filter';
 
 import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
 
 import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from, fadeIn } from './shared/animations';
 
-import { RouteCommsService, RouteMsg } from './shared/route-comms.service';
+import { RouteCommsService } from './shared/route-comms.service';
 
 import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
 
@@ -34,8 +38,6 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
     trigger('sidebar', [
       state('void', style({ transform: 'translateX(-100%)' })),
       state('home', style({ transform: 'translateX(10vw) skew(20deg)' })),
-      // transition(':enter', useAnimation(slide, from.left)),
-      // transition(':leave', useAnimation(slide, to.left)),
       transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('header', [
@@ -49,53 +51,48 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
     ])
   ]
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('routesContainer') container: ElementRef;
+  @ViewChild('routerOutlet') outlet: RouterOutlet;
 
-  page: String;
+  page: string;
+  pageSub: BehaviorSubject<string>;
+  pageRef$: Observable<string>;
 
   scrollPos: Number;
-  mobileShow: Boolean;
+  showSidebar: Boolean;
   isMobile: Boolean;
   grid: JRGrid;
 
-
   constructor(
     private routerComms: RouteCommsService,
-    private ngZone: NgZone,
-    private cdRef: ChangeDetectorRef,
-  ) {}
+  ) {
+//    this.mobileShow = false;
+    this.showSidebar = true;
+    this.pageSub = new BehaviorSubject<string>('');
+    this.page = '';
 
-  scrollWatch(element: Element) {
-    if (this.page !== 'folio') {
-      return false;
-      // only interested if is on the template page;
-    }
-    this.routerComms.emitScrollPos(element.scrollTop);
+    this.pageRef$ = this.pageSub.asObservable();
   }
 
-  widthWatch() {
-    const vw = window.innerWidth;
+//  scrollWatch(element: Element) {
+//    if (this.page !== 'folio') {
+//      return false;
+//      // only interested if is on the template page;
+//    }
+//    this.routerComms.emitScrollPos(element.scrollTop);
+//  }
 
-    switch (true) {
-    case (vw < 800):
-      return 'mobile';
-    case (vw < 1100):
-      return 'tablet';
-    default:
-      return 'screen';
-    }
+
+  updateRoute(outlet) {
+    const ref = outlet.activatedRouteData.anim;
+    this.pageSub.next(ref);
+    this.toggleSidebar(false);
   }
 
-  prepRouteState(outlet) {
-    const page = outlet.activatedRouteData['anim'];
-    this.page = page;
-    return page;
-  }
 
-// todo use this to close the menu more often (route changes i guess)
   toggleSidebar(bool: Boolean) {
-    this.mobileShow = bool;
+    this.showSidebar = bool || !this.isMobile;
   }
 
 
@@ -116,51 +113,44 @@ export class AppComponent implements AfterViewInit {
     requestAnimationFrame(() => this.scrollTo(to));
   }
 
+  ngOnInit() {
+    this.grid = new JRGrid({ target: 'jr_grid' });
+
+    this.routerComms.listDimensions$.subscribe(dims => {
+      const mq = dims.query;
+      this.isMobile = mq === 'mobile';
+      if (mq === 'screen') {
+        this.grid.build().play();
+      } else {
+        this.grid.pause();
+
+      }
+      this.toggleSidebar(false);
+    });
+
+    this.routerComms.scrollPosition$.subscribe(pos => {
+      this.scrollTo(pos);
+    });
+
+    this.pageRef$.subscribe((pg) => this.page = pg);
+  }
+
 
   ngAfterViewInit() {
 
     const container = this.container.nativeElement;
 
-    this.routerComms.scrollToOutput$
-      .subscribe(scroll => this.scrollTo(scroll));
-
-
-    this.grid = new JRGrid({ target: 'jr_grid' });
-    const width = this.widthWatch();
-
-    if (width === 'screen') {
-      this.grid.build().play();
-    } else {
-      this.grid.pause();
-    };
-
-    this.mobileShow = false;
-    this.isMobile = (width === 'mobile');
-
-
-    this.cdRef.detectChanges();
-    this.routerComms.emitWidth(width);
 
     Observable.fromEvent(window, 'resize')
-      .debounceTime(150)
-      .subscribe((e) => {
-        const width2 = this.widthWatch();
+      .debounceTime(500)
+      .subscribe(() => this.routerComms.updateDims());
 
-        if (width2 === 'screen') {
-          this.grid.pause();
-        } else {
-          this.grid.build();
-        }
-
-        this.mobileShow = (width2 === 'mobile');
-        this.routerComms.emitWidth(width2);
-      });
 
     Observable.fromEvent(container, 'scroll')
+      // only actively watching if on folio pages
+      .filter(() => this.page === 'folio')
       .debounceTime(150)
-      .subscribe(() => {
-        this.scrollWatch(container);
-      });
+      .subscribe(() => this.routerComms.updateScrollPos(container.scrollTop));
 
   }
 

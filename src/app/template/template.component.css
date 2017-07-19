@@ -109,11 +109,7 @@ iframe.content-inner {
 /*
 
 
-TODO URGENT!!!
-review svgs on firefox/edge. any that break just set as images. seems to be issue with use?
-
 MQ todo: below 800 fixes:
-reducing section pad
 smaller intro header/icon
 icons too big. some multi column shindig? some :not(flex-triple/double)
 hide blackjack
@@ -121,7 +117,4 @@ smaller title fonts. mdl design have sizes??
 fix bg on recRoom
 fix homepage
 
-lose filter on mobile? not doing much
-
-reloacate sidebar? perhaps as header, perhaps as a toggle (since have toggle home already)
 */

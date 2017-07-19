@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { useAnimation, transition, trigger, group, query } from '@angular/animations';
@@ -22,20 +22,24 @@ import { fadeIn, slide } from '../shared/animations';
   ],
 })
 export class TemplateComponent implements OnInit {
-  @Input() template: {};
+  @Input() template;
+
 
   scrollPos = 0;
 
   constructor(
     private routeComms: RouteCommsService,
+    private cdRef: ChangeDetectorRef,
   ) {}
 
   activateRow(row) {
     row.isActive = true;
   }
 
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.template.rows.forEach(row => row.isActive = false);
+//    this.cdRef.detectChanges();
+  }
 
 };
 

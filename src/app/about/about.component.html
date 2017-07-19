@@ -1,4 +1,34 @@
 
+
 <section class="about-container outer-frame" >
   <app-template [template]="about" ></app-template>
 </section>
+
+
+
+
+<!--
+<header class="folio-header frame-shadow">
+  <a class="folio-filter nav-link"
+    *ngFor="let filter of filters"
+    [routerLink]="{category: filter}"
+    [ngClass]="{ active: category == filter }" >
+    {{filter | titlecase}}
+  </a>
+</header>
+
+<section class="about-container outer-frame"  [scrollTop]="scrollPos" #listContainer >
+
+  <ul class="projects-list" [ngStyle]="{ 'height.px' : folioHeight }" >
+
+    <app-folio-item
+      *ngFor="let project of projects; index as n; trackBy: trackProjects"
+      [project]="project"
+      [listIndex]="n"
+      [activeProject]="activeProject"
+      (updateActive)="setFolioHeight($event)" >
+    </app-folio-item>
+
+  </ul>
+
+</section>-->

@@ -7,7 +7,6 @@
     .switcheroo {
       animation: reveal 9s infinite both;
     }
-    .une { animation-delay: }
     .deux { animation-delay: -3s }
     .trois { animation-delay: -6s }
 
@@ -15,7 +14,7 @@
 
   </style>
 
-  <g font-family="'SoleilW01-Bold'" >
+  <g font-family="soleil" font-weight="bold" >
     <g fill="#B2DFDB" font-size="48" >
       <path class="hide-small" d="M176.03 217l11.02-20h-9.1L168 214.57c-.67 1.2-.67 3 0 4.2l9.95 18.23h9.1l-11.02-20zm274.37 0l-11 20h9.1l9.94-18.32c.67-1.2.67-2.62 0-3.82L448.5 197h-9.1l11 20z"/>
 
@@ -32,8 +31,6 @@
       <text class="hide-small switcheroo quatre" fill="#f05" transform="translate(90 234)">
         Catching IE Bugs
       </text>
-
-
       <text transform="translate(55.43 91.83)" font-size="67">
         Jon Richards
       </text>

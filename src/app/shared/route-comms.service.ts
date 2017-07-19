@@ -1,45 +1,107 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+// import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 
-export class RouteMsg {
-  constructor(
-    public sidebar: string,
-    public page: string,
-  ) {}
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/debounceTime';
+// import 'rxjs/add/observable/fromEvent';
+
+export interface Dims {
+  height: number;
+  width: number;
+  query: string;
 }
 
 @Injectable()
 export class RouteCommsService {
 
-  private msgSrc = new Subject<RouteMsg>();
-  msgOutput$ = this.msgSrc.asObservable();
+  /* OLD ------------- */
+//  private msgSrc = new Subject<RouteMsg>();
+//  msgOutput$ = this.msgSrc.asObservable();
 
-  private scrollToSrc = new Subject<number>();
-  scrollToOutput$ = this.scrollToSrc.asObservable();
+//  private scrollToSrc = new Subject<number>();
+//  scrollToOutput$ = this.scrollToSrc.asObservable();
 
-  private scrollPosSrc = new Subject<number>();
-  scrollPosOutput$ = this.scrollPosSrc.asObservable();
+//  private scrollPosSrc = new Subject<number>();
+//  scrollPosOutput$ = this.scrollPosSrc.asObservable();
 
-  private width = new Subject<string>();
-  widthOutput$ = this.width.asObservable();
+//  private width = new Subject<string>();
+//  widthOutput$ = this.width.asObservable();
+  /* OLD ------------- */
 
-  emitStates(msg: RouteMsg) {
-    this.msgSrc.next(msg);
+  listDimensions$: Observable<Dims>;
+  private listDims: BehaviorSubject<Dims>;
+  private sizes: Map<string, number>;
+
+  scrollPosition$: Observable<number>;
+  private scrollPos: BehaviorSubject<number>;
+
+  constructor() {
+
+    this.sizes = new Map([
+      ['mobile', 168],
+      ['tablet', 192],
+      ['screen', 256],
+    ]);
+
+    const firstDims = this.setDims();
+
+    this.listDims = new BehaviorSubject(firstDims);
+    this.listDimensions$ = this.listDims.asObservable();
+
+    this.scrollPos = new BehaviorSubject(0);
+    this.scrollPosition$ = this.scrollPos.asObservable();
+
   }
 
-  emitScrollTo(scrollTo: number) {
-    this.scrollToSrc.next(scrollTo);
+  setDims(): Dims {
+    const width = window.innerWidth;
+
+    const setQuery = (vw) => {
+      switch (true) {
+      case (vw < 800):
+        return 'mobile';
+      case (vw < 1100):
+        return 'tablet';
+      default:
+        return 'screen';
+      }
+    };
+
+    const query = setQuery(width);
+    const height = this.sizes.get(query);
+
+    return { width, height, query };
   }
 
-  emitScrollPos(scrollPos: number) {
-    this.scrollPosSrc.next(scrollPos);
+  updateDims() {
+    const dims = this.setDims();
+    this.listDims.next(dims);
   }
 
-  emitWidth(vw: string) {
-    console.log(vw);
-    this.width.next(vw);
+  updateScrollPos(pos) {
+    this.scrollPos.next(pos);
   }
+
+
+  // older below
+//  emitStates(msg: RouteMsg) {
+//    this.msgSrc.next(msg);
+//  }
+
+//  emitScrollTo(scrollTo: number) {
+//    this.scrollToSrc.next(scrollTo);
+//  }
+//
+//  emitScrollPos(scrollPos: number) {
+//    this.scrollPosSrc.next(scrollPos);
+//  }
+//
+//  emitWidth(vw: string) {
+//    console.log(vw);
+//    this.width.next(vw);
+//  }
 
 }
 
