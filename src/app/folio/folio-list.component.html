@@ -1,15 +1,16 @@
 
 
-<header class="folio-header frame-shadow">
-  <a class="folio-filter nav-link"
+<header class="page-header frame-shadow">
+  <a class="folio-filter nav-link hide-small"
     *ngFor="let filter of filters"
     [routerLink]="{category: filter}"
     [ngClass]="{ active: category == filter }" >
     {{filter | titlecase}}
   </a>
+  <h3 class="page-title" >Portfolio</h3>
 </header>
 
-<section class="folio-container outer-frame" #listContainer >
+<section class="page-container outer-frame" #listContainer >
 
   <ul class="projects-list" [ngStyle]="{ 'height.px' : folioHeight }" >
 

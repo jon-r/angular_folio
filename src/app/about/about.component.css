@@ -1,15 +1,8 @@
-:host {
-  position: absolute;
-  width: 100%;
-}
 
-.about-container {
-  position: relative;
-}
 
 @media screen and (min-width: 1500px) {
 
-  .about-container::before {
+  .page-container::before {
     content: "";
     display: block;
     left: 32px;

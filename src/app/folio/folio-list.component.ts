@@ -9,7 +9,7 @@ import { FolioService } from './folio.service';
 @Component({
   selector: 'app-folio-list',
   templateUrl: './folio-list.component.html',
-  styleUrls: ['./folio-list.component.css'],
+  styleUrls: ['./folio-list.component.css', '../shared/content-style.css'],
 })
 export class FolioListComponent implements OnInit {
 
@@ -79,10 +79,13 @@ export class FolioListComponent implements OnInit {
     this.route.paramMap.subscribe(paramMap => this.setFilter(paramMap));
 
     this.routeCommsService.listDimensions$.subscribe(dims => {
+      const n = this.projects.length;
+      // todo have this wait till after the previous filter? 'wait until' ?
 
       this.size = dims.height;
 
-      this.setFolioHeight(this.projects.length * this.size);
+      this.setFolioHeight(n * this.size);
+
     });
 
 

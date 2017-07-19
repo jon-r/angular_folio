@@ -1,0 +1,26 @@
+:host {
+  position: absolute;
+  width: 100%;
+}
+
+.page-container {
+  position: relative;
+  margin-top: 48px;
+}
+
+.page-header {
+  text-align: center;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: #0e4c46;
+  z-index: 5;
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .page-header {
+    left: calc(64px + 5vw);
+    padding: 0;
+  }
+}

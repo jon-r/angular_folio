@@ -6,7 +6,7 @@ import { RouteCommsService } from '../shared/route-comms.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
+  styleUrls: ['./about.component.css', '../shared/content-style.css'],
 })
 export class AboutComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-//    this.routeCommsService.updateScrollPos(0);
+    this.routeCommsService.updateScrollPos(0);
 
     this.about = About;
   }

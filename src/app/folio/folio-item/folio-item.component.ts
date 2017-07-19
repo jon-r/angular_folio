@@ -78,7 +78,7 @@ export class FolioItemComponent implements OnInit {
       const player: AnimationPlayer = factory.create(el, {});
 
       player.play();
-      if (i === 0) {
+      if (this.state = 'in') {
         player.onDone(() => this.emitHeight());
       }
     });
