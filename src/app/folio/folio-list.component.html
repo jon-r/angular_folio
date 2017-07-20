@@ -1,20 +1,30 @@
 
 
 <header class="page-header frame-shadow">
-  <div>
-    <button class="nav-link back-btn" *ngIf="activeProject" [routerLink]="{category: category}" >Back</button>
-  </div>
 
+  <h5 class="page-title" >{{pageTitle()}}</h5>
 
-  <h3 class="page-title" >{{pageTitle()}}</h3>
-  <div class="filter-grp hide-small" >
-    <button class="folio-filter nav-link"
-      *ngFor="let filter of filters"
-      [routerLink]="{category: filter}"
-      [ngClass]="{ active: category == filter }" >
-      {{filter | titlecase}}
+  <div class="btn-box">
+    <button class="header-btn filter-dropdown small-only" *ngIf="!activeProject" (click)="dropOpen = true" >
+      {{category}}
+      <i class="tiny-icon" [inlineSVG]="'../assets/site/arr.svg'" ></i>
+    </button>
+    <button class="nav-link back-btn" *ngIf="activeProject" [routerLink]="{category: category}" >
+      <i class="tiny-icon" [inlineSVG]="'../assets/site/arrLeft.svg'" ></i>
+      Back
     </button>
   </div>
+
+  <ul class="filter-grp" [ngClass]="{ 'open' : dropOpen }" (click)="dropOpen = false" >
+    <li *ngFor="let filter of filters" class="folio-filter" >
+      <button class="header-btn nav-link"
+        [routerLink]="{category: filter}"
+        [ngClass]="{ active: category == filter }" >
+        {{filter | titlecase}}
+      </button>
+    </li>
+  </ul>
+
 </header>
 
 <section class="page-container outer-frame" #listContainer >

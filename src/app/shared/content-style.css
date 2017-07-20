@@ -9,29 +9,52 @@
 }
 
 .page-header {
-  text-align: center;
   width: 100%;
   right: 0;
   position: fixed;
   background-color: #0e4c46;
   z-index: 5;
-  padding: 0.5rem;
+
   display: flex;
-  justify-content: center;
-  align-items: stretch;
+  align-items: center;
+  padding-left: 3rem;
 }
 
-.page-tile {
+.page-title {
   line-height: 1;
-  align-self: center;
+  flex: 1;
+  padding: 0.5rem;
 }
 
+.header-btn {
+  width: 100%;
+}
+
+.btn-box {
+  min-width: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 
 @media screen and (min-width: 800px) {
+  .header-btn {
+    display: inline-block;
+    height: 100%;
+    min-width: calc(64px + 5vw);
+  }
+
+
+  .header-btn:hover {
+    background-color: #1c6b63;
+  }
+
+  .header-btn.active {
+    background-color: #00897B;
+  }
+
   .page-header {
     padding-top: 0;
     padding-bottom: 0;
-    justify-content: space-between;
-    width: calc(95vw - 64px);
+    padding-left: calc(5vw + 64px);
   }
 }

@@ -33,36 +33,29 @@
 
   </div>
 
-  <svg>
-    <path id="curv-sm" fill="none" d="M50.5 8a1 1 0 1 0 124 0 a1 1 0 1 0-124 0"/>
-    <path id="curv-lg" fill="none" d="M33.5 8a1 1 0 1 0 158 0 a1 1 0 1 0-158 0"/>
-
-  </svg>
-
-
   <script>
   (function() {
-  var loaderLogo = document.getElementById('js_loaderLogo');
-  var loaderFrame = document.getElementById('js_preLoader');
-//  var ready = [false, false];
-  var ready = [false, true]; // TEMPORARY [false,true] TO SKIP LOADING
+    var loaderLogo = document.getElementById('js_loaderLogo');
+    var loaderFrame = document.getElementById('js_preLoader');
+    var ready = [false, false];
+    // var ready = [false, true]; // TEMPORARY [false,true] TO SKIP LOADING
 
-  function readyCheck(n) {
-    ready[n] = true;
+    function readyCheck(n) {
+      ready[n] = true;
 
-    if (ready[0] && ready[1]) {
-      loaderFrame.dataset.ready = true;
-      ready.forEach(function(check) { return check = false });
+      if (ready[0] && ready[1]) {
+        loaderFrame.dataset.ready = true;
+        ready.forEach(function(check) { return check = false });
+      }
     }
-  }
 
     loaderLogo.addEventListener('animationend', function() {
       setTimeout(function() { readyCheck(1) }, 500);
     });
+
     window.addEventListener('load', function() { readyCheck(0) });
   })();
   </script>
-
 
   <!-- typekit -->
   <script src="https://use.typekit.net/qgo6zhu.js"></script>

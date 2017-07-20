@@ -80,18 +80,13 @@
 
 .menu-toggle {
   position: absolute;
-  top: 0.5rem;
+  top: 0.3rem;
   left: 0.5rem;
   z-index: 5;
-  background: none;
-  border: none;
-  color: white;
-  width: 2em;
+  width: 1.5em;
   padding: 0;
 }
-.menu-toggle:focus {
-  outline: none;
-}
+
 
 @media screen and (min-width: 800px) {
 
@@ -122,9 +117,6 @@
 
   .site-content {
     left: calc(64px + 5vw);
-  }
-  .menu-toggle {
-    display: none;
   }
 
 }

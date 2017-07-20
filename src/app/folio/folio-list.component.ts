@@ -16,6 +16,7 @@ export class FolioListComponent implements OnInit {
   projects: Array<any>;
   folioHeight;
   activeProject;
+  dropOpen = false;
   size;
 
   filters = ['all', 'work', 'play'];
@@ -28,6 +29,8 @@ export class FolioListComponent implements OnInit {
   ) { }
 
   filterProjects({key = 'cat', value}) {
+    this.dropOpen = false;
+
     if (key === 'cat') {
       this.category = value;
     }
