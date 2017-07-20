@@ -97,38 +97,13 @@ export default {
       }],
     }, {
       style: {
-        background: `url(${rootLink}/noise.png) #2a5a30`,
-      },
-      class: 'row-collapse',
-      content: [{
-        type: 'image',
-        height: '24%',
-        value: `${rootLink}chip.svg`,
-      }, {
-        type: 'image',
-        height: '25%',
-        value: `${rootLink}cards.svg`,
-      }],
-    }, {
-      style: {
-        background: `url(${rootLink}/noise.png) #2a5a30`,
+        background: `url(${rootLink}table-print.svg) right/contain no-repeat, url(${rootLink}/noise.png) #2a5a30`,
       },
       content: [{
         type: 'image',
-        height: '50%',
-        value: `${rootLink}table-print.svg`,
-      }],
-    }, {
-      content: [{
-        type: 'image',
-        height: '107%',
-        class: 'content-overlap flex-double',
-        value: `${rootLink}options.png`,
-      }, {
-        type: 'image',
-        height: '85%',
-        class: 'image-shadow',
-        value: `${rootLink}hand.png`,
+        height: '62.5%',
+        class: 'no-expand',
+        value: `${rootLink}tokens.svg`,
       }],
     }, {
       style: {
@@ -139,6 +114,18 @@ export default {
         height: '13%',
         class: 'image-shadow',
         value: `${rootLink}ctrls.png`,
+      }],
+    }, {
+      content: [{
+        type: 'image',
+        height: '107%',
+        class: 'image-shadow flex-double',
+        value: `${rootLink}options.png`,
+      }, {
+        type: 'image',
+        height: '85%',
+        class: 'image-shadow',
+        value: `${rootLink}hand.png`,
       }],
     }, {
       class: 'footer-row',

@@ -4,7 +4,7 @@
 import {animation, style, animate, stagger, query, animateChild, useAnimation, AnimationReferenceMetadata } from '@angular/animations';
 
 const defaultTime = '400ms ease-out';
-const defaultStagger = '100ms';
+const defaultStagger = '150ms';
 
 export const to = {
   left:  { params: { to: 'translateX(-100%)'}},

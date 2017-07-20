@@ -1,7 +1,12 @@
 
 
 <header class="page-header frame-shadow">
-  <h3 class="page-title" >Things I've Made</h3>
+  <div>
+    <button class="nav-link back-btn" *ngIf="activeProject" [routerLink]="{category: category}" >Back</button>
+  </div>
+
+
+  <h3 class="page-title" >{{pageTitle()}}</h3>
   <div class="filter-grp hide-small" >
     <button class="folio-filter nav-link"
       *ngFor="let filter of filters"
@@ -27,3 +32,9 @@
   </ul>
 
 </section>
+
+<!-- TODO:
+dropdown, make back butn match size of said dropdown
+https://material.io/guidelines/components/menus.html#menus-usage
+rearrange page headers to match appearance
+-->

@@ -1,6 +1,6 @@
 
-<div class="sidebar" [@nav] *ngIf="showSidebar" >
-  <div class="sidebar-bg frame-shadow" [@sidebar]="page" ></div>
+<div class="sidebar" [@nav]="appState.page" *ngIf="sidebarVisible()" >
+  <div class="sidebar-bg frame-shadow" [@sidebarBG]="appState.page" ></div>
 
   <div class="site-logo"  >
     <a routerLink="home" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >
@@ -8,39 +8,41 @@
     </a>
   </div>
 
-  <nav id="sideNav" class="site-nav" *ngIf="page !== 'home'; else homeContact" >
-    <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/work.svg'" ></div>
-      <h4>Folio</h4>
-    </a>
 
-    <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/about.svg'" ></div>
-      <h4>About</h4>
-    </a>
 
-    <a class="nav-link site-link" href="mailto:jon.richards@outlook.com" >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/email.svg'" ></div>
-      <h4>Email</h4>
-    </a>
+  <nav id="sideNav" class="site-nav" >
+    <ng-container *ngIf="siteNavVisible()" >
+      <a class="nav-link site-link" routerLink="home" routerLinkActive="active"  >
+        <div class="navicon hide-small" [inlineSVG]="'../assets/site/home.svg'" ></div>
+        <h4>Home</h4>
+      </a>
 
-    <a class="nav-link site-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-      <div class="navicon hide-small" [inlineSVG]="'../assets/site/github.svg'" ></div>
-      <h4>Github</h4>
-    </a>
+      <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
+        <div class="navicon hide-small" [inlineSVG]="'../assets/site/work.svg'" ></div>
+        <h4>Folio</h4>
+      </a>
+
+      <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
+        <div class="navicon hide-small" [inlineSVG]="'../assets/site/about.svg'" ></div>
+        <h4>About</h4>
+      </a>
+    </ng-container>
   </nav>
 
-  <ng-template #homeContact>
-    <nav [@nav] class="home-nav" >
-      <a href="mailto:jon.richards@outlook.com" >
-        <h5><i class="navicon inline" [inlineSVG]="'../assets/site/email.svg'" ></i> jon.richards@outlook.com</h5>
-      </a>
-      <a href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-        <h5><i class="navicon inline" [inlineSVG]="'../assets/site/github.svg'" ></i> github.io/jon-r</h5>
-      </a>
-    </nav>
-  </ng-template>
 </div>
+
+<nav class="contact-nav" [ngClass]="appState.page" >
+  <a class="contact-link" href="mailto:jon.richards@outlook.com" >
+    <h5><i class="navicon" [inlineSVG]="'../assets/site/email.svg'" ></i>
+      <span>jon.richards@outlook.com</span>
+    </h5>
+  </a>
+  <a class="contact-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
+    <h5><i class="navicon" [inlineSVG]="'../assets/site/github.svg'" ></i>
+      <span>github.io/jon-r</span>
+    </h5>
+  </a>
+</nav>
 
 <button class="menu-toggle"
   (click)="toggleSidebar()"
@@ -48,15 +50,16 @@
   [inlineSVG]="'../assets/site/burger.svg'" >
 </button>
 
-
 <main class="site-content full-screen"
-  [@routeAnimation]="page"
+  [@routeAnimation]="appState.page"
   [scrollTop]="scrollPos"
   #routesContainer >
 
   <router-outlet #routerOutlet="outlet" (activate)="updateRoute(routerOutlet)" ></router-outlet>
 
 </main>
+
+
 
 
 

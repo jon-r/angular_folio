@@ -7,7 +7,7 @@ import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/filter';
 
-import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
+import { useAnimation, transition, trigger, state, style, group, query, animateChild } from '@angular/animations';
 
 import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from, fadeIn } from './shared/animations';
 
@@ -35,55 +35,68 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
         useAnimation(slideInChild, from.down),
       ])),
     ]),
-    trigger('sidebar', [
+    trigger('sidebarBG', [
       state('void', style({ transform: 'translateX(-100%)' })),
       state('home', style({ transform: 'translateX(10vw) skew(20deg)' })),
       transition('*<=>*', useAnimation(duration)),
     ]),
-    trigger('header', [
-      state('home, closed', style({ transform: 'translateX(120%)' })),
-      transition(':enter', fadeIn),
-      transition('*<=>*', useAnimation(duration)),
-    ]),
     trigger('nav', [
-      transition(':enter', query('a', useAnimation(slideStagger, from.left) )),
+      transition(':enter', fadeIn),
       transition(':leave', useAnimation(slide, to.left)),
-    ])
+      transition('*=>*', group([
+        query('a:leave', useAnimation(slideStagger, to.left), { optional: true }),
+        query('a:enter', useAnimation(slideStagger, from.left), { optional: true }),
+      ])),
+    ]),
   ]
 })
+
 export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('routesContainer') container: ElementRef;
   @ViewChild('routerOutlet') outlet: RouterOutlet;
 
-  page: string;
   pageSub: BehaviorSubject<string>;
   pageRef$: Observable<string>;
 
+  appState;
+
   scrollPos: Number;
-  showSidebar: Boolean;
-  isMobile: Boolean;
   grid: JRGrid;
 
   constructor(
     private routerComms: RouteCommsService,
     private ngZone: NgZone,
   ) {
-//    this.mobileShow = false;
-    this.showSidebar = true;
+
     this.pageSub = new BehaviorSubject<string>('');
-    this.page = '';
 
     this.pageRef$ = this.pageSub.asObservable();
+
+    this.appState = {
+      page: '',
+      isMobile: false,
+      menuOpen: false,
+    };
+
   }
 
-//  scrollWatch(element: Element) {
-//    if (this.page !== 'folio') {
-//      return false;
-//      // only interested if is on the template page;
-//    }
-//    this.routerComms.emitScrollPos(element.scrollTop);
-//  }
+  toggleSidebar() {
+    this.appState.menuOpen = !this.appState.menuOpen;
+  }
 
+  closeSidebar() {
+    this.appState.menuOpen = false;
+  }
+
+  sidebarVisible() {
+    const state = this.appState;
+    return !state.isMobile || state.menuOpen;
+  }
+
+  siteNavVisible() {
+    const state = this.appState;
+    return state.isMobile || state.page !== 'home';
+  }
 
   updateRoute(outlet) {
     const ref = outlet.activatedRouteData.anim;
@@ -91,21 +104,9 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.closeSidebar();
   }
 
-
-  toggleSidebar() {
-    const bool = this.showSidebar;
-    this.showSidebar = !bool || !this.isMobile;
-  }
-
-  closeSidebar() {
-    this.showSidebar = false || !this.isMobile;
-  }
-
-
-// inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
+   // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
    // todo bonus = set this up as service? not needed but better organised
   scrollTo(to) {
-
     const from = this.container.nativeElement.scrollTop;
     const multiplier = .2;
 
@@ -121,24 +122,18 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.grid = new JRGrid({ target: 'jr_grid' });
+    this.ngZone.runOutsideAngular(() => this.grid.build().play());
 
     this.routerComms.listDimensions$.subscribe(dims => {
-      const mq = dims.query;
-      this.isMobile = mq === 'mobile';
-
-      if (mq === 'screen') {
-        this.ngZone.runOutsideAngular(() => this.grid.build().play());
-      } else {
-        this.grid.pause();
-      }
+      this.appState.isMobile = (dims.query === 'mobile');
+      // currently not pausing grid on mobile, will check performance later
+      this.grid.build().play();
       this.closeSidebar();
     });
 
-    this.routerComms.scrollPosition$.subscribe(pos => {
-      this.scrollTo(pos);
-    });
+    this.routerComms.scrollPosition$.subscribe(pos => this.scrollTo(pos));
 
-    this.pageRef$.subscribe((pg) => this.page = pg);
+    this.pageRef$.subscribe((pg) => this.appState.page = pg);
   }
 
 
@@ -154,7 +149,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
     Observable.fromEvent(container, 'scroll')
       // only actively watching if on folio pages
-      .filter(() => this.page === 'folio')
+      .filter(() => this.appState.page === 'folio')
       .debounceTime(150)
       .subscribe(() => this.routerComms.updateScrollPos(container.scrollTop));
 

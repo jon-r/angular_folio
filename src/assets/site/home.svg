@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <mask id="e">
+    <path fill="#fff" d="M0 0h36v36H0z"/>
+    <path d="M18 8l10 10H8m3 1h14v9H11"/>
+  </mask>
+  <circle class="ico" cx="18" cy="18.5" r="16" mask="url(#e)" fill="#202121"/>
+</svg>

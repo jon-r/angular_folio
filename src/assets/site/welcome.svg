@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 256">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 0 480 256">
   <style>
     @keyframes reveal {
       from, 5%, 30%, to { opacity: 0 }
@@ -12,22 +12,22 @@
 
   <g font-family="soleil" font-weight="bold" >
     <g fill="#B2DFDB" font-size="48" >
-      <g class="hide-small" >
-        <path class="hide-small" d="M176.03 217l11.02-20h-9.1L168 214.57c-.67 1.2-.67 3 0 4.2l9.95 18.23h9.1l-11.02-20zm274.37 0l-11 20h9.1l9.94-18.32c.67-1.2.67-2.62 0-3.82L448.5 197h-9.1l11 20z"/>
 
-        <text class="switcheroo une" transform="translate(204 234)">
-          Front End
-        </text>
-        <text class="switcheroo deux" transform="translate(190 234)">
-          Wordpress
-        </text>
-        <text class="switcheroo trois" transform="translate(200 234)">
-          JavaScript
-        </text>
-        <text class=" switcheroo quatre" fill="#f05" transform="translate(90 234)">
-          Catching IE Bugs
-        </text>
-      </g>
+      <path d="M176.03 217l11.02-20h-9.1L168 214.57c-.67 1.2-.67 3 0 4.2l9.95 18.23h9.1l-11.02-20zm274.37 0l-11 20h9.1l9.94-18.32c.67-1.2.67-2.62 0-3.82L448.5 197h-9.1l11 20z"/>
+
+      <text class="switcheroo une" transform="translate(204 234)">
+        Front End
+      </text>
+      <text class="switcheroo deux" transform="translate(190 234)">
+        Wordpress
+      </text>
+      <text class="switcheroo trois" transform="translate(200 234)">
+        JavaScript
+      </text>
+      <text class=" switcheroo quatre" fill="#f05" transform="translate(90 234)">
+        Catching IE Bugs
+      </text>
+
 
       <text transform="translate(55 92)" font-size="67">
         Jon Richards
@@ -38,7 +38,7 @@
 
     </g>
     <g fill="#00897B" font-size="24" >
-      <text class="hide-small" transform="translate(160 175)" >
+      <text transform="translate(160 175)" >
         specialising in
       </text>
       <text transform="translate(52 28)" >

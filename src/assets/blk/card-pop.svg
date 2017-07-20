@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 100 100" preserveAspectRatio="xMidYMid" overflow="visible" >
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 100 100" preserveAspectRatio="xMidYMid" style="overflow:visible" >
   <defs>
     <clipPath id="cut">
       <path d="M0 0h50v70H0z"/>

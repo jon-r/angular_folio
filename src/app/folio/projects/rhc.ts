@@ -103,6 +103,7 @@ export default {
         `,
       }, {
         type: 'iframe',
+        class: 'hide-small',
         height: '150%',
         value: '//codepen.io/inspironix/embed/preview/oXqezg/?height=600&theme-id=light&default-tab=result&embed-version=2',
       }],

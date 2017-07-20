@@ -42,7 +42,7 @@ a {
 }
 
 .nav-link:hover::after, .nav-link.active::after, .content a:hover::after {
-    background-color: currentColor;
+  background-color: currentColor;
 }
 
 .text-center {
@@ -104,17 +104,14 @@ a {
 .navicon {
   width: 2em;
   display: inline-block;
-}
-
-.navicon.inline {
-  width: 1em;
   vertical-align: middle;
 }
+
 .ico {
   transition: fill 300ms;
 }
 
-.active .ico  {
+a:hover .ico, .active .ico  {
   fill: currentColor;
 }
 
@@ -136,6 +133,7 @@ a {
   .hide-small {
     display: none !important;
   }
+
 }
 
 

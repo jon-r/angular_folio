@@ -13,6 +13,19 @@
   padding: 2rem 1rem;
 }
 
+.flex-mobile .content-row-inner {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.align-tops .content-row-inner {
+  align-items: flex-start;
+}
+
+.push-right .content-row-inner {
+  justify-content: flex-end;
+}
 
 .row-collapse {
   padding-bottom: 0;
@@ -32,11 +45,17 @@
   position: relative;
 }
 
+.flex-double {
+  flex: 2;
+}
+
+.flex-triple {
+  flex: 3;
+}
 
 .folio-content .content-text {
   max-width: 768px;
 }
-
 
 .content-inner {
   position: absolute;
@@ -57,21 +76,6 @@ iframe.content-inner {
 
 .blackjack-row .content {
   border: solid 2px;
-}
-
-
-@media screen and (min-width: 1500px) {
-  .blackjack-row .content {
-    border: none;
-    transform: scale(.8);
-    margin: -1%;
-  }
-
-  .blackjack-row {
-    background: url(/assets/blk/ipad-bg.svg) center / 90% no-repeat,
-    url(/assets/blk/noise.png),
-    #2a5a30;
-  }
 }
 
 @media screen and (min-width: 800px) {
@@ -104,23 +108,25 @@ iframe.content-inner {
   .flex-triple {
     flex: 3;
   }
+  .flex-reverse .content-row-inner {
+    flex-direction: row-reverse;
+  }
 
   .content-text, .no-expand {
     max-width: 512px;
   }
 }
 
-/*
+@media screen and (min-width: 1500px) {
+  .blackjack-row .content {
+    border: none;
+    transform: scale(.8);
+    margin: -1%;
+  }
 
-
-MQ todo: below 800 fixes:
-smaller intro header/icon
-icons too big. some multi column shindig? some :not(flex-triple/double)
-fix homepage
-
-flex reverse class? to have better columns on mobile
-
-faster sidebar on open/close
-move email/github lower down to seperate form the nav. prehaps reuse the home page versions so always two sepreate elements
-
-*/
+  .blackjack-row {
+    background: url(/assets/blk/ipad-bg.svg) center / 90% no-repeat,
+    url(/assets/blk/noise.png),
+    #2a5a30;
+  }
+}

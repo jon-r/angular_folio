@@ -34,7 +34,7 @@ export default {
       style: {
         backgroundColor: '#B2DFDB',
       },
-      class: 'row-collapse',
+      class: 'row-collapse flex-mobile',
       content: [{
         type: 'image',
         height: '100%',
@@ -46,6 +46,7 @@ export default {
         value: `${rootLink}ridings-ico.svg`,
       }],
     }, {
+      class: 'flex-mobile',
       style: {
         backgroundColor: '#B2DFDB',
       },
@@ -67,6 +68,7 @@ export default {
         `,
       }],
     }, {
+      class: 'flex-mobile',
       style: {
         backgroundColor: '#B2DFDB',
       },
@@ -75,6 +77,7 @@ export default {
         height: '75%',
         value: `${rootLink}monitor_anim.svg`,
       }, {
+        class: 'hide-small',
         type: 'iframe',
         height: '75%',
         value: '//codepen.io/inspironix/embed/preview/MpBXYG/?height=265&theme-id=light&default-tab=result&embed-version=2',

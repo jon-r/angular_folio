@@ -15,16 +15,12 @@ export default {
     },
   },
   rows: [{
+      class: 'flex-reverse',
       style: {
         background: `url(${rootLink}bg.svg) right/cover`,
         color: '#31b0bd',
       },
       content: [{
-        type: 'image',
-        height: '127%',
-        class: 'image-shadow',
-        value: `${rootLink}recruitment.jpg`,
-      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -36,6 +32,11 @@ export default {
         <p>Wordpress | Foundation</p>
         <h4>View <a href="http://therecruitmentroom.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
+      }, {
+        type: 'image',
+        height: '127%',
+        class: 'image-shadow',
+        value: `${rootLink}recruitment.jpg`,
       }]
     }, {
       style: {
@@ -62,16 +63,12 @@ export default {
         value: `${rootLink}arcane.jpg`,
       }]
     }, {
+      class: 'flex-reverse',
       style: {
         'background-color': '#eee',
         color: '#BB7726',
       },
       content: [{
-        type: 'image',
-        height: '127%',
-        class: 'image-shadow',
-        value: `${rootLink}cuzina.jpg`,
-      }, {
         type: 'text',
         class: 'intro-text',
         value: `
@@ -83,6 +80,11 @@ export default {
         <p>Wordpress | Foundation</p>
         <h4>View <a href="http://cuzina.co.uk/" ${linkAttrs} >Live Site</a></h4>
         `,
+      }, {
+        type: 'image',
+        height: '127%',
+        class: 'image-shadow',
+        value: `${rootLink}cuzina.jpg`,
       }]
     }, {
       style: {

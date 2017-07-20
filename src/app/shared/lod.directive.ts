@@ -14,7 +14,8 @@ import { RouteCommsService, Dims } from '../shared/route-comms.service';
 export class LODDirective implements OnInit {
   @Output() appLOD: EventEmitter<boolean> = new EventEmitter();
 
-  dims;
+  dimsSub: Observable<Dims>;
+  scrollSub: Observable<number>;
 
   constructor(
     private el: ElementRef,
@@ -22,34 +23,31 @@ export class LODDirective implements OnInit {
   ) {}
 
 
+
   ngOnInit() {
+
+
+    this.dimsSub = this.routeComms.listDimensions$;
+    this.scrollSub = this.routeComms.scrollPosition$;
+
     const el = this.el.nativeElement;
-    const rect = el.getBoundingClientRect();
-    const offset =  rect.top - window.innerHeight;
+    const offset = el.getBoundingClientRect().top - window.innerHeight;
 
-    const dimsSub: Observable<Dims> = this.routeComms.listDimensions$;
-
-    const scrollSub = this.routeComms.scrollPosition$
-      .combineLatest(dimsSub)
+    this.scrollSub.combineLatest(this.dimsSub)
       .takeUntil(this.appLOD)
       .subscribe(arr => {
-        const mq = arr[1].query;
-        const willSkip = el.classList.contains('hide-small');
-        const skipSmall = (mq === 'mobile' && willSkip);
+        const scroll = arr[0];
 
-        this.appLOD.emit(!skipSmall);
+        if (scroll > offset) {
+          const mq = arr[1].query;
+          const willSkip = el.classList.contains('hide-small');
+          const skipSmall = (mq === 'mobile' && willSkip);
+
+          this.appLOD.emit(!skipSmall);
+        }
       });
-
-    // .subscribe(dims => {
-    //   this.dims = dims;
-    //   console.log(this.dims);
-    // });
-
-
-
-
-
   }
+
 
 }
 

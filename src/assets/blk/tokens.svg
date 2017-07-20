@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-60 -60 480 300">
+  <defs>
+    <clipPath id="cut">
+      <path d="M0 0h50v70H0z"/>
+    </clipPath>
+    <filter id="dropShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+      <feOffset dy="1"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .playing-card {
+        filter: url(#dropShadow);
+      }
+    </style>
+    <pattern id="a" patternUnits="userSpaceOnUse" height="16" width="10" >
+      <path fill='#bb3838' d='M0 0l5 3v5l-5 -3z M5 8l5 3v5l-5 -3z'/>
+      <path fill='#8d1010' d='M10 0l-5 3v5l5 -3M0 11l5-3v5l-5 3'/>
+    </pattern>
+
+    <symbol id="jr-logo" fill="none" stroke-width="2" viewBox="0 0 61 16" >
+      <path stroke-linejoin="round" stroke="#bb3838" d="M7 -1L2 8l5 9m20 0l5-9-5-9"  />
+      <path stroke="#e7e4e4" d="M10 1h5v10a4 4 0 0 1-4 4h-2M16.5 1h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3"/>
+    </symbol>
+  </defs>
+  <g font-weight="600" font-family="georgia" >
+    <g class="playing-card" font-weight="600" transform="translate(20)" >
+      <rect fill="#fff" height="70" width="50" rx="3"/>
+      <path id="spades" d="M35 50a1 1 0 0 0 20 0q0-7-9-14t-8-14q0 7-9 14t-8 14a1 1 0 0 0 20 0m-3 8l5 8H33z" clip-path="url(#cut)"/>
+      <text x="5" y="15">K</text>
+    </g>
+    <g class="playing-card" transform="translate(85)" >
+      <rect fill="#fff" height="70" width="50" rx="3" />
+      <path id="hearts" fill="red" d="M40 37a1 1 0 0 0-20 0q0 7 9 14t8 14q0-7 9-14t8-14a1 1 0 0 0-20 0z" clip-path="url(#cut)"/>
+      <text  x="5" y="15" fill="red">J</text>
+    </g>
+    <g class="playing-card" transform="translate(150)" >
+      <rect fill="#fff" height="70" width="50" rx="3" />
+        <path id="clubs" d="m35,50 a10,10 0 1,0 10,-12 a10,10 0 1,0 -18,0 a10,10 0 1,0 10,12 m-1,4 l5,8 h-10 z" clip-path="url(#cut)"/>
+
+      <text  x="5" y="15" >10</text>
+    </g>
+    <g class="playing-card" transform="translate(215)" >
+      <rect fill="#fff" height="70" width="50" rx="3" />
+      <path id="diamonds" fill="red" d="m38,24 l18,21 l-18,21 l-18,-21 z" clip-path="url(#cut)"/>
+      <text  x="5" y="15" fill="red">5</text>
+    </g>
+  </g>
+  <g class="playing-card" transform="translate(280) scale(0.5)" >
+    <rect fill="#c97272" height="140" width="100" rx="6" />
+
+    <path fill="url(#a)" stroke="#e7e4e4" stroke-width="2"  d="m5 5h90v130h-90z"  />
+
+    <circle stroke="#8d1010" stroke-width="2" fill="#c97272" cx="50" cy="70" r="30" />
+
+    <use x="22"  xlink:href="#jr-logo" width="100" height="140" ></use>
+  </g>
+
+    <defs>
+    <filter id="pink">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="-20"/>
+    </filter>
+      <filter id="blue">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="240"/>
+    </filter>
+    <filter id="yellow">
+      <feColorMatrix values="1.2 0 .8 0 0 1.2 .8 0 0 0 0 .8 .8 0 0 0 0 0 1 0"/>
+    </filter>
+    <filter id="green">
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="120"/>
+    </filter>
+    <filter id="black">
+      <feColorMatrix values="0.1 1 0 0 0 0.1 1 0 0 0 0.1 1 0 0 0 0 0 0 1 0"/>
+    </filter>
+    <filter id="grey">
+      <feColorMatrix values="1 0 0.5 0 0 1 0 0.5 0 0 1 0 0.5 0 0 0 0 0 1 0"/>
+    </filter>
+
+    <g id="mrChips">
+      <circle r="48" fill="#c00" />
+      <circle r="42" fill="transparent" stroke="#ddd" stroke-width="12" stroke-dasharray="22" />
+      <circle r="40" opacity=".2" />
+      <path fill="#555" d="m0-40a1 1 0 1 0 0 80h2a1 1 0 1 1 0-80" opacity=".2"  />
+    </g>
+
+  </defs>
+
+  <g class="chip-5" transform="translate(0 140)" >
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(60 140)" filter="url(#blue)" >
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(120 140)" filter="url(#green)" >
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(180 140)" filter="url(#black)" >
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(240 140)" filter="url(#pink)">
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(300 140)" filter="url(#yellow)" >
+    <use xlink:href="#mrChips" />
+  </g>
+  <g transform="translate(360 140)" filter="url(#grey)" >
+    <use xlink:href="#mrChips" />
+  </g>
+
+</svg>

@@ -8,11 +8,11 @@ export default {
   slug: 'cam',
   intro: {
     title: 'CAMMS',
-    desc: 'SAAS Corporate Site &amp; Software Portfolio',
+    desc: 'SAAS Corporate Site & Software Portfolio',
     icon: `${rootLink}monitor-2.svg`,
     style: {
       color: '#fff',
-      background: 'linear-gradient(to right, #055492 50%, #143B53)'
+      background: 'linear-gradient(#055492 50%, #143B53)'
     },
   },
   rows: [
@@ -77,7 +77,7 @@ export default {
       style: {
         backgroundColor: '#2079bf',
       },
-      class: 'row-gallery align-tops',
+      class: 'align-tops',
       content: [{
         type: 'image',
         height: '209%',
@@ -92,7 +92,7 @@ export default {
         value: `${rootLink}community.jpg`,
       }],
     }, {
-      class: 'row-gallery',
+      class: 'flex-mobile',
       style: {
         backgroundColor: '#fff',
       },

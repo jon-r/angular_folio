@@ -33,6 +33,11 @@ export class FolioListComponent implements OnInit {
     }
 
     this.projects = this.folioService.getFilteredList({ key, value });
+
+    if (this.projects.length < 1) {
+      this.activeProject = null;
+      this.filterProjects({ value: 'all' });
+    }
   }
 
   trackProjects(n, project) {
@@ -70,6 +75,18 @@ export class FolioListComponent implements OnInit {
     }
   }
 
+  pageTitle() {
+    const descriptionss = {
+      all: 'Things I’ve Made',
+      work: 'Sites I’ve Developed',
+      play: 'What I’ve Learned',
+    };
+
+    const cat = this.category;
+    const active = this.activeProject ? this.projects[0] : false;
+
+    return active ? active.intro.title : descriptionss[cat];
+  }
 
 
 // http://slides.yearofmoo.com/ng4-animations-preview/demo/

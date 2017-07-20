@@ -16,15 +16,6 @@
   width: 50vw;
   min-width: 150px;
   height: 100vh;
-}
-
-.sidebar-bg {
-  position: absolute;
-  transform-origin: top right;
-  width: 100vw;
-  right: 0;
-  top: 0;
-  height: 100%;
   background-color: #00897B;
 }
 
@@ -43,16 +34,42 @@
 }
 .site-link:hover {
   background-color: #1c6b63;
+  color: #e4e5e7;
 }
 .site-link.active {
   background-color: #0e4c46;
 }
 
-.home-nav {
+.contact-nav {
   position: absolute;
-  bottom: 32px;
-  left: 32px;
+  bottom: 0;
+  left: 0;
   white-space: nowrap;
+  z-index: 5;
+  width: 3rem;
+  padding: 0.5rem;
+  background-color: #00897B;
+  border-top-right-radius: 5px;
+}
+
+.contact-nav.home {
+  background: none;
+}
+
+.contact-link span {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
+
+
+.home .contact-link span, .contact-link:hover span {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-link:hover {
+  color: #e4e5e7;
 }
 
 .site-content {
@@ -78,9 +95,25 @@
 
 @media screen and (min-width: 800px) {
 
+  .contact-nav {
+    background-color: none;
+  }
+
   .sidebar {
     width: calc(64px + 5vw);
     min-width: 100px;
+    background: none;
+  }
+
+  .sidebar-bg {
+    display: block;
+    position: absolute;
+    transform-origin: top right;
+    width: 100vw;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #00897B;
   }
 
   .site-link {
