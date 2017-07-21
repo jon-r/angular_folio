@@ -3,8 +3,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
-@Pipe({ name: 'safe' })
-export class SafePipe implements PipeTransform {
+@Pipe({ name: 'safeURL' })
+export class SafeURLPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
 
   transform(url) {

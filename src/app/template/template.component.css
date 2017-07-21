@@ -57,6 +57,18 @@
   max-width: 768px;
 }
 
+.stats-box > div {
+  max-width: 300px;
+  margin: auto;
+  border: solid 2px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat {
+  font-size: 3rem;
+}
+
 .content-inner {
   position: absolute;
   top: .5rem;
@@ -126,7 +138,7 @@ iframe.content-inner {
 
   .blackjack-row {
     background: url(/assets/blk/ipad-bg.svg) center / 90% no-repeat,
-    url(/assets/blk/noise.png),
-    #2a5a30;
+      url(/assets/blk/noise.png),
+      #2a5a30;
   }
 }

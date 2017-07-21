@@ -1,4 +1,4 @@
-import { linkAttrs } from './index';
+import { linkAttrs } from './blk';
 const rootLink = '../assets/cam/';
 
 
@@ -22,11 +22,11 @@ export default {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h4>The Project</h4>
+        <h3 class="header-3">The Project</h3>
         <p>A corporate ‘brochure’ website for an international SAAS company.</p>
-        <h4>The Role</h4>
-        <p>Senior Web Developer at [Minerva creative]</p>
-        <h4>The Toolkit</h4>
+        <h3 class="header-3">The Role</h3>
+        <p>Senior Web Developer at <a href="http://www.minerva-creative.com/" ${linkAttrs} >Minerva Creative</a></p>
+        <h3 class="header-3">The Toolkit</h3>
         <p>WordPress | Foundation</p>
         `,
       }]
@@ -35,9 +35,9 @@ export default {
       content: [{
         type: 'text',
         value: `
-        <h4 class="text-center" >View
+        <h3 class="text-center header-3" >View
           <a href="https://www.cammsgroup.com/" ${linkAttrs} >live site</a>
-        </h4>
+        </h3>
         `,
       }],
     }, {
@@ -47,12 +47,14 @@ export default {
         color: '#fff',
       },
       content: [{
+        class: 'stats-box',
         type: 'text',
         value: `
-        <p>The task was a complete modernisation of the existing CAMMS site. The original site was
-        overflowing with text-only content, and our role was to present this information to the
-        customers in a site that was clearer for the user and easier to maintain by the team at CAMMS.</p>
-        <p>The project was built under a short timescale, from concept to deployment in three months.</p>
+        <div >
+          <h4 class="header-4">Development Time</h4>
+          <div class="font-super" style="color:#2079bf">3 Months</div>
+          <span>In a two man team</span>
+        </div>
         `,
       }, {
         type: 'image',
@@ -65,6 +67,9 @@ export default {
       content: [{
         type: 'text',
         value: `
+        <p>The task was a complete modernisation of the existing CAMMS site. The original site was
+        overflowing with text-only content, and our role was to present this information to the
+        customers in a site that was clearer for the user and easier to maintain by the team at CAMMS.</p>
         <p>My role as lead developer was to oversee production of a number of highly modular and
         customisable templates. CAMMS offers a large number of software solutions, tools, and services
         at varying levels of detail. This information is presented on the site with only a few, highly

@@ -1,8 +1,9 @@
 
 
-import { linkAttrs } from './index';
-const rootLink = '../assets/blk/';
+export const linkAttrs = 'target="_blank" rel="nofollow"';
+// shared accross the other projects
 
+const rootLink = '../assets/blk/';
 
 export default {
   id: 1,
@@ -28,11 +29,11 @@ export default {
         type: 'text',
         class: 'intro-text row-collapse',
         value: `
-        <h4>The Project</h4>
+        <h3 class="header-3" >The Project</h3>
         <p>A web app game of Blackjack. Fully playable for up to 5 players.</p>
-        <h4>The Role</h4>
+        <h3 class="header-3" >The Role</h3>
         <p>Personal project. Learning Vue.js.</p>
-        <h4>The Toolkit</h4>
+        <h3 class="header-3" >The Toolkit</h3>
         <ul>
           <li>Javascript framework = Vue.js with Vuex and ES6</li>
           <li>Built with webpack - postCSS and babel</li>
@@ -45,9 +46,17 @@ export default {
         type: 'text',
         class: 'text-center',
         value: `
-        <h4>View source on
+        <h3 class="header-3">View source on
           <a href="https://github.com/jon-r/jr_blackJackVue" ${linkAttrs} >Github</a>
-        </h4>
+        </h3>
+        `,
+      }, {
+        type: 'text',
+        class: 'text-center',
+        value: `
+        <h3 class="header-3">View
+          <a href="https://jon-richards.com/blackjack/" ${linkAttrs} >Live Game</a>
+        </h3>
         `,
       }],
     }, {
@@ -59,15 +68,36 @@ export default {
         value: '//jon-richards.com/blackjack/?demo',
       }],
     }, {
-      class: 'text-row',
+      class: 'text-row align-tops',
       content: [{
         type: 'text',
         value: `
         <p>My goal was to learn Vue.js by actually making something with it. The project was built with ES6,
-        and I used a number of modern JavaScript features such as the [spread] operator, [arrow] functions
-        and [promises]. For backwards compatability I also used webpack with Babel and postCSS.</p>
-        <p>The Visuals are all custom made SVG elements. Animations are built with almost entirely CSS only
-        transitions, with a few javascript triggers.</p>
+        and I used a number of modern JavaScript features such as the
+        <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator" ${linkAttrs} >
+        spread operator</a>,
+        <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions" ${linkAttrs} >
+        arrow functions</a> and
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" ${linkAttrs} >
+        promises</a>.
+        For backwards compatability I also used webpack with Babel and postCSS.</p> <p>The Visuals are all
+        custom made SVG elements. Animations are built with almost entirely CSS only transitions, with a
+        few javascript triggers.</p>
+        `,
+
+
+
+      }, {
+        type: 'text',
+        class: 'stats-box',
+        value: `
+        <h4 class="header-4">Bundle Gzip Size</h4>
+        <div class="font-super" style="color:#2a5a30">47kb</div>
+        <span>without google fonts
+          <a href="https://fonts.google.com/?selection.family=Roboto" ${linkAttrs} >Roboto</a></span>
+          &
+          <a href="https://material.io/icons/" ${linkAttrs} >Material Icons</a>
+        </span>
         `,
       }],
     }, {

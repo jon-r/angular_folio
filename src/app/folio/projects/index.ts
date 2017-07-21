@@ -5,16 +5,13 @@ import rhc from './rhc';
 import cam from './cam';
 import web from './web';
 
-export const linkAttrs = 'target="_blank" rel="nofollow"';
-
-export default  [
+export default [
   blk,
   cam,
   ico,
   rhc,
   web
 ];
-
 
 /* todo bonus
 

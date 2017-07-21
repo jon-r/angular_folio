@@ -1,4 +1,4 @@
-import { linkAttrs } from './index';
+import { linkAttrs } from './blk';
 const rootLink = '../assets/rhc/';
 
 export default {
@@ -21,20 +21,20 @@ export default {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h4>The Project</h4>
+        <h3 class="header-3">The Project</h3>
         <p>Online E-catalogue to sell refurbished commercial catering equipment.</p>
-        <h4>The Role</h4>
+        <h3 class="header-3">The Role</h3>
         <p>Full stack web design and development. In-house.</p>
-        <h4>The Toolkit</h4>
+        <h3 class="header-3">The Toolkit</h3>
         <ul>
           <li>WordPress (bespoke theme/plugin development)</li>
           <li>MySQL and Microsoft Access database</li>
           <li>Amazon AWS Hosting</li>
           <li>Illustrator SVG icons</li>
         </ul>
-        <h4>View
-          <a href="http://redhotchilli.catering/" ${linkAttrs} >live site</a>
-        </h4>
+        <h3 class="header-3">
+          View <a href="http://redhotchilli.catering/" ${linkAttrs} >live site</a>
+        </h3>
         `,
       }]
     }, {
@@ -55,6 +55,13 @@ export default {
         <p>The Website at Red Hot Chilli is an online catalogue, using a custom-made CMS system built
         around the WordPress database functions. The site’s frontend is a responsive, fully featured
         design with a very lightweight footprint.</p>
+        `,
+      }, {
+        type: 'text',
+        class: 'stats-box',
+        value: `
+        <div class="font-super" style="color:#640202">1000+</div>
+        <span>Unique Products listed per year.</span>
         `,
       }],
     }, {

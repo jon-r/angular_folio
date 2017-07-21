@@ -15,15 +15,15 @@
             <ng-container [ngSwitch]="content.type"
               *ngIf="row.isActive || content.type === 'text' || content.type === 'footer'" >
 
-              <div *ngSwitchCase="'text'" [innerHTML]="content.value" ></div>
+              <div *ngSwitchCase="'text'" [innerHTML]="content.value | safeHTML" ></div>
 
               <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" />
 
-              <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safe"
+              <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safeURL"
                 frameborder="no" allowtransparency="true" scrolling="no" ></iframe>
 
               <div class="text-center" *ngSwitchCase="'footer'" >
-                <h4 ><a class="nav-link" [routerLink]="{category: 'all'}" >Back</a></h4>
+                <a class="nav-link header-4" [routerLink]="{category: 'all'}" >Back</a>
               </div>
 
             </ng-container>

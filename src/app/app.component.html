@@ -8,23 +8,21 @@
     </a>
   </div>
 
-
-
   <nav id="sideNav" class="site-nav" >
     <ng-container *ngIf="siteNavVisible()" >
       <a class="nav-link site-link" routerLink="home" routerLinkActive="active"  >
         <div class="navicon hide-small" [inlineSVG]="'../assets/site/home.svg'" ></div>
-        <h4>Home</h4>
+        <span class="header-4" >Home</span>
       </a>
 
       <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
         <div class="navicon hide-small" [inlineSVG]="'../assets/site/work.svg'" ></div>
-        <h4>Folio</h4>
+        <span class="header-4" >Folio</span>
       </a>
 
       <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
         <div class="navicon hide-small" [inlineSVG]="'../assets/site/about.svg'" ></div>
-        <h4>About</h4>
+        <span class="header-4" >About</span>
       </a>
     </ng-container>
   </nav>
@@ -33,14 +31,12 @@
 
 <nav class="contact-nav" [ngClass]="appState.page" >
   <a class="contact-link" href="mailto:jon.richards@outlook.com" >
-    <h5><i class="navicon" [inlineSVG]="'../assets/site/email.svg'" ></i>
-      <span>jon.richards@outlook.com</span>
-    </h5>
+    <i class="navicon inline" [inlineSVG]="'../assets/site/email.svg'" ></i>
+    <span>jon.richards@outlook.com</span>
   </a>
   <a class="contact-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-    <h5><i class="navicon" [inlineSVG]="'../assets/site/github.svg'" ></i>
-      <span>github.io/jon-r</span>
-    </h5>
+    <i class="navicon inline" [inlineSVG]="'../assets/site/github.svg'" ></i>
+    <span>github.io/jon-r</span>
   </a>
 </nav>
 

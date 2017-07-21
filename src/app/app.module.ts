@@ -11,10 +11,11 @@ import { AboutComponent } from './about/about.component';
 import { FolioListComponent } from './folio/folio-list.component';
 import { FolioService } from './folio/folio.service';
 import { TemplateComponent } from './template/template.component';
-import { SafePipe } from './shared/safeURL.pipe';
+import { SafeURLPipe } from './shared/safe-url.pipe';
 import { RouteCommsService } from './shared/route-comms.service';
 import { LODDirective } from './shared/lod.directive';
 import { FolioItemComponent } from './folio/folio-item/folio-item.component';
+import { SafeHTMLPipe } from './shared/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,10 @@ import { FolioItemComponent } from './folio/folio-item/folio-item.component';
     AboutComponent,
     FolioListComponent,
     TemplateComponent,
-    SafePipe,
+    SafeURLPipe,
     LODDirective,
     FolioItemComponent,
+    SafeHTMLPipe,
   ],
   imports: [
     BrowserModule,

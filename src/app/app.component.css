@@ -56,10 +56,19 @@
   background: none;
 }
 
+.contact-link {
+  display: block;
+}
+
+.contact-link:hover {
+  color: #e4e5e7;
+}
+
 .contact-link span {
   opacity: 0;
   pointer-events: none;
   transition: opacity 300ms;
+  font-weight: bold;
 }
 
 
@@ -68,9 +77,7 @@
   pointer-events: auto;
 }
 
-.contact-link:hover {
-  color: #e4e5e7;
-}
+
 
 .site-content {
   overflow-y: auto;

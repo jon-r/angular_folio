@@ -1,4 +1,4 @@
-import { linkAttrs } from './index';
+import { linkAttrs } from './blk';
 const rootLink = '../assets/ico/';
 
 
@@ -22,11 +22,12 @@ export default {
         type: 'text',
         class: 'intro-text',
         value: `
-        <h4>The Toolkit</h4>
+        <h3 class="header-3">The Toolkit</h3>
         <ul>
           <li>Illustrator (preparing and tidying vector illustrations)</li>
           <li>Brackets code editor. Manually cleaning up SVG’s, and styling/animating them with CSS</li>
-          <li>[SVGOMG] online configurable optimisation and minification of SVG’s.</li>
+          <li><a href="https://jakearchibald.github.io/svgomg/" ${linkAttrs} >SVGOMG</a> online configurable
+            optimisation and minification of SVG’s.</li>
         </ul>
         `,
       }]
@@ -66,6 +67,26 @@ export default {
         value: `
         <p>As well as animating designs in the agency, I also hand-coded a number of designs for my personal projects.</p>
         `,
+      }],
+    }, {
+      style: {
+        backgroundColor: '#B2DFDB',
+      },
+      class: 'text-row',
+      content: [{
+        class: 'stats-box',
+        type: 'text',
+        value: `
+        <div >
+          <h4 class="header-4">&lt;JR&gt; Logo Gzip Size</h4>
+          <div class="font-super" style="color:#0e4c46">524 bytes</div>
+          <span>227b without animation</span>
+        </div>
+        `,
+      }, {
+        type: 'image',
+        height: '36%',
+        value: `${rootLink}jr-logo.min.svg`,
       }],
     }, {
       class: 'flex-mobile',

@@ -2,7 +2,7 @@
 
 <header class="page-header frame-shadow">
 
-  <h5 class="page-title" >{{pageTitle()}}</h5>
+  <h1 class="page-title" >{{pageTitle()}}</h1>
 
   <div class="btn-box">
     <button class="header-btn filter-dropdown small-only" *ngIf="!activeProject" (click)="dropOpen = true" >
@@ -29,7 +29,7 @@
 
 <section class="page-container outer-frame" #listContainer >
 
-  <ul class="projects-list" [ngStyle]="{ 'height.px' : folioHeight }" >
+  <ul class="projects-list" [style.height.px]="folioHeight" >
 
     <app-folio-item
       *ngFor="let project of projects; index as n; trackBy: trackProjects"
@@ -43,8 +43,3 @@
 
 </section>
 
-<!-- TODO:
-dropdown, make back butn match size of said dropdown
-https://material.io/guidelines/components/menus.html#menus-usage
-rearrange page headers to match appearance
--->

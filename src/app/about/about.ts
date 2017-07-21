@@ -11,7 +11,7 @@ export default {
     content: [{
       type: 'text',
       value: `
-      <h1>Jon Richards <sub>BA (hons)</h1>
+      <h2 class="header-1" >Jon Richards <sub>BA (hons)</h2>
       `,
     }]
   }, {
@@ -19,7 +19,7 @@ export default {
     content: [{
       type: 'text',
       value: `
-      <h3>About Me</h3>
+      <h3 class="header-3" >About Me</h3>
       <hr>
       <p>I am a skilled & motivated technical developer, with experience in full stack web development
       and digital design. I am a self-taught coder with a strong lean towards web, picking
@@ -33,7 +33,7 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
     content: [{
       type: 'text',
       value: `
-      <h3>Skills</h3>
+      <h3 class="header-3" >Skills</h3>
       <hr>
       <h5>Fluent In</h5>
       <ul>
@@ -59,7 +59,7 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
     content: [{
       type: 'text',
       value: `
-      <h3>Employment</h3>
+      <h3 class="header-3" >Employment</h3>
       <hr>
       <h5>Present Minerva Creative - Design Agency Manchester</h5>
       <em>- Senior Web Developer (Full Stack Wordpress)</em>
@@ -99,7 +99,7 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
     content: [{
       type: 'text',
       value: `
-      <h3>Education</h3>
+      <h3 class="header-3" >Education</h3>
       <hr>
       <h5>2012 – University of Bolton</h5>
       <ul>

@@ -16,20 +16,22 @@ button:focus {
 /* BASE STYLE/TYPOGRAPHY ---------------------------------------------------- */
 
 body {
-
   font: 300 16px/1.375 "soleil", sans-serif;
   color: #B2DFDB;
   background-color: #202121;
 /*  overflow: hidden;*/
 }
 
-h1, h2, h3, h4, h5 { font-weight: bold; line-height: 1.2}
+h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 1.2}
 
-h1 { font-size: 2rem }
-h2 { font-size: 1.625rem }
-h3 { font-size: 1.375rem }
-h4 { font-size: 1.125rem }
-h5 { font-size: 1rem }
+.header-1 { font-size: 2rem }
+.header-2 { font-size: 1.625rem }
+.header-3 { font-size: 1.375rem }
+.header-4 { font-size: 1.125rem }
+
+.font-super {
+  font-size: 2rem;
+}
 
 a {
   text-decoration: none;
@@ -42,6 +44,7 @@ a {
   padding: 8px 16px;
   transition-duration: 300ms;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .nav-link::after, .content a::after {
@@ -67,12 +70,18 @@ a {
 }
 
 @media screen and (min-width: 800px) {
-  h1 { font-size: 4.21rem }
-  h2 { font-size: 3.16rem }
-  h3 { font-size: 2.37rem }
-  h4 { font-size: 1.77rem }
-  h5 { font-size: 1.33rem }
+  .header-1 { font-size: 4.21rem }
+  .header-2 { font-size: 3.16rem }
+  .header-3 { font-size: 2.37rem }
+  .header-4 { font-size: 1.77rem }
+
+  .font-super {
+    font-size: 3.16rem;
+  }
+
   body { font-size: 18px }
+
+
 }
 
 
@@ -115,9 +124,13 @@ a {
 /* helpers ------------------------------------------------------------------ */
 
 .navicon {
-  width: 2em;
-  display: inline-block;
+  width: 2rem;
+  margin: auto;
   vertical-align: middle;
+}
+
+.navicon.inline {
+  display: inline-block;
 }
 
 .tiny-icon {
