@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 16" class="😄" >
 <style>
   .😄 path { transition: 300ms; transform-origin: 17px 16px; }
-  .😄:hover path { transition-delay: 1000ms }
+  .😄:hover path { transition-delay: 1000ms; }
   .😄:hover .text { transform: translate(-8px, 1px) rotate(90deg) }
   .😄:hover .left { transform: translateX(-12px) scaleX(.5) rotate(90deg)}
   .😄:hover .right { transform: translateX(12px) scaleX(.5) rotate(-90deg)}

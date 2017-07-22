@@ -57,7 +57,7 @@ a {
   left: 0;
 }
 
-.nav-link:hover::after, .nav-link.active::after, .content a:hover::after {
+.nav-link:hover::after, .nav-link.active::after, .content a:hover::after, .content a.match-content::after {
   background-color: currentColor;
 }
 
@@ -94,6 +94,10 @@ a {
 .content a {
   color: #00897B;
   position: relative;
+}
+
+.content a.match-content {
+  color: inherit;
 }
 
 .content ul {
@@ -136,7 +140,6 @@ a {
 .tiny-icon {
   width: 0.75em;
   display: inline-block;
-  vertical-align: middle;
   fill: currentColor;
   margin-left: 0.25em;
 }

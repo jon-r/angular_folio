@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      /* text */ 
+      @keyframes slide-up { to{transform:translateY(-18px)} from{transform:translateY(18px)} } @keyframes write { from,10%{stroke-dashoffset:20} 20%,to{stroke-dashoffset:0} } .chat-lines{animation:slide-up 6s steps(6) infinite both;} .lines-1{animation-delay:-1s} .lines-2{animation-delay:2s} .chat-line{animation:write 6s ease-out infinite both;stroke-dasharray:18;} .line-1{animation-delay:-.2s} .line-2{animation-delay:.8s} .line-3{animation-delay:1.8s} .line-4{animation-delay:2.8s} .line-5{animation-delay:3.8s} .line-6{animation-delay:4.8s} 
+      /* pig */ 
+      @keyframes coinDrop { from {opacity: 0} 20% {opacity: 1} to {transform: rotate(-50deg) } } .coins { transform-origin: 100px 40px; animation: coinDrop 1s infinite linear both } .coin-2 { transform:rotate(20deg); animation-delay: 500ms } 
+      /* monitor */ 
+      @keyframes mousey-mover { from, 10%, to { transform: translateY(-50px)} 40%, 45% { transform: translate(-210px, -80px)} 70%, 75% { transform: translate(50px, -140px)} } @keyframes pop { from, 79% { opacity: 0} 80% { transform: none;opacity: 1} to { transform: scale(2); opacity: 0} } .pointer { animation: mousey-mover 2s infinite;} .ping { animation: pop 2s infinite both;} .ping-1 { transform-origin: 102px 145px; opacity: 0; animation-delay: -0.9s} .ping-2 { transform-origin: 363px 85px; opacity: 0; animation-delay: -0.2s}
+    </style>
+    <clipPath id="chatMask">
+      <path d="M20 20h20v20H20z"/>
+    </clipPath>
+    <mask id="pigHole" maskUnits="userSpaceOnUse">
+      <path d="M0 0h100v100H0" fill="#fff"/>
+      <circle cx="50" cy="60" r="15"/>
+    </mask>
+  </defs>
+  <rect fill="#fff" height="200" width="200" rx="20"/>
+  <g transform="translate(25 125)" >
+    <circle cx="30" cy="30" r="29" fill="#2079bf"/>  
+    <g class="bg" fill="#fff">
+      <ellipse cx="30" cy="30" rx="22" ry="15"/>
+      <path d="M45 40l1 8-7-5" stroke-linejoin="round"/>
+    </g>
+    <g clip-path="url(#chatMask)" stroke="#9CBCD3" stroke-width="4" stroke-linecap="round">
+      <g class="chat-lines lines-1">
+        <path class="chat-line line-1" d="M22 24h15"/>
+        <path stroke="#719ab7" class="chat-line line-2" d="M22 30h10"/>
+        <path class="chat-line line-3" d="M22 36h13"/>
+      </g>
+      <g class="chat-lines lines-2">
+        <path stroke="#719ab7" class="chat-line line-4" d="M22 24h15"/>
+        <path class="chat-line line-5" d="M22 30h10"/>
+        <path stroke="#719ab7" class="chat-line line-6" d="M22 36h13"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(100 100)" >
+    <path fill="#2079bf" d="M73.3 55.18h-3.75a19.77 19.77 0 0 0-5-9c-.08-1.16-.17-4.6 1.68-6.46a1.03 1.03 0 0 0-.66-1.75c-.15 0-3.94-.22-7.66 3.67a19.8 19.8 0 0 0-27.35 18.3 19.87 19.87 0 0 0 4.28 12.3l3.7 11.3a1.03 1.03 0 0 0 1 .7h6.93a1.03 1.03 0 0 0 1.03-1.02v-3.7a19.8 19.8 0 0 0 5.44.05v3.65a1.03 1.03 0 0 0 1.04 1.03h6.94a1.03 1.03 0 0 0 1-.7l3.6-10.86a19.7 19.7 0 0 0 3.4-5.8h4.44a1.03 1.03 0 0 0 1.04-1.05V56.2a1.03 1.03 0 0 0-1.03-1.02zM54.96 79.44l.8-.5a1.03 1.03 0 0 0-.84-1.86 17.76 17.76 0 0 1-9.6-.12 1.03 1.03 0 0 0-.87 1.85l.94.67v2.75h-5.2l-3.5-10.66a1.04 1.04 0 0 0-.2-.43 17.74 17.74 0 0 1 13.8-28.9 17.6 17.6 0 0 1 7.43 1.64 1.02 1.02 0 0 0 1.32-.43 10.3 10.3 0 0 1 4.24-3 13.4 13.4 0 0 0-.8 6.34 1.03 1.03 0 0 0 .22.55v.05l.1.05a17.66 17.66 0 0 1 4.85 9 1.04 1.04 0 0 0 1.08.83h3.47v7.6l-3.96.02a1.03 1.03 0 0 0-1.15.68 17.62 17.62 0 0 1-3.4 5.97 1.04 1.04 0 0 0-.2.35l-3.4 10.35h-5.17z"/>
+    <g fill="#fff" stroke="#2079bf" stroke-width="2">
+      <path d="M49 45h2a16 16 0 0 0-15 10"/>
+      <g mask="url(#pigHole)">
+        <circle class="coins coin-2" cx="45" cy="20" r="5"/>
+        <circle class="coins coin-1" cx="45" cy="20" r="5"/>
+      </g>
+    </g>
+  </g>
+  <g fill="#055492" transform="translate(50 10) scale(.2)">
+    <path d="M481 28H31C14 28 0 41.7 0 58.7v310.8c0 17 14 31 31 31h154V423c0 20.6-16.8 37.4-37.4 37.4h-34c-6.5 0-11.8 5.3-11.8 11.8S107 484 113.6 484H398c6.5 0 11.8-5.3 11.8-11.8s-5.3-11.8-11.8-11.8h-34c-20.6 0-37.4-16.8-37.4-37.4v-22.5H481c17 0 31-14 31-31V59c0-17-14-31-31-31zM196 460.4c8-10.3 12.8-23.3 12.8-37.4v-22.4h94.4V423c0 14.2 4.8 27.2 13 37.5H195.8zm292.4-90.8c0 4-3.3 7.3-7.3 7.3H31c-4 0-7.4-3.7-7.4-7.7v-62h464.8v62zm0-85.7H23.6V58.4c0-4 3.3-7.3 7.3-7.3h450c4 0 7 3.3 7 7.3V284z"/>
+    <circle cx="256" cy="342.3" r="12.7"/>
+    <path class="screen pointer" d="M411 266.6l-100.8-43.3 43.4 101 9.8-36.5 26.7 26.7 11.8-11.3-26.7-26.7z" stroke="#055492" stroke-width="10" stroke-linejoin="round"/>
+    <circle class="ping ping-1" cx="102" cy="145" r="20"/>
+    <circle class="ping ping-2" cx="363" cy="85" r="20"/>
+  </g>
+</svg>

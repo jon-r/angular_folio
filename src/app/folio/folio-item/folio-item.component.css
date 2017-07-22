@@ -4,6 +4,7 @@
   background-color: #0e4c46;
   opacity: 0;
   transition: opacity 300ms;
+  position: absolute;
 }
 .project-wrapper-bg:hover {
   opacity: 0.3

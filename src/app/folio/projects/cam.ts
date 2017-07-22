@@ -51,9 +51,9 @@ export default {
         type: 'text',
         value: `
         <div >
-          <h4 class="header-4">Development Time</h4>
+          <h4 class="header-4">40+ Pages. Development Time</h4>
           <div class="font-super" style="color:#2079bf">3 Months</div>
-          <span>In a two man team</span>
+          <span>Two developers, one designer</span>
         </div>
         `,
       }, {
@@ -80,21 +80,26 @@ export default {
       }],
     }, {
       style: {
+        color: '#fff',
         backgroundColor: '#2079bf',
       },
       class: 'align-tops',
       content: [{
         type: 'image',
         height: '209%',
-        value: `${rootLink}solutions.jpg`,
+        value: `${rootLink}strategy.jpg`,
+        alt: 'CAMMS Strategy',
+        caption: 'Eleven varied products. One Wordpress post template.'
       }, {
         type: 'image',
         height: '141%',
         value: `${rootLink}budget.jpg`,
+        alt: 'CAMMS Strategy',
       }, {
         type: 'image',
         height: '192%',
         value: `${rootLink}community.jpg`,
+        alt: 'CAMMS Strategy',
       }],
     }, {
       class: 'flex-mobile',
@@ -104,20 +109,14 @@ export default {
       content: [{
         type: 'image',
         height: '100%',
-        value: `${rootLink}ico-chat.svg`,
+        value: `${rootLink}camm-icons.svg`,
+        alt: 'CAMM Icons',
       }, {
-        type: 'image',
-        height: '100%',
-        value: `${rootLink}ico-finance.svg`,
-      }, {
-        type: 'image',
-        height: '100%',
-        value: `${rootLink}ico-screen.svg`,
-      }, {
-        class: 'flex-triple',
+        class: 'flex-double',
         type: 'image',
         height: '50%',
         value: `${rootLink}map.svg`,
+        alt: 'CAMMS Strategy',
       }],
     }, {
       class: 'footer-row',

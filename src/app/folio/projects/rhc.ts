@@ -46,6 +46,7 @@ export default {
         height: '56.28%',
         class: 'content-overlap',
         value: `${rootLink}first-hd.jpg`,
+        alt: 'Red Hot Chilli',
       }]
     }, {
       class: 'text-row',
@@ -74,11 +75,13 @@ export default {
         height: '187%',
         type: 'image',
         value: `${rootLink}detail.jpg`,
+        alt: 'Products Page',
       }, {
         class: 'image-shadow',
         type: 'image',
         height: '189%',
         value: `${rootLink}style-guide.png`,
+        alt: 'Style Guide',
       }],
     }, {
       style: {
@@ -89,11 +92,13 @@ export default {
         type: 'image',
         height: '263%',
         value: `${rootLink}home.jpg`,
+        alt: 'Home Page',
       }, {
         class: 'image-shadow',
         type: 'image',
         height: '247%',
         value: `${rootLink}category.jpg`,
+        alt: 'Procut Categories',
       }]
     },   {
       class: 'text-row align-tops',
@@ -112,7 +117,7 @@ export default {
         type: 'iframe',
         class: 'hide-small',
         height: '150%',
-        value: '//codepen.io/inspironix/embed/preview/oXqezg/?height=600&theme-id=light&default-tab=result&embed-version=2',
+        value: '//codepen.io/inspironix/embed/oXqezg/?height=600&theme-id=light&default-tab=result&embed-version=2',
       }],
     }, {
       class: 'row-collapse',
@@ -120,6 +125,8 @@ export default {
         type: 'image',
         height: '18%',
         value: `${rootLink}rhc-icons.svg`,
+        alt: 'Shop Icons',
+        caption: 'Shop Icons',
       }],
     }, {
       class: 'text-row',
@@ -136,12 +143,15 @@ export default {
       class: 'row-collapse',
       style: {
         backgroundColor: '#640202',
+        color: '#f2f2f2'
       },
       content: [{
         type: 'image',
         class: 'image-shadow',
         height: '56.28%',
         value: `${rootLink}modular.jpg`,
+        alt: 'Modular Plugin Layout',
+        caption: 'Although build on a Wordpress site, the CMS is an entirely bespoke toolkit.'
       }]
     }, {
       class: 'row-collapse',
@@ -153,6 +163,7 @@ export default {
         class: 'image-shadow',
         height: '56.28%',
         value: `${rootLink}shop_flow.jpg`,
+        alt: 'Function Process',
       }]
     }, {
       style: {
@@ -163,6 +174,7 @@ export default {
         class: 'image-shadow',
         height: '56.28%',
         value: `${rootLink}shop_compile.jpg`,
+        alt: 'Compiling Content',
       }]
     }, {
       class: 'footer-row',

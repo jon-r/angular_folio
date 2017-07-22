@@ -11,13 +11,14 @@
         [ngClass]="[ 'content-' + content.type , content.class||'' ]" [@lod]="row.isActive" >
 
             <div class="content-filler" *ngIf="content.height" [style.paddingBottom]="content.height" ></div>
+            <aside class="content-caption" *ngIf="content.caption" [innerHTML]="content.caption | safeHTML" ></aside>
 
             <ng-container [ngSwitch]="content.type"
               *ngIf="row.isActive || content.type === 'text' || content.type === 'footer'" >
 
               <div *ngSwitchCase="'text'" [innerHTML]="content.value | safeHTML" ></div>
 
-              <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" />
+              <img class="content-inner" *ngSwitchCase="'image'" [src]="content.value" [alt]="content.alt" />
 
               <iframe class="content-inner" *ngSwitchCase="'iframe'" [src]="content.value | safeURL"
                 frameborder="no" allowtransparency="true" scrolling="no" ></iframe>

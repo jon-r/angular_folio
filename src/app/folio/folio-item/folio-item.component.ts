@@ -64,7 +64,7 @@ export class FolioItemComponent implements OnInit {
 
     const start = introBG.clientWidth;
     const fin = this.float.nativeElement.clientWidth;
-    const offset = ((fin - start) / 2) - 16;
+    const offset = Math.min(((fin - start) / 2) - 16, 128);
 
 
     const anims = [

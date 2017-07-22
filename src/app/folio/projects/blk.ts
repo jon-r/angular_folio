@@ -25,6 +25,7 @@ export default {
         type: 'image',
         height: '100%',
         value: `${rootLink}vuejs.svg`,
+        alt: 'Vue.js',
       }, {
         type: 'text',
         class: 'intro-text row-collapse',
@@ -65,6 +66,7 @@ export default {
       content: [{
         type: 'iframe',
         height: '75%',
+        caption: '<h5>New Game</h5><span>Play it now in browser.</span>',
         value: '//jon-richards.com/blackjack/?demo',
       }],
     }, {
@@ -84,9 +86,6 @@ export default {
         custom made SVG elements. Animations are built with almost entirely CSS only transitions, with a
         few javascript triggers.</p>
         `,
-
-
-
       }, {
         type: 'text',
         class: 'stats-box',
@@ -107,16 +106,17 @@ export default {
       content: [{
         type: 'image',
         height: '75%',
+        alt: 'Round Over',
         class: 'content-overlap',
         value: `${rootLink}results.png`,
+        caption: '<span>Round Over. Dealer Bust.</span>'
       }],
     }, {
       class: 'text-row',
       content: [{
         type: 'text',
         value: `
-        <p>I decided to build blackjack for a few reasons. Card games have only a few moving parts for a start.
-        Blackjack has a fairly simple set of rules and a typical round only lasts a few minutes.</p>
+        <p>Blackjack has a fairly simple set of rules and a typical round only lasts a few minutes.</p>
         <p>Despite the simple rules, there were still a few tricky moments in programming the gameplay, with
         betting and special player actions.</p>
         <p>In Blackjack a player is allowed to ‘split’ a pair into two hands. By paying an extra bet his two
@@ -128,12 +128,24 @@ export default {
     }, {
       style: {
         background: `url(${rootLink}table-print.svg) right/contain no-repeat, url(${rootLink}/noise.png) #2a5a30`,
+        color: '#fff',
       },
       content: [{
         type: 'image',
         height: '62.5%',
         class: 'no-expand',
+        alt: 'SVG Tokens',
+        caption: 'SVG Tokens',
         value: `${rootLink}tokens.svg`,
+      }],
+    }, {
+      content: [{
+        type: 'image',
+        height: '13%',
+        alt: 'Bet Controls Component',
+        caption: 'Bet Controls Component',
+        class: 'image-shadow',
+        value: `${rootLink}ctrls.png`,
       }],
     }, {
       style: {
@@ -141,20 +153,16 @@ export default {
       },
       content: [{
         type: 'image',
-        height: '13%',
-        class: 'image-shadow',
-        value: `${rootLink}ctrls.png`,
-      }],
-    }, {
-      content: [{
-        type: 'image',
         height: '107%',
+        alt: 'Options Component',
+        caption: 'Options & Player Component',
         class: 'image-shadow flex-double',
         value: `${rootLink}options.png`,
       }, {
         type: 'image',
         height: '85%',
         class: 'image-shadow',
+        alt: 'Player Hand Component',
         value: `${rootLink}hand.png`,
       }],
     }, {
