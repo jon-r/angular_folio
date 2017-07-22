@@ -59,13 +59,17 @@ export class FolioItemComponent implements OnInit {
     this.state = 'in';
 
     const introBG = this.introBG.nativeElement;
-    const label = this.label.nativeElement;
-    const icon = this.icon.nativeElement;
-
     const start = introBG.clientWidth;
+    if (!start) {
+      // to prevent the script attempting to animate hidden elements
+      return false;
+    }
+
     const fin = this.float.nativeElement.clientWidth;
     const offset = Math.min(((fin - start) / 2) - 16, 128);
 
+    const label = this.label.nativeElement;
+    const icon = this.icon.nativeElement;
 
     const anims = [
       { el: introBG, to: `scale(${ fin / start })` },
@@ -97,7 +101,7 @@ export class FolioItemComponent implements OnInit {
       introBG,
       label,
       icon,
-    ].forEach((el, to) => {
+    ].forEach((el) => {
       const anim = useAnimation(slide, { params : { to: 'none' }});
       const factory = this.builder.build(anim);
       const player = factory.create(el, {});
