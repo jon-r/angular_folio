@@ -9,11 +9,11 @@ import 'rxjs/add/operator/filter';
 
 import { useAnimation, transition, trigger, state, style, group, query, animateChild } from '@angular/animations';
 
-import { duration, slide, slideInChild, slideOutChild, slideStagger, to, from, fadeIn } from './shared/animations';
+import { duration, slide, slideStagger, to, from, fadeIn, go } from './shared/animations';
 
 import { RouteCommsService } from './shared/route-comms.service';
 
-import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
+import { CanvasGrid } from '../assets/jr_grid/canvasGrid';
 
 @Component({
   selector: 'app-root',
@@ -23,16 +23,16 @@ import JRGrid from '../assets/jr_grid/canvas/canvasGrid';
     trigger('routeAnimation', [
       transition(':enter', []),
       transition('home=>*', group([
-        useAnimation(slideOutChild, to.left),
-        useAnimation(slideInChild, from.down),
+        query(':enter', useAnimation(slide, {params: { from: go.down }}), { optional: true }),
+        query(':leave', useAnimation(slide, {params: { to: go.left }}), { optional: true })
       ])),
       transition('*=>home', group([
-        useAnimation(slideOutChild, to.right),
-        useAnimation(slideInChild, from.left),
+        query(':enter', useAnimation(slide, {params: { from: go.left }}), { optional: true }),
+        query(':leave', useAnimation(slide, {params: { to: go.right }}), { optional: true })
       ])),
       transition('about<=>folio', group([
-        useAnimation(slideOutChild, to.up),
-        useAnimation(slideInChild, from.down),
+        query(':enter', useAnimation(slide, {params: { from: go.down }}), { optional: true }),
+        query(':leave', useAnimation(slide, {params: { to: go.up }}), { optional: true })
       ])),
     ]),
     trigger('sidebarBG', [
@@ -61,7 +61,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   appState;
 
   scrollPos: Number;
-  grid: JRGrid;
+  grid: CanvasGrid;
 
   constructor(
     private routerComms: RouteCommsService,
@@ -121,7 +121,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.grid = new JRGrid({ target: 'jr_grid' });
+    this.grid = new CanvasGrid({ target: 'jr_grid' });
     this.ngZone.runOutsideAngular(() => this.grid.build().play());
 
     this.routerComms.listDimensions$.subscribe(dims => {

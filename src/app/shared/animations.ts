@@ -1,10 +1,18 @@
 
 // todo bonus: turn all this into function wrappers. to potentially remive ALL the 'useAnimation' imports
 
-import {animation, style, animate, stagger, query, animateChild, useAnimation, AnimationReferenceMetadata } from '@angular/animations';
+import {animation, style, animate, stagger, query, animateChild,
+  useAnimation, AnimationReferenceMetadata, group } from '@angular/animations';
 
 const defaultTime = '400ms ease-out';
 const defaultStagger = '150ms';
+
+export const go = {
+  left: 'translateX(-100%)',
+  right: 'translateX(100%)',
+  up: 'translateY(-100%)',
+  down: 'translateY(100%)',
+};
 
 export const to = {
   left:  { params: { to: 'translateX(-100%)'}},
@@ -52,9 +60,7 @@ export const slideStagger = animation([
   ])
 ], {params: { time: defaultTime, to: '*', from: '*' }});
 
-export const slideInChild = animation(
-  query(':enter', useAnimation(slide, {params: { from: '{{ from }}' }}), { optional: true })
-);
-export const slideOutChild = animation(
-  query(':leave', useAnimation(slide, {params: { to: '{{ to }}' }}), { optional: true })
-);
+export const slideChildren = animation([
+  query(':enter', useAnimation(slide, {params: { from: '{{ enterFrom }}' }}), { optional: true }),
+  query(':leave', useAnimation(slide, {params: { to: '{{ leaveTo }}' }}), { optional: true })
+]);

@@ -2,9 +2,19 @@
 
 import GridRect from './rect';
 
-import { isFactorFilter, randomFrom } from '../utils';
+import { isFactorFilter, randomFrom } from './utils';
 
 export class CanvasGrid {
+
+  target;
+  ctx;
+  config;
+  grid;
+  counter;
+  activePoints;
+  gridStarters;
+  isPaused;
+
   constructor({
     target = 'jsGridCanvas',
     rectHeight = 6,
@@ -55,8 +65,8 @@ export class CanvasGrid {
     const container = this.getContainer();
     const cfg = this.config;
 
-    const rows = new Array(container.rows).fill();
-    const cols = new Array(container.cols).fill();
+    const rows = new Array(container.rows).fill(0);
+    const cols = new Array(container.cols).fill(0);
     const grid = this.grid;
 
     cols.forEach((i, x) => {
@@ -76,7 +86,9 @@ export class CanvasGrid {
 
     grid.forEach((rect) => {
       rect.drawRect(0.1).setCanTrigger(grid, cfg, container);
-      if (rect.canTrigger.length === 1) this.gridStarters.push(rect);
+      if (rect.canTrigger.length === 1) {
+        this.gridStarters.push(rect);
+      }
     });
 
     return this;
@@ -107,7 +119,7 @@ export class CanvasGrid {
     }
   }
 
-  updateGrid(n) {
+  updateGrid(n = 0) {
     let m = n + 1 || 0;
 
     const active = this.activePoints;

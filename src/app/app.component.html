@@ -64,7 +64,7 @@
 
 <button class="menu-toggle small-only"
   (click)="toggleSidebar()"
-  [ngClass]="{ 'on': showSidebar }" >
+  [ngClass]="{ 'on': appState.menuOpen }" >
   <svg class="ico" viewBox="0 0 6 6">
     <g stroke="#B2DFDB" stroke-width="1" >
       <path class="b-1" d="m-1 1h10"/>

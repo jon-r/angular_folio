@@ -10,10 +10,10 @@ if (environment.production) {
 
 const loaderFrame = document.getElementById('js_preLoader');
 
-(function bootsrapNagging() {
+(function bootstrapNagging() {
 
   if (!loaderFrame.dataset.ready) {
-    return setTimeout(bootsrapNagging, 50);
+    return setTimeout(bootstrapNagging, 50);
   }
 
   loaderFrame.classList.add('going');
