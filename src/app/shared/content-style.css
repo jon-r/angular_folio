@@ -23,17 +23,15 @@
 .page-title {
   /*line-height: 1;*/
   flex: 1;
-  padding: 0.5rem;
-}
-
-.header-btn {
-  width: 100%;
+  padding: 1rem .5rem;
 }
 
 .btn-box {
   min-width: 2rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: .5rem;
+}
+.header-btn {
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -56,5 +54,8 @@
     padding-top: 0;
     padding-bottom: 0;
     padding-left: calc(5vw + 64px);
+  }
+  .page-title {
+    padding-left: 2rem;
   }
 }

@@ -5,14 +5,13 @@
   .page-container::before {
     content: "";
     display: block;
-    left: 32px;
+    left: 2rem;
+    top: 2rem;
+    bottom: 2rem;
     right: 1200px;
-    opacity: 0.5;
-    background-color: #00897B;
-    top: 32px;
-    position: absolute;
-    bottom: 32px;
-    border-radius: 8px 0 0 0;
+    background-color: rgba(0, 137, 123, 0.5);
+    position: absolute;    
+    border-radius: 8px 0 0 8px;
   }
 
 }

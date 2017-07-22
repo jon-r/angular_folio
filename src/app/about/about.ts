@@ -10,21 +10,19 @@ export default {
     class: 'folio-content',
     content: [{
       type: 'text',
-      value: `
-      <h2 class="header-1" >Jon Richards <sub>BA (hons)</h2>
-      `,
+      value: `<h2 class="header-1" >Jon Richards <sub>BA (hons)</h2>`,
     }]
   }, {
     class: 'folio-content row-collapse',
     content: [{
       type: 'text',
       value: `
-      <h3 class="header-3" >About Me</h3>
-      <hr>
-      <p>I am a skilled & motivated technical developer, with experience in full stack web development
-      and digital design. I am a self-taught coder with a strong lean towards web, picking
-      up samples of other languages along the way.</p>
-      <p>When working in development, I like to combine my past design experience and game
+<h3 class="header-3" >About Me</h3>
+<hr>
+<p>I am a skilled & motivated technical developer, with experience in full stack web development
+and digital design. I am a self-taught coder with a strong lean towards web, picking
+up samples of other languages along the way.</p>
+<p>When working in development, I like to combine my past design experience and game
 development knowledge to produce clear, optimised code and pleasing results.</p>
       `,
     }]

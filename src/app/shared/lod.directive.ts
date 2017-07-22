@@ -3,8 +3,6 @@ import { Directive, ElementRef, Output, OnInit, EventEmitter } from '@angular/co
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/combineLatest';
-// import 'rxjs/add/operator/take';
-// import 'rxjs/add/operator/map';
 
 import { RouteCommsService, Dims } from '../shared/route-comms.service';
 
@@ -21,8 +19,6 @@ export class LODDirective implements OnInit {
     private el: ElementRef,
     private routeComms: RouteCommsService,
   ) {}
-
-
 
   ngOnInit() {
 

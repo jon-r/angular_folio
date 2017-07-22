@@ -24,7 +24,6 @@ import { fadeIn, slide } from '../shared/animations';
 export class TemplateComponent implements OnInit {
   @Input() template;
 
-
   scrollPos = 0;
 
   constructor(

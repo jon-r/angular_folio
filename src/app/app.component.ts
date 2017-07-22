@@ -4,10 +4,9 @@ import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/filter';
 
-import { useAnimation, transition, trigger, state, style, group, query, animateChild } from '@angular/animations';
+import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
 
 import { duration, slide, slideStagger, to, from, fadeIn, go } from './shared/animations';
 
@@ -96,6 +95,11 @@ export class AppComponent implements AfterViewInit, OnInit {
   siteNavVisible() {
     const state = this.appState;
     return state.isMobile || state.page !== 'home';
+  }
+
+  contactNavVisible() {
+    const state = this.appState;
+    return !state.isMobile || state.page === 'home';
   }
 
   updateRoute(outlet) {

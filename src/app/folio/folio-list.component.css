@@ -5,11 +5,8 @@
   position: relative;
 }
 
-.filter-dropdown {
-  text-transform: capitalize;
-}
-
 .filter-grp {
+  text-transform: capitalize;
   position: absolute;
   right: 0.5rem;
   top: 0.4rem;
@@ -26,15 +23,15 @@
 @media screen and (min-width: 800px) {
   .filter-grp {
     display: block;
-    position: relative;
+    position: static;
     box-shadow: none;
     background: none;
     padding: 0;
-    top: 0;
-    right: 0;
+    align-self: stretch;
   }
   .folio-filter {
     display: inline-block;
+    height: 100%;
   }
 
 }

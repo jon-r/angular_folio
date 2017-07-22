@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-// import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
-
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/debounceTime';
-// import 'rxjs/add/observable/fromEvent';
 
 export interface Dims {
   height: number;
@@ -15,20 +10,6 @@ export interface Dims {
 
 @Injectable()
 export class RouteCommsService {
-
-  /* OLD ------------- */
-//  private msgSrc = new Subject<RouteMsg>();
-//  msgOutput$ = this.msgSrc.asObservable();
-
-//  private scrollToSrc = new Subject<number>();
-//  scrollToOutput$ = this.scrollToSrc.asObservable();
-
-//  private scrollPosSrc = new Subject<number>();
-//  scrollPosOutput$ = this.scrollPosSrc.asObservable();
-
-//  private width = new Subject<string>();
-//  widthOutput$ = this.width.asObservable();
-  /* OLD ------------- */
 
   listDimensions$: Observable<Dims>;
   private listDims: BehaviorSubject<Dims>;
@@ -84,33 +65,4 @@ export class RouteCommsService {
     this.scrollPos.next(pos);
   }
 
-
-  // older below
-//  emitStates(msg: RouteMsg) {
-//    this.msgSrc.next(msg);
-//  }
-
-//  emitScrollTo(scrollTo: number) {
-//    this.scrollToSrc.next(scrollTo);
-//  }
-//
-//  emitScrollPos(scrollPos: number) {
-//    this.scrollPosSrc.next(scrollPos);
-//  }
-//
-//  emitWidth(vw: string) {
-//    console.log(vw);
-//    this.width.next(vw);
-//  }
-
 }
-
-
-//  private motionSrc = new Subject<ElTransform>();
-//  motionOutput$ = this.motionSrc.asObservable();
-//
-//  transform(elements: ElTransform) {
-//    // const out: ElTransform = { home: null, framer: null,  };
-//    // Object.keys(elements).forEach(el => out[el] = { transform: elements[el] });
-//    this.motionSrc.next(elements);
-//  }

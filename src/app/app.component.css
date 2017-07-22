@@ -52,18 +52,10 @@
 
 .contact-nav {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 1.5rem;
+  left: .5rem;
   white-space: nowrap;
   z-index: 5;
-  width: 3rem;
-  padding: 0.5rem;
-  background-color: #00897B;
-  border-top-right-radius: 5px;
-}
-
-.contact-nav.home {
-  background: none;
 }
 
 .contact-link {
@@ -95,8 +87,8 @@
 
 .menu-toggle {
   position: absolute;
-  top: 0.3rem;
-  left: 0.5rem;
+  top: 1rem;
+  left: 1rem;
   z-index: 5;
   width: 1.5em;
   padding: 0;
@@ -112,10 +104,6 @@
 
 
 @media screen and (min-width: 800px) {
-
-  .contact-nav {
-    background-color: none;
-  }
 
   .sidebar {
     width: calc(64px + 5vw);
@@ -140,6 +128,10 @@
 
   .site-content {
     left: calc(64px + 5vw);
+  }
+
+  .contact-nav {
+    bottom: .5rem;
   }
 
 }

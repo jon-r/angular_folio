@@ -16,11 +16,6 @@
   width: 100%;
   left: 0;
   top: 0;
-  overflow: hidden;
-}
-
-.project-float.in {
-  overflow: visible;
 }
 
 .project-intro-bg,
@@ -46,7 +41,13 @@
   padding: 8px;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
+
+.project-float.in .project-intro {
+  overflow: visible;
+}
+
 .project-intro-label {
   flex: 1;
   align-self: center;

@@ -33,16 +33,6 @@
   font-size: 75%;
 }
 
-@media screen and (min-width: 1100px) {
-  .home-nav-bg {
-    width: calc(50vw);
-    right: 60vw;
-    transform: skewX(30deg);
-    transform-origin: top right;
-    background-color: rgba(14, 76, 70, 0.7);
-  }
-}
-
 @media screen and (min-width: 800px) {
   .welcome {
     margin: 0;
@@ -66,5 +56,15 @@
   .about {
     top: calc(5vh + 400px);
     left: calc(180px + 15vw);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .home-nav-bg {
+    width: calc(50vw);
+    right: 60vw;
+    transform: skewX(30deg);
+    transform-origin: top right;
+    background-color: rgba(14, 76, 70, 0.7);
   }
 }

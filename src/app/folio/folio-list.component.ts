@@ -107,11 +107,6 @@ export class FolioListComponent implements OnInit {
 
     });
 
-
-
   }
-
-
-
 
 }

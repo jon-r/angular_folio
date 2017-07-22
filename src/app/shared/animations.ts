@@ -1,8 +1,7 @@
 
 // todo bonus: turn all this into function wrappers. to potentially remive ALL the 'useAnimation' imports
 
-import {animation, style, animate, stagger, query, animateChild,
-  useAnimation, AnimationReferenceMetadata, group } from '@angular/animations';
+import { animation, style, animate, stagger, query, useAnimation } from '@angular/animations';
 
 const defaultTime = '400ms ease-out';
 const defaultStagger = '150ms';
@@ -28,16 +27,13 @@ export const from = {
   down: { params: { from: 'translateY(100%)' }},
 };
 
-const fIn = { params: { from: 0, to: 1 }};
-const fOut = { params: { from: 1, to: 0 }};
-
 export const fade = animation([
   style({ opacity: '{{from}}' }),
   animate('{{ time }}', style({ opacity: '{{to}}' }))
 ], {params: { time: defaultTime }});
 
-export const fadeIn = useAnimation(fade, fIn);
-export const fadeOut = useAnimation(fade, fOut);
+export const fadeIn = useAnimation(fade,  { params: { from: 0, to: 1 }});
+export const fadeOut = useAnimation(fade, { params: { from: 1, to: 0 }});
 
 export const slide = animation([
   style({ transform: '{{from}}'}),
@@ -49,9 +45,6 @@ export const duration = animation(
   animate('{{ time }}'), {params: { time: defaultTime }}
 );
 
-export const staggerChildren = animation(
-  query('@*', stagger(defaultStagger, animateChild()))
-);
 
 export const slideStagger = animation([
   style({ transform: '{{ from }}' }),
@@ -60,7 +53,10 @@ export const slideStagger = animation([
   ])
 ], {params: { time: defaultTime, to: '*', from: '*' }});
 
+/* UNUSED, kept if bug fixed in angular
+
 export const slideChildren = animation([
   query(':enter', useAnimation(slide, {params: { from: '{{ enterFrom }}' }}), { optional: true }),
   query(':leave', useAnimation(slide, {params: { to: '{{ leaveTo }}' }}), { optional: true })
 ]);
+*/

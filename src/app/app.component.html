@@ -45,7 +45,7 @@
 
 </div>
 
-<nav class="contact-nav" [ngClass]="appState.page" >
+<nav class="contact-nav" [ngClass]="appState.page" *ngIf="contactNavVisible()" >
   <a class="contact-link" href="mailto:jon.richards@outlook.com" >
     <i class="navicon inline" >
         <svg  viewBox="0 0 36 36"><circle class="ico" cx="18" cy="18.5" r="16" mask="url(#eml)" fill="#202121"/></svg>
