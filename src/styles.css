@@ -13,13 +13,12 @@ button:focus {
   outline: none;
 }
 
-/* BASE STYLE/TYPOGRAPHY ---------------------------------------------------- */
+/* BASE TYPOGRAPHY ---------------------------------------------------------- */
 
 body {
   font: 300 16px/1.375 "soleil", sans-serif;
   color: #B2DFDB;
   background-color: #202121;
-/*  overflow: hidden;*/
 }
 
 h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 1.2}
@@ -215,89 +214,3 @@ a:hover .ico, .active .ico  {
     padding: 2rem;
   }
 }
-
-/* preloader ---------------------------------------------------------------- */
-
-.pre-loader-frame {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  transition: transform 300ms ease-in-out;
-  background-color: #00897B;
-  z-index: 99;
-}
-
-.pre-loader-frame.going {
-  transform: translateX(100%);
-}
-
-.pre-loader-slide {
-
-}
-
-.loader-logo {
-  width: 20%;
-}
-
-.loader-spin {
-  height: 5%;
-}
-.lg-jr {
-  animation: fade-in 400ms 1s both
-}
-
-.lg-br {
-  animation-duration: 500ms;
-  animation-fill-mode: both;
-}
-
-.br-l {
-  animation-name: svg-draw;
-}
-
-.br-r {
-  animation-delay: 500ms, 1s;
-  animation-name: svg-draw, nudge-right;
-}
-
-.spin {
-  stroke-dashoffset: -20;
-  animation-duration: 1.5s, 1.2s;
-  transform-origin: 10px;
-  animation-name: svg-ring-pulse, spin;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in, linear;
-  animation-direction: alternate-reverse, normal
-}
-
-/* css animations ----------------------------------------------------------- */
-
-/* todo - reorganise, check whats here and whats no longer used. */
-@keyframes svg-draw {
-  from { stroke-dashoffset: 21 }
-  50% { stroke-dashoffset: 10 }
-  to { stroke-dashoffset: 0 }
-}
-
-@keyframes nudge-right {
-  from { transform: translatex(-19px) }
-}
-
-@keyframes fade-in {
-  from {opacity: 0 }
-  to {opacity: 1 }
-}
-
-@keyframes svg-ring-pulse {
-  from { stroke-dasharray: 5 40}
-  to { stroke-dasharray: 40 40}
-}
-
-@keyframes spin {
-  /*from { transform: rotate(0)}*/
-  to { transform: rotate(360deg)}
-}
-
-
-/* media querys ------------------------------------------------------------- */
