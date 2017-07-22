@@ -50,5 +50,3 @@ export class LODDirective implements OnInit {
 
 
 }
-
-// todo: some way to skip loading on demand? eg if screen is too small.

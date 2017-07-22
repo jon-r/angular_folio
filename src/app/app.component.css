@@ -8,6 +8,16 @@
   max-width: 110px;
   margin: auto;
 }
+
+/* site logo */
+.😄 path { transition: 300ms; transform-origin: 17px 16px; }
+.😄:hover path { transition-delay: 1000ms; }
+.😄:hover .text { transform: translate(-8px, 1px) rotate(90deg) }
+.😄:hover .left { transform: translateX(-12px) scaleX(.5) rotate(90deg)}
+.😄:hover .right { transform: translateX(12px) scaleX(.5) rotate(-90deg)}
+
+
+
 .sidebar {
   position: fixed;
   z-index: 5;
@@ -77,8 +87,6 @@
   pointer-events: auto;
 }
 
-
-
 .site-content {
   overflow-y: auto;
   overflow-x: hidden;
@@ -93,6 +101,14 @@
   width: 1.5em;
   padding: 0;
 }
+
+/* burger */
+.b-1, .b-2, .b-3 { transition: transform 300ms }
+.b-1 { transform-origin: 1px 1px }
+.b-3 { transform-origin: 1px 5px }
+.on .b-1 { transform: rotate(45deg) }
+.on .b-2 { transform: translateX(10px) }
+.on .b-3 { transform: rotate(-45deg) }
 
 
 @media screen and (min-width: 800px) {

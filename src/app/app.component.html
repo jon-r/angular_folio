@@ -3,25 +3,41 @@
   <div class="sidebar-bg frame-shadow" [@sidebarBG]="appState.page" ></div>
 
   <div class="site-logo"  >
-    <a routerLink="home" [inlineSVG]="'../assets/site/jr-logo-fun.min.svg'" >
-      logo
+    <a routerLink="home"  >
+      <svg viewBox="0 0 34 16" class="😄" >
+      <g fill="none" stroke-width="2"><g stroke="#e4e5e7" >
+      <path class="text" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3" />
+      </g><g stroke-linejoin="round" stroke="#B2DFDB">
+      <path class="left" d="M7-1L2 8l5 9" />
+      <path class="right" d="M27 17l5-9-5-9"/>
+      </g></g>
+      </svg>
     </a>
   </div>
 
   <nav id="sideNav" class="site-nav" >
     <ng-container *ngIf="siteNavVisible()" >
       <a class="nav-link site-link" routerLink="home" routerLinkActive="active"  >
-        <div class="navicon hide-small" [inlineSVG]="'../assets/site/home.svg'" ></div>
+        <div class="navicon hide-small" >
+          <svg  viewBox="0 0 36 36"><circle class="ico" cx="18" cy="18.5" r="16" mask="url(#hom)" fill="#202121"/></svg>
+        </div>
+
         <span class="header-4" >Home</span>
       </a>
 
       <a class="nav-link site-link" routerLink="folio" routerLinkActive="active"  >
-        <div class="navicon hide-small" [inlineSVG]="'../assets/site/work.svg'" ></div>
+        <div class="navicon hide-small" >
+          <svg  viewBox="0 0 36 36"><circle class="ico" cx="18" cy="18.5" r="16" mask="url(#wrk)" fill="#202121"/></svg>
+        </div>
+
         <span class="header-4" >Folio</span>
       </a>
 
       <a class="nav-link site-link" routerLink="about" routerLinkActive="active" >
-        <div class="navicon hide-small" [inlineSVG]="'../assets/site/about.svg'" ></div>
+        <div class="navicon hide-small" >
+          <svg  viewBox="0 0 36 36"><circle class="ico" cx="18" cy="18.5" r="16" mask="url(#abt)" fill="#202121"/></svg>
+        </div>
+
         <span class="header-4" >About</span>
       </a>
     </ng-container>
@@ -31,19 +47,32 @@
 
 <nav class="contact-nav" [ngClass]="appState.page" >
   <a class="contact-link" href="mailto:jon.richards@outlook.com" >
-    <i class="navicon inline" [inlineSVG]="'../assets/site/email.svg'" ></i>
+    <i class="navicon inline" >
+        <svg  viewBox="0 0 36 36"><circle class="ico" cx="18" cy="18.5" r="16" mask="url(#eml)" fill="#202121"/></svg>
+    </i>
     <span>jon.richards@outlook.com</span>
   </a>
   <a class="contact-link" href="https://github.com/jon-r" target="_blank" rel="noreferrer" >
-    <i class="navicon inline" [inlineSVG]="'../assets/site/github.svg'" ></i>
+    <i class="navicon inline" >
+      <svg viewBox="0 0 36 36">
+        <path class="ico" fill="#202121" d="M18 2.1C9 2.1 1.7 9.4 1.7 18.4c0 7.2 4.68 13.3 11.15 15.46.82.15 1.1-.35 1.1-.8V30.3c-4.54 1-5.5-2.18-5.5-2.18-.74-1.88-1.8-2.38-1.8-2.38-1.48-1 .1-1 .1-1 1.64.12 2.5 1.7 2.5 1.7 1.46 2.47 3.8 1.76 4.74 1.34.13-1.05.55-1.77 1.02-2.18-3.62-.4-7.42-1.8-7.42-8.05 0-1.78.64-3.23 1.68-4.37-.16-.4-.72-2.07.16-4.3 0 0 1.37-.45 4.48 1.66 1.3-.36 2.7-.54 4.08-.55 1.38 0 2.78.17 4.08.53 3.1-2.1 4.47-1.67 4.47-1.67.9 2.24.33 3.9.17 4.3 1.04 1.15 1.67 2.6 1.67 4.38 0 6.26-3.83 7.64-7.46 8.04.6.5 1.1 1.5 1.1 3v4.47c0 .44.28.95 1.1.8C29.64 31.7 34.3 25.6 34.3 18.4c0-9-7.3-16.3-16.3-16.3z"/>
+      </svg>
+    </i>
     <span>github.io/jon-r</span>
   </a>
 </nav>
 
 <button class="menu-toggle small-only"
   (click)="toggleSidebar()"
-  [ngClass]="{ 'on': showSidebar }"
-  [inlineSVG]="'../assets/site/burger.svg'" >
+  [ngClass]="{ 'on': showSidebar }" >
+  <svg class="ico" viewBox="0 0 6 6">
+    <g stroke="#B2DFDB" stroke-width="1" >
+      <path class="b-1" d="m-1 1h10"/>
+      <path class="b-2" d="m-1 3h8"/>
+      <path class="b-3" d="m-1 5h10"/>
+    </g>
+  </svg>
+
 </button>
 
 <main class="site-content full-screen"
@@ -55,8 +84,30 @@
 
 </main>
 
-
-
+<svg >
+  <defs>
+    <mask id="abt">
+      <path fill="#fff" d="M0 0h36v36H0z"/>
+      <path d="M21.6 17s-1.3 1-3.6 1-3.5-1-3.5-1c-4.3 1.5-6.2 7.3-6.2 8.7 0 1.4 1.4 1.8 1.4 1.8 2.7 1 8.3 1 8.3 1s5.6 0 8.3-1c0 0 1.4-.4 1.4-1.8s-2-7.2-6.2-8.8z"/>
+      <circle cx="18" cy="12.4" r="4.9"/>
+    </mask>
+    <mask id="eml">
+      <path fill="#fff" d="M0 0h36v36H0z"/>
+      <rect x="8" y="11" height="14" width="20" rx="2"/>
+      <path stroke="#fff" d="M8 11l10 10 10-10" fill="none"/>
+    </mask>
+    <mask id="hom">
+      <path fill="#fff" d="M0 0h36v36H0z"/>
+      <path d="M18 8l10 10H8m3 1h14v9H11"/>
+    </mask>
+    <mask id="wrk">
+      <path fill="#fff" d="M0 0h36v36H0z"/>
+      <rect x="8" y="11" height="12" fill="#fff" stroke="#000" width="20" rx="1"/>
+      <path stroke="#000" d="M10 14h6m-6 2h5m-5 2h7"/>
+      <path d="M22 13h4v8h-4zm-7 12h6l1 4h-8"/>
+    </mask>
+  </defs>
+</svg>
 
 
 
