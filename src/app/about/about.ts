@@ -10,7 +10,9 @@ export default {
     class: 'folio-content',
     content: [{
       type: 'text',
-      value: `<h2 class="header-1" >Jon Richards <sub>BA (hons)</h2>`,
+      value: `<h2 class="header-1" >Jon Richards <sub>BA (hons)</h2>
+      <a class="header-4 match-content" href="../assets/JonR-CV_Jul17.pdf" >Download CV</a> (pdf)
+      `,
     }]
   }, {
     class: 'folio-content row-collapse',

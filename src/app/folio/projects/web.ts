@@ -8,7 +8,7 @@ export default {
   intro: {
     title: 'Wordpress Development',
     desc: 'Assorted sites I worked on as primary developer',
-    icon: `${rootLink}monitor-2.svg`,
+    icon: `${rootLink}web-monitor.png`,
     style: {
       background: '#23282d',
       color: '#ddd',

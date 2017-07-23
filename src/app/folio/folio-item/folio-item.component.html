@@ -15,9 +15,8 @@
       <em>{{project.intro.desc}}</em>
     </div>
 
-    <div #icon class="project-intro-icon"
-      [ngClass]="state"
-      [inlineSVG]="project.intro.icon" >
+    <div #icon class="project-intro-icon" >
+      <img [src]="project.intro.icon" />
     </div>
 
   </a>

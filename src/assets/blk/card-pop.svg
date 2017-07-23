@@ -1,8 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 100 100" preserveAspectRatio="xMidYMid" style="overflow:visible" >
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -10 100 100" preserveAspectRatio="xMidYMid" style="overflow:visible" >
   <defs>
     <clipPath id="cut">
       <path d="M0 0h50v70H0z"/>
     </clipPath>
+    <mask id="cut2">
+      <path fill="#fff" d="M0 0h50v70H0z"/>
+    </mask>
     <filter id="dropShadow">
       <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
       <feOffset dy="1"/>
@@ -12,22 +15,20 @@
       </feMerge>
     </filter>
     <style>
-      .playing-card { transform-origin: 25px 70px; transition: transform 300ms 500ms cubic-bezier(.5,-.2,.5,2); filter: url(#dropShadow); }
-      .playing-card.left { transform: translateX(-8px) rotate(-5deg) }
-      .playing-card.right { transform: translateX(8px) rotate(5deg) }
+      .playing-card { transition: transform 300ms 500ms cubic-bezier(.5,-.2,.5,2); transform-origin:25px 70px; }
       .in .left { transform: rotate(-20deg) translate(-10px, -10px); }
       .in .right { transform: rotate(20deg) translate(10px, -10px); }
     </style>
   </defs>
   <g font-weight="600" font-family="georgia" >
-    <g class="playing-card left" font-weight="600"  >
+    <g class="playing-card left" font-weight="600" transform="translate(-8) rotate(-8)" filter="url(#dropShadow)" >
       <rect fill="#fff" height="70" width="50" rx="3"/>
-      <path id="spades" d="M35 50a1 1 0 0 0 20 0q0-7-9-14t-8-14q0 7-9 14t-8 14a1 1 0 0 0 20 0m-3 8l5 8H33z" clip-path="url(#cut)"/>
+      <path id="spades" d="M35 50a1 1 0 0 0 20 0q0-7-9-14t-8-14q0 7-9 14t-8 14a1 1 0 0 0 20 0m-3 8l5 8H33z" mask="url(#cut2)"/>
       <text x="5" y="15">A</text>
     </g>
-    <g class="playing-card right">
+    <g class="playing-card right" transform="translate(8) rotate(8)" filter="url(#dropShadow)" >
       <rect fill="#fff" height="70" width="50" rx="3"/>
-      <path id="hearts" fill="red" d="M40 37a1 1 0 0 0-20 0q0 7 9 14t8 14q0-7 9-14t8-14a1 1 0 0 0-20 0z" clip-path="url(#cut)"/>
+      <path id="hearts" fill="red" d="M40 37a1 1 0 0 0-20 0q0 7 9 14t8 14q0-7 9-14t8-14a1 1 0 0 0-20 0z" mask="url(#cut2)"/>
       <text  x="5" y="15" fill="red">Q</text>
     </g>
   </g>

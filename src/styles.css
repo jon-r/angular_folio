@@ -78,8 +78,6 @@ a {
   }
 
   body { font-size: 18px }
-
-
 }
 
 
@@ -127,6 +125,7 @@ a {
 
 .navicon {
   width: 2rem;
+  height: 2rem;
   margin: auto;
   vertical-align: middle;
 }
@@ -137,6 +136,7 @@ a {
 
 .tiny-icon {
   width: 0.75em;
+  height: 0.75em;
   display: inline-block;
   fill: currentColor;
   margin-left: 0.25em;
