@@ -18,6 +18,10 @@ export class RouteCommsService {
   scrollPosition$: Observable<number>;
   private scrollPos: BehaviorSubject<number>;
 
+  scrollSetTo$: Observable<number>;
+  private scrollTo: BehaviorSubject<number>;
+
+
   constructor() {
 
     this.sizes = new Map([
@@ -33,6 +37,10 @@ export class RouteCommsService {
 
     this.scrollPos = new BehaviorSubject(0);
     this.scrollPosition$ = this.scrollPos.asObservable();
+
+
+    this.scrollTo = new BehaviorSubject(0);
+    this.scrollSetTo$ = this.scrollTo.asObservable();
 
   }
 
@@ -60,9 +68,13 @@ export class RouteCommsService {
     const dims = this.setDims();
     this.listDims.next(dims);
   }
-
+  // scroll position value TO the content
   updateScrollPos(pos) {
     this.scrollPos.next(pos);
+  }
+  // scroll position set FROM the content
+  setScrollTo(pos) {
+    this.scrollTo.next(pos);
   }
 
 }

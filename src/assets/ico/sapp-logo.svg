@@ -1,4 +1,4 @@
-<svg id="sap-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+<svg id="sap-ico" xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 48 48">
   <defs>
     <linearGradient id="gr" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="1">
       <stop offset="0" stop-color="#DD3123"/>
@@ -13,8 +13,8 @@
       <circle fill="#fff" cx="17.6" cy="16.6" r="13.5"/>
     </mask>
     <style>
-      @keyframes rise { from { transform: translateY(30px) } to { transform: none } }
-      .in .sunrise {animation: rise 4s ease-out }
+      @keyframes rise { from { transform: translateY(30px) } 50% { transform: none } }
+      .sunrise {animation: rise 8s ease-out infinite alternate }
     </style>
   </defs>
 

@@ -66,7 +66,7 @@ export class FolioListComponent implements OnInit {
   }
 
   setFilter(paramMap) {
-    this.routeCommsService.updateScrollPos(0);
+    this.routeCommsService.setScrollTo(0);
 
     switch (true) {
     case (paramMap.has('project')):

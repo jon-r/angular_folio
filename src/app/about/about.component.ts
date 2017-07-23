@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.routeCommsService.updateScrollPos(0);
+    this.routeCommsService.setScrollTo(0);
 
     this.about = About;
   }

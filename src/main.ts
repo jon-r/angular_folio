@@ -8,7 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-const loaderFrame = document.getElementById('js_preLoader');
+const loaderFrame = document.getElementById('ldFr');
 
 (function bootstrapNagging() {
 

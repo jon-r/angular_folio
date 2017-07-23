@@ -1,10 +1,19 @@
 
+<main class="site-content full-screen"
+  [@routeAnimation]="appState.page"
+  [scrollTop]="scrollPos"
+  #routesContainer >
+
+  <router-outlet #routerOutlet="outlet" (activate)="updateRoute(routerOutlet)" ></router-outlet>
+
+</main>
+
 <div class="sidebar" [@nav]="appState.page" *ngIf="sidebarVisible()" >
-  <div class="sidebar-bg frame-shadow" [@sidebarBG]="appState.page" ></div>
+  <div class="sidebar-bg frame-shadow" [ngClass]="appState.page" ></div>
 
   <div class="site-logo"  >
     <a routerLink="home"  >
-      <svg viewBox="0 0 34 16" class="😄" >
+      <svg viewBox="0 0 34 16" class="😄" width="110" height="52" >
       <g fill="none" stroke-width="2"><g stroke="#e4e5e7" >
       <path class="text" d="M10 1h5v10a4 4 0 0 1-4 4H9m7.5-14h3a4 4 0 0 1 0 8h-3 2q3 0 4 3t2.5 3" />
       </g><g stroke-linejoin="round" stroke="#B2DFDB">
@@ -74,15 +83,6 @@
   </svg>
 
 </button>
-
-<main class="site-content full-screen"
-  [@routeAnimation]="appState.page"
-  [scrollTop]="scrollPos"
-  #routesContainer >
-
-  <router-outlet #routerOutlet="outlet" (activate)="updateRoute(routerOutlet)" ></router-outlet>
-
-</main>
 
 <svg >
   <defs>

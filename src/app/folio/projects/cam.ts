@@ -9,7 +9,7 @@ export default {
   intro: {
     title: 'CAMMS',
     desc: 'SAAS Corporate Site & Software Portfolio',
-    icon: `${rootLink}monitor-2.svg`,
+    icon: `${rootLink}cam-monitor.png`,
     style: {
       color: '#fff',
       background: 'linear-gradient(#055492 50%, #143B53)'
@@ -31,7 +31,7 @@ export default {
         `,
       }]
     }, {
-      class: 'text-row push-right',
+      class: 'text-row',
       content: [{
         type: 'text',
         value: `

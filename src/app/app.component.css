@@ -6,6 +6,7 @@
   display: block;
   position: relative;
   max-width: 110px;
+  max-height: 52px;
   margin: auto;
 }
 
@@ -115,11 +116,16 @@
     display: block;
     position: absolute;
     transform-origin: top right;
+    transition: transform 300ms;
     width: 100vw;
     right: 0;
     top: 0;
     height: 100%;
     background-color: #00897B;
+  }
+
+  .home.sidebar-bg {
+    transform: translateX(10vw) skew(20deg);
   }
 
   .site-link {

@@ -56,7 +56,7 @@ export default {
         class: 'text-center',
         value: `
         <h3 class="header-3">View
-          <a href="https://jon-richards.com/blackjack/" ${linkAttrs} >Live Game</a>
+          <a href="https://jon-richards.com/blackjack-embed/" ${linkAttrs} >Live Game</a>
         </h3>
         `,
       }],

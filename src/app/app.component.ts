@@ -6,7 +6,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/filter';
 
-import { useAnimation, transition, trigger, state, style, group, query } from '@angular/animations';
+import { useAnimation, transition, trigger, group, query } from '@angular/animations';
 
 import { duration, slide, slideStagger, to, from, fadeIn, go } from './shared/animations';
 
@@ -33,11 +33,6 @@ import { CanvasGrid } from '../assets/jr_grid/canvasGrid';
         query(':enter', useAnimation(slide, {params: { from: go.down }}), { optional: true }),
         query(':leave', useAnimation(slide, {params: { to: go.up }}), { optional: true })
       ])),
-    ]),
-    trigger('sidebarBG', [
-      state('void', style({ transform: 'translateX(-100%)' })),
-      state('home', style({ transform: 'translateX(10vw) skew(20deg)' })),
-      transition('*<=>*', useAnimation(duration)),
     ]),
     trigger('nav', [
       transition(':enter', fadeIn),
@@ -135,7 +130,7 @@ export class AppComponent implements AfterViewInit, OnInit {
       this.closeSidebar();
     });
 
-    this.routerComms.scrollPosition$.subscribe(pos => this.scrollTo(pos));
+    this.routerComms.scrollSetTo$.subscribe(pos => this.scrollTo(pos));
 
     this.pageRef$.subscribe((pg) => this.appState.page = pg);
   }

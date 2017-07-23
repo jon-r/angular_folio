@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InlineSVGModule } from 'ng-inline-svg';
@@ -32,7 +32,7 @@ import { SafeHTMLPipe } from './shared/safe-html.pipe';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    // HttpModule,
     AppRoutingModule,
     InlineSVGModule,
   ],
