@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 // import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { InlineSVGModule } from 'ng-inline-svg';
+// import { InlineSVGModule } from 'ng-inline-svg';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -34,7 +34,7 @@ import { SafeHTMLPipe } from './shared/safe-html.pipe';
     BrowserAnimationsModule,
     // HttpModule,
     AppRoutingModule,
-    InlineSVGModule,
+    // InlineSVGModule,
   ],
   providers: [
     FolioService,
