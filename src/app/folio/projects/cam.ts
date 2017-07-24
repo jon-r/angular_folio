@@ -87,17 +87,20 @@ export default {
       content: [{
         type: 'image',
         height: '209%',
+        class: 'image-shadow',
         value: `${rootLink}strategy.jpg`,
         alt: 'CAMMS Strategy',
         caption: 'Eleven varied products. One Wordpress post template.'
       }, {
         type: 'image',
         height: '141%',
+        class: 'image-shadow',
         value: `${rootLink}budget.jpg`,
         alt: 'CAMMS Strategy',
       }, {
         type: 'image',
         height: '192%',
+        class: 'image-shadow',
         value: `${rootLink}community.jpg`,
         alt: 'CAMMS Strategy',
       }],
