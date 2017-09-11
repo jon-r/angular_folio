@@ -38,7 +38,8 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
       <h5>Fluent In</h5>
       <ul>
         <li>HTML5 | SVG (hand written)</li>
-        <li>JavaScript | ES6 | Angular 4 | Vue.js | jQuery</li>
+        <li>JavaScript | ES6 | TypeScript</li>
+        <li>React | Angular 4 | Vue.js | jQuery</li>
         <li>CSS3 | SASS | Bootstrap | Foundation | PostCSS</li>
         <li>PHP | WordPress</li>
         <li>Adobe Photoshop | Illustrator</li>
@@ -61,7 +62,14 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
       value: `
       <h3 class="header-3" >Employment</h3>
       <hr>
-      <h5>Present Minerva Creative - Design Agency Manchester</h5>
+      <h5>Present - Degree53 - App and Web Development Agency Manchester</h5>
+      <em>- Front End Web Developer (ReactJS)</em>
+      <ul>
+        <li>Developing a frontend for a new end-to-end betting and gaming platform</li>
+        <li>Kanban development, working closely with back-end API team</li>
+        <li>Test-Heavy environment. Achieving 90%+ test coverage for all front-end code</li>
+      </ul>      
+      <h5>2016-2017 Minerva Creative - Design Agency Manchester</h5>
       <em>- Senior Web Developer (Full Stack Wordpress)</em>
       <ul>
         <li>Working in a tight knit team to produce bespoke Wordpress websites </li>
@@ -70,7 +78,7 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
         <li>Implementing Unique Selling Points (eg, interactivity, CTA’s)</li>
         <li>Deploying finished sites, preparing the final builds, and assisting migration</li>
       </ul>
-      <h5>2015 Red Hot Chilli Northwest - Commercial Appliance Retailer</h5>
+      <h5>2012-2015 Red Hot Chilli Northwest - Commercial Appliance Retailer</h5>
       <em>- Web Marketing Lead / Full Stack Web Developer</em>
       <ul>
         <li>Supervising content production for sales & marketing</li>
