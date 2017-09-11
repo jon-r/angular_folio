@@ -56,7 +56,7 @@ export default {
         class: 'text-center',
         value: `
         <h3 class="header-3">View
-          <a href="https://jon-richards.com/blackjack-embed/" ${linkAttrs} >Live Game</a>
+          <a href="https://jon-richards.com/blackjack/" ${linkAttrs} >Live Game</a>
         </h3>
         `,
       }],
@@ -67,7 +67,7 @@ export default {
         type: 'iframe',
         height: '75%',
         caption: '<h5>New Game</h5><span>Play it now in browser.</span>',
-        value: '//jon-richards.com/blackjack/?demo',
+        value: '//jon-richards.com/blackjack-embed/?demo',
       }],
     }, {
       class: 'text-row align-tops',

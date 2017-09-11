@@ -4,13 +4,15 @@ import ico from './ico';
 import rhc from './rhc';
 import cam from './cam';
 import web from './web';
+import scp from './scp';
 
 export default [
   blk,
   cam,
   ico,
   rhc,
-  web
+  web,
+  scp,
 ];
 
 /* todo bonus
