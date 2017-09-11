@@ -1,0 +1,71 @@
+<svg class="pro-ico" xmlns="http://www.w3.org/2000/svg" viewBox="15 15 240 240">
+  <defs>
+    <style>
+      .pro-st { fill: none; stroke: #2BEDBA; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .pro-fl { fill: #2BEDBA; }
+
+      .looking { animation: looker 1s ease-in-out infinite alternate; transform-origin: 75px 84px; }
+      .heat { animation: hot 1s ease-in-out infinite alternate; transform-origin: 75px 104px; }
+      .spin-left { transform-origin: 48.8px 56.7px; animation: spinner 2s linear infinite; }
+      .spin-right { transform-origin: 92.3px 56.7px; animation: spinner 2s linear infinite; }
+      .glow { opacity: 0; animation: glowing 1s linear infinite alternate; }
+
+      @keyframes spinner { from { transform: rotate(0); } 50% { transform: rotate(180deg); } to { transform: rotate(360deg); } }
+      @keyframes looker { from { transform: translateX(-20px) skew(15deg); } 50% { transform: scale(1.2); } to { transform: translateX(20px) skew(-15deg); } }
+      @keyframes hot { from { transform: scaleY(0.3); } 50% { transform: scaleY(1); } to { transform: scaleY(0.5); } }
+      @keyframes glowing { to { opacity: 0.9; } }
+    </style>
+    <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+    <mask id="hollow">
+      <path fill="#fff" d="M0 0h200v200H0"/>
+      <path d="M85 44.4c11 4 19 14.8 19 27.6 0 16-13 29-29.2 29s-29-13-29-29c0-12.8 8-23.5 19.3-27.6M68 27s0-7.3 7.3-7.3c0 0 6.7 0 6.7 6.8"/>
+      <path d="M87.5 35.7h-25c-2.4 0-4.3-2-4.3-4.3 0-2.4 2-4.4 4.3-4.4h25c2.4 0 4.3 2 4.3 4.4 0 2.4-2 4.3-4.3 4.3zm0 8.7h-25c-2.4 0-4.3-2-4.3-4.3s2-4 4.3-4h25c2.4 0 4.3 2 4.3 4.4 0 2.5-2 4.4-4.3 4.4z"/>
+    </mask>
+  </defs>
+
+  <rect x="15" y="15" height="100%" width="100%" fill="#333" rx="10%" />
+  <g class="light" transform="translate(110 130)">
+    <circle class="glow pro-fl" cx="75" cy="72" r="42" mask="url(#hollow)" filter="url(#blur)"/>
+    <path class="pro-st" d="M85 44.4c11 4 19 14.8 19 27.6 0 16-13 29-29.2 29s-29-13-29-29c0-12.8 8-23.5 19.3-27.6M68 27s0-7.3 7.3-7.3c0 0 6.7 0 6.7 6.8"/>
+    <path class="pro-st" d="M68.5 45L82 71.3H68l14-27"/>
+    <path class="pro-st" d="M87.5 35.7h-25c-2.4 0-4.3-2-4.3-4.3 0-2.4 2-4.4 4.3-4.4h25c2.4 0 4.3 2 4.3 4.4 0 2.4-2 4.3-4.3 4.3zm0 8.7h-25c-2.4 0-4.3-2-4.3-4.3s2-4 4.3-4h25c2.4 0 4.3 2 4.3 4.4 0 2.5-2 4.4-4.3 4.4z"/>
+  </g>
+  <g class="cam">
+    <path d="M152.4 78.7h58.2V114h-58.2z" class="pro-st"/>
+    <path d="M210.6 99.7L232 109V76.3L210.5 86z" class="pro-st"/>
+    <g transform="translate(110)" >
+    <g class="spin-right" >
+      <circle cx="92.3" cy="56.7" r="20.8" class="pro-st"/>
+      <circle cx="92.3" cy="56.7" r="7.7" class="pro-st"/>
+      <circle cx="92.3" cy="42.7" r="4" class="pro-fl"/>
+      <circle cx="104.4" cy="63.7" r="4" class="pro-fl"/>
+      <circle cx="80.2" cy="63.7" r="4" class="pro-fl"/>
+    </g>
+    <g class="spin-left" >
+      <circle cx="48.8" cy="56.7" r="20.8" class="pro-st"/>
+      <circle cx="48.8" cy="56.7" r="7.7" class="pro-st"/>
+      <circle cx="48.8" cy="70.7" r="4" class="pro-fl"/>
+      <circle cx="36.7" cy="49.7" r="4" class="pro-fl"/>
+      <circle cx="60.9" cy="49.7" r="4" class="pro-fl"/>
+    </g>
+    </g>
+  </g>
+  <g class="temp" transform="translate(0 20)">
+    <g class="pro-st">
+      <path d="M83 97.5c5.4 3 9 8.5 9 15 0 9.5-7.6 17.2-17 17.2s-17-7.7-17-17c0-6.5 3.4-12 8.6-15l.4-69.5c0-4.4 2.5-8 5.7-8H77c3 0 5.6 3.6 5.7 8l.3 69.3z"/>
+      <path class="heat" d="M74.8 36v67.8"/>
+    </g>
+    <circle class="pro-fl" cx="75" cy="112.6" r="9.5"/>
+  </g>
+  <g class="sec">
+    <path class="pro-st" d="M26.8 169h96.4v24H26.8zm89.7 24.4c0 22.8-18.6 41.4-41.5 41.4s-41.5-18.6-41.5-41.4"/>
+    <g transform="translate(0 130)" >
+      <g class="looking" >
+        <circle class="pro-st" cx="75" cy="84.1" r="12.3"/>
+        <circle class="pro-fl" cx="75" cy="84.1" r="6.6"/>
+      </g>
+    </g>
+  </g>
+</svg>
