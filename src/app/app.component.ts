@@ -2,16 +2,15 @@ import { Component, ViewChild, ElementRef, AfterViewInit, OnInit, NgZone } from 
 import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/filter';
+import { debounceTime, filter } from 'rxjs/operators';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+// import 'rxjs/add/operator/debounceTime';
+// import 'rxjs/add/observable/fromEvent';
+// import 'rxjs/add/operator/filter';
 
 import { useAnimation, transition, trigger, group, query } from '@angular/animations';
-
 import { duration, slide, slideStagger, to, from, fadeIn, go } from './shared/animations';
-
 import { RouteCommsService } from './shared/route-comms.service';
-
 import { CanvasGrid } from '../assets/jr_grid/canvasGrid';
 
 @Component({
@@ -22,16 +21,16 @@ import { CanvasGrid } from '../assets/jr_grid/canvasGrid';
     trigger('routeAnimation', [
       transition(':enter', []),
       transition('home=>*', group([
-        query(':enter', useAnimation(slide, {params: { from: go.down }}), { optional: true }),
-        query(':leave', useAnimation(slide, {params: { to: go.left }}), { optional: true })
+        query(':enter', useAnimation(slide, { params: { from: go.down } }), { optional: true }),
+        query(':leave', useAnimation(slide, { params: { to: go.left } }), { optional: true })
       ])),
       transition('*=>home', group([
-        query(':enter', useAnimation(slide, {params: { from: go.left }}), { optional: true }),
-        query(':leave', useAnimation(slide, {params: { to: go.right }}), { optional: true })
+        query(':enter', useAnimation(slide, { params: { from: go.left } }), { optional: true }),
+        query(':leave', useAnimation(slide, { params: { to: go.right } }), { optional: true })
       ])),
       transition('about<=>folio', group([
-        query(':enter', useAnimation(slide, {params: { from: go.down }}), { optional: true }),
-        query(':leave', useAnimation(slide, {params: { to: go.up }}), { optional: true })
+        query(':enter', useAnimation(slide, { params: { from: go.down } }), { optional: true }),
+        query(':leave', useAnimation(slide, { params: { to: go.up } }), { optional: true })
       ])),
     ]),
     trigger('nav', [
@@ -103,20 +102,20 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.closeSidebar();
   }
 
-   // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
-   // todo bonus = set this up as service? not needed but better organised
-  scrollTo(to) {
-    const from = this.container.nativeElement.scrollTop;
+  // inspired by https://twitter.com/johnlindquist/status/735172526083440642?lang=en
+  // todo bonus = set this up as service? not needed but better organised
+  scrollTo(toPoint) {
+    const fromPoint = this.container.nativeElement.scrollTop;
     const multiplier = .2;
 
-    if (Math.abs(from - to) < 1) {
+    if (Math.abs(fromPoint - toPoint) < 1) {
       return false;
     }
 
     const lerp = (start, finish) => ((1 - multiplier) * start) + (multiplier * finish);
-    this.scrollPos = lerp(from, to);
+    this.scrollPos = lerp(fromPoint, toPoint);
 
-    requestAnimationFrame(() => this.scrollTo(to));
+    requestAnimationFrame(() => this.scrollTo(toPoint));
   }
 
   ngOnInit() {
@@ -135,24 +134,21 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.pageRef$.subscribe((pg) => this.appState.page = pg);
   }
 
-
   ngAfterViewInit() {
 
     const container = this.container.nativeElement;
 
-
-    Observable.fromEvent(window, 'resize')
-      .debounceTime(500)
+    fromEvent(window, 'resize')
+      .pipe(debounceTime(500))
       .subscribe(() => this.routerComms.updateDims());
 
-
-    Observable.fromEvent(container, 'scroll')
+    fromEvent(container, 'scroll')
+      .pipe(
       // only actively watching if on folio pages
-      .filter(() => this.appState.page === 'folio')
-      .debounceTime(150)
+      filter(() => this.appState.page === 'folio'),
+      debounceTime(150)
+      )
       .subscribe(() => this.routerComms.updateScrollPos(container.scrollTop));
-
   }
-
 
 }

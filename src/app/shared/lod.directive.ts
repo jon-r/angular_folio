@@ -1,8 +1,7 @@
 import { Directive, ElementRef, Output, OnInit, EventEmitter } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/takeUntil';
-import 'rxjs/add/operator/combineLatest';
+import { takeUntil, combineLatest } from 'rxjs/operators';
 
 import { RouteCommsService, Dims } from '../shared/route-comms.service';
 
@@ -18,7 +17,7 @@ export class LODDirective implements OnInit {
   constructor(
     private el: ElementRef,
     private routeComms: RouteCommsService,
-  ) {}
+  ) { }
 
   ngOnInit() {
 
@@ -29,8 +28,9 @@ export class LODDirective implements OnInit {
     const el = this.el.nativeElement;
     const offset = el.getBoundingClientRect().top - window.innerHeight;
 
-    this.scrollSub.combineLatest(this.dimsSub)
-      .takeUntil(this.appLOD)
+    this.scrollSub.pipe(
+      combineLatest(this.dimsSub),
+      takeUntil(this.appLOD))
       .subscribe(arr => {
         const scroll = arr[0];
 
@@ -43,6 +43,4 @@ export class LODDirective implements OnInit {
         }
       });
   }
-
-
 }

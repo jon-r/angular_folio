@@ -1,11 +1,8 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
 import { useAnimation, transition, trigger, group, query } from '@angular/animations';
-
+import { Observable } from 'rxjs/Observable';
 
 import { RouteCommsService } from '../shared/route-comms.service';
-
 import { fadeIn, slide } from '../shared/animations';
 
 @Component({
@@ -38,8 +35,7 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {
     this.template.rows.forEach(row => row.isActive = false);
   }
-
-};
+}
 
 /*
 TODO: bonus: lightboxes. similar to the old folio site? but with better positioning from NG

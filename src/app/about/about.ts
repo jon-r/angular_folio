@@ -68,7 +68,7 @@ development knowledge to produce clear, optimised code and pleasing results.</p>
         <li>Developing a frontend for a new end-to-end betting and gaming platform</li>
         <li>Kanban development, working closely with back-end API team</li>
         <li>Test-Heavy environment. Achieving 90%+ test coverage for all front-end code</li>
-      </ul>      
+      </ul>
       <h5>2016-2017 Minerva Creative - Design Agency Manchester</h5>
       <em>- Senior Web Developer (Full Stack Wordpress)</em>
       <ul>

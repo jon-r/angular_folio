@@ -1,14 +1,14 @@
-import { JrNgFolioPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('jr-ng-folio App', () => {
-  let page: JrNgFolioPage;
+describe('folio App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new JrNgFolioPage();
+    page = new AppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

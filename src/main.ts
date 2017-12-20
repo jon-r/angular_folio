@@ -18,9 +18,8 @@ const loaderFrame = document.getElementById('ldFr');
 
   loaderFrame.classList.add('going');
 
-  setTimeout(() => {
-    platformBrowserDynamic().bootstrapModule(AppModule);
+  return setTimeout(() => {
+    platformBrowserDynamic().bootstrapModule(AppModule)
+      .catch(err => console.log(err));
   }, 400);
-
-  return true;
 })();
